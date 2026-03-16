@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisaIQ - Australia's Migration Intelligence Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <title>VisaIQ — Australia Skilled Migration Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,784 +12,703 @@
             box-sizing: border-box;
         }
 
-        body {
+        :root {
+            --bg-primary: #070F1C;
+            --bg-secondary: #0D1B2E;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.07);
+            --text-primary: #E8EDF5;
+            --text-muted: #7A8FA8;
+            --accent: #00C896;
+            --accent-blue: #4E8EFF;
+        }
+
+        html, body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
             font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, #070F1C 0%, #0D1B2E 100%);
-            color: #E8EDF5;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Bloomberg Ticker */
-        .ticker-container {
-            background: rgba(0, 200, 150, 0.08);
-            border-bottom: 1px solid rgba(0, 200, 150, 0.2);
-            padding: 14px 0;
-            overflow: hidden;
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
         }
 
-        .ticker-wrapper {
-            overflow: hidden;
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 16px;
         }
 
-        .ticker {
-            display: flex;
-            animation: scroll-left 40s linear infinite;
-            white-space: nowrap;
-        }
-
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            padding: 0 40px;
-            font-size: 13px;
-            color: #00C896;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .ticker-item:before {
-            content: "●";
-            margin-right: 10px;
-            opacity: 0.6;
-            font-size: 10px;
-        }
-
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 40px 24px;
             }
         }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .logo {
+            font-size: 32px;
             font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: #00C896;
+            color: var(--accent);
+            margin-bottom: 8px;
         }
 
-        nav a {
-            color: #7A8FA8;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #00C896;
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 40px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 56px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            line-height: 1.2;
-        }
-
-        .hero p {
+        .tagline {
             font-size: 18px;
-            color: #7A8FA8;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 16px;
         }
 
-        .cta-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 80px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 32px;
+        .trust-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s;
+            padding: 12px 16px;
+            font-size: 12px;
+            color: var(--text-muted);
             display: inline-block;
+            margin-bottom: 32px;
         }
 
-        .btn-primary {
-            background: #00C896;
-            color: #070F1C;
-        }
-
-        .btn-primary:hover {
-            background: #00E5A8;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #E8EDF5;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #00C896;
-        }
-
-        /* Scorecard Section */
-        .scorecard-section {
-            max-width: 1400px;
-            margin: 80px auto;
-            padding: 0 40px;
-        }
-
-        .section-label {
-            font-family: 'Syne', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #00C896;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .section-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            color: #7A8FA8;
-            font-size: 16px;
-            margin-bottom: 40px;
-            max-width: 800px;
-        }
-
-        .scorecard-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-            align-items: start;
-        }
-
-        .scorecard-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 12px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .scorecard-preview {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #0D1B2E 0%, #070F1C 100%);
-            border: 2px solid #00C896;
-            border-radius: 12px;
-            padding: 30px;
+        /* Tabs */
+        .tabs {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            font-family: 'Syne', sans-serif;
-        }
-
-        .scorecard-header {
-            color: #00C896;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .scorecard-occupation {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #E8EDF5;
-        }
-
-        .scorecard-metric {
-            margin-bottom: 15px;
-        }
-
-        .scorecard-metric-label {
-            color: #7A8FA8;
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
-
-        .scorecard-dots {
-            color: #00C896;
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
-
-        .scorecard-footer {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 12px;
-            color: #7A8FA8;
-        }
-
-        /* EOI Chart Card */
-        .eoi-chart-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 12px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .eoi-chart-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #E8EDF5;
-        }
-
-        .eoi-chart-subtitle {
-            font-size: 13px;
-            color: #7A8FA8;
-            margin-bottom: 25px;
-        }
-
-        .chart-container {
-            position: relative;
-            height: 280px;
-            margin-bottom: 20px;
-        }
-
-        .eoi-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 13px;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
             gap: 8px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+            overflow-x: auto;
         }
 
-        .legend-box {
-            width: 12px;
-            height: 12px;
-            border-radius: 2px;
-        }
-
-        /* Features Section */
-        .features {
-            max-width: 1200px;
-            margin: 120px auto;
-            padding: 0 40px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #00C896;
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(0, 200, 150, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #00C896;
-        }
-
-        .feature-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            color: #7A8FA8;
+        .tab-button {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
             font-size: 14px;
-            line-height: 1.8;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            white-space: nowrap;
         }
 
-        /* Tool Section */
-        .tool-section {
-            max-width: 1200px;
-            margin: 120px auto;
-            padding: 0 40px;
+        .tab-button:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-button.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Tool Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
         }
 
         .tool-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 50px;
-            backdrop-filter: blur(10px);
+            padding: 24px;
             text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .tool-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 28px;
-            margin-bottom: 15px;
+        .tool-card:hover {
+            background: rgba(0, 200, 150, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-4px);
         }
 
-        .tool-card p {
-            color: #7A8FA8;
-            margin-bottom: 30px;
-            font-size: 16px;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .tool-card .btn-primary {
-            padding: 16px 40px;
-            font-size: 16px;
-        }
-
-        /* Trust Section */
-        .trust {
-            max-width: 1200px;
-            margin: 120px auto;
-            padding: 0 40px;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .trust-item h4 {
-            font-family: 'Syne', sans-serif;
+        .tool-icon {
             font-size: 32px;
-            color: #00C896;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .trust-item p {
-            color: #7A8FA8;
+        .tool-name {
+            font-size: 16px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .tool-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Section Info */
+        .section-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .section-info h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .section-info p {
             font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        /* Disclaimer */
-        .disclaimer {
-            background: rgba(78, 142, 255, 0.05);
-            border: 1px solid rgba(78, 142, 255, 0.2);
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(78, 142, 255, 0.1) 100%);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .cta-section p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
             border-radius: 8px;
-            padding: 20px;
-            margin: 60px auto;
-            max-width: 1200px;
-            margin-left: 40px;
-            margin-right: 40px;
-            font-size: 13px;
-            color: #7A8FA8;
-            line-height: 1.8;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .cta-button:hover {
+            background: #00B880;
+            transform: translateY(-2px);
         }
 
         /* Footer */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
-            padding: 40px;
+        .footer {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            margin-top: 60px;
             text-align: center;
-            color: #7A8FA8;
-            font-size: 13px;
-            margin-top: 100px;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .ticker-item {
-                padding: 0 20px;
-                font-size: 12px;
-            }
-
-            nav {
-                padding: 15px 20px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .hero {
-                padding: 40px 20px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cta-container {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .scorecard-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .scorecard-card,
-            .eoi-chart-card,
-            .tool-card {
-                padding: 20px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .disclaimer {
-                margin-left: 20px;
-                margin-right: 20px;
-            }
-
-            footer {
-                padding: 20px;
-            }
+        .footer p {
+            margin-bottom: 8px;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Preview Section */
+        .preview-section {
+            margin-top: 80px;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .hero,
-        .scorecard-section,
-        .tool-section,
-        .features,
-        .trust {
-            animation: fadeUp 0.8s ease-out;
+        .preview-section h2 {
+            font-size: 28px;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .preview-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .preview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .preview-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* EOI Queue Chart */
+        .eoi-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 150px;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .bar {
+            background: var(--accent-blue);
+            border-radius: 4px 4px 0 0;
+            flex: 1;
+            min-width: 8px;
+            opacity: 0.6;
+        }
+
+        .bar.highlight {
+            background: var(--accent);
+            opacity: 1;
+            position: relative;
+        }
+
+        .bar.highlight::after {
+            content: "You";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Cutoff Comparison */
+        .cutoff-comparison {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .cutoff-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cutoff-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .cutoff-bars {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            height: 80px;
+        }
+
+        .bar-segment {
+            flex: 1;
+            background: var(--accent-blue);
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding-bottom: 4px;
+        }
+
+        .bar-segment.active {
+            background: var(--accent);
+        }
+
+        /* Scorecard Preview */
+        .scorecard-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .score-box {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.15) 0%, rgba(78, 142, 255, 0.08) 100%);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .score-value {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            color: var(--accent);
+        }
+
+        .score-value.points {
+            color: var(--accent);
+        }
+
+        .score-value.rate {
+            color: var(--accent-blue);
+        }
+
+        /* Center button section */
+        .preview-cta {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .preview-cta p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .header { margin-bottom: 24px; }
+            .logo { font-size: 28px; }
+            .tagline { font-size: 16px; }
+            .tabs { gap: 4px; }
+            .tab-button { padding: 10px 16px; font-size: 13px; }
+            .tool-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+            .cta-section { padding: 20px; }
+            .cta-section h2 { font-size: 20px; }
+            .preview-section h2 { font-size: 24px; }
+            .preview-grid { grid-template-columns: 1fr; }
+            .scorecard-preview { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <!-- Bloomberg Ticker -->
-    <div class="ticker-container">
-        <div class="ticker-wrapper">
-            <div class="ticker">
-                <div class="ticker-item">NSW 190: 90pts | VIC: 85pts | QLD: 75pts | SA: 65pts</div>
-                <div class="ticker-item">3,450 invitations this round | Lowest: 75pts</div>
-                <div class="ticker-item">Accountants 491: 65pts cutoff | 15,200 in queue</div>
-                <div class="ticker-item">Software Engineers: High demand in ACT & VIC</div>
-                <div class="ticker-item">Registered Nurses: 42% invited within 12 months</div>
-                <div class="ticker-item">NSW 190: 90pts | VIC: 85pts | QLD: 75pts | SA: 65pts</div>
-                <div class="ticker-item">3,450 invitations this round | Lowest: 75pts</div>
-                <div class="ticker-item">Accountants 491: 65pts cutoff | 15,200 in queue</div>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">VisaIQ</div>
+            <div class="tagline">Australia Skilled Migration Intelligence</div>
+            <div style="font-size: 18px; color: var(--text-muted); margin-top: 12px; margin-bottom: 24px;">Your Personalised PR Score in Minutes</div>
+            <div style="font-size: 12px; color: var(--text-muted);">Powered by 100K+ Real Visa Outcomes</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('pr-analysis')">
+                🎯 PR Analysis
+            </button>
+            <button class="tab-button" onclick="switchTab('employment')">
+                💼 Employment Sponsored
+            </button>
+            <button class="tab-button" onclick="switchTab('student')">
+                🎓 Student Pathways
+            </button>
+        </div>
+
+        <!-- TAB 1: PR ANALYSIS -->
+        <div id="pr-analysis" class="tab-content active">
+            <div class="section-info">
+                <h3>🎯 Points-Based Skilled Migration</h3>
+                <p>For independent professionals targeting PR through points-based visas. Assess your eligibility for 189 (independent), 190 (state nominated), and 491 (regional) pathways.</p>
             </div>
-        </div>
-    </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">VisaIQ</div>
-        <div>
-            <a href="#methodology">Methodology</a>
-            <a href="/toolindex.html" style="margin-left: 30px;">Tool</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>What are your real PR chances?</h1>
-        <p>Stop wondering. Get your actual odds based on 100K+ real visa outcomes.</p>
-        <div class="cta-container">
-            <a href="/toolindex.html" class="btn btn-primary">Start PR Analysis</a>
-            <button class="btn btn-secondary">Student Pathway</button>
-        </div>
-    </section>
-
-    <!-- Scorecard & EOI Chart Section -->
-    <section class="scorecard-section">
-        <span class="section-label">Your instant visa scorecard</span>
-        <h2 class="section-title">See exactly where you stand for Australian Permanent Residency.</h2>
-        <p class="section-subtitle">Your personalised migration scorecard based on real visa data.</p>
-
-        <div class="scorecard-grid">
-            <!-- Scorecard Preview -->
-            <div class="scorecard-card">
-                <div class="scorecard-preview">
+            <div class="tool-grid">
+                <a href="/tool" class="tool-card">
                     <div>
-                        <div class="scorecard-header">VisaIQ • Migration Intelligence</div>
-                        <div class="scorecard-occupation">Software Engineer • NSW • 80pts</div>
-                        <div class="scorecard-metric">
-                            <div class="scorecard-metric-label">189 Competitiveness</div>
-                            <div class="scorecard-dots">●●●○○ Medium</div>
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-name">Full PR Probability Tool</div>
+                        <div class="tool-desc">Complete analysis with graphs, EOI queue, and personalised scorecard</div>
+                    </div>
+                </a>
+
+                <a href="/189-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🏆</div>
+                        <div class="tool-name">189 Independent Visa</div>
+                        <div class="tool-desc">No state sponsor needed. Highest points required. Compare with other visas</div>
+                    </div>
+                </a>
+
+                <a href="/190-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🎖️</div>
+                        <div class="tool-name">190 State Nomination</div>
+                        <div class="tool-desc">State sponsor required. +5 bonus points. Check all 8 states' requirements</div>
+                    </div>
+                </a>
+
+                <a href="/491-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🌏</div>
+                        <div class="tool-name">491 Regional Visa</div>
+                        <div class="tool-desc">Regional commitment. +15 bonus points. Fastest PR pathways</div>
+                    </div>
+                </a>
+
+                <a href="/points-calculator" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🔢</div>
+                        <div class="tool-name">Points Calculator</div>
+                        <div class="tool-desc">Quick calculation of your PR points score in seconds</div>
+                    </div>
+                </a>
+
+                <a href="/eoi-queue" class="tool-card">
+                    <div>
+                        <div class="tool-icon">📈</div>
+                        <div class="tool-name">EOI Queue Checker</div>
+                        <div class="tool-desc">See where you stand in the EOI pool. Understand waiting times by tier</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- TAB 2: EMPLOYMENT SPONSORED -->
+        <div id="employment" class="tab-content">
+            <div class="section-info">
+                <h3>💼 Employment Sponsored Visas</h3>
+                <p>For workers with employer backing. Includes temporary sponsorship (482) and permanent nomination (186). Fastest pathway for those with a job offer.</p>
+            </div>
+
+            <div class="tool-grid">
+                <a href="/482-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">💼</div>
+                        <div class="tool-name">482 Skills in Demand</div>
+                        <div class="tool-desc">Employer-sponsored temporary visa. Check eligibility and pathway to PR</div>
+                    </div>
+                </a>
+
+                <a href="/186-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🟢</div>
+                        <div class="tool-name">186 Employer Nomination</div>
+                        <div class="tool-desc">Permanent PR via employer. Fastest pathway for sponsored workers</div>
+                    </div>
+                </a>
+
+                <a href="/482-to-186" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🔄</div>
+                        <div class="tool-name">482 → 186 Pathway</div>
+                        <div class="tool-desc">Convert 482 to permanent PR after 2+ years. Timeline and requirements</div>
+                    </div>
+                </a>
+
+                <a href="/employer-guide" class="tool-card">
+                    <div>
+                        <div class="tool-icon">📋</div>
+                        <div class="tool-name">Employer Sponsorship Guide</div>
+                        <div class="tool-desc">What employers need to do. Labour market testing, salary requirements, approval timeline</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- TAB 3: STUDENT PATHWAYS -->
+        <div id="student" class="tab-content">
+            <div class="section-info">
+                <h3>🎓 International Student PR Pathways</h3>
+                <p>For students planning to stay after graduation. Understand your working rights, post-study options, and PR eligibility before you enrol.</p>
+            </div>
+
+            <div class="tool-grid">
+                <a href="/student-pathway" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🎓</div>
+                        <div class="tool-name">Student Pathway Tool</div>
+                        <div class="tool-desc">Full analysis: studying → 485 work visa → PR. See your timeline and options</div>
+                    </div>
+                </a>
+
+                <a href="/485-visa" class="tool-card">
+                    <div>
+                        <div class="tool-icon">⏱️</div>
+                        <div class="tool-name">485 Post-Study Work Visa</div>
+                        <div class="tool-desc">Working rights after graduation. Check duration based on your qualification</div>
+                    </div>
+                </a>
+
+                <a href="/best-degrees-pr" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🎯</div>
+                        <div class="tool-name">Best Degrees for PR</div>
+                        <div class="tool-desc">Which courses lead to PR fastest. Compare demand, cutoffs, and timelines</div>
+                    </div>
+                </a>
+
+                <a href="/regional-study-bonus" class="tool-card">
+                    <div>
+                        <div class="tool-icon">🌱</div>
+                        <div class="tool-name">Regional Study Bonus</div>
+                        <div class="tool-desc">+5 points for regional study. +15 regional visa bonus. Combined strategy</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- PREVIEW SECTION -->
+        <div class="preview-section">
+            <h2>See What You'll Get</h2>
+            <p class="preview-subtitle">Sample output from your personalised PR analysis</p>
+
+            <div class="preview-grid">
+                <!-- EOI Queue Chart -->
+                <div class="preview-card">
+                    <h3>📊 EOI Queue Position</h3>
+                    <div class="eoi-chart">
+                        <div class="bar" style="height: 30%;"></div>
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 62%;"></div>
+                        <div class="bar" style="height: 85%;"></div>
+                        <div class="bar highlight" style="height: 70%;"></div>
+                        <div class="bar" style="height: 55%;"></div>
+                        <div class="bar" style="height: 38%;"></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>60pts</span>
+                        <span>70pts</span>
+                        <span>80pts</span>
+                        <span>90pts</span>
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">You're in the 85th percentile for your occupation & points tier</p>
+                </div>
+
+                <!-- Cutoff Comparison -->
+                <div class="preview-card">
+                    <h3>📈 189 vs 190 Cutoffs</h3>
+                    <div class="cutoff-comparison">
+                        <div class="cutoff-bar">
+                            <div class="cutoff-label">189 Independent</div>
+                            <div class="cutoff-bars">
+                                <div class="bar-segment" style="height: 100%; background: var(--accent-blue);">90+</div>
+                            </div>
                         </div>
-                        <div class="scorecard-metric">
-                            <div class="scorecard-metric-label">190 Competitiveness</div>
-                            <div class="scorecard-dots">●●●●○ High</div>
-                        </div>
-                        <div class="scorecard-metric">
-                            <div class="scorecard-metric-label">491 Competitiveness</div>
-                            <div class="scorecard-dots">●●●●● Very High</div>
+                        <div class="cutoff-bar">
+                            <div class="cutoff-label">190 Nominated</div>
+                            <div class="cutoff-bars">
+                                <div class="bar-segment active" style="height: 72%;">65</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="scorecard-footer">
-                        <div style="margin-bottom: 10px;">Similar profiles: 42% invited via state nomination</div>
-                        <div style="color: #00C896; font-weight: 600;">Your PR Chance Score: 67/100</div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Showing Software Engineer, NSW. Your score: 80pts</p>
+                </div>
+
+                <!-- Scorecard -->
+                <div class="preview-card">
+                    <h3>🎯 Your Scorecard</h3>
+                    <div class="scorecard-preview">
+                        <div class="score-box">
+                            <div class="score-label">Points</div>
+                            <div class="score-value points">80</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">Tier</div>
+                            <div class="score-value rate">High</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">189 Chance</div>
+                            <div class="score-value rate">31%</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">190 Chance</div>
+                            <div class="score-value points">67%</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- EOI Queue Chart -->
-            <div class="eoi-chart-card">
-                <div class="eoi-chart-title">EOI Queue Position</div>
-                <p class="eoi-chart-subtitle">Where you rank among applicants at different points levels</p>
-                <div class="chart-container">
-                    <canvas id="eoi-chart"></canvas>
-                </div>
-                <div class="eoi-legend">
-                    <div class="legend-item">
-                        <div class="legend-box" style="background: #00C896;"></div>
-                        <span>Your points level (80pts)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-box" style="background: #4E8EFF;"></div>
-                        <span>Invitation cutoff</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-box" style="background: rgba(255,255,255,0.1);"></div>
-                        <span>Other applicants</span>
-                    </div>
-                </div>
+            <div class="preview-cta">
+                <p>Enter your details to see your actual analysis, state eligibility, processing times & action plan</p>
+                <button class="cta-button" onclick="window.location.href='/tool'">Get Your PR Score</button>
             </div>
         </div>
-    </section>
 
-    <!-- Tool Section -->
-    <section class="tool-section">
-        <div class="tool-card">
-            <h3>Ready to discover your PR chances?</h3>
-            <p>Use our comprehensive migration intelligence tool. Answer a few questions about your profile and get instant analysis backed by 100K+ real visa outcomes and latest DHA invitation data.</p>
-            <a href="/toolindex.html" class="btn btn-primary">Launch the Tool</a>
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>⚠️ Important:</strong> VisaIQ provides data-driven research based on official DHA information. This is NOT migration advice. For advice specific to your situation, consult a MARA-registered migration agent.</p>
+            <p>© 2026 VisaIQ. All rights reserved.</p>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <span class="section-label">How VisaIQ works</span>
-        <h2 class="section-title">Data. Not opinions.</h2>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>100K+ real outcomes</h3>
-                <p>Actual PR grants, invitations, and processing times. No guesswork.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Your exact profile</h3>
-                <p>Points, occupation, state, visa type. See probabilities that actually apply to you.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⏱️</div>
-                <h3>Live invitation data</h3>
-                <p>Updated with every invitation round from all states. Always current.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Actionable roadmap</h3>
-                <p>What points boost gets you invited. Which state to target. When to apply.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📍</div>
-                <h3>State comparisons</h3>
-                <p>Every state's current cutoffs, processing times, and allocation numbers.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Similar profiles</h3>
-                <p>See what people exactly like you did to get PR. Real timelines.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
-    <section class="trust">
-        <span class="section-label">You can trust this</span>
-        <h2 class="section-title">Built on real visa data</h2>
-
-        <div class="trust-grid">
-            <div class="trust-item">
-                <h4>100K+</h4>
-                <p>Real visa outcomes</p>
-            </div>
-            <div class="trust-item">
-                <h4>12+</h4>
-                <p>Monthly rounds tracked</p>
-            </div>
-            <div class="trust-item">
-                <h4>8</h4>
-                <p>States analyzed</p>
-            </div>
-            <div class="trust-item">
-                <h4>50+</h4>
-                <p>Occupations covered</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Disclaimer -->
-    <div class="disclaimer">
-        <strong>Important:</strong> VisaIQ provides AI-informed research based on publicly available DHA data and community-submitted timelines. This is not migration advice. For advice specific to your circumstances, consult a MARA-registered migration agent.
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 VisaIQ. Australia's migration intelligence platform.</p>
-    </footer>
 
     <script>
-        // EOI Queue Chart
-        const ctx = document.getElementById('eoi-chart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['65pts', '70pts', '75pts', '80pts', '85pts', '90pts', '95pts+'],
-                datasets: [
-                    {
-                        label: 'EOIs in queue',
-                        data: [1200, 2800, 4500, 5200, 3800, 2100, 900],
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                        borderColor: 'rgba(255, 255, 255, 0.2)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Your position',
-                        data: [0, 0, 0, 5200, 0, 0, 0],
-                        backgroundColor: '#00C896',
-                        borderColor: '#00C896',
-                        borderWidth: 2
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y',
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#7A8FA8',
-                            font: {
-                                family: "'DM Sans', sans-serif",
-                                size: 12
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            color: '#7A8FA8',
-                            font: {
-                                family: "'DM Sans', sans-serif",
-                                size: 12
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.05)'
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: '#7A8FA8',
-                            font: {
-                                family: "'DM Sans', sans-serif",
-                                size: 12
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.05)'
-                        }
-                    }
-                }
-            }
-        });
+        function switchTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Highlight selected button
+            event.target.classList.add('active');
+        }
     </script>
 </body>
 </html>
