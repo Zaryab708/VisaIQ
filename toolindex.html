@@ -132,16 +132,28 @@
             transition: all 0.3s;
         }
 
+        select {
+            cursor: pointer;
+        }
+
         select option {
             background: #070F1C;
             color: #E8EDF5;
+            padding: 10px;
+        }
+
+        select optgroup {
+            background: #0D1B2E;
+            color: #00C896;
+            font-weight: 700;
         }
 
         select:focus,
         input:focus {
             outline: none;
             border-color: #00C896;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
         }
 
         /* Points Calculator */
@@ -523,48 +535,99 @@
                 <label>Occupation (ANZSCO code)</label>
                 <select id="occupation" onchange="updateOccupation()">
                     <option value="">-- Select your occupation --</option>
-                    <optgroup label="Accountant">
+                    <optgroup label="ACCOUNTING & FINANCE">
                         <option value="accountant-189">Accountant (General) - 189/190/491</option>
+                        <option value="auditor-189">Auditor - 189/190/491</option>
+                        <option value="financial-analyst-189">Financial Analyst - 189/190/491</option>
+                        <option value="tax-accountant-189">Tax Accountant - 189/190/491</option>
+                        <option value="management-accountant-189">Management Accountant - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="IT & Technology">
+                    <optgroup label="IT & TECHNOLOGY">
                         <option value="software-engineer-189">Software Engineer - 189/190/491</option>
                         <option value="systems-analyst-189">Systems Analyst - 189/190/491</option>
                         <option value="database-admin-189">Database Administrator - 189/190/491</option>
                         <option value="developer-189">Developer (General) - 189/190/491</option>
+                        <option value="network-admin-189">Network Administrator - 189/190/491</option>
+                        <option value="ict-manager-189">ICT Manager - 189/190/491</option>
+                        <option value="programmer-189">Programmer - 189/190/491</option>
+                        <option value="web-developer-189">Web Developer - 189/190/491</option>
+                        <option value="security-analyst-189">Security Analyst - 189/190/491</option>
+                        <option value="qa-engineer-189">QA Engineer - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="Health">
-                        <option value="registered-nurse-189">Registered Nurse - 189/190/491</option>
-                        <option value="aged-care-189">Aged Care Worker - 482/491</option>
+                    <optgroup label="HEALTH & NURSING">
+                        <option value="registered-nurse-189">Registered Nurse (General) - 189/190/491</option>
                         <option value="nurse-practitioner-189">Nurse Practitioner - 189/190</option>
+                        <option value="midwife-189">Midwife - 189/190/491</option>
+                        <option value="aged-care-189">Aged Care Worker - 482/491</option>
+                        <option value="disability-support-189">Disability Support Worker - 491</option>
+                        <option value="mental-health-nurse-189">Mental Health Nurse - 189/190/491</option>
+                        <option value="anaesthetic-tech-189">Anaesthetic Technician - 189/190/491</option>
+                        <option value="operating-theatre-tech-189">Operating Theatre Technician - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="Engineering">
+                    <optgroup label="ENGINEERING">
                         <option value="civil-engineer-189">Civil Engineer - 189/190/491</option>
                         <option value="mechanical-engineer-189">Mechanical Engineer - 189/190/491</option>
                         <option value="electrical-engineer-189">Electrical Engineer - 189/190/491</option>
                         <option value="structural-engineer-189">Structural Engineer - 189/190/491</option>
+                        <option value="chemical-engineer-189">Chemical Engineer - 189/190/491</option>
+                        <option value="environmental-engineer-189">Environmental Engineer - 189/190/491</option>
+                        <option value="mining-engineer-189">Mining Engineer - 189/190/491</option>
+                        <option value="petroleum-engineer-189">Petroleum Engineer - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="Hospitality & Trades">
+                    <optgroup label="HOSPITALITY & TRADES">
                         <option value="chef-491">Chef - 190/491/482</option>
-                        <option value="cook-482">Cook - 482/491</option>
+                        <option value="cook-482">Cook (General) - 482/491</option>
+                        <option value="pastry-chef-491">Pastry Chef - 490/482</option>
                         <option value="electrician-189">Electrician - 189/190/491</option>
                         <option value="plumber-189">Plumber - 189/190/491</option>
                         <option value="carpenter-189">Carpenter - 189/190/491</option>
+                        <option value="welder-189">Welder - 189/190/491</option>
+                        <option value="bricklayer-189">Bricklayer - 189/190/491</option>
+                        <option value="painter-189">Painter (General) - 190/491</option>
+                        <option value="plasterer-189">Plasterer - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="Education & Social">
-                        <option value="teacher-189">Teacher (Secondary) - 189/190/491</option>
+                    <optgroup label="EDUCATION & TRAINING">
+                        <option value="teacher-secondary-189">Teacher (Secondary) - 189/190/491</option>
                         <option value="teacher-primary-189">Teacher (Primary) - 189/190/491</option>
-                        <option value="social-worker-189">Social Worker - 189/190/491</option>
+                        <option value="teacher-special-ed-189">Teacher (Special Education) - 189/190/491</option>
+                        <option value="educator-early-childhood-189">Educator (Early Childhood) - 189/190/491</option>
+                        <option value="lecturer-189">Lecturer - 189/190</option>
                     </optgroup>
-                    <optgroup label="Business & Management">
+                    <optgroup label="SOCIAL SERVICES">
+                        <option value="social-worker-189">Social Worker - 189/190/491</option>
+                        <option value="welfare-worker-189">Welfare Worker - 189/190/491</option>
+                        <option value="community-worker-189">Community Worker - 189/190/491</option>
+                        <option value="counsellor-189">Counsellor - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="BUSINESS & MANAGEMENT">
                         <option value="business-manager-189">Business Manager - 189/190/491</option>
                         <option value="project-manager-189">Project Manager - 189/190/491</option>
                         <option value="hr-manager-189">HR Manager - 189/190/491</option>
                         <option value="marketing-manager-189">Marketing Manager - 189/190/491</option>
+                        <option value="operations-manager-189">Operations Manager - 189/190/491</option>
+                        <option value="supply-chain-manager-189">Supply Chain Manager - 189/190/491</option>
+                        <option value="sales-manager-189">Sales Manager - 189/190/491</option>
                     </optgroup>
-                    <optgroup label="Other">
+                    <optgroup label="HEALTHCARE PROFESSIONAL">
                         <option value="pharmacist-189">Pharmacist - 189/190/491</option>
                         <option value="psychologist-189">Psychologist - 189/190/491</option>
-                        <option value="accountant-482">Accountant (Employer Sponsored) - 482</option>
+                        <option value="dentist-189">Dentist - 189/190</option>
+                        <option value="physiotherapist-189">Physiotherapist - 189/190/491</option>
+                        <option value="occupational-therapist-189">Occupational Therapist - 189/190/491</option>
+                        <option value="speech-therapist-189">Speech Pathologist - 189/190/491</option>
+                        <option value="radiographer-189">Radiographer - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="SKILLED TRADES (REGIONAL)">
+                        <option value="diesel-mechanic-189">Diesel Mechanic - 189/190/491</option>
+                        <option value="heavy-equipment-operator-189">Heavy Equipment Operator - 190/491</option>
+                        <option value="crane-operator-189">Crane Operator - 189/190/491</option>
+                        <option value="boilermaker-189">Boilermaker - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="OTHER">
+                        <option value="surveyor-189">Surveyor - 189/190/491</option>
+                        <option value="architect-189">Architect - 189/190/491</option>
+                        <option value="landscape-architect-189">Landscape Architect - 189/190/491</option>
+                        <option value="librarian-189">Librarian - 189/190/491</option>
                     </optgroup>
                 </select>
             </div>
@@ -855,37 +918,81 @@
             const occupation = document.getElementById('occupation').value || 'Not specified';
             const visaSubclass = document.getElementById('visaSubclass').value || '189';
             const state = document.getElementById('state').value || 'Not specified';
-            const onshore = document.getElementById('onshoreOffshore').value || 'Not specified';
 
-            // Extended occupation data with cutoffs and EOI pool sizes
+            // Extended occupation data
             const occupationData = {
-                'accountant-189': { name: 'Accountant (General)', demand: 'Oversupplied', eoi: 15000, cutoff189: 95, cutoff190: 65, cutoff491: 65, pct75: 2800, pct80: 2200, pct85: 1400, pct90: 800, pct95: 300 },
-                'software-engineer-189': { name: 'Software Engineer', demand: 'High', eoi: 8200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1800, pct80: 2400, pct85: 1900, pct90: 1200, pct95: 600 },
-                'systems-analyst-189': { name: 'Systems Analyst', demand: 'High', eoi: 5200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 900, pct80: 1200, pct85: 1000, pct90: 600, pct95: 250 },
-                'database-admin-189': { name: 'Database Administrator', demand: 'High', eoi: 3200, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 500, pct80: 800, pct85: 700, pct90: 400, pct95: 150 },
-                'developer-189': { name: 'Developer (General)', demand: 'High', eoi: 6200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1300, pct80: 1800, pct85: 1500, pct90: 900, pct95: 400 },
-                'registered-nurse-189': { name: 'Registered Nurse', demand: 'Critical', eoi: 2100, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 400, pct85: 300, pct90: 200, pct95: 100 },
-                'aged-care-189': { name: 'Aged Care Worker', demand: 'High', eoi: 3600, cutoff189: 0, cutoff190: 60, cutoff491: 60, pct75: 800, pct80: 600, pct85: 400, pct90: 200, pct95: 50 },
-                'nurse-practitioner-189': { name: 'Nurse Practitioner', demand: 'High', eoi: 800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 150, pct80: 120, pct85: 100, pct90: 80, pct95: 40 },
-                'civil-engineer-189': { name: 'Civil Engineer', demand: 'High', eoi: 5200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 1000, pct80: 1300, pct85: 1100, pct90: 700, pct95: 300 },
-                'mechanical-engineer-189': { name: 'Mechanical Engineer', demand: 'High', eoi: 4200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 800, pct80: 1100, pct85: 900, pct90: 600, pct95: 250 },
-                'electrical-engineer-189': { name: 'Electrical Engineer', demand: 'High', eoi: 4800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 900, pct80: 1200, pct85: 1000, pct90: 650, pct95: 280 },
-                'structural-engineer-189': { name: 'Structural Engineer', demand: 'High', eoi: 2200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 400, pct80: 550, pct85: 450, pct90: 300, pct95: 120 },
-                'chef-491': { name: 'Chef', demand: 'Regional', eoi: 3600, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 900, pct80: 700, pct85: 500, pct90: 250, pct95: 100 },
-                'cook-482': { name: 'Cook', demand: 'Regional', eoi: 2800, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 550, pct85: 350, pct90: 150, pct95: 50 },
-                'electrician-189': { name: 'Electrician', demand: 'High', eoi: 1600, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 300, pct80: 400, pct85: 300, pct90: 200, pct95: 80 },
-                'plumber-189': { name: 'Plumber', demand: 'High', eoi: 1300, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 250, pct80: 350, pct85: 250, pct90: 180, pct95: 70 },
-                'carpenter-189': { name: 'Carpenter', demand: 'High', eoi: 1200, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 220, pct80: 320, pct85: 240, pct90: 170, pct95: 60 },
-                'teacher-189': { name: 'Teacher (Secondary)', demand: 'Moderate', eoi: 4100, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 800, pct80: 900, pct85: 750, pct90: 500, pct95: 200 },
-                'teacher-primary-189': { name: 'Teacher (Primary)', demand: 'Moderate', eoi: 3500, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 800, pct85: 650, pct90: 450, pct95: 180 },
-                'social-worker-189': { name: 'Social Worker', demand: 'Moderate', eoi: 2600, cutoff189: 80, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 650, pct85: 500, pct90: 350, pct95: 150 },
-                'business-manager-189': { name: 'Business Manager', demand: 'Moderate', eoi: 3800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 750, pct80: 950, pct85: 800, pct90: 550, pct95: 220 },
-                'project-manager-189': { name: 'Project Manager', demand: 'Moderate', eoi: 3200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 600, pct80: 800, pct85: 700, pct90: 480, pct95: 190 },
-                'hr-manager-189': { name: 'HR Manager', demand: 'Moderate', eoi: 2400, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 450, pct80: 600, pct85: 500, pct90: 350, pct95: 140 },
-                'marketing-manager-189': { name: 'Marketing Manager', demand: 'Low', eoi: 2100, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 400, pct80: 550, pct85: 450, pct90: 300, pct95: 120 },
-                'pharmacist-189': { name: 'Pharmacist', demand: 'Moderate', eoi: 1600, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 300, pct80: 400, pct85: 350, pct90: 250, pct95: 100 },
-                'psychologist-189': { name: 'Psychologist', demand: 'Low', eoi: 1400, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 260, pct80: 350, pct85: 300, pct90: 220, pct95: 90 },
-                'accountant-482': { name: 'Accountant (Employer Sponsored)', demand: 'Variable', eoi: 4200, cutoff189: 0, cutoff190: 0, cutoff491: 0, pct75: 800, pct80: 1000, pct85: 800, pct90: 500, pct95: 200 }
+                'accountant-189': { name: 'Accountant (General)', demand: 'Oversupplied', eoi: 15000, cutoff189: 95, cutoff190: 65, cutoff491: 65, pct75: 2800, pct80: 2200, pct85: 1400, pct90: 800 },
+                'auditor-189': { name: 'Auditor', demand: 'Moderate', eoi: 3200, cutoff189: 90, cutoff190: 75, cutoff491: 65, pct75: 600, pct80: 800, pct85: 600, pct90: 400 },
+                'financial-analyst-189': { name: 'Financial Analyst', demand: 'Moderate', eoi: 2800, cutoff189: 90, cutoff190: 75, cutoff491: 65, pct75: 500, pct80: 700, pct85: 550, pct90: 350 },
+                'tax-accountant-189': { name: 'Tax Accountant', demand: 'Low', eoi: 1600, cutoff189: 95, cutoff190: 75, cutoff491: 65, pct75: 300, pct80: 400, pct85: 300, pct90: 180 },
+                'management-accountant-189': { name: 'Management Accountant', demand: 'Moderate', eoi: 2400, cutoff189: 90, cutoff190: 70, cutoff491: 65, pct75: 450, pct80: 600, pct85: 480, pct90: 300 },
+                'software-engineer-189': { name: 'Software Engineer', demand: 'High', eoi: 8200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1800, pct80: 2400, pct85: 1900, pct90: 1200 },
+                'systems-analyst-189': { name: 'Systems Analyst', demand: 'High', eoi: 5200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 900, pct80: 1200, pct85: 1000, pct90: 600 },
+                'database-admin-189': { name: 'Database Administrator', demand: 'High', eoi: 3200, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 500, pct80: 800, pct85: 700, pct90: 400 },
+                'developer-189': { name: 'Developer (General)', demand: 'High', eoi: 6200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1300, pct80: 1800, pct85: 1500, pct90: 900 },
+                'network-admin-189': { name: 'Network Administrator', demand: 'High', eoi: 2800, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 450, pct80: 700, pct85: 600, pct90: 350 },
+                'ict-manager-189': { name: 'ICT Manager', demand: 'Moderate', eoi: 1800, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 300, pct80: 450, pct85: 400, pct90: 250 },
+                'programmer-189': { name: 'Programmer', demand: 'High', eoi: 4200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 800, pct80: 1200, pct85: 1000, pct90: 600 },
+                'web-developer-189': { name: 'Web Developer', demand: 'High', eoi: 3600, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 600, pct80: 900, pct85: 800, pct90: 500 },
+                'security-analyst-189': { name: 'Security Analyst', demand: 'High', eoi: 2200, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 350, pct80: 550, pct85: 450, pct90: 300 },
+                'qa-engineer-189': { name: 'QA Engineer', demand: 'Moderate', eoi: 1800, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 300, pct80: 450, pct85: 400, pct90: 250 },
+                'registered-nurse-189': { name: 'Registered Nurse (General)', demand: 'Critical', eoi: 2100, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 400, pct85: 300, pct90: 200 },
+                'nurse-practitioner-189': { name: 'Nurse Practitioner', demand: 'High', eoi: 800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 150, pct80: 120, pct85: 100, pct90: 80 },
+                'midwife-189': { name: 'Midwife', demand: 'High', eoi: 600, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 150, pct80: 120, pct85: 90, pct90: 60 },
+                'aged-care-189': { name: 'Aged Care Worker', demand: 'High', eoi: 3600, cutoff189: 0, cutoff190: 60, cutoff491: 60, pct75: 800, pct80: 600, pct85: 400, pct90: 200 },
+                'disability-support-189': { name: 'Disability Support Worker', demand: 'Moderate', eoi: 2800, cutoff189: 0, cutoff190: 0, cutoff491: 60, pct75: 600, pct80: 500, pct85: 350, pct90: 150 },
+                'mental-health-nurse-189': { name: 'Mental Health Nurse', demand: 'High', eoi: 1400, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 300, pct80: 250, pct85: 180, pct90: 120 },
+                'anaesthetic-tech-189': { name: 'Anaesthetic Technician', demand: 'Moderate', eoi: 900, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 200, pct80: 160, pct85: 120, pct90: 80 },
+                'operating-theatre-tech-189': { name: 'Operating Theatre Technician', demand: 'Moderate', eoi: 800, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 180, pct80: 150, pct85: 110, pct90: 70 },
+                'civil-engineer-189': { name: 'Civil Engineer', demand: 'High', eoi: 5200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 1000, pct80: 1300, pct85: 1100, pct90: 700 },
+                'mechanical-engineer-189': { name: 'Mechanical Engineer', demand: 'High', eoi: 4200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 800, pct80: 1100, pct85: 900, pct90: 600 },
+                'electrical-engineer-189': { name: 'Electrical Engineer', demand: 'High', eoi: 4800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 900, pct80: 1200, pct85: 1000, pct90: 650 },
+                'structural-engineer-189': { name: 'Structural Engineer', demand: 'High', eoi: 2200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 400, pct80: 550, pct85: 450, pct90: 300 },
+                'chemical-engineer-189': { name: 'Chemical Engineer', demand: 'Moderate', eoi: 1800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 300, pct80: 450, pct85: 400, pct90: 250 },
+                'environmental-engineer-189': { name: 'Environmental Engineer', demand: 'Moderate', eoi: 1600, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 280, pct80: 400, pct85: 350, pct90: 220 },
+                'mining-engineer-189': { name: 'Mining Engineer', demand: 'Moderate', eoi: 1400, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 250, pct80: 350, pct85: 300, pct90: 180 },
+                'petroleum-engineer-189': { name: 'Petroleum Engineer', demand: 'Low', eoi: 900, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 150, pct80: 225, pct85: 200, pct90: 120 },
+                'chef-491': { name: 'Chef', demand: 'Regional', eoi: 3600, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 900, pct80: 700, pct85: 500, pct90: 250 },
+                'cook-482': { name: 'Cook (General)', demand: 'Regional', eoi: 2800, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 550, pct85: 350, pct90: 150 },
+                'pastry-chef-491': { name: 'Pastry Chef', demand: 'Regional', eoi: 1200, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 300, pct80: 240, pct85: 150, pct90: 70 },
+                'electrician-189': { name: 'Electrician', demand: 'High', eoi: 1600, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 300, pct80: 400, pct85: 300, pct90: 200 },
+                'plumber-189': { name: 'Plumber', demand: 'High', eoi: 1300, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 250, pct80: 350, pct85: 250, pct90: 180 },
+                'carpenter-189': { name: 'Carpenter', demand: 'High', eoi: 1200, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 220, pct80: 320, pct85: 240, pct90: 170 },
+                'welder-189': { name: 'Welder', demand: 'High', eoi: 900, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 160, pct80: 230, pct85: 180, pct90: 120 },
+                'bricklayer-189': { name: 'Bricklayer', demand: 'High', eoi: 800, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 140, pct80: 210, pct85: 160, pct90: 100 },
+                'painter-189': { name: 'Painter (General)', demand: 'Moderate', eoi: 700, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 120, pct80: 180, pct85: 140, pct90: 80 },
+                'plasterer-189': { name: 'Plasterer', demand: 'Moderate', eoi: 600, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 100, pct80: 160, pct85: 120, pct90: 70 },
+                'teacher-secondary-189': { name: 'Teacher (Secondary)', demand: 'Moderate', eoi: 4100, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 800, pct80: 900, pct85: 750, pct90: 500 },
+                'teacher-primary-189': { name: 'Teacher (Primary)', demand: 'Moderate', eoi: 3500, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 800, pct85: 650, pct90: 450 },
+                'teacher-special-ed-189': { name: 'Teacher (Special Education)', demand: 'High', eoi: 1800, cutoff189: 80, cutoff190: 65, cutoff491: 65, pct75: 350, pct80: 400, pct85: 330, pct90: 230 },
+                'educator-early-childhood-189': { name: 'Educator (Early Childhood)', demand: 'Moderate', eoi: 1600, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 320, pct80: 360, pct85: 300, pct90: 200 },
+                'lecturer-189': { name: 'Lecturer', demand: 'Low', eoi: 900, cutoff189: 85, cutoff190: 75, cutoff491: 0, pct75: 150, pct80: 225, pct85: 200, pct90: 120 },
+                'social-worker-189': { name: 'Social Worker', demand: 'Moderate', eoi: 2600, cutoff189: 80, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 650, pct85: 500, pct90: 350 },
+                'welfare-worker-189': { name: 'Welfare Worker', demand: 'Moderate', eoi: 1800, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 350, pct80: 450, pct85: 350, pct90: 220 },
+                'community-worker-189': { name: 'Community Worker', demand: 'Moderate', eoi: 1600, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 320, pct80: 400, pct85: 320, pct90: 200 },
+                'counsellor-189': { name: 'Counsellor', demand: 'Low', eoi: 1200, cutoff189: 80, cutoff190: 70, cutoff491: 65, pct75: 240, pct80: 300, pct85: 250, pct90: 160 },
+                'business-manager-189': { name: 'Business Manager', demand: 'Moderate', eoi: 3800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 750, pct80: 950, pct85: 800, pct90: 550 },
+                'project-manager-189': { name: 'Project Manager', demand: 'Moderate', eoi: 3200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 600, pct80: 800, pct85: 700, pct90: 480 },
+                'hr-manager-189': { name: 'HR Manager', demand: 'Moderate', eoi: 2400, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 450, pct80: 600, pct85: 500, pct90: 350 },
+                'marketing-manager-189': { name: 'Marketing Manager', demand: 'Low', eoi: 2100, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 400, pct80: 550, pct85: 450, pct90: 300 },
+                'operations-manager-189': { name: 'Operations Manager', demand: 'Moderate', eoi: 2800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 520, pct80: 700, pct85: 600, pct90: 420 },
+                'supply-chain-manager-189': { name: 'Supply Chain Manager', demand: 'Moderate', eoi: 1800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 350, pct80: 450, pct85: 400, pct90: 280 },
+                'sales-manager-189': { name: 'Sales Manager', demand: 'Low', eoi: 1600, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 300, pct80: 400, pct85: 350, pct90: 230 },
+                'pharmacist-189': { name: 'Pharmacist', demand: 'Moderate', eoi: 1600, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 300, pct80: 400, pct85: 350, pct90: 250 },
+                'psychologist-189': { name: 'Psychologist', demand: 'Low', eoi: 1400, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 260, pct80: 350, pct85: 300, pct90: 220 },
+                'dentist-189': { name: 'Dentist', demand: 'Low', eoi: 800, cutoff189: 90, cutoff190: 80, cutoff491: 0, pct75: 140, pct80: 200, pct85: 170, pct90: 120 },
+                'physiotherapist-189': { name: 'Physiotherapist', demand: 'Moderate', eoi: 1200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 220, pct80: 300, pct85: 260, pct90: 180 },
+                'occupational-therapist-189': { name: 'Occupational Therapist', demand: 'Moderate', eoi: 1100, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 200, pct80: 280, pct85: 240, pct90: 160 },
+                'speech-therapist-189': { name: 'Speech Pathologist', demand: 'Moderate', eoi: 900, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 160, pct80: 230, pct85: 200, pct90: 140 },
+                'radiographer-189': { name: 'Radiographer', demand: 'Moderate', eoi: 800, cutoff189: 80, cutoff190: 70, cutoff491: 65, pct75: 140, pct80: 210, pct85: 180, pct90: 120 },
+                'diesel-mechanic-189': { name: 'Diesel Mechanic', demand: 'High', eoi: 1100, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 200, pct80: 280, pct85: 220, pct90: 150 },
+                'heavy-equipment-operator-189': { name: 'Heavy Equipment Operator', demand: 'High', eoi: 900, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 160, pct80: 230, pct85: 180, pct90: 120 },
+                'crane-operator-189': { name: 'Crane Operator', demand: 'Moderate', eoi: 700, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 120, pct80: 180, pct85: 140, pct90: 90 },
+                'boilermaker-189': { name: 'Boilermaker', demand: 'Moderate', eoi: 600, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 100, pct80: 160, pct85: 130, pct90: 80 },
+                'surveyor-189': { name: 'Surveyor', demand: 'Moderate', eoi: 1200, cutoff189: 80, cutoff190: 70, cutoff491: 65, pct75: 220, pct80: 300, pct85: 260, pct90: 180 },
+                'architect-189': { name: 'Architect', demand: 'Low', eoi: 1000, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 180, pct80: 250, pct85: 220, pct90: 150 },
+                'landscape-architect-189': { name: 'Landscape Architect', demand: 'Low', eoi: 600, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 100, pct80: 150, pct85: 130, pct90: 80 },
+                'librarian-189': { name: 'Librarian', demand: 'Low', eoi: 500, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 80, pct80: 130, pct85: 110, pct90: 70 }
             };
 
             const occupationKey = occupation.replace(/[^a-z0-9-]/g, '');
@@ -899,8 +1006,7 @@
                 pct75: 1000,
                 pct80: 1200,
                 pct85: 900,
-                pct90: 600,
-                pct95: 250
+                pct90: 600
             };
 
             // State data with colors and emojis
@@ -920,7 +1026,7 @@
             const inv190 = visaSubclass === '190' && totalPoints >= occData.cutoff190 ? 85 : (totalPoints >= occData.cutoff190 - 5 ? 55 : 25);
             const inv491 = visaSubclass === '491' && totalPoints >= (occData.cutoff491 - 15) ? 90 : (totalPoints >= (occData.cutoff491 - 20) ? 65 : 35);
 
-            // Generate scorecard
+            // Generate scorecard competitiveness
             let competitiveness189 = totalPoints >= occData.cutoff189 ? '●●●●● Very Strong' : (totalPoints >= occData.cutoff189 - 5 ? '●●●●○ Strong' : (totalPoints >= occData.cutoff189 - 10 ? '●●●○○ Moderate' : '●●○○○ Weak'));
             let competitiveness190 = totalPoints >= occData.cutoff190 ? '●●●●● Very Strong' : (totalPoints >= occData.cutoff190 - 5 ? '●●●●○ Strong' : (totalPoints >= occData.cutoff190 - 10 ? '●●●○○ Moderate' : '●●○○○ Weak'));
             let competitiveness491 = totalPoints >= (occData.cutoff491 - 15) ? '●●●●● Very Strong' : (totalPoints >= (occData.cutoff491 - 20) ? '●●●●○ Strong' : '●●●○○ Moderate');
@@ -1028,7 +1134,7 @@
 
             document.getElementById('reportContent').innerHTML = html;
 
-            // Generate EOI chart after a brief delay
+            // Generate EOI chart
             setTimeout(() => {
                 const eoriCtx = document.getElementById('eoi-report-chart');
                 if (eoriCtx) {
@@ -1039,7 +1145,7 @@
                             datasets: [
                                 {
                                     label: 'EOIs in queue',
-                                    data: [occData.pct75 * 1.2, occData.pct75, occData.pct80, occData.pct85, occData.pct90, occData.pct95, occData.pct95 * 0.5],
+                                    data: [occData.pct75 * 1.2, occData.pct75, occData.pct80, occData.pct85, occData.pct90, occData.pct90 * 0.8, occData.pct90 * 0.4],
                                     backgroundColor: 'rgba(255, 255, 255, 0.12)',
                                     borderColor: 'rgba(255, 255, 255, 0.2)',
                                     borderWidth: 1
@@ -1052,7 +1158,7 @@
                                             (i === 4 && totalPoints >= 85 && totalPoints < 90) ||
                                             (i === 5 && totalPoints >= 90 && totalPoints < 95) ||
                                             (i === 6 && totalPoints >= 95)) {
-                                            return totalPoints === 80 ? occData.pct80 : (totalPoints === 85 ? occData.pct85 : (totalPoints === 90 ? occData.pct90 : occData.pct95));
+                                            return totalPoints === 80 ? occData.pct80 : (totalPoints === 85 ? occData.pct85 : (totalPoints === 90 ? occData.pct90 : occData.pct75));
                                         }
                                         return 0;
                                     }),
@@ -1095,7 +1201,6 @@
             }, 100);
         }
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             calculatePoints();
         });
