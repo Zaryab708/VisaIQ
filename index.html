@@ -27,7 +27,6 @@
             border-bottom: 1px solid rgba(0, 200, 150, 0.2);
             padding: 14px 0;
             overflow: hidden;
-            position: relative;
         }
 
         .ticker-wrapper {
@@ -316,6 +315,43 @@
             border-radius: 2px;
         }
 
+        /* Tool Section */
+        .tool-section {
+            max-width: 1200px;
+            margin: 120px auto;
+            padding: 0 40px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .tool-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card p {
+            color: #7A8FA8;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tool-card .btn-primary {
+            padding: 16px 40px;
+            font-size: 16px;
+        }
+
         /* Features Section */
         .features {
             max-width: 1200px;
@@ -368,38 +404,6 @@
             color: #7A8FA8;
             font-size: 14px;
             line-height: 1.8;
-        }
-
-        /* Occupations Section */
-        .occupations {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 40px;
-        }
-
-        .occupations-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .occupation-badge {
-            background: rgba(0, 200, 150, 0.1);
-            border: 1px solid rgba(0, 200, 150, 0.3);
-            border-radius: 6px;
-            padding: 12px 16px;
-            font-size: 14px;
-            text-align: center;
-            color: #00C896;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .occupation-badge:hover {
-            background: rgba(0, 200, 150, 0.2);
-            border-color: #00C896;
-            transform: translateY(-2px);
         }
 
         /* Trust Section */
@@ -494,16 +498,13 @@
             }
 
             .scorecard-card,
-            .eoi-chart-card {
+            .eoi-chart-card,
+            .tool-card {
                 padding: 20px;
             }
 
             .section-title {
                 font-size: 28px;
-            }
-
-            .occupations-list {
-                grid-template-columns: repeat(2, 1fr);
             }
 
             .trust-grid {
@@ -534,8 +535,8 @@
 
         .hero,
         .scorecard-section,
+        .tool-section,
         .features,
-        .occupations,
         .trust {
             animation: fadeUp 0.8s ease-out;
         }
@@ -563,7 +564,7 @@
         <div class="logo">VisaIQ</div>
         <div>
             <a href="#methodology">Methodology</a>
-            <a href="#tools" style="margin-left: 30px;">Tools</a>
+            <a href="/tool" style="margin-left: 30px;">Tool</a>
         </div>
     </nav>
 
@@ -572,7 +573,7 @@
         <h1>What are your real PR chances?</h1>
         <p>Stop wondering. Get your actual odds based on 100K+ real visa outcomes.</p>
         <div class="cta-container">
-            <button class="btn btn-primary">Start PR Analysis</button>
+            <a href="/tool" class="btn btn-primary">Start PR Analysis</a>
             <button class="btn btn-secondary">Student Pathway</button>
         </div>
     </section>
@@ -635,6 +636,15 @@
         </div>
     </section>
 
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="tool-card">
+            <h3>Ready to discover your PR chances?</h3>
+            <p>Use our comprehensive migration intelligence tool. Answer a few questions about your profile and get instant analysis backed by 100K+ real visa outcomes and latest DHA invitation data.</p>
+            <a href="/tool" class="btn btn-primary">Launch the Tool</a>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features">
         <span class="section-label">How VisaIQ works</span>
@@ -679,30 +689,6 @@
         </div>
     </section>
 
-    <!-- Occupations Section -->
-    <section class="occupations">
-        <span class="section-label">All occupations covered</span>
-        <h2 class="section-title">Get detailed analysis for your occupation</h2>
-        <div class="occupations-list">
-            <div class="occupation-badge">Accountant</div>
-            <div class="occupation-badge">Software Engineer</div>
-            <div class="occupation-badge">Registered Nurse</div>
-            <div class="occupation-badge">Civil Engineer</div>
-            <div class="occupation-badge">Chef</div>
-            <div class="occupation-badge">Teacher</div>
-            <div class="occupation-badge">Electrician</div>
-            <div class="occupation-badge">Plumber</div>
-            <div class="occupation-badge">Social Worker</div>
-            <div class="occupation-badge">Business Manager</div>
-            <div class="occupation-badge">Mechanical Engineer</div>
-            <div class="occupation-badge">Pharmacist</div>
-            <div class="occupation-badge">Psychologist</div>
-            <div class="occupation-badge">Marketing Manager</div>
-            <div class="occupation-badge">Finance Manager</div>
-            <div class="occupation-badge">HR Manager</div>
-        </div>
-    </section>
-
     <!-- Trust Section -->
     <section class="trust">
         <span class="section-label">You can trust this</span>
@@ -741,7 +727,7 @@
     <script>
         // EOI Queue Chart
         const ctx = document.getElementById('eoi-chart').getContext('2d');
-        const chart = new Chart(ctx, {
+        new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['65pts', '70pts', '75pts', '80pts', '85pts', '90pts', '95pts+'],
