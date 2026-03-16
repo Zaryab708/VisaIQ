@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VisaIQ - Australia's Migration Intelligence Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -18,6 +19,51 @@
             color: #E8EDF5;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Bloomberg Ticker */
+        .ticker-container {
+            background: rgba(0, 200, 150, 0.08);
+            border-bottom: 1px solid rgba(0, 200, 150, 0.2);
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-wrapper {
+            overflow: hidden;
+        }
+
+        .ticker {
+            display: flex;
+            animation: scroll-left 40s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 13px;
+            color: #00C896;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .ticker-item:before {
+            content: "●";
+            margin-right: 10px;
+            opacity: 0.6;
+            font-size: 10px;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Navigation */
@@ -69,19 +115,14 @@
             line-height: 1.2;
         }
 
-        .hero .highlight {
-            color: #00C896;
-        }
-
         .hero p {
             font-size: 18px;
             color: #7A8FA8;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 40px;
             line-height: 1.8;
         }
 
-        /* CTA Buttons */
         .cta-container {
             display: flex;
             gap: 20px;
@@ -126,7 +167,7 @@
 
         /* Scorecard Section */
         .scorecard-section {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 80px auto;
             padding: 0 40px;
         }
@@ -146,23 +187,30 @@
             font-family: 'Syne', sans-serif;
             font-size: 42px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            color: #7A8FA8;
+            font-size: 16px;
+            margin-bottom: 40px;
+            max-width: 800px;
         }
 
         .scorecard-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
             margin-top: 40px;
-            align-items: center;
+            align-items: start;
         }
 
         .scorecard-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 12px;
-            padding: 40px;
+            padding: 30px;
             backdrop-filter: blur(10px);
         }
 
@@ -175,7 +223,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-size: 14px;
             font-family: 'Syne', sans-serif;
         }
 
@@ -219,36 +266,54 @@
             color: #7A8FA8;
         }
 
-        .scorecard-description h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            line-height: 1.4;
+        /* EOI Chart Card */
+        .eoi-chart-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
         }
 
-        .scorecard-description p {
-            color: #7A8FA8;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .scorecard-features {
-            list-style: none;
-        }
-
-        .scorecard-features li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #7A8FA8;
-            font-size: 14px;
-        }
-
-        .scorecard-features li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #00C896;
+        .eoi-chart-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
             font-weight: 700;
+            margin-bottom: 10px;
+            color: #E8EDF5;
+        }
+
+        .eoi-chart-subtitle {
+            font-size: 13px;
+            color: #7A8FA8;
+            margin-bottom: 25px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 280px;
+            margin-bottom: 20px;
+        }
+
+        .eoi-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-box {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
         }
 
         /* Features Section */
@@ -305,6 +370,38 @@
             line-height: 1.8;
         }
 
+        /* Occupations Section */
+        .occupations {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .occupations-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .occupation-badge {
+            background: rgba(0, 200, 150, 0.1);
+            border: 1px solid rgba(0, 200, 150, 0.3);
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 14px;
+            text-align: center;
+            color: #00C896;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .occupation-badge:hover {
+            background: rgba(0, 200, 150, 0.2);
+            border-color: #00C896;
+            transform: translateY(-2px);
+        }
+
         /* Trust Section */
         .trust {
             max-width: 1200px;
@@ -359,6 +456,11 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .ticker-item {
+                padding: 0 20px;
+                font-size: 12px;
+            }
+
             nav {
                 padding: 15px 20px;
             }
@@ -391,16 +493,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .scorecard-card {
-                padding: 25px;
+            .scorecard-card,
+            .eoi-chart-card {
+                padding: 20px;
             }
 
             .section-title {
                 font-size: 28px;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .occupations-list {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .trust-grid {
@@ -418,7 +521,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -433,12 +535,29 @@
         .hero,
         .scorecard-section,
         .features,
+        .occupations,
         .trust {
             animation: fadeUp 0.8s ease-out;
         }
     </style>
 </head>
 <body>
+    <!-- Bloomberg Ticker -->
+    <div class="ticker-container">
+        <div class="ticker-wrapper">
+            <div class="ticker">
+                <div class="ticker-item">NSW 190: 90pts | VIC: 85pts | QLD: 75pts | SA: 65pts</div>
+                <div class="ticker-item">3,450 invitations this round | Lowest: 75pts</div>
+                <div class="ticker-item">Accountants 491: 65pts cutoff | 15,200 in queue</div>
+                <div class="ticker-item">Software Engineers: High demand in ACT & VIC</div>
+                <div class="ticker-item">Registered Nurses: 42% invited within 12 months</div>
+                <div class="ticker-item">NSW 190: 90pts | VIC: 85pts | QLD: 75pts | SA: 65pts</div>
+                <div class="ticker-item">3,450 invitations this round | Lowest: 75pts</div>
+                <div class="ticker-item">Accountants 491: 65pts cutoff | 15,200 in queue</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="logo">VisaIQ</div>
@@ -450,54 +569,67 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>What does <span class="highlight">your PR profile</span> actually mean?</h1>
-        <p>Stop guessing. See what the data shows for profiles like yours. Based on 50,000+ actual visa outcomes, not opinions.</p>
+        <h1>What are your real PR chances?</h1>
+        <p>Stop wondering. Get your actual odds based on 100K+ real visa outcomes.</p>
         <div class="cta-container">
             <button class="btn btn-primary">Start PR Analysis</button>
             <button class="btn btn-secondary">Student Pathway</button>
         </div>
     </section>
 
-    <!-- Scorecard Preview Section -->
+    <!-- Scorecard & EOI Chart Section -->
     <section class="scorecard-section">
         <span class="section-label">Your instant visa scorecard</span>
-        <h2 class="section-title">See your PR chances in 60 seconds</h2>
+        <h2 class="section-title">See exactly where you stand for Australian Permanent Residency.</h2>
+        <p class="section-subtitle">Your personalised migration scorecard based on real visa data.</p>
 
         <div class="scorecard-grid">
-            <div class="scorecard-preview">
-                <div class="scorecard-header">VisaIQ • Migration Intelligence</div>
-                <div>
-                    <div class="scorecard-occupation">Software Engineer • NSW • 80pts</div>
-                    <div class="scorecard-metric">
-                        <div class="scorecard-metric-label">189 Competitiveness</div>
-                        <div class="scorecard-dots">●●●○○ Medium</div>
+            <!-- Scorecard Preview -->
+            <div class="scorecard-card">
+                <div class="scorecard-preview">
+                    <div>
+                        <div class="scorecard-header">VisaIQ • Migration Intelligence</div>
+                        <div class="scorecard-occupation">Software Engineer • NSW • 80pts</div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">189 Competitiveness</div>
+                            <div class="scorecard-dots">●●●○○ Medium</div>
+                        </div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">190 Competitiveness</div>
+                            <div class="scorecard-dots">●●●●○ High</div>
+                        </div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">491 Competitiveness</div>
+                            <div class="scorecard-dots">●●●●● Very High</div>
+                        </div>
                     </div>
-                    <div class="scorecard-metric">
-                        <div class="scorecard-metric-label">190 Competitiveness</div>
-                        <div class="scorecard-dots">●●●●○ High</div>
+                    <div class="scorecard-footer">
+                        <div style="margin-bottom: 10px;">Similar profiles: 42% invited via state nomination</div>
+                        <div style="color: #00C896; font-weight: 600;">Your PR Chance Score: 67/100</div>
                     </div>
-                    <div class="scorecard-metric">
-                        <div class="scorecard-metric-label">491 Competitiveness</div>
-                        <div class="scorecard-dots">●●●●● Very High</div>
-                    </div>
-                </div>
-                <div class="scorecard-footer">
-                    <div style="margin-bottom: 10px;">Similar profiles: 42% invited via state nomination</div>
-                    <div style="color: #00C896; font-weight: 600;">Your PR Chance Score: 67/100</div>
                 </div>
             </div>
 
-            <div class="scorecard-card">
-                <div class="scorecard-description">
-                    <h3>Download & Share Your Results</h3>
-                    <p>Get your personalized scorecard as an image. Share it on WhatsApp, Reddit, or keep it private.</p>
-                    <ul class="scorecard-features">
-                        <li>Your exact PR probability by visa type</li>
-                        <li>Where you rank in your occupation queue</li>
-                        <li>Which states want your profile right now</li>
-                        <li>What similar profiles actually did</li>
-                        <li>Your 12-month action roadmap</li>
-                    </ul>
+            <!-- EOI Queue Chart -->
+            <div class="eoi-chart-card">
+                <div class="eoi-chart-title">EOI Queue Position</div>
+                <p class="eoi-chart-subtitle">Where you rank among applicants at different points levels</p>
+                <div class="chart-container">
+                    <canvas id="eoi-chart"></canvas>
+                </div>
+                <div class="eoi-legend">
+                    <div class="legend-item">
+                        <div class="legend-box" style="background: #00C896;"></div>
+                        <span>Your points level (80pts)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box" style="background: #4E8EFF;"></div>
+                        <span>Invitation cutoff</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box" style="background: rgba(255,255,255,0.1);"></div>
+                        <span>Other applicants</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -511,8 +643,8 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
-                <h3>Real visa outcomes</h3>
-                <p>50,000+ actual PR grants, invitations, and processing times. No guesswork.</p>
+                <h3>100K+ real outcomes</h3>
+                <p>Actual PR grants, invitations, and processing times. No guesswork.</p>
             </div>
 
             <div class="feature-card">
@@ -523,13 +655,13 @@
 
             <div class="feature-card">
                 <div class="feature-icon">⏱️</div>
-                <h3>Processing times by nationality</h3>
-                <p>See how long Indian, Pakistani, Filipino, Nepali applicants actually waited.</p>
+                <h3>Live invitation data</h3>
+                <p>Updated with every invitation round from all states. Always current.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🚀</div>
-                <h3>Actionable next steps</h3>
+                <h3>Actionable roadmap</h3>
                 <p>What points boost gets you invited. Which state to target. When to apply.</p>
             </div>
 
@@ -542,32 +674,56 @@
             <div class="feature-card">
                 <div class="feature-icon">👥</div>
                 <h3>Similar profiles</h3>
-                <p>See what people exactly like you did to get PR. Their real timelines.</p>
+                <p>See what people exactly like you did to get PR. Real timelines.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Occupations Section -->
+    <section class="occupations">
+        <span class="section-label">All occupations covered</span>
+        <h2 class="section-title">Get detailed analysis for your occupation</h2>
+        <div class="occupations-list">
+            <div class="occupation-badge">Accountant</div>
+            <div class="occupation-badge">Software Engineer</div>
+            <div class="occupation-badge">Registered Nurse</div>
+            <div class="occupation-badge">Civil Engineer</div>
+            <div class="occupation-badge">Chef</div>
+            <div class="occupation-badge">Teacher</div>
+            <div class="occupation-badge">Electrician</div>
+            <div class="occupation-badge">Plumber</div>
+            <div class="occupation-badge">Social Worker</div>
+            <div class="occupation-badge">Business Manager</div>
+            <div class="occupation-badge">Mechanical Engineer</div>
+            <div class="occupation-badge">Pharmacist</div>
+            <div class="occupation-badge">Psychologist</div>
+            <div class="occupation-badge">Marketing Manager</div>
+            <div class="occupation-badge">Finance Manager</div>
+            <div class="occupation-badge">HR Manager</div>
         </div>
     </section>
 
     <!-- Trust Section -->
     <section class="trust">
         <span class="section-label">You can trust this</span>
-        <h2 class="section-title">Built on public DHA data</h2>
+        <h2 class="section-title">Built on real visa data</h2>
 
         <div class="trust-grid">
             <div class="trust-item">
-                <h4>50K+</h4>
-                <p>Actual visa outcomes</p>
+                <h4>100K+</h4>
+                <p>Real visa outcomes</p>
             </div>
             <div class="trust-item">
-                <h4>12</h4>
-                <p>Monthly invitation rounds</p>
+                <h4>12+</h4>
+                <p>Monthly rounds tracked</p>
             </div>
             <div class="trust-item">
                 <h4>8</h4>
                 <p>States analyzed</p>
             </div>
             <div class="trust-item">
-                <h4>10+</h4>
-                <p>Occupation deep-dives</p>
+                <h4>50+</h4>
+                <p>Occupations covered</p>
             </div>
         </div>
     </section>
@@ -582,5 +738,73 @@
         <p>&copy; 2026 VisaIQ. Australia's migration intelligence platform.</p>
     </footer>
 
+    <script>
+        // EOI Queue Chart
+        const ctx = document.getElementById('eoi-chart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['65pts', '70pts', '75pts', '80pts', '85pts', '90pts', '95pts+'],
+                datasets: [
+                    {
+                        label: 'EOIs in queue',
+                        data: [1200, 2800, 4500, 5200, 3800, 2100, 900],
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Your position',
+                        data: [0, 0, 0, 5200, 0, 0, 0],
+                        backgroundColor: '#00C896',
+                        borderColor: '#00C896',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#7A8FA8',
+                            font: {
+                                family: "'DM Sans', sans-serif",
+                                size: 12
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#7A8FA8',
+                            font: {
+                                family: "'DM Sans', sans-serif",
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.05)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#7A8FA8',
+                            font: {
+                                family: "'DM Sans', sans-serif",
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.05)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
