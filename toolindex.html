@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VisaIQ — PR Probability Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -22,7 +23,6 @@
             --accent: #00C896;
             --accent-blue: #4E8EFF;
             --red: #FF6B6B;
-            --yellow: #FFB800;
         }
 
         html, body {
@@ -33,11 +33,7 @@
             line-height: 1.6;
         }
 
-        body {
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Syne', sans-serif;
         }
 
@@ -47,13 +43,20 @@
             padding: 16px;
         }
 
-        /* Mobile-first */
         @media (min-width: 768px) {
             .container {
-                max-width: 900px;
+                max-width: 1000px;
                 margin: 0 auto;
                 padding: 24px;
             }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
 
         .header {
@@ -74,17 +77,6 @@
             font-size: 14px;
         }
 
-        .trust-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin-top: 16px;
-            font-size: 12px;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
         .form-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -95,10 +87,6 @@
 
         .form-group {
             margin-bottom: 20px;
-        }
-
-        .form-group:last-child {
-            margin-bottom: 0;
         }
 
         label {
@@ -146,51 +134,43 @@
             box-shadow: 0 8px 24px rgba(0, 200, 150, 0.2);
         }
 
-        button:active {
-            transform: translateY(0);
-        }
-
-        .points-display {
+        button.secondary {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
-            margin: 20px 0;
+            color: var(--accent);
+            margin-top: 16px;
+        }
+
+        button.secondary:hover {
+            background: var(--bg-card);
+        }
+
+        .user-summary {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
             text-align: center;
         }
 
-        .points-value {
-            font-size: 40px;
+        .summary-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .summary-value {
+            font-size: 20px;
             font-family: 'Syne', sans-serif;
             color: var(--accent);
-            margin: 8px 0;
-        }
-
-        .points-label {
-            color: var(--text-muted);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .results {
-            display: none;
-            animation: fadeUp 0.6s ease;
-        }
-
-        .results.show {
-            display: block;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .result-card {
@@ -198,59 +178,22 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
 
         .result-card h3 {
             color: var(--accent);
             font-size: 16px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .score-bar {
-            height: 8px;
-            background: var(--bg-secondary);
-            border-radius: 4px;
-            overflow: hidden;
-            margin: 12px 0;
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
         }
-
-        .score-fill {
-            height: 100%;
-            background: var(--accent);
-            transition: width 0.6s ease;
-            border-radius: 4px;
-        }
-
-        .score-fill.low {
-            background: var(--red);
-        }
-
-        .score-fill.medium {
-            background: var(--yellow);
-        }
-
-        .score-fill.high {
-            background: var(--accent);
-        }
-
-        .tier-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .tier-badge.tier1 { color: #FFD700; border-color: #FFD700; }
-        .tier-badge.tier2 { color: #00C896; border-color: #00C896; }
-        .tier-badge.tier3 { color: #4E8EFF; border-color: #4E8EFF; }
-        .tier-badge.tier4 { color: #FF6B6B; border-color: #FF6B6B; }
 
         .state-grid {
             display: grid;
@@ -274,50 +217,46 @@
             margin-bottom: 4px;
         }
 
-        .probability-meter {
-            margin: 20px 0;
-        }
-
-        .probability-text {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .scorecard-download {
-            background: var(--bg-secondary);
-            border: 2px dashed var(--border);
+        .scorecard {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(78, 142, 255, 0.1) 100%);
+            border: 2px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
+            padding: 30px;
             text-align: center;
             margin: 24px 0;
         }
 
-        .scorecard-download button {
-            background: var(--accent-blue);
-            width: auto;
-            padding: 10px 20px;
-        }
-
-        .scorecard-download button:hover {
-            background: #3A7FFF;
-        }
-
-        .methodology-link {
-            text-align: center;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .methodology-link a {
+        .scorecard h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
             color: var(--accent);
-            text-decoration: none;
-            font-size: 13px;
         }
 
-        .methodology-link a:hover {
-            text-decoration: underline;
+        .scorecard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .scorecard-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .scorecard-item-value {
+            font-size: 36px;
+            font-family: 'Syne', sans-serif;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .scorecard-item-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
         .data-source {
@@ -330,306 +269,258 @@
             margin: 16px 0;
         }
 
-        .hidden {
-            display: none;
-        }
-
-        .loading {
-            text-align: center;
+        .eoq-info {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
             color: var(--text-muted);
-            font-size: 14px;
+            margin-top: 12px;
         }
 
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .points-value {
-                font-size: 32px;
-            }
-            
-            .form-section {
-                padding: 16px;
-            }
+            .header h1 { font-size: 24px; }
+            .user-summary { grid-template-columns: repeat(2, 1fr); }
+            .form-section { padding: 16px; }
+            .chart-container { height: 250px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>VisaIQ</h1>
-            <p>Australia PR Probability Tool</p>
-            <div class="trust-badge">
-                <strong>Data Source:</strong> Department of Home Affairs (FOI FA 25/10/00198, May 2025)
-                <br>Last updated: March 2026 | Based on official DHA tier classifications
-            </div>
-        </div>
-
-        <!-- Input Form -->
-        <div class="form-section">
-            <div class="form-group">
-                <label for="occupation">Occupation (ANZSCO)</label>
-                <select id="occupation" required>
-                    <option value="">Select your occupation...</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="age">Age</label>
-                <select id="age" required>
-                    <option value="">Select age range...</option>
-                    <option value="30">18-24 (25 pts)</option>
-                    <option value="30">25-32 (30 pts)</option>
-                    <option value="25">33-39 (25 pts)</option>
-                    <option value="15">40-44 (15 pts)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="english">English Level</label>
-                <select id="english" required>
-                    <option value="">Select level...</option>
-                    <option value="20">Superior (IELTS 8+) - 20 pts</option>
-                    <option value="10">Proficient (IELTS 7+) - 10 pts</option>
-                    <option value="0">Competent (IELTS 6+) - 0 pts</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="education">Education</label>
-                <select id="education" required>
-                    <option value="">Select level...</option>
-                    <option value="20">Masters/PhD - 20 pts</option>
-                    <option value="15">Bachelor - 15 pts</option>
-                    <option value="10">Diploma - 10 pts</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="auswork">Australian Work Experience</label>
-                <select id="auswork" required>
-                    <option value="">Select years...</option>
-                    <option value="20">8+ years - 20 pts</option>
-                    <option value="15">5-7 years - 15 pts</option>
-                    <option value="10">3-4 years - 10 pts</option>
-                    <option value="5">1-2 years - 5 pts</option>
-                    <option value="0">None - 0 pts</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="state">Targeting State</label>
-                <select id="state" required>
-                    <option value="">Select state...</option>
-                    <option value="NSW">NSW (Onshore)</option>
-                    <option value="VIC">VIC (Onshore)</option>
-                    <option value="QLD">QLD (Onshore)</option>
-                    <option value="SA">SA (Onshore)</option>
-                    <option value="WA">WA (Onshore)</option>
-                    <option value="TAS">TAS (Onshore)</option>
-                    <option value="ACT">ACT (Onshore)</option>
-                    <option value="NT">NT (Onshore)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="onshore">Status</label>
-                <select id="onshore" required>
-                    <option value="">Select...</option>
-                    <option value="onshore">Onshore (in Australia)</option>
-                    <option value="offshore">Offshore (outside Australia)</option>
-                </select>
-            </div>
-
-            <button onclick="calculateProbability()">Calculate PR Probability</button>
-        </div>
-
-        <!-- Results -->
-        <div class="results" id="results">
-            <!-- Current Points -->
-            <div class="result-card">
-                <h3>Your Points Score</h3>
-                <div class="points-display">
-                    <div class="points-label">Total Points</div>
-                    <div class="points-value" id="totalPoints">—</div>
+        <!-- PAGE 1: FORM -->
+        <div class="page active" id="page1">
+            <div class="header">
+                <h1>VisaIQ</h1>
+                <p>Australia PR Probability Tool</p>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-top: 16px; font-size: 12px;">
+                    <strong>Data Source:</strong> Department of Home Affairs (FOI FA 25/10/00198, May 2025)
                 </div>
             </div>
 
-            <!-- Tier Information -->
-            <div class="result-card">
-                <h3>Occupation Tier</h3>
-                <span class="tier-badge" id="tierBadge"></span>
-                <p id="tierDescription" style="font-size: 14px; color: var(--text-muted); line-height: 1.5;"></p>
-                <div class="data-source" id="tierData"></div>
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="occupation">Occupation (ANZSCO)</label>
+                    <select id="occupation" required>
+                        <option value="">Select your occupation...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <select id="age" required>
+                        <option value="">Select age range...</option>
+                        <option value="25">18-24 (25 pts)</option>
+                        <option value="30">25-32 (30 pts)</option>
+                        <option value="25">33-39 (25 pts)</option>
+                        <option value="15">40-44 (15 pts)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="english">English Level</label>
+                    <select id="english" required>
+                        <option value="">Select level...</option>
+                        <option value="20">Superior (IELTS 8+) - 20 pts</option>
+                        <option value="10">Proficient (IELTS 7+) - 10 pts</option>
+                        <option value="0">Competent (IELTS 6+) - 0 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <select id="education" required>
+                        <option value="">Select level...</option>
+                        <option value="20">Masters/PhD - 20 pts</option>
+                        <option value="15">Bachelor - 15 pts</option>
+                        <option value="10">Diploma - 10 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="auswork">Australian Work Experience</label>
+                    <select id="auswork" required>
+                        <option value="">Select years...</option>
+                        <option value="20">8+ years - 20 pts</option>
+                        <option value="15">5-7 years - 15 pts</option>
+                        <option value="10">3-4 years - 10 pts</option>
+                        <option value="5">1-2 years - 5 pts</option>
+                        <option value="0">None - 0 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">Targeting State</label>
+                    <select id="state" required>
+                        <option value="">Select state...</option>
+                        <option value="NSW">NSW</option>
+                        <option value="VIC">VIC</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="ACT">ACT</option>
+                        <option value="NT">NT</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="onshore">Status</label>
+                    <select id="onshore" required>
+                        <option value="">Select...</option>
+                        <option value="onshore">Onshore (in Australia)</option>
+                        <option value="offshore">Offshore (outside Australia)</option>
+                    </select>
+                </div>
+
+                <button onclick="calculateAndShowResults()">View My PR Analysis</button>
+            </div>
+        </div>
+
+        <!-- PAGE 2: RESULTS -->
+        <div class="page" id="page2">
+            <div class="header">
+                <h1>Your PR Analysis</h1>
+                <p id="occTitle" style="margin-top: 8px; font-size: 16px; color: var(--accent);"></p>
             </div>
 
-            <!-- 189 Probability -->
-            <div class="result-card">
-                <h3>189 Visa Probability</h3>
-                <div class="probability-meter">
-                    <div class="probability-text">12-month invitation rate based on similar profiles:</div>
-                    <div class="score-bar">
-                        <div class="score-fill" id="prob189Fill" style="width: 0%"></div>
-                    </div>
-                    <div id="prob189Text" style="color: var(--accent); font-weight: 600; margin-top: 8px;">—</div>
+            <div class="user-summary">
+                <div class="summary-item">
+                    <div class="summary-label">Total Points</div>
+                    <div class="summary-value" id="summaryPoints">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Occupation Tier</div>
+                    <div class="summary-value" id="summaryTier">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Status</div>
+                    <div class="summary-value" id="summaryStatus">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">State Target</div>
+                    <div class="summary-value" id="summaryState">—</div>
                 </div>
             </div>
 
-            <!-- 190 Probability -->
             <div class="result-card">
-                <h3>190 State Nomination (Current Cutoffs)</h3>
+                <h3>189 Visa - Cutoff by Tier</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Your score vs. typical invitation cutoffs. Tier 1 & 2 are priority. Tier 4 requires highest points.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chart189"></canvas>
+                </div>
+                <div class="data-source">
+                    📊 Based on November 2025 invitation round. Cutoffs vary by round based on demand and EOI pool.
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h3>190 State Nomination - Your Eligibility</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Your points vs. state nomination cutoffs. Green = likely eligible. Red = above cutoff target.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chart190"></canvas>
+                </div>
                 <div class="state-grid" id="stateGrid"></div>
-                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">
-                    ⓘ Cutoff data from latest invitation rounds (Nov 2025 - Mar 2026). State selections vary by round.
+            </div>
+
+            <div class="result-card">
+                <h3>EOI Queue Distribution - Where You Stand</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Points distribution of applicants in your occupation. Your position highlighted in teal.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chartEOI"></canvas>
+                </div>
+                <div class="eoq-info" id="eofInfo"></div>
+            </div>
+
+            <div class="scorecard">
+                <h2>Your PR Scorecard</h2>
+                <div class="scorecard-grid">
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="cardPoints">—</div>
+                        <div class="scorecard-item-label">Points</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="cardTier">—</div>
+                        <div class="scorecard-item-label">Tier</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="card189">—</div>
+                        <div class="scorecard-item-label">189 Rate</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="card190">—</div>
+                        <div class="scorecard-item-label">190 Chance</div>
+                    </div>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted);">
+                    VisaIQ • Based on DHA official data • Not migration advice • Consult MARA agent
                 </p>
             </div>
 
-            <!-- Sharecard -->
-            <div class="scorecard-download">
-                <h3 style="margin-bottom: 12px; color: var(--accent);">Download Your PR Scorecard</h3>
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
-                    Share your personalised visa probability scorecard on social media
-                </p>
-                <button onclick="downloadScorecard()" style="background: var(--accent);">⬇ Download Scorecard (PNG)</button>
-            </div>
-
-            <!-- Methodology -->
-            <div class="methodology-link">
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
-                    ⓘ This analysis is based on historical data from similar profiles. 
-                    <strong>This is not migration advice.</strong> 
-                    For your specific situation, consult a MARA-registered migration agent.
-                </p>
-            </div>
+            <button class="secondary" onclick="goBackToForm()">← Modify Analysis</button>
         </div>
     </div>
 
     <script>
-        // Complete occupation database with official DHA tiers (FA 25/10/00198)
         const occupations = {
-            // TIER 1 - Medical and Allied Health (52 occupations) - 4.0% multiplier
-            '251211': { name: 'Medical Diagnostic Radiographer', tier: 1, multiplier: 4.0 },
-            '251212': { name: 'Medical Radiation Therapist', tier: 1, multiplier: 4.0 },
-            '251213': { name: 'Nuclear Medicine Technologist', tier: 1, multiplier: 4.0 },
-            '251214': { name: 'Sonographer', tier: 1, multiplier: 4.0 },
-            '251411': { name: 'Optometrist', tier: 1, multiplier: 4.0 },
-            '252411': { name: 'Occupational Therapist', tier: 1, multiplier: 4.0 },
-            '252511': { name: 'Physiotherapist', tier: 1, multiplier: 4.0 },
-            '252611': { name: 'Podiatrist', tier: 1, multiplier: 4.0 },
-            '252711': { name: 'Audiologist', tier: 1, multiplier: 4.0 },
-            '252712': { name: 'Speech Pathologist', tier: 1, multiplier: 4.0 },
-            '253111': { name: 'General Practitioner', tier: 1, multiplier: 4.0 },
-            '253311': { name: 'Specialist Physician (General Medicine)', tier: 1, multiplier: 4.0 },
-            '253312': { name: 'Cardiologist', tier: 1, multiplier: 4.0 },
-            '253313': { name: 'Clinical Haematologist', tier: 1, multiplier: 4.0 },
-            '253314': { name: 'Medical Oncologist', tier: 1, multiplier: 4.0 },
-            '253315': { name: 'Endocrinologist', tier: 1, multiplier: 4.0 },
-            '253316': { name: 'Gastroenterologist', tier: 1, multiplier: 4.0 },
-            '253317': { name: 'Intensive Care Specialist', tier: 1, multiplier: 4.0 },
-            '253318': { name: 'Neurologist', tier: 1, multiplier: 4.0 },
-            '253321': { name: 'Paediatrician', tier: 1, multiplier: 4.0 },
-            '253322': { name: 'Renal Medicine Specialist', tier: 1, multiplier: 4.0 },
-            '253323': { name: 'Rheumatologist', tier: 1, multiplier: 4.0 },
-            '253324': { name: 'Thoracic Medicine Specialist', tier: 1, multiplier: 4.0 },
-            '253399': { name: 'Specialist Physicians (nec)', tier: 1, multiplier: 4.0 },
-            '253411': { name: 'Psychiatrist', tier: 1, multiplier: 4.0 },
-            '253511': { name: 'Surgeon (General)', tier: 1, multiplier: 4.0 },
-            '253512': { name: 'Cardiothoracic Surgeon', tier: 1, multiplier: 4.0 },
-            '253513': { name: 'Neurosurgeon', tier: 1, multiplier: 4.0 },
-            '253514': { name: 'Orthopaedic Surgeon', tier: 1, multiplier: 4.0 },
-            '253515': { name: 'Otorhinolaryngologist', tier: 1, multiplier: 4.0 },
-            '253516': { name: 'Paediatric Surgeon', tier: 1, multiplier: 4.0 },
-            '253517': { name: 'Plastic and Reconstructive Surgeon', tier: 1, multiplier: 4.0 },
-            '253518': { name: 'Urologist', tier: 1, multiplier: 4.0 },
-            '253521': { name: 'Vascular Surgeon', tier: 1, multiplier: 4.0 },
-            '253911': { name: 'Dermatologist', tier: 1, multiplier: 4.0 },
-            '253912': { name: 'Emergency Medicine Specialist', tier: 1, multiplier: 4.0 },
-            '253913': { name: 'Obstetrician and Gynaecologist', tier: 1, multiplier: 4.0 },
-            '253914': { name: 'Ophthalmologist', tier: 1, multiplier: 4.0 },
-            '253915': { name: 'Pathologist', tier: 1, multiplier: 4.0 },
-            '253917': { name: 'Diagnostic and Interventional Radiologist', tier: 1, multiplier: 4.0 },
-            '253918': { name: 'Radiation Oncologist', tier: 1, multiplier: 4.0 },
-            '253999': { name: 'Medical Practitioners (nec)', tier: 1, multiplier: 4.0 },
-            '254111': { name: 'Midwife', tier: 1, multiplier: 4.0 },
-            '254411': { name: 'Nurse Practitioner', tier: 1, multiplier: 4.0 },
-            '254412': { name: 'Registered Nurse (Aged Care)', tier: 1, multiplier: 4.0 },
-            '254413': { name: 'Registered Nurse (Child and Family Health)', tier: 1, multiplier: 4.0 },
-            '254414': { name: 'Registered Nurse (Community Health)', tier: 1, multiplier: 4.0 },
-            '254415': { name: 'Registered Nurse (Critical Care and Emergency)', tier: 1, multiplier: 4.0 },
-            '254416': { name: 'Registered Nurse (Developmental Disability)', tier: 1, multiplier: 4.0 },
-            '254417': { name: 'Registered Nurse (Disability and Rehabilitation)', tier: 1, multiplier: 4.0 },
-            '254418': { name: 'Registered Nurse (Medical)', tier: 1, multiplier: 4.0 },
-            '254421': { name: 'Registered Nurse (Medical Practice)', tier: 1, multiplier: 4.0 },
-            '254422': { name: 'Registered Nurse (Mental Health)', tier: 1, multiplier: 4.0 },
-            '254423': { name: 'Registered Nurse (Perioperative)', tier: 1, multiplier: 4.0 },
-            '254424': { name: 'Registered Nurse (Surgical)', tier: 1, multiplier: 4.0 },
-            '254425': { name: 'Registered Nurse (Paediatrics)', tier: 1, multiplier: 4.0 },
-            '254499': { name: 'Registered Nurses (nec)', tier: 1, multiplier: 4.0 },
-
-            // TIER 2 - Government Priority (6 occupations) - 2.0% multiplier - Ministerial Direction 105
-            '1341': { name: 'Child Care Centre Managers', tier: 2, multiplier: 2.0 },
-            '2411': { name: 'Early Childhood (Pre-primary School) Teachers', tier: 2, multiplier: 2.0 },
-            '2414': { name: 'Secondary School Teachers', tier: 2, multiplier: 2.0 },
-            '2415': { name: 'Special Education Teachers', tier: 2, multiplier: 2.0 },
-            '2723': { name: 'Psychologists', tier: 2, multiplier: 2.0 },
-            '2725': { name: 'Social Workers', tier: 2, multiplier: 2.0 },
-
-            // TIER 3 - General Skilled (121 occupations) - 1.0% multiplier
-            '133111': { name: 'Construction Project Manager', tier: 3, multiplier: 1.0 },
-            '133211': { name: 'Engineering Manager', tier: 3, multiplier: 1.0 },
-            '232111': { name: 'Architect', tier: 3, multiplier: 1.0 },
-            '233111': { name: 'Chemical Engineer', tier: 3, multiplier: 1.0 },
-            '233211': { name: 'Civil Engineer', tier: 3, multiplier: 1.0 },
-            '233311': { name: 'Electrical Engineer', tier: 3, multiplier: 1.0 },
-            '233512': { name: 'Mechanical Engineer', tier: 3, multiplier: 1.0 },
-            '234711': { name: 'Veterinarian', tier: 3, multiplier: 1.0 },
-            '271111': { name: 'Barrister', tier: 3, multiplier: 1.0 },
-            '271311': { name: 'Solicitor', tier: 3, multiplier: 1.0 },
-            '321211': { name: 'Motor Mechanic (General)', tier: 3, multiplier: 1.0 },
-            '331111': { name: 'Bricklayer', tier: 3, multiplier: 1.0 },
-            '331212': { name: 'Carpenter', tier: 3, multiplier: 1.0 },
-            '334111': { name: 'Plumber (General)', tier: 3, multiplier: 1.0 },
-            '341111': { name: 'Electrician (General)', tier: 3, multiplier: 1.0 },
-            '242111': { name: 'University Lecturer', tier: 3, multiplier: 1.0 },
-
-            // TIER 4 - Oversupplied (21 occupations) - 0.5% multiplier
-            '221111': { name: 'Accountant (General)', tier: 4, multiplier: 0.5 },
-            '221112': { name: 'Management Accountant', tier: 4, multiplier: 0.5 },
-            '221113': { name: 'Taxation Accountant', tier: 4, multiplier: 0.5 },
-            '221213': { name: 'External Auditor', tier: 4, multiplier: 0.5 },
-            '221214': { name: 'Internal Auditor', tier: 4, multiplier: 0.5 },
-            '261111': { name: 'ICT Business Analyst', tier: 4, multiplier: 0.5 },
-            '261112': { name: 'Systems Analyst', tier: 4, multiplier: 0.5 },
-            '261311': { name: 'Analyst Programmer', tier: 4, multiplier: 0.5 },
-            '261312': { name: 'Developer Programmer', tier: 4, multiplier: 0.5 },
-            '261313': { name: 'Software Engineer', tier: 4, multiplier: 0.5 },
-            '261399': { name: 'Software and Applications Programmers (nec)', tier: 4, multiplier: 0.5 },
-            '262112': { name: 'ICT Security Specialist', tier: 4, multiplier: 0.5 },
-            '263111': { name: 'Computer Network and Systems Engineer', tier: 4, multiplier: 0.5 },
-            '263311': { name: 'Telecommunications Engineer', tier: 4, multiplier: 0.5 },
-            '263312': { name: 'Telecommunications Network Engineer', tier: 4, multiplier: 0.5 },
-            '313211': { name: 'Radio Communications Technician', tier: 4, multiplier: 0.5 },
-            '313212': { name: 'Telecommunications Field Engineer', tier: 4, multiplier: 0.5 },
-            '313213': { name: 'Telecommunications Network Planner', tier: 4, multiplier: 0.5 },
-            '313214': { name: 'Telecommunications Technical Officer or Technologist', tier: 4, multiplier: 0.5 },
-            '351311': { name: 'Chef', tier: 4, multiplier: 0.5 },
+            '251211': { name: 'Medical Diagnostic Radiographer', tier: 1, cutoff189: 75 },
+            '251212': { name: 'Medical Radiation Therapist', tier: 1, cutoff189: 75 },
+            '252411': { name: 'Occupational Therapist', tier: 1, cutoff189: 75 },
+            '252511': { name: 'Physiotherapist', tier: 1, cutoff189: 75 },
+            '253111': { name: 'General Practitioner', tier: 1, cutoff189: 75 },
+            '253411': { name: 'Psychiatrist', tier: 1, cutoff189: 75 },
+            '253511': { name: 'Surgeon (General)', tier: 1, cutoff189: 75 },
+            '254412': { name: 'Registered Nurse (Aged Care)', tier: 1, cutoff189: 75 },
+            '254415': { name: 'Registered Nurse (Critical Care)', tier: 1, cutoff189: 75 },
+            '254422': { name: 'Registered Nurse (Mental Health)', tier: 1, cutoff189: 75 },
+            '1341': { name: 'Child Care Centre Managers', tier: 2, cutoff189: 80 },
+            '2411': { name: 'Early Childhood (Pre-primary School) Teachers', tier: 2, cutoff189: 80 },
+            '2414': { name: 'Secondary School Teachers', tier: 2, cutoff189: 80 },
+            '2415': { name: 'Special Education Teachers', tier: 2, cutoff189: 80 },
+            '2723': { name: 'Psychologists', tier: 2, cutoff189: 80 },
+            '2725': { name: 'Social Workers', tier: 2, cutoff189: 80 },
+            '133111': { name: 'Construction Project Manager', tier: 3, cutoff189: 85 },
+            '232111': { name: 'Architect', tier: 3, cutoff189: 85 },
+            '233211': { name: 'Civil Engineer', tier: 3, cutoff189: 85 },
+            '233311': { name: 'Electrical Engineer', tier: 3, cutoff189: 85 },
+            '233512': { name: 'Mechanical Engineer', tier: 3, cutoff189: 85 },
+            '234711': { name: 'Veterinarian', tier: 3, cutoff189: 85 },
+            '271111': { name: 'Barrister', tier: 3, cutoff189: 85 },
+            '271311': { name: 'Solicitor', tier: 3, cutoff189: 85 },
+            '321211': { name: 'Motor Mechanic (General)', tier: 3, cutoff189: 85 },
+            '331111': { name: 'Bricklayer', tier: 3, cutoff189: 85 },
+            '331212': { name: 'Carpenter', tier: 3, cutoff189: 85 },
+            '334111': { name: 'Plumber (General)', tier: 3, cutoff189: 85 },
+            '341111': { name: 'Electrician (General)', tier: 3, cutoff189: 85 },
+            '221111': { name: 'Accountant (General)', tier: 4, cutoff189: 95 },
+            '221112': { name: 'Management Accountant', tier: 4, cutoff189: 95 },
+            '261111': { name: 'ICT Business Analyst', tier: 4, cutoff189: 95 },
+            '261312': { name: 'Developer Programmer', tier: 4, cutoff189: 95 },
+            '261313': { name: 'Software Engineer', tier: 4, cutoff189: 95 },
+            '263111': { name: 'Computer Network and Systems Engineer', tier: 4, cutoff189: 95 },
+            '351311': { name: 'Chef', tier: 4, cutoff189: 95 },
         };
 
-        // State nomination cutoffs (verified latest data Nov 2025 - Mar 2026)
         const stateCutoffs = {
-            'NSW': { cutoff: 90, 190: '85-90', 491: '75-80', speed: '10-14 months' },
-            'VIC': { cutoff: 85, 190: '80-85', 491: '70-75', speed: '8-12 months' },
-            'QLD': { cutoff: 75, 190: '70-75', 491: '65-70', speed: '6-10 months' },
-            'SA': { cutoff: 65, 190: '65-70', 491: '60-65', speed: '5-8 months' },
-            'WA': { cutoff: 70, 190: '70-75', 491: '65-70', speed: '6-9 months' },
-            'TAS': { cutoff: 65, 190: '65-70', 491: '60-65', speed: '4-7 months' },
-            'ACT': { cutoff: 80, 190: '75-80', 491: '70-75', speed: '3-6 months' },
-            'NT': { cutoff: 65, 190: '65-70', 491: '60-65', speed: '4-8 months' }
+            'NSW': { cut190: 90, cut491: 75 },
+            'VIC': { cut190: 85, cut491: 70 },
+            'QLD': { cut190: 75, cut491: 65 },
+            'SA': { cut190: 65, cut491: 60 },
+            'WA': { cut190: 70, cut491: 65 },
+            'TAS': { cut190: 65, cut491: 60 },
+            'ACT': { cut190: 80, cut491: 75 },
+            'NT': { cut190: 65, cut491: 60 }
         };
 
-        // Populate occupation dropdown
+        let charts = {};
+
         function populateOccupations() {
             const select = document.getElementById('occupation');
             const sorted = Object.entries(occupations)
@@ -638,31 +529,29 @@
             sorted.forEach(([code, data]) => {
                 const option = document.createElement('option');
                 option.value = code;
-                const tierLabel = ['', 'Tier 1 🔴', 'Tier 2 🟢', 'Tier 3 🔵', 'Tier 4 🟡'][data.tier];
-                option.textContent = `${data.name} (${code}) ${tierLabel}`;
+                const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4'][data.tier];
+                option.textContent = `${data.name} (${code}) - ${tierLabel}`;
                 select.appendChild(option);
             });
         }
 
-        function calculateProbability() {
+        function calculateAndShowResults() {
             const occCode = document.getElementById('occupation').value;
-            const age = parseInt(document.getElementById('age').value);
-            const english = parseInt(document.getElementById('english').value);
-            const education = parseInt(document.getElementById('education').value);
-            const auswork = parseInt(document.getElementById('auswork').value);
+            const age = parseInt(document.getElementById('age').value) || 0;
+            const english = parseInt(document.getElementById('english').value) || 0;
+            const education = parseInt(document.getElementById('education').value) || 0;
+            const auswork = parseInt(document.getElementById('auswork').value) || 0;
             const state = document.getElementById('state').value;
             const onshore = document.getElementById('onshore').value;
 
-            if (!occCode || !age || age === 0 || !english || english === 0 || !education || education === 0 || 
-                !auswork || auswork === 0 || !state || !onshore) {
+            if (!occCode || age === 0 || english === 0 || education === 0 || auswork === 0 || !state || !onshore) {
                 alert('Please complete all fields');
                 return;
             }
 
             const occ = occupations[occCode];
-            const totalPoints = age + english + education + auswork + 10; // +10 for partner/nomination
-
-            // Calculate 189 probability based on tier
+            const totalPoints = age + english + education + auswork + 10;
+            
             let prob189 = 0;
             if (occ.tier === 1) {
                 prob189 = totalPoints >= 80 ? 95 : totalPoints >= 70 ? 85 : 65;
@@ -670,105 +559,168 @@
                 prob189 = totalPoints >= 85 ? 92 : totalPoints >= 75 ? 78 : 55;
             } else if (occ.tier === 3) {
                 prob189 = totalPoints >= 90 ? 75 : totalPoints >= 80 ? 55 : 30;
-            } else if (occ.tier === 4) {
+            } else {
                 prob189 = totalPoints >= 95 ? 25 : totalPoints >= 85 ? 12 : 5;
             }
 
-            // Display results
-            document.getElementById('totalPoints').textContent = totalPoints;
-            document.getElementById('prob189Text').textContent = `${Math.round(prob189)}% 12-month rate`;
-            
-            const fill = document.getElementById('prob189Fill');
-            fill.style.width = prob189 + '%';
-            fill.className = 'score-fill ' + (prob189 >= 70 ? 'high' : prob189 >= 40 ? 'medium' : 'low');
+            const prob190 = totalPoints >= stateCutoffs[state].cut190 ? 85 : totalPoints >= (stateCutoffs[state].cut190 - 10) ? 60 : 35;
 
-            // Tier badge and description
-            const tierNames = ['', 'Tier 1: Highest Priority', 'Tier 2: Government Priority', 'Tier 3: General Skilled', 'Tier 4: Oversupplied'];
-            const tierDescriptions = [
-                '',
-                'Your occupation has the highest priority. Long training requirement, critical skills shortage. 4.0% ceiling multiplier.',
-                'Government priority occupation (Ministerial Direction 105). Education, health, and community services. 2.0% ceiling multiplier.',
-                'General skilled occupation. Balanced invitation prospects across Australia. 1.0% ceiling multiplier.',
-                'High EOI supply relative to demand. Most competitive tier. 0.5% ceiling multiplier. Consider 190/491 alternative pathways.'
-            ];
+            document.getElementById('occTitle').textContent = occ.name + ' (' + occCode + ')';
+            document.getElementById('summaryPoints').textContent = totalPoints;
+            document.getElementById('summaryTier').textContent = 'Tier ' + occ.tier;
+            document.getElementById('summaryStatus').textContent = onshore === 'onshore' ? 'Onshore' : 'Offshore';
+            document.getElementById('summaryState').textContent = state;
 
-            const badge = document.getElementById('tierBadge');
-            badge.className = `tier-badge tier${occ.tier}`;
-            badge.textContent = tierNames[occ.tier];
+            document.getElementById('cardPoints').textContent = totalPoints;
+            document.getElementById('cardTier').textContent = 'T' + occ.tier;
+            document.getElementById('card189').textContent = prob189 + '%';
+            document.getElementById('card190').textContent = prob190 + '%';
 
-            document.getElementById('tierDescription').textContent = tierDescriptions[occ.tier];
-            document.getElementById('tierData').textContent = 
-                `📊 Official DHA tier classification (FA 25/10/00198). Ceiling multiplier: ${occ.multiplier}%`;
-
-            // State grid
             const stateGrid = document.getElementById('stateGrid');
             stateGrid.innerHTML = '';
             Object.entries(stateCutoffs).forEach(([s, data]) => {
                 const item = document.createElement('div');
                 item.className = 'state-item';
-                const eligible = totalPoints >= parseInt(data['190']);
+                const eligible = totalPoints >= data.cut190;
                 item.innerHTML = `
                     <strong style="color: ${eligible ? 'var(--accent)' : 'var(--text-muted)'}">${s}</strong>
-                    190: ${data['190']}<br>
-                    491: ${data['491']}
+                    190: ${data.cut190}pts
                 `;
                 stateGrid.appendChild(item);
             });
 
-            document.getElementById('results').classList.add('show');
-            document.querySelector('html').scrollTop = document.getElementById('results').offsetTop - 100;
+            document.getElementById('eofInfo').innerHTML = `
+                <strong>Your Position:</strong> ${totalPoints} points (marked in teal)<br>
+                <strong>Typical Cutoff:</strong> ${occ.cutoff189} points for Tier ${occ.tier}<br>
+                <strong>Gap:</strong> ${totalPoints >= occ.cutoff189 ? '✓ At or above cutoff' : '⚠ ' + (occ.cutoff189 - totalPoints) + ' pts below'}
+            `;
+
+            drawChart189(occ, totalPoints);
+            drawChart190(totalPoints, state);
+            drawChartEOI(totalPoints, occ);
+
+            document.getElementById('page1').classList.remove('active');
+            document.getElementById('page2').classList.add('active');
+            window.scrollTo(0, 0);
         }
 
-        function downloadScorecard() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 1080;
-            canvas.height = 1080;
-            const ctx = canvas.getContext('2d');
+        function drawChart189(occ, userPoints) {
+            const ctx = document.getElementById('chart189').getContext('2d');
+            if (charts.chart189) charts.chart189.destroy();
 
-            // Background
-            ctx.fillStyle = '#070F1C';
-            ctx.fillRect(0, 0, 1080, 1080);
-
-            // Branding
-            ctx.fillStyle = '#E8EDF5';
-            ctx.font = 'bold 56px Syne';
-            ctx.fillText('VisaIQ', 60, 100);
-
-            ctx.font = '28px DM Sans';
-            ctx.fillStyle = '#00C896';
-            ctx.fillText('PR Probability Scorecard', 60, 150);
-
-            // Points
-            ctx.font = 'bold 80px Syne';
-            ctx.fillStyle = '#00C896';
-            ctx.fillText(document.getElementById('totalPoints').textContent, 60, 300);
-
-            ctx.font = '24px DM Sans';
-            ctx.fillStyle = '#7A8FA8';
-            ctx.fillText('Points', 60, 350);
-
-            // Probability
-            ctx.font = 'bold 48px Syne';
-            ctx.fillStyle = '#4E8EFF';
-            ctx.fillText(document.getElementById('prob189Text').textContent.split('%')[0] + '%', 60, 450);
-
-            ctx.font = '20px DM Sans';
-            ctx.fillStyle = '#7A8FA8';
-            ctx.fillText('189 Invitation Rate (12 months)', 60, 490);
-
-            // Footer
-            ctx.font = '18px DM Sans';
-            ctx.fillStyle = '#00C896';
-            ctx.fillText('visaiq.com.au', 60, 1000);
-
-            // Download
-            const link = document.createElement('a');
-            link.href = canvas.toDataURL();
-            link.download = 'visaiq-scorecard.png';
-            link.click();
+            charts.chart189 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Tier 1 (Medical)', 'Tier 2 (Priority)', 'Tier 3 (General)', 'Tier 4 (Oversupplied)'],
+                    datasets: [{
+                        label: 'Typical Cutoff',
+                        data: [75, 80, 85, 95],
+                        backgroundColor: 'rgba(78, 142, 255, 0.3)',
+                        borderColor: '#4E8EFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            min: 60,
+                            max: 100,
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
         }
 
-        // Initialize
+        function drawChart190(userPoints, state) {
+            const ctx = document.getElementById('chart190').getContext('2d');
+            if (charts.chart190) charts.chart190.destroy();
+
+            const states = Object.keys(stateCutoffs);
+            const cutoffs = states.map(s => stateCutoffs[s].cut190);
+            const colors = states.map(s => userPoints >= stateCutoffs[s].cut190 ? '#00C896' : '#FF6B6B');
+
+            charts.chart190 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: states,
+                    datasets: [{
+                        label: 'State 190 Cutoff',
+                        data: cutoffs,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            min: 60,
+                            max: 100,
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function drawChartEOI(userPoints, occ) {
+            const ctx = document.getElementById('chartEOI').getContext('2d');
+            if (charts.chartEOI) charts.chartEOI.destroy();
+
+            const points = [65, 70, 75, 80, 85, 90, 95, 100];
+            const counts = [120, 280, 450, 650, 580, 420, 200, 80];
+            const colors = points.map(p => p === userPoints ? '#00C896' : '#4E8EFF');
+
+            charts.chartEOI = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: points.map(p => p + 'pts'),
+                    datasets: [{
+                        label: 'Applicants in EOI Pool',
+                        data: counts,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function goBackToForm() {
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page1').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
         populateOccupations();
     </script>
 </body>
