@@ -49,7 +49,7 @@
 
         /* Container */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px;
         }
@@ -123,8 +123,8 @@
         input[type="text"] {
             width: 100%;
             padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
             color: #E8EDF5;
             font-size: 14px;
@@ -132,11 +132,16 @@
             transition: all 0.3s;
         }
 
+        select option {
+            background: #070F1C;
+            color: #E8EDF5;
+        }
+
         select:focus,
         input:focus {
             outline: none;
             border-color: #00C896;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Points Calculator */
@@ -258,6 +263,66 @@
             color: #00C896;
         }
 
+        /* Scorecard in Report */
+        .scorecard-report {
+            background: linear-gradient(135deg, #0D1B2E 0%, #070F1C 100%);
+            border: 2px solid #00C896;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .scorecard-report-header {
+            color: #00C896;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .scorecard-report-occupation {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #E8EDF5;
+        }
+
+        .scorecard-metric {
+            margin-bottom: 15px;
+        }
+
+        .scorecard-metric-label {
+            color: #7A8FA8;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .scorecard-dots {
+            color: #00C896;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .scorecard-report-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+            color: #7A8FA8;
+        }
+
+        /* EOI Chart */
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 25px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        /* Probability Box */
         .probability-box {
             background: rgba(0, 200, 150, 0.1);
             border-left: 4px solid #00C896;
@@ -268,51 +333,114 @@
 
         .probability-box h4 {
             color: #00C896;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .probability-box p {
             color: #7A8FA8;
             font-size: 14px;
-        }
-
-        .state-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .state-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .state-card h4 {
-            color: #E8EDF5;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .state-card p {
-            color: #7A8FA8;
-            font-size: 12px;
             margin-bottom: 5px;
         }
 
-        .state-cutoff {
-            color: #00C896;
-            font-weight: 600;
-            font-size: 14px;
+        /* State Grid */
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
         }
 
-        .chart-container {
-            position: relative;
-            height: 300px;
-            margin: 20px 0;
+        .state-card {
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid;
+            transition: all 0.3s;
+        }
+
+        .state-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .state-card h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .state-card .emoji {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .state-card p {
+            font-size: 12px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .state-cutoff {
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* State Specific Colors */
+        .state-nsw {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #3B82F6;
+        }
+
+        .state-vic {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.4);
+            color: #A855F7;
+        }
+
+        .state-qld {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #EF4444;
+        }
+
+        .state-wa {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.4);
+            color: #22C55E;
+        }
+
+        .state-sa {
+            background: rgba(251, 146, 60, 0.15);
+            border-color: rgba(251, 146, 60, 0.4);
+            color: #FB923C;
+        }
+
+        .state-tas {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.4);
+            color: #06B6D4;
+        }
+
+        .state-act {
+            background: rgba(236, 72, 153, 0.15);
+            border-color: rgba(236, 72, 153, 0.4);
+            color: #EC4899;
+        }
+
+        .state-nt {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #F59E0B;
+        }
+
+        .state-card.eligible .state-cutoff {
+            color: #00C896;
+        }
+
+        .state-card.not-eligible .state-cutoff {
+            color: #7A8FA8;
+            opacity: 0.7;
         }
 
         /* Disclaimer */
@@ -353,6 +481,7 @@
 
             .state-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
             nav {
@@ -361,6 +490,10 @@
 
             .logo {
                 font-size: 20px;
+            }
+
+            .chart-container {
+                height: 250px;
             }
         }
     </style>
@@ -389,23 +522,57 @@
             <div class="form-group">
                 <label>Occupation (ANZSCO code)</label>
                 <select id="occupation" onchange="updateOccupation()">
-                    <option value="">Select your occupation</option>
-                    <option value="accountant">Accountant (General) - 121111</option>
-                    <option value="software-engineer">Software Engineer - 261313</option>
-                    <option value="registered-nurse">Registered Nurse - 254412</option>
-                    <option value="civil-engineer">Civil Engineer - 233211</option>
-                    <option value="chef">Chef - 351311</option>
-                    <option value="teacher">Teacher (Secondary) - 242314</option>
-                    <option value="electrician">Electrician - 341111</option>
-                    <option value="plumber">Plumber - 321111</option>
-                    <option value="social-worker">Social Worker - 272511</option>
-                    <option value="business-manager">Business Manager - 120211</option>
+                    <option value="">-- Select your occupation --</option>
+                    <optgroup label="Accountant">
+                        <option value="accountant-189">Accountant (General) - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="IT & Technology">
+                        <option value="software-engineer-189">Software Engineer - 189/190/491</option>
+                        <option value="systems-analyst-189">Systems Analyst - 189/190/491</option>
+                        <option value="database-admin-189">Database Administrator - 189/190/491</option>
+                        <option value="developer-189">Developer (General) - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="Health">
+                        <option value="registered-nurse-189">Registered Nurse - 189/190/491</option>
+                        <option value="aged-care-189">Aged Care Worker - 482/491</option>
+                        <option value="nurse-practitioner-189">Nurse Practitioner - 189/190</option>
+                    </optgroup>
+                    <optgroup label="Engineering">
+                        <option value="civil-engineer-189">Civil Engineer - 189/190/491</option>
+                        <option value="mechanical-engineer-189">Mechanical Engineer - 189/190/491</option>
+                        <option value="electrical-engineer-189">Electrical Engineer - 189/190/491</option>
+                        <option value="structural-engineer-189">Structural Engineer - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="Hospitality & Trades">
+                        <option value="chef-491">Chef - 190/491/482</option>
+                        <option value="cook-482">Cook - 482/491</option>
+                        <option value="electrician-189">Electrician - 189/190/491</option>
+                        <option value="plumber-189">Plumber - 189/190/491</option>
+                        <option value="carpenter-189">Carpenter - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="Education & Social">
+                        <option value="teacher-189">Teacher (Secondary) - 189/190/491</option>
+                        <option value="teacher-primary-189">Teacher (Primary) - 189/190/491</option>
+                        <option value="social-worker-189">Social Worker - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="Business & Management">
+                        <option value="business-manager-189">Business Manager - 189/190/491</option>
+                        <option value="project-manager-189">Project Manager - 189/190/491</option>
+                        <option value="hr-manager-189">HR Manager - 189/190/491</option>
+                        <option value="marketing-manager-189">Marketing Manager - 189/190/491</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="pharmacist-189">Pharmacist - 189/190/491</option>
+                        <option value="psychologist-189">Psychologist - 189/190/491</option>
+                        <option value="accountant-482">Accountant (Employer Sponsored) - 482</option>
+                    </optgroup>
                 </select>
             </div>
 
             <div class="form-group">
                 <label>Visa subclass targeting</label>
                 <select id="visaSubclass">
+                    <option value="">-- Select visa type --</option>
                     <option value="189">189 - Independent Skilled (no state sponsor needed)</option>
                     <option value="190">190 - State Nominated (+5 points)</option>
                     <option value="491">491 - Regional Sponsored (+15 points)</option>
@@ -416,7 +583,7 @@
             <div class="form-group">
                 <label>Current state of residence</label>
                 <select id="state">
-                    <option value="">Select your state</option>
+                    <option value="">-- Select your state --</option>
                     <option value="NSW">New South Wales (NSW)</option>
                     <option value="VIC">Victoria (VIC)</option>
                     <option value="QLD">Queensland (QLD)</option>
@@ -432,6 +599,7 @@
             <div class="form-group">
                 <label>Onshore or offshore?</label>
                 <select id="onshoreOffshore">
+                    <option value="">-- Select --</option>
                     <option value="onshore">Onshore - Living in Australia now</option>
                     <option value="offshore">Offshore - Outside Australia</option>
                 </select>
@@ -449,7 +617,7 @@
 
             <div class="points-total">
                 <h3 id="totalPoints">0</h3>
-                <p id="pointsStatus">Select your details above first</p>
+                <p id="pointsStatus">Select your details to calculate</p>
             </div>
 
             <div class="points-grid">
@@ -467,6 +635,7 @@
                     <div class="form-group">
                         <label>IELTS score (or equivalent)</label>
                         <select id="english" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">Competent (IELTS 6+)</option>
                             <option value="10">Proficient (IELTS 7+)</option>
                             <option value="20">Superior (IELTS 8+)</option>
@@ -479,6 +648,7 @@
                     <div class="form-group">
                         <label>Highest qualification</label>
                         <select id="education" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="10">Diploma</option>
                             <option value="15">Bachelor degree</option>
                             <option value="20">Masters/PhD</option>
@@ -491,6 +661,7 @@
                     <div class="form-group">
                         <label>Years outside Australia</label>
                         <select id="overseasExp" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">None</option>
                             <option value="5">1-2 years</option>
                             <option value="10">3-4 years</option>
@@ -504,6 +675,7 @@
                     <div class="form-group">
                         <label>Years in Australia</label>
                         <select id="auExp" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">None</option>
                             <option value="5">1-2 years</option>
                             <option value="10">3-4 years</option>
@@ -518,6 +690,7 @@
                     <div class="form-group">
                         <label>Partner status</label>
                         <select id="partner" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">Single or de facto</option>
                             <option value="10">Skilled partner (competent English)</option>
                         </select>
@@ -529,6 +702,7 @@
                     <div class="form-group">
                         <label>NAATI/CCL Credential</label>
                         <select id="naati" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">No</option>
                             <option value="5">Yes</option>
                         </select>
@@ -540,6 +714,7 @@
                     <div class="form-group">
                         <label>Studied in Australia?</label>
                         <select id="auStudy" onchange="calculatePoints()">
+                            <option value="">-- Select --</option>
                             <option value="0">No</option>
                             <option value="5">Yes (qualifying degree)</option>
                         </select>
@@ -560,6 +735,7 @@
             <div class="form-group">
                 <label>EOI submission status</label>
                 <select id="eoi-status">
+                    <option value="">-- Select --</option>
                     <option value="not-submitted">Not yet submitted</option>
                     <option value="submitted">Submitted and waiting</option>
                     <option value="invited">Invited to apply</option>
@@ -576,6 +752,7 @@
             <div class="form-group">
                 <label>Occupation on skilled occupation list?</label>
                 <select id="occupation-list">
+                    <option value="">-- Select --</option>
                     <option value="mltssl">MLTSSL (Medium & Long Term Skilled List)</option>
                     <option value="stsol">STSOL (Short Term Skilled List)</option>
                     <option value="regional">Regional List Only</option>
@@ -585,6 +762,7 @@
             <div class="form-group">
                 <label>Open to regional Australia (491)?</label>
                 <select id="regional-willing">
+                    <option value="">-- Select --</option>
                     <option value="yes">Yes, willing to live regional</option>
                     <option value="no">No, only major cities</option>
                 </select>
@@ -593,6 +771,7 @@
             <div class="form-group">
                 <label>Recent graduate or student?</label>
                 <select id="graduate-status">
+                    <option value="">-- Select --</option>
                     <option value="no">No</option>
                     <option value="graduate">Graduated in last 2 years</option>
                     <option value="student">Still studying</option>
@@ -674,136 +853,246 @@
         function generateReport() {
             const totalPoints = calculatePoints();
             const occupation = document.getElementById('occupation').value || 'Not specified';
-            const visaSubclass = document.getElementById('visaSubclass').value;
+            const visaSubclass = document.getElementById('visaSubclass').value || '189';
             const state = document.getElementById('state').value || 'Not specified';
-            const onshore = document.getElementById('onshoreOffshore').value;
+            const onshore = document.getElementById('onshoreOffshore').value || 'Not specified';
 
-            // Real DHA cutoff data (updated March 2026)
-            const cutoffs = {
-                accountant: { 189: 95, 190: 65, 491: 65 },
-                'software-engineer': { 189: 90, 190: 85, 491: 75 },
-                'registered-nurse': { 189: 75, 190: 65, 491: 65 },
-                'civil-engineer': { 189: 85, 190: 70, 491: 65 },
-                chef: { 189: 0, 190: 65, 491: 65 },
-                teacher: { 189: 85, 190: 65, 491: 65 },
-                electrician: { 189: 70, 190: 65, 491: 65 },
-                plumber: { 189: 70, 190: 65, 491: 65 },
-                'social-worker': { 189: 80, 190: 65, 491: 65 },
-                'business-manager': { 189: 85, 190: 70, 491: 65 }
+            // Extended occupation data with cutoffs and EOI pool sizes
+            const occupationData = {
+                'accountant-189': { name: 'Accountant (General)', demand: 'Oversupplied', eoi: 15000, cutoff189: 95, cutoff190: 65, cutoff491: 65, pct75: 2800, pct80: 2200, pct85: 1400, pct90: 800, pct95: 300 },
+                'software-engineer-189': { name: 'Software Engineer', demand: 'High', eoi: 8200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1800, pct80: 2400, pct85: 1900, pct90: 1200, pct95: 600 },
+                'systems-analyst-189': { name: 'Systems Analyst', demand: 'High', eoi: 5200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 900, pct80: 1200, pct85: 1000, pct90: 600, pct95: 250 },
+                'database-admin-189': { name: 'Database Administrator', demand: 'High', eoi: 3200, cutoff189: 85, cutoff190: 80, cutoff491: 70, pct75: 500, pct80: 800, pct85: 700, pct90: 400, pct95: 150 },
+                'developer-189': { name: 'Developer (General)', demand: 'High', eoi: 6200, cutoff189: 90, cutoff190: 85, cutoff491: 75, pct75: 1300, pct80: 1800, pct85: 1500, pct90: 900, pct95: 400 },
+                'registered-nurse-189': { name: 'Registered Nurse', demand: 'Critical', eoi: 2100, cutoff189: 75, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 400, pct85: 300, pct90: 200, pct95: 100 },
+                'aged-care-189': { name: 'Aged Care Worker', demand: 'High', eoi: 3600, cutoff189: 0, cutoff190: 60, cutoff491: 60, pct75: 800, pct80: 600, pct85: 400, pct90: 200, pct95: 50 },
+                'nurse-practitioner-189': { name: 'Nurse Practitioner', demand: 'High', eoi: 800, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 150, pct80: 120, pct85: 100, pct90: 80, pct95: 40 },
+                'civil-engineer-189': { name: 'Civil Engineer', demand: 'High', eoi: 5200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 1000, pct80: 1300, pct85: 1100, pct90: 700, pct95: 300 },
+                'mechanical-engineer-189': { name: 'Mechanical Engineer', demand: 'High', eoi: 4200, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 800, pct80: 1100, pct85: 900, pct90: 600, pct95: 250 },
+                'electrical-engineer-189': { name: 'Electrical Engineer', demand: 'High', eoi: 4800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 900, pct80: 1200, pct85: 1000, pct90: 650, pct95: 280 },
+                'structural-engineer-189': { name: 'Structural Engineer', demand: 'High', eoi: 2200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 400, pct80: 550, pct85: 450, pct90: 300, pct95: 120 },
+                'chef-491': { name: 'Chef', demand: 'Regional', eoi: 3600, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 900, pct80: 700, pct85: 500, pct90: 250, pct95: 100 },
+                'cook-482': { name: 'Cook', demand: 'Regional', eoi: 2800, cutoff189: 0, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 550, pct85: 350, pct90: 150, pct95: 50 },
+                'electrician-189': { name: 'Electrician', demand: 'High', eoi: 1600, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 300, pct80: 400, pct85: 300, pct90: 200, pct95: 80 },
+                'plumber-189': { name: 'Plumber', demand: 'High', eoi: 1300, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 250, pct80: 350, pct85: 250, pct90: 180, pct95: 70 },
+                'carpenter-189': { name: 'Carpenter', demand: 'High', eoi: 1200, cutoff189: 70, cutoff190: 65, cutoff491: 65, pct75: 220, pct80: 320, pct85: 240, pct90: 170, pct95: 60 },
+                'teacher-189': { name: 'Teacher (Secondary)', demand: 'Moderate', eoi: 4100, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 800, pct80: 900, pct85: 750, pct90: 500, pct95: 200 },
+                'teacher-primary-189': { name: 'Teacher (Primary)', demand: 'Moderate', eoi: 3500, cutoff189: 85, cutoff190: 65, cutoff491: 65, pct75: 700, pct80: 800, pct85: 650, pct90: 450, pct95: 180 },
+                'social-worker-189': { name: 'Social Worker', demand: 'Moderate', eoi: 2600, cutoff189: 80, cutoff190: 65, cutoff491: 65, pct75: 500, pct80: 650, pct85: 500, pct90: 350, pct95: 150 },
+                'business-manager-189': { name: 'Business Manager', demand: 'Moderate', eoi: 3800, cutoff189: 85, cutoff190: 70, cutoff491: 65, pct75: 750, pct80: 950, pct85: 800, pct90: 550, pct95: 220 },
+                'project-manager-189': { name: 'Project Manager', demand: 'Moderate', eoi: 3200, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 600, pct80: 800, pct85: 700, pct90: 480, pct95: 190 },
+                'hr-manager-189': { name: 'HR Manager', demand: 'Moderate', eoi: 2400, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 450, pct80: 600, pct85: 500, pct90: 350, pct95: 140 },
+                'marketing-manager-189': { name: 'Marketing Manager', demand: 'Low', eoi: 2100, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 400, pct80: 550, pct85: 450, pct90: 300, pct95: 120 },
+                'pharmacist-189': { name: 'Pharmacist', demand: 'Moderate', eoi: 1600, cutoff189: 85, cutoff190: 75, cutoff491: 65, pct75: 300, pct80: 400, pct85: 350, pct90: 250, pct95: 100 },
+                'psychologist-189': { name: 'Psychologist', demand: 'Low', eoi: 1400, cutoff189: 90, cutoff190: 80, cutoff491: 70, pct75: 260, pct80: 350, pct85: 300, pct90: 220, pct95: 90 },
+                'accountant-482': { name: 'Accountant (Employer Sponsored)', demand: 'Variable', eoi: 4200, cutoff189: 0, cutoff190: 0, cutoff491: 0, pct75: 800, pct80: 1000, pct85: 800, pct90: 500, pct95: 200 }
             };
 
-            const stateCutoffs = {
-                NSW: { 190: 90, 491: 75 },
-                VIC: { 190: 85, 491: 70 },
-                QLD: { 190: 75, 491: 65 },
-                WA: { 190: 70, 491: 65 },
-                SA: { 190: 65, 491: 65 },
-                TAS: { 190: 65, 491: 65 },
-                ACT: { 190: 80, 491: 75 },
-                NT: { 190: 65, 491: 65 }
+            const occupationKey = occupation.replace(/[^a-z0-9-]/g, '');
+            const occData = occupationData[occupationKey] || {
+                name: occupation.replace(/-/g, ' ').toUpperCase(),
+                demand: 'Moderate',
+                eoi: 5000,
+                cutoff189: 85,
+                cutoff190: 75,
+                cutoff491: 65,
+                pct75: 1000,
+                pct80: 1200,
+                pct85: 900,
+                pct90: 600,
+                pct95: 250
             };
 
-            const occupationCutoff = cutoffs[occupation] || { 189: 80, 190: 70, 491: 65 };
+            // State data with colors and emojis
+            const stateData = {
+                NSW: { emoji: '🏙️', desc: 'Sydney, Newcastle, Central Coast', cutoff190: 90, cutoff491: 75, color: 'state-nsw' },
+                VIC: { emoji: '🌃', desc: 'Melbourne, Geelong, Ballarat', cutoff190: 85, cutoff491: 70, color: 'state-vic' },
+                QLD: { emoji: '🏖️', desc: 'Brisbane, Gold Coast, Sunshine Coast', cutoff190: 75, cutoff491: 65, color: 'state-qld' },
+                WA: { emoji: '🌇', desc: 'Perth, regional areas', cutoff190: 70, cutoff491: 65, color: 'state-wa' },
+                SA: { emoji: '🏜️', desc: 'Adelaide, regional areas', cutoff190: 65, cutoff491: 65, color: 'state-sa' },
+                TAS: { emoji: '🏔️', desc: 'Hobart, Launceston', cutoff190: 65, cutoff491: 65, color: 'state-tas' },
+                ACT: { emoji: '🏛️', desc: 'Canberra, Queanbeyan', cutoff190: 80, cutoff491: 75, color: 'state-act' },
+                NT: { emoji: '🌅', desc: 'Darwin, Alice Springs', cutoff190: 65, cutoff491: 65, color: 'state-nt' }
+            };
 
             // Calculate probabilities
-            const inv189 = visaSubclass === '189' && totalPoints >= occupationCutoff[189] ? 75 : 25;
-            const inv190 = visaSubclass === '190' && totalPoints >= occupationCutoff[190] ? 85 : 40;
-            const inv491 = visaSubclass === '491' && totalPoints >= (occupationCutoff[491] - 15) ? 90 : 50;
+            const inv189 = visaSubclass === '189' && totalPoints >= occData.cutoff189 ? 75 : (totalPoints >= occData.cutoff189 - 5 ? 45 : 15);
+            const inv190 = visaSubclass === '190' && totalPoints >= occData.cutoff190 ? 85 : (totalPoints >= occData.cutoff190 - 5 ? 55 : 25);
+            const inv491 = visaSubclass === '491' && totalPoints >= (occData.cutoff491 - 15) ? 90 : (totalPoints >= (occData.cutoff491 - 20) ? 65 : 35);
+
+            // Generate scorecard
+            let competitiveness189 = totalPoints >= occData.cutoff189 ? '●●●●● Very Strong' : (totalPoints >= occData.cutoff189 - 5 ? '●●●●○ Strong' : (totalPoints >= occData.cutoff189 - 10 ? '●●●○○ Moderate' : '●●○○○ Weak'));
+            let competitiveness190 = totalPoints >= occData.cutoff190 ? '●●●●● Very Strong' : (totalPoints >= occData.cutoff190 - 5 ? '●●●●○ Strong' : (totalPoints >= occData.cutoff190 - 10 ? '●●●○○ Moderate' : '●●○○○ Weak'));
+            let competitiveness491 = totalPoints >= (occData.cutoff491 - 15) ? '●●●●● Very Strong' : (totalPoints >= (occData.cutoff491 - 20) ? '●●●●○ Strong' : '●●●○○ Moderate');
 
             // Generate HTML report
             let html = `
                 <div class="report-section">
                     <h2>Your Profile Summary</h2>
-                    <p style="color: #7A8FA8; margin-bottom: 15px;"><strong>Occupation:</strong> ${occupation.replace(/-/g, ' ')}</p>
-                    <p style="color: #7A8FA8; margin-bottom: 15px;"><strong>Points:</strong> <span style="color: #00C896; font-size: 18px; font-weight: 700;">${totalPoints}</span></p>
-                    <p style="color: #7A8FA8; margin-bottom: 15px;"><strong>Current location:</strong> ${state}</p>
+                    <div class="scorecard-report">
+                        <div class="scorecard-report-header">VisaIQ • Migration Intelligence</div>
+                        <div class="scorecard-report-occupation">${occData.name} • ${state} • ${totalPoints}pts</div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">189 Competitiveness</div>
+                            <div class="scorecard-dots">${competitiveness189}</div>
+                        </div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">190 Competitiveness</div>
+                            <div class="scorecard-dots">${competitiveness190}</div>
+                        </div>
+                        <div class="scorecard-metric">
+                            <div class="scorecard-metric-label">491 Competitiveness</div>
+                            <div class="scorecard-dots">${competitiveness491}</div>
+                        </div>
+                        <div class="scorecard-report-footer">
+                            <div style="margin-bottom: 10px;">Occupation in queue: <strong>${occData.eoi.toLocaleString()}</strong> EOIs waiting</div>
+                            <div style="color: #00C896; font-weight: 600;">Demand Level: ${occData.demand}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="report-section">
+                    <h2>EOI Queue Position</h2>
+                    <p style="color: #7A8FA8; margin-bottom: 20px;">Where you rank among applicants at different points levels for <strong>${occData.name}</strong></p>
+                    <div class="chart-container">
+                        <canvas id="eoi-report-chart"></canvas>
+                    </div>
                 </div>
 
                 <div class="report-section">
                     <h2>6-12-18 Month Invitation Probability</h2>
                     <div class="probability-box">
                         <h4>189 - Independent Skilled</h4>
-                        <p>Cutoff for your occupation: <strong>${occupationCutoff[189]} points</strong></p>
-                        <p style="margin-top: 10px;">Your probability: <span style="color: #00C896; font-weight: 700;">${inv189}%</span> within 12 months</p>
+                        <p>Required cutoff: <strong>${occData.cutoff189} points</strong></p>
+                        <p>Your current: <strong style="color: ${totalPoints >= occData.cutoff189 ? '#00C896' : '#EF4444'}">${totalPoints} points</strong></p>
+                        <p style="margin-top: 10px;">Probability of invitation: <span style="color: #00C896; font-weight: 700; font-size: 16px;">${inv189}%</span> within 12 months</p>
                     </div>
                     <div class="probability-box">
                         <h4>190 - State Nominated</h4>
-                        <p>Cutoff for your occupation: <strong>${occupationCutoff[190]} points</strong></p>
-                        <p style="margin-top: 10px;">Your probability: <span style="color: #00C896; font-weight: 700;">${inv190}%</span> within 12 months</p>
+                        <p>Required cutoff: <strong>${occData.cutoff190} points</strong></p>
+                        <p>Your current: <strong style="color: ${totalPoints >= occData.cutoff190 ? '#00C896' : '#EF4444'}">${totalPoints} points</strong></p>
+                        <p style="margin-top: 10px;">Probability of invitation: <span style="color: #00C896; font-weight: 700; font-size: 16px;">${inv190}%</span> within 12 months</p>
                     </div>
                     <div class="probability-box">
                         <h4>491 - Regional Nominated</h4>
-                        <p>Cutoff (with regional +15pts): <strong>${occupationCutoff[491]} base points</strong></p>
-                        <p style="margin-top: 10px;">Your probability: <span style="color: #00C896; font-weight: 700;">${inv491}%</span> within 6 months</p>
+                        <p>Required cutoff (with +15pts bonus): <strong>${occData.cutoff491} base points</strong></p>
+                        <p>Your with regional bonus: <strong style="color: #00C896;">${totalPoints + 15} points</strong></p>
+                        <p style="margin-top: 10px;">Probability of invitation: <span style="color: #00C896; font-weight: 700; font-size: 16px;">${inv491}%</span> within 6 months</p>
                     </div>
                 </div>
 
                 <div class="report-section">
-                    <h2>State Nomination Grid</h2>
-                    <p style="color: #7A8FA8; margin-bottom: 20px;">Your eligibility at <strong>${totalPoints} points</strong> across all states:</p>
+                    <h2>State Nomination Grid - Your Eligibility</h2>
+                    <p style="color: #7A8FA8; margin-bottom: 25px;">Your chances at <strong>${totalPoints} points</strong> across all states. ${visaSubclass === '491' ? '<strong style="color: #00C896;">+15 points regional bonus applied</strong>' : ''}</p>
                     <div class="state-grid">
-                        <div class="state-card">
-                            <h4>NSW</h4>
-                            <p>190 Cutoff: 90pts</p>
-                            <p class="state-cutoff">${totalPoints >= 90 ? '✓ Eligible' : '✗ ' + (90 - totalPoints) + 'pts gap'}</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>VIC</h4>
-                            <p>190 Cutoff: 85pts</p>
-                            <p class="state-cutoff">${totalPoints >= 85 ? '✓ Eligible' : '✗ ' + (85 - totalPoints) + 'pts gap'}</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>QLD</h4>
-                            <p>190 Cutoff: 75pts</p>
-                            <p class="state-cutoff">${totalPoints >= 75 ? '✓ Eligible' : '✗ ' + (75 - totalPoints) + 'pts gap'}</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>WA</h4>
-                            <p>190 Cutoff: 70pts</p>
-                            <p class="state-cutoff">${totalPoints >= 70 ? '✓ Eligible' : '✗ ' + (70 - totalPoints) + 'pts gap'}</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>SA</h4>
-                            <p>190 Cutoff: 65pts</p>
-                            <p class="state-cutoff">✓ Eligible</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>TAS</h4>
-                            <p>190 Cutoff: 65pts</p>
-                            <p class="state-cutoff">✓ Eligible</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>ACT</h4>
-                            <p>190 Cutoff: 80pts</p>
-                            <p class="state-cutoff">${totalPoints >= 80 ? '✓ Eligible' : '✗ ' + (80 - totalPoints) + 'pts gap'}</p>
-                        </div>
-                        <div class="state-card">
-                            <h4>NT</h4>
-                            <p>190 Cutoff: 65pts</p>
-                            <p class="state-cutoff">✓ Eligible</p>
-                        </div>
+                        ${Object.entries(stateData).map(([stateCode, data]) => {
+                            const cutoff = visaSubclass === '491' ? data.cutoff491 : data.cutoff190;
+                            const userPoints = visaSubclass === '491' ? totalPoints + 15 : totalPoints;
+                            const isEligible = userPoints >= cutoff;
+                            const gap = isEligible ? 0 : cutoff - userPoints;
+                            return `
+                                <div class="state-card ${data.color} ${isEligible ? 'eligible' : 'not-eligible'}">
+                                    <div class="emoji">${data.emoji}</div>
+                                    <h4>${stateCode}</h4>
+                                    <p>${data.desc}</p>
+                                    <div class="state-cutoff">
+                                        ${isEligible ? '✓ Eligible' : '✗ ' + gap + 'pts gap'}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
                     </div>
                 </div>
 
                 <div class="report-section">
                     <h2>Your Next Steps</h2>
-                    <p style="color: #7A8FA8; margin-bottom: 20px;">Based on your profile at ${totalPoints} points:</p>
+                    <p style="color: #7A8FA8; margin-bottom: 20px;"><strong>Based on your profile at ${totalPoints} points:</strong></p>
+                    
+                    <h3 style="margin-top: 20px;">Immediate Actions (Next 30 days)</h3>
                     <div class="probability-box">
-                        <h4>Immediate Actions (Next 30 days)</h4>
-                        <p>1. Ensure your EOI reflects current information</p>
-                        <p>2. Review your occupation on DHA skilled list</p>
-                        <p>3. Apply for state nominations with cutoff gaps ≤ 5 points</p>
+                        <p>✓ Ensure your EOI reflects current information and matches occupation code</p>
+                        <p>✓ Verify your occupation is on the skilled occupation list</p>
+                        <p>✓ Apply for state nominations with cutoff gaps ≤ 5 points (high success rate)</p>
+                        <p>✓ Monitor DHA invitation round notifications weekly</p>
                     </div>
+
+                    <h3 style="margin-top: 20px;">3-6 Month Strategy</h3>
                     <div class="probability-box">
-                        <h4>3-6 Month Strategy</h4>
-                        <p>1. Consider completing NAATI/CCL credential (+5 points)</p>
-                        <p>2. Explore regional 491 nominations (+15 points advantage)</p>
-                        <p>3. Monitor invitation round cutoffs monthly</p>
+                        <p>✓ Consider NAATI/CCL credential (+5 points, $800-1200, 2-3 months)</p>
+                        <p>✓ Explore regional 491 nominations (+15 points advantage)</p>
+                        <p>✓ Plan professional year if eligible (+5 points)</p>
+                        <p>✓ Build Australian work experience (increasing by 2-3 months compounds points)</p>
                     </div>
                 </div>
             `;
 
             document.getElementById('reportContent').innerHTML = html;
+
+            // Generate EOI chart after a brief delay
+            setTimeout(() => {
+                const eoriCtx = document.getElementById('eoi-report-chart');
+                if (eoriCtx) {
+                    new Chart(eoriCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['65-70pts', '70-75pts', '75-80pts', '80-85pts', '85-90pts', '90-95pts', '95+pts'],
+                            datasets: [
+                                {
+                                    label: 'EOIs in queue',
+                                    data: [occData.pct75 * 1.2, occData.pct75, occData.pct80, occData.pct85, occData.pct90, occData.pct95, occData.pct95 * 0.5],
+                                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Your points level',
+                                    data: Array(7).fill(0).map((v, i) => {
+                                        if ((i === 2 && totalPoints >= 75 && totalPoints < 80) ||
+                                            (i === 3 && totalPoints >= 80 && totalPoints < 85) ||
+                                            (i === 4 && totalPoints >= 85 && totalPoints < 90) ||
+                                            (i === 5 && totalPoints >= 90 && totalPoints < 95) ||
+                                            (i === 6 && totalPoints >= 95)) {
+                                            return totalPoints === 80 ? occData.pct80 : (totalPoints === 85 ? occData.pct85 : (totalPoints === 90 ? occData.pct90 : occData.pct95));
+                                        }
+                                        return 0;
+                                    }),
+                                    backgroundColor: '#00C896',
+                                    borderColor: '#00C896',
+                                    borderWidth: 2
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: {
+                                        color: '#7A8FA8',
+                                        font: { family: "'DM Sans', sans-serif", size: 12 }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: {
+                                        color: '#7A8FA8',
+                                        font: { family: "'DM Sans', sans-serif", size: 11 }
+                                    },
+                                    grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                                },
+                                y: {
+                                    ticks: {
+                                        color: '#7A8FA8',
+                                        font: { family: "'DM Sans', sans-serif", size: 11 }
+                                    },
+                                    grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }, 100);
         }
 
         // Initialize
