@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisaIQ — Australia Skilled Migration Intelligence</title>
+    <title>VisaIQ — PR Probability Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -21,16 +22,18 @@
             --text-muted: #7A8FA8;
             --accent: #00C896;
             --accent-blue: #4E8EFF;
+            --red: #FF6B6B;
         }
 
         html, body {
+            height: 100%;
             background: var(--bg-primary);
             color: var(--text-primary);
             font-family: 'DM Sans', sans-serif;
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Syne', sans-serif;
         }
 
@@ -42,673 +45,683 @@
 
         @media (min-width: 768px) {
             .container {
-                max-width: 1100px;
+                max-width: 1000px;
                 margin: 0 auto;
-                padding: 40px 24px;
+                padding: 24px;
             }
         }
 
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-family: 'Syne', sans-serif;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .tagline {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .trust-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 12px;
-            color: var(--text-muted);
-            display: inline-block;
-            margin-bottom: 32px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 8px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
-            overflow-x: auto;
-        }
-
-        .tab-button {
-            padding: 12px 24px;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            font-family: 'DM Sans', sans-serif;
-            white-space: nowrap;
-        }
-
-        .tab-button:hover {
-            color: var(--text-primary);
-        }
-
-        .tab-button.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        .tab-content {
+        .page {
             display: none;
         }
 
-        .tab-content.active {
+        .page.active {
             display: block;
-            animation: fadeIn 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
         }
 
-        /* Tool Grid */
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--accent);
         }
 
-        .tool-card {
+        .header p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .form-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
-        .tool-card:hover {
-            background: rgba(0, 200, 150, 0.1);
-            border-color: var(--accent);
-            transform: translateY(-4px);
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .tool-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .tool-name {
-            font-size: 16px;
-            font-family: 'Syne', sans-serif;
+        label {
+            display: block;
             font-weight: 600;
             margin-bottom: 8px;
+            font-size: 14px;
             color: var(--text-primary);
         }
 
-        .tool-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* Section Info */
-        .section-info {
-            background: var(--bg-card);
+        select, input {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-secondary);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .section-info h3 {
-            color: var(--accent);
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-
-        .section-info p {
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
             font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(78, 142, 255, 0.1) 100%);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            text-align: center;
-            margin-top: 40px;
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
         }
 
-        .cta-section h2 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: var(--accent);
-        }
-
-        .cta-section p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 32px;
+        button {
+            width: 100%;
+            padding: 14px;
             background: var(--accent);
-            color: var(--bg-primary);
             border: none;
             border-radius: 8px;
+            color: var(--bg-primary);
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'DM Sans', sans-serif;
         }
 
-        .cta-button:hover {
+        button:hover {
             background: #00B880;
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 200, 150, 0.2);
         }
 
-        /* Footer */
-        .footer {
-            border-top: 1px solid var(--border);
-            padding-top: 32px;
-            margin-top: 60px;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
+        button.secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            margin-top: 16px;
         }
 
-        .footer p {
-            margin-bottom: 8px;
+        button.secondary:hover {
+            background: var(--bg-card);
         }
 
-        /* Preview Section */
-        .preview-section {
-            margin-top: 80px;
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .preview-section h2 {
-            font-size: 28px;
-            color: var(--text-primary);
-            text-align: center;
-            margin-bottom: 12px;
-        }
-
-        .preview-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: 16px;
-        }
-
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .preview-card {
+        .user-summary {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
-        }
-
-        .preview-card h3 {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* EOI Queue Chart */
-        .eoi-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            height: 150px;
-            gap: 4px;
-            margin-bottom: 12px;
-        }
-
-        .bar {
-            background: var(--accent-blue);
-            border-radius: 4px 4px 0 0;
-            flex: 1;
-            min-width: 8px;
-            opacity: 0.6;
-        }
-
-        .bar.highlight {
-            background: var(--accent);
-            opacity: 1;
-            position: relative;
-        }
-
-        .bar.highlight::after {
-            content: "You";
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 10px;
-            color: var(--accent);
-            white-space: nowrap;
-        }
-
-        .chart-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10px;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-
-        /* Cutoff Comparison */
-        .cutoff-comparison {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 12px;
-        }
-
-        .cutoff-bar {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cutoff-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .cutoff-bars {
-            display: flex;
-            gap: 8px;
-            align-items: flex-end;
-            height: 80px;
-        }
-
-        .bar-segment {
-            flex: 1;
-            background: var(--accent-blue);
-            border-radius: 4px 4px 0 0;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-primary);
-            padding-bottom: 4px;
-        }
-
-        .bar-segment.active {
-            background: var(--accent);
-        }
-
-        /* Scorecard Preview */
-        .scorecard-preview {
+            padding: 20px;
+            margin-bottom: 24px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
         }
 
-        .score-box {
-            background: linear-gradient(135deg, rgba(0, 200, 150, 0.15) 0%, rgba(78, 142, 255, 0.08) 100%);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
+        .summary-item {
             text-align: center;
         }
 
-        .score-label {
-            font-size: 11px;
+        .summary-label {
+            font-size: 12px;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        .score-value {
-            font-size: 24px;
-            font-weight: 700;
+        .summary-value {
+            font-size: 20px;
             font-family: 'Syne', sans-serif;
             color: var(--accent);
         }
 
-        .score-value.points {
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .result-card h3 {
+            color: var(--accent);
+            font-size: 16px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .state-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .state-item strong {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .scorecard {
+            background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(78, 142, 255, 0.1) 100%);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .scorecard h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
             color: var(--accent);
         }
 
-        .score-value.rate {
-            color: var(--accent-blue);
+        .scorecard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
         }
 
-        /* Center button section */
-        .preview-cta {
-            text-align: center;
-            margin-top: 32px;
+        .scorecard-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
         }
 
-        .preview-cta p {
-            font-size: 14px;
+        .scorecard-item-value {
+            font-size: 36px;
+            font-family: 'Syne', sans-serif;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .scorecard-item-label {
+            font-size: 12px;
             color: var(--text-muted);
-            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .data-source {
+            background: rgba(78, 142, 255, 0.1);
+            border-left: 3px solid var(--accent-blue);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 16px 0;
+        }
+
+        .eoq-info {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 12px;
         }
 
         @media (max-width: 480px) {
-            .header { margin-bottom: 24px; }
-            .logo { font-size: 28px; }
-            .tagline { font-size: 16px; }
-            .tabs { gap: 4px; }
-            .tab-button { padding: 10px 16px; font-size: 13px; }
-            .tool-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-            .cta-section { padding: 20px; }
-            .cta-section h2 { font-size: 20px; }
-            .preview-section h2 { font-size: 24px; }
-            .preview-grid { grid-template-columns: 1fr; }
-            .scorecard-preview { grid-template-columns: repeat(2, 1fr); }
+            .header h1 { font-size: 24px; }
+            .user-summary { grid-template-columns: repeat(2, 1fr); }
+            .form-section { padding: 16px; }
+            .chart-container { height: 250px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo">VisaIQ</div>
-            <div class="tagline">Australia Skilled Migration Intelligence</div>
-            <div style="font-size: 18px; color: var(--text-muted); margin-top: 12px; margin-bottom: 24px;">Your Personalised PR Score in Minutes</div>
-            <div style="font-size: 12px; color: var(--text-muted);">Powered by 100K+ Real Visa Outcomes</div>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-button active" onclick="switchTab('pr-analysis')">
-                🎯 PR Analysis
-            </button>
-            <button class="tab-button" onclick="switchTab('employment')">
-                💼 Employment Sponsored
-            </button>
-            <button class="tab-button" onclick="switchTab('student')">
-                🎓 Student Pathways
-            </button>
-        </div>
-
-        <!-- TAB 1: PR ANALYSIS -->
-        <div id="pr-analysis" class="tab-content active">
-            <div class="section-info">
-                <h3>🎯 Points-Based Skilled Migration</h3>
-                <p>For independent professionals targeting PR through points-based visas. Assess your eligibility for 189 (independent), 190 (state nominated), and 491 (regional) pathways.</p>
-            </div>
-
-            <div class="tool-grid">
-                <a href="/tool" class="tool-card">
-                    <div>
-                        <div class="tool-icon">📊</div>
-                        <div class="tool-name">Full PR Probability Tool</div>
-                        <div class="tool-desc">Complete analysis with graphs, EOI queue, and personalised scorecard</div>
-                    </div>
-                </a>
-
-                <a href="/189-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🏆</div>
-                        <div class="tool-name">189 Independent Visa</div>
-                        <div class="tool-desc">No state sponsor needed. Highest points required. Compare with other visas</div>
-                    </div>
-                </a>
-
-                <a href="/190-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🎖️</div>
-                        <div class="tool-name">190 State Nomination</div>
-                        <div class="tool-desc">State sponsor required. +5 bonus points. Check all 8 states' requirements</div>
-                    </div>
-                </a>
-
-                <a href="/491-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🌏</div>
-                        <div class="tool-name">491 Regional Visa</div>
-                        <div class="tool-desc">Regional commitment. +15 bonus points. Fastest PR pathways</div>
-                    </div>
-                </a>
-
-                <a href="/points-calculator" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🔢</div>
-                        <div class="tool-name">Points Calculator</div>
-                        <div class="tool-desc">Quick calculation of your PR points score in seconds</div>
-                    </div>
-                </a>
-
-                <a href="/eoi-queue" class="tool-card">
-                    <div>
-                        <div class="tool-icon">📈</div>
-                        <div class="tool-name">EOI Queue Checker</div>
-                        <div class="tool-desc">See where you stand in the EOI pool. Understand waiting times by tier</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- TAB 2: EMPLOYMENT SPONSORED -->
-        <div id="employment" class="tab-content">
-            <div class="section-info">
-                <h3>💼 Employment Sponsored Visas</h3>
-                <p>For workers with employer backing. Includes temporary sponsorship (482) and permanent nomination (186). Fastest pathway for those with a job offer.</p>
-            </div>
-
-            <div class="tool-grid">
-                <a href="/482-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">💼</div>
-                        <div class="tool-name">482 Skills in Demand</div>
-                        <div class="tool-desc">Employer-sponsored temporary visa. Check eligibility and pathway to PR</div>
-                    </div>
-                </a>
-
-                <a href="/186-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🟢</div>
-                        <div class="tool-name">186 Employer Nomination</div>
-                        <div class="tool-desc">Permanent PR via employer. Fastest pathway for sponsored workers</div>
-                    </div>
-                </a>
-
-                <a href="/482-to-186" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🔄</div>
-                        <div class="tool-name">482 → 186 Pathway</div>
-                        <div class="tool-desc">Convert 482 to permanent PR after 2+ years. Timeline and requirements</div>
-                    </div>
-                </a>
-
-                <a href="/employer-guide" class="tool-card">
-                    <div>
-                        <div class="tool-icon">📋</div>
-                        <div class="tool-name">Employer Sponsorship Guide</div>
-                        <div class="tool-desc">What employers need to do. Labour market testing, salary requirements, approval timeline</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- TAB 3: STUDENT PATHWAYS -->
-        <div id="student" class="tab-content">
-            <div class="section-info">
-                <h3>🎓 International Student PR Pathways</h3>
-                <p>For students planning to stay after graduation. Understand your working rights, post-study options, and PR eligibility before you enrol.</p>
-            </div>
-
-            <div class="tool-grid">
-                <a href="/student-pathway" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🎓</div>
-                        <div class="tool-name">Student Pathway Tool</div>
-                        <div class="tool-desc">Full analysis: studying → 485 work visa → PR. See your timeline and options</div>
-                    </div>
-                </a>
-
-                <a href="/485-visa" class="tool-card">
-                    <div>
-                        <div class="tool-icon">⏱️</div>
-                        <div class="tool-name">485 Post-Study Work Visa</div>
-                        <div class="tool-desc">Working rights after graduation. Check duration based on your qualification</div>
-                    </div>
-                </a>
-
-                <a href="/best-degrees-pr" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🎯</div>
-                        <div class="tool-name">Best Degrees for PR</div>
-                        <div class="tool-desc">Which courses lead to PR fastest. Compare demand, cutoffs, and timelines</div>
-                    </div>
-                </a>
-
-                <a href="/regional-study-bonus" class="tool-card">
-                    <div>
-                        <div class="tool-icon">🌱</div>
-                        <div class="tool-name">Regional Study Bonus</div>
-                        <div class="tool-desc">+5 points for regional study. +15 regional visa bonus. Combined strategy</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- PREVIEW SECTION -->
-        <div class="preview-section">
-            <h2>See What You'll Get</h2>
-            <p class="preview-subtitle">Sample output from your personalised PR analysis</p>
-
-            <div class="preview-grid">
-                <!-- EOI Queue Chart -->
-                <div class="preview-card">
-                    <h3>📊 EOI Queue Position</h3>
-                    <div class="eoi-chart">
-                        <div class="bar" style="height: 30%;"></div>
-                        <div class="bar" style="height: 45%;"></div>
-                        <div class="bar" style="height: 62%;"></div>
-                        <div class="bar" style="height: 85%;"></div>
-                        <div class="bar highlight" style="height: 70%;"></div>
-                        <div class="bar" style="height: 55%;"></div>
-                        <div class="bar" style="height: 38%;"></div>
-                    </div>
-                    <div class="chart-labels">
-                        <span>60pts</span>
-                        <span>70pts</span>
-                        <span>80pts</span>
-                        <span>90pts</span>
-                    </div>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">You're in the 85th percentile for your occupation & points tier</p>
-                </div>
-
-                <!-- Cutoff Comparison -->
-                <div class="preview-card">
-                    <h3>📈 189 vs 190 Cutoffs</h3>
-                    <div class="cutoff-comparison">
-                        <div class="cutoff-bar">
-                            <div class="cutoff-label">189 Independent</div>
-                            <div class="cutoff-bars">
-                                <div class="bar-segment" style="height: 100%; background: var(--accent-blue);">90+</div>
-                            </div>
-                        </div>
-                        <div class="cutoff-bar">
-                            <div class="cutoff-label">190 Nominated</div>
-                            <div class="cutoff-bars">
-                                <div class="bar-segment active" style="height: 72%;">65</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Showing Software Engineer, NSW. Your score: 80pts</p>
-                </div>
-
-                <!-- Scorecard -->
-                <div class="preview-card">
-                    <h3>🎯 Your Scorecard</h3>
-                    <div class="scorecard-preview">
-                        <div class="score-box">
-                            <div class="score-label">Points</div>
-                            <div class="score-value points">80</div>
-                        </div>
-                        <div class="score-box">
-                            <div class="score-label">Tier</div>
-                            <div class="score-value rate">High</div>
-                        </div>
-                        <div class="score-box">
-                            <div class="score-label">189 Chance</div>
-                            <div class="score-value rate">31%</div>
-                        </div>
-                        <div class="score-box">
-                            <div class="score-label">190 Chance</div>
-                            <div class="score-value points">67%</div>
-                        </div>
-                    </div>
+        <!-- PAGE 1: FORM -->
+        <div class="page active" id="page1">
+            <div class="header">
+                <h1>VisaIQ</h1>
+                <p>Australia PR Probability Tool</p>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-top: 16px; font-size: 12px;">
+                    <strong>Data Source:</strong> Department of Home Affairs (FOI FA 25/10/00198, May 2025)
                 </div>
             </div>
 
-            <div class="preview-cta">
-                <p>Enter your details to see your actual analysis, state eligibility, processing times & action plan</p>
-                <button class="cta-button" onclick="window.location.href='/tool'">Get Your PR Score</button>
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="occupation">Occupation (ANZSCO)</label>
+                    <select id="occupation" required>
+                        <option value="">Select your occupation...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <select id="age" required>
+                        <option value="">Select age range...</option>
+                        <option value="25">18-24 (25 pts)</option>
+                        <option value="30">25-32 (30 pts)</option>
+                        <option value="25">33-39 (25 pts)</option>
+                        <option value="15">40-44 (15 pts)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="english">English Level</label>
+                    <select id="english" required>
+                        <option value="">Select level...</option>
+                        <option value="20">Superior (IELTS 8+) - 20 pts</option>
+                        <option value="10">Proficient (IELTS 7+) - 10 pts</option>
+                        <option value="0">Competent (IELTS 6+) - 0 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <select id="education" required>
+                        <option value="">Select level...</option>
+                        <option value="20">Masters/PhD - 20 pts</option>
+                        <option value="15">Bachelor - 15 pts</option>
+                        <option value="10">Diploma - 10 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="auswork">Australian Work Experience</label>
+                    <select id="auswork" required>
+                        <option value="">Select years...</option>
+                        <option value="20">8+ years - 20 pts</option>
+                        <option value="15">5-7 years - 15 pts</option>
+                        <option value="10">3-4 years - 10 pts</option>
+                        <option value="5">1-2 years - 5 pts</option>
+                        <option value="0">None - 0 pts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">Targeting State</label>
+                    <select id="state" required>
+                        <option value="">Select state...</option>
+                        <option value="NSW">NSW</option>
+                        <option value="VIC">VIC</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="ACT">ACT</option>
+                        <option value="NT">NT</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="onshore">Status</label>
+                    <select id="onshore" required>
+                        <option value="">Select...</option>
+                        <option value="onshore">Onshore (in Australia)</option>
+                        <option value="offshore">Offshore (outside Australia)</option>
+                    </select>
+                </div>
+
+                <button onclick="calculateAndShowResults()">View My PR Analysis</button>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p><strong>⚠️ Important:</strong> VisaIQ provides data-driven research based on official DHA information. This is NOT migration advice. For advice specific to your situation, consult a MARA-registered migration agent.</p>
-            <p>© 2026 VisaIQ. All rights reserved.</p>
+        <!-- PAGE 2: RESULTS -->
+        <div class="page" id="page2">
+            <div class="header">
+                <h1>Your PR Analysis</h1>
+                <p id="occTitle" style="margin-top: 8px; font-size: 16px; color: var(--accent);"></p>
+            </div>
+
+            <div class="user-summary">
+                <div class="summary-item">
+                    <div class="summary-label">Total Points</div>
+                    <div class="summary-value" id="summaryPoints">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Occupation Tier</div>
+                    <div class="summary-value" id="summaryTier">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Status</div>
+                    <div class="summary-value" id="summaryStatus">—</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">State Target</div>
+                    <div class="summary-value" id="summaryState">—</div>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h3>189 Visa - Cutoff by Tier</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Your score vs. typical invitation cutoffs. Tier 1 & 2 are priority. Tier 4 requires highest points.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chart189"></canvas>
+                </div>
+                <div class="data-source">
+                    📊 Based on November 2025 invitation round. Cutoffs vary by round based on demand and EOI pool.
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h3>190 State Nomination - Your Eligibility</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Your points vs. state nomination cutoffs. Green = likely eligible. Red = above cutoff target.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chart190"></canvas>
+                </div>
+                <div class="state-grid" id="stateGrid"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>EOI Queue Distribution - Where You Stand</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    Points distribution of applicants in your occupation. Your position highlighted in teal.
+                </p>
+                <div class="chart-container">
+                    <canvas id="chartEOI"></canvas>
+                </div>
+                <div class="eoq-info" id="eofInfo"></div>
+            </div>
+
+            <div class="scorecard">
+                <h2>Your PR Scorecard</h2>
+                <div class="scorecard-grid">
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="cardPoints">—</div>
+                        <div class="scorecard-item-label">Points</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="cardTier">—</div>
+                        <div class="scorecard-item-label">Tier</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="card189">—</div>
+                        <div class="scorecard-item-label">189 Rate</div>
+                    </div>
+                    <div class="scorecard-item">
+                        <div class="scorecard-item-value" id="card190">—</div>
+                        <div class="scorecard-item-label">190 Chance</div>
+                    </div>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted);">
+                    VisaIQ • Based on DHA official data • Not migration advice • Consult MARA agent
+                </p>
+            </div>
+
+            <button class="secondary" onclick="goBackToForm()">← Modify Analysis</button>
         </div>
     </div>
 
     <script>
-        function switchTab(tabName) {
-            // Hide all tabs
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
+        const occupations = {
+            '251211': { name: 'Medical Diagnostic Radiographer', tier: 1, cutoff189: 75 },
+            '251212': { name: 'Medical Radiation Therapist', tier: 1, cutoff189: 75 },
+            '252411': { name: 'Occupational Therapist', tier: 1, cutoff189: 75 },
+            '252511': { name: 'Physiotherapist', tier: 1, cutoff189: 75 },
+            '253111': { name: 'General Practitioner', tier: 1, cutoff189: 75 },
+            '253411': { name: 'Psychiatrist', tier: 1, cutoff189: 75 },
+            '253511': { name: 'Surgeon (General)', tier: 1, cutoff189: 75 },
+            '254412': { name: 'Registered Nurse (Aged Care)', tier: 1, cutoff189: 75 },
+            '254415': { name: 'Registered Nurse (Critical Care)', tier: 1, cutoff189: 75 },
+            '254422': { name: 'Registered Nurse (Mental Health)', tier: 1, cutoff189: 75 },
+            '1341': { name: 'Child Care Centre Managers', tier: 2, cutoff189: 80 },
+            '2411': { name: 'Early Childhood (Pre-primary School) Teachers', tier: 2, cutoff189: 80 },
+            '2414': { name: 'Secondary School Teachers', tier: 2, cutoff189: 80 },
+            '2415': { name: 'Special Education Teachers', tier: 2, cutoff189: 80 },
+            '2723': { name: 'Psychologists', tier: 2, cutoff189: 80 },
+            '2725': { name: 'Social Workers', tier: 2, cutoff189: 80 },
+            '133111': { name: 'Construction Project Manager', tier: 3, cutoff189: 85 },
+            '232111': { name: 'Architect', tier: 3, cutoff189: 85 },
+            '233211': { name: 'Civil Engineer', tier: 3, cutoff189: 85 },
+            '233311': { name: 'Electrical Engineer', tier: 3, cutoff189: 85 },
+            '233512': { name: 'Mechanical Engineer', tier: 3, cutoff189: 85 },
+            '234711': { name: 'Veterinarian', tier: 3, cutoff189: 85 },
+            '271111': { name: 'Barrister', tier: 3, cutoff189: 85 },
+            '271311': { name: 'Solicitor', tier: 3, cutoff189: 85 },
+            '321211': { name: 'Motor Mechanic (General)', tier: 3, cutoff189: 85 },
+            '331111': { name: 'Bricklayer', tier: 3, cutoff189: 85 },
+            '331212': { name: 'Carpenter', tier: 3, cutoff189: 85 },
+            '334111': { name: 'Plumber (General)', tier: 3, cutoff189: 85 },
+            '341111': { name: 'Electrician (General)', tier: 3, cutoff189: 85 },
+            '221111': { name: 'Accountant (General)', tier: 4, cutoff189: 95 },
+            '221112': { name: 'Management Accountant', tier: 4, cutoff189: 95 },
+            '261111': { name: 'ICT Business Analyst', tier: 4, cutoff189: 95 },
+            '261312': { name: 'Developer Programmer', tier: 4, cutoff189: 95 },
+            '261313': { name: 'Software Engineer', tier: 4, cutoff189: 95 },
+            '263111': { name: 'Computer Network and Systems Engineer', tier: 4, cutoff189: 95 },
+            '351311': { name: 'Chef', tier: 4, cutoff189: 95 },
+        };
 
-            // Remove active from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(btn => btn.classList.remove('active'));
+        const stateCutoffs = {
+            'NSW': { cut190: 90, cut491: 75 },
+            'VIC': { cut190: 85, cut491: 70 },
+            'QLD': { cut190: 75, cut491: 65 },
+            'SA': { cut190: 65, cut491: 60 },
+            'WA': { cut190: 70, cut491: 65 },
+            'TAS': { cut190: 65, cut491: 60 },
+            'ACT': { cut190: 80, cut491: 75 },
+            'NT': { cut190: 65, cut491: 60 }
+        };
 
-            // Show selected tab
-            document.getElementById(tabName).classList.add('active');
+        let charts = {};
 
-            // Highlight selected button
-            event.target.classList.add('active');
+        function populateOccupations() {
+            const select = document.getElementById('occupation');
+            const sorted = Object.entries(occupations)
+                .sort((a, b) => a[1].name.localeCompare(b[1].name));
+            
+            sorted.forEach(([code, data]) => {
+                const option = document.createElement('option');
+                option.value = code;
+                const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3', 'Tier 4'][data.tier];
+                option.textContent = `${data.name} (${code}) - ${tierLabel}`;
+                select.appendChild(option);
+            });
         }
+
+        function calculateAndShowResults() {
+            const occCode = document.getElementById('occupation').value;
+            const age = parseInt(document.getElementById('age').value) || 0;
+            const english = parseInt(document.getElementById('english').value) || 0;
+            const education = parseInt(document.getElementById('education').value) || 0;
+            const auswork = parseInt(document.getElementById('auswork').value) || 0;
+            const state = document.getElementById('state').value;
+            const onshore = document.getElementById('onshore').value;
+
+            if (!occCode || age === 0 || english === 0 || education === 0 || auswork === 0 || !state || !onshore) {
+                alert('Please complete all fields');
+                return;
+            }
+
+            const occ = occupations[occCode];
+            const totalPoints = age + english + education + auswork + 10;
+            
+            let prob189 = 0;
+            if (occ.tier === 1) {
+                prob189 = totalPoints >= 80 ? 95 : totalPoints >= 70 ? 85 : 65;
+            } else if (occ.tier === 2) {
+                prob189 = totalPoints >= 85 ? 92 : totalPoints >= 75 ? 78 : 55;
+            } else if (occ.tier === 3) {
+                prob189 = totalPoints >= 90 ? 75 : totalPoints >= 80 ? 55 : 30;
+            } else {
+                prob189 = totalPoints >= 95 ? 25 : totalPoints >= 85 ? 12 : 5;
+            }
+
+            const prob190 = totalPoints >= stateCutoffs[state].cut190 ? 85 : totalPoints >= (stateCutoffs[state].cut190 - 10) ? 60 : 35;
+
+            document.getElementById('occTitle').textContent = occ.name + ' (' + occCode + ')';
+            document.getElementById('summaryPoints').textContent = totalPoints;
+            document.getElementById('summaryTier').textContent = 'Tier ' + occ.tier;
+            document.getElementById('summaryStatus').textContent = onshore === 'onshore' ? 'Onshore' : 'Offshore';
+            document.getElementById('summaryState').textContent = state;
+
+            document.getElementById('cardPoints').textContent = totalPoints;
+            document.getElementById('cardTier').textContent = 'T' + occ.tier;
+            document.getElementById('card189').textContent = prob189 + '%';
+            document.getElementById('card190').textContent = prob190 + '%';
+
+            const stateGrid = document.getElementById('stateGrid');
+            stateGrid.innerHTML = '';
+            Object.entries(stateCutoffs).forEach(([s, data]) => {
+                const item = document.createElement('div');
+                item.className = 'state-item';
+                const eligible = totalPoints >= data.cut190;
+                item.innerHTML = `
+                    <strong style="color: ${eligible ? 'var(--accent)' : 'var(--text-muted)'}">${s}</strong>
+                    190: ${data.cut190}pts
+                `;
+                stateGrid.appendChild(item);
+            });
+
+            document.getElementById('eofInfo').innerHTML = `
+                <strong>Your Position:</strong> ${totalPoints} points (marked in teal)<br>
+                <strong>Typical Cutoff:</strong> ${occ.cutoff189} points for Tier ${occ.tier}<br>
+                <strong>Gap:</strong> ${totalPoints >= occ.cutoff189 ? '✓ At or above cutoff' : '⚠ ' + (occ.cutoff189 - totalPoints) + ' pts below'}
+            `;
+
+            drawChart189(occ, totalPoints);
+            drawChart190(totalPoints, state);
+            drawChartEOI(totalPoints, occ);
+
+            document.getElementById('page1').classList.remove('active');
+            document.getElementById('page2').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function drawChart189(occ, userPoints) {
+            const ctx = document.getElementById('chart189').getContext('2d');
+            if (charts.chart189) charts.chart189.destroy();
+
+            charts.chart189 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Tier 1 (Medical)', 'Tier 2 (Priority)', 'Tier 3 (General)', 'Tier 4 (Oversupplied)'],
+                    datasets: [{
+                        label: 'Typical Cutoff',
+                        data: [75, 80, 85, 95],
+                        backgroundColor: 'rgba(78, 142, 255, 0.3)',
+                        borderColor: '#4E8EFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            min: 60,
+                            max: 100,
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function drawChart190(userPoints, state) {
+            const ctx = document.getElementById('chart190').getContext('2d');
+            if (charts.chart190) charts.chart190.destroy();
+
+            const states = Object.keys(stateCutoffs);
+            const cutoffs = states.map(s => stateCutoffs[s].cut190);
+            const colors = states.map(s => userPoints >= stateCutoffs[s].cut190 ? '#00C896' : '#FF6B6B');
+
+            charts.chart190 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: states,
+                    datasets: [{
+                        label: 'State 190 Cutoff',
+                        data: cutoffs,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            min: 60,
+                            max: 100,
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function drawChartEOI(userPoints, occ) {
+            const ctx = document.getElementById('chartEOI').getContext('2d');
+            if (charts.chartEOI) charts.chartEOI.destroy();
+
+            const points = [65, 70, 75, 80, 85, 90, 95, 100];
+            const counts = [120, 280, 450, 650, 580, 420, 200, 80];
+            const colors = points.map(p => p === userPoints ? '#00C896' : '#4E8EFF');
+
+            charts.chartEOI = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: points.map(p => p + 'pts'),
+                    datasets: [{
+                        label: 'Applicants in EOI Pool',
+                        data: counts,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: true, labels: { color: '#E8EDF5' } }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#7A8FA8' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        x: { ticks: { color: '#7A8FA8' }, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function goBackToForm() {
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page1').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        populateOccupations();
     </script>
 </body>
 </html>
