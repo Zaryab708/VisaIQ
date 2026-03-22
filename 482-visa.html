@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>482 Skills in Demand Visa — VisaIQ</title>
+<meta name="description" content="Free 482 visa eligibility checker. Find your stream, check your occupation, understand your PR pathway and see exactly what happens next. No agent needed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.15);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--purple:#9B7FFF;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);border-bottom:1px solid var(--border);padding:3rem 1.5rem 2.5rem;text-align:center}
+.visa-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(78,142,255,0.12);border:1px solid rgba(78,142,255,0.3);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.75rem;color:var(--blue);font-weight:600;margin-bottom:1.25rem;letter-spacing:0.04em}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.75rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.95rem;max-width:520px;margin:0 auto 2rem;line-height:1.7}
+.hero-stats{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.hs{text-align:center}
+.hsn{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--teal)}
+.hsl{font-size:0.7rem;color:var(--muted);margin-top:0.1rem}
+.source-line{font-size:0.72rem;color:var(--muted);margin-top:1rem}
+.source-line a{color:var(--blue)}
+
+/* MAIN LAYOUT */
+.main{max-width:960px;margin:0 auto;padding:2rem 1.5rem 5rem}
+
+/* SECTION TABS */
+.sec-tabs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:2rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:0.5rem}
+.stab{flex:1;min-width:120px;padding:0.65rem 0.75rem;background:transparent;border:none;border-radius:10px;font-size:0.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;text-align:center;line-height:1.3}
+.stab:hover{color:var(--text)}
+.stab.active{background:var(--teal);color:#000}
+.sec-content{display:none;animation:fu 0.35s ease}
+.sec-content.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* CARDS */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card-title{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+
+/* STREAM CARDS */
+.stream-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stream-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color 0.2s}
+.stream-card.specialist{border-top:3px solid var(--blue)}
+.stream-card.core{border-top:3px solid var(--teal)}
+.stream-card.essential{border-top:3px solid var(--purple)}
+.stream-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.stream-icon{font-size:1.6rem;margin-bottom:0.75rem}
+.stream-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.4rem}
+.stream-salary{font-size:0.78rem;font-weight:600;margin-bottom:0.75rem;padding:0.3rem 0.6rem;border-radius:6px;display:inline-block}
+.specialist .stream-salary{background:rgba(78,142,255,0.12);color:var(--blue)}
+.core .stream-salary{background:var(--td);color:var(--teal)}
+.essential .stream-salary{background:rgba(155,127,255,0.12);color:var(--purple)}
+.stream-desc{font-size:0.82rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.stream-tag{display:inline-block;font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:5px;margin:0.15rem;font-weight:600}
+.tag-g{background:rgba(16,185,129,0.1);color:#6ee7b7;border:1px solid rgba(16,185,129,0.2)}
+.tag-a{background:rgba(245,158,11,0.08);color:#fcd34d;border:1px solid rgba(245,158,11,0.2)}
+.tag-r{background:rgba(239,68,68,0.08);color:#fca5a5;border:1px solid rgba(239,68,68,0.15)}
+
+/* ELIGIBILITY CHECKER */
+.elig-step{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:0.75rem}
+.elig-num{width:28px;height:28px;background:var(--td);border:1px solid var(--tb);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--teal);flex-shrink:0;margin-bottom:0.75rem}
+.elig-q{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.75rem}
+.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem}
+.pill{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.pill.sel-blue{border-color:var(--blue);background:var(--bd);color:var(--blue)}
+.pill.sel-red{border-color:rgba(239,68,68,0.4);background:rgba(239,68,68,0.08);color:var(--red)}
+
+select,input[type=number]{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+select:focus,input:focus{border-color:var(--tb)}
+select option{background:#0D1B2E}
+.frow{margin-bottom:0.9rem}
+label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.35rem}
+
+/* RESULT CARD */
+.result-card{border-radius:16px;padding:1.5rem;margin-top:1rem;display:none}
+.result-card.show{display:block;animation:fu 0.4s ease}
+.result-card.eligible{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.3)}
+.result-card.partial{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.25)}
+.result-card.not-eligible{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)}
+.result-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.result-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.5rem}
+.result-card.eligible .result-title{color:var(--green)}
+.result-card.partial .result-title{color:var(--amber)}
+.result-card.not-eligible .result-title{color:var(--red)}
+.result-body{font-size:0.85rem;color:var(--muted);line-height:1.7}
+.result-body strong{color:var(--text)}
+.result-actions{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem}
+.ra-item{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text)}
+.ra-item::before{content:'→';color:var(--teal);flex-shrink:0}
+
+/* TIMELINE VISUAL */
+.timeline{position:relative;padding-left:2rem;margin:1rem 0}
+.tl-item{position:relative;padding-bottom:1.5rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-1.5rem;top:8px;bottom:0;width:1px;background:var(--border)}
+.tl-item:last-child::before{display:none}
+.tl-dot{position:absolute;left:-1.85rem;top:4px;width:10px;height:10px;border-radius:50%;border:2px solid var(--teal);background:var(--teal);flex-shrink:0}
+.tl-dot.blue{border-color:var(--blue);background:var(--blue)}
+.tl-dot.purple{border-color:var(--purple);background:var(--purple)}
+.tl-dot.green{border-color:var(--green);background:var(--green)}
+.tl-time{font-size:0.68rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.2rem}
+.tl-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:0.2rem}
+.tl-desc{font-size:0.78rem;color:var(--muted);line-height:1.6}
+
+/* COST TABLE */
+.cost-table{width:100%;border-collapse:collapse;font-size:0.83rem}
+.cost-table th{text-align:left;padding:0.65rem 0.75rem;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border)}
+.cost-table td{padding:0.65rem 0.75rem;border-bottom:1px solid var(--border);vertical-align:top}
+.cost-table td:first-child{color:var(--text);font-weight:500}
+.cost-table td:nth-child(2){color:var(--muted)}
+.cost-table td:last-child{font-family:'Syne',sans-serif;font-weight:700;text-align:right;white-space:nowrap}
+.cost-table .emp{color:var(--blue)}
+.cost-table .app{color:var(--teal)}
+.cost-table .total-row td{border-top:2px solid var(--border);border-bottom:none;font-weight:700}
+.cost-table tr:hover td{background:rgba(255,255,255,0.015)}
+.cost-badge{font-size:0.62rem;padding:0.1rem 0.4rem;border-radius:4px;font-weight:700;margin-left:0.35rem}
+.cb-emp{background:rgba(78,142,255,0.12);color:var(--blue)}
+.cb-app{background:var(--td);color:var(--teal)}
+
+/* INFO BOXES */
+.info-box{border-radius:10px;padding:0.9rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.75rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb);color:var(--text)}
+.ib-blue{background:var(--bd);border:1px solid rgba(78,142,255,0.25);color:var(--text)}
+.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+.ib-red{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);color:#fca5a5}
+.info-box strong{display:block;margin-bottom:0.3rem}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0.75rem}
+.step{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.1rem;display:flex;gap:0.9rem;align-items:flex-start}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--td);border:1px solid var(--tb);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:800;color:var(--teal);flex-shrink:0}
+.step-body h4{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.3rem}
+.step-body p{font-size:0.78rem;color:var(--muted);line-height:1.6}
+.step-body .step-time{font-size:0.7rem;color:var(--blue);font-weight:600;margin-top:0.3rem}
+
+/* OCCUPATION SEARCH */
+.occ-search-wrap{position:relative;margin-bottom:1rem}
+.occ-search{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem 0.8rem 2.5rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+.occ-search:focus{border-color:var(--tb)}
+.occ-search::placeholder{color:var(--muted)}
+.search-icon{position:absolute;left:0.85rem;top:50%;transform:translateY(-50%);font-size:0.9rem;pointer-events:none}
+.occ-results{background:var(--bg2);border:1px solid var(--border);border-radius:10px;max-height:280px;overflow-y:auto;margin-top:0.35rem;display:none}
+.occ-results.open{display:block}
+.occ-item{padding:0.75rem 1rem;cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.15s;display:flex;align-items:center;justify-content:space-between;gap:0.75rem}
+.occ-item:last-child{border-bottom:none}
+.occ-item:hover,.occ-item.selected{background:var(--td)}
+.occ-name{font-size:0.83rem;color:var(--text);font-weight:500}
+.occ-status{font-size:0.65rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;flex-shrink:0}
+.os-yes{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.os-no{background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.2)}
+.os-check{background:var(--bd);color:var(--blue);border:1px solid rgba(78,142,255,0.25)}
+.occ-selected-display{background:var(--td);border:1px solid var(--tb);border-radius:10px;padding:0.75rem 1rem;font-size:0.85rem;color:var(--teal);font-weight:600;display:none;margin-bottom:0.75rem}
+
+/* COMPARE TABLE */
+.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1rem 0}
+.cmp-col{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.cmp-head{padding:0.85rem;text-align:center;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:800}
+.cmp-head.blue{background:var(--bd);border-bottom:1px solid rgba(78,142,255,0.2);color:var(--blue)}
+.cmp-head.teal{background:var(--td);border-bottom:1px solid var(--tb);color:var(--teal)}
+.cmp-head.purple{background:rgba(155,127,255,0.1);border-bottom:1px solid rgba(155,127,255,0.2);color:var(--purple)}
+.cmp-row{padding:0.65rem 0.85rem;border-bottom:1px solid var(--border);font-size:0.75rem}
+.cmp-row:last-child{border-bottom:none}
+.cmp-label{color:var(--muted);font-size:0.68rem;margin-bottom:0.15rem}
+.cmp-val{color:var(--text);font-weight:500}
+
+/* BUTTONS */
+.btn-primary{width:100%;padding:0.9rem 1.5rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:1rem}
+.btn-primary:hover{background:#00e0aa;transform:translateY(-1px)}
+.btn-secondary{display:inline-block;padding:0.65rem 1.25rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.2s;margin-top:0.5rem}
+.btn-secondary:hover{background:var(--td)}
+
+/* DISCLAIMER */
+.dis{font-size:0.73rem;color:var(--muted);background:rgba(245,158,11,0.05);border:1px solid rgba(245,158,11,0.15);border-radius:8px;padding:0.75rem;line-height:1.6;margin-top:1.5rem}
+.dis strong{color:var(--amber)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+
+@media(max-width:680px){.stream-grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.nls{display:none}.sec-tabs{flex-direction:column}.stab{min-width:unset}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/policy-updates">Policy Updates</a>
+    <a href="/" class="nh">← Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="visa-tag">🆕 Updated December 2024 — TSS 482 replaced by Skills in Demand (SID)</div>
+  <h1>482 Skills in Demand Visa.<br><em>Everything you need to know.</em></h1>
+  <p>Replaced the old TSS 482 on 7 December 2024. Three streams. 456 occupations. Faster PR. This tool covers eligibility, your stream, costs, timelines and exactly what to do next.</p>
+  <div class="hero-stats">
+    <div class="hs"><div class="hsn">44,000+</div><div class="hsl">Grants in 2024–25</div></div>
+    <div class="hs"><div class="hsn">456</div><div class="hsl">CSOL occupations</div></div>
+    <div class="hs"><div class="hsn">2 years</div><div class="hsl">To PR (reduced from 3)</div></div>
+    <div class="hs"><div class="hsn">180 days</div><div class="hsl">To find new sponsor</div></div>
+  </div>
+  <div class="source-line">All data sourced from <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skills-in-demand-visa-subclass-482" target="_blank">Department of Home Affairs</a> · Updated March 2026</div>
+</div>
+
+<div class="main">
+
+  <!-- SECTION TABS -->
+  <div class="sec-tabs">
+    <button class="stab active" onclick="showSec('eligibility',this)">✅ Am I Eligible?</button>
+    <button class="stab" onclick="showSec('streams',this)">🔀 3 Streams Explained</button>
+    <button class="stab" onclick="showSec('occupations',this)">🔍 Occupation Check</button>
+    <button class="stab" onclick="showSec('pathway',this)">🎯 PR Pathway</button>
+    <button class="stab" onclick="showSec('costs',this)">💰 Costs Breakdown</button>
+    <button class="stab" onclick="showSec('conditions',this)">📌 While On The Visa</button>
+  </div>
+
+  <!-- ═══════ TAB 1 — ELIGIBILITY ═══════ -->
+  <div class="sec-content active" id="sec-eligibility">
+
+    <div class="info-box ib-teal" style="margin-bottom:1.5rem">
+      <strong>What is the 482 Skills in Demand (SID) Visa?</strong>
+      Australia's main employer-sponsored temporary work visa. An Australian employer sponsors you to work in a specific role. You work for up to 4 years and can apply for permanent residency after 2 years. Replaced the old TSS 482 on 7 December 2024.
+    </div>
+
+    <!-- QUICK ELIGIBILITY CHECKER -->
+    <div class="card">
+      <div class="card-title">Quick Eligibility Check</div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1.25rem">Answer 5 questions to see if you qualify and which stream you fall into.</p>
+
+      <div class="elig-step">
+        <div class="elig-num">1</div>
+        <div class="elig-q">Do you have a job offer or employer willing to sponsor you in Australia?</div>
+        <div class="pill-row">
+          <button class="pill" data-q="1" data-v="yes" onclick="setPill(this,'q1')">Yes — I have an offer</button>
+          <button class="pill" data-q="1" data-v="looking" onclick="setPill(this,'q1')">Not yet — I'm looking</button>
+          <button class="pill" data-q="1" data-v="employer" onclick="setPill(this,'q1')">I'm an employer wanting to sponsor</button>
+        </div>
+      </div>
+
+      <div class="elig-step">
+        <div class="elig-num">2</div>
+        <div class="elig-q">What is your offered annual salary (AUD, base, excluding super)?</div>
+        <div class="pill-row">
+          <button class="pill" data-q="2" data-v="under76" onclick="setPill(this,'q2')">Under $76,515</button>
+          <button class="pill" data-q="2" data-v="76to141" onclick="setPill(this,'q2')">$76,515 — $141,209</button>
+          <button class="pill" data-q="2" data-v="over141" onclick="setPill(this,'q2')">$141,210 or above</button>
+          <button class="pill" data-q="2" data-v="unsure" onclick="setPill(this,'q2')">Not sure yet</button>
+        </div>
+      </div>
+
+      <div class="elig-step">
+        <div class="elig-num">3</div>
+        <div class="elig-q">How much relevant work experience do you have in this occupation?</div>
+        <div class="pill-row">
+          <button class="pill" data-q="3" data-v="under1" onclick="setPill(this,'q3')">Under 1 year</button>
+          <button class="pill" data-q="3" data-v="1to2" onclick="setPill(this,'q3')">1–2 years</button>
+          <button class="pill" data-q="3" data-v="over2" onclick="setPill(this,'q3')">2+ years</button>
+        </div>
+      </div>
+
+      <div class="elig-step">
+        <div class="elig-num">4</div>
+        <div class="elig-q">What is your English level?</div>
+        <div class="pill-row">
+          <button class="pill" data-q="4" data-v="native" onclick="setPill(this,'q4')">Native speaker (UK / USA / NZ / Canada / Ireland)</button>
+          <button class="pill" data-q="4" data-v="ielts5" onclick="setPill(this,'q4')">IELTS 5.0+ (or equivalent) — I have a test result</button>
+          <button class="pill" data-q="4" data-v="notest" onclick="setPill(this,'q4')">I haven't taken an English test yet</button>
+          <button class="pill" data-q="4" data-v="below5" onclick="setPill(this,'q4')">Below IELTS 5.0</button>
+        </div>
+      </div>
+
+      <div class="elig-step">
+        <div class="elig-num">5</div>
+        <div class="elig-q">Where are you currently located?</div>
+        <div class="pill-row">
+          <button class="pill" data-q="5" data-v="onshore" onclick="setPill(this,'q5')">Onshore — in Australia</button>
+          <button class="pill" data-q="5" data-v="offshore" onclick="setPill(this,'q5')">Offshore — overseas</button>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="checkEligibility()">Check My Eligibility →</button>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-card" id="elig-result">
+      <div class="result-icon" id="er-icon">✅</div>
+      <div class="result-title" id="er-title">Result</div>
+      <div class="result-body" id="er-body"></div>
+      <div class="result-actions" id="er-actions"></div>
+    </div>
+
+    <!-- CORE REQUIREMENTS -->
+    <div class="card" style="margin-top:1rem">
+      <div class="card-title">Core Requirements — All Streams</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">Work Experience</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">1 year</div>
+          <div style="font-size:0.72rem;color:var(--muted)">Relevant experience within last 5 years. Reduced from 2 years Dec 2024.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">English Level</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">IELTS 5.0+</div>
+          <div style="font-size:0.72rem;color:var(--muted)">All 4 bands minimum 5.0. PTE, TOEFL, Cambridge also accepted.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">Age</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">No limit</div>
+          <div style="font-size:0.72rem;color:var(--muted)">No age cap for 482 SID visa itself. Age matters for 186 PR pathway (under 45).</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">Health &amp; Character</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">Required</div>
+          <div style="font-size:0.72rem;color:var(--muted)">Medical exam + police clearance from every country lived in 12+ months.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">Visa Duration</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">Up to 4 years</div>
+          <div style="font-size:0.72rem;color:var(--muted)">Core &amp; Specialist streams. Can be extended or transitioned to PR.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem">Skills Assessment</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:0.2rem">Required (most)</div>
+          <div style="font-size:0.72rem;color:var(--muted)">Core Skills stream requires skills assessment for most occupations. Not required for Specialist stream.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW VS OLD -->
+    <div class="card">
+      <div class="card-title">What Changed — Old TSS 482 vs New SID 482</div>
+      <table class="cost-table">
+        <thead><tr><th>What</th><th>Old TSS 482 (before Dec 2024)</th><th>New SID 482 (from Dec 2024)</th></tr></thead>
+        <tbody>
+          <tr><td>Work experience required</td><td style="color:var(--red)">2 years</td><td style="color:var(--green)">1 year ✓ Improved</td></tr>
+          <tr><td>PR pathway (via 186)</td><td style="color:var(--red)">3 years same employer</td><td style="color:var(--green)">2 years, multiple sponsors ✓ Improved</td></tr>
+          <tr><td>Change employer grace period</td><td style="color:var(--red)">60 days</td><td style="color:var(--green)">180 days ✓ Improved</td></tr>
+          <tr><td>Occupation list</td><td style="color:var(--amber)">MLTSSL / STSOL / ROL</td><td style="color:var(--teal)">CSOL (456 occupations) — unified list</td></tr>
+          <tr><td>Streams</td><td>Short-term / Medium-term</td><td style="color:var(--teal)">Specialist / Core / Essential — clearer</td></tr>
+          <tr><td>High earner pathway</td><td style="color:var(--red)">No — occupation list required for all</td><td style="color:var(--green)">Yes — $141K+ earners: no occupation list needed ✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 2 — STREAMS ═══════ -->
+  <div class="sec-content" id="sec-streams">
+    <div class="stream-grid">
+
+      <!-- SPECIALIST -->
+      <div class="stream-card specialist">
+        <div class="stream-icon">💼</div>
+        <div class="stream-name">Specialist Skills Stream</div>
+        <div class="stream-salary">Salary $141,210+ per year</div>
+        <div class="stream-desc">For highly paid professionals. No occupation list required — if you earn $141,210+, almost any ANZSCO occupation qualifies (except trades, machine operators and labourers).</div>
+        <div>
+          <span class="stream-tag tag-g">No CSOL required</span>
+          <span class="stream-tag tag-g">7-day processing</span>
+          <span class="stream-tag tag-g">No skills assessment</span>
+          <span class="stream-tag tag-g">Any profession</span>
+          <span class="stream-tag tag-a">Must earn $141,210+</span>
+          <span class="stream-tag tag-a">Rises to $146,717 from Jul 2026</span>
+        </div>
+        <div class="info-box ib-blue" style="margin-top:0.9rem;font-size:0.77rem">
+          <strong>Who this is for:</strong> Senior tech leads, specialist doctors, executives, senior engineers, finance directors — anyone earning at or above the threshold in a professional occupation.
+        </div>
+      </div>
+
+      <!-- CORE -->
+      <div class="stream-card core">
+        <div class="stream-icon">⚙️</div>
+        <div class="stream-name">Core Skills Stream</div>
+        <div class="stream-salary">Salary $76,515 — $141,209</div>
+        <div class="stream-desc">The main stream for most applicants. Your occupation must be on the Core Skills Occupation List (CSOL — 456 occupations). Covers healthcare, engineering, IT, education, trades and more.</div>
+        <div>
+          <span class="stream-tag tag-g">456 CSOL occupations</span>
+          <span class="stream-tag tag-g">4 years visa</span>
+          <span class="stream-tag tag-g">→ PR after 2 years</span>
+          <span class="stream-tag tag-a">Skills assessment needed</span>
+          <span class="stream-tag tag-a">Labour Market Testing</span>
+          <span class="stream-tag tag-a">4–8 months processing</span>
+        </div>
+        <div class="info-box ib-teal" style="margin-top:0.9rem;font-size:0.77rem">
+          <strong>Who this is for:</strong> Nurses, engineers, software developers, teachers, accountants, tradespeople — skilled workers earning between $76,515 and $141,210 in a CSOL occupation.
+        </div>
+      </div>
+
+      <!-- ESSENTIAL -->
+      <div class="stream-card essential">
+        <div class="stream-icon">🤝</div>
+        <div class="stream-name">Essential Skills Stream</div>
+        <div class="stream-salary">Below $76,515 — Labour Agreement</div>
+        <div class="stream-desc">For essential workers in the care economy — aged care, disability support, community services. Still in development. Requires a labour agreement between the employer and DHA.</div>
+        <div>
+          <span class="stream-tag tag-g">Aged care &amp; disability</span>
+          <span class="stream-tag tag-g">Community services</span>
+          <span class="stream-tag tag-r">Labour agreement required</span>
+          <span class="stream-tag tag-r">Still in development</span>
+          <span class="stream-tag tag-a">Union oversight</span>
+        </div>
+        <div class="info-box ib-amber" style="margin-top:0.9rem;font-size:0.77rem">
+          <strong>Who this is for:</strong> Aged care workers, disability support workers. Complex process — labour agreement must be negotiated between employer and DHA. Consult a MARA agent.
+        </div>
+      </div>
+    </div>
+
+    <!-- STREAM COMPARISON -->
+    <div class="card">
+      <div class="card-title">Stream Comparison at a Glance</div>
+      <div class="compare">
+        <div class="cmp-col">
+          <div class="cmp-head blue">Specialist Skills</div>
+          <div class="cmp-row"><div class="cmp-label">Min. salary</div><div class="cmp-val">$141,210</div></div>
+          <div class="cmp-row"><div class="cmp-label">Occupation list</div><div class="cmp-val">None required</div></div>
+          <div class="cmp-row"><div class="cmp-label">Skills assessment</div><div class="cmp-val">Not required</div></div>
+          <div class="cmp-row"><div class="cmp-label">Processing time</div><div class="cmp-val">7–53 days</div></div>
+          <div class="cmp-row"><div class="cmp-label">PR pathway</div><div class="cmp-val">186 after 2 yrs</div></div>
+          <div class="cmp-row"><div class="cmp-label">Visa length</div><div class="cmp-val">Up to 4 years</div></div>
+          <div class="cmp-row"><div class="cmp-label">Family included?</div><div class="cmp-val">Yes — full rights</div></div>
+        </div>
+        <div class="cmp-col">
+          <div class="cmp-head teal">Core Skills</div>
+          <div class="cmp-row"><div class="cmp-label">Min. salary</div><div class="cmp-val">$76,515</div></div>
+          <div class="cmp-row"><div class="cmp-label">Occupation list</div><div class="cmp-val">CSOL (456 occs)</div></div>
+          <div class="cmp-row"><div class="cmp-label">Skills assessment</div><div class="cmp-val">Required (most)</div></div>
+          <div class="cmp-row"><div class="cmp-label">Processing time</div><div class="cmp-val">4–8 months</div></div>
+          <div class="cmp-row"><div class="cmp-label">PR pathway</div><div class="cmp-val">186 after 2 yrs</div></div>
+          <div class="cmp-row"><div class="cmp-label">Visa length</div><div class="cmp-val">Up to 4 years</div></div>
+          <div class="cmp-row"><div class="cmp-label">Family included?</div><div class="cmp-val">Yes — full rights</div></div>
+        </div>
+        <div class="cmp-col">
+          <div class="cmp-head purple">Essential Skills</div>
+          <div class="cmp-row"><div class="cmp-label">Min. salary</div><div class="cmp-val">Below $76,515</div></div>
+          <div class="cmp-row"><div class="cmp-label">Occupation list</div><div class="cmp-val">Labour agreement</div></div>
+          <div class="cmp-row"><div class="cmp-label">Skills assessment</div><div class="cmp-val">Varies</div></div>
+          <div class="cmp-row"><div class="cmp-label">Processing time</div><div class="cmp-val">Varies</div></div>
+          <div class="cmp-row"><div class="cmp-label">PR pathway</div><div class="cmp-val">Varies by agreement</div></div>
+          <div class="cmp-row"><div class="cmp-label">Visa length</div><div class="cmp-val">Varies</div></div>
+          <div class="cmp-row"><div class="cmp-label">Family included?</div><div class="cmp-val">Generally yes</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY PROTECTIONS -->
+    <div class="card">
+      <div class="card-title">New Worker Protections (December 2024)</div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div class="info-box ib-teal" style="margin:0">
+          <strong>180-day portability — change employer without losing visa</strong>
+          If your employer terminates you or you choose to leave, you have 180 days to find a new approved sponsor. During this period you can work any job. Previously this was only 60 days.
+        </div>
+        <div class="info-box ib-teal" style="margin:0">
+          <strong>PR counts across multiple employers</strong>
+          The 2 years of work needed before applying for 186 PR can now be accumulated across multiple approved sponsors — not just one employer. This removes the "trapped employee" problem.
+        </div>
+        <div class="info-box ib-teal" style="margin:0">
+          <strong>SAF levy refund if you leave within 12 months</strong>
+          If you leave Australia before 12 months, the employer can apply for a partial SAF levy refund. Refund rules unchanged from previous framework.
+        </div>
+        <div class="info-box ib-amber" style="margin:0">
+          <strong>Employers cannot recover costs from employees</strong>
+          It is illegal for an employer to pass the SAF levy, SBS fee, or nomination fee costs on to the visa holder. Penalties up to $93,000 per breach.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 3 — OCCUPATION CHECK ═══════ -->
+  <div class="sec-content" id="sec-occupations">
+
+    <div class="info-box ib-blue" style="margin-bottom:1.25rem">
+      <strong>How occupation eligibility works for the SID 482 visa</strong>
+      For the Core Skills stream, your occupation must appear on the Core Skills Occupation List (CSOL). For the Specialist Skills stream, any professional occupation qualifies if you earn $141,210+. Trades, machine operators and labourers cannot access the Specialist stream.
+    </div>
+
+    <!-- SEARCH -->
+    <div class="card">
+      <div class="card-title">Search Your Occupation</div>
+      <div class="occ-search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="occ-search" id="occ-search-input" placeholder="Type your occupation (e.g. Software Engineer, Nurse, Accountant…)" oninput="searchOcc()" onfocus="openOccResults()">
+        <div class="occ-results" id="occ-results"></div>
+      </div>
+      <div class="occ-selected-display" id="occ-selected"></div>
+      <div id="occ-detail" style="display:none"></div>
+    </div>
+
+    <!-- CSOL INDUSTRIES -->
+    <div class="card">
+      <div class="card-title">CSOL Coverage — What's In and What's Out</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem">
+        <div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--green);margin-bottom:0.5rem">✓ ON THE CSOL (456 occupations)</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span>Healthcare — nurses, doctors, allied health</span>
+            <span>Engineering — civil, mechanical, electrical</span>
+            <span>Technology — software, networks, cybersecurity</span>
+            <span>Education — teachers, early childhood</span>
+            <span>Construction — project managers, surveyors</span>
+            <span>Accounting &amp; Finance</span>
+            <span>Social &amp; community services</span>
+            <span>Agriculture &amp; environment</span>
+            <span>Trades — electricians, plumbers, carpenters</span>
+            <span>Child care workers (new Dec 2024)</span>
+            <span>Data analysts &amp; scientists (new Dec 2024)</span>
+            <span>Supply chain analysts (new Dec 2024)</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--red);margin-bottom:0.5rem">✗ REMOVED FROM CSOL (Dec 2024)</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span>Café and Restaurant Manager</span>
+            <span>ICT Support Engineer</span>
+            <span>Graphic Designer</span>
+            <span>Marketing Specialist (some)</span>
+          </div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--amber);margin-top:1rem;margin-bottom:0.5rem">⚠ SPECIALIST STREAM ONLY (no CSOL)</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span>Removed occupations if earning $141K+</span>
+            <span>Senior executive roles</span>
+            <span>C-suite positions</span>
+            <span>Any professional occupation at $141K+</span>
+          </div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--red);margin-top:1rem;margin-bottom:0.5rem">✗ CANNOT ACCESS SPECIALIST STREAM</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span>Trades workers (ANZSCO Group 3)</span>
+            <span>Machine operators (ANZSCO Group 7)</span>
+            <span>Labourers (ANZSCO Group 8)</span>
+          </div>
+        </div>
+      </div>
+      <div class="info-box ib-blue" style="margin:0">
+        Always verify at the <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list" target="_blank" style="color:var(--blue)">official DHA CSOL list</a> — the list is updated by Jobs and Skills Australia and can change.
+      </div>
+    </div>
+
+    <!-- CAVEATS -->
+    <div class="card">
+      <div class="card-title">Occupation Caveats — 14 Special Conditions</div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Some CSOL occupations have additional requirements called "caveats." Even if your occupation is on the list, you must also meet the caveat to be eligible.</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem">
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem"><strong>Registered Nurse</strong> — must hold AHPRA registration or have applied for it</div>
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem"><strong>Medical Practitioners</strong> — must hold or be eligible for specialist registration</div>
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem"><strong>Engineering occupations</strong> — may require Engineers Australia assessment</div>
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem"><strong>Accountants</strong> — must have CPA/CA ANZ/IPA assessment</div>
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem"><strong>Teachers</strong> — must hold or be eligible for state teaching registration</div>
+        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.8rem;color:var(--muted)">+ 9 other occupation-specific caveats. Always check the official DHA caveat list for your ANZSCO code.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 4 — PR PATHWAY ═══════ -->
+  <div class="sec-content" id="sec-pathway">
+
+    <div class="info-box ib-teal" style="margin-bottom:1.5rem">
+      <strong>482 SID → Permanent Residency pathway (updated December 2024)</strong>
+      The SID 482 is not permanent — but it is a structured stepping stone to PR. After 2 years of sponsored work you can apply for the Subclass 186 Employer Nomination Scheme (Permanent Residence). Work can now be spread across multiple approved sponsors.
+    </div>
+
+    <!-- PR TIMELINE VISUAL -->
+    <div class="card">
+      <div class="card-title">Full Pathway — From Sponsorship to Permanent Residency</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot blue"></div>
+          <div class="tl-time">Start — Months 1–3</div>
+          <div class="tl-title">Employer Sponsorship Process</div>
+          <div class="tl-desc">Your employer applies for Standard Business Sponsorship (SBS) — $420 fee, 2–3 weeks processing. Simultaneously lodges nomination for your position. Nomination fee $330 + SAF levy. Both can be lodged at same time — you do not need to wait for SBS before lodging nomination.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">Month 1–8 (varies by stream)</div>
+          <div class="tl-title">Visa Application Processing</div>
+          <div class="tl-desc">You lodge your visa application. <strong>Specialist Skills:</strong> 7–53 days. <strong>Core Skills:</strong> 4–8 months. Includes health check, police clearance, skills assessment (if required). Family members can be included — full work and study rights.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">Month 1–8+</div>
+          <div class="tl-title">482 SID Visa Granted — Work Begins</div>
+          <div class="tl-desc">You arrive in Australia (or continue working if onshore) in your nominated occupation. Visa is valid for up to 4 years. You work for your approved sponsor. Clock toward PR begins.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">After 2 Years of Sponsored Work</div>
+          <div class="tl-title">186 PR Eligibility Unlocked</div>
+          <div class="tl-desc">After 2 years of full-time sponsored work (reduced from 3 years), you become eligible to apply for the Subclass 186 Employer Nomination Scheme — permanent residency. The 2 years can be across multiple approved sponsors. You must be under 45 at time of nomination (some exceptions apply).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot green"></div>
+          <div class="tl-time">Month 24–36 — PR Application</div>
+          <div class="tl-title">186 ENS — Permanent Residency Granted</div>
+          <div class="tl-desc">Your employer nominates you for permanent residency. You lodge the 186 visa application. Processing: typically 6–18 months. No points test — employer support is the key requirement. 92% success rate for TRT stream applicants in 2025.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot green"></div>
+          <div class="tl-time">Month 30–50+ (total journey)</div>
+          <div class="tl-title">Australian Permanent Resident</div>
+          <div class="tl-desc">Permanent residency granted. You can live and work anywhere in Australia with any employer. After 4 years of permanent residency (1 year as citizen), you can apply for Australian citizenship.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PR REQUIREMENTS -->
+    <div class="card">
+      <div class="card-title">186 PR Requirements — What You Need</div>
+      <table class="cost-table">
+        <thead><tr><th>Requirement</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Work requirement</td><td>2 years full-time sponsored work in nominated occupation (across 1 or more approved sponsors)</td></tr>
+          <tr><td>Age at nomination</td><td>Under 45 years. Exceptions: medical practitioners, academics, scientists earning $141K+</td></tr>
+          <tr><td>English</td><td>Competent English — IELTS 6.0 all bands (or equivalent)</td></tr>
+          <tr><td>Skills assessment</td><td>Required for most occupations unless already held for 482 application</td></tr>
+          <tr><td>Employer nomination</td><td>Your employer must nominate you and meet market salary requirements</td></tr>
+          <tr><td>Health &amp; character</td><td>Full health checks + police clearances required again at 186 stage</td></tr>
+          <tr><td>Application fee</td><td>$4,770 (primary applicant). Additional fees for dependants.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ALTERNATIVE PATHWAYS -->
+    <div class="card">
+      <div class="card-title">Alternative PR Pathways from 482</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.3rem;color:var(--teal)">Points-tested pathway (189 / 190 / 491)</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">While on 482, you can build points and apply for a points-tested skilled visa independently of your employer. If your occupation is on MLTSSL and you have enough points, this can be faster than waiting for 186.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.3rem;color:var(--blue)">494 Employer Sponsored Regional (regional alternative)</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">If your employer is in a regional area, you may be eligible for the 494 visa instead. Leads to 191 PR after 3 years in regional Australia.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.3rem;color:var(--purple)">Distinguished Talent (Subclass 858)</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">For internationally recognised talent in arts, sport, research, academia. No employer required. Directly to PR.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 5 — COSTS ═══════ -->
+  <div class="sec-content" id="sec-costs">
+
+    <div class="info-box ib-amber" style="margin-bottom:1.25rem">
+      <strong>⚠️ Important: Employers CANNOT pass costs to employees</strong>
+      By law, employers cannot recover the SAF levy, SBS fee, or nomination fee from the visa applicant. Doing so carries fines up to $93,000 per breach. If an employer asks you to pay these — that is illegal.
+    </div>
+
+    <!-- EMPLOYER COSTS -->
+    <div class="card">
+      <div class="card-title">Employer Costs — What the Business Pays</div>
+      <table class="cost-table">
+        <thead><tr><th>Fee</th><th>What it is</th><th class="emp">Amount</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Standard Business Sponsorship (SBS)<span class="cost-badge cb-emp">Employer</span></td>
+            <td>One-off application to become an approved sponsor. Valid 5 years.</td>
+            <td class="emp">$420</td>
+          </tr>
+          <tr>
+            <td>Nomination fee<span class="cost-badge cb-emp">Employer</span></td>
+            <td>Per worker nominated. Paid each time you nominate a new worker.</td>
+            <td class="emp">$330</td>
+          </tr>
+          <tr>
+            <td>SAF Levy — Small business<span class="cost-badge cb-emp">Employer</span></td>
+            <td>Turnover under $10M. Per year of visa. 4-year visa = $4,800 total.</td>
+            <td class="emp">$1,200/yr</td>
+          </tr>
+          <tr>
+            <td>SAF Levy — Large business<span class="cost-badge cb-emp">Employer</span></td>
+            <td>Turnover $10M+. Per year of visa. 4-year visa = $7,200 total.</td>
+            <td class="emp">$1,800/yr</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2">Typical total employer cost (small biz, 4-year Core Skills visa)</td>
+            <td class="emp">~$5,670</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2">Typical total employer cost (large biz, 4-year Core Skills visa)</td>
+            <td class="emp">~$8,670</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- APPLICANT COSTS -->
+    <div class="card">
+      <div class="card-title">Applicant Costs — What You Pay</div>
+      <table class="cost-table">
+        <thead><tr><th>Fee</th><th>What it is</th><th class="app">Amount</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Visa Application Charge (VAC)<span class="cost-badge cb-app">You pay</span></td>
+            <td>Primary applicant. Updated July 2025.</td>
+            <td class="app">$3,210</td>
+          </tr>
+          <tr>
+            <td>VAC — Spouse / partner<span class="cost-badge cb-app">You pay</span></td>
+            <td>Per adult dependent included in application.</td>
+            <td class="app">$3,210</td>
+          </tr>
+          <tr>
+            <td>VAC — Children under 18<span class="cost-badge cb-app">You pay</span></td>
+            <td>Per dependent child.</td>
+            <td class="app">$805</td>
+          </tr>
+          <tr>
+            <td>Health examination<span class="cost-badge cb-app">You pay</span></td>
+            <td>Per applicant. Panel physician cost varies.</td>
+            <td class="app">$300–600</td>
+          </tr>
+          <tr>
+            <td>Police clearance<span class="cost-badge cb-app">You pay</span></td>
+            <td>Required for each country lived in 12+ months in last 10 years.</td>
+            <td class="app">$30–100 each</td>
+          </tr>
+          <tr>
+            <td>Skills assessment<span class="cost-badge cb-app">You pay</span></td>
+            <td>Core Skills stream only. Varies by assessing authority.</td>
+            <td class="app">$500–1,000</td>
+          </tr>
+          <tr>
+            <td>English test (if required)<span class="cost-badge cb-app">You pay</span></td>
+            <td>IELTS / PTE / TOEFL. Not needed for native English speakers.</td>
+            <td class="app">$340–380</td>
+          </tr>
+          <tr>
+            <td>Health insurance<span class="cost-badge cb-app">You pay</span></td>
+            <td>Required for full visa duration. Single person estimate.</td>
+            <td class="app">$1,200–2,000/yr</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2">Typical total for solo applicant (Core Skills)</td>
+            <td class="app">~$5,500–6,500</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2">Typical total for couple + 1 child (Core Skills)</td>
+            <td class="app">~$10,000–12,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MIGRATION AGENT -->
+    <div class="card">
+      <div class="card-title">Migration Agent Fees (Optional)</div>
+      <div class="info-box ib-blue" style="margin-bottom:0.75rem">
+        Using a MARA-registered agent is optional but significantly reduces errors. Agents typically increase approval success rates and manage the complex documentation requirements.
+      </div>
+      <table class="cost-table">
+        <thead><tr><th>Service</th><th>Typical cost</th></tr></thead>
+        <tbody>
+          <tr><td>Full 482 application (employer + applicant)</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">$5,500 – $7,500</td></tr>
+          <tr><td>Employer sponsorship only</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">$1,500 – $2,500</td></tr>
+          <tr><td>Applicant visa only (with existing nomination)</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">$2,000 – $3,500</td></tr>
+          <tr><td>Labour Market Testing advice only</td><td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">$500 – $1,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 6 — HOW TO GET SPONSORED ═══════ -->
+  <div class="sec-content" id="sec-howto">
+
+    <!-- TOGGLE EMPLOYEE / EMPLOYER -->
+    <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem">
+      <button class="pill sel" id="btn-emp" onclick="showHowTo('employee')">👤 I'm looking for sponsorship</button>
+      <button class="pill" id="btn-er" onclick="showHowTo('employer')">🏢 I'm an employer wanting to sponsor</button>
+    </div>
+
+    <!-- EMPLOYEE VIEW -->
+    <div id="view-employee">
+      <div class="info-box ib-teal" style="margin-bottom:1.25rem">
+        <strong>The reality of finding sponsorship</strong>
+        Most employers who sponsor do so because they genuinely cannot find a local candidate — not as a favour. Your best chance is targeting employers who already sponsor (they have existing SBS approval and know the process) and industries with genuine shortages.
+      </div>
+
+      <div class="card">
+        <div class="card-title">Step-by-Step — Getting Sponsored</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Confirm your occupation is on the CSOL</h4>
+              <p>Check the official DHA CSOL list to confirm your ANZSCO occupation code is eligible. If you earn $141,210+, skip this — Specialist stream has no list requirement.</p>
+              <div class="step-time">→ 1 day · Free at immi.homeaffairs.gov.au</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Get your skills assessment (Core Skills only)</h4>
+              <p>Most Core Skills occupations require a positive skills assessment before the employer lodges your nomination. Start early — Engineers Australia, CPA, AHPRA, ACS, VETASSESS etc. Takes 2–4 months.</p>
+              <div class="step-time">→ 2–4 months · $500–$1,000</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Find an employer willing to sponsor</h4>
+              <p>Target employers who already have SBS approval — they're faster and more familiar with the process. Use LinkedIn to filter "Visa Sponsorship" in Australia. Target industries with genuine shortages (healthcare, tech, engineering, trades). Be upfront about needing sponsorship early in the conversation.</p>
+              <div class="step-time">→ Timeline varies · Research employers at visatasker.com for recently active sponsors</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Employer lodges Standard Business Sponsorship (SBS)</h4>
+              <p>If not already an approved sponsor, your employer applies for SBS first — $420 fee, 2–3 weeks processing. They can lodge the nomination at the same time — no need to wait.</p>
+              <div class="step-time">→ 2–3 weeks · $420 (employer pays)</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h4>Employer lodges nomination</h4>
+              <p>Employer nominates you for the specific position. Must demonstrate Labour Market Testing (genuine attempt to find an Australian first — usually 28 days of advertising). Nomination fee $330 + SAF levy.</p>
+              <div class="step-time">→ 1–3 months · SAF levy $1,200–$7,200 (employer pays, cannot be passed to you)</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h4>You lodge visa application</h4>
+              <p>Once nomination is lodged (does not need approval first), you can lodge your visa application. Gather: passport, English test results, skills assessment, health check, police clearances, employment evidence.</p>
+              <div class="step-time">→ Specialist: 7–53 days · Core Skills: 4–8 months · $3,210 (you pay)</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+              <h4>Visa granted — work begins</h4>
+              <p>You work for your approved sponsor in the nominated occupation. Keep records of your employment dates — this is evidence for your 186 PR application. You need 2 years of full-time work before applying for PR.</p>
+              <div class="step-time">→ Up to 4 years · Clock toward PR starts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Industries With Highest Sponsorship Activity</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Healthcare</div>
+            <div style="color:var(--muted)">Hospitals, aged care, community health. Nurses, GPs, allied health.</div>
+          </div>
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Technology</div>
+            <div style="color:var(--muted)">Software companies, banks, government IT. Engineers, developers, cybersecurity.</div>
+          </div>
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Engineering &amp; Construction</div>
+            <div style="color:var(--muted)">Civil, structural, electrical engineers. Quantity surveyors. Active in QLD and WA.</div>
+          </div>
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Education</div>
+            <div style="color:var(--muted)">Government and private schools. Secondary school and special needs teachers.</div>
+          </div>
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Trades</div>
+            <div style="color:var(--muted)">Electricians, plumbers, carpenters. Construction boom in QLD, WA, VIC.</div>
+          </div>
+          <div style="background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem">
+            <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Accounting &amp; Finance</div>
+            <div style="color:var(--muted)">Big4, mid-tier firms, corporate finance. More competitive than other sectors.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Common Rejection Reasons — Avoid These</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem">
+          <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Salary below market rate</strong> — Your offer must meet both the TSMIT ($76,515) AND the market salary rate for your occupation. DHA checks both. Low-balled offers are a leading cause of nomination refusal.</div>
+          <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Inadequate Labour Market Testing</strong> — Employer must demonstrate genuine attempts to hire locally (typically 28 days advertising). Weak LMT is the second most common refusal reason.</div>
+          <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Skills assessment not matching occupation</strong> — Your skills assessment must be in the exact nominated occupation code. Mismatched ANZSCO codes cause refusals.</div>
+          <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Insufficient work experience evidence</strong> — Employment references, payslips, tax records. 1 year minimum within last 5 years. Missing documentation is the most common delay cause.</div>
+          <div class="info-box ib-amber" style="margin:0;font-size:0.78rem"><strong>Expired English test results</strong> — English tests are valid for 3 years. Check your test date before lodging.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYER VIEW -->
+    <div id="view-employer" style="display:none">
+      <div class="info-box ib-blue" style="margin-bottom:1.25rem">
+        <strong>Sponsoring a worker — what you need to know as an employer</strong>
+        You must be approved as a Standard Business Sponsor. You pay the SAF levy and cannot recover it from the employee. The process has three stages that can largely run in parallel.
+      </div>
+
+      <div class="card">
+        <div class="card-title">Employer Obligations — Ongoing</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem">
+          <div class="info-box ib-teal" style="margin:0;font-size:0.78rem"><strong>Pay market salary rate</strong> — You must pay the higher of the TSMIT ($76,515) or the market salary rate for the occupation and location. DHA conducts salary audits.</div>
+          <div class="info-box ib-teal" style="margin:0;font-size:0.78rem"><strong>Do not recover costs</strong> — You cannot ask the worker to reimburse SAF levy, SBS, or nomination fees. Fine up to $93,000 per breach.</div>
+          <div class="info-box ib-teal" style="margin:0;font-size:0.78rem"><strong>Notify DHA of changes</strong> — If the worker's role changes significantly, you may need to lodge a new nomination. Termination must be notified.</div>
+          <div class="info-box ib-teal" style="margin:0;font-size:0.78rem"><strong>Keep employment records</strong> — DHA can audit your sponsorship at any time. Keep payslips, employment contracts and job descriptions.</div>
+          <div class="info-box ib-amber" style="margin:0;font-size:0.78rem"><strong>Labour Market Testing validity</strong> — LMT results are valid for 4 months. If the nomination is not lodged within 4 months, you may need to re-advertise.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Step-by-Step — Sponsoring a Worker</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Apply for Standard Business Sponsorship (SBS)</h4>
+              <p>Lodge via ImmiAccount. Provide business registration (ABN), Business Activity Statements, commitment to Australian employment law. Valid for 5 years once approved.</p>
+              <div class="step-time">→ 2 weeks – 4 months · $420</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Conduct Labour Market Testing (LMT)</h4>
+              <p>Advertise the position genuinely for at least 28 days on Australian job platforms (Seek, LinkedIn, industry platforms). Keep all records — number of applicants, why none were suitable. LMT is valid for 4 months.</p>
+              <div class="step-time">→ Minimum 28 days · Can run alongside SBS application</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Lodge nomination for the worker</h4>
+              <p>Nominate the specific worker for the specific position. Pay SAF levy upfront ($1,200–$1,800/year of visa × visa years). Include position description, salary evidence, LMT results.</p>
+              <div class="step-time">→ 1–4 months processing · $330 + SAF levy</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Worker lodges visa application</h4>
+              <p>Worker can lodge as soon as nomination is lodged (not approved). They prepare their own documents — English test, skills assessment, health check, police clearances.</p>
+              <div class="step-time">→ Worker-managed · $3,210 worker pays</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h4>Visa approved — manage ongoing compliance</h4>
+              <p>Keep employment records. Pay market salary. Notify DHA of any changes. When the worker reaches 2 years, you can nominate them for 186 permanent residency if you wish to retain them permanently.</p>
+              <div class="step-time">→ Ongoing · 186 PR nomination at 2-year mark</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dis">
+      <strong>⚠️ Historical pathways, not advice:</strong> The information on this page reflects publicly available DHA rules and general patterns in visa sponsorship. Every case is different. Salary, occupation caveats, LMT requirements and employer circumstances all affect outcomes. Consult a MARA-registered migration agent before lodging. Find one at <a href="https://www.mara.gov.au" target="_blank" style="color:var(--teal)">mara.gov.au</a>.
+    </div>
+  </div>
+
+  <!-- ═══════ TAB 7 — WHILE ON THE VISA ═══════ -->
+  <div class="sec-content" id="sec-conditions">
+
+    <!-- CONDITION 8607 -->
+    <div class="card">
+      <div class="card-title">Visa Condition 8607 — The Master Rule</div>
+      <div class="info-box ib-amber" style="margin-bottom:1rem">
+        <strong>⚠️ This condition applies to every primary 482 holder. Breaching it can result in visa cancellation under s116 of the Migration Act.</strong>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal);margin-bottom:0.3rem">Rule 1 — Work only in your nominated occupation</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.6">You must perform the duties of the exact ANZSCO occupation your visa was granted for. If your job title changes or your duties shift significantly — even at the same employer — this may breach condition 8607. A Software Engineer cannot perform ICT Manager duties without a new nomination.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal);margin-bottom:0.3rem">Rule 2 — Work only for your approved sponsor</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.6">You must work for the business that sponsored you — or an associated entity of that Australian business. You cannot work for a competitor or unrelated employer while employed by your sponsor. Exception: during the 180-day portability window (see below), you can work any job.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal);margin-bottom:0.3rem">Rule 3 — Start work within 90 days</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.6">You must start working for your sponsor within 90 days of your visa being granted (if you were onshore) or within 90 days of first arriving in Australia (if you were offshore). Missing this deadline is a breach.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal);margin-bottom:0.3rem">Rule 4 — Hold required licences within 90 days</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.6">If your occupation requires a licence or registration (e.g. AHPRA for nurses, state teaching registration for teachers, electrical licence for electricians) you must obtain it within 90 days of starting work and keep it current. If your licence is refused or cancelled, notify DHA immediately and stop performing duties requiring that licence.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK RIGHTS -->
+    <div class="card">
+      <div class="card-title">Work Rights — What You Can and Cannot Do</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <div>
+          <div style="font-size:0.72rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem">✓ You CAN</div>
+          <div style="display:flex;flex-direction:column;gap:0.4rem">
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Work full-time for your sponsor in your nominated occupation</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Work for an associated entity of your Australian sponsor</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Work any job during the 180-day portability window</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Study at any Australian institution (no government aid)</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Travel freely in and out of Australia while visa is valid</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Apply for other visas (e.g. points-tested 189/190) simultaneously</div>
+            <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Include your partner and children — they get full work and study rights</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem">✗ You CANNOT</div>
+          <div style="display:flex;flex-direction:column;gap:0.4rem">
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Work for a different employer while sponsored (outside portability window)</div>
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Perform duties outside your nominated ANZSCO occupation without a new nomination</div>
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Work a second job for another employer (unless in 180-day window)</div>
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Access Medicare (unless your country has a reciprocal health agreement with Australia)</div>
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Access Centrelink or most government financial assistance</div>
+            <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:0.65rem;font-size:0.78rem;color:var(--text)">Stay beyond visa expiry — must depart or have applied for a new visa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILY RIGHTS -->
+    <div class="card">
+      <div class="card-title">Family Members — Rights and Conditions</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
+            <span style="font-size:1.1rem">💑</span>
+            <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700">Spouse / De Facto Partner</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span style="color:var(--green)">✓ Full unrestricted work rights — any job, any employer, any industry, full-time or part-time</span>
+            <span style="color:var(--green)">✓ Full study rights — any institution, any course</span>
+            <span style="color:var(--green)">✓ Can start their own business</span>
+            <span style="color:var(--amber)">→ Must maintain their own adequate health insurance</span>
+            <span style="color:var(--amber)">→ Their visa is tied to the primary holder's visa — if primary visa cancelled, secondary visa may also cease</span>
+            <span>Both same-sex and opposite-sex partners are eligible. De facto relationship must be genuine and ongoing.</span>
+          </div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
+            <span style="font-size:1.1rem">👧</span>
+            <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700">Dependent Children</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;font-size:0.78rem;color:var(--muted)">
+            <span style="color:var(--green)">✓ Can attend school in Australia</span>
+            <span style="color:var(--green)">✓ Study rights for all levels</span>
+            <span style="color:var(--amber)">→ Public school fees may apply depending on the state — check your state education department</span>
+            <span style="color:var(--amber)">→ Must be under 18, or under 23 if financially dependent and not married/de facto</span>
+            <span style="color:var(--amber)">→ Application fee: $805 per child under 18</span>
+          </div>
+        </div>
+        <div class="info-box ib-blue" style="margin:0;font-size:0.78rem">
+          <strong>Health insurance is mandatory for all family members</strong> included in the 482 application. Each person must maintain adequate health cover for the full duration of the visa unless their country has a reciprocal healthcare agreement with Australia (e.g. UK, Ireland, New Zealand, Sweden, Netherlands, Belgium, Finland, Italy, Malta, Norway, Slovenia).
+        </div>
+      </div>
+    </div>
+
+    <!-- CHANGING EMPLOYERS -->
+    <div class="card">
+      <div class="card-title">Changing Employers — Step by Step</div>
+      <div class="info-box ib-teal" style="margin-bottom:1rem">
+        <strong>The 180-day portability rule (new Dec 2024)</strong> — If you lose your job or resign, you have 180 days to find a new approved sponsor. During this time you can work any job to support yourself. Maximum total time without compliant sponsorship across the whole visa: 365 days.
+      </div>
+
+      <div style="font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:0.75rem">Scenario A — Same occupation, new employer</div>
+      <div class="steps" style="margin-bottom:1.25rem">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Employment ends — 180-day clock starts</h4>
+            <p>From the day your employment with your sponsor ceases, the 180-day portability window begins. You can work any job during this time. Your old employer must notify DHA of the cessation via ImmiAccount.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>New employer lodges nomination for you</h4>
+            <p>Your new employer must be an approved Standard Business Sponsor (or become one — $420, 2–3 weeks). They lodge a new nomination for you in the same ANZSCO occupation. You do NOT need a new visa grant if the occupation is identical.</p>
+            <div class="step-time">→ Nomination processing: 1–4 months</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Wait for nomination approval before starting</h4>
+            <p>⚠️ Critical — you cannot start working for the new employer in your nominated occupation until the new nomination is approved. Starting before approval breaches condition 8607. You can continue working in any other job during the wait.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Begin work — PR clock continues</h4>
+            <p>Once the nomination is approved, start work immediately. Your PR clock continues from your previous 482 employment — the 2 years counts across multiple approved sponsors.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:0.75rem">Scenario B — Different occupation, new employer</div>
+      <div class="info-box ib-amber" style="margin:0">
+        If your new role is a different ANZSCO occupation code from your current nomination, you need <strong>both</strong> a new nomination AND a new 482 visa application. You cannot start the new occupation until the new visa is granted. This takes 4–8 months for Core Skills stream.
+      </div>
+    </div>
+
+    <!-- ENGLISH TEST EQUIVALENTS -->
+    <div class="card">
+      <div class="card-title">English Test Requirements — All Accepted Tests</div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">All tests must be sat in-person at an approved test centre. Remote/online tests are not accepted (rule effective 7 August 2025). Tests are valid for 3 years from the original test date.</p>
+      <table class="cost-table">
+        <thead><tr><th>Test</th><th>Minimum score required</th><th style="text-align:right">Cost (approx.)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>IELTS Academic or General</td>
+            <td>5.0 in every band (Listening, Reading, Writing, Speaking)</td>
+            <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">~$340–380</td>
+          </tr>
+          <tr>
+            <td>PTE Academic</td>
+            <td>36 in each of the four communicative skills (from 13 Sep 2025 — new scoring)</td>
+            <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">~$360–400</td>
+          </tr>
+          <tr>
+            <td>TOEFL iBT</td>
+            <td>4 in Listening, 4 in Reading, 14 in Writing, 14 in Speaking</td>
+            <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">~$350–390</td>
+          </tr>
+          <tr>
+            <td>Cambridge C1 Advanced / C2 Proficiency</td>
+            <td>154 overall, no band below 154</td>
+            <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">~$380–420</td>
+          </tr>
+          <tr>
+            <td>OET (Occupational English Test)</td>
+            <td>B in each of the four components (healthcare occupations only)</td>
+            <td style="text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)">~$550–600</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="info-box ib-teal" style="margin-top:0.75rem;margin-bottom:0;font-size:0.78rem">
+        <strong>Exempt from English test:</strong> Passport holders from UK, USA, Canada, New Zealand, Republic of Ireland. Secondary applicants (partner, children) do not need to provide English evidence.
+      </div>
+    </div>
+
+    <!-- HK PASSPORT -->
+    <div class="card">
+      <div class="card-title">Hong Kong Passport Holders — Special Provisions</div>
+      <div class="info-box ib-blue" style="margin-bottom:1rem">
+        Hong Kong SAR and British National Overseas (BNO) passport holders have specific concessions under Australian law, introduced in response to political changes in Hong Kong from 2020.
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Visa Duration</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text)">5 years</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">All streams. Standard applicants get 4 years maximum.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">PR Pathway</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text)">Subclass 189</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">After 4 years in Australia on qualifying visa. No points test required.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Regional PR Pathway</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text)">Subclass 191</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">After 3 years living and working exclusively in regional Australia.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Condition 8607</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text)">Still applies</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">Same work conditions as all 482 holders despite the extended visa.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRAVEL -->
+    <div class="card">
+      <div class="card-title">Travelling While on the 482</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;font-size:0.8rem">
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Travel freely in and out of Australia</div>
+          <div style="color:var(--muted)">The 482 SID visa allows multiple entries. You can travel internationally and re-enter Australia freely for the full duration of the visa — no travel facility expiry to worry about (unlike some visas where travel rights expire separately).</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;font-size:0.8rem">
+          <div style="font-weight:700;color:var(--amber);margin-bottom:0.25rem">⚠️ Do not stay overseas so long you breach Condition 8607</div>
+          <div style="color:var(--muted)">While you can travel, you must return and continue working for your sponsor to meet your work obligations. Extended overseas stays may be treated as abandonment of your sponsored position.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;font-size:0.8rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Check your visa expiry before booking travel</div>
+          <div style="color:var(--muted)">If your 482 expires while you are overseas, you cannot re-enter on that visa. Always check your visa validity at immi.homeaffairs.gov.au before travelling and ensure any new visa or bridging visa is in place if needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEALTH INSURANCE -->
+    <div class="card">
+      <div class="card-title">Health Insurance — Mandatory Requirement</div>
+      <div class="info-box ib-amber" style="margin-bottom:0.75rem">
+        <strong>Health insurance is not optional.</strong> All 482 primary and secondary visa holders must maintain adequate health insurance for the entire visa period. Failure to maintain it is a breach of visa conditions.
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.8rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">What counts as "adequate"</div>
+          <div style="color:var(--muted)">A recognised private health insurance policy covering hospital and medical treatment in Australia. Must cover all visa holders named in the application.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Reciprocal healthcare exemptions</div>
+          <div style="color:var(--muted)">Citizens of UK, Ireland, New Zealand, Sweden, Netherlands, Belgium, Finland, Italy, Malta, Norway and Slovenia may access Medicare and may be exempt. Check the current reciprocal healthcare agreement list at the Department of Health website.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Typical annual cost</div>
+          <div style="color:var(--muted)">Solo: $1,200–$2,000/year · Couple: $2,400–$3,500/year · Family: $3,000–$5,000/year. Costs vary by provider and level of cover.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISA REFUSAL & APPEAL -->
+    <div class="card">
+      <div class="card-title">If Your Application is Refused — What Happens</div>
+      <div class="info-box ib-red" style="margin-bottom:1rem;font-size:0.8rem">
+        <strong>38% of 482 refusals are nomination refusals</strong> — meaning the employer's nomination failed, which automatically triggers a visa refusal. A refusal is not always final.
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--red);margin-bottom:0.4rem">Step 1 — You have 21 calendar days to appeal</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">From the date of the refusal letter, you have exactly 21 days to lodge a Merits Review application with the Administrative Review Tribunal (ART). This deadline is absolute — missing it removes your right to review. If you are onshore at the time of refusal, you will typically be granted a Bridging Visa A (BVA) allowing you to remain in Australia while the review is processed.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--amber);margin-bottom:0.4rem">Step 2 — Merits Review at the ART</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">The Administrative Review Tribunal takes a fresh look at your case. You can provide new and updated evidence that was not in your original application. Success rate is approximately 32% when fresh evidence is supplied. The ART cannot grant the visa itself — a successful review sends the case back to DHA for reconsideration.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:1rem">
+          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--blue);margin-bottom:0.4rem">Step 3 — Other options if review is unsuccessful</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.6">
+            <strong style="color:var(--text)">Ministerial Intervention</strong> — For compelling or compassionate circumstances. Not guaranteed and rarely granted.<br><br>
+            <strong style="color:var(--text)">Judicial Review (Federal Circuit Court)</strong> — For legal errors only, not factual disagreements.<br><br>
+            <strong style="color:var(--text)">Re-lodge from offshore</strong> — If the underlying issues are fixed (e.g. employer improves their LMT, nomination is re-drafted), a fresh application can be lodged from outside Australia.
+          </div>
+        </div>
+        <div class="info-box ib-amber" style="margin:0;font-size:0.78rem">
+          <strong>Section 48 bar — important onshore restriction:</strong> If you are in Australia on a Bridging Visa after a refusal, Section 48 of the Migration Act prevents you from lodging most other visa types onshore. Limited exceptions include: Partner visa (820/801), some Skilled visas (190/491/494), and Protection visas.
+        </div>
+      </div>
+    </div>
+
+    <!-- VISA CANCELLATION -->
+    <div class="card">
+      <div class="card-title">Visa Cancellation — What Can Trigger It</div>
+      <div style="display:flex;flex-direction:column;gap:0.45rem">
+        <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Breaching Condition 8607</strong> — Working outside your occupation or for an unauthorised employer. DHA can cancel under Section 116 of the Migration Act.</div>
+        <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Your sponsor's sponsorship is cancelled</strong> — If DHA bars or cancels your employer's Standard Business Sponsorship, this directly affects your visa status.</div>
+        <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Character or health failure</strong> — Conviction for a serious offence, or failure to maintain required health standards.</div>
+        <div class="info-box ib-red" style="margin:0;font-size:0.78rem"><strong>Providing false information</strong> — Any misrepresentation in your application — documents, employment history, qualifications — is grounds for immediate cancellation.</div>
+        <div class="info-box ib-amber" style="margin:0;font-size:0.78rem"><strong>If cancelled:</strong> You have the right to a Merits Review (if cancelled inside Australia). You must depart within the period stated on the cancellation notice. A cancelled visa creates a 3-year re-entry ban in most circumstances.</div>
+      </div>
+    </div>
+
+    <!-- TAX STATUS NOTE -->
+    <div class="card">
+      <div class="card-title">Tax and Medicare — Quick Facts</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.8rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Tax residency is separate from visa status</div>
+          <div style="color:var(--muted)">You can be a tax resident of Australia on a temporary visa. Tax residency is determined by your intentions and circumstances — not your visa subclass. Most 482 holders working full-time in Australia are treated as tax residents and taxed at resident rates (more favourable than non-resident rates). Confirm your status with an Australian accountant.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Medicare Levy Surcharge</div>
+          <div style="color:var(--muted)">If you earn above $93,000 (single) and do not have private hospital cover, you may be subject to the Medicare Levy Surcharge (1–1.5% of income) even as a temporary visa holder. Private health insurance often costs less than the surcharge.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.25rem">Superannuation</div>
+          <div style="color:var(--muted)">Your employer must pay superannuation (11.5% of base salary from Jul 2024) regardless of your visa status. You can claim your super when you permanently leave Australia via a Departing Australia Superannuation Payment (DASP) — though tax is withheld at 65%.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div style="background:linear-gradient(135deg,var(--td),var(--bd));border:1px solid var(--tb);border-radius:16px;padding:2rem;text-align:center;margin-top:2rem">
+    <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.5rem">Also targeting skilled PR through points?</div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.25rem;max-width:420px;margin-left:auto;margin-right:auto">While on a 482 visa you can simultaneously build your points score for 189 / 190 / 491. Many applicants use the 482 as the income base while pursuing points-tested PR independently.</p>
+    <a href="/tool" style="display:inline-block;padding:0.8rem 1.75rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none">Check My PR Points Score →</a>
+  </div>
+
+</div><!-- end main -->
+
+<footer>
+  <div style="margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.2rem">
+    <a href="/">Home</a><a href="/tool">PR Tool</a><a href="/policy-updates">Policy Updates</a><a href="/points-calculator">Points Calculator</a>
+  </div>
+  <div>© 2026 VisaIQ · Not migration advice · All data sourced from Department of Home Affairs</div>
+</footer>
+
+<script>
+// ── OCCUPATION DATA ────────────────────────────────
+const OCCS = [
+  {n:'Accountant (General)',csol:true,stream:'Core',assess:'CPA / CA ANZ / IPA',note:'Skills assessment required. Caveats may apply based on specific accounting role.'},
+  {n:'Auditor',csol:true,stream:'Core',assess:'CPA / CA ANZ / IPA',note:''},
+  {n:'Software Engineer / Developer',csol:true,stream:'Core or Specialist',assess:'ACS',note:'Pro-rata occupation for 189. Specialist stream if earning $141K+.'},
+  {n:'Systems Analyst',csol:true,stream:'Core',assess:'ACS',note:''},
+  {n:'Network Engineer',csol:true,stream:'Core',assess:'ACS',note:''},
+  {n:'Data Analyst / Data Scientist',csol:true,stream:'Core',assess:'ACS',note:'Newly added to CSOL December 2024.'},
+  {n:'Cybersecurity Specialist',csol:true,stream:'Core or Specialist',assess:'ACS',note:''},
+  {n:'ICT Manager',csol:true,stream:'Core or Specialist',assess:'ACS',note:''},
+  {n:'Civil Engineer',csol:true,stream:'Core',assess:'Engineers Australia',note:''},
+  {n:'Structural Engineer',csol:true,stream:'Core',assess:'Engineers Australia',note:''},
+  {n:'Mechanical Engineer',csol:true,stream:'Core',assess:'Engineers Australia',note:''},
+  {n:'Electrical Engineer',csol:true,stream:'Core',assess:'Engineers Australia',note:''},
+  {n:'Chemical Engineer',csol:true,stream:'Core',assess:'Engineers Australia',note:''},
+  {n:'Project Manager',csol:true,stream:'Core',assess:'AIPM / Engineers Australia',note:'ANZSCO code matters — verify correct code.'},
+  {n:'Registered Nurse',csol:true,stream:'Core',assess:'ANMAC',note:'AHPRA registration or eligibility required. Caveat applies.'},
+  {n:'General Practitioner',csol:true,stream:'Core or Specialist',assess:'AMC',note:'Must hold or be eligible for specialist registration. Caveat applies.'},
+  {n:'Medical Specialist',csol:true,stream:'Core or Specialist',assess:'AMC',note:'Specialist registration required. Caveat applies.'},
+  {n:'Physiotherapist',csol:true,stream:'Core',assess:'AHPRA / APC',note:''},
+  {n:'Occupational Therapist',csol:true,stream:'Core',assess:'AHPRA',note:''},
+  {n:'Pharmacist',csol:true,stream:'Core',assess:'AHPRA / APC',note:''},
+  {n:'Psychologist',csol:true,stream:'Core',assess:'AHPRA',note:''},
+  {n:'Dentist',csol:true,stream:'Core or Specialist',assess:'ADC',note:''},
+  {n:'Radiographer',csol:true,stream:'Core',assess:'AHPRA',note:''},
+  {n:'Paramedic',csol:true,stream:'Core',assess:'AHPRA',note:''},
+  {n:'Teacher (Secondary)',csol:true,stream:'Core',assess:'State teaching authority',note:'State teaching registration or eligibility required. Caveat applies.'},
+  {n:'Teacher (Primary)',csol:true,stream:'Core',assess:'State teaching authority',note:''},
+  {n:'Early Childhood Teacher',csol:true,stream:'Core',assess:'ACECQA / State authority',note:''},
+  {n:'Social Worker',csol:true,stream:'Core',assess:'AASW',note:''},
+  {n:'Electrician',csol:true,stream:'Core',assess:'TRA',note:'TRA skills assessment required.'},
+  {n:'Plumber',csol:true,stream:'Core',assess:'TRA',note:'TRA skills assessment required.'},
+  {n:'Carpenter / Joiner',csol:true,stream:'Core',assess:'TRA',note:''},
+  {n:'Bricklayer',csol:true,stream:'Core',assess:'TRA',note:''},
+  {n:'Refrigeration Mechanic',csol:true,stream:'Core',assess:'TRA',note:''},
+  {n:'Child Care Worker',csol:true,stream:'Core',assess:'ACECQA',note:'Newly added to CSOL December 2024.'},
+  {n:'Supply Chain Analyst',csol:true,stream:'Core',assess:'VETASSESS',note:'Newly added to CSOL December 2024.'},
+  {n:'Architect',csol:true,stream:'Core',assess:'AACA',note:'ARBV / state registration may be required.'},
+  {n:'Quantity Surveyor',csol:true,stream:'Core',assess:'AIQS',note:''},
+  {n:'Urban / Town Planner',csol:true,stream:'Core',assess:'PIA',note:''},
+  {n:'Agricultural Scientist',csol:true,stream:'Core',assess:'VETASSESS',note:''},
+  {n:'Café / Restaurant Manager',csol:false,stream:'Removed from CSOL',assess:'N/A',note:'REMOVED from CSOL December 2024. Not eligible for Core Skills stream. Specialist stream possible if earning $141K+.'},
+  {n:'ICT Support Engineer',csol:false,stream:'Removed from CSOL',assess:'N/A',note:'REMOVED from CSOL December 2024.'},
+  {n:'Graphic Designer',csol:false,stream:'Removed from CSOL',assess:'N/A',note:'REMOVED from CSOL December 2024. Specialist stream possible at $141K+.'},
+  {n:'Marketing Manager',csol:true,stream:'Core',assess:'VETASSESS',note:'Verify exact ANZSCO code — some marketing roles on CSOL, some not.'},
+  {n:'HR Manager',csol:true,stream:'Core or Specialist',assess:'VETASSESS',note:''},
+  {n:'Finance Manager',csol:true,stream:'Core or Specialist',assess:'CPA / CA ANZ',note:''},
+  {n:'Chef',csol:true,stream:'Core',assess:'TRA / VETASSESS',note:'On CSOL but not MLTSSL. Only 190/491 for points-tested PR. 482 → 186 is the PR pathway.'},
+];
+
+// ── TAB SWITCHING ──────────────────────────────────
+function showSec(id, btn) {
+  document.querySelectorAll('.sec-content').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('.sec-tabs').offsetTop - 70, behavior: 'smooth'});
+}
+
+// ── PILL SELECTION ─────────────────────────────────
+const answers = {};
+function setPill(el, q) {
+  document.querySelectorAll(`[data-q="${q.slice(1)}"]`).forEach(p => {
+    p.classList.remove('sel','sel-blue','sel-red');
+  });
+  el.classList.add('sel');
+  answers[q] = el.dataset.v;
+}
+
+// ── ELIGIBILITY CHECK ──────────────────────────────
+function checkEligibility() {
+  const q1 = answers['q1'], q2 = answers['q2'], q3 = answers['q3'], q4 = answers['q4'], q5 = answers['q5'];
+  const rc = document.getElementById('elig-result');
+  rc.className = 'result-card show';
+  let icon, title, body, actions = '';
+
+  if (!q1 || !q2 || !q3 || !q4 || !q5) {
+    rc.className = 'result-card partial show';
+    document.getElementById('er-icon').textContent = '⚠️';
+    document.getElementById('er-title').textContent = 'Please answer all 5 questions';
+    document.getElementById('er-body').innerHTML = 'Select an answer for each question above to get your eligibility assessment.';
+    document.getElementById('er-actions').innerHTML = '';
+    return;
+  }
+
+  if (q1 === 'employer') {
+    rc.classList.add('eligible');
+    icon = '🏢'; title = 'You can sponsor a worker';
+    body = `As an employer, you can sponsor a skilled overseas worker through the SID 482 visa. You will need to become an approved Standard Business Sponsor ($420), conduct Labour Market Testing (28 days), and pay the SAF levy ($1,200–$1,800/year). <strong>Go to the "How To Get Sponsored" tab and select the employer view for your step-by-step guide.</strong>`;
+    actions = `<div class="ra-item">Apply for Standard Business Sponsorship (SBS) — $420</div><div class="ra-item">Conduct Labour Market Testing — 28 days minimum</div><div class="ra-item">Lodge nomination + pay SAF levy</div>`;
+  } else if (q4 === 'below5') {
+    rc.classList.add('not-eligible');
+    icon = '❌'; title = 'English level is a barrier right now';
+    body = `The minimum English requirement for all SID 482 streams is <strong>IELTS 5.0 in all four bands</strong> (or equivalent PTE/TOEFL score). You will need to sit and pass an approved English test before you can be eligible. The test must be in-centre (not remote-proctored). IELTS costs approximately $340–380 and can be retaken as many times as needed.`;
+    actions = `<div class="ra-item">Book IELTS or PTE at an approved in-person test centre</div><div class="ra-item">Aim for 5.0 in all four bands (Listening, Reading, Writing, Speaking)</div>`;
+  } else if (q3 === 'under1') {
+    rc.classList.add('not-eligible');
+    icon = '⏳'; title = 'Not yet — need 1 year of experience';
+    body = `The SID 482 visa requires at least <strong>1 year of full-time relevant work experience</strong> in your nominated occupation within the last 5 years. This was reduced from 2 years in December 2024. You are not yet eligible but may be eligible sooner than you think — part-time work counts on a full-time equivalent basis.`;
+    actions = `<div class="ra-item">Continue building experience in your occupation</div><div class="ra-item">Re-check eligibility once you reach 12 months of experience</div>`;
+  } else if (q1 === 'looking') {
+    rc.classList.add('partial');
+    icon = '🔍'; title = 'Potentially eligible — you need a sponsor first';
+    if (q2 === 'over141') {
+      body = `With a salary of <strong>$141,210+</strong>, you qualify for the <strong>Specialist Skills stream</strong> which has no occupation list requirement and 7-day processing. Your main task is finding an employer willing to sponsor you at that salary level. Focus on senior professional roles in your field.`;
+    } else if (q2 === '76to141') {
+      body = `With a salary of <strong>$76,515–$141,209</strong>, you qualify for the <strong>Core Skills stream</strong> — if your occupation is on the CSOL (456 occupations). Use the Occupation Check tab to verify. Finding a sponsor is the main challenge — target employers who already have SBS approval and industries with genuine shortages.`;
+    } else if (q2 === 'under76') {
+      body = `With a salary under <strong>$76,515</strong>, standard Core Skills and Specialist streams are not available. The Essential Skills stream (aged care, disability, community services) may apply but requires a labour agreement. Alternatively, you may be eligible for points-tested skilled migration — check the PR tool.`;
+    } else {
+      body = `Your first step is to confirm your expected salary range — this determines which stream you fall into. Use the Streams tab to understand the three streams and which one you fit.`;
+    }
+    actions = `<div class="ra-item">Check the Occupation tab to confirm your CSOL eligibility</div><div class="ra-item">Get your skills assessment started (2–4 months)</div><div class="ra-item">Target employers with existing SBS approval</div>`;
+  } else {
+    // Has offer
+    if (q2 === 'over141') {
+      rc.classList.add('eligible');
+      icon = '✅'; title = 'Eligible — Specialist Skills Stream';
+      body = `<strong>Great news.</strong> With a salary of $141,210+ and a job offer, you qualify for the <strong>Specialist Skills Stream</strong> — the fastest 482 pathway. No occupation list required, no skills assessment needed, and processing takes just <strong>7–53 days</strong>. ${q5 === 'onshore' ? 'As an onshore applicant, you can apply without departing Australia.' : 'You can apply from offshore.'}`;
+      actions = `<div class="ra-item">Confirm offer is at base $141,210+ excluding super</div><div class="ra-item">Begin visa application — processing 7–53 days</div><div class="ra-item">PR pathway unlocks after 2 years via Subclass 186</div>`;
+    } else if (q2 === '76to141') {
+      rc.classList.add('eligible');
+      icon = '✅'; title = 'Eligible — Core Skills Stream (check occupation)';
+      body = `With a salary of <strong>$76,515–$141,209</strong> and a job offer, you are in the <strong>Core Skills stream</strong> — if your occupation is on the CSOL. <strong>Verify your ANZSCO occupation code on the Occupation tab.</strong> You will need a skills assessment for most occupations. Processing time is <strong>4–8 months</strong>. ${q5 === 'onshore' ? 'Onshore applicants can lodge without departing.' : ''}`;
+      actions = `<div class="ra-item">Verify occupation on CSOL (Occupation tab)</div><div class="ra-item">Start skills assessment now — takes 2–4 months</div><div class="ra-item">Employer lodges SBS + nomination simultaneously</div><div class="ra-item">PR pathway via 186 after 2 years</div>`;
+    } else if (q2 === 'under76') {
+      rc.classList.add('partial');
+      icon = '⚠️'; title = 'Salary is below Core Skills threshold';
+      body = `The Core Skills stream requires a minimum salary of <strong>$76,515 per year</strong> (from 1 July 2025). Your offered salary is below this threshold. Options: (1) Negotiate salary to meet the threshold. (2) Check if you qualify for the Essential Skills stream (aged care / disability). (3) Consider whether points-tested skilled migration is a better pathway — use the PR Tool.`;
+      actions = `<div class="ra-item">Negotiate salary to meet $76,515 threshold</div><div class="ra-item">Check Essential Skills stream if in care economy</div><div class="ra-item">Check PR points-tested pathway as alternative</div>`;
+    } else {
+      rc.classList.add('partial');
+      icon = '🔍'; title = 'Confirm your salary range to determine stream';
+      body = `You have the core requirements covered. Confirm your exact salary offer to determine your stream — <strong>$141,210+</strong> = Specialist (fast, no list), <strong>$76,515–$141,209</strong> = Core Skills (CSOL required), <strong>under $76,515</strong> = Essential Skills only (care economy).`;
+      actions = `<div class="ra-item">Confirm exact base salary excluding superannuation</div><div class="ra-item">Use the Streams tab to understand each option</div>`;
+    }
+  }
+
+  document.getElementById('er-icon').textContent = icon;
+  document.getElementById('er-title').textContent = title;
+  document.getElementById('er-body').innerHTML = body;
+  document.getElementById('er-actions').innerHTML = actions;
+  rc.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+// ── OCCUPATION SEARCH ──────────────────────────────
+function searchOcc() {
+  const q = document.getElementById('occ-search-input').value.toLowerCase();
+  const res = document.getElementById('occ-results');
+  if (q.length < 2) { res.classList.remove('open'); return; }
+  const matches = OCCS.filter(o => o.n.toLowerCase().includes(q)).slice(0, 8);
+  if (!matches.length) { res.innerHTML = '<div class="occ-item"><span class="occ-name" style="color:var(--muted)">No match found — check the full DHA CSOL list</span></div>'; res.classList.add('open'); return; }
+  res.innerHTML = matches.map(o => `
+    <div class="occ-item" onclick="selectOcc('${o.n.replace(/'/g,"\\'")}')">
+      <span class="occ-name">${o.n}</span>
+      <span class="occ-status ${o.csol ? 'os-yes' : 'os-no'}">${o.csol ? 'On CSOL' : 'Not on CSOL'}</span>
+    </div>`).join('');
+  res.classList.add('open');
+}
+function openOccResults() { if (document.getElementById('occ-search-input').value.length >= 2) searchOcc(); }
+function selectOcc(name) {
+  const occ = OCCS.find(o => o.n === name);
+  document.getElementById('occ-search-input').value = name;
+  document.getElementById('occ-results').classList.remove('open');
+  const sd = document.getElementById('occ-selected');
+  const det = document.getElementById('occ-detail');
+  if (!occ) return;
+  sd.textContent = `Selected: ${occ.n}`;
+  sd.style.display = 'block';
+  const csol_color = occ.csol ? 'var(--green)' : 'var(--red)';
+  const csol_icon = occ.csol ? '✅' : '❌';
+  det.style.display = 'block';
+  det.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.75rem">
+      <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">CSOL Status</div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;color:${csol_color}">${csol_icon} ${occ.csol ? 'On CSOL' : 'Not on CSOL'}</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">${occ.csol ? 'Eligible for Core Skills stream (salary $76,515+)' : 'Not eligible for Core Skills stream. Specialist stream if earning $141K+.'}</div>
+      </div>
+      <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Stream</div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;color:var(--text)">${occ.stream}</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">Based on salary level</div>
+      </div>
+      <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Skills Assessment</div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text)">${occ.assess}</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">Required for Core Skills stream</div>
+      </div>
+      <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">PR Pathway</div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal)">186 after 2 years</div>
+        <div style="font-size:0.72rem;color:var(--muted);margin-top:0.2rem">Via Temporary Residence Transition stream</div>
+      </div>
+    </div>
+    ${occ.note ? `<div class="info-box ib-amber" style="margin:0;font-size:0.78rem">${occ.note}</div>` : ''}
+    <div class="info-box ib-blue" style="margin-top:0.6rem;margin-bottom:0;font-size:0.75rem">Always verify your exact ANZSCO code and caveats at <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list" target="_blank" style="color:var(--blue)">the official DHA CSOL list</a> — this is for guidance only.</div>`;
+}
+document.addEventListener('click', e => { if (!e.target.closest('.occ-search-wrap')) document.getElementById('occ-results').classList.remove('open'); });
+
+// ── HOW TO GET SPONSORED TOGGLE ────────────────────
+function showHowTo(view) {
+  document.getElementById('view-employee').style.display = view === 'employee' ? 'block' : 'none';
+  document.getElementById('view-employer').style.display = view === 'employer' ? 'block' : 'none';
+  document.getElementById('btn-emp').classList.toggle('sel', view === 'employee');
+  document.getElementById('btn-er').classList.toggle('sel', view === 'employer');
+}
+</script>
+</body>
+</html>
