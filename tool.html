@@ -116,7 +116,6 @@ select:focus{border-color:var(--tb)}select option{background:#0D1B2E}.fr{margin-
 footer{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);font-size:0.78rem;color:var(--muted);margin-top:2rem}
 footer a{color:var(--teal);text-decoration:none}
 </style>
-<script src="/occupations.js"></script>
 </head>
 <body>
 <div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;">
@@ -192,7 +191,153 @@ footer a{color:var(--teal);text-decoration:none}
       <span style="font-size:0.72rem;color:var(--muted)">MLTSSL = eligible for 189+190+491 · STSOL = 190/491 only (not 189)</span>
     </div>
     <div class="fr"><label>Your nominated occupation</label>
-      <select id="occ" onchange="updateOccTierBadge()"><option value="">Choose occupation…</option></select>
+      <select id="occ" onchange="updateOccTierBadge()">
+        <option value="">Choose occupation…</option>
+        <optgroup label="Healthcare — Tier 1 (Best PR · 75 pt cutoff)">
+          <option value="general_practitioner">General Practitioner (GP)</option>
+          <option value="resident_medical_officer">Resident Medical Officer</option>
+          <option value="medical_specialist">Medical Specialist (Cardiologist / Surgeon etc)</option>
+          <option value="psychiatrist">Psychiatrist</option>
+          <option value="anaesthetist">Anaesthetist</option>
+          <option value="paediatrician">Paediatrician</option>
+          <option value="obstetrician">Obstetrician / Gynaecologist</option>
+          <option value="registered_nurse">Registered Nurse (General)</option>
+          <option value="nurse_practitioner">Nurse Practitioner</option>
+          <option value="enrolled_nurse">Enrolled Nurse</option>
+          <option value="midwife">Midwife</option>
+          <option value="dentist">Dentist</option>
+          <option value="dental_specialist">Dental Specialist (Orthodontist etc)</option>
+          <option value="physiotherapist">Physiotherapist</option>
+          <option value="occupational_therapist">Occupational Therapist</option>
+          <option value="pharmacist">Pharmacist</option>
+          <option value="optometrist">Optometrist</option>
+          <option value="speech_pathologist">Speech Pathologist</option>
+          <option value="podiatrist">Podiatrist</option>
+          <option value="chiropractor">Chiropractor</option>
+          <option value="osteopath">Osteopath</option>
+          <option value="medical_radiation_tech">Medical Radiation Technologist</option>
+          <option value="sonographer">Sonographer</option>
+          <option value="radiographer">Radiographer</option>
+          <option value="paramedic">Paramedic</option>
+          <option value="medical_lab_scientist">Medical Laboratory Scientist</option>
+          <option value="audiologist">Audiologist</option>
+          <option value="dietitian">Dietitian</option>
+          <option value="aged_care_worker">Aged / Disability Care Worker</option>
+          <option value="veterinarian">Veterinarian</option>
+        </optgroup>
+        <optgroup label="Education — Tier 2">
+          <option value="early_childhood_teacher">Early Childhood Teacher</option>
+          <option value="primary_teacher">Primary School Teacher</option>
+          <option value="secondary_teacher">Secondary School Teacher (General)</option>
+          <option value="secondary_teacher_maths">Secondary Teacher — Maths / Science / Computing</option>
+          <option value="secondary_teacher_english">Secondary Teacher — English</option>
+          <option value="special_ed_teacher">Special Education Teacher</option>
+          <option value="vet_trainer">VET / TAFE Trainer and Assessor</option>
+          <option value="psychologist">Psychologist</option>
+          <option value="counsellor">Counsellor</option>
+          <option value="social_worker">Social Worker</option>
+          <option value="welfare_worker">Welfare / Community Worker</option>
+          <option value="disability_worker">Disability Support Worker</option>
+        </optgroup>
+        <optgroup label="Engineering — Tier 3">
+          <option value="civil_engineer">Civil Engineer</option>
+          <option value="structural_engineer">Structural Engineer</option>
+          <option value="geotechnical_engineer">Geotechnical Engineer</option>
+          <option value="transport_engineer">Transport / Traffic Engineer</option>
+          <option value="electrical_engineer">Electrical Engineer</option>
+          <option value="electronics_engineer">Electronics Engineer</option>
+          <option value="mechanical_engineer">Mechanical Engineer</option>
+          <option value="chemical_engineer">Chemical Engineer</option>
+          <option value="industrial_engineer">Industrial / Manufacturing Engineer</option>
+          <option value="environmental_engineer">Environmental Engineer</option>
+          <option value="mining_engineer">Mining Engineer</option>
+          <option value="petroleum_engineer">Petroleum Engineer</option>
+          <option value="biomedical_engineer">Biomedical Engineer</option>
+          <option value="aeronautical_engineer">Aeronautical Engineer</option>
+          <option value="naval_architect">Naval Architect</option>
+          <option value="construction_pm">Construction Project Manager</option>
+          <option value="quantity_surveyor">Quantity Surveyor</option>
+          <option value="land_surveyor">Land Surveyor</option>
+          <option value="architect">Architect</option>
+          <option value="landscape_architect">Landscape Architect</option>
+          <option value="urban_planner">Urban and Regional Planner</option>
+          <option value="geologist">Geologist / Geophysicist</option>
+          <option value="environmental_scientist">Environmental / Conservation Scientist</option>
+        </optgroup>
+        <optgroup label="Trades — Tier 3 (65 pt cutoff — lowest available)">
+          <option value="electrician">Electrician (General)</option>
+          <option value="electrical_linesworker">Electrical Linesworker</option>
+          <option value="plumber">Plumber (General)</option>
+          <option value="gasfitter">Gasfitter</option>
+          <option value="carpenter">Carpenter / Joiner</option>
+          <option value="bricklayer">Bricklayer / Blocklayer</option>
+          <option value="plasterer">Plasterer</option>
+          <option value="painting_trades">Painting Trades Worker</option>
+          <option value="floor_finisher">Floor Finisher</option>
+          <option value="roof_tiler">Roof Tiler</option>
+          <option value="wall_tiler">Wall and Floor Tiler</option>
+          <option value="refrigeration_mechanic">Refrigeration and Air Conditioning Mechanic</option>
+          <option value="sheet_metal_worker">Sheet Metal Worker</option>
+          <option value="welder">Welder (First Class)</option>
+          <option value="boilermaker">Boilermaker</option>
+          <option value="fitter_machinist">Fitter and Machinist</option>
+          <option value="toolmaker">Toolmaker</option>
+          <option value="motor_mechanic">Motor Mechanic (General)</option>
+          <option value="diesel_mechanic">Diesel Motor Mechanic</option>
+          <option value="cabinetmaker">Cabinetmaker</option>
+          <option value="electronics_tech">Electronics / Telecoms Technician</option>
+        </optgroup>
+        <optgroup label="ICT / Technology — Tier 4">
+          <option value="software_engineer">Software Engineer</option>
+          <option value="software_developer">Software / Applications Developer</option>
+          <option value="cybersecurity_analyst">Cybersecurity Analyst / Specialist</option>
+          <option value="network_engineer">Network / Systems Engineer</option>
+          <option value="database_admin">Database Administrator</option>
+          <option value="ict_manager">ICT Manager</option>
+          <option value="systems_analyst">Systems Analyst</option>
+          <option value="ict_project_manager">ICT Project Manager</option>
+          <option value="data_scientist">Data Scientist / Analyst</option>
+          <option value="ai_ml_engineer">AI / Machine Learning Engineer</option>
+          <option value="devops_engineer">DevOps / Cloud Engineer</option>
+          <option value="ux_designer">UX / UI Designer</option>
+          <option value="ict_security_specialist">ICT Security Specialist</option>
+          <option value="telecommunications_eng">Telecommunications Engineer</option>
+        </optgroup>
+        <optgroup label="Accounting — Tier 4 (No 189 · SA 190 pathway)">
+          <option value="accountant">Accountant (General)</option>
+          <option value="management_accountant">Management Accountant</option>
+          <option value="taxation_accountant">Taxation Accountant</option>
+          <option value="external_auditor">External Auditor</option>
+          <option value="internal_auditor">Internal Auditor</option>
+          <option value="finance_manager">Finance Manager</option>
+          <option value="financial_analyst">Financial Analyst / Investment Analyst</option>
+          <option value="actuary">Actuary</option>
+        </optgroup>
+        <optgroup label="Science">
+          <option value="chemist">Chemist</option>
+          <option value="physicist">Physicist</option>
+          <option value="food_technologist">Food Technologist</option>
+          <option value="metallurgist">Metallurgist / Materials Engineer</option>
+          <option value="statistician">Statistician</option>
+          <option value="botanist">Botanist / Ecologist</option>
+        </optgroup>
+        <optgroup label="Business / Management">
+          <option value="management_consultant">Management Consultant</option>
+          <option value="hr_manager">Human Resource Manager</option>
+          <option value="recruitment_consultant">Recruitment Consultant</option>
+          <option value="marketing_specialist">Marketing Specialist</option>
+          <option value="supply_chain_manager">Supply Chain / Logistics Manager</option>
+        </optgroup>
+        <optgroup label="Hospitality (STSOL — 190/491 only)">
+          <option value="chef">Cook / Chef</option>
+          <option value="pastrycook">Pastrycook</option>
+          <option value="hotel_manager">Hotel / Motel Manager</option>
+          <option value="cafe_manager">Café / Restaurant Manager</option>
+        </optgroup>
+        <optgroup label="Community Services">
+          <option value="interpreter">Interpreter / Translator</option>
+        </optgroup>
+      </select>
       <div id="occ-tier-badge" style="display:none;margin-top:0.5rem;padding:0.5rem 0.75rem;border-radius:8px;font-size:0.75rem"></div>
     </div>
     <div class="fr"><label>Visa targeting</label>
@@ -993,35 +1138,149 @@ async function dlsc(){
 function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();}
 function wt(ctx,txt,x,y,mw,lh){const ws=txt.split(' ');let ln='';for(let i=0;i<ws.length;i++){const t=ln+ws[i]+' ';if(ctx.measureText(t).width>mw&&i>0){ctx.fillText(ln,x,y);ln=ws[i]+' ';y+=lh;}else ln=t;}ctx.fillText(ln,x,y);}
 
-// ── POPULATE OCCUPATION SELECT FROM SHARED LIST ────────
-document.addEventListener('DOMContentLoaded', function() {
-  var sel = document.getElementById('occ');
-  if (sel && window.VIQ) {
-    sel.innerHTML = window.VIQ.selectHTML();
-  }
-});
+// ── OCCUPATION DATA — inline, no external dependency ───────
+var TOOL_OCC_DATA = {
+  general_practitioner:{label:'General Practitioner',tier:1,list:'MLTSSL',cutoff189:75,assess:'AMC'},
+  resident_medical_officer:{label:'Resident Medical Officer',tier:1,list:'MLTSSL',cutoff189:75,assess:'AMC'},
+  medical_specialist:{label:'Medical Specialist',tier:1,list:'MLTSSL',cutoff189:70,assess:'AMC'},
+  psychiatrist:{label:'Psychiatrist',tier:1,list:'MLTSSL',cutoff189:70,assess:'AMC'},
+  anaesthetist:{label:'Anaesthetist',tier:1,list:'MLTSSL',cutoff189:70,assess:'AMC'},
+  paediatrician:{label:'Paediatrician',tier:1,list:'MLTSSL',cutoff189:70,assess:'AMC'},
+  obstetrician:{label:'Obstetrician / Gynaecologist',tier:1,list:'MLTSSL',cutoff189:70,assess:'AMC'},
+  registered_nurse:{label:'Registered Nurse',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  nurse_practitioner:{label:'Nurse Practitioner',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  enrolled_nurse:{label:'Enrolled Nurse',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  midwife:{label:'Midwife',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  dentist:{label:'Dentist',tier:1,list:'MLTSSL',cutoff189:80,assess:'ADC'},
+  dental_specialist:{label:'Dental Specialist',tier:1,list:'MLTSSL',cutoff189:80,assess:'ADC'},
+  physiotherapist:{label:'Physiotherapist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  occupational_therapist:{label:'Occupational Therapist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  pharmacist:{label:'Pharmacist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  optometrist:{label:'Optometrist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  speech_pathologist:{label:'Speech Pathologist',tier:1,list:'MLTSSL',cutoff189:75,assess:'SPA'},
+  podiatrist:{label:'Podiatrist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  chiropractor:{label:'Chiropractor',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  osteopath:{label:'Osteopath',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  medical_radiation_tech:{label:'Medical Radiation Technologist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  sonographer:{label:'Sonographer',tier:1,list:'MLTSSL',cutoff189:75,assess:'ASAR'},
+  radiographer:{label:'Radiographer',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  paramedic:{label:'Paramedic',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  medical_lab_scientist:{label:'Medical Laboratory Scientist',tier:1,list:'MLTSSL',cutoff189:75,assess:'AIMS'},
+  audiologist:{label:'Audiologist',tier:1,list:'MLTSSL',cutoff189:75,assess:'Audiology Aus'},
+  dietitian:{label:'Dietitian',tier:1,list:'MLTSSL',cutoff189:75,assess:'DAA'},
+  aged_care_worker:{label:'Aged / Disability Care Worker',tier:1,list:'MLTSSL',cutoff189:75,assess:'AHPRA'},
+  veterinarian:{label:'Veterinarian',tier:1,list:'MLTSSL',cutoff189:75,assess:'AVA'},
+  early_childhood_teacher:{label:'Early Childhood Teacher',tier:2,list:'MLTSSL',cutoff189:80,assess:'AITSL'},
+  primary_teacher:{label:'Primary School Teacher',tier:2,list:'MLTSSL',cutoff189:85,assess:'AITSL'},
+  secondary_teacher:{label:'Secondary School Teacher',tier:2,list:'MLTSSL',cutoff189:85,assess:'AITSL'},
+  secondary_teacher_maths:{label:'Secondary Teacher (STEM)',tier:2,list:'MLTSSL',cutoff189:80,assess:'AITSL'},
+  secondary_teacher_english:{label:'Secondary Teacher (English)',tier:2,list:'MLTSSL',cutoff189:85,assess:'AITSL'},
+  special_ed_teacher:{label:'Special Education Teacher',tier:2,list:'MLTSSL',cutoff189:80,assess:'AITSL'},
+  vet_trainer:{label:'VET / TAFE Trainer',tier:2,list:'MLTSSL',cutoff189:85,assess:'VETASSESS'},
+  psychologist:{label:'Psychologist',tier:2,list:'MLTSSL',cutoff189:80,assess:'AHPRA'},
+  counsellor:{label:'Counsellor',tier:2,list:'MLTSSL',cutoff189:80,assess:'VETASSESS'},
+  social_worker:{label:'Social Worker',tier:2,list:'MLTSSL',cutoff189:80,assess:'AASW'},
+  welfare_worker:{label:'Welfare / Community Worker',tier:2,list:'MLTSSL',cutoff189:80,assess:'ACWA'},
+  disability_worker:{label:'Disability Support Worker',tier:2,list:'MLTSSL',cutoff189:80,assess:'ACWA'},
+  civil_engineer:{label:'Civil Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  structural_engineer:{label:'Structural Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  geotechnical_engineer:{label:'Geotechnical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  transport_engineer:{label:'Transport Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  electrical_engineer:{label:'Electrical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  electronics_engineer:{label:'Electronics Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  mechanical_engineer:{label:'Mechanical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  chemical_engineer:{label:'Chemical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  industrial_engineer:{label:'Industrial Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  environmental_engineer:{label:'Environmental Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  mining_engineer:{label:'Mining Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  petroleum_engineer:{label:'Petroleum Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  biomedical_engineer:{label:'Biomedical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  aeronautical_engineer:{label:'Aeronautical Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  naval_architect:{label:'Naval Architect',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  construction_pm:{label:'Construction Project Manager',tier:3,list:'MLTSSL',cutoff189:85,assess:'AIPM'},
+  quantity_surveyor:{label:'Quantity Surveyor',tier:3,list:'MLTSSL',cutoff189:85,assess:'AIQS'},
+  land_surveyor:{label:'Land Surveyor',tier:3,list:'MLTSSL',cutoff189:85,assess:'SSSI'},
+  architect:{label:'Architect',tier:3,list:'MLTSSL',cutoff189:85,assess:'AACA'},
+  landscape_architect:{label:'Landscape Architect',tier:3,list:'MLTSSL',cutoff189:85,assess:'AILA'},
+  urban_planner:{label:'Urban Planner',tier:3,list:'MLTSSL',cutoff189:85,assess:'PIA'},
+  geologist:{label:'Geologist / Geophysicist',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  environmental_scientist:{label:'Environmental Scientist',tier:3,list:'MLTSSL',cutoff189:85,assess:'VETASSESS'},
+  electrician:{label:'Electrician (General)',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  electrical_linesworker:{label:'Electrical Linesworker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  plumber:{label:'Plumber (General)',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  gasfitter:{label:'Gasfitter',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  carpenter:{label:'Carpenter / Joiner',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  bricklayer:{label:'Bricklayer',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  plasterer:{label:'Plasterer',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  painting_trades:{label:'Painting Trades Worker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  floor_finisher:{label:'Floor Finisher',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  roof_tiler:{label:'Roof Tiler',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  wall_tiler:{label:'Wall and Floor Tiler',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  refrigeration_mechanic:{label:'Refrigeration & AC Mechanic',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  sheet_metal_worker:{label:'Sheet Metal Worker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  welder:{label:'Welder (First Class)',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  boilermaker:{label:'Boilermaker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  fitter_machinist:{label:'Fitter and Machinist',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  toolmaker:{label:'Toolmaker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  motor_mechanic:{label:'Motor Mechanic',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  diesel_mechanic:{label:'Diesel Motor Mechanic',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  cabinetmaker:{label:'Cabinetmaker',tier:3,list:'MLTSSL',cutoff189:65,assess:'TRA'},
+  electronics_tech:{label:'Electronics Technician',tier:3,list:'MLTSSL',cutoff189:70,assess:'TRA'},
+  software_engineer:{label:'Software Engineer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  software_developer:{label:'Software Developer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  cybersecurity_analyst:{label:'Cybersecurity Analyst',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  network_engineer:{label:'Network / Systems Engineer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  database_admin:{label:'Database Administrator',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  ict_manager:{label:'ICT Manager',tier:4,list:'MLTSSL',cutoff189:95,assess:'ACS'},
+  systems_analyst:{label:'Systems Analyst',tier:4,list:'MLTSSL',cutoff189:95,assess:'ACS'},
+  ict_project_manager:{label:'ICT Project Manager',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  data_scientist:{label:'Data Scientist / Analyst',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  ai_ml_engineer:{label:'AI / ML Engineer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  devops_engineer:{label:'DevOps / Cloud Engineer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  ux_designer:{label:'UX / UI Designer',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  ict_security_specialist:{label:'ICT Security Specialist',tier:4,list:'MLTSSL',cutoff189:90,assess:'ACS'},
+  telecommunications_eng:{label:'Telecommunications Engineer',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  accountant:{label:'Accountant (General)',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  management_accountant:{label:'Management Accountant',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  taxation_accountant:{label:'Taxation Accountant',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  external_auditor:{label:'External Auditor',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  internal_auditor:{label:'Internal Auditor',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  finance_manager:{label:'Finance Manager',tier:4,list:'MLTSSL',cutoff189:null,assess:'CPA/CAANZ'},
+  financial_analyst:{label:'Financial Analyst',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  actuary:{label:'Actuary',tier:4,list:'MLTSSL',cutoff189:85,assess:'IAA'},
+  chemist:{label:'Chemist',tier:3,list:'MLTSSL',cutoff189:85,assess:'RACI'},
+  physicist:{label:'Physicist',tier:3,list:'MLTSSL',cutoff189:85,assess:'AIP'},
+  food_technologist:{label:'Food Technologist',tier:3,list:'MLTSSL',cutoff189:85,assess:'VETASSESS'},
+  metallurgist:{label:'Metallurgist',tier:3,list:'MLTSSL',cutoff189:85,assess:'Engineers Aus'},
+  statistician:{label:'Statistician',tier:3,list:'MLTSSL',cutoff189:85,assess:'SSA'},
+  botanist:{label:'Botanist / Ecologist',tier:3,list:'MLTSSL',cutoff189:85,assess:'VETASSESS'},
+  management_consultant:{label:'Management Consultant',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  hr_manager:{label:'Human Resource Manager',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  recruitment_consultant:{label:'Recruitment Consultant',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  marketing_specialist:{label:'Marketing Specialist',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  supply_chain_manager:{label:'Supply Chain Manager',tier:4,list:'MLTSSL',cutoff189:null,assess:'VETASSESS'},
+  chef:{label:'Cook / Chef',tier:null,list:'STSOL',cutoff189:null,assess:'TRA'},
+  pastrycook:{label:'Pastrycook',tier:null,list:'STSOL',cutoff189:null,assess:'TRA'},
+  hotel_manager:{label:'Hotel / Motel Manager',tier:null,list:'STSOL',cutoff189:null,assess:'VETASSESS'},
+  cafe_manager:{label:'Café / Restaurant Manager',tier:null,list:'STSOL',cutoff189:null,assess:'VETASSESS'},
+  interpreter:{label:'Interpreter / Translator',tier:3,list:'MLTSSL',cutoff189:80,assess:'NAATI'},
+};
 
 function updateOccTierBadge() {
   var id = document.getElementById('occ').value;
   var badge = document.getElementById('occ-tier-badge');
-  if (!id || !window.VIQ) { badge.style.display='none'; return; }
-  var occ = window.VIQ.get(id);
+  if (!id) { badge.style.display='none'; return; }
+  var occ = TOOL_OCC_DATA[id];
   if (!occ) { badge.style.display='none'; return; }
-  var tierColors={1:'rgba(16,185,129,0.12)',2:'rgba(0,200,150,0.1)',3:'rgba(78,142,255,0.1)',4:'rgba(245,158,11,0.08)'};
-  var tierBorder={1:'rgba(16,185,129,0.3)',2:'rgba(0,200,150,0.25)',3:'rgba(78,142,255,0.25)',4:'rgba(245,158,11,0.25)'};
-  var tierTextColors={1:'#10B981',2:'#00C896',3:'#4E8EFF',4:'#F59E0B'};
-  var tierLabel={1:'Tier 1 — Highest Priority · Invited at lowest cutoffs',2:'Tier 2 — High Priority · Steady invitation rates',3:'Tier 3 — Standard · Achievable cutoffs',4:'Tier 4 — Oversupplied · Consider 190/491 as primary pathway'};
-  var cutoffText = occ.cutoff189 ? occ.cutoff189+' pts' : 'Not invited via 189';
-  var bg = occ.tier ? tierColors[occ.tier] : 'rgba(255,255,255,0.04)';
-  var border = occ.tier ? tierBorder[occ.tier] : 'rgba(255,255,255,0.07)';
-  var tc = occ.tier ? tierTextColors[occ.tier] : '#7A8FA8';
-  badge.style.display = 'block';
-  badge.style.background = bg;
-  badge.style.border = '1px solid ' + border;
-  badge.innerHTML = '<strong style="color:'+tc+'">' + occ.list + (occ.tier?' · '+(tierLabel[occ.tier]||''):'') + '</strong>' +
-    '<span style="color:#7A8FA8;margin-left:0.75rem">189 cutoff: <strong style="color:'+tc+'">' + cutoffText + '</strong> · Skills assessment: <strong style="color:#E8EDF5">' + occ.assess + '</strong></span>';
-  // Also update S.occ if it exists
-  if (typeof S !== "undefined") S.occ = id;
+  var tc={1:'#10B981',2:'#00C896',3:'#4E8EFF',4:'#F59E0B'};
+  var bg={1:'rgba(16,185,129,0.1)',2:'rgba(0,200,150,0.1)',3:'rgba(78,142,255,0.08)',4:'rgba(245,158,11,0.08)'};
+  var bd={1:'rgba(16,185,129,0.25)',2:'rgba(0,200,150,0.25)',3:'rgba(78,142,255,0.2)',4:'rgba(245,158,11,0.2)'};
+  var tl={1:'Tier 1 — Highest Priority · Invited at lowest cutoffs',2:'Tier 2 — High Priority · Steady invitation rates',3:'Tier 3 — Standard · Achievable cutoffs',4:'Tier 4 — Oversupplied · Consider 190/491 as primary pathway'};
+  var col = occ.tier ? tc[occ.tier] : '#7A8FA8';
+  var cutText = occ.cutoff189 ? occ.cutoff189+' pts' : 'Not invited via 189';
+  badge.style.cssText = 'display:block;background:'+( occ.tier?bg[occ.tier]:'rgba(255,255,255,0.04)')+';border:1px solid '+(occ.tier?bd[occ.tier]:'rgba(255,255,255,0.07)')+';border-radius:8px;padding:0.55rem 0.75rem;font-size:0.76rem;margin-top:0.4rem';
+  badge.innerHTML = '<strong style="color:'+col+'">'+occ.list+(occ.tier?' · '+(tl[occ.tier]||''):'')+'</strong><span style="color:#7A8FA8;margin-left:0.75rem">189 cutoff: <strong style="color:'+col+'">'+cutText+'</strong> · Assessment: <strong style="color:#E8EDF5">'+occ.assess+'</strong></span>';
+  if (typeof S !== 'undefined') S.occ = id;
 }
 
 cp();
