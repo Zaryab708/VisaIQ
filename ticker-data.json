@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+      "type": "grant",
+      "icon": "✓",
+      "text": "Registered Nurse · SA 190 · 75 pts · granted 3 days ago"
+    },
+    {
+      "type": "round",
+      "icon": "📡",
+      "text": "TAS ran a 491 round · Chefs invited · cutoff 65 pts · March 18"
+    },
+    {
+      "type": "processing",
+      "icon": "⏱",
+      "text": "190 visa processing · NSW · now averaging 11 months · updated March 2026"
+    },
+    {
+      "type": "queue",
+      "icon": "📊",
+      "text": "Accountant EOI pool · 15,240 active EOIs · up 340 this month"
+    },
+    {
+      "type": "policy",
+      "icon": "⚠️",
+      "text": "SA Talent and Innovation stream · reopened March 20 · limited places"
+    },
+    {
+      "type": "grant",
+      "icon": "✓",
+      "text": "Software Engineer · ACT 491 · 80 pts · granted 5 days ago"
+    },
+    {
+      "type": "round",
+      "icon": "📡",
+      "text": "189 Round 3 · 2025-26 expected Jan–Mar 2026 · next round approaching"
+    },
+    {
+      "type": "processing",
+      "icon": "⏱",
+      "text": "485 visa · DHA target 25 days · current average 83 days · March 2026"
+    },
+    {
+      "type": "queue",
+      "icon": "📊",
+      "text": "Civil Engineer EOI pool · 5,200 active EOIs · 85 pt cutoff Nov 2025"
+    },
+    {
+      "type": "policy",
+      "icon": "⚠️",
+      "text": "485 visa fee increase · $4,600 from 1 March 2026 · applies to new applications"
+    },
+    {
+      "type": "grant",
+      "icon": "✓",
+      "text": "Electrician · QLD 190 · 65 pts · granted 1 week ago"
+    },
+    {
+      "type": "round",
+      "icon": "📡",
+      "text": "NSW 190 invitation round · March 2026 · EOI deadline 1 March passed"
+    },
+    {
+      "type": "processing",
+      "icon": "⏱",
+      "text": "186 TRT Standard · currently processing March 2024 lodgements · 12+ months"
+    },
+    {
+      "type": "queue",
+      "icon": "📊",
+      "text": "Registered Nurse EOI pool · 2,100 active EOIs · 75 pt cutoff · Tier 1"
+    },
+    {
+      "type": "policy",
+      "icon": "⚠️",
+      "text": "189 quarterly round · 2 of 4 complete for 2025-26 · 16,887 total invitations issued"
+    }
+  ]
+}

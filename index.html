@@ -334,25 +334,28 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
     <div class="ptc" id="tab-student">
       <div class="tgrid">
         <a href="/student-pathway" class="tc">
-          <div class="tbadge new2">New</div>
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
           <div class="ti">🎓</div>
           <div class="tn">Student Pathway Tool</div>
           <div class="td2">Full pipeline: studying → 485 post-study work visa → EOI → PR. See your projected points at graduation date.</div>
           <div class="tm">End-to-end PR planning</div>
         </a>
         <a href="/485-visa" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
           <div class="ti">⏱️</div>
           <div class="tn">485 Post-Study Work Visa</div>
           <div class="td2">Working rights after graduation. Duration by qualification and city. New 25-day processing target (March 2026).</div>
           <div class="tm">485 eligibility &amp; duration</div>
         </a>
         <a href="/best-degrees-pr" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
           <div class="ti">🎯</div>
           <div class="tn">Best Degrees for PR</div>
           <div class="td2">Which courses actually lead to PR — and how fast. Compare demand, cutoffs and EOI queue depth before you enrol.</div>
           <div class="tm">Choose your degree strategically</div>
         </a>
         <a href="/regional-study-bonus" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
           <div class="ti">🌱</div>
           <div class="tn">Regional Study Bonus</div>
           <div class="td2">+5 study points + +15 regional visa = 20 point combined advantage. The most powerful combo for students.</div>
@@ -578,5 +581,6 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
   if(e.target===this)closeGate();
 });
 </script>
+<script src="/ticker.js"></script>
 </body>
 </html>

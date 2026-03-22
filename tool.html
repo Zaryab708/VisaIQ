@@ -604,6 +604,64 @@ footer a{color:var(--teal);text-decoration:none}
       <span style="display:block;margin-top:0.5rem"><a href="/methodology" style="color:var(--teal)">How we calculate these figures →</a></span>
     </div>
   </div>
+  <!-- ── PROFILE TRACKER / ALERT SIGNUP ───────────────── -->
+  <div id="tracker-section" style="margin-top:1rem">
+
+    <!-- NOT YET SAVED STATE -->
+    <div id="tracker-save" style="background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.3);border-radius:14px;padding:1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
+        <span style="font-size:1.2rem">📡</span>
+        <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800">Get notified when your state runs a round</div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.1rem;line-height:1.6">Save your profile. We'll alert you within 48 hours of any invitation round or policy change affecting your occupation and state.</p>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <input type="email" id="tracker-email" placeholder="your@email.com" style="background:#0A1525;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.75rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;width:100%;box-sizing:border-box" onfocus="this.style.borderColor='rgba(0,200,150,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
+          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.65rem 1rem;font-size:0.78rem">
+            <div style="color:#7A8FA8;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Occupation</div>
+            <div id="tracker-occ-display" style="color:#E8EDF5;font-weight:600">—</div>
+          </div>
+          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.65rem 1rem;font-size:0.78rem">
+            <div style="color:#7A8FA8;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">State · Points</div>
+            <div id="tracker-state-display" style="color:#E8EDF5;font-weight:600">—</div>
+          </div>
+        </div>
+        <button onclick="saveProfile()" style="width:100%;padding:0.85rem;background:#00C896;color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:background 0.2s" onmouseover="this.style.background='#00e0aa'" onmouseout="this.style.background='#00C896'">Activate My Alerts →</button>
+      </div>
+      <p style="font-size:0.68rem;color:#7A8FA8;margin-top:0.6rem;text-align:center">Free · No spam · Unsubscribe anytime</p>
+    </div>
+
+    <!-- SAVED / DASHBOARD STATE -->
+    <div id="tracker-dashboard" style="display:none;background:#0D1B2E;border:1px solid rgba(0,200,150,0.3);border-radius:14px;overflow:hidden">
+      <div style="background:linear-gradient(135deg,rgba(0,200,150,0.12),rgba(13,27,46,0.6));padding:1.1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:0.6rem">
+        <span style="font-size:1rem">✅</span>
+        <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:#00C896">Alerts active</div>
+      </div>
+      <div style="padding:1.25rem">
+        <div id="tracker-confirmation" style="font-size:0.82rem;color:#E8EDF5;line-height:1.7;margin-bottom:1rem;background:rgba(0,200,150,0.06);border-radius:8px;padding:0.85rem;border-left:3px solid #00C896"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem">
+          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
+            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Your Profile</div>
+            <div id="dash-profile" style="font-size:0.78rem;color:#E8EDF5;font-weight:600;line-height:1.5">—</div>
+          </div>
+          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
+            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Queue Position</div>
+            <div id="dash-queue" style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#00C896">—</div>
+          </div>
+          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
+            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Last Round</div>
+            <div id="dash-last-round" style="font-size:0.78rem;color:#E8EDF5;font-weight:600">—</div>
+          </div>
+          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
+            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Next Round Est.</div>
+            <div id="dash-next-round" style="font-size:0.78rem;color:#4E8EFF;font-weight:600">—</div>
+          </div>
+        </div>
+        <button onclick="clearProfile()" style="width:100%;padding:0.6rem;background:transparent;color:#7A8FA8;border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.75rem;cursor:pointer">Clear saved profile</button>
+      </div>
+    </div>
+  </div>
+
   <button class="bs" style="margin-top:1rem" onclick="location.reload()">← Start new analysis</button>
 </div>
 
@@ -794,7 +852,7 @@ function gen(){
   document.getElementById('loading').classList.add('active');
   uprog(4);window.scrollTo({top:0,behavior:'smooth'});
   ['ls1','ls2','ls3','ls4'].forEach((id,i)=>setTimeout(()=>document.getElementById(id).classList.add('done'),700*(i+1)));
-  setTimeout(()=>{document.getElementById('loading').classList.remove('active');br();document.getElementById('screen4').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});fetchAI();},3600);
+  setTimeout(()=>{document.getElementById('loading').classList.remove('active');br();document.getElementById('screen4').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});fetchAI();initTracker();},3600);
 }
 
 function prob(pts,occ,mo,vt){
@@ -987,6 +1045,89 @@ function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y)
 function wt(ctx,txt,x,y,mw,lh){const ws=txt.split(' ');let ln='';for(let i=0;i<ws.length;i++){const t=ln+ws[i]+' ';if(ctx.measureText(t).width>mw&&i>0){ctx.fillText(ln,x,y);ln=ws[i]+' ';y+=lh;}else ln=t;}ctx.fillText(ln,x,y);}
 
 cp();
+
+// ── PROFILE TRACKER ────────────────────────────────
+const ROUND_DATA = {
+  nsw:  { last:'March 2026',  next:'May–Jun 2026 (est)',  type:'190' },
+  vic:  { last:'Feb 2026',    next:'Apr–May 2026 (est)',  type:'190/491' },
+  qld:  { last:'Jan 2026',    next:'Mar–Apr 2026 (est)',  type:'190/491' },
+  sa:   { last:'Mar 2026',    next:'Ongoing (weekly)',    type:'190/491' },
+  wa:   { last:'Feb 2026',    next:'Apr 2026 (est)',      type:'190' },
+  tas:  { last:'Mar 2026',    next:'Ongoing (weekly)',    type:'190/491' },
+  act:  { last:'Jan 2026',    next:'Mar–Apr 2026 (est)',  type:'190/491' },
+  nt:   { last:'Dec 2025',    next:'Apr 2026 (est)',      type:'190/491' },
+  overseas: { last:'N/A',     next:'N/A',                type:'N/A' }
+};
+
+function fillTrackerDefaults() {
+  // Pre-fill from current session S object
+  const occLabel = document.querySelector('.occ-name')?.textContent || S.occ || '—';
+  const stateLabel = S.state || '—';
+  const pts = (S.age||0)+(S.eng||0)+(S.edu||0)+(S.ow||0)+(S.aw||0)+(S.part||0)+(S.naati||0)+(S.ausst||0)+(S.regst||0)+(S.py||0)+(S.nom||0);
+  document.getElementById('tracker-occ-display').textContent = occLabel;
+  document.getElementById('tracker-state-display').textContent = (stateLabel!=='—'?stateLabel:'—') + (pts>0?' · '+pts+' pts':'');
+}
+
+function saveProfile() {
+  const email = document.getElementById('tracker-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('tracker-email').style.borderColor = 'rgba(239,68,68,0.5)';
+    document.getElementById('tracker-email').placeholder = 'Please enter a valid email';
+    return;
+  }
+  const pts = (S.age||0)+(S.eng||0)+(S.edu||0)+(S.ow||0)+(S.aw||0)+(S.part||0)+(S.naati||0)+(S.ausst||0)+(S.regst||0)+(S.py||0)+(S.nom||0);
+  const occLabel = document.getElementById('tracker-occ-display').textContent;
+  const stateKey = S.state ? S.state.toLowerCase().replace(/\s/g,'') : 'nsw';
+  const stateDisplay = S.state || 'Your State';
+  const rd = ROUND_DATA[stateKey] || ROUND_DATA.nsw;
+
+  const profile = { email, occ: occLabel, state: stateDisplay, pts, savedAt: new Date().toISOString() };
+  try { localStorage.setItem('visaiq_profile', JSON.stringify(profile)); } catch(e) {}
+
+  // Show dashboard
+  document.getElementById('tracker-save').style.display = 'none';
+  document.getElementById('tracker-dashboard').style.display = 'block';
+
+  document.getElementById('tracker-confirmation').innerHTML =
+    `You're set. We'll notify <strong>${email}</strong> within 48 hours of any round affecting <strong>${occLabel}</strong> in <strong>${stateDisplay}</strong>.`;
+  document.getElementById('dash-profile').innerHTML = `${occLabel}<br>${stateDisplay} · ${pts} pts`;
+  document.getElementById('dash-queue').textContent = pts + ' pts';
+  document.getElementById('dash-last-round').textContent = rd.last + ' (' + rd.type + ')';
+  document.getElementById('dash-next-round').textContent = rd.next;
+}
+
+function clearProfile() {
+  try { localStorage.removeItem('visaiq_profile'); } catch(e) {}
+  document.getElementById('tracker-dashboard').style.display = 'none';
+  document.getElementById('tracker-save').style.display = 'block';
+  document.getElementById('tracker-email').value = '';
+}
+
+function checkSavedProfile() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('visaiq_profile') || 'null');
+    if (!saved) return;
+    const stateKey = saved.state ? saved.state.toLowerCase().replace(/\s/g,'') : 'nsw';
+    const rd = ROUND_DATA[stateKey] || ROUND_DATA.nsw;
+    document.getElementById('tracker-save').style.display = 'none';
+    document.getElementById('tracker-dashboard').style.display = 'block';
+    document.getElementById('tracker-confirmation').innerHTML =
+      `Alerts active for <strong>${saved.email}</strong> — <strong>${saved.occ}</strong> in <strong>${saved.state}</strong>.`;
+    document.getElementById('dash-profile').innerHTML = `${saved.occ}<br>${saved.state} · ${saved.pts} pts`;
+    document.getElementById('dash-queue').textContent = saved.pts + ' pts';
+    document.getElementById('dash-last-round').textContent = rd.last + ' (' + rd.type + ')';
+    document.getElementById('dash-next-round').textContent = rd.next;
+  } catch(e) {}
+}
+
+// Called after report generates — fill defaults then check saved
+function initTracker() {
+  setTimeout(() => {
+    fillTrackerDefaults();
+    checkSavedProfile();
+  }, 500);
+}
 </script>
+<script src="/ticker.js"></script>
 </body>
 </html>
