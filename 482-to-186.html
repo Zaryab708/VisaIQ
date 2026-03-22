@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>482 → 186 PR Calculator — VisaIQ</title>
+<meta name="description" content="Already on a 482 Skills in Demand visa? Calculate exactly when you become eligible for permanent residency via the Subclass 186 ENS pathway. Free, instant, accurate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.15);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--purple:#9B7FFF;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.visa-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bd);border:1px solid rgba(78,142,255,0.3);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.75rem;color:var(--blue);font-weight:600;margin-bottom:1rem;letter-spacing:0.04em}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:480px;margin:0 auto;line-height:1.7}
+
+/* LAYOUT */
+.wrap{max-width:760px;margin:0 auto;padding:2rem 1.5rem 5rem}
+
+/* FORM CARD */
+.form-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.75rem;margin-bottom:1.25rem}
+.form-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.frow{margin-bottom:0}
+label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.35rem;font-weight:500}
+label span{color:var(--teal)}
+input[type=date],input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none}
+input[type=date]:focus,input[type=number]:focus,select:focus{border-color:var(--tb)}
+input[type=date]::-webkit-calendar-picker-indicator{filter:invert(0.5)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+select option{background:#0D1B2E}
+
+/* EMPLOYER PERIODS */
+.period-row{display:grid;grid-template-columns:1fr 1fr auto;gap:0.6rem;align-items:end;margin-bottom:0.6rem}
+.add-btn{padding:0.5rem 0.9rem;background:var(--td);border:1px solid var(--tb);border-radius:8px;font-size:0.78rem;color:var(--teal);font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap}
+.add-btn:hover{background:rgba(0,200,150,0.2)}
+.rem-btn{width:32px;height:42px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;color:var(--red);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* PILL TOGGLE */
+.pill-row{display:flex;gap:0.5rem;flex-wrap:wrap}
+.pill{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
+
+/* CALC BUTTON */
+.calc-btn{width:100%;padding:1rem 1.5rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:1.25rem}
+.calc-btn:hover{background:#00e0aa;transform:translateY(-1px)}
+
+/* RESULT */
+.result{display:none;animation:fu 0.4s ease}
+.result.show{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATUS BANNER */
+.status-banner{border-radius:14px;padding:1.5rem;margin-bottom:1rem;text-align:center}
+.sb-eligible{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3)}
+.sb-soon{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.25)}
+.sb-waiting{background:var(--td);border:1px solid var(--tb)}
+.sb-icon{font-size:2rem;margin-bottom:0.5rem}
+.sb-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:0.35rem}
+.sb-eligible .sb-title{color:var(--green)}
+.sb-soon .sb-title{color:var(--amber)}
+.sb-waiting .sb-title{color:var(--teal)}
+.sb-sub{font-size:0.85rem;color:var(--muted);line-height:1.6}
+
+/* DATE DISPLAY */
+.date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1rem}
+.date-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;text-align:center}
+.db-label{font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem}
+.db-date{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:0.2rem}
+.db-sub{font-size:0.7rem;color:var(--muted)}
+.db-teal .db-date{color:var(--teal)}
+.db-green .db-date{color:var(--green)}
+.db-blue .db-date{color:var(--blue)}
+
+/* PROGRESS BAR */
+.progress-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.prog-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+.prog-title{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700}
+.prog-pct{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal)}
+.prog-track{height:10px;background:rgba(255,255,255,0.06);border-radius:5px;overflow:hidden;margin-bottom:0.6rem}
+.prog-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--teal),#00e0aa);transition:width 1s ease}
+.prog-markers{display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted)}
+
+/* COUNTDOWN */
+.countdown{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.cd-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem}
+.cd-box{background:var(--bg3);border-radius:10px;padding:0.75rem;text-align:center}
+.cd-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal)}
+.cd-unit{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.15rem}
+
+/* CHECKLIST */
+.checklist{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.cl-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.cl-item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--border)}
+.cl-item:last-child{border-bottom:none;padding-bottom:0}
+.cl-icon{font-size:1rem;flex-shrink:0;margin-top:0.1rem}
+.cl-body h4{font-size:0.82rem;font-weight:600;margin-bottom:0.15rem}
+.cl-body p{font-size:0.75rem;color:var(--muted);line-height:1.5}
+.cl-status{margin-left:auto;font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:6px;flex-shrink:0;white-space:nowrap}
+.cls-done{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
+.cls-now{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.cls-later{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid var(--border)}
+.cls-check{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+
+/* WARNINGS */
+.warn-box{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin-bottom:0.6rem}
+.wb-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+.wb-red{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);color:#fca5a5}
+.wb-green{background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);color:#6ee7b7}
+.wb-blue{background:var(--bd);border:1px solid rgba(78,142,255,0.25);color:var(--blue)}
+.warn-box strong{display:block;margin-bottom:0.2rem}
+
+/* INFO BOXES */
+.info-box{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb);color:var(--text)}
+.ib-blue{background:var(--bd);border:1px solid rgba(78,142,255,0.25);color:var(--text)}
+
+/* 186 COSTS */
+.cost-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.cost-row:last-child{border-bottom:none}
+.cost-label{color:var(--muted)}
+.cost-val{font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+
+@media(max-width:600px){.fgrid{grid-template-columns:1fr}.date-grid{grid-template-columns:1fr 1fr}.cd-grid{grid-template-columns:repeat(2,1fr)}.period-row{grid-template-columns:1fr 1fr auto}.nls{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/482-visa">482 SID Visa</a>
+    <a href="/tool">PR Tool</a>
+    <a href="/policy-updates">Policy Updates</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>When can you apply<br>for <em>permanent residency?</em></h1>
+  <p>Already on a 482 Skills in Demand visa? Enter your details and see exactly when you hit the 2-year mark, what you need to prepare, and your estimated PR grant date.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- FORM -->
+  <div class="form-card">
+    <div class="form-title">Your 482 Employment History</div>
+
+    <div class="info-box ib-teal" style="margin-top:0;margin-bottom:1.25rem;font-size:0.78rem">
+      <strong>How the 2-year rule works:</strong> You need 2 years of full-time sponsored work in your nominated occupation with approved sponsors. This can be across multiple employers — not just one. Only work with approved Standard Business Sponsors counts toward your 186 PR eligibility.
+    </div>
+
+    <!-- EMPLOYER PERIODS -->
+    <div style="margin-bottom:1.25rem">
+      <label style="margin-bottom:0.6rem">Sponsored employment periods <span>(add each employer separately)</span></label>
+      <div id="periods-wrap"></div>
+      <button class="add-btn" onclick="addPeriod()" id="add-period-btn">+ Add another employer period</button>
+    </div>
+
+    <div class="fgrid">
+      <div class="frow">
+        <label>Your occupation</label>
+        <select id="occupation">
+          <option value="">Select occupation…</option>
+          <optgroup label="Healthcare">
+            <option>Registered Nurse</option>
+            <option>General Practitioner</option>
+            <option>Medical Specialist</option>
+            <option>Physiotherapist</option>
+            <option>Occupational Therapist</option>
+            <option>Pharmacist</option>
+            <option>Dentist</option>
+            <option>Paramedic</option>
+            <option>Psychologist</option>
+          </optgroup>
+          <optgroup label="Technology">
+            <option>Software Engineer / Developer</option>
+            <option>Systems Analyst</option>
+            <option>ICT Manager</option>
+            <option>Cybersecurity Specialist</option>
+            <option>Data Analyst / Scientist</option>
+            <option>Network Engineer</option>
+          </optgroup>
+          <optgroup label="Engineering">
+            <option>Civil Engineer</option>
+            <option>Structural Engineer</option>
+            <option>Mechanical Engineer</option>
+            <option>Electrical Engineer</option>
+            <option>Chemical Engineer</option>
+            <option>Project Manager</option>
+          </optgroup>
+          <optgroup label="Education">
+            <option>Secondary School Teacher</option>
+            <option>Primary School Teacher</option>
+            <option>Early Childhood Teacher</option>
+          </optgroup>
+          <optgroup label="Trades">
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>Carpenter / Joiner</option>
+            <option>Refrigeration Mechanic</option>
+          </optgroup>
+          <optgroup label="Finance / Business">
+            <option>Accountant</option>
+            <option>Finance Manager</option>
+            <option>HR Manager</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option>Social Worker</option>
+            <option>Architect</option>
+            <option>Chef</option>
+            <option>Other CSOL occupation</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="frow">
+        <label>Annual salary (AUD)</label>
+        <input type="number" id="salary" placeholder="e.g. 95000" min="50000" max="500000">
+      </div>
+      <div class="frow">
+        <label>Your stream</label>
+        <select id="stream">
+          <option value="">Select stream…</option>
+          <option value="specialist">Specialist Skills ($141,210+)</option>
+          <option value="core">Core Skills ($76,515–$141,209)</option>
+        </select>
+      </div>
+      <div class="frow">
+        <label>Your date of birth</label>
+        <input type="date" id="dob">
+      </div>
+    </div>
+
+    <div style="margin-top:1rem">
+      <label style="margin-bottom:0.5rem">Do you have a positive skills assessment?</label>
+      <div class="pill-row">
+        <button class="pill sel" data-v="yes" onclick="setPill(this,'assess')">Yes — already have it</button>
+        <button class="pill" data-v="inprogress" onclick="setPill(this,'assess')">In progress</button>
+        <button class="pill" data-v="no" onclick="setPill(this,'assess')">Not yet</button>
+        <button class="pill" data-v="exempt" onclick="setPill(this,'assess')">Not required (Specialist stream)</button>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem">
+      <label style="margin-bottom:0.5rem">Does your employer intend to nominate you for 186 PR?</label>
+      <div class="pill-row">
+        <button class="pill sel" data-v="yes" onclick="setPill(this,'employer186')">Yes — confirmed</button>
+        <button class="pill" data-v="likely" onclick="setPill(this,'employer186')">Likely but not confirmed</button>
+        <button class="pill" data-v="no" onclick="setPill(this,'employer186')">Not sure / No</button>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My PR Timeline →</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+
+    <!-- STATUS BANNER -->
+    <div class="status-banner" id="status-banner">
+      <div class="sb-icon" id="sb-icon">🎯</div>
+      <div class="sb-title" id="sb-title">—</div>
+      <div class="sb-sub" id="sb-sub">—</div>
+    </div>
+
+    <!-- KEY DATES -->
+    <div class="date-grid">
+      <div class="date-box db-teal">
+        <div class="db-label">482 Work Started</div>
+        <div class="db-date" id="d-started">—</div>
+        <div class="db-sub">First sponsored day</div>
+      </div>
+      <div class="date-box db-green">
+        <div class="db-label">186 Eligible From</div>
+        <div class="db-date" id="d-eligible">—</div>
+        <div class="db-sub">2-year mark reached</div>
+      </div>
+      <div class="date-box db-blue">
+        <div class="db-label">Est. PR Grant</div>
+        <div class="db-date" id="d-grant">—</div>
+        <div class="db-sub">After 186 processing</div>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-wrap">
+      <div class="prog-label">
+        <div class="prog-title">Progress toward 186 eligibility</div>
+        <div class="prog-pct" id="prog-pct">0%</div>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="prog-fill" style="width:0%"></div>
+      </div>
+      <div class="prog-markers">
+        <span>Day 1 on 482</span>
+        <span>1 year</span>
+        <span>186 eligible (2 years)</span>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown" id="countdown-wrap">
+      <div class="cd-title" id="cd-title">Time remaining until 186 eligibility</div>
+      <div class="cd-grid">
+        <div class="cd-box"><div class="cd-num" id="cd-years">—</div><div class="cd-unit">Years</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-months">—</div><div class="cd-unit">Months</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-weeks">—</div><div class="cd-unit">Weeks</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-days">—</div><div class="cd-unit">Days</div></div>
+      </div>
+    </div>
+
+    <!-- WARNINGS -->
+    <div id="warnings-wrap"></div>
+
+    <!-- ACTION CHECKLIST -->
+    <div class="checklist">
+      <div class="cl-title">Your PR Preparation Checklist</div>
+      <div id="checklist-items"></div>
+    </div>
+
+    <!-- 186 WHAT TO EXPECT -->
+    <div class="form-card" style="margin-bottom:1rem">
+      <div class="form-title">186 ENS Application — What to Expect</div>
+      <div style="margin-bottom:1rem">
+        <div class="cost-row"><span class="cost-label">Application fee (primary applicant)</span><span class="cost-val">$4,770</span></div>
+        <div class="cost-row"><span class="cost-label">Application fee (partner)</span><span class="cost-val">$2,385</span></div>
+        <div class="cost-row"><span class="cost-label">Application fee (child under 18)</span><span class="cost-val">$1,195</span></div>
+        <div class="cost-row"><span class="cost-label">Employer nomination fee</span><span class="cost-val">$540 (employer pays)</span></div>
+        <div class="cost-row"><span class="cost-label">Skills assessment (if not already held)</span><span class="cost-val">$500–$1,000</span></div>
+        <div class="cost-row"><span class="cost-label">Health examination (per person)</span><span class="cost-val">$300–$600</span></div>
+        <div class="cost-row"><span class="cost-label">Police clearances</span><span class="cost-val">$30–$100 each</span></div>
+        <div class="cost-row" style="border-top:2px solid var(--border)"><span class="cost-label" style="font-weight:700;color:var(--text)">Typical total (solo applicant)</span><span class="cost-val">~$6,000–$7,500</span></div>
+      </div>
+      <div class="warn-box wb-blue">
+        <strong>186 TRT Processing Time</strong>
+        Currently 6–18 months from application lodgement. Lodge your 186 as soon as your employer nominates you — there is no benefit to waiting. You can continue working on your 482 while the 186 is processing.
+      </div>
+    </div>
+
+    <!-- 186 REQUIREMENTS REMINDER -->
+    <div class="form-card" style="margin-bottom:1rem">
+      <div class="form-title">186 TRT Eligibility Requirements</div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem">
+        <div class="warn-box wb-green" style="margin:0"><strong>✓ 2 years sponsored work in nominated occupation</strong> Across one or more approved sponsors. Employment must be continuous and full-time (or part-time equivalent).</div>
+        <div class="warn-box wb-green" style="margin:0"><strong>✓ Under 45 years at time of nomination</strong> Age is checked when your employer lodges the 186 nomination — not when you started on 482. Exceptions exist for medical practitioners, academics and some scientists earning $141K+.</div>
+        <div class="warn-box wb-green" style="margin:0"><strong>✓ Competent English — IELTS 6.0 all bands</strong> Higher than the 482 requirement of 5.0. If you are a native speaker (UK, US, NZ, Canada, Ireland) you are exempt.</div>
+        <div class="warn-box wb-green" style="margin:0"><strong>✓ Positive skills assessment</strong> Required for most occupations. If you already held one for your 482 application, check whether it is still current (usually valid 3 years).</div>
+        <div class="warn-box wb-green" style="margin:0"><strong>✓ Employer must nominate you</strong> Your employer lodges the 186 nomination — you cannot self-nominate. The employer pays the $540 nomination fee and must still meet Labour Market Testing requirements.</div>
+        <div class="warn-box wb-amber" style="margin:0"><strong>⚠️ Work must be with approved sponsors only</strong> From 29 November 2025, only employment with businesses that hold approved Standard Business Sponsorship counts toward your 2-year requirement. Employment with non-approved entities does not count.</div>
+      </div>
+    </div>
+
+    <!-- ALTERNATIVE PATHWAY NOTE -->
+    <div class="form-card" style="margin-bottom:1rem">
+      <div class="form-title">Don't want to wait for your employer? Alternative PR pathways</div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;font-size:0.8rem">
+          <div style="font-weight:700;color:var(--teal);margin-bottom:0.25rem">Points-tested PR (189 / 190 / 491) — independent of employer</div>
+          <div style="color:var(--muted)">While on your 482, you can simultaneously build your points score and apply for a points-tested skilled visa. If your occupation is on the MLTSSL, you do not need your employer's involvement. Check your PR points score using the VisaIQ PR Tool.</div>
+          <a href="/tool" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;color:var(--teal);font-weight:600">Check my PR points score →</a>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;font-size:0.8rem">
+          <div style="font-weight:700;color:var(--blue);margin-bottom:0.25rem">494 Regional Employer Sponsored — if your employer is regional</div>
+          <div style="color:var(--muted)">If your employer operates in a regional area of Australia, you may be eligible for the 494 visa instead, which leads to 191 PR after 3 years in regional Australia.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="warn-box wb-amber" style="font-size:0.75rem">
+      <strong>⚠️ Historical data and general information only</strong>
+      Dates and timelines shown are calculated from the information you entered. Processing times are estimates based on current DHA published data. Your actual eligibility depends on your specific employment records, skills assessment, your employer's compliance status, and other individual factors. Verify your eligibility with a MARA-registered migration agent before lodging. Find one at <a href="https://www.mara.gov.au" target="_blank" style="color:var(--amber)">mara.gov.au</a>.
+    </div>
+
+  </div><!-- end result -->
+
+  <!-- HOW IT WORKS (shown before calculation) -->
+  <div id="explainer">
+    <div class="form-card">
+      <div class="form-title">How the 482 → 186 PR pathway works</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="display:flex;gap:0.75rem;align-items:flex-start">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--td);border:1px solid var(--tb);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--teal);flex-shrink:0">1</div>
+          <div>
+            <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.2rem">Work 2 years on 482 with approved sponsor(s)</div>
+            <div style="font-size:0.78rem;color:var(--muted)">Reduced from 3 years in December 2024. Can be across multiple employers — all must be approved Standard Business Sponsors.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--td);border:1px solid var(--tb);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--teal);flex-shrink:0">2</div>
+          <div>
+            <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.2rem">Employer lodges 186 nomination</div>
+            <div style="font-size:0.78rem;color:var(--muted)">Your employer nominates you for permanent residency. $540 employer fee. Must still conduct Labour Market Testing.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--td);border:1px solid var(--tb);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--teal);flex-shrink:0">3</div>
+          <div>
+            <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.2rem">You lodge 186 visa application</div>
+            <div style="font-size:0.78rem;color:var(--muted)">$4,770 fee. Health checks, police clearances, updated skills assessment if required. You can lodge as soon as employer nomination is lodged.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start">
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--green);flex-shrink:0">✓</div>
+          <div>
+            <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.2rem;color:var(--green)">Permanent Residency granted — 6 to 18 months later</div>
+            <div style="font-size:0.78rem;color:var(--muted)">You receive your 186 PR visa. You can then live and work anywhere in Australia, sponsor family members, and apply for citizenship after 4 years of permanent residency (1 year as citizen).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">Key facts — updated December 2024</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Work requirement</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text)">2 years</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem">Reduced from 3 years. Counts across multiple approved sponsors.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">Age at nomination</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text)">Under 45</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem">Age checked when employer lodges 186 nomination.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">English for 186</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text)">IELTS 6.0</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem">Higher than the 482 requirement of 5.0. All four bands.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem">186 processing time</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text)">6–18 months</div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem">Continue working on 482 while waiting.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end wrap -->
+
+<footer>
+  <div style="margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.2rem">
+    <a href="/">Home</a><a href="/482-visa">482 SID Visa</a><a href="/tool">PR Tool</a><a href="/policy-updates">Policy Updates</a>
+  </div>
+  <div>© 2026 VisaIQ · Not migration advice · All data sourced from Department of Home Affairs</div>
+</footer>
+
+<script>
+// ── STATE ─────────────────────────────────────────
+const pills = {assess:'yes', employer186:'yes'};
+let periodCount = 0;
+
+// ── INIT ──────────────────────────────────────────
+window.onload = function() {
+  addPeriod(); // start with one period
+};
+
+// ── PILLS ─────────────────────────────────────────
+function setPill(el, key) {
+  document.querySelectorAll(`[onclick="setPill(this,'${key}')"]`).forEach(p => p.classList.remove('sel'));
+  el.classList.add('sel');
+  pills[key] = el.dataset.v;
+}
+
+// ── EMPLOYER PERIODS ──────────────────────────────
+function addPeriod() {
+  periodCount++;
+  const id = periodCount;
+  const wrap = document.getElementById('periods-wrap');
+  const div = document.createElement('div');
+  div.className = 'period-row';
+  div.id = 'period-' + id;
+  div.innerHTML = `
+    <div>
+      <label>Start date <span>#${id}</span></label>
+      <input type="date" id="pstart-${id}">
+    </div>
+    <div>
+      <label>End date <span>(leave blank if current)</span></label>
+      <input type="date" id="pend-${id}">
+    </div>
+    ${id > 1 ? `<button class="rem-btn" onclick="removePeriod(${id})">×</button>` : '<div></div>'}
+  `;
+  wrap.appendChild(div);
+  if (periodCount >= 4) document.getElementById('add-period-btn').style.display = 'none';
+}
+
+function removePeriod(id) {
+  document.getElementById('period-' + id).remove();
+  if (periodCount >= 4) document.getElementById('add-period-btn').style.display = 'inline-block';
+}
+
+// ── CALCULATE ─────────────────────────────────────
+function calculate() {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  // Collect periods
+  const periods = [];
+  for (let i = 1; i <= periodCount; i++) {
+    const el = document.getElementById('period-' + i);
+    if (!el) continue;
+    const s = document.getElementById('pstart-' + i)?.value;
+    const e = document.getElementById('pend-' + i)?.value;
+    if (!s) continue;
+    const start = new Date(s);
+    const end = e ? new Date(e) : today;
+    if (start > end) continue;
+    periods.push({start, end});
+  }
+
+  if (!periods.length) {
+    alert('Please enter at least one employment start date.');
+    return;
+  }
+
+  // Sort by start date
+  periods.sort((a,b) => a.start - b.start);
+  const earliestStart = periods[0].start;
+
+  // Calculate total days worked
+  let totalDays = 0;
+  periods.forEach(p => {
+    const days = Math.floor((p.end - p.start) / 86400000);
+    totalDays += Math.max(0, days);
+  });
+
+  const requiredDays = 730; // 2 years
+  const pct = Math.min(100, Math.round((totalDays / requiredDays) * 100));
+
+  // Calculate eligibility date based on when 730 days will be reached
+  let eligibleDate;
+  let daysAccum = 0;
+  for (let i = 0; i < periods.length; i++) {
+    const p = periods[i];
+    const pDays = Math.floor((p.end - p.start) / 86400000);
+    if (daysAccum + pDays >= requiredDays) {
+      const daysNeeded = requiredDays - daysAccum;
+      eligibleDate = new Date(p.start.getTime() + daysNeeded * 86400000);
+      break;
+    }
+    daysAccum += pDays;
+  }
+
+  // If not enough accumulated days yet, project forward from last period end
+  if (!eligibleDate) {
+    const lastPeriodEnd = periods[periods.length - 1].end;
+    const daysRemaining = requiredDays - totalDays;
+    if (periods[periods.length - 1].end >= today) {
+      // Currently employed — project forward
+      eligibleDate = new Date(today.getTime() + daysRemaining * 86400000);
+    } else {
+      // Not currently employed — if they find new job today
+      eligibleDate = new Date(today.getTime() + daysRemaining * 86400000);
+    }
+  }
+
+  // Estimate PR grant date: eligible + 12 months median processing
+  const grantDate = new Date(eligibleDate.getTime() + 365 * 86400000);
+
+  // Age at nomination
+  const dob = document.getElementById('dob').value;
+  let ageAtNomination = null;
+  let ageWarning = false;
+  if (dob) {
+    const dobDate = new Date(dob);
+    const ageMs = eligibleDate - dobDate;
+    ageAtNomination = Math.floor(ageMs / (365.25 * 86400000));
+    ageWarning = ageAtNomination >= 45;
+  }
+
+  // Salary check
+  const salary = parseInt(document.getElementById('salary').value) || 0;
+  const stream = document.getElementById('stream').value;
+
+  // Days/months remaining
+  const daysRemaining = Math.max(0, Math.floor((eligibleDate - today) / 86400000));
+  const isEligible = daysRemaining === 0;
+  const isSoon = daysRemaining > 0 && daysRemaining <= 90;
+
+  // Show result
+  document.getElementById('explainer').style.display = 'none';
+  const resultEl = document.getElementById('result');
+  resultEl.classList.add('show');
+
+  // Status banner
+  const banner = document.getElementById('status-banner');
+  if (isEligible) {
+    banner.className = 'status-banner sb-eligible';
+    document.getElementById('sb-icon').textContent = '🎉';
+    document.getElementById('sb-title').textContent = 'You are eligible to apply for 186 PR now';
+    document.getElementById('sb-sub').textContent = `You have completed ${totalDays} days of sponsored work — you meet the 2-year requirement. Your employer can lodge your 186 nomination immediately.`;
+  } else if (isSoon) {
+    banner.className = 'status-banner sb-soon';
+    document.getElementById('sb-icon').textContent = '⏳';
+    document.getElementById('sb-title').textContent = `186 eligibility in ${daysRemaining} days — start preparing now`;
+    document.getElementById('sb-sub').textContent = `You are ${totalDays} days into your 2-year requirement. ${daysRemaining} days to go. Start gathering documents now so you can lodge immediately on the eligible date.`;
+  } else {
+    banner.className = 'status-banner sb-waiting';
+    document.getElementById('sb-icon').textContent = '📅';
+    document.getElementById('sb-title').textContent = `${totalDays} of 730 days complete — ${Math.round(pct)}% of the way there`;
+    document.getElementById('sb-sub').textContent = `You need ${requiredDays - totalDays} more days of sponsored employment. Keep working — your eligibility date is ${fmt(eligibleDate)}.`;
+  }
+
+  // Key dates
+  document.getElementById('d-started').textContent = fmt(earliestStart);
+  document.getElementById('d-eligible').textContent = fmt(eligibleDate);
+  document.getElementById('d-grant').textContent = fmt(grantDate) + '*';
+
+  // Progress bar
+  setTimeout(() => {
+    document.getElementById('prog-fill').style.width = pct + '%';
+    document.getElementById('prog-pct').textContent = pct + '%';
+  }, 100);
+
+  // Countdown
+  if (!isEligible) {
+    const yrs = Math.floor(daysRemaining / 365);
+    const mths = Math.floor((daysRemaining % 365) / 30);
+    const wks = Math.floor((daysRemaining % 30) / 7);
+    const dys = daysRemaining % 7;
+    document.getElementById('cd-title').textContent = 'Time remaining until 186 eligibility';
+    document.getElementById('cd-years').textContent = yrs;
+    document.getElementById('cd-months').textContent = mths;
+    document.getElementById('cd-weeks').textContent = wks;
+    document.getElementById('cd-days').textContent = dys;
+  } else {
+    document.getElementById('countdown-wrap').style.display = 'none';
+  }
+
+  // Warnings
+  const ww = document.getElementById('warnings-wrap');
+  ww.innerHTML = '';
+
+  if (ageWarning) {
+    ww.innerHTML += `<div class="warn-box wb-red"><strong>⚠️ Age concern — you will be ${ageAtNomination} at nomination</strong> The 186 TRT requires you to be under 45 when your employer lodges the nomination. At your projected eligibility date, you would be ${ageAtNomination}. Consider applying for points-tested PR (189/190) independently, or speak with a MARA agent about the age exemption for medical practitioners and some scientists.</div>`;
+  } else if (ageAtNomination !== null) {
+    ww.innerHTML += `<div class="warn-box wb-green"><strong>✓ Age check passed — you will be ${ageAtNomination} at nomination</strong> Under the 45-year requirement for 186 TRT.</div>`;
+  }
+
+  if (salary > 0 && salary < 76515 && stream === 'core') {
+    ww.innerHTML += `<div class="warn-box wb-amber"><strong>⚠️ Salary below Core Skills threshold</strong> Your salary of $${salary.toLocaleString()} is below the current Core Skills minimum of $76,515. This may affect your employer's ability to lodge a new nomination if you change jobs.</div>`;
+  }
+
+  if (pills.assess === 'no') {
+    ww.innerHTML += `<div class="warn-box wb-amber"><strong>⚠️ Skills assessment not yet started</strong> Most occupations require a positive skills assessment for the 186 application. Start your assessment now — it takes 2–4 months. Do not leave this until your eligibility date.</div>`;
+  } else if (pills.assess === 'inprogress') {
+    ww.innerHTML += `<div class="warn-box wb-blue"><strong>Skills assessment in progress</strong> Make sure it completes well before your eligibility date. Check the expiry date on your assessment — it must be current when your 186 is lodged (typically valid 3 years).</div>`;
+  }
+
+  if (pills.employer186 === 'no') {
+    ww.innerHTML += `<div class="warn-box wb-amber"><strong>⚠️ Employer intent unknown</strong> The 186 pathway requires your employer to nominate you. If your employer is unlikely to support your PR application, consider whether a points-tested pathway (189/190/491) is a better option for you. Use the VisaIQ PR Tool to check your points score.</div>`;
+  }
+
+  // Checklist
+  const ci = document.getElementById('checklist-items');
+  ci.innerHTML = '';
+
+  const checks = [
+    {
+      icon:'📋',
+      title:'Keep detailed employment records',
+      desc:'Payslips, employment contracts, start/end dates. You must prove 2 years of full-time sponsored work when lodging your 186. Keep every document.',
+      status: isEligible ? 'cls-done' : 'cls-now',
+      label: isEligible ? 'Done — keep records' : 'Action now'
+    },
+    {
+      icon:'🔬',
+      title:'Confirm your skills assessment is current',
+      desc:`Most occupations require a positive skills assessment for the 186. Check your assessment expiry date — must be valid when you lodge. IELTS for 186 is 6.0 all bands (higher than 482's 5.0).`,
+      status: pills.assess === 'yes' ? 'cls-done' : pills.assess === 'inprogress' ? 'cls-now' : 'cls-now',
+      label: pills.assess === 'yes' ? 'Have it — check expiry' : pills.assess === 'inprogress' ? 'In progress' : 'Start now'
+    },
+    {
+      icon:'🏢',
+      title:'Confirm employer will nominate you',
+      desc:'Raise the 186 pathway with your employer or HR team at least 6 months before your eligibility date. The employer pays the $540 nomination fee and must conduct Labour Market Testing.',
+      status: pills.employer186 === 'yes' ? 'cls-done' : pills.employer186 === 'likely' ? 'cls-check' : 'cls-now',
+      label: pills.employer186 === 'yes' ? 'Confirmed' : pills.employer186 === 'likely' ? 'Confirm soon' : 'Discuss ASAP'
+    },
+    {
+      icon:'🏥',
+      title:'Book health examination',
+      desc:'186 requires a new health check even if you had one for your 482. Book with a DHA-approved panel physician. Costs $300–$600 per person. Allow 2–4 weeks for results.',
+      status: isEligible ? 'cls-now' : 'cls-later',
+      label: isEligible ? 'Book now' : `Book ~1 month before ${fmt(eligibleDate)}`
+    },
+    {
+      icon:'🚔',
+      title:'Obtain police clearances',
+      desc:'Required from every country you have lived in for 12+ months in the last 10 years. Some countries take months — start Pakistan, India and other offshore clearances early.',
+      status: isEligible ? 'cls-now' : daysRemaining < 120 ? 'cls-now' : 'cls-later',
+      label: daysRemaining < 120 ? 'Apply now — takes months' : `Apply 3 months before ${fmt(eligibleDate)}`
+    },
+    {
+      icon:'💰',
+      title:'Save for 186 application fees',
+      desc:'$4,770 primary applicant + $2,385 per adult dependent + $1,195 per child. Plus health exam, police clearances and agent fees if using one. Budget $6,000–$7,500 minimum for a solo applicant.',
+      status: 'cls-later',
+      label: 'Budget ahead'
+    },
+    {
+      icon:'📄',
+      title:'Consider points-tested PR as a parallel pathway',
+      desc:'If your occupation is on the MLTSSL, you can apply for 189/190/491 independently — no employer needed. This is especially important if your employer is uncertain about supporting 186.',
+      status: 'cls-later',
+      label: 'Check PR Tool'
+    }
+  ];
+
+  checks.forEach(c => {
+    ci.innerHTML += `
+      <div class="cl-item">
+        <span class="cl-icon">${c.icon}</span>
+        <div class="cl-body" style="flex:1">
+          <h4>${c.title}</h4>
+          <p>${c.desc}</p>
+        </div>
+        <span class="cl-status ${c.status}">${c.label}</span>
+      </div>`;
+  });
+
+  resultEl.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ── HELPERS ───────────────────────────────────────
+function fmt(d) {
+  return d.toLocaleDateString('en-AU', {day:'numeric', month:'short', year:'numeric'});
+}
+</script>
+</body>
+</html>
