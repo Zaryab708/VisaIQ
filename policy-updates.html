@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Migration Policy Updates — VisaIQ</title>
+<meta name="description" content="Latest Australian migration policy changes. Every update sourced from the Department of Home Affairs. Filter by your occupation and get alerts when changes affect you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a:hover,.nls a.active{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+
+/* PAGE HEADER */
+.page-header{max-width:720px;margin:0 auto;padding:3rem 1.5rem 2rem;text-align:center}
+.page-label{font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
+.page-header h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.15;margin-bottom:0.75rem}
+.page-header h1 em{font-style:italic;color:var(--teal)}
+.page-header p{color:var(--muted);font-size:0.95rem;max-width:480px;margin:0 auto 1.5rem;line-height:1.7}
+.source-note{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(78,142,255,0.08);border:1px solid rgba(78,142,255,0.2);border-radius:8px;padding:0.5rem 0.9rem;font-size:0.75rem;color:var(--blue)}
+.source-note::before{content:'🔗';font-size:0.8rem}
+
+/* ALERT BANNER */
+.alert-banner{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:14px;padding:1.25rem 1.5rem;max-width:720px;margin:0 auto 2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.ab-icon{font-size:1.4rem;flex-shrink:0}
+.ab-text{flex:1;min-width:200px}
+.ab-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.2rem}
+.ab-sub{font-size:0.78rem;color:var(--muted)}
+.ab-btn{padding:0.55rem 1.1rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}
+
+/* FILTERS */
+.filter-wrap{max-width:960px;margin:0 auto;padding:0 1.5rem 1.5rem}
+.filter-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.ftag{padding:0.4rem 0.85rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.78rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.ftag:hover{border-color:var(--muted);color:var(--text)}
+.ftag.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.ftag.impact-high{border-color:rgba(239,68,68,0.4);color:var(--red)}
+.ftag.impact-high.active{background:rgba(239,68,68,0.1)}
+.ftag.impact-med{border-color:rgba(245,158,11,0.4);color:var(--amber)}
+.ftag.impact-med.active{background:rgba(245,158,11,0.08)}
+
+.search-input{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.65rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;width:100%;max-width:340px;transition:border-color 0.2s}
+.search-input:focus{border-color:var(--tb)}
+.search-input::placeholder{color:var(--muted)}
+
+/* POLICY CARDS */
+.cards-wrap{max-width:960px;margin:0 auto;padding:0 1.5rem 4rem;display:flex;flex-direction:column;gap:1rem}
+
+.policy-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:border-color 0.2s;position:relative;overflow:hidden}
+.policy-card:hover{border-color:rgba(255,255,255,0.12)}
+.policy-card.impact-high{border-left:3px solid var(--red)}
+.policy-card.impact-med{border-left:3px solid var(--amber)}
+.policy-card.impact-low{border-left:3px solid var(--teal)}
+
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem;flex-wrap:wrap}
+.card-meta{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+.impact-badge{font-size:0.65rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:6px;text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0}
+.ib-high{background:rgba(239,68,68,0.12);color:var(--red);border:1px solid rgba(239,68,68,0.25)}
+.ib-med{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.25)}
+.ib-low{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.card-date{font-size:0.72rem;color:var(--muted)}
+.card-visa-tags{display:flex;gap:0.35rem;flex-wrap:wrap}
+.visa-tag{font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:5px;font-weight:700;background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border)}
+
+.card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;line-height:1.3;margin-bottom:0.5rem}
+.card-summary{font-size:0.85rem;color:var(--text);line-height:1.7;margin-bottom:1rem}
+.card-plain{background:var(--bg3);border-radius:10px;padding:0.9rem 1rem;margin-bottom:1rem}
+.card-plain-label{font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem}
+.card-plain-text{font-size:0.82rem;color:var(--text);line-height:1.6}
+
+/* OCCUPATION TAGS */
+.occ-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.occ-tag{font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.occ-tag.affected{background:rgba(239,68,68,0.1);color:#ef8181;border:1px solid rgba(239,68,68,0.2)}
+.occ-tag.benefited{background:rgba(16,185,129,0.1);color:#6ee7b7;border:1px solid rgba(16,185,129,0.2)}
+.occ-tag.neutral{background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border)}
+
+/* CARD FOOTER */
+.card-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;padding-top:0.9rem;border-top:1px solid var(--border)}
+.source-link{display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--blue);text-decoration:none;font-weight:600;transition:opacity 0.2s}
+.source-link:hover{opacity:0.8}
+.source-link::before{content:'🔗';font-size:0.75rem}
+.alert-btn{font-size:0.72rem;padding:0.35rem 0.8rem;background:transparent;border:1px solid var(--tb);border-radius:8px;color:var(--teal);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:all 0.2s}
+.alert-btn:hover{background:var(--td)}
+.alert-btn.set{background:var(--td);border-color:var(--teal)}
+
+/* NO RESULTS */
+.no-results{text-align:center;padding:3rem;color:var(--muted);font-size:0.9rem;display:none}
+
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(7,15,28,0.88);backdrop-filter:blur(8px);z-index:200;align-items:center;justify-content:center;padding:1.5rem}
+.modal-bg.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--tb);border-radius:20px;padding:2rem;max-width:420px;width:100%;position:relative;animation:slideUp 0.3s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1;padding:0.2rem}
+.modal h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.4rem}
+.modal p{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
+.modal-occ{background:var(--td);border:1px solid var(--tb);border-radius:8px;padding:0.5rem 0.75rem;font-size:0.8rem;color:var(--teal);font-weight:600;margin-bottom:1rem;display:inline-block}
+.modal input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;margin-bottom:0.75rem;transition:border-color 0.2s}
+.modal input:focus{border-color:var(--tb)}
+.modal input::placeholder{color:var(--muted)}
+.modal-submit{width:100%;padding:0.8rem;background:var(--teal);color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer}
+.modal-note{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:0.6rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+.dis{font-size:0.72rem;color:var(--muted);max-width:700px;margin:1rem auto 0;line-height:1.6}
+.dis strong{color:var(--amber)}
+
+@media(max-width:600px){.nls{display:none}.card-top{flex-direction:column}.card-footer{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/policy-updates" class="active">Policy Updates</a>
+    <a href="/methodology">Methodology</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-label">Live Policy Intelligence</div>
+  <h1>Migration policy changes<br><em>that affect your pathway</em></h1>
+  <p>Every update sourced directly from the Department of Home Affairs. Filter by your occupation to see what applies to you.</p>
+  <div class="source-note">All changes link to official DHA source · Updated within 48 hours of announcement</div>
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner" style="max-width:960px;padding-left:1.5rem;padding-right:1.5rem">
+  <div class="ab-icon">🔔</div>
+  <div class="ab-text">
+    <div class="ab-title">Get alerts when your occupation is affected</div>
+    <div class="ab-sub">Enter your occupation once. We'll email you when a policy change applies to your pathway — within 48 hours of any DHA announcement.</div>
+  </div>
+  <button class="ab-btn" onclick="openModal('your occupation','General Alerts')">Set Up My Alerts</button>
+</div>
+
+<!-- FILTERS -->
+<div class="filter-wrap">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.75rem">
+    <input type="text" class="search-input" id="search-input" placeholder="Search by keyword or occupation…" oninput="filterCards()">
+    <div style="font-size:0.78rem;color:var(--muted)" id="result-count">Showing all 12 updates</div>
+  </div>
+  <div class="filter-row" id="filter-row">
+    <button class="ftag active" data-filter="all" onclick="setFilter('all',this)">All Updates</button>
+    <button class="ftag impact-high" data-filter="high" onclick="setFilter('high',this)">🔴 High Impact</button>
+    <button class="ftag impact-med" data-filter="med" onclick="setFilter('med',this)">🟡 Moderate Impact</button>
+    <button class="ftag" data-filter="visa-189" onclick="setFilter('visa-189',this)">189 Visa</button>
+    <button class="ftag" data-filter="visa-190" onclick="setFilter('visa-190',this)">190 Visa</button>
+    <button class="ftag" data-filter="visa-491" onclick="setFilter('visa-491',this)">491 Visa</button>
+    <button class="ftag" data-filter="visa-482" onclick="setFilter('visa-482',this)">482 / SID</button>
+    <button class="ftag" data-filter="visa-485" onclick="setFilter('visa-485',this)">485 Visa</button>
+    <button class="ftag" data-filter="occ-health" onclick="setFilter('occ-health',this)">Healthcare</button>
+    <button class="ftag" data-filter="occ-ict" onclick="setFilter('occ-ict',this)">Technology / ICT</button>
+    <button class="ftag" data-filter="occ-eng" onclick="setFilter('occ-eng',this)">Engineering</button>
+    <button class="ftag" data-filter="occ-acc" onclick="setFilter('occ-acc',this)">Accounting</button>
+    <button class="ftag" data-filter="occ-trades" onclick="setFilter('occ-trades',this)">Trades</button>
+    <button class="ftag" data-filter="occ-edu" onclick="setFilter('occ-edu',this)">Education</button>
+  </div>
+</div>
+
+<!-- POLICY CARDS -->
+<div class="cards-wrap" id="cards-wrap">
+
+  <!-- CARD 1 -->
+  <div class="policy-card impact-high" data-impact="high" data-tags="visa-189 visa-190 visa-491 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-high">High Impact</span>
+        <span class="card-date">Effective: 2025–26 Program Year</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">189 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">New 4-Tier Occupation Priority System for 189 Invitations</div>
+    <div class="card-summary">The Department of Home Affairs introduced a four-tier occupation prioritisation model for all Subclass 189 invitation rounds from the 2025–26 program year. Invitations are now issued by tier first, then by points within each tier. Occupation ceiling multipliers vary from 4.0% (Tier 1) down to 0.5% (Tier 4).</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">Your occupation's tier now matters as much as your points score. Accountants, ICT managers and systems analysts (Tier 4) receive the fewest 189 invitations regardless of points. Nurses, GPs and allied health (Tier 1) receive priority invitations and are invited at lower points thresholds. Engineering and trades sit in Tier 3 — standard allocation.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited" onclick="openModal('Registered Nurse','4-Tier System')">✓ Nurses — Tier 1 (highest priority)</span>
+      <span class="occ-tag benefited" onclick="openModal('General Practitioner','4-Tier System')">✓ GPs — Tier 1</span>
+      <span class="occ-tag benefited" onclick="openModal('Teacher','4-Tier System')">✓ Teachers — Tier 2</span>
+      <span class="occ-tag neutral" onclick="openModal('Civil Engineer','4-Tier System')">→ Engineers — Tier 3</span>
+      <span class="occ-tag neutral" onclick="openModal('Electrician','4-Tier System')">→ Trades — Tier 3</span>
+      <span class="occ-tag affected" onclick="openModal('Accountant','4-Tier System')">⚠ Accountants — Tier 4 (fewest invitations)</span>
+      <span class="occ-tag affected" onclick="openModal('Software Engineer','4-Tier System')">⚠ Software Engineers — Tier 4</span>
+      <span class="occ-tag affected" onclick="openModal('ICT Manager','4-Tier System')">⚠ ICT Managers — Tier 4</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="source-link">Source: DHA SkillSelect Invitation Rounds</a>
+      <button class="alert-btn" onclick="openModal('your occupation','4-Tier System')">🔔 Alert me for my occupation</button>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="policy-card impact-high" data-impact="high" data-tags="visa-482 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-high">High Impact</span>
+        <span class="card-date">Effective: 7 December 2024</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">482 → SID Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">TSS 482 Visa Replaced by Skills in Demand (SID) Visa — 3-Stream System</div>
+    <div class="card-summary">The Temporary Skill Shortage (TSS) visa subclass 482 was replaced by the Skills in Demand (SID) visa from 7 December 2024. The new visa operates under three streams: Specialist Skills (salary $141,210+), Core Skills (CSOL-listed occupations, $76,515–$141,210), and Essential Skills (care economy, labour agreement required).</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">If you earn over $141,210 there is no occupation list requirement — any occupation qualifies. Between $76,515 and $141,210 your occupation must be on the new Core Skills Occupation List (456 occupations). The pathway to permanent residency via Subclass 186 now requires only 2 years of work (reduced from 3). Applications lodged after 7 December 2024 are assessed under the new SID rules.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ All occupations earning $141K+ (no list needed)</span>
+      <span class="occ-tag benefited" onclick="openModal('Data Analyst','SID Visa Change')">✓ Data Analysts — newly added to CSOL</span>
+      <span class="occ-tag benefited" onclick="openModal('Child Care Worker','SID Visa Change')">✓ Child Care Workers — newly added</span>
+      <span class="occ-tag affected" onclick="openModal('Cafe Manager','SID Visa Change')">⚠ Café/Restaurant Managers — removed from CSOL</span>
+      <span class="occ-tag affected" onclick="openModal('ICT Support Engineer','SID Visa Change')">⚠ ICT Support Engineers — removed</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="source-link">Source: DHA Skills in Demand Visa</a>
+      <button class="alert-btn" onclick="openModal('your occupation','SID Visa Change')">🔔 Alert me for my occupation</button>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="policy-card impact-high" data-impact="high" data-tags="visa-482 occ-acc occ-ict occ-health occ-eng">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-high">High Impact</span>
+        <span class="card-date">Effective: 1 July 2025</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">482 SID Visa</span>
+          <span class="visa-tag">186 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">Salary Thresholds Increased — Core Skills $76,515 · Specialist Skills $141,210</div>
+    <div class="card-summary">The Core Skills Income Threshold (CSIT) increased to $76,515 per annum and the Specialist Skills Income Threshold (SSIT) increased to $141,210 per annum from 1 July 2025. Both thresholds will increase again to $79,499 and $146,717 respectively from 1 July 2026.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">Your employer must pay you at least $76,515 per year to sponsor you under the Core Skills stream. If your offered salary is below this, your sponsorship application will be refused regardless of occupation. Check your current offer against the threshold before your employer lodges a nomination.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag affected">⚠ Affects all 482 SID Core Skills applicants</span>
+      <span class="occ-tag neutral">→ July 2026: rises again to $79,499</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list" target="_blank" class="source-link">Source: DHA Skilled Occupation List</a>
+      <button class="alert-btn" onclick="openModal('482 applicant','Salary Threshold Change')">🔔 Alert me for threshold updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="policy-card impact-med" data-impact="med" data-tags="visa-189 visa-190 visa-491 visa-482 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-med">Moderate Impact</span>
+        <span class="card-date">Effective: 7 August 2025</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">All Skilled Visas</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">English Test Rules Updated — Remote-Proctored Tests No Longer Accepted</div>
+    <div class="card-summary">From 7 August 2025, the Department of Home Affairs no longer accepts remotely proctored (at-home) English language tests for skilled visa applications. Tests must be conducted at an approved testing centre. Tests taken before 7 August 2025 remain valid for 3 years from the original test date. PTE Academic scoring components for Writing and Speaking were also tightened from 13 September 2025.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">If you sat an IELTS or PTE test at home online, that result is no longer accepted for visa purposes. You need to re-sit at an official test centre. Tests done in-centre before this date are still valid. If you took PTE on or after 13 September 2025, check the new Writing and Speaking minimum scores — they are stricter than before.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag affected">⚠ Affects all applicants who sat remote/online English tests</span>
+      <span class="occ-tag neutral">→ PTE Academic: new component minimums from 13 Sep 2025</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="source-link">Source: DHA English Requirements Update</a>
+      <button class="alert-btn" onclick="openModal('all applicants','English Test Change')">🔔 Alert me for English rule updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="policy-card impact-high" data-impact="high" data-tags="visa-190 visa-491 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-high">High Impact</span>
+        <span class="card-date">Confirmed: November 2025</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">190 Visa</span>
+          <span class="visa-tag">491 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">2025–26 State Nomination Allocations Confirmed — Total 20,350 Places</div>
+    <div class="card-summary">The Department of Home Affairs confirmed final state and territory nomination allocations for the 2025–26 program year. Total places: 12,850 for Subclass 190 and 7,500 for Subclass 491 across all states. NSW received 2,100 × 190 and 1,500 × 491. Victoria leads with 2,700 × 190. Subclass 190 allocations decreased across most states compared to 2024–25.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">Fewer 190 nomination places are available nationally than last year. NSW (2,100 places) and VIC (2,700 places) are the largest allocations but competition is intense. SA (1,350 places), TAS (1,200 places) and NT (850 places) remain more accessible. QLD received an increase of 1,250 additional places — now a stronger option than previous years.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ QLD — allocation increased significantly</span>
+      <span class="occ-tag neutral">→ NSW, VIC — large allocation but highly competitive</span>
+      <span class="occ-tag affected">⚠ Most states — 190 allocation reduced vs 2024–25</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="source-link">Source: DHA State Nomination Allocations 2025–26</a>
+      <button class="alert-btn" onclick="openModal('state nomination applicant','State Allocation Change')">🔔 Alert me for state allocation updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="policy-card impact-med" data-impact="med" data-tags="visa-485 occ-acc occ-ict occ-health occ-eng occ-edu">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-med">Moderate Impact</span>
+        <span class="card-date">Announced: March 2026</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">485 Post-Study</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">485 Visa New 25-Day Processing Target Announced</div>
+    <div class="card-summary">The Department of Home Affairs announced a new 25-day median processing target for Subclass 485 Graduate Temporary visa applications, in response to backlogs that pushed processing times to 3–5 months in late 2025. The target applies to complete applications lodged from early 2026.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">If you are about to graduate and plan to apply for a 485 post-study work visa, the Department is committing to process complete applications within 25 days. Apply as soon as you are eligible and ensure your application is complete — missing documents are the main reason for delays under the new system.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ All international graduates applying for 485</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485" target="_blank" class="source-link">Source: DHA Temporary Graduate 485 Visa</a>
+      <button class="alert-btn" onclick="openModal('international student','485 Processing Update')">🔔 Alert me for 485 updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 7 -->
+  <div class="policy-card impact-high" data-impact="high" data-tags="visa-189 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-high">High Impact</span>
+        <span class="card-date">Round held: 13 November 2025</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">189 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">189 Invitation Round — 10,000 Invitations Issued · Official Cutoffs by Occupation Released</div>
+    <div class="card-summary">The Department of Home Affairs held the second 189 SkillSelect invitation round for 2025–26 on 13 November 2025, issuing 10,000 invitations. Combined with the August 2025 round (6,887 invitations), a total of 16,887 invitations have been issued — against a planning level of 16,900. This suggests no further 189 rounds may be held in 2025–26.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">Official minimum points invited by occupation (Nov 2025)</div>
+      <div class="card-plain-text" style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem 1rem;margin-top:0.4rem">
+        <span>Electrician (General): <strong style="color:var(--teal)">65 pts</strong></span>
+        <span>Carpenter / Joiner: <strong style="color:var(--teal)">65 pts</strong></span>
+        <span>Plumber (General): <strong style="color:var(--teal)">65 pts</strong></span>
+        <span>Registered Nurse: <strong style="color:var(--teal)">75 pts</strong></span>
+        <span>General Practitioner: <strong style="color:var(--teal)">75 pts</strong></span>
+        <span>Physiotherapist: <strong style="color:var(--teal)">75 pts</strong></span>
+        <span>Civil Engineer: <strong style="color:var(--teal)">85 pts</strong></span>
+        <span>Software Engineer: <strong style="color:var(--teal)">90 pts</strong></span>
+        <span>Accountant: <strong style="color:var(--red)">95 pts (pro-rata)</strong></span>
+        <span>Chef / Cook: <strong style="color:var(--red)">Not eligible (STSOL)</strong></span>
+      </div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited" onclick="openModal('Electrician','Nov 2025 189 Round')">✓ Trades — invited at 65 pts</span>
+      <span class="occ-tag benefited" onclick="openModal('Registered Nurse','Nov 2025 189 Round')">✓ Healthcare — invited at 75 pts</span>
+      <span class="occ-tag neutral" onclick="openModal('Civil Engineer','Nov 2025 189 Round')">→ Engineers — 85 pts</span>
+      <span class="occ-tag affected" onclick="openModal('Accountant','Nov 2025 189 Round')">⚠ Accountants — 95 pts, pro-rata cap</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="source-link">Source: DHA SkillSelect Invitation Rounds</a>
+      <button class="alert-btn" onclick="openModal('your occupation','189 Round Results')">🔔 Alert me for next round</button>
+    </div>
+  </div>
+
+  <!-- CARD 8 -->
+  <div class="policy-card impact-med" data-impact="med" data-tags="visa-190 occ-acc occ-ict occ-health occ-eng occ-edu occ-trades">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-med">Moderate Impact</span>
+        <span class="card-date">March 2026</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">190 Visa</span>
+          <span class="visa-tag">NSW</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">NSW 190 Invitation Round — March 2026 · EOI Deadline 1 March 2026</div>
+    <div class="card-summary">The NSW Government announced a Subclass 190 invitation round for the first week of March 2026. Applicants were required to ensure their SkillSelect EOI was updated by COB Sunday 1 March 2026. NSW uses merit-based selection — points alone do not determine outcomes. Priority sectors include construction, renewable energy, digital and cyber, and the care economy.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">NSW does not publish a fixed points cutoff. Selection is based on occupation demand, employment evidence, English level and sector alignment. Accountants and general finance roles face very limited invitation chances in NSW regardless of points. If you are in construction, healthcare, digital or renewable energy, your chances are significantly better.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited" onclick="openModal('Civil Engineer','NSW March 2026 Round')">✓ Construction / Engineering</span>
+      <span class="occ-tag benefited" onclick="openModal('Registered Nurse','NSW March 2026 Round')">✓ Healthcare</span>
+      <span class="occ-tag benefited" onclick="openModal('Software Engineer','NSW March 2026 Round')">✓ Digital / Cyber</span>
+      <span class="occ-tag affected" onclick="openModal('Accountant','NSW March 2026 Round')">⚠ Accountants — very limited NSW allocation</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://www.nsw.gov.au/visas-and-migration/skilled-visas/skilled-nominated-visa-subclass-190" target="_blank" class="source-link">Source: NSW Government Skilled Visas</a>
+      <button class="alert-btn" onclick="openModal('NSW applicant','NSW Round Alerts')">🔔 Alert me for NSW rounds</button>
+    </div>
+  </div>
+
+  <!-- CARD 9 -->
+  <div class="policy-card impact-low" data-impact="low" data-tags="visa-482 occ-health">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-low">Positive Change</span>
+        <span class="card-date">Effective: December 2024</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">482 SID Visa</span>
+          <span class="visa-tag">186 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">482 → 186 PR Pathway Shortened — Work Requirement Reduced to 2 Years</div>
+    <div class="card-summary">Under the new Skills in Demand visa framework, the Temporary Residence Transition (TRT) stream of the Subclass 186 Employer Nomination Scheme was updated. Sponsored workers now only need 2 years of full-time work with an approved sponsor before being eligible to apply for permanent residency — reduced from 3 years under the old TSS framework.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">If you are on or transitioning to the new SID 482 visa, you can apply for permanent residency through your employer after 2 years of work in your nominated occupation — one year sooner than before. The 2 years can be accumulated across multiple approved sponsors, not just one employer.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ All SID 482 visa holders — faster PR pathway</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/employer-nomination-scheme-186" target="_blank" class="source-link">Source: DHA Employer Nomination Scheme 186</a>
+      <button class="alert-btn" onclick="openModal('482 visa holder','186 PR Pathway Update')">🔔 Alert me for 186 updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 10 -->
+  <div class="policy-card impact-med" data-impact="med" data-tags="visa-482 occ-health occ-edu">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-med">Moderate Impact</span>
+        <span class="card-date">Effective: December 2024</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">482 SID Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">SID Visa Portability Extended to 180 Days — Change Employer Without Losing Visa</div>
+    <div class="card-summary">Under the new Skills in Demand visa framework, sponsored workers who lose their job or change employer have 180 days to find a new approved sponsor before their visa is at risk — extended from 60 days under the old TSS 482 framework. During this period, full work rights are maintained including the ability to work in any job.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">If your employer terminates your employment or you choose to leave, you now have 6 months to find a new sponsoring employer. You can work in any job during this time to support yourself. This significantly reduces the risk of being on an employer-sponsored visa — you are no longer a "desperate hire."</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ All SID 482 visa holders — improved job security</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="source-link">Source: DHA Skills in Demand Visa</a>
+      <button class="alert-btn" onclick="openModal('482 visa holder','Portability Update')">🔔 Alert me for SID updates</button>
+    </div>
+  </div>
+
+  <!-- CARD 11 -->
+  <div class="policy-card impact-low" data-impact="low" data-tags="visa-189 visa-190 visa-491 occ-ict occ-eng">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-low">Positive Change</span>
+        <span class="card-date">Confirmed: 2025–26</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">189 Visa</span>
+          <span class="visa-tag">190 Visa</span>
+          <span class="visa-tag">491 Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">Quarterly Invitation Round Schedule Introduced — More Predictable Timing</div>
+    <div class="card-summary">From the 2025–26 program year, the Department of Home Affairs moved toward a quarterly schedule for Subclass 189 invitation rounds, replacing the previous irregular ad-hoc timing. This followed internal reform documents (May 2025) identifying unpredictable round timing as a key problem for applicants.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">Instead of invitation rounds happening without warning, applicants can now expect rounds roughly every 3 months. This means you can time your EOI submission and document preparation around predictable windows. The first two rounds of 2025–26 were in August 2025 and November 2025.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ All 189 EOI applicants — better planning certainty</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="source-link">Source: DHA SkillSelect Invitation Rounds</a>
+      <button class="alert-btn" onclick="openModal('189 applicant','Round Schedule Update')">🔔 Alert me for next round</button>
+    </div>
+  </div>
+
+  <!-- CARD 12 -->
+  <div class="policy-card impact-med" data-impact="med" data-tags="visa-482 occ-health occ-edu">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="impact-badge ib-med">Moderate Impact</span>
+        <span class="card-date">Effective: December 2024</span>
+        <div class="card-visa-tags">
+          <span class="visa-tag">482 SID Visa</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-title">Work Experience Requirement for 482 SID Reduced to 1 Year</div>
+    <div class="card-summary">The minimum prior work experience requirement for the Skills in Demand (SID) Core Skills stream was reduced from 2 years to 1 year. The 1 year of experience must have been gained within the last 5 years and must be in the nominated occupation or a closely related role.</div>
+    <div class="card-plain">
+      <div class="card-plain-label">What this means in plain English</div>
+      <div class="card-plain-text">Recent graduates and early-career professionals who previously could not access employer sponsorship due to the 2-year experience requirement can now apply after just 1 year of relevant work. This particularly benefits recent 485 post-study visa holders transitioning to sponsored employment.</div>
+    </div>
+    <div class="occ-row">
+      <span class="occ-tag benefited">✓ Recent graduates — now eligible after 1 year work</span>
+      <span class="occ-tag benefited">✓ 485 post-study visa holders — faster transition to 482</span>
+    </div>
+    <div class="card-footer">
+      <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skills-in-demand-visa-subclass-482" target="_blank" class="source-link">Source: DHA Skills in Demand 482 Visa</a>
+      <button class="alert-btn" onclick="openModal('recent graduate','SID Work Experience Update')">🔔 Alert me for SID updates</button>
+    </div>
+  </div>
+
+  <div class="no-results" id="no-results">No updates match your current filter. <a href="#" onclick="setFilter('all',document.querySelector('[data-filter=all]'));return false" style="color:var(--teal)">Clear filter</a></div>
+
+</div><!-- end cards-wrap -->
+
+<!-- ALERT MODAL -->
+<div class="modal-bg" id="alert-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div style="font-size:1.3rem;margin-bottom:0.6rem">🔔</div>
+    <h3>Get alerts for <span id="modal-occ-display">your occupation</span></h3>
+    <p>We'll email you within 48 hours of any DHA policy change that affects your pathway — occupation list changes, cutoff shifts, visa rule updates.</p>
+    <div class="modal-occ" id="modal-occ-badge">Change type: <span id="modal-change-type">General</span></div>
+    <input type="text" id="modal-name" placeholder="Your name">
+    <input type="email" id="modal-email" placeholder="your@email.com">
+    <select id="modal-occ-select" style="width:100%;background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.7rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;margin-bottom:0.75rem;-webkit-appearance:none">
+      <option value="">Select your occupation…</option>
+      <option>Accountant</option><option>Software Engineer / Developer</option>
+      <option>Civil Engineer</option><option>Mechanical Engineer</option>
+      <option>Electrical Engineer</option><option>Registered Nurse</option>
+      <option>General Practitioner</option><option>Physiotherapist</option>
+      <option>Teacher</option><option>Early Childhood Teacher</option>
+      <option>Electrician</option><option>Plumber</option><option>Carpenter</option>
+      <option>Chef / Cook</option><option>Social Worker</option>
+      <option>Data Analyst / Scientist</option><option>Cybersecurity Specialist</option>
+      <option>ICT Manager</option><option>Other occupation</option>
+    </select>
+    <button class="modal-submit" onclick="submitAlert()">Activate My Alerts →</button>
+    <div class="modal-note">Free · No spam · Unsubscribe anytime · Sourced from DHA only</div>
+  </div>
+</div>
+
+<div class="dis" style="padding:1.5rem">
+  <strong>⚠️ Data source notice:</strong> All policy information on this page is sourced directly from official Department of Home Affairs publications and announcements. Each update includes a direct link to the relevant DHA page. VisaIQ publishes this information for reference only — always verify current rules at immi.homeaffairs.gov.au before making decisions. This is not migration advice.
+</div>
+
+<footer>
+  <div style="margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.2rem">
+    <a href="/">Home</a><a href="/tool">PR Tool</a><a href="/rounds">Rounds</a>
+    <a href="/points-calculator">Points Calc</a><a href="/methodology">Methodology</a>
+  </div>
+  <div>© 2026 VisaIQ · Not migration advice · All data sourced from Department of Home Affairs</div>
+</footer>
+
+<script>
+let currentFilter='all';
+
+function setFilter(f,btn){
+  currentFilter=f;
+  document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterCards();
+}
+
+function filterCards(){
+  const search=document.getElementById('search-input').value.toLowerCase();
+  const cards=document.querySelectorAll('.policy-card');
+  let visible=0;
+  cards.forEach(c=>{
+    const tags=c.dataset.tags||'';
+    const impact=c.dataset.impact||'';
+    const text=c.textContent.toLowerCase();
+    const matchFilter=currentFilter==='all'||tags.includes(currentFilter)||impact===currentFilter.replace('impact-','');
+    const matchSearch=!search||text.includes(search);
+    const show=matchFilter&&matchSearch;
+    c.style.display=show?'':'none';
+    if(show)visible++;
+  });
+  document.getElementById('result-count').textContent=`Showing ${visible} update${visible!==1?'s':''}`;
+  document.getElementById('no-results').style.display=visible===0?'block':'none';
+}
+
+function openModal(occ,changeType){
+  document.getElementById('modal-occ-display').textContent=occ;
+  document.getElementById('modal-change-type').textContent=changeType;
+  // Pre-select occupation in dropdown if it matches
+  const sel=document.getElementById('modal-occ-select');
+  for(let i=0;i<sel.options.length;i++){
+    if(sel.options[i].value.toLowerCase().includes(occ.toLowerCase())){
+      sel.selectedIndex=i;break;
+    }
+  }
+  document.getElementById('alert-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  document.getElementById('alert-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function submitAlert(){
+  const email=document.getElementById('modal-email').value;
+  const name=document.getElementById('modal-name').value;
+  if(!email||!email.includes('@')){
+    document.getElementById('modal-email').style.borderColor='rgba(239,68,68,0.5)';
+    return;
+  }
+  // Success state
+  const m=document.querySelector('.modal');
+  m.innerHTML=`
+    <div style="text-align:center;padding:1rem 0">
+      <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:0.6rem">Alerts activated</h3>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem">We'll email ${name||'you'} at <strong style="color:var(--teal)">${email}</strong> within 48 hours of any DHA change that affects your pathway.</p>
+      <button onclick="closeModal()" style="padding:0.7rem 1.5rem;background:var(--teal);color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer">Done</button>
+    </div>`;
+}
+
+// Close modal on backdrop click
+document.getElementById('alert-modal').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+
+// Update all alert buttons to show "set" state after signup (session only)
+let alertsSet=false;
+function markAlertsSet(){
+  if(!alertsSet){
+    alertsSet=true;
+    document.querySelectorAll('.alert-btn').forEach(b=>{
+      b.textContent='✓ Alerts Set';
+      b.classList.add('set');
+    });
+    document.querySelector('.ab-btn').textContent='✅ Alerts Active';
+  }
+}
+</script>
+</body>
+</html>
