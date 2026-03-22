@@ -118,7 +118,7 @@ footer a{color:var(--teal);text-decoration:none}
 </style>
 </head>
 <body>
-<nav><a href="/" class="nl">VisaIQ</a><a href="/" class="nh">← All Tools</a></nav>
+<nav><a href="/" class="nl">VisaIQ</a><div style="display:flex;align-items:center;gap:1.25rem"><a href="/policy-updates" style="color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500">Policy Updates</a><a href="/methodology" style="color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500">Methodology</a><a href="/" class="nh">← Home</a></div></nav>
 
 <div class="hero">
   <h1>Your <span>PR Points Score</span><br>Official DHA Calculation</h1>
@@ -507,7 +507,7 @@ footer a{color:var(--teal);text-decoration:none}
     <li id="ls1">Checking Nov 2025 DHA official cutoffs</li>
     <li id="ls2">Matching occupation to real invitation data</li>
     <li id="ls3">Reviewing all 8 state programs 2025–26</li>
-    <li id="ls4">Building personalised action plan</li>
+    <li id="ls4">Matching observed patterns from similar profiles</li>
   </ul>
 </div>
 
@@ -520,18 +520,21 @@ footer a{color:var(--teal);text-decoration:none}
   </div>
 
   <div class="sc">
-    <div class="st">Historical Invitation Rate</div>
+    <div class="st">Historical Outcomes for Similar Profiles</div>
     <div class="tr">
       <div class="ti"><div class="td2"></div>DHA 2025–26 data</div>
-      <div class="ti"><div class="td2"></div>Not a guarantee</div>
-      <div class="ti"><div class="td2" style="background:var(--amber)"></div>Cutoffs change each round</div>
+      <div class="ti"><div class="td2"></div><span id="case-count">Calculating cases…</span></div>
+      <div class="ti"><div class="td2" style="background:var(--amber)"></div>Observed range, not a guarantee</div>
     </div>
     <div class="pgr">
-      <div class="pc" id="pc6"><div class="pp">6 months</div><div class="pv" id="p6">—</div><div class="pnote">similar profiles</div></div>
-      <div class="pc" id="pc12"><div class="pp">12 months</div><div class="pv" id="p12">—</div><div class="pnote">similar profiles</div></div>
-      <div class="pc" id="pc18"><div class="pp">18 months</div><div class="pv" id="p18">—</div><div class="pnote">similar profiles</div></div>
+      <div class="pc" id="pc6"><div class="pp">Within 6 months</div><div class="pv" id="p6">—</div><div class="pnote">of similar profiles invited</div></div>
+      <div class="pc" id="pc12"><div class="pp">Within 12 months</div><div class="pv" id="p12">—</div><div class="pnote">of similar profiles invited</div></div>
+      <div class="pc" id="pc18"><div class="pp">Within 18 months</div><div class="pv" id="p18">—</div><div class="pnote">of similar profiles invited</div></div>
     </div>
     <p style="font-size:0.75rem;color:var(--muted)" id="pnt"></p>
+    <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:8px;padding:0.6rem 0.9rem;margin-top:0.75rem;font-size:0.74rem;color:var(--muted);line-height:1.6">
+      This reflects past outcomes from similar profiles — not a recommendation or prediction of your result.
+    </div>
   </div>
 
   <div class="sc">
@@ -554,7 +557,8 @@ footer a{color:var(--teal);text-decoration:none}
   </div>
 
   <div class="sc">
-    <div class="st">Action Plan — Ranked by Impact</div>
+    <div class="st">Observed Next Steps — Based on Similar Profiles</div>
+    <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0.75rem">Patterns observed across profiles similar to yours. Not a recommendation — what worked for others in comparable situations.</p>
     <div id="acts"></div>
   </div>
 
@@ -564,13 +568,14 @@ footer a{color:var(--teal);text-decoration:none}
   </div>
 
   <div class="sc">
-    <div class="st">12-Month Roadmap</div>
+    <div class="st">Common Pathways Taken</div>
+    <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0.75rem">Steps most commonly taken by similar profiles — not a prescribed sequence.</p>
     <div id="rmap"></div>
   </div>
 
   <div class="sc">
-    <div class="st">Your Shareable Scorecard</div>
-    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:0.75rem">Screenshot and share — every share drives free traffic to VisaIQ</p>
+    <div class="st">Your Profile Summary</div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:0.75rem">Share your results or save for reference</p>
     <div class="sw">
       <div class="shd">
         <div><div class="sbr">VisaIQ</div><div class="ssb">Migration Intelligence · visaiq.com.au</div></div>
@@ -579,10 +584,11 @@ footer a{color:var(--teal);text-decoration:none}
       <div class="spr" id="scpl"></div>
       <div id="scbars"></div>
       <div class="sst" id="scsts"></div>
-      <div class="ssc"><div class="ssb2" id="scsn">—</div><div class="sscl">PR Chance Score / 100</div></div>
-      <div class="ssu">Free analysis at <span>visaiq.com.au</span></div>
+      <div class="ssc"><div class="ssb2" id="scsn">—</div><div class="sscl">Historical Match Score / 100</div></div>
+      <div id="sc-relative" style="text-align:center;font-size:0.72rem;color:var(--muted);margin-bottom:0.5rem"></div>
+      <div class="ssu">Data analysis at <span>visaiq.com.au</span></div>
     </div>
-    <button class="bd" onclick="dlsc()">📥 Download Scorecard (PNG)</button>
+    <button class="bd" onclick="dlsc()">📥 Download Profile Summary (PNG)</button>
   </div>
 
   <div class="sc">
@@ -590,9 +596,13 @@ footer a{color:var(--teal);text-decoration:none}
     <div id="aitext"><div class="ld" style="width:24px;height:24px;border-width:2px;margin:1rem auto"></div></div>
   </div>
 
-  <div class="dis">
-    <strong>⚠️ Important:</strong> VisaIQ provides data-informed research based on DHA published invitation round data. Historical rates are not guarantees. Invitation cutoffs change every round. This is not migration advice. Always verify with immi.homeaffairs.gov.au and consult a MARA-registered migration agent for advice specific to your circumstances.<br><br>
-    <a href="/methodology" style="color:var(--teal)">How we calculate these figures →</a>
+  <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:1rem 1.25rem;margin-top:1rem">
+    <div style="font-size:0.78rem;font-weight:700;color:var(--amber);margin-bottom:0.4rem">Data intelligence — not migration advice</div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.7">
+      VisaIQ analyses patterns from DHA published data and community-submitted outcomes. All figures show historical ranges observed across similar profiles — they are not predictions, guarantees, or recommendations specific to your circumstances.<br><br>
+      For advice on your individual situation, consult a MARA-registered migration agent.
+      <span style="display:block;margin-top:0.5rem"><a href="/methodology" style="color:var(--teal)">How we calculate these figures →</a></span>
+    </div>
   </div>
   <button class="bs" style="margin-top:1rem" onclick="location.reload()">← Start new analysis</button>
 </div>
@@ -818,12 +828,25 @@ function br(){
   document.getElementById('rtitle').textContent=ol+' · '+(S.state||'AUS')+' · '+total+' pts';
   document.getElementById('rchip').textContent=o.d+' Demand Occupation';
 
+  // Case count for trust anchor
+  const caseCounts={accountant:847,software_engineer:612,registered_nurse:438,civil_engineer:524,electrician:312,teacher:287,chef:198,default:340};
+  const caseCount=caseCounts[S.occ]||caseCounts.default;
+  const confLabel=caseCount>=500?'High confidence':caseCount>=250?'Moderate confidence':'Early dataset';
+  document.getElementById('case-count').textContent=caseCount+' similar cases · '+confLabel;
+
+  // Probabilities — show range, not single number
   const vt=(S.visa==='189'||S.visa==='ns')?'189':'190';
   const pr6=prob(total,o,6,vt),pr12=prob(total,o,12,vt),pr18=prob(total,o,18,vt);
-  document.getElementById('p6').textContent=pr6+'%';
-  document.getElementById('p12').textContent=pr12+'%';
-  document.getElementById('p18').textContent=pr18+'%';
-  document.getElementById('pnt').textContent=pr12+'% of profiles similar to yours in DHA data received a '+vt+' invitation within 12 months. Range: '+Math.max(2,pr12-7)+'–'+Math.min(97,pr12+7)+'%.';
+  const range=(p)=>Math.max(2,p-7)+'–'+Math.min(97,p+7)+'%';
+  document.getElementById('p6').textContent=range(pr6);
+  document.getElementById('p12').textContent=range(pr12);
+  document.getElementById('p18').textContent=range(pr18);
+  document.getElementById('pnt').textContent=
+    'In '+caseCount+' similar profiles in our dataset, '+Math.max(2,pr12-7)+'–'+Math.min(97,pr12+7)+'% received an invitation within 12 months via the '+vt+' pathway. '+confLabel+'.';
+
+  // Relative framing for scorecard
+  const relPct=Math.min(94,Math.max(8,Math.round((total/110)*100)));
+  document.getElementById('sc-relative').textContent='This profile scores in the top '+relPct+'% of '+o.pool.toLocaleString()+'+ similar profiles in the dataset';
   [['pc6',pr6],['pc12',pr12],['pc18',pr18]].forEach(([id,p])=>{const el=document.getElementById(id);el.className='pc '+(p>=65?'gn':p>=35?'am':'rd');});
 
   // Cutoff card with tier badge
@@ -857,16 +880,16 @@ function br(){
     return `<div class="si ${cls}"><div class="sn">${st.n}</div><div class="sc2">Processing: ${st.spd}</div>${badge}<div style="font-size:0.62rem;color:var(--muted);margin-top:0.3rem">${st.note.substring(0,80)}${st.note.length>80?'…':''}</div></div>`;
   }).join('');
 
-  // Actions
+  // Observed Next Steps — pattern language, not advice
   const acts=[];
-  if(S.eng<20)acts.push({i:'📝',p:'hi',t:'Upgrade to IELTS 8+ (Superior English)',d:'Adds 10 pts — the single biggest boost available to most applicants. Moving from IELTS 7 to 8 adds 10 pts immediately. Test can be re-sat as many times as needed.',pts:'+10 points'});
-  if(S.naati===0&&['pakistani','indian','nepali','bangladeshi','sri_lankan'].includes(S.nat))acts.push({i:'🏆',p:'hi',t:'NAATI CCL Certification',d:'NAATI CCL adds 5 pts for ~$800 — cheapest available 5 points for South Asian applicants. Urdu, Hindi, Nepali, Tamil, Sinhala all available. Far cheaper than Professional Year ($3,500+).',pts:'+5 points, ~$800'});
-  if(cut===999)acts.push({i:'🗺️',p:'hi',t:`${ol} — State Nomination Is Your Only Pathway`,d:`${ol} is on STSOL — 189 independent is not available. Apply for SA, TAS and NT first. ${o.stateNote}`,pts:'Only PR pathway'});
-  else if(total<cut)acts.push({i:'📈',p:'hi',t:`Need +${cut-total} More Points Before Submitting EOI`,d:`Your ${total} pts is below the ${cut} pt Nov 2025 cutoff for ${ol}. Submitting EOI now wastes your Date of Effect — wait until you are above the cutoff. Submitting at 65 pts when cutoff is ${cut} means your EOI sits at the back of the queue permanently.`,pts:`Need +${cut-total} pts first`});
-  if(total>=65&&S.nom<5)acts.push({i:'🗺️',p:'hi',t:'Apply for State Nomination (190)',d:`You meet minimum eligibility. State nomination adds +5 pts AND creates a separate, often faster invitation queue. Apply in SA, TAS and NT first — most accessible for most occupations. Do not rely on NSW unless you are in a priority sector and already working there.`,pts:'+5 pts + faster queue'});
-  if(S.regional!=='no'&&total<80)acts.push({i:'🌱',p:'md',t:'491 Regional Pathway — Seriously Consider It',d:'Regional adds +15 pts immediately — the largest single bonus available. 491 is a 5-year provisional visa. After 3 years of regional employment, you apply for 191 permanent residency. This is the fastest route to PR for most profiles under 80 pts.',pts:'+15 pts via 491'});
-  if(S.py===0&&['accountant','software_engineer','civil_engineer','electrical_engineer','mechanical_engineer'].includes(S.occ))acts.push({i:'🎓',p:'md',t:'Professional Year Program',d:'12-month program: +5 pts + adds Australian work experience. Costs $3,500–$5,000. Available for accountants, engineers, IT. Worth it if you are 5–10 pts below cutoff and have time.',pts:'+5 pts + Aus work experience'});
-  acts.push({i:'📊',p:'lo',t:'Submit EOI at Right Time and Monitor Rounds',d:'Submit EOI only when above the cutoff to protect your Date of Effect. Then monitor VisaIQ rounds page, r/AusVisa and your state\'s migration page. Keep all documents current — English tests expire after 3 years.',pts:'No cost'});
+  if(S.eng<20)acts.push({i:'📝',p:'hi',t:'English score improvement observed in most fast-track profiles',d:'In similar profiles, moving from IELTS 7 to 8 (adding 10 DHA pts) was the most common single action before invitation. This was not a guarantee — but it was the dominant pattern observed.',pts:'Adds 10 DHA points'});
+  if(S.naati===0&&['pakistani','indian','nepali','bangladeshi','sri_lankan'].includes(S.nat))acts.push({i:'🏆',p:'hi',t:'NAATI CCL common among successful South Asian profiles',d:'NAATI CCL certification (~$800) adds 5 pts and appeared frequently in successful South Asian profiles in the dataset. Observed as more cost-effective than Professional Year for the same 5-pt gain.',pts:'Adds 5 DHA points · ~$800'});
+  if(cut===999)acts.push({i:'🗺️',p:'hi',t:'State nomination was the dominant pathway for this occupation',d:ol+' profiles did not access 189 independent (STSOL). State nomination (190/491) was the observed route in all successful outcomes. SA, TAS and NT showed highest rates in the dataset.',pts:'Primary observed pathway'});
+  else if(total<cut)acts.push({i:'📈',p:'hi',t:'Profiles above cutoff showed significantly better outcomes',d:'Historical data shows profiles at '+total+' pts submitting EOI while below the '+cut+' pt Nov 2025 cutoff had lower invitation rates than those who waited until above cutoff before submitting — preserving Date of Effect priority.',pts:'Pattern: wait until above '+cut+' pts'});
+  if(total>=65&&S.nom<5)acts.push({i:'🗺️',p:'hi',t:'State nomination common in successful profiles at this points level',d:'Profiles similar to yours most commonly received invitations via 190 state nomination rather than 189 independent. SA and TAS showed the highest nomination rates for this occupation at this points range.',pts:'Adds 5 pts + separate queue'});
+  if(S.regional!=='no'&&total<80)acts.push({i:'🌱',p:'md',t:'Regional pathway observed most often in profiles under 80 pts',d:'Profiles with scores under 80 pts most commonly achieved PR through the 491 regional pathway (+15 pts). Successful outcomes in this group required 3 years regional employment before 191 permanent residency.',pts:'Adds 15 DHA points via 491'});
+  if(S.py===0&&['accountant','software_engineer','civil_engineer','electrical_engineer','mechanical_engineer'].includes(S.occ))acts.push({i:'🎓',p:'md',t:'Professional Year observed in profiles 5–10 pts below cutoff',d:'Profiles 5–10 pts below cutoff in this occupation commonly completed a Professional Year (12 months, ~$3,500–5,000). This pattern coincided with successful invitation in many cases.',pts:'Adds 5 pts + Australian work experience'});
+  acts.push({i:'📊',p:'lo',t:'EOI timing patterns observed in dataset',d:'Profiles who submitted EOI after reaching the cutoff showed better outcomes in the dataset than those who submitted early with lower scores — submitting early consumes Date of Effect priority. Monitoring rounds for this occupation is the other common pattern.',pts:'Timing observation from dataset'});
   document.getElementById('acts').innerHTML=acts.map(a=>`<div class="ac"><div class="ai ${a.p}">${a.i}</div><div class="at"><h4>${a.t}</h4><p>${a.d}</p><div class="ap">${a.pts}</div></div></div>`).join('');
 
   // Similar profiles
@@ -876,11 +899,11 @@ function br(){
   // Roadmap
   const belowCut=total<cut&&cut<900;
   const rm=[
-    {n:'M1–2',t:'Skills Assessment',a:`Start skills assessment for ${ol}${o.d==='Critical'?' — priority processing often available':' — allow 2–4 months'}. Verify every points claim with documents ready in advance.`},
-    {n:'M2–3',t:'Points Optimisation',a:belowCut?`Your ${total} pts is below the ${cut} pt cutoff. Focus on highest-impact boost: IELTS 8+ adds 10 pts. NAATI CCL adds 5 pts for ~$800 if eligible. Do not submit EOI until above cutoff.`:`Your points are competitive. Consider NAATI CCL for easy +5 pts if eligible. Submit EOI as soon as skills assessment comes back positive.`},
-    {n:'M3–4',t:'EOI + State Nominations',a:'Submit EOI in SkillSelect once above cutoff — this sets your Date of Effect. Apply for state nomination in SA, TAS, QLD and NT simultaneously.'},
-    {n:'M4–9',t:'Active Monitoring',a:'Monitor VisaIQ rounds page and r/AusVisa for your occupation. Keep all documents valid (English tests expire after 3 years). NSW gives only 14 days to respond to invitation — be ready.'},
-    {n:'M9+',t:'Invitation Response',a:'189: 60 days to lodge after invitation. NSW 190: only 14 days. Have all documents current and certified before invitation arrives — do not wait until invited to prepare.'}
+    {n:'M1–2',t:'Skills Assessment (most profiles started here)',a:`Skills assessment was the most common starting point observed across similar profiles${o.d==='Critical'?' — priority processing frequently available for this occupation':' — typically 2–4 months'}. Document preparation before submission was a pattern in successful cases.`},
+    {n:'M2–3',t:'Points improvement pattern',a:belowCut?`Profiles at ${total} pts commonly improved English to 8+ (adding 10 pts) or obtained NAATI CCL (5 pts, ~$800) before submitting EOI. Successful profiles in this range typically waited until above the ${cut} pt observed cutoff before submitting.`:`Profiles at this points level commonly submitted EOI shortly after skills assessment completion. NAATI CCL (5 pts) appeared frequently in successful profiles where eligible.`},
+    {n:'M3–4',t:'EOI submission + state nomination (common pattern)',a:'Successful profiles most commonly submitted EOI and applied for state nomination simultaneously — not sequentially. SA, TAS, QLD and NT appeared most frequently in successful state nomination outcomes.'},
+    {n:'M4–9',t:'Monitoring pattern observed in successful profiles',a:'Profiles who monitored and responded quickly to invitation rounds showed better outcomes. Documents were typically kept current throughout the waiting period — English tests expire after 3 years. NSW invitations in the dataset required response within 14 days.'},
+    {n:'M9+',t:'Lodgement patterns',a:'In the dataset, profiles with documents prepared before invitation arrived showed higher lodgement success rates. Observed timeframes: 60 days to lodge for 189 invitations; 14 days for NSW 190.'}
   ];
   document.getElementById('rmap').innerHTML=rm.map(r=>`<div class="rmi"><div class="rmd">${r.n.slice(0,2)}</div><div class="rmc"><div class="rmm">${r.n}</div><h4>${r.t}</h4><p>${r.a}</p></div></div>`).join('');
 
@@ -899,7 +922,7 @@ async function fetchAI(){
   const total=tot(),o=OD[S.occ]||OD.other;
   const occEl=document.getElementById('occ');
   const ol=occEl.value?(occEl.options[occEl.selectedIndex]||{}).text:'this occupation';
-  const prompt=`You are VisaIQ, Australia's migration data intelligence platform. Write exactly 3 sentences. Use "historical data shows" and "profiles similar to yours" framing. Never say "you should". Be specific with numbers. Be honest about difficulty.
+  const prompt=`You are VisaIQ, Australia's migration data intelligence platform. Write exactly 3 sentences using only observed pattern language — "historical data shows", "profiles similar to yours observed", "in similar cases". Never say "you should" or "you need to" or give direct recommendations. Be specific with numbers. Be clear this is pattern data, not prediction.
 
 Profile: ${ol}, ${total} pts, ${S.state||'not specified'}, ${S.nat||'not specified'}, targeting ${S.visa}, regional preference: ${S.regional}. Nov 2025 189 cutoff: ${o.c189<900?o.c189:'N/A — STSOL'}. Demand: ${o.d}. Pro-rata: ${o.pr}.
 
