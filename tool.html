@@ -142,51 +142,106 @@ footer a{color:var(--teal);text-decoration:none}
 <div class="screen active" id="screen1">
   <div class="sc">
     <div class="st">Occupation</div>
+    <div class="ib" style="margin-bottom:0.75rem">
+      <strong>New 4-Tier 189 Invitation System (2025–26) — applies to 189 only:</strong><br>
+      🟢 <strong>Tier 1</strong> — Critical health/medical · Highest priority · Most invitations · Invited at lowest points<br>
+      🔵 <strong>Tier 2</strong> — Education, mental health, community · Moderate steady invitations<br>
+      🟡 <strong>Tier 3</strong> — Engineering, trades, science, construction · Standard allocation<br>
+      🔴 <strong>Tier 4</strong> — Oversupplied (ICT, accounting, hospitality) · Fewest 189 invitations · Consider 190/491 instead<br>
+      <span style="font-size:0.72rem;color:var(--muted)">MLTSSL = eligible for 189+190+491 · STSOL = 190/491 only (not 189)</span>
+    </div>
     <div class="fr"><label>Your nominated occupation</label>
       <select id="occ">
         <option value="">Choose occupation…</option>
-        <optgroup label="Accounting &amp; Finance">
-          <option value="accountant">Accountant (General / Tax / Management)</option>
-          <option value="auditor">Auditor</option>
-          <option value="financial_analyst">Financial Analyst</option>
+        <optgroup label="── Accounting &amp; Finance ──">
+          <option value="accountant">Accountant — General / Tax / Management [MLTSSL · 🔴 Tier 4]</option>
+          <option value="auditor">Auditor [MLTSSL · 🔴 Tier 4]</option>
+          <option value="financial_analyst">Financial Analyst [MLTSSL · 🟡 Tier 3]</option>
+          <option value="actuary">Actuary [MLTSSL · 🟡 Tier 3]</option>
+          <option value="management_consultant">Management Consultant [MLTSSL · 🟡 Tier 3]</option>
+          <option value="finance_manager">Finance / Treasury Manager [MLTSSL · 🟡 Tier 3]</option>
         </optgroup>
-        <optgroup label="Technology">
-          <option value="software_engineer">Software Engineer / Developer</option>
-          <option value="systems_analyst">Systems Analyst</option>
-          <option value="network_engineer">Network Engineer</option>
-          <option value="data_analyst">Data Analyst / Scientist</option>
-          <option value="ict_manager">ICT Manager</option>
+        <optgroup label="── Technology ──">
+          <option value="software_engineer">Software Engineer / Developer [MLTSSL · 🔴 Tier 4]</option>
+          <option value="systems_analyst">Systems Analyst [MLTSSL · 🔴 Tier 4]</option>
+          <option value="network_engineer">Network Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="data_analyst">Data Analyst / Data Scientist [MLTSSL · 🟡 Tier 3]</option>
+          <option value="ict_manager">ICT Manager [MLTSSL · 🔴 Tier 4]</option>
+          <option value="cybersecurity">Cybersecurity Specialist / Analyst [MLTSSL · 🟡 Tier 3]</option>
+          <option value="cloud_engineer">Cloud Engineer / DevOps Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="ai_engineer">AI / Machine Learning Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="ict_business_analyst">ICT Business Analyst [MLTSSL · 🔴 Tier 4]</option>
+          <option value="database_admin">Database Administrator [MLTSSL · 🟡 Tier 3]</option>
+          <option value="web_developer">Web Developer [STSOL — 190/491 only]</option>
+          <option value="ux_designer">UX Designer / Product Designer [STSOL — 190/491 only]</option>
+          <option value="supply_chain_analyst">Supply Chain Analyst [STSOL — 190/491 only]</option>
         </optgroup>
-        <optgroup label="Engineering">
-          <option value="civil_engineer">Civil Engineer</option>
-          <option value="mechanical_engineer">Mechanical Engineer</option>
-          <option value="electrical_engineer">Electrical Engineer</option>
-          <option value="structural_engineer">Structural Engineer</option>
-          <option value="chemical_engineer">Chemical Engineer</option>
+        <optgroup label="── Engineering ──">
+          <option value="civil_engineer">Civil Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="structural_engineer">Structural Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="mechanical_engineer">Mechanical Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="electrical_engineer">Electrical Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="chemical_engineer">Chemical Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="mining_engineer">Mining Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="petroleum_engineer">Petroleum Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="environmental_engineer">Environmental Engineer / Consultant [MLTSSL · 🟡 Tier 3]</option>
+          <option value="geotechnical_engineer">Geotechnical Engineer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="project_engineer">Project Engineer / Manager [MLTSSL · 🟡 Tier 3]</option>
+          <option value="quantity_surveyor">Quantity Surveyor [MLTSSL · 🟡 Tier 3]</option>
         </optgroup>
-        <optgroup label="Healthcare">
-          <option value="registered_nurse">Registered Nurse</option>
-          <option value="midwife">Midwife</option>
-          <option value="physiotherapist">Physiotherapist</option>
-          <option value="pharmacist">Pharmacist</option>
-          <option value="gp">General Practitioner</option>
-          <option value="specialist_doctor">Medical Specialist</option>
+        <optgroup label="── Healthcare ──">
+          <option value="registered_nurse">Registered Nurse [MLTSSL · 🟢 Tier 1]</option>
+          <option value="midwife">Midwife [MLTSSL · 🟢 Tier 1]</option>
+          <option value="gp">General Practitioner [MLTSSL · 🟢 Tier 1]</option>
+          <option value="specialist_doctor">Medical Specialist — Cardiologist / Surgeon etc [MLTSSL · 🟢 Tier 1]</option>
+          <option value="physiotherapist">Physiotherapist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="occupational_therapist">Occupational Therapist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="speech_pathologist">Speech Pathologist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="pharmacist">Pharmacist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="psychologist">Psychologist / Clinical Psychologist [MLTSSL · 🔵 Tier 2]</option>
+          <option value="radiographer">Medical Radiographer / Sonographer [MLTSSL · 🟢 Tier 1]</option>
+          <option value="paramedic">Paramedic [MLTSSL · 🟢 Tier 1]</option>
+          <option value="optometrist">Optometrist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="dental">Dentist / Dental Specialist [MLTSSL · 🟢 Tier 1]</option>
+          <option value="aged_care_worker">Aged Care Worker [STSOL — 190/491 only]</option>
+          <option value="disability_worker">Disability Support Worker [STSOL — 190/491 only]</option>
+          <option value="child_care_worker">Child Care Worker [STSOL — 190/491 only]</option>
         </optgroup>
-        <optgroup label="Trades">
-          <option value="electrician">Electrician (General)</option>
-          <option value="plumber">Plumber (General)</option>
-          <option value="carpenter">Carpenter / Joiner</option>
-          <option value="welder">Welder / Metal Fabricator</option>
+        <optgroup label="── Trades ──">
+          <option value="electrician">Electrician — General [MLTSSL · 🟡 Tier 3]</option>
+          <option value="plumber">Plumber — General [MLTSSL · 🟡 Tier 3]</option>
+          <option value="carpenter">Carpenter / Joiner [MLTSSL · 🟡 Tier 3]</option>
+          <option value="welder">Welder / Metal Fabricator [MLTSSL · 🟡 Tier 3]</option>
+          <option value="bricklayer">Bricklayer [MLTSSL · 🟡 Tier 3]</option>
+          <option value="refrigeration_mechanic">Refrigeration &amp; AC Mechanic [MLTSSL · 🟡 Tier 3]</option>
+          <option value="motor_mechanic">Motor Mechanic / Diesel Mechanic [STSOL — 190/491 only]</option>
+          <option value="boilermaker">Boilermaker [MLTSSL · 🟡 Tier 3]</option>
+          <option value="painting_trades">Painting Trades Worker [STSOL — 190/491 only]</option>
+          <option value="cabinet_maker">Cabinet Maker [STSOL — 190/491 only]</option>
         </optgroup>
-        <optgroup label="Education">
-          <option value="teacher">Teacher (Secondary / Primary)</option>
-          <option value="early_childhood">Early Childhood Teacher</option>
+        <optgroup label="── Education ──">
+          <option value="teacher">Secondary / Primary Teacher [MLTSSL · 🔵 Tier 2]</option>
+          <option value="early_childhood">Early Childhood Teacher [MLTSSL · 🔵 Tier 2]</option>
+          <option value="special_ed_teacher">Special Education Teacher [MLTSSL · 🔵 Tier 2]</option>
+          <option value="vet_trainer">VET / TAFE Trainer [STSOL — 190/491 only]</option>
         </optgroup>
-        <optgroup label="Other">
-          <option value="chef">Chef / Cook</option>
-          <option value="social_worker">Social Worker</option>
-          <option value="business_manager">Business / Marketing Manager</option>
-          <option value="architect">Architect</option>
+        <optgroup label="── Community Services ──">
+          <option value="social_worker">Social Worker [MLTSSL · 🔵 Tier 2]</option>
+          <option value="welfare_worker">Welfare Worker / Community Worker [STSOL — 190/491 only]</option>
+          <option value="counsellor">Counsellor [STSOL — 190/491 only]</option>
+        </optgroup>
+        <optgroup label="── Business &amp; Management ──">
+          <option value="business_manager">Business / Marketing Manager [MLTSSL · 🟡 Tier 3]</option>
+          <option value="hr_manager">Human Resources Manager [MLTSSL · 🟡 Tier 3]</option>
+          <option value="operations_manager">Operations Manager [MLTSSL · 🟡 Tier 3]</option>
+          <option value="project_manager">Project Manager (non-engineering) [MLTSSL · 🟡 Tier 3]</option>
+        </optgroup>
+        <optgroup label="── Architecture, Science &amp; Other ──">
+          <option value="architect">Architect [MLTSSL · 🟡 Tier 3]</option>
+          <option value="urban_planner">Urban / Town Planner [MLTSSL · 🟡 Tier 3]</option>
+          <option value="surveyor">Land Surveyor [MLTSSL · 🟡 Tier 3]</option>
+          <option value="agricultural_scientist">Agricultural Scientist / Consultant [MLTSSL · 🟡 Tier 3]</option>
+          <option value="chef">Chef / Cook [STSOL — 190/491 only · 🔴 Tier 4 if MLTSSL]</option>
           <option value="other">Other occupation</option>
         </optgroup>
       </select>
@@ -552,62 +607,101 @@ const S={occ:'',visa:'189',state:'',nat:'',age:0,eng:0,edu:0,stem:0,ow:0,aw:0,pa
 // 189 cutoffs = official Nov 13 2025 DHA published round data
 // list: mltssl = 189 eligible, stsol = 190/491 only
 const OD={
-  accountant:{d:'Oversupplied',pool:15000,c189:95,list:'mltssl',pr:true,
+  accountant:{d:'Oversupplied',pool:15000,c189:95,list:'mltssl',pr:true,tier:4,
     stateNote:'NSW: almost impossible for accountants regardless of points — very limited allocation and sector not priority. SA (Talent & Innovation stream), TAS and QLD are realistic options.',
-    ins:'Accountants require 95+ pts for 189 (pro-rata cap applied — limited invitations per round). This is one of the most competitive occupations in SkillSelect. SA 190 and TAS 190 are the most common successful pathways for accountants at lower scores.',
+    ins:'Accountants are Tier 4 — the most oversupplied occupation in SkillSelect. Fewer 189 invitations are allocated vs other occupations. 95+ pts required. SA 190 and TAS 190 are the most common successful pathways.',
     sim:[{f:'🇮🇳',n:'Accountant · SA · 80 pts',d:'SA Talent & Innovation 190 · 9-month wait',m:'9 mo',l:'SA 190'},{f:'🇵🇰',n:'Accountant · TAS · 75 pts',d:'TAS 190 · employed in Hobart 8 months',m:'12 mo',l:'TAS 190'},{f:'🇳🇵',n:'Accountant · QLD · 85 pts',d:'QLD 190 offshore stream · 11-month wait',m:'11 mo',l:'QLD 190'}]},
-  auditor:{d:'High',pool:3000,c189:90,list:'mltssl',pr:false,stateNote:'',ins:'Auditors: 90 pts Nov 2025 cutoff. Better prospects than general accountants. SA and QLD accessible.',sim:[]},
-  financial_analyst:{d:'Moderate',pool:2500,c189:90,list:'mltssl',pr:false,stateNote:'Check state skills lists — not all states include financial analysts.',ins:'Financial analysts: 90 pts target. State nomination often faster than 189 queue.',sim:[]},
-  software_engineer:{d:'High',pool:8200,c189:90,list:'mltssl',pr:true,
-    stateNote:'ACT Canberra Matrix is strongest for IT — fast nomination (3–6 months) for strong profiles. NSW and VIC IT streams are active but wait times are longer. Pro-rata cap applies for 189.',
-    ins:'Software engineers: 90 pts in Nov 2025 (pro-rata). ACT Canberra Matrix is the fastest route for IT at 80–90 pts. PhD holders in IT can receive ACT nomination within days.',
+  auditor:{d:'High',pool:3000,c189:90,list:'mltssl',pr:false,tier:4,stateNote:'',ins:'Auditors are Tier 4 — oversupplied like general accountants. 90 pts target. SA and QLD 190 are the faster pathway.',sim:[]},
+  financial_analyst:{d:'Moderate',pool:2500,c189:90,list:'mltssl',pr:false,tier:3,stateNote:'Check state skills lists — not all states include financial analysts.',ins:'Financial analysts: Tier 3, moderate competition. 90 pts target. State nomination often faster than 189 queue.',sim:[]},
+  actuary:{d:'High',pool:1200,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Actuaries: Tier 3. 85 pts target. Strong demand in finance sector. NSW and VIC have most opportunities.',sim:[]},
+  management_consultant:{d:'Moderate',pool:2000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Management consultants: Tier 3. 85 pts target. Strong Australian work experience is critical.',sim:[]},
+  finance_manager:{d:'High',pool:1800,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Finance managers: Tier 3. 85 pts for 189. Senior roles often qualify for 482 Specialist Skills stream.',sim:[]},
+  software_engineer:{d:'High',pool:8200,c189:90,list:'mltssl',pr:true,tier:4,
+    stateNote:'ACT Canberra Matrix is strongest for IT — fast nomination (3–6 months) for strong profiles. NSW and VIC IT streams active but competitive. Pro-rata cap applies.',
+    ins:'Software engineers are Tier 4 — high EOI volumes mean fewer 189 invitations allocated. 90 pts required. ACT Canberra Matrix is the fastest route for IT profiles at 80–90 pts.',
     sim:[{f:'🇮🇳',n:'Developer · ACT · 85 pts',d:'ACT Canberra Matrix · 3-month nomination',m:'3 mo',l:'ACT 190'},{f:'🇵🇰',n:'Software Eng · VIC · 90 pts',d:'189 direct · invited Nov 2025 round',m:'5 mo',l:'189'},{f:'🇨🇳',n:'ICT Manager · NSW · 90 pts',d:'NSW 190 · 14-month wait',m:'14 mo',l:'NSW 190'}]},
-  systems_analyst:{d:'High',pool:3000,c189:90,list:'mltssl',pr:false,stateNote:'',ins:'Systems analysts: 90 pts target. ACT and SA are good options.',sim:[]},
-  network_engineer:{d:'High',pool:2500,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Network engineers: 85 pts in Nov 2025. SA and QLD have active demand.',sim:[]},
-  data_analyst:{d:'High',pool:3500,c189:90,list:'mltssl',pr:false,stateNote:'',ins:'Data roles growing fast. ACT and VIC prioritise tech. 90 pts target.',sim:[]},
-  ict_manager:{d:'Moderate',pool:2000,c189:90,list:'mltssl',pr:false,stateNote:'',ins:'ICT managers: strong Australian work experience is the critical differentiator.',sim:[]},
-  civil_engineer:{d:'High',pool:5200,c189:85,list:'mltssl',pr:false,
+  systems_analyst:{d:'High',pool:3000,c189:90,list:'mltssl',pr:false,tier:4,stateNote:'',ins:'Systems analysts: Tier 4 like most ICT roles. 90 pts target. ACT and SA are good 190 options.',sim:[]},
+  network_engineer:{d:'High',pool:2500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Network engineers: Tier 3. 85 pts in Nov 2025. SA and QLD have active demand.',sim:[]},
+  data_analyst:{d:'High',pool:3500,c189:90,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Data analysts: Tier 3 — better positioned than traditional ICT roles. 90 pts target. ACT and VIC prioritise this.',sim:[]},
+  ict_manager:{d:'Moderate',pool:2000,c189:90,list:'mltssl',pr:false,tier:4,stateNote:'',ins:'ICT managers: Tier 4. 90 pts target. Strong Australian work experience is the critical differentiator.',sim:[]},
+  cybersecurity:{d:'High',pool:2000,c189:90,list:'mltssl',pr:false,tier:3,stateNote:'ACT and NSW have strong demand.',ins:'Cybersecurity: Tier 3 — growing demand, better positioned than traditional ICT. 90 pts target. ACT Canberra Matrix is fast.',sim:[]},
+  cloud_engineer:{d:'High',pool:2200,c189:90,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Cloud/DevOps engineers: Tier 3. 90 pts target. High demand across ACT, VIC, NSW.',sim:[]},
+  ai_engineer:{d:'High',pool:1500,c189:90,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'AI/ML engineers: Tier 3 — emerging demand. 90 pts target. Often qualify for 482 Specialist Skills at senior levels.',sim:[]},
+  ict_business_analyst:{d:'High',pool:2500,c189:90,list:'mltssl',pr:false,tier:4,stateNote:'',ins:'ICT business analysts: Tier 4. 90 pts target. Consider 190 state nomination as primary strategy.',sim:[]},
+  database_admin:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Database administrators: Tier 3. 85 pts target. Cloud transition shifting demand to cloud-DB hybrid skills.',sim:[]},
+  web_developer:{d:'Moderate',pool:3000,c189:999,list:'stsol',pr:false,tier:4,stateNote:'STSOL — 190/491 only. Not eligible for 189.',ins:'Web developers: STSOL — not eligible for 189. Tier 4 if assessed as ICT. State nomination (190) is the pathway. VIC and NSW have most demand.',sim:[]},
+  ux_designer:{d:'Moderate',pool:1500,c189:999,list:'stsol',pr:false,tier:4,stateNote:'STSOL — state nomination required.',ins:'UX/Product designers: STSOL — 189 not available. State nomination (190) required. NSW and VIC are best options.',sim:[]},
+  supply_chain_analyst:{d:'High',pool:1800,c189:999,list:'stsol',pr:false,tier:3,stateNote:'STSOL.',ins:'Supply chain analysts: STSOL — state nomination (190) recommended. Strong QLD and VIC demand.',sim:[]},
+  civil_engineer:{d:'High',pool:5200,c189:85,list:'mltssl',pr:false,tier:3,
     stateNote:'QLD and WA are most actively seeking civil engineers in 2025–26.',
-    ins:'Civil engineers: 85 pts Nov 2025 cutoff. QLD and WA are strong 190 options with faster processing than NSW/VIC.',
+    ins:'Civil engineers: Tier 3. 85 pts Nov 2025 cutoff. QLD and WA are strong 190 options.',
     sim:[{f:'🇮🇳',n:'Civil Engineer · QLD · 75 pts',d:'QLD 190 offshore stream',m:'8 mo',l:'QLD 190'},{f:'🇵🇰',n:'Civil Engineer · WA · 80 pts',d:'WA General Stream 190',m:'9 mo',l:'WA 190'}]},
-  mechanical_engineer:{d:'High',pool:3000,c189:85,list:'mltssl',pr:false,stateNote:'WA and SA have strong mechanical engineering demand.',ins:'Mechanical engineers: 85 pts. WA and SA are reliable 190 options.',sim:[]},
-  electrical_engineer:{d:'High',pool:2500,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Electrical engineers: 85 pts Nov 2025. In demand across most states.',sim:[]},
-  structural_engineer:{d:'High',pool:2200,c189:85,list:'mltssl',pr:false,stateNote:'QLD housing boom driving structural engineering demand.',ins:'Structural engineers: QLD demand particularly high. 85 pts for 189.',sim:[]},
-  chemical_engineer:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Chemical engineers: WA has strongest demand. 85 pts target.',sim:[]},
-  registered_nurse:{d:'Critical',pool:2100,c189:75,list:'mltssl',pr:false,
-    stateNote:'Priority occupation — on every state 190 skills list. All 8 states actively seeking nurses.',
-    ins:'Registered Nurses: 75 pts in Nov 2025 — one of the lowest 189 cutoffs. Critical shortage occupation with priority processing in all states. Best occupation-to-points ratio in healthcare.',
-    sim:[{f:'🇵🇭',n:'Reg. Nurse · QLD · 70 pts',d:'189 direct · critical occupation priority',m:'5 mo',l:'189'},{f:'🇮🇳',n:'Reg. Nurse · SA · 65 pts',d:'SA 190 · 6-month wait',m:'6 mo',l:'SA 190'},{f:'🇵🇭',n:'Reg. Nurse · WA · 70 pts',d:'WA 190 healthcare stream',m:'7 mo',l:'WA 190'}]},
-  midwife:{d:'Critical',pool:800,c189:75,list:'mltssl',pr:false,stateNote:'Priority in all states.',ins:'Midwives: 75 pts Nov 2025 cutoff. Critical shortage. Priority processing.',sim:[]},
-  physiotherapist:{d:'High',pool:1500,c189:75,list:'mltssl',pr:false,stateNote:'',ins:'Physiotherapists: 75 pts Nov 2025. Good demand in regional areas.',sim:[]},
-  pharmacist:{d:'Moderate',pool:1800,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Pharmacists: 85 pts target. Regional demand is higher than metro.',sim:[]},
-  gp:{d:'Critical',pool:500,c189:75,list:'mltssl',pr:false,
-    stateNote:'Highest priority occupation across all states. Most states have specific GP streams.',
-    ins:'GPs: 75 pts Nov 2025 cutoff. Highest priority occupation in Australia. Most states offer fast-track pathways.',sim:[]},
-  specialist_doctor:{d:'Critical',pool:600,c189:80,list:'mltssl',pr:false,stateNote:'Priority across all states.',ins:'Medical specialists: 75–100 pts depending on specialty. Highly favourable for all pathways.',sim:[]},
-  electrician:{d:'High',pool:1600,c189:65,list:'mltssl',pr:false,
-    stateNote:'In demand in all states. TRA skills assessment required before EOI.',
-    ins:'Electricians: invited at just 65 pts in Nov 2025 — the absolute minimum threshold. Best points-to-invitation ratio of any occupation. TRA assessment required.',
-    sim:[{f:'🇵🇭',n:'Electrician · SA · 65 pts',d:'189 direct · 65 pt minimum cutoff',m:'3 mo',l:'189'},{f:'🇮🇳',n:'Electrician · QLD · 70 pts',d:'QLD 190 · fast trades stream',m:'5 mo',l:'QLD 190'}]},
-  plumber:{d:'High',pool:1300,c189:65,list:'mltssl',pr:false,
-    stateNote:'Low cutoff occupation. TRA assessment required.',
-    ins:'Plumbers: 65 pts Nov 2025. Excellent points-to-invitation ratio. TRA assessment required.',sim:[]},
-  carpenter:{d:'High',pool:1200,c189:65,list:'mltssl',pr:false,stateNote:'QLD and WA construction boom.',ins:'Carpenters / Joiners: 65 pts Nov 2025. Strong QLD and WA demand.',sim:[]},
-  welder:{d:'Moderate',pool:1000,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Metal fabricators: 85 pts. Regional demand is stronger than metro.',sim:[]},
-  teacher:{d:'Moderate',pool:4100,c189:85,list:'mltssl',pr:false,
+  mechanical_engineer:{d:'High',pool:3000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'WA and SA have strong demand.',ins:'Mechanical engineers: Tier 3. 85 pts. WA and SA are reliable 190 options.',sim:[]},
+  electrical_engineer:{d:'High',pool:2500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Electrical engineers: Tier 3. 85 pts Nov 2025. In demand across most states.',sim:[]},
+  structural_engineer:{d:'High',pool:2200,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'QLD housing boom driving demand.',ins:'Structural engineers: Tier 3. QLD demand particularly high. 85 pts for 189.',sim:[]},
+  chemical_engineer:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Chemical engineers: Tier 3. WA has strongest demand. 85 pts target.',sim:[]},
+  mining_engineer:{d:'High',pool:1200,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'WA has by far the strongest mining engineering demand.',ins:'Mining engineers: Tier 3. 85 pts. WA is the dominant state.',sim:[]},
+  petroleum_engineer:{d:'Moderate',pool:800,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'WA — primary state.',ins:'Petroleum engineers: Tier 3. WA-dominated occupation. 85 pts target.',sim:[]},
+  environmental_engineer:{d:'Moderate',pool:1200,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Environmental engineers: Tier 3. Growing demand with renewable energy projects.',sim:[]},
+  geotechnical_engineer:{d:'High',pool:900,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Geotechnical engineers: Tier 3. High demand, smaller pool. QLD and WA strong.',sim:[]},
+  project_engineer:{d:'High',pool:2000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Project engineers/managers: Tier 3. 85 pts target. NSW, QLD and WA strong.',sim:[]},
+  quantity_surveyor:{d:'High',pool:1400,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Quantity surveyors: Tier 3. High demand in construction boom. QLD and VIC strong.',sim:[]},
+  registered_nurse:{d:'Critical',pool:2100,c189:75,list:'mltssl',pr:false,tier:1,
+    stateNote:'Priority occupation — on every state 190 skills list.',
+    ins:'Registered Nurses: Tier 1 — highest priority. 75 pts in Nov 2025. Critical shortage. Priority processing in all states. Best occupation-to-points ratio.',
+    sim:[{f:'🇵🇭',n:'Reg. Nurse · QLD · 70 pts',d:'189 direct · Tier 1 priority',m:'5 mo',l:'189'},{f:'🇮🇳',n:'Reg. Nurse · SA · 65 pts',d:'SA 190 · 6-month wait',m:'6 mo',l:'SA 190'},{f:'🇵🇭',n:'Reg. Nurse · WA · 70 pts',d:'WA 190 healthcare stream',m:'7 mo',l:'WA 190'}]},
+  midwife:{d:'Critical',pool:800,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Priority in all states.',ins:'Midwives: Tier 1. 75 pts Nov 2025. Critical shortage. Highest priority processing.',sim:[]},
+  gp:{d:'Critical',pool:500,c189:75,list:'mltssl',pr:false,tier:1,
+    stateNote:'Highest priority occupation across all states.',
+    ins:'GPs: Tier 1 — highest priority in the entire 189 program. 75 pts cutoff. Fastest pathway of any occupation.',sim:[]},
+  specialist_doctor:{d:'Critical',pool:600,c189:80,list:'mltssl',pr:false,tier:1,stateNote:'Priority across all states.',ins:'Medical specialists: Tier 1. Cardiologists, surgeons and specialists are specifically named as highest priority. Often invited at minimum points.',sim:[]},
+  physiotherapist:{d:'High',pool:1500,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Priority healthcare — Tier 1.',ins:'Physiotherapists: Tier 1. 75 pts Nov 2025. High demand especially in NDIS and aged care sectors.',sim:[]},
+  occupational_therapist:{d:'High',pool:1400,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1 priority healthcare.',ins:'Occupational therapists: Tier 1. 75 pts target. High demand in NDIS and community health.',sim:[]},
+  speech_pathologist:{d:'High',pool:1000,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1.',ins:'Speech pathologists: Tier 1. 75 pts target. High demand in NDIS and education sectors.',sim:[]},
+  pharmacist:{d:'High',pool:1800,c189:85,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1 healthcare.',ins:'Pharmacists: Tier 1. 85 pts target. Regional demand is higher than metro.',sim:[]},
+  psychologist:{d:'High',pool:1500,c189:80,list:'mltssl',pr:false,tier:2,stateNote:'Tier 2 — education/community/mental health.',ins:'Psychologists: Tier 2 — mental health classified under community wellbeing priority. 80 pts target. ACT and WA strongest.',sim:[]},
+  radiographer:{d:'High',pool:900,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1 healthcare.',ins:'Radiographers/sonographers: Tier 1. 75 pts target. Healthcare priority across all states.',sim:[]},
+  paramedic:{d:'High',pool:700,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1 priority.',ins:'Paramedics: Tier 1. 75 pts target. Critical shortage. QLD and SA actively seeking.',sim:[]},
+  optometrist:{d:'Moderate',pool:800,c189:75,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1 allied health.',ins:'Optometrists: Tier 1 allied health. 75 pts target. Regional demand particularly high.',sim:[]},
+  dental:{d:'High',pool:1000,c189:80,list:'mltssl',pr:false,tier:1,stateNote:'Tier 1. Regional demand very high.',ins:'Dentists: Tier 1. 80 pts target. Regional and rural areas have critical shortages.',sim:[]},
+  aged_care_worker:{d:'Critical',pool:500,c189:999,list:'stsol',pr:false,tier:4,stateNote:'STSOL — not eligible for 189.',ins:'Aged care workers: STSOL — no 189 pathway. 482 Essential Skills stream (Tier 3 SID) is the main route. Not on points-tested PR lists. Employer sponsorship is primary pathway.',sim:[]},
+  disability_worker:{d:'Critical',pool:500,c189:999,list:'stsol',pr:false,tier:4,stateNote:'STSOL — not eligible for 189.',ins:'Disability support workers: STSOL — no 189 pathway. 482 Essential Skills (SID) and state nomination (190) are the routes.',sim:[]},
+  child_care_worker:{d:'High',pool:800,c189:999,list:'stsol',pr:false,tier:4,stateNote:'STSOL — 190/491 only.',ins:'Child care workers: STSOL — 189 not available. State nomination (190/491) is the PR pathway. SA, QLD and regional areas most accessible.',sim:[]},
+  electrician:{d:'High',pool:1600,c189:65,list:'mltssl',pr:false,tier:3,
+    stateNote:'In demand in all states. TRA assessment required.',
+    ins:'Electricians: Tier 3. 65 pts in Nov 2025 — minimum threshold. Best points-to-invitation ratio. TRA assessment required.',
+    sim:[{f:'🇵🇭',n:'Electrician · SA · 65 pts',d:'189 direct · 65 pt minimum',m:'3 mo',l:'189'},{f:'🇮🇳',n:'Electrician · QLD · 70 pts',d:'QLD 190 · fast trades stream',m:'5 mo',l:'QLD 190'}]},
+  plumber:{d:'High',pool:1300,c189:65,list:'mltssl',pr:false,tier:3,stateNote:'TRA assessment required.',ins:'Plumbers: Tier 3. 65 pts Nov 2025. Excellent points-to-invitation ratio. TRA required.',sim:[]},
+  carpenter:{d:'High',pool:1200,c189:65,list:'mltssl',pr:false,tier:3,stateNote:'QLD and WA construction boom.',ins:'Carpenters: Tier 3. 65 pts Nov 2025. Strong QLD and WA demand.',sim:[]},
+  welder:{d:'Moderate',pool:1000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Metal fabricators: Tier 3. 85 pts. Regional demand stronger than metro.',sim:[]},
+  bricklayer:{d:'High',pool:900,c189:65,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Bricklayers: Tier 3. 65 pts Nov 2025. Strong demand in QLD and VIC construction.',sim:[]},
+  refrigeration_mechanic:{d:'High',pool:800,c189:65,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Refrigeration & AC mechanics: Tier 3. 65 pts target. In demand across all states.',sim:[]},
+  motor_mechanic:{d:'High',pool:1200,c189:999,list:'stsol',pr:false,tier:3,stateNote:'STSOL — state nomination required.',ins:'Motor mechanics: STSOL — state nomination (190/491) only. QLD and WA strongest demand.',sim:[]},
+  boilermaker:{d:'High',pool:700,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Boilermakers: Tier 3. 85 pts. WA and QLD resources sector strong demand.',sim:[]},
+  painting_trades:{d:'Moderate',pool:600,c189:999,list:'stsol',pr:false,tier:3,stateNote:'STSOL — state nomination required.',ins:'Painting trades: STSOL — state nomination (190/491) required. 70 pts Nov 2025 for those on MLTSSL equivalent.',sim:[]},
+  cabinet_maker:{d:'Moderate',pool:700,c189:999,list:'stsol',pr:false,tier:3,stateNote:'STSOL — state nomination required.',ins:'Cabinet makers: STSOL — state nomination required. TAS and SA most accessible.',sim:[]},
+  teacher:{d:'Moderate',pool:4100,c189:85,list:'mltssl',pr:false,tier:2,
     stateNote:'ACT and TAS actively prioritise teachers. Secondary shortage is acute.',
-    ins:'Teachers: 85 pts Nov 2025. ACT Canberra Matrix is fastest route for teachers. TAS issues weekly rounds.',sim:[]},
-  early_childhood:{d:'High',pool:2000,c189:85,list:'mltssl',pr:true,
-    stateNote:'Occupation ceiling applies for 189 — limits invitations per round.',
-    ins:'Early childhood teachers: 85 pts but occupation ceiling restricts 189 invitations. State nomination (190) avoids the ceiling.',sim:[]},
-  chef:{d:'Regional',pool:3600,c189:999,list:'stsol',pr:false,
-    stateNote:'STSOL only — NOT eligible for 189. State nomination (190/491) is the only pathway. SA, TAS, NT and regional areas are most accessible.',
-    ins:'Chefs are on STSOL and CANNOT access 189 independent visa. State nomination is mandatory. About 78% of chefs achieving PR use a regional pathway. SA and TAS 190 are most common.',
-    sim:[{f:'🇵🇭',n:'Chef · SA · 70 pts',d:'SA 190 · regional restaurant employment',m:'12 mo',l:'SA 190'},{f:'🇮🇳',n:'Chef · TAS · 65 pts',d:'TAS 190 · 9-month wait',m:'9 mo',l:'TAS 190'}]},
-  social_worker:{d:'Moderate',pool:2600,c189:80,list:'mltssl',pr:false,stateNote:'ACT, WA and NT prioritise social workers.',ins:'Social workers: 80 pts Nov 2025. ACT, WA and NT are best state options.',sim:[]},
-  business_manager:{d:'Moderate',pool:3000,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Business managers: strong Australian work experience is critical. 85 pts target.',sim:[]},
-  architect:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,stateNote:'',ins:'Architects: 85 pts Nov 2025. NSW and VIC have active demand.',sim:[]},
-  other:{d:'Moderate',pool:3500,c189:85,list:'mltssl',pr:false,stateNote:'Verify your occupation list status at immi.homeaffairs.gov.au',ins:'Check the DHA skilled occupation list to confirm your list status. State nomination adds +5 pts and creates a faster pathway.',sim:[]}
+    ins:'Teachers: Tier 2 — education is a government priority. 85 pts Nov 2025. ACT Canberra Matrix is fastest. TAS issues weekly rounds.',sim:[]},
+  early_childhood:{d:'High',pool:2000,c189:85,list:'mltssl',pr:true,tier:2,stateNote:'Occupation ceiling applies for 189.',ins:'Early childhood teachers: Tier 2. 85 pts but occupation ceiling restricts 189 invitations. State nomination (190) avoids the ceiling.',sim:[]},
+  special_ed_teacher:{d:'High',pool:1500,c189:85,list:'mltssl',pr:false,tier:2,stateNote:'Tier 2 — ACT, TAS and NT priority.',ins:'Special education teachers: Tier 2. 85 pts target. High demand across all states.',sim:[]},
+  vet_trainer:{d:'Moderate',pool:1200,c189:999,list:'stsol',pr:false,tier:3,stateNote:'STSOL — state nomination only.',ins:'VET/TAFE trainers: STSOL — 189 not available. State nomination (190) required. SA and TAS most accessible.',sim:[]},
+  social_worker:{d:'Moderate',pool:2600,c189:80,list:'mltssl',pr:false,tier:2,stateNote:'ACT, WA and NT prioritise social workers.',ins:'Social workers: Tier 2 — community wellbeing priority. 80 pts Nov 2025. ACT, WA and NT are best options.',sim:[]},
+  welfare_worker:{d:'Moderate',pool:1500,c189:999,list:'stsol',pr:false,tier:2,stateNote:'STSOL.',ins:'Welfare workers: STSOL — state nomination required. ACT, WA and NT highest demand.',sim:[]},
+  counsellor:{d:'Moderate',pool:1200,c189:999,list:'stsol',pr:false,tier:2,stateNote:'STSOL — state nomination required.',ins:'Counsellors: STSOL — state nomination required. ACT, WA and NT most accessible.',sim:[]},
+  business_manager:{d:'Moderate',pool:3000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Business managers: Tier 3. 85 pts target. Strong Australian work experience critical.',sim:[]},
+  hr_manager:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'HR managers: Tier 3. 85 pts target. Strong Australian work experience is key differentiator.',sim:[]},
+  operations_manager:{d:'High',pool:1800,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Operations managers: Tier 3. 85 pts target. Senior roles may qualify for 482 Specialist Skills.',sim:[]},
+  project_manager:{d:'High',pool:2000,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Project managers: Tier 3. 85 pts target. High demand across construction, IT and healthcare.',sim:[]},
+  architect:{d:'Moderate',pool:1500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Architects: Tier 3. 85 pts Nov 2025. NSW and VIC have active demand.',sim:[]},
+  urban_planner:{d:'Moderate',pool:900,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Urban/town planners: Tier 3. 85 pts target. Growing demand with housing policy focus.',sim:[]},
+  surveyor:{d:'High',pool:800,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'',ins:'Land surveyors: Tier 3. High demand in construction boom. QLD and WA strong.',sim:[]},
+  agricultural_scientist:{d:'Moderate',pool:700,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'Regional areas have strongest demand.',ins:'Agricultural scientists: Tier 3. 85 pts target. Regional and rural demand highest. SA, QLD and WA good options.',sim:[]},
+  chef:{d:'Regional',pool:3600,c189:999,list:'stsol',pr:false,tier:4,
+    stateNote:'STSOL only — NOT eligible for 189. SA, TAS, NT and regional areas are most accessible.',
+    ins:'Chefs are STSOL and Tier 4 — cannot access 189 independent visa. State nomination is mandatory. About 78% of chefs achieving PR use a regional pathway.',
+    sim:[{f:'🇵🇭',n:'Chef · SA · 70 pts',d:'SA 190 · regional restaurant',m:'12 mo',l:'SA 190'},{f:'🇮🇳',n:'Chef · TAS · 65 pts',d:'TAS 190 · 9-month wait',m:'9 mo',l:'TAS 190'}]},
+  other:{d:'Moderate',pool:3500,c189:85,list:'mltssl',pr:false,tier:3,stateNote:'Verify your occupation list status at immi.homeaffairs.gov.au',ins:'Check the DHA skilled occupation list to confirm your list status and 189 tier. State nomination adds +5 pts and creates a faster pathway.',sim:[]}
 };
 
 // ── STATE DATA 2025–26 (official DHA allocations) ─────
@@ -703,8 +797,16 @@ function prob(pts,occ,mo,vt){
   else if(gap>=0)b=mo===6?15:mo===12?35:52;
   else if(gap>=-5)b=mo===6?5:mo===12?18:32;
   else b=mo===6?2:mo===12?8:18;
-  if(occ.d==='Critical')b=Math.min(99,b+12);
-  else if(occ.d==='Oversupplied')b=Math.max(2,b-15);
+  // Apply 189 invitation tier adjustment (2025-26 4-tier system)
+  if(vt==='189'){
+    const tier=occ.tier||3;
+    if(tier===1)b=Math.min(99,b+15);       // Tier 1: highest priority, 4% multiplier
+    else if(tier===2)b=Math.min(99,b+5);   // Tier 2: moderate boost, 2% multiplier
+    else if(tier===4)b=Math.max(2,b-18);   // Tier 4: oversupplied, 0.5% multiplier
+    // Tier 3: no adjustment (baseline 1% multiplier)
+  }
+  if(occ.d==='Critical')b=Math.min(99,b+8);
+  else if(occ.d==='Oversupplied')b=Math.max(2,b-10);
   if(occ.pr)b=Math.max(2,b-8);
   return Math.min(97,Math.max(2,b));
 }
@@ -724,11 +826,15 @@ function br(){
   document.getElementById('pnt').textContent=pr12+'% of profiles similar to yours in DHA data received a '+vt+' invitation within 12 months. Range: '+Math.max(2,pr12-7)+'–'+Math.min(97,pr12+7)+'%.';
   [['pc6',pr6],['pc12',pr12],['pc18',pr18]].forEach(([id,p])=>{const el=document.getElementById(id);el.className='pc '+(p>=65?'gn':p>=35?'am':'rd');});
 
-  // Cutoff card
-  const cut=o.c189;let ch='';
-  if(cut===999){ch=`<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--red);margin-bottom:0.4rem">⚠️ Not Eligible for 189 Independent</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">${ol} is on the <strong>STSOL</strong> (Short-term Skilled Occupation List) and is not eligible for the 189 independent visa. State nomination (190) or regional 491 is your only pathway. SA, TAS and NT are most accessible.<br><br>${o.stateNote}</p></div>`;}
-  else if(total>=cut){ch=`<div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--green);margin-bottom:0.4rem">✅ Above Nov 2025 Cutoff</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">The 189 cutoff for ${ol} in the Nov 13, 2025 DHA round was <strong style="color:var(--teal)">${cut} points</strong>. Your score of <strong style="color:var(--teal)">${total} pts</strong> is above this.${o.pr?' <strong style="color:var(--amber)">Note: Pro-rata occupation — a limited number of invitations are issued per round, so higher scores are invited first.</strong>':''}</p></div>`;}
-  else{const gap=cut-total;ch=`<div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--red);margin-bottom:0.4rem">Below Current 189 Cutoff</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">The 189 cutoff for ${ol} was <strong>${cut} pts</strong> in Nov 2025. You are <strong style="color:var(--red)">${gap} pts below</strong>. Do not submit EOI yet — wait until you are above the cutoff to protect your Date of Effect (the tie-breaker between applicants with equal scores). State nomination (190) is your best current pathway.</p></div>`;}
+  // Cutoff card with tier badge
+  const cut=o.c189,tier=o.tier||3;
+  const tierLabels={1:'🟢 Tier 1 — Highest Priority (Health/Medical)',2:'🔵 Tier 2 — Priority (Education/Community)',3:'🟡 Tier 3 — Standard (Engineering/Trades/Science)',4:'🔴 Tier 4 — Oversupplied (Fewest 189 invitations)'};
+  const tierColors={1:'rgba(16,185,129,0.15)',2:'rgba(78,142,255,0.12)',3:'rgba(245,158,11,0.1)',4:'rgba(239,68,68,0.1)'};
+  const tierBorderColors={1:'rgba(16,185,129,0.4)',2:'rgba(78,142,255,0.35)',3:'rgba(245,158,11,0.35)',4:'rgba(239,68,68,0.3)'};
+  let ch=`<div style="background:${tierColors[tier]};border:1px solid ${tierBorderColors[tier]};border-radius:10px;padding:0.75rem;margin-bottom:0.75rem;font-size:0.82rem;font-weight:600">${tierLabels[tier]}</div>`;
+  if(cut===999){ch+=`<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--red);margin-bottom:0.4rem">⚠️ Not Eligible for 189 Independent</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">${ol} is on the <strong>STSOL</strong> list and is not eligible for the 189 independent visa. State nomination (190) or regional 491 is your only pathway. SA, TAS and NT are most accessible.</p></div>`;}
+  else if(total>=cut){ch+=`<div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--green);margin-bottom:0.4rem">✅ Above Nov 2025 Cutoff</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">The 189 cutoff for ${ol} in the Nov 13, 2025 DHA round was <strong style="color:var(--teal)">${cut} points</strong>. Your score of <strong style="color:var(--teal)">${total} pts</strong> is above this.${o.pr?' <strong style="color:var(--amber)">Note: Pro-rata occupation — limited invitations per round.</strong>':''}</p></div>`;}
+  else{const gap=cut-total;ch+=`<div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:0.9rem"><p style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;color:var(--red);margin-bottom:0.4rem">Below Nov 2025 Cutoff</p><p style="font-size:0.82rem;color:var(--muted);line-height:1.6">189 cutoff for ${ol} was <strong>${cut} pts</strong>. You are <strong style="color:var(--red)">${gap} pts below</strong>. Do not submit EOI yet — wait until above cutoff to protect your Date of Effect. State nomination (190) is your best current pathway.</p></div>`;}
   document.getElementById('cutcard').innerHTML=ch;
 
   // Queue chart
