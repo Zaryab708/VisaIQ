@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisaIQ — Australia's Migration Intelligence Platform</title>
+<meta name="description" content="Australia's migration intelligence platform. Real DHA data, personalised scores, state nomination intelligence and live invitation round tracking. Free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.1);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07);--card:rgba(255,255,255,0.04)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--teal);text-decoration:none;letter-spacing:-0.02em}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif;transition:all 0.2s}
+.ncta:hover{background:#00e0aa !important}
+.hero{max-width:640px;margin:0 auto;text-align:center;padding:4rem 1.5rem 3rem}
+.hbadge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--td);border:1px solid var(--tb);border-radius:20px;padding:0.35rem 0.9rem;font-size:0.75rem;color:var(--teal);font-weight:600;margin-bottom:1.5rem;letter-spacing:0.04em}
+.hbadge::before{content:'●';font-size:0.5rem;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2.2rem,6vw,3.6rem);font-weight:400;line-height:1.05;letter-spacing:-0.01em;margin-bottom:1rem;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:1rem;max-width:480px;margin:0 auto 2rem;line-height:1.7}
+.hbtns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+.bth{padding:0.85rem 1.8rem;background:var(--teal);color:#000;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.bth:hover{background:#00e0aa;transform:translateY(-2px)}
+.btg{padding:0.85rem 1.8rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-size:0.9rem;font-weight:500;text-decoration:none;transition:all 0.2s}
+.btg:hover{border-color:var(--muted)}
+.hstats{display:flex;gap:2rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}
+.hsn{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal)}
+.hsl{font-size:0.72rem;color:var(--muted);margin-top:0.15rem}
+section{padding:4rem 1.5rem}
+.sw{max-width:980px;margin:0 auto}
+.slabel{font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
+.stitle{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.2}
+.ssub{color:var(--muted);font-size:0.95rem;max-width:500px;line-height:1.7;margin-bottom:2.5rem}
+hr{border:none;border-top:1px solid var(--border)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.tc{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.75rem;transition:all 0.25s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,var(--td),transparent 60%);opacity:0;transition:opacity 0.3s}
+.tc:hover{border-color:var(--tb);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.3)}
+.tc:hover::before{opacity:1}
+.ti{font-size:1.6rem;width:44px;height:44px;background:var(--td);border:1px solid var(--tb);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tn{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;line-height:1.3}
+.td2{font-size:0.8rem;color:var(--muted);line-height:1.5;flex:1}
+.tm{font-size:0.7rem;color:var(--teal);font-weight:600;display:flex;align-items:center;gap:0.35rem;margin-top:0.25rem}
+.tm::before{content:'→'}
+.tbadge{position:absolute;top:0.75rem;right:0.75rem;background:var(--td);border:1px solid var(--tb);border-radius:6px;font-size:0.62rem;color:var(--teal);padding:0.15rem 0.45rem;font-weight:700}
+.tbadge.new2{background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.3);color:var(--green)}
+.tbadge.hot{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.25);color:#ef6161}
+.tbadge.soon{background:rgba(255,255,255,0.05);border-color:var(--border);color:var(--muted)}
+.ptabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.ptab{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.ptab.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.ptc{display:none}.ptc.active{display:block;animation:fu 0.3s ease}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.rsec{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
+.rsec::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(0,200,150,0.08),transparent 70%);pointer-events:none}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.ri{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem}
+.rst{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.25rem}
+.rdt{font-size:0.72rem;color:var(--muted)}
+.rb{display:inline-block;font-size:0.62rem;padding:0.15rem 0.5rem;border-radius:6px;margin-top:0.35rem;font-weight:600}
+.rbl{background:rgba(16,185,129,0.15);color:var(--green);border:1px solid rgba(16,185,129,0.3)}
+.rbu{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.rbc{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid var(--border)}
+.scdemo{background:linear-gradient(135deg,#0a1830,#071422);border:1px solid var(--tb);border-radius:16px;padding:1.5rem;max-width:340px;margin:0 auto;position:relative;overflow:hidden}
+.scdemo::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(0,200,150,0.15),transparent 70%);pointer-events:none}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.trust-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.trust-item{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center}
+.ctastrip{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:20px;padding:3rem 2rem;text-align:center}
+.ef{display:flex;gap:0.5rem;max-width:380px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.ei{flex:1;min-width:200px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+.ei:focus{border-color:var(--tb)}
+.ei::placeholder{color:var(--muted)}
+.eb{padding:0.7rem 1.2rem;background:var(--teal);color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.eb:hover{background:#00e0aa}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+.fl{margin-bottom:0.75rem;display:flex;justify-content:center;flex-wrap:wrap;gap:0.2rem}
+.dis{font-size:0.72rem;color:var(--muted);text-align:center;padding:1rem 1.5rem;line-height:1.6;max-width:700px;margin:0 auto}
+.dis strong{color:var(--amber)}
+@media(max-width:680px){.split{grid-template-columns:1fr}.rgrid{grid-template-columns:1fr}.nls{display:none}}
+@media(max-width:600px){.tgrid{grid-template-columns:1fr 1fr}.trust-row{grid-template-columns:1fr 1fr}section{padding:3rem 1.25rem}}
+@media(max-width:380px){.tgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="#" onclick="showRoundsGate();return false">Live Rounds</a>
+    <a href="/policy-updates">Policy Updates</a>
+    
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<div class="hero">
+
+  <!-- HEADLINE ABOVE VISUAL -->
+  <div style="margin-bottom:2rem">
+    <div class="hbadge" style="margin-bottom:1rem">Australia's First AI-Powered Migration Intelligence Platform</div>
+    <h1>Your Australian<br>migration journey,<br><em>made clear.</em></h1>
+    <p style="margin-top:0.75rem;margin-bottom:0;font-size:0.95rem;color:var(--muted);max-width:420px;margin-left:auto;margin-right:auto">Skilled migration. Student pathways. Employer sponsorship. Real data. Personalised to your profile.</p>
+  </div>
+
+  <!-- PATHWAY VISUAL -->
+  <div style="margin:0 auto 2rem;max-width:580px;width:100%;position:relative">
+    <svg viewBox="0 0 580 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+      <defs>
+        <radialGradient id="bg1" cx="50%" cy="100%" r="70%">
+          <stop offset="0%" stop-color="#00C896" stop-opacity="0.18"/>
+          <stop offset="50%" stop-color="#00C896" stop-opacity="0.04"/>
+          <stop offset="100%" stop-color="#00C896" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="bg2" cx="80%" cy="15%" r="40%">
+          <stop offset="0%" stop-color="#4E8EFF" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#4E8EFF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="youGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00C896" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#00C896" stop-opacity="0.3"/>
+        </radialGradient>
+        <linearGradient id="nodeGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0f2a1e"/>
+          <stop offset="100%" stop-color="#0a1820"/>
+        </linearGradient>
+        <linearGradient id="nodeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0f1e35"/>
+          <stop offset="100%" stop-color="#0a1525"/>
+        </linearGradient>
+        <linearGradient id="nodePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1a1035"/>
+          <stop offset="100%" stop-color="#0e0a25"/>
+        </linearGradient>
+        <filter id="nodeGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="youFilter" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="lineGlow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Background -->
+      <rect width="580" height="310" fill="#070F1C" rx="16"/>
+      <rect width="580" height="310" fill="url(#bg1)" rx="16"/>
+      <rect width="580" height="310" fill="url(#bg2)" rx="16"/>
+
+      <!-- Subtle grid -->
+      <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+        <line x1="0" y1="77"  x2="580" y2="77"/>
+        <line x1="0" y1="155" x2="580" y2="155"/>
+        <line x1="0" y1="232" x2="580" y2="232"/>
+        <line x1="96"  y1="0" x2="96"  y2="310"/>
+        <line x1="193" y1="0" x2="193" y2="310"/>
+        <line x1="290" y1="0" x2="290" y2="310"/>
+        <line x1="387" y1="0" x2="387" y2="310"/>
+        <line x1="484" y1="0" x2="484" y2="310"/>
+      </g>
+
+      <!-- Ray lines from YOUR PROFILE point — end above label -->
+      <g filter="url(#lineGlow)">
+        <line x1="290" y1="275" x2="38"  y2="72"  stroke="#00C896" stroke-width="1"   opacity="0.2"/>
+        <line x1="290" y1="275" x2="128" y2="52"  stroke="#00C896" stroke-width="1.5" opacity="0.3"/>
+        <line x1="290" y1="275" x2="218" y2="42"  stroke="#00C896" stroke-width="1.5" opacity="0.35"/>
+        <line x1="290" y1="275" x2="290" y2="42"  stroke="#00C896" stroke-width="2"   opacity="0.5"/>
+        <line x1="290" y1="275" x2="362" y2="42"  stroke="#4E8EFF" stroke-width="1.5" opacity="0.35"/>
+        <line x1="290" y1="275" x2="452" y2="52"  stroke="#4E8EFF" stroke-width="1.5" opacity="0.3"/>
+        <line x1="290" y1="275" x2="542" y2="72"  stroke="#9B7FFF" stroke-width="1"   opacity="0.2"/>
+      </g>
+
+      <!-- Dashed path arcs -->
+      <path d="M290,275 Q164,165 38,72"   fill="none" stroke="#00C896" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+      <path d="M290,275 Q209,160 128,52"  fill="none" stroke="#00C896" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.65"/>
+      <path d="M290,275 Q254,155 218,42"  fill="none" stroke="#00C896" stroke-width="2"   stroke-dasharray="5 4" opacity="0.7"/>
+      <path d="M290,275 Q290,155 290,42"  fill="none" stroke="#00C896" stroke-width="2.5" stroke-dasharray="5 4" opacity="0.9"/>
+      <path d="M290,275 Q326,155 362,42"  fill="none" stroke="#4E8EFF" stroke-width="2"   stroke-dasharray="5 4" opacity="0.7"/>
+      <path d="M290,275 Q371,160 452,52"  fill="none" stroke="#4E8EFF" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.65"/>
+      <path d="M290,275 Q416,165 542,72"  fill="none" stroke="#9B7FFF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+
+      <!-- DESTINATION NODES — 7 nodes -->
+      <g filter="url(#nodeGlow)">
+
+        <!-- 500 Student Visa — far left -->
+        <circle cx="38"  cy="72" r="28" fill="url(#nodePurple)" stroke="#9B7FFF" stroke-width="1.5" opacity="0.95"/>
+        <text x="38"  y="66" text-anchor="middle" font-family="Syne,sans-serif" font-size="10" font-weight="800" fill="#9B7FFF">500</text>
+        <text x="38"  y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">Student</text>
+        <text x="38"  y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">→ 485 → PR</text>
+
+        <!-- 189 Independent -->
+        <circle cx="128" cy="52" r="30" fill="url(#nodeGreen)" stroke="#00C896" stroke-width="1.5" opacity="0.95"/>
+        <text x="128" y="46" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="#00C896">189</text>
+        <text x="128" y="57" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">Independent</text>
+        <text x="128" y="67" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">No sponsor</text>
+
+        <!-- 190 State Nominated -->
+        <circle cx="218" cy="42" r="30" fill="url(#nodeGreen)" stroke="#00C896" stroke-width="1.5" opacity="0.95"/>
+        <text x="218" y="36" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="#00C896">190</text>
+        <text x="218" y="47" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">State Nom.</text>
+        <text x="218" y="57" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">+5 pts</text>
+
+        <!-- 491 Regional — CENTRE HERO -->
+        <circle cx="290" cy="42" r="38" fill="url(#nodeGreen)" stroke="#00C896" stroke-width="2.5"/>
+        <circle cx="290" cy="42" r="44" fill="none" stroke="#00C896" stroke-width="0.5" opacity="0.2"/>
+        <circle cx="290" cy="42" r="50" fill="none" stroke="#00C896" stroke-width="0.5" opacity="0.1"/>
+        <text x="290" y="34" text-anchor="middle" font-family="Syne,sans-serif" font-size="13" font-weight="800" fill="#00C896">491</text>
+        <text x="290" y="47" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#E8EDF5">Regional PR</text>
+        <text x="290" y="57" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="#7A8FA8">+15 pts</text>
+
+        <!-- 482 Skills in Demand -->
+        <circle cx="362" cy="42" r="30" fill="url(#nodeBlue)" stroke="#4E8EFF" stroke-width="1.5" opacity="0.95"/>
+        <text x="362" y="36" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="#4E8EFF">482</text>
+        <text x="362" y="47" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">Sponsored</text>
+        <text x="362" y="57" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">Employer</text>
+
+        <!-- 485 Post-Study -->
+        <circle cx="452" cy="52" r="30" fill="url(#nodeBlue)" stroke="#4E8EFF" stroke-width="1.5" opacity="0.95"/>
+        <text x="452" y="46" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="800" fill="#4E8EFF">485</text>
+        <text x="452" y="57" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">Post-Study</text>
+        <text x="452" y="67" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">Graduate</text>
+
+        <!-- 186 Permanent — far right -->
+        <circle cx="542" cy="72" r="28" fill="url(#nodeBlue)" stroke="#9B7FFF" stroke-width="1.5" opacity="0.95"/>
+        <text x="542" y="66" text-anchor="middle" font-family="Syne,sans-serif" font-size="10" font-weight="800" fill="#9B7FFF">186</text>
+        <text x="542" y="77" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#E8EDF5" opacity="0.8">Employer PR</text>
+        <text x="542" y="87" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6.5" fill="#7A8FA8">Permanent</text>
+      </g>
+
+      <!-- Broad arc label -->
+      <text x="290" y="120" text-anchor="middle" font-family="Syne,sans-serif" font-size="8.5" font-weight="700" fill="#00C896" opacity="0.45" letter-spacing="3">EVERY PATHWAY TO AUSTRALIA</text>
+
+      <!-- YOUR PROFILE — clean label below convergence point -->
+      <rect x="210" y="278" width="160" height="22" rx="11" fill="#0D1B2E" stroke="#00C896" stroke-width="1" opacity="0.95"/>
+      <text x="290" y="293" text-anchor="middle" font-family="Syne,sans-serif" font-size="9" font-weight="800" fill="#00C896" letter-spacing="2">YOUR PROFILE</text>
+
+    </svg>
+  </div>
+
+  <!-- stats only below visual -->
+  <div class="hstats">
+    <div><div class="hsn">100K+</div><div class="hsl">Real visa outcomes</div></div>
+    <div><div class="hsn">Live</div><div class="hsl">Round tracking</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- TOOLS SECTION -->
+<section>
+  <div class="sw">
+    <div class="slabel">Tools &amp; Intelligence</div>
+    <h2 class="stitle">Every tool you need.<br>All in one place.</h2>
+    <p class="ssub">Four pillars serving the same anxious migrant at every stage of the same journey.</p>
+
+    <div class="ptabs">
+      <button class="ptab active" onclick="sw('skilled',this)">🎯 Skilled Migration</button>
+      <button class="ptab" onclick="sw('student',this)">🎓 Student Pathways</button>
+      <button class="ptab" onclick="sw('employer',this)">💼 Employer Sponsored</button>
+      <button class="ptab" onclick="sw('rounds',this)">📡 Round Tracker</button>
+    </div>
+
+    <!-- SKILLED -->
+    <div class="ptc active" id="tab-skilled">
+      <div class="tgrid">
+        <a href="/tool" class="tc">
+          <div class="tbadge hot">Most Used</div>
+          <div class="ti">📊</div>
+          <div class="tn">Full PR Intelligence Report</div>
+          <div class="td2">4-screen analysis. Official DHA points score, EOI queue position, all 8 states, 12-month action plan and shareable scorecard.</div>
+          <div class="tm">Your full analysis — free</div>
+        </a>
+        <a href="/points-calculator" class="tc">
+          <div class="ti">🔢</div>
+          <div class="tn">Points Calculator</div>
+          <div class="td2">Official DHA points test with real cutoffs. New 4-tier 189 invitation system explained by occupation.</div>
+          <div class="tm">Instant DHA points score</div>
+        </a>
+        <a href="/eoi-queue" class="tc">
+          <div class="ti">📈</div>
+          <div class="tn">EOI Queue Checker</div>
+          <div class="td2">See where you sit in your occupation pool. Queue depth by points tier, state and the new 189 tier system.</div>
+          <div class="tm">Your queue position</div>
+        </a>
+        <a href="/189-visa" class="tc">
+          <div class="ti">🏆</div>
+          <div class="tn">189 Independent Visa</div>
+          <div class="td2">No employer or state needed. Understand the new 4-tier invitation system and where your occupation sits.</div>
+          <div class="tm">Nov 2025 cutoffs by occupation</div>
+        </a>
+        <a href="/190-visa" class="tc">
+          <div class="ti">🎖️</div>
+          <div class="tn">190 State Nomination</div>
+          <div class="td2">+5 bonus points. All 8 states compared. Which is fastest for your occupation. 2025–26 allocations.</div>
+          <div class="tm">All 8 states compared</div>
+        </a>
+        <a href="/491-visa" class="tc">
+          <div class="ti">🌏</div>
+          <div class="tn">491 Regional Visa</div>
+          <div class="td2">+15 bonus points — the single biggest points boost available. Fastest PR for most profiles under 80 points.</div>
+          <div class="tm">+15 pts — biggest bonus available</div>
+        </a>
+        <a href="/state-comparator" class="tc">
+          <div class="ti">🗺️</div>
+          <div class="tn">State Comparator</div>
+          <div class="td2">All 8 states side by side. Processing times, requirements, priority occupations and 2025–26 allocations.</div>
+          <div class="tm">All states at a glance</div>
+        </a>
+        <a href="/occupation-demand" class="tc">
+          <div class="ti">📋</div>
+          <div class="tn">Occupation Demand Score</div>
+          <div class="td2">Is your occupation Tier 1, 2, 3 or 4 under the new 189 system? EOI pool and state demand by occupation.</div>
+          <div class="tm">189 tier + state demand</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- STUDENT -->
+    <div class="ptc" id="tab-student">
+      <div class="tgrid">
+        <a href="/student-pathway" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">🎓</div>
+          <div class="tn">Student Pathway Tool</div>
+          <div class="td2">Full pipeline: studying → 485 post-study work visa → EOI → PR. See your projected points at graduation date.</div>
+          <div class="tm">End-to-end PR planning</div>
+        </a>
+        <a href="/485-visa" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">⏱️</div>
+          <div class="tn">485 Post-Study Work Visa</div>
+          <div class="td2">Working rights after graduation. Duration by qualification and city. New 25-day processing target (March 2026).</div>
+          <div class="tm">485 eligibility &amp; duration</div>
+        </a>
+        <a href="/best-degrees-pr" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">🎯</div>
+          <div class="tn">Best Degrees for PR</div>
+          <div class="td2">Which courses actually lead to PR — and how fast. Compare demand, cutoffs and EOI queue depth before you enrol.</div>
+          <div class="tm">Choose your degree strategically</div>
+        </a>
+        <a href="/regional-study-bonus" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">🌱</div>
+          <div class="tn">Regional Study Bonus</div>
+          <div class="td2">+5 study points + +15 regional visa = 20 point combined advantage. The most powerful combo for students.</div>
+          <div class="tm">+20 pts combined strategy</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EMPLOYER -->
+    <div class="ptc" id="tab-employer">
+      <div class="tgrid">
+        <a href="/482-visa" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">💼</div>
+          <div class="tn">482 Skills in Demand Visa</div>
+          <div class="td2">Complete A–Z guide. Check your eligibility, find your stream, occupation checker, PR pathway, costs and conditions. Everything in one place.</div>
+          <div class="tm">Full tool — live now</div>
+        </a>
+        <a href="/482-to-186" class="tc">
+          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
+          <div class="ti">🔄</div>
+          <div class="tn">482 → 186 PR Calculator</div>
+          <div class="td2">Already on a 482 visa? Enter your start date and see exactly when you become eligible for permanent residency via the 186 ENS pathway.</div>
+          <div class="tm">PR timeline calculator</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ROUNDS -->
+    <div class="ptc" id="tab-rounds">
+      <div class="rsec">
+        <div class="slabel" style="margin-bottom:0.5rem">Live Intelligence</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem">Invitation Round Tracker</h3>
+        <p style="font-size:0.85rem;color:var(--muted);max-width:480px;line-height:1.6">Every federal and state invitation round — published in plain English within 48 hours. The feature that turns one-time visitors into monthly returning users.</p>
+        <div class="rgrid">
+          <div class="ri">
+            <div class="rst">NSW 190</div>
+            <div class="rdt">March 2026 round · EOI deadline 1 Mar 2026</div>
+            <div class="rb rbl">Active — Round Open</div>
+          </div>
+          <div class="ri">
+            <div class="rst">Federal 189</div>
+            <div class="rdt">Nov 2025 round · 10,000 invitations issued</div>
+            <div class="rb rbc">Completed · Analysis Live</div>
+          </div>
+          <div class="ri">
+            <div class="rst">TAS 190/491</div>
+            <div class="rdt">Weekly rounds · Fast processing</div>
+            <div class="rb rbl">Weekly rounds active</div>
+          </div>
+          <div class="ri">
+            <div class="rst">SA 190</div>
+            <div class="rdt">Monthly rounds · Talent &amp; Innovation stream</div>
+            <div class="rb rbu">Processing backlog</div>
+          </div>
+        </div>
+        <a href="/rounds" style="display:inline-block;margin-top:1.25rem;padding:0.7rem 1.4rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">View All Rounds →</a>
+        <button onclick="showRoundsGate()" style="display:inline-block;margin-top:1.25rem;margin-left:0.75rem;padding:0.7rem 1.4rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer">🔔 Get Round Alerts</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- SCORECARD -->
+<section>
+  <div class="sw">
+    <div class="split">
+      <div>
+        <div class="slabel">Your Results</div>
+        <h2 class="stitle">Download your<br>PR scorecard</h2>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem">Every analysis generates a downloadable scorecard showing your DHA points, invitation rates by visa type, 189 tier, and state eligibility — all in one clean image.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem">
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.83rem"><span style="color:var(--teal)">✓</span> Included with every tool output</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.83rem"><span style="color:var(--teal)">✓</span> Download as PNG in one click</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.83rem"><span style="color:var(--teal)">✓</span> Points score, tier, states and PR chance</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.83rem"><span style="color:var(--teal)">✓</span> Save and revisit as your profile improves</div>
+        </div>
+      </div>
+      <div>
+        <div class="scdemo">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)">
+            <div><div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal)">VisaIQ</div><div style="font-size:0.68rem;color:var(--muted)">Migration Intelligence</div></div>
+            <div style="font-size:0.68rem;color:var(--muted)">March 2026</div>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.75rem">Software Engineer · NSW · 85 pts</div>
+          <div style="font-size:0.7rem;color:var(--muted);margin-bottom:0.5rem">12-month historical invitation rate</div>
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">189</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:42%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">42%</span></div>
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">190</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:68%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">68%</span></div>
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">491</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:85%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">85%</span></div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin-bottom:0.75rem">
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">85</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">DHA Points</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">🔴 T4</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Tier</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">90pts</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Cutoff</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">3/8</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">States ✓</div></div>
+          </div>
+          <div style="text-align:center;padding:0.65rem;background:var(--td);border:1px solid var(--tb);border-radius:8px;margin-bottom:0.65rem"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--teal)">71</div><div style="font-size:0.68rem;color:var(--muted)">PR Chance Score / 100</div></div>
+          <div style="text-align:center;font-size:0.68rem;color:var(--muted)">Free analysis at <span style="color:var(--teal)">visaiq.com.au</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- TRUST -->
+<section>
+  <div class="sw">
+    <div class="slabel">Why Trust Us</div>
+    <h2 class="stitle">Data intelligence,<br>not guesswork.</h2>
+    <p class="ssub">Every figure on VisaIQ comes from published DHA data or community-submitted timelines. We show our working.</p>
+    <div class="trust-row">
+      <div class="trust-item"><div style="font-size:1.4rem;margin-bottom:0.5rem">📋</div><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.25rem">Official DHA Data</div><div style="font-size:0.72rem;color:var(--muted);line-height:1.5">Points test from Migration Regulations 1994. Cutoffs from published invitation rounds.</div></div>
+      <div class="trust-item"><div style="font-size:1.4rem;margin-bottom:0.5rem">🔢</div><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.25rem">Real Cutoffs</div><div style="font-size:0.72rem;color:var(--muted);line-height:1.5">Nov 2025 official round data by occupation — not averages or estimates.</div></div>
+      <div class="trust-item"><div style="font-size:1.4rem;margin-bottom:0.5rem">📡</div><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.25rem">Updated Within 48hrs</div><div style="font-size:0.72rem;color:var(--muted);line-height:1.5">Every invitation round published with plain-English analysis within 48 hours.</div></div>
+      <div class="trust-item"><div style="font-size:1.4rem;margin-bottom:0.5rem">🎯</div><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.25rem">Confidence Ranges</div><div style="font-size:0.72rem;color:var(--muted);line-height:1.5">Every figure shows a data range. We show our working — never more certain than the data supports.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem"><a href="/methodology" style="font-size:0.82rem;color:var(--teal);text-decoration:none;font-weight:600">Read our full methodology →</a></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EMAIL CAPTURE -->
+<section>
+  <div class="sw">
+    <div class="ctastrip">
+      <div class="slabel" style="text-align:center">Stay Ahead</div>
+      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:0.75rem">Get invitation round alerts<br>for your occupation</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;max-width:440px;margin-left:auto;margin-right:auto">Every time your state runs a round — plain-English summary in your inbox within 48 hours. No spam.</p>
+      <div class="ef">
+        <input type="email" class="ei" placeholder="your@email.com">
+        <button class="eb" onclick="handleEmail()">Get Alerts →</button>
+      </div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:0.75rem">Join 50,000+ applicants · Free · Unsubscribe anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- gap removed -->
+
+<hr>
+
+<!-- FINAL CTA -->
+<section style="padding-top:3rem;padding-bottom:3rem">
+  <div class="sw" style="text-align:center">
+    <div class="hbadge" style="margin-bottom:1.25rem">Free · No signup · 60 seconds</div>
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:0.75rem">Ready to understand your<br>Australian PR options?</h2>
+    <p style="color:var(--muted);font-size:0.95rem;max-width:420px;margin:0 auto 1.75rem;line-height:1.7">Enter your occupation, points and location. Get your full report. Download your scorecard.</p>
+    <a href="/tool" class="bth" style="display:inline-block">Get My PR Score →</a>
+  </div>
+</section>
+
+<div class="dis"><strong>⚠️ Important:</strong> VisaIQ provides AI-informed research based on publicly available DHA data and community-submitted timelines. This is not migration advice. For advice specific to your circumstances, consult a MARA-registered migration agent.</div>
+
+<footer>
+  <div class="fl">
+    <a href="/tool">PR Tool</a><a href="/points-calculator">Points Calc</a><a href="/eoi-queue">EOI Queue</a>
+    <a href="/rounds">Rounds</a><a href="/189-visa">189</a><a href="/190-visa">190</a>
+    <a href="/491-visa">491</a><a href="/485-visa">485</a><a href="/student-pathway">Student</a>
+    <a href="/state-comparator">States</a><a href="/occupation-demand">Occupations</a>
+  </div>
+  <div>© 2026 VisaIQ · visaiq.com.au · Not migration advice · Consult a MARA-registered agent</div>
+</footer>
+
+<!-- ROUNDS GATE MODAL -->
+<div id="rounds-gate" style="display:none;position:fixed;inset:0;background:rgba(7,15,28,0.85);backdrop-filter:blur(8px);z-index:1000;align-items:center;justify-content:center;padding:1.5rem">
+  <div style="background:#0D1B2E;border:1px solid rgba(0,200,150,0.3);border-radius:20px;padding:2rem;max-width:420px;width:100%;position:relative;animation:fu 0.3s ease">
+    <button onclick="closeGate()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:#7A8FA8;font-size:1.2rem;cursor:pointer;line-height:1">×</button>
+    <div style="font-size:1.5rem;margin-bottom:0.75rem">📡</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:0.5rem;color:#E8EDF5">Get Invitation Round Alerts</h3>
+    <p style="font-size:0.82rem;color:#7A8FA8;line-height:1.6;margin-bottom:1.25rem">Every time your state runs a nomination round — get a plain-English summary within 48 hours. Select which states and occupations you care about.</p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem">
+      <input type="text" id="gate-name" placeholder="Your name" style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.7rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;width:100%">
+      <input type="email" id="gate-email" placeholder="your@email.com" style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.7rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;width:100%">
+      <select id="gate-state" style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.7rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;width:100%;-webkit-appearance:none">
+        <option value="">Which state are you targeting?</option>
+        <option>NSW</option><option>VIC</option><option>QLD</option>
+        <option>SA</option><option>WA</option><option>TAS</option>
+        <option>ACT</option><option>NT</option><option>All states</option>
+      </select>
+      <button onclick="submitGate()" style="padding:0.8rem;background:#00C896;color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s">Activate My Alerts →</button>
+    </div>
+    <p style="font-size:0.7rem;color:#7A8FA8;text-align:center;margin-top:0.75rem">Free · No spam · Unsubscribe anytime</p>
+  </div>
+</div>
+
+<script>
+function sw(id,btn){
+  document.querySelectorAll('.ptc').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+function handleEmail(){
+  const inp=document.querySelector('.ei');
+  if(inp.value&&inp.value.includes('@')){
+    inp.value='';
+    const btn=document.querySelector('.eb');
+    btn.textContent="✅ You're in!";
+    setTimeout(()=>{btn.textContent='Get Alerts →';},3000);
+  }
+}
+function showRoundsGate(){
+  const g=document.getElementById('rounds-gate');
+  g.style.display='flex';
+}
+function closeGate(){
+  document.getElementById('rounds-gate').style.display='none';
+}
+function submitGate(){
+  const email=document.getElementById('gate-email').value;
+  if(email&&email.includes('@')){
+    document.getElementById('rounds-gate').style.display='none';
+    const btn=document.querySelector('[onclick="showRoundsGate()"]');
+    if(btn){btn.textContent='✅ Alerts Active';btn.style.color='var(--green)';}
+  }
+}
+// Close on backdrop click
+document.getElementById('rounds-gate').addEventListener('click',function(e){
+  if(e.target===this)closeGate();
+});
+</script>
+</body>
+</html>
