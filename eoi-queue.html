@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EOI Queue Position — VisaIQ Australia</title>
+<meta name="description" content="Check your EOI queue position for 189 skilled independent visa. See queue depth by occupation, points tier and wait time estimates based on 2025-26 data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb)}
+.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;margin-bottom:0.75rem}
+.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.pill{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.calc-btn{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:0.5rem;transition:all 0.2s}
+/* RESULT */
+.result{display:none}
+.result.show{display:block;animation:fu 0.4s ease}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* POOL BAR */
+.pool-bar-wrap{height:12px;background:rgba(255,255,255,0.05);border-radius:6px;overflow:hidden;margin:0.75rem 0}
+.pool-bar{height:100%;border-radius:6px;transition:width 1s ease}
+/* QUEUE TABLE */
+.qtable{width:100%;border-collapse:collapse;font-size:0.82rem}
+.qtable th{text-align:left;padding:0.6rem 0.75rem;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border)}
+.qtable td{padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--muted)}
+.qtable td:first-child{color:var(--text);font-weight:500}
+.qtable tr:last-child td{border-bottom:none}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:600px){.nls{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/189-visa">189 Visa</a>
+    <a href="/points-calculator">Points Calc</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+<div class="hero">
+  <h1>EOI Queue<br><em>Position Checker</em></h1>
+  <p>See your estimated position in your occupation's EOI pool and what it means for your invitation chances under the 2025–26 quarterly round system.</p>
+</div>
+<div class="wrap">
+  <div class="ib ib-amber">
+    <strong>How EOI queue data works:</strong> DHA does not publish individual queue positions. The figures below are based on publicly available DHA FOI data, SkillSelect statistics and community-submitted EOI data. Treat as informed estimates, not guarantees. Queue depth changes every day as people lodge new EOIs and receive invitations.
+  </div>
+  <div class="card">
+    <div class="card-title">Check Your Queue Position</div>
+    <select id="q-occ" onchange="updateQueue()">
+      <option value="">Select your occupation…</option>
+      <optgroup label="Healthcare — Tier 1">
+        <option value="nurse">Registered Nurse</option>
+        <option value="gp">General Practitioner / Medical Officer</option>
+        <option value="allied">Allied Health (Physio / OT / Pharmacist)</option>
+        <option value="dentist">Dentist</option>
+      </optgroup>
+      <optgroup label="Education — Tier 2">
+        <option value="teacher">Teacher (Secondary / Primary)</option>
+        <option value="socialworker">Social Worker / Counsellor</option>
+      </optgroup>
+      <optgroup label="Engineering — Tier 3">
+        <option value="civil">Civil / Structural Engineer</option>
+        <option value="mechanical">Mechanical / Electrical Engineer</option>
+      </optgroup>
+      <optgroup label="Trades — Tier 3">
+        <option value="electrician">Electrician</option>
+        <option value="plumber">Plumber</option>
+        <option value="carpenter">Carpenter / Joiner</option>
+      </optgroup>
+      <optgroup label="Technology — Tier 4">
+        <option value="software">Software Engineer / Developer</option>
+        <option value="ict">ICT Manager / Systems Analyst</option>
+        <option value="data">Data Analyst / Scientist</option>
+      </optgroup>
+      <optgroup label="Accounting — Tier 4">
+        <option value="accountant">Accountant (General / Management)</option>
+        <option value="auditor">Auditor / Financial Analyst</option>
+      </optgroup>
+    </select>
+    <div style="margin-bottom:0.75rem">
+      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Your points score (before nomination)</div>
+      <div class="pill-row">
+        <button class="pill" data-v="65" onclick="sp(this,'pts')">65–69 pts</button>
+        <button class="pill" data-v="70" onclick="sp(this,'pts')">70–74 pts</button>
+        <button class="pill" data-v="75" onclick="sp(this,'pts')">75–79 pts</button>
+        <button class="pill" data-v="80" onclick="sp(this,'pts')">80–84 pts</button>
+        <button class="pill" data-v="85" onclick="sp(this,'pts')">85–89 pts</button>
+        <button class="pill" data-v="90" onclick="sp(this,'pts')">90–94 pts</button>
+        <button class="pill" data-v="95" onclick="sp(this,'pts')">95+ pts</button>
+      </div>
+    </div>
+    <div style="margin-bottom:1rem">
+      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Nomination status</div>
+      <div class="pill-row">
+        <button class="pill sel" data-v="none" onclick="sp(this,'nom')">No nomination (189)</button>
+        <button class="pill" data-v="190" onclick="sp(this,'nom')">190 state (+5 pts)</button>
+        <button class="pill" data-v="491" onclick="sp(this,'nom')">491 regional (+15 pts)</button>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="checkQueue()">See My Queue Position →</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="queue-result"></div>
+
+  <!-- OCCUPATION POOL DATA -->
+  <div class="card">
+    <div class="card-title">EOI Pool Size by Occupation — 2025–26 Data</div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1rem">Estimated EOI pool sizes based on DHA SkillSelect data and community submissions. Larger pools = more competition = higher cutoffs needed.</p>
+    <table class="qtable">
+      <thead><tr><th>Occupation</th><th>Tier</th><th>Est. EOI pool</th><th>Nov 2025 cutoff</th><th>Competition</th></tr></thead>
+      <tbody>
+        <tr><td>Accountant</td><td>Tier 4</td><td style="color:var(--red)">15,000+</td><td style="color:var(--red)">Not invited</td><td style="color:var(--red)">Extreme</td></tr>
+        <tr><td>Software Engineer</td><td>Tier 4</td><td style="color:var(--red)">8,200+</td><td style="color:var(--amber)">90 pts</td><td style="color:var(--red)">Very high</td></tr>
+        <tr><td>ICT Manager</td><td>Tier 4</td><td style="color:var(--red)">5,400+</td><td style="color:var(--red)">95 pts (pro-rata)</td><td style="color:var(--red)">Extreme</td></tr>
+        <tr><td>Civil Engineer</td><td>Tier 3</td><td style="color:var(--amber)">5,200+</td><td style="color:var(--amber)">85 pts</td><td style="color:var(--amber)">High</td></tr>
+        <tr><td>Registered Nurse</td><td>Tier 1</td><td style="color:var(--teal)">2,100</td><td style="color:var(--green)">75 pts</td><td style="color:var(--teal)">Moderate</td></tr>
+        <tr><td>Teacher (Secondary)</td><td>Tier 2</td><td style="color:var(--teal)">4,100</td><td style="color:var(--teal)">85 pts</td><td style="color:var(--teal)">Moderate</td></tr>
+        <tr><td>Social Worker</td><td>Tier 2</td><td style="color:var(--teal)">2,600</td><td style="color:var(--green)">80 pts</td><td style="color:var(--teal)">Moderate</td></tr>
+        <tr><td>Electrician</td><td>Tier 3</td><td style="color:var(--green)">1,600</td><td style="color:var(--green)">65 pts</td><td style="color:var(--green)">Low</td></tr>
+        <tr><td>Plumber</td><td>Tier 3</td><td style="color:var(--green)">1,300</td><td style="color:var(--green)">65 pts</td><td style="color:var(--green)">Low</td></tr>
+        <tr><td>Chef / Cook</td><td>STSOL</td><td style="color:var(--red)">3,600+</td><td style="color:var(--red)">No 189 pathway</td><td style="color:var(--red)">N/A for 189</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer>
+  <a href="/">Home</a><a href="/189-visa">189 Visa</a><a href="/points-calculator">Points Calc</a><a href="/tool">PR Tool</a>
+  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · EOI data: DHA SkillSelect + community submissions</div>
+</footer>
+<script>
+const QA = {pts:null, nom:'none'};
+function sp(el,k){document.querySelectorAll(`[onclick="sp(this,'${k}')"]`).forEach(p=>p.classList.remove('sel'));el.classList.add('sel');QA[k]=el.dataset.v;}
+
+const OCC_Q = {
+  nurse:{tier:1,pool:2100,cutoff:75,label:'Registered Nurse',comp:'Moderate'},
+  gp:{tier:1,pool:1200,cutoff:75,label:'General Practitioner',comp:'Moderate'},
+  allied:{tier:1,pool:1800,cutoff:75,label:'Allied Health',comp:'Moderate'},
+  dentist:{tier:1,pool:800,cutoff:80,label:'Dentist',comp:'Moderate'},
+  teacher:{tier:2,pool:4100,cutoff:85,label:'Teacher',comp:'Moderate'},
+  socialworker:{tier:2,pool:2600,cutoff:80,label:'Social Worker',comp:'Moderate'},
+  civil:{tier:3,pool:5200,cutoff:85,label:'Civil Engineer',comp:'High'},
+  mechanical:{tier:3,pool:3800,cutoff:85,label:'Mechanical Engineer',comp:'High'},
+  electrician:{tier:3,pool:1600,cutoff:65,label:'Electrician',comp:'Low'},
+  plumber:{tier:3,pool:1300,cutoff:65,label:'Plumber',comp:'Low'},
+  carpenter:{tier:3,pool:1200,cutoff:65,label:'Carpenter',comp:'Low'},
+  software:{tier:4,pool:8200,cutoff:90,label:'Software Engineer',comp:'Very High'},
+  ict:{tier:4,pool:5400,cutoff:95,label:'ICT Manager',comp:'Extreme'},
+  data:{tier:4,pool:4200,cutoff:90,label:'Data Analyst',comp:'Very High'},
+  accountant:{tier:4,pool:15000,cutoff:999,label:'Accountant',comp:'Extreme'},
+  auditor:{tier:4,pool:6000,cutoff:95,label:'Auditor',comp:'Very High'},
+};
+
+function updateQueue(){checkQueue();}
+
+function checkQueue(){
+  const occKey = document.getElementById('q-occ').value;
+  if(!occKey) return;
+  const occ = OCC_Q[occKey];
+  if(!occ) return;
+  
+  const pts = parseInt(QA.pts) || 70;
+  const nomBonus = QA.nom === '190' ? 5 : QA.nom === '491' ? 15 : 0;
+  const effective = pts + nomBonus;
+  
+  const tierColors={1:'var(--green)',2:'var(--teal)',3:'var(--blue)',4:'var(--amber)'};
+  const tierNames={1:'Tier 1 — Highest Priority',2:'Tier 2 — High Priority',3:'Tier 3 — Standard',4:'Tier 4 — Oversupplied'};
+  const tc = tierColors[occ.tier];
+  
+  const aboveCutoff = occ.cutoff === 999 ? false : effective >= occ.cutoff;
+  const gap = occ.cutoff === 999 ? 'N/A' : occ.cutoff - effective;
+  
+  // Estimate queue percentile
+  const ptsRange = [65,70,75,80,85,90,95,100];
+  const ptsIdx = ptsRange.findIndex(p => pts <= p);
+  const abovePct = Math.max(5, Math.min(95, (ptsIdx/ptsRange.length)*100));
+  
+  let outlook, outlookColor;
+  if(occ.cutoff === 999){
+    outlook = 'Accountants were not invited in either 2025–26 round. 189 is not a viable primary pathway. Strongly recommend SA 190 or 491 regional as primary strategy.';
+    outlookColor = 'var(--red)';
+  } else if(aboveCutoff && effective >= occ.cutoff + 5){
+    outlook = `Your effective score of ${effective} pts is above the Nov 2025 cutoff of ${occ.cutoff} pts. You are in a competitive position for the next quarterly round. Ensure your EOI is lodged and up to date.`;
+    outlookColor = 'var(--green)';
+  } else if(aboveCutoff){
+    outlook = `Your effective score of ${effective} pts meets the Nov 2025 cutoff of ${occ.cutoff} pts — but only just. Cutoffs fluctuate between rounds. Improving your score by 5+ pts would give stronger security.`;
+    outlookColor = 'var(--amber)';
+  } else {
+    const need = occ.cutoff - effective;
+    outlook = `Your effective score of ${effective} pts is ${need} pts below the Nov 2025 cutoff of ${occ.cutoff} pts. Consider: ${need <= 5 ? 'NAATI CCL (+5 pts) could close this gap immediately.' : need <= 10 ? 'NAATI CCL (+5 pts) + improving English to Superior (+10 pts) could help significantly.' : '491 regional nomination (+15 pts) is likely the most practical pathway at your current score.'}`;
+    outlookColor = 'var(--amber)';
+  }
+
+  const r = document.getElementById('queue-result');
+  r.className='result show';
+  r.innerHTML = `
+    <div class="card">
+      <div class="card-title">Your EOI Queue Assessment — ${occ.label}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem">
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
+          <div style="font-size:0.65rem;font-weight:700;color:${tc};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">${tierNames[occ.tier]}</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:${tc}">Tier ${occ.tier}</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">Est. EOI Pool</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--text)">${occ.pool.toLocaleString()}+</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
+          <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">Nov 2025 Cutoff</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:${aboveCutoff?'var(--green)':'var(--red)'}">${occ.cutoff === 999 ? 'Not invited' : occ.cutoff + ' pts'}</div>
+        </div>
+      </div>
+      <div style="margin-bottom:0.75rem">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem">
+          <span>Your effective score: <strong style="color:var(--text)">${effective} pts</strong>${nomBonus ? ` (${pts} base + ${nomBonus} ${QA.nom})` : ''}</span>
+          <span>Pool above you: ~${abovePct.toFixed(0)}%</span>
+        </div>
+        <div class="pool-bar-wrap"><div class="pool-bar" style="width:${abovePct}%;background:${aboveCutoff?'var(--green)':'var(--amber)'}"></div></div>
+      </div>
+      <div style="background:var(--bg3);border-radius:10px;padding:1rem;font-size:0.82rem;color:var(--text);line-height:1.7;border-left:3px solid ${outlookColor}">${outlook}</div>
+      <div style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+        <a href="/points-calculator" style="padding:0.55rem 1rem;background:var(--td);color:var(--teal);border:1px solid var(--tb);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Calculate exact points →</a>
+        <a href="/tool" style="padding:0.55rem 1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Get full PR report →</a>
+      </div>
+    </div>`;
+}
+</script>
+</body>
+</html>
