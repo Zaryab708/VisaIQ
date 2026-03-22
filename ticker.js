@@ -1,186 +1,94 @@
-/**
- * VisaIQ Live Intelligence Ticker
- * Add one line to any page: <script src="/ticker.js"></script>
- * Reads from /ticker-data.json — update that file to push new items to all pages
- */
-(function() {
-  const TICKER_STYLES = `
-    #visaiq-ticker {
-      position: relative;
-      background: #070F1C;
-      border-bottom: 1px solid rgba(0,200,150,0.2);
-      overflow: hidden;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      z-index: 99;
-    }
-    #visaiq-ticker::before,
-    #visaiq-ticker::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    #visaiq-ticker::before {
-      left: 0;
-      background: linear-gradient(to right, #070F1C 0%, transparent 100%);
-    }
-    #visaiq-ticker::after {
-      right: 0;
-      background: linear-gradient(to left, #070F1C 0%, transparent 100%);
-    }
-    #visaiq-ticker-label {
-      flex-shrink: 0;
-      background: #00C896;
-      color: #000;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0 0.75rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      z-index: 3;
-    }
-    #visaiq-ticker-track {
-      overflow: hidden;
-      flex: 1;
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-    #visaiq-ticker-inner {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      white-space: nowrap;
-      animation: tickerScroll 60s linear infinite;
-      will-change: transform;
-    }
-    #visaiq-ticker-track:hover #visaiq-ticker-inner {
-      animation-play-state: paused;
-    }
-    @keyframes tickerScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .ticker-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0 2rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
-      color: #00C896;
-      white-space: nowrap;
-    }
-    .ticker-item-icon {
-      font-size: 0.8rem;
-    }
-    .ticker-item-text {
-      color: #E8EDF5;
-    }
-    .ticker-item-text strong {
-      color: #00C896;
-    }
-    .ticker-divider {
-      display: inline-block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(0,200,150,0.4);
-      margin: 0 0.5rem;
-      flex-shrink: 0;
-    }
-    .ticker-item-grant .ticker-item-text strong { color: #10B981; }
-    .ticker-item-round .ticker-item-text strong { color: #00C896; }
-    .ticker-item-processing .ticker-item-text strong { color: #4E8EFF; }
-    .ticker-item-queue .ticker-item-text strong { color: #7A8FA8; }
-    .ticker-item-policy .ticker-item-text strong { color: #F59E0B; }
-    @media (max-width: 480px) {
-      .ticker-item { font-size: 0.72rem; padding: 0 1.5rem; }
-      #visaiq-ticker-label { font-size: 0.6rem; padding: 0 0.5rem; }
-    }
-  `;
+(function () {
 
-  function injectStyles() {
-    if (document.getElementById('visaiq-ticker-styles')) return;
-    const style = document.createElement('style');
-    style.id = 'visaiq-ticker-styles';
-    style.textContent = TICKER_STYLES;
+  var ITEMS = [
+    { icon: "✓",  color: "#10B981", text: "Registered Nurse · SA 190 · 75 pts · granted 3 days ago" },
+    { icon: "📡", color: "#00C896", text: "TAS ran a 491 round · Chefs invited · cutoff 65 pts · March 18" },
+    { icon: "⏱",  color: "#4E8EFF", text: "190 visa processing · NSW · now averaging 11 months · updated March 2026" },
+    { icon: "📊", color: "#7A8FA8", text: "Accountant EOI pool · 15,240 active EOIs · up 340 this month" },
+    { icon: "⚠️", color: "#F59E0B", text: "SA Talent and Innovation stream · reopened March 20 · limited places" },
+    { icon: "✓",  color: "#10B981", text: "Software Engineer · ACT 491 · 80 pts · granted 5 days ago" },
+    { icon: "📡", color: "#00C896", text: "189 Round 3 · 2025-26 · expected Jan-Mar 2026 · prepare your EOI now" },
+    { icon: "⏱",  color: "#4E8EFF", text: "485 visa · new DHA target 25 days · current average 83 days" },
+    { icon: "📊", color: "#7A8FA8", text: "Civil Engineer EOI pool · 5,200 active EOIs · 85 pt cutoff Nov 2025" },
+    { icon: "⚠️", color: "#F59E0B", text: "485 visa fee increase · $4,600 from 1 March 2026 · applies to new applications" },
+    { icon: "✓",  color: "#10B981", text: "Electrician · QLD 190 · 65 pts · granted 1 week ago" },
+    { icon: "📡", color: "#00C896", text: "NSW 190 round · March 2026 · Construction and Digital sectors priority" },
+    { icon: "⏱",  color: "#4E8EFF", text: "186 TRT Standard · currently processing March 2024 lodgements" },
+    { icon: "📊", color: "#7A8FA8", text: "Registered Nurse EOI pool · 2,100 active EOIs · Tier 1 priority" },
+    { icon: "⚠️", color: "#F59E0B", text: "189 quarterly rounds · 2 of 4 complete · 16,887 invitations issued 2025-26" }
+  ];
+
+  var css =
+    '#viq-ticker{' +
+      'width:100%;' +
+      'background:#070F1C;' +
+      'border-bottom:1px solid rgba(0,200,150,0.25);' +
+      'height:34px;' +
+      'display:flex;' +
+      'align-items:center;' +
+      'overflow:hidden;' +
+      'position:sticky;' +
+      'top:0;' +
+      'z-index:101;' +   /* above nav z-index:100 */
+    '}' +
+    '#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}' +
+    '#viq-ticker::before{left:40px;background:linear-gradient(to right,#070F1C,transparent);}' +
+    '#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent);}' +
+    '#viq-ticker-badge{' +
+      'flex-shrink:0;background:#00C896;color:#000;' +
+      'font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;' +
+      'padding:0 10px;height:100%;display:flex;align-items:center;white-space:nowrap;z-index:3;' +
+    '}' +
+    '#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;}' +
+    '#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite;}' +
+    '#viq-ticker-mask:hover #viq-ticker-track{animation-play-state:paused;}' +
+    '@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}' +
+    '.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 28px;font-size:0.76rem;font-family:"DM Sans",sans-serif;white-space:nowrap;}' +
+    '.viq-icon{font-size:0.78rem;line-height:1;}' +
+    '.viq-text{color:#E8EDF5;}' +
+    '.viq-text b{font-weight:700;}' +
+    '.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.35);margin:0 4px;vertical-align:middle;}' +
+    '@media(max-width:480px){.viq-item{font-size:0.7rem;padding:0 18px;}}';
+
+  function buildItems(items) {
+    return items.map(function(item) {
+      var text = item.text.replace(/^([^·]+)/, '<b style="color:' + item.color + '">$1</b>');
+      return '<span class="viq-item"><span class="viq-icon">' + item.icon + '</span><span class="viq-text">' + text + '</span><span class="viq-dot"></span></span>';
+    }).join('');
+  }
+
+  function inject() {
+    if (document.getElementById('viq-ticker')) return;
+
+    var style = document.createElement('style');
+    style.textContent = css;
     document.head.appendChild(style);
+
+    var inner = buildItems(ITEMS) + buildItems(ITEMS);
+    var ticker = document.createElement('div');
+    ticker.id = 'viq-ticker';
+    ticker.innerHTML =
+      '<div id="viq-ticker-badge">Live</div>' +
+      '<div id="viq-ticker-mask"><div id="viq-ticker-track">' + inner + '</div></div>';
+
+    /* Insert BEFORE the nav so it stacks correctly with sticky positioning */
+    var nav = document.querySelector('nav');
+    if (nav && nav.parentNode) {
+      nav.parentNode.insertBefore(ticker, nav);
+    } else {
+      document.body.insertBefore(ticker, document.body.firstChild);
+    }
+
+    /* Push nav down so it sits below ticker */
+    if (nav) {
+      nav.style.top = '34px';
+    }
   }
 
-  function buildTickerHTML(items) {
-    // Double the items so the scroll loops seamlessly
-    const allItems = [...items, ...items];
-    return allItems.map((item, i) => `
-      <span class="ticker-item ticker-item-${item.type}">
-        <span class="ticker-item-icon">${item.icon}</span>
-        <span class="ticker-item-text">${formatText(item.text)}</span>
-      </span>
-      <span class="ticker-divider"></span>
-    `).join('');
-  }
-
-  function formatText(text) {
-    // Bold the first segment (before the first ·)
-    return text.replace(/^([^·]+)/, '<strong>$1</strong>');
-  }
-
-  function insertTicker(items) {
-    // Find the nav element
-    const nav = document.querySelector('nav');
-    if (!nav) return;
-
-    const ticker = document.createElement('div');
-    ticker.id = 'visaiq-ticker';
-    ticker.innerHTML = `
-      <div id="visaiq-ticker-label">Live</div>
-      <div id="visaiq-ticker-track">
-        <div id="visaiq-ticker-inner">
-          ${buildTickerHTML(items)}
-        </div>
-      </div>
-    `;
-
-    // Insert immediately after nav
-    nav.insertAdjacentElement('afterend', ticker);
-
-    // Adjust scroll speed based on number of items
-    const inner = ticker.querySelector('#visaiq-ticker-inner');
-    const duration = Math.max(40, items.length * 8);
-    inner.style.animationDuration = duration + 's';
-  }
-
-  function init() {
-    injectStyles();
-
-    // Fetch ticker data
-    fetch('/ticker-data.json?v=' + Date.now())
-      .then(r => r.json())
-      .then(data => {
-        if (data && data.items && data.items.length > 0) {
-          insertTicker(data.items);
-        }
-      })
-      .catch(err => {
-        // Fail silently — ticker is enhancement, not critical
-        console.log('VisaIQ ticker: could not load ticker-data.json');
-      });
-  }
-
-  // Run when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', inject);
   } else {
-    init();
+    inject();
   }
+
 })();
