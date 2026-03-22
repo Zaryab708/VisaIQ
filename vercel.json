@@ -4,6 +4,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/tool", "destination": "/tool.html" },
+    { "source": "/profile", "destination": "/profile.html" },
     { "source": "/policy-updates", "destination": "/policy-updates.html" },
     { "source": "/482-visa", "destination": "/482-visa.html" },
     { "source": "/482-to-186", "destination": "/482-to-186.html" },

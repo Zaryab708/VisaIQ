@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Migration Profile — VisaIQ Australia</title>
+<meta name="description" content="Set up your free VisaIQ profile. Get personalised round alerts, weekly updates and your PR timeline — all based on your specific occupation, state and points score.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="/occupations.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.15);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+
+/* TICKER */
+#viq-ticker{width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;}
+#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}
+#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent);}
+#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent);}
+#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0;}
+#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite;}
+#viq-ticker-mask:hover #viq-ticker-track{animation-play-state:paused;}
+@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:'DM Sans',sans-serif;white-space:nowrap;line-height:1;}
+.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px;}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:480px;margin:0 auto;line-height:1.7}
+
+.wrap{max-width:720px;margin:0 auto;padding:2rem 1.5rem 5rem}
+
+/* SCREENS */
+.screen{display:none}
+.screen.active{display:block;animation:fu 0.3s ease}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* FORM */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.q{margin-bottom:1rem}
+.q label{display:block;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.4rem;color:var(--text)}
+.q .hint{font-size:0.73rem;color:var(--muted);margin-bottom:0.5rem;line-height:1.5}
+input[type=email],input[type=text],select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--tb)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.4rem}
+.pill{padding:0.5rem 0.9rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.btn-primary{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
+.btn-primary:hover{background:#00e0aa}
+.btn-secondary{width:100%;padding:0.75rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;margin-top:0.5rem;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--tb);color:var(--teal)}
+
+/* ALERTS */
+.pref-row{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1rem;background:var(--bg3);border-radius:10px;margin-bottom:0.5rem}
+.pref-label{font-size:0.82rem;font-weight:500}
+.pref-sub{font-size:0.72rem;color:var(--muted);margin-top:0.1rem}
+.toggle{position:relative;width:42px;height:24px;flex-shrink:0}
+.toggle input{opacity:0;width:0;height:0;position:absolute}
+.toggle-slider{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.1);border-radius:12px;cursor:pointer;transition:background 0.2s}
+.toggle input:checked+.toggle-slider{background:var(--teal)}
+.toggle-slider::before{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:transform 0.2s}
+.toggle input:checked+.toggle-slider::before{transform:translateX(18px)}
+.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb)}
+.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+
+/* DASHBOARD */
+.dash-header{background:linear-gradient(135deg,var(--td),var(--bg2));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;margin-bottom:1rem;text-align:center}
+.dash-avatar{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:#000;margin:0 auto 0.75rem}
+.dash-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:0.2rem}
+.dash-sub{font-size:0.78rem;color:var(--muted)}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin:1rem 0}
+.stat-box{background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center}
+.stat-val{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--teal)}
+.stat-label{font-size:0.65rem;color:var(--muted);margin-top:0.15rem;text-transform:uppercase;letter-spacing:0.05em}
+.action-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.1rem;margin-bottom:0.6rem;display:flex;align-items:flex-start;gap:0.85rem;cursor:pointer;transition:border-color 0.2s;text-decoration:none;color:inherit}
+.action-card:hover{border-color:var(--tb)}
+.ac-icon{font-size:1.1rem;flex-shrink:0;margin-top:0.1rem}
+.ac-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.2rem}
+.ac-sub{font-size:0.75rem;color:var(--muted);line-height:1.5}
+.ac-arrow{margin-left:auto;font-size:0.9rem;color:var(--muted);flex-shrink:0}
+
+/* ROUND ALERTS */
+.round-item{background:var(--bg3);border-radius:10px;padding:1rem;margin-bottom:0.5rem;border-left:3px solid var(--teal)}
+.ri-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.3rem}
+.ri-title{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700}
+.ri-date{font-size:0.68rem;color:var(--muted)}
+.ri-body{font-size:0.77rem;color:var(--muted);line-height:1.6}
+.ri-badge{font-size:0.62rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px}
+.rb-active{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.rb-upcoming{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.25)}
+.rb-closed{background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:600px){.stat-grid{grid-template-columns:1fr 1fr}.nls{display:none}}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;">
+  <div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;z-index:3;">Live</div>
+  <div id="viq-ticker-mask"><div id="viq-ticker-track">
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts</span><span class="viq-dot"></span></span>
+    <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts</span><span class="viq-dot"></span></span>
+    <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span>
+  </div></div>
+</div>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/rounds">Rounds</a>
+    <a href="/policy-updates">Policy Updates</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Your Migration<br><em>Profile</em></h1>
+  <p>Set up once. Get personalised round alerts, weekly digests and PR updates — all filtered to your occupation, state and points score.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- SCREEN 1: SETUP FORM -->
+  <div class="screen active" id="screen-setup">
+    <div class="card">
+      <div class="card-title">Step 1 — Your Details</div>
+      <div class="q">
+        <label>Your name</label>
+        <input type="text" id="p-name" placeholder="First name">
+      </div>
+      <div class="q">
+        <label>Email address</label>
+        <div class="hint">This is where we send your round alerts and weekly digest</div>
+        <input type="email" id="p-email" placeholder="your@email.com">
+      </div>
+      <div class="q">
+        <label>Your nationality</label>
+        <div class="pill-row">
+          <button class="pill" data-v="indian" onclick="sp(this,'nat')">Indian</button>
+          <button class="pill" data-v="pakistani" onclick="sp(this,'nat')">Pakistani</button>
+          <button class="pill" data-v="nepali" onclick="sp(this,'nat')">Nepali</button>
+          <button class="pill" data-v="filipino" onclick="sp(this,'nat')">Filipino</button>
+          <button class="pill" data-v="bangladeshi" onclick="sp(this,'nat')">Bangladeshi</button>
+          <button class="pill" data-v="sri_lankan" onclick="sp(this,'nat')">Sri Lankan</button>
+          <button class="pill" data-v="chinese" onclick="sp(this,'nat')">Chinese</button>
+          <button class="pill" data-v="other" onclick="sp(this,'nat')">Other</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Step 2 — Your Migration Profile</div>
+      <div class="q">
+        <label>Your occupation</label>
+        <div class="hint">Start typing or scroll — all 200+ skilled occupations listed</div>
+        <select id="p-occ" onchange="updateOccInfo()"></select>
+        <div id="occ-info" style="display:none;margin-top:0.6rem;background:var(--bg3);border-radius:8px;padding:0.75rem;font-size:0.78rem;color:var(--muted)"></div>
+      </div>
+      <div class="q">
+        <label>Current state / territory</label>
+        <select id="p-state">
+          <option value="">Select state…</option>
+          <option value="NSW">New South Wales</option>
+          <option value="VIC">Victoria</option>
+          <option value="QLD">Queensland</option>
+          <option value="SA">South Australia</option>
+          <option value="WA">Western Australia</option>
+          <option value="TAS">Tasmania</option>
+          <option value="ACT">ACT (Canberra)</option>
+          <option value="NT">Northern Territory</option>
+          <option value="overseas">Overseas — planning to move</option>
+        </select>
+      </div>
+      <div class="q">
+        <label>Your current DHA points score</label>
+        <div class="hint">Estimate is fine — you can update this anytime</div>
+        <div class="pill-row">
+          <button class="pill" data-v="55" onclick="sp(this,'pts')">Under 60</button>
+          <button class="pill" data-v="65" onclick="sp(this,'pts')">60–69 pts</button>
+          <button class="pill" data-v="70" onclick="sp(this,'pts')">70–74 pts</button>
+          <button class="pill" data-v="75" onclick="sp(this,'pts')">75–79 pts</button>
+          <button class="pill" data-v="80" onclick="sp(this,'pts')">80–84 pts</button>
+          <button class="pill" data-v="85" onclick="sp(this,'pts')">85–89 pts</button>
+          <button class="pill" data-v="90" onclick="sp(this,'pts')">90–94 pts</button>
+          <button class="pill" data-v="95" onclick="sp(this,'pts')">95+ pts</button>
+        </div>
+      </div>
+      <div class="q">
+        <label>Your visa target</label>
+        <div class="pill-row">
+          <button class="pill" data-v="189" onclick="sp(this,'visa')">189 Independent</button>
+          <button class="pill" data-v="190" onclick="sp(this,'visa')">190 State Nominated</button>
+          <button class="pill" data-v="491" onclick="sp(this,'visa')">491 Regional</button>
+          <button class="pill" data-v="482" onclick="sp(this,'visa')">482 Employer Sponsored</button>
+          <button class="pill" data-v="unsure" onclick="sp(this,'visa')">Not sure yet</button>
+        </div>
+      </div>
+      <div class="q">
+        <label>EOI status</label>
+        <div class="pill-row">
+          <button class="pill" data-v="lodged" onclick="sp(this,'eoi')">EOI lodged</button>
+          <button class="pill" data-v="invited" onclick="sp(this,'eoi')">Invitation received</button>
+          <button class="pill" data-v="applied" onclick="sp(this,'eoi')">Visa applied</button>
+          <button class="pill" data-v="not_yet" onclick="sp(this,'eoi')">Not yet lodged</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Step 3 — What Alerts Do You Want?</div>
+      <div class="pref-row">
+        <div><div class="pref-label">Round alerts for my state</div><div class="pref-sub">Within 48hrs of any 190/491 nomination round in your state</div></div>
+        <label class="toggle"><input type="checkbox" id="pref-rounds" checked><div class="toggle-slider"></div></label>
+      </div>
+      <div class="pref-row">
+        <div><div class="pref-label">Weekly digest — every Monday</div><div class="pref-sub">5-minute summary of what changed and what it means for your profile</div></div>
+        <label class="toggle"><input type="checkbox" id="pref-weekly" checked><div class="toggle-slider"></div></label>
+      </div>
+      <div class="pref-row">
+        <div><div class="pref-label">Policy change alerts</div><div class="pref-sub">Instant notification when DHA changes rules affecting your occupation</div></div>
+        <label class="toggle"><input type="checkbox" id="pref-policy" checked><div class="toggle-slider"></div></label>
+      </div>
+      <div class="pref-row">
+        <div><div class="pref-label">189 federal invitation rounds</div><div class="pref-sub">Alert when a new SkillSelect round is announced</div></div>
+        <label class="toggle"><input type="checkbox" id="pref-189" checked><div class="toggle-slider"></div></label>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="createProfile()">Create My Profile →</button>
+    <p style="text-align:center;font-size:0.72rem;color:var(--muted);margin-top:0.75rem">Free · No spam · Unsubscribe anytime · Not migration advice</p>
+  </div>
+
+  <!-- SCREEN 2: DASHBOARD -->
+  <div class="screen" id="screen-dashboard">
+    <!-- PROFILE HEADER -->
+    <div class="dash-header">
+      <div class="dash-avatar" id="dash-avatar">?</div>
+      <div class="dash-name" id="dash-name">Your Profile</div>
+      <div class="dash-sub" id="dash-sub">—</div>
+      <div style="margin-top:0.75rem;display:inline-flex;align-items:center;gap:0.4rem;background:var(--td);border:1px solid var(--tb);border-radius:20px;padding:0.25rem 0.75rem;font-size:0.7rem;color:var(--teal);font-weight:600">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;animation:pulse 2s infinite"></span>
+        Alerts active
+      </div>
+      <style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}</style>
+    </div>
+
+    <!-- STATS -->
+    <div class="stat-grid">
+      <div class="stat-box"><div class="stat-val" id="dash-pts">—</div><div class="stat-label">Points score</div></div>
+      <div class="stat-box"><div class="stat-val" id="dash-tier" style="font-size:0.85rem">—</div><div class="stat-label">189 Tier</div></div>
+      <div class="stat-box"><div class="stat-val" id="dash-cutoff">—</div><div class="stat-label">Target cutoff</div></div>
+    </div>
+
+    <!-- PERSONALISED INSIGHT -->
+    <div class="ib ib-teal" id="dash-insight" style="margin-bottom:1rem"></div>
+
+    <!-- ROUND ACTIVITY -->
+    <div class="card">
+      <div class="card-title">Round Activity — Your State</div>
+      <div id="dash-rounds"></div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="card">
+      <div class="card-title">Your Tools</div>
+      <a href="/tool" class="action-card">
+        <div class="ac-icon">🎯</div>
+        <div><div class="ac-title">Run full PR report</div><div class="ac-sub">Get your complete invitation probability, state grid and action plan</div></div>
+        <div class="ac-arrow">→</div>
+      </a>
+      <a href="/points-calculator" class="action-card">
+        <div class="ac-icon">📊</div>
+        <div><div class="ac-title">Points calculator</div><div class="ac-sub">Check your exact score and see how to improve it</div></div>
+        <div class="ac-arrow">→</div>
+      </a>
+      <a href="/eoi-queue" class="action-card">
+        <div class="ac-icon">📋</div>
+        <div><div class="ac-title">EOI queue position</div><div class="ac-sub">See how many EOIs are ahead of you at your points score</div></div>
+        <div class="ac-arrow">→</div>
+      </a>
+      <a href="/rounds" class="action-card">
+        <div class="ac-icon">📡</div>
+        <div><div class="ac-title">Round tracker</div><div class="ac-sub">Every federal and state round — published within 48 hours</div></div>
+        <div class="ac-arrow">→</div>
+      </a>
+      <a href="/state-comparator" class="action-card">
+        <div class="ac-icon">🗺️</div>
+        <div><div class="ac-title">Compare all 8 states</div><div class="ac-sub">See which states accept your occupation at your points score</div></div>
+        <div class="ac-arrow">→</div>
+      </a>
+    </div>
+
+    <!-- EDIT / RESET -->
+    <button class="btn-secondary" onclick="editProfile()">Edit my profile</button>
+    <button class="btn-secondary" onclick="clearProfile()" style="margin-top:0.4rem;color:var(--red);border-color:rgba(239,68,68,0.2)">Delete profile</button>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">Home</a><a href="/tool">PR Tool</a><a href="/rounds">Rounds</a>
+  <a href="/policy-updates">Policy Updates</a><a href="/methodology">Methodology</a>
+  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · Data: DHA 2025–26</div>
+</footer>
+
+<script>
+/* Populate occupation dropdown from shared occupations.js */
+document.addEventListener('DOMContentLoaded', function() {
+  var sel = document.getElementById('p-occ');
+  if (sel && window.VIQ) {
+    sel.innerHTML = window.VIQ.selectHTML();
+  }
+  checkExistingProfile();
+});
+
+/* ── STATE ─────────────────────────────────────────────────── */
+var P = { nat:'', pts:'', visa:'', eoi:'not_yet' };
+
+function sp(el, k) {
+  document.querySelectorAll('[onclick="sp(this,\''+k+'\')"]').forEach(function(b){ b.classList.remove('sel'); });
+  el.classList.add('sel');
+  P[k] = el.dataset.v;
+}
+
+/* ── OCC INFO BADGE ─────────────────────────────────────────── */
+function updateOccInfo() {
+  var id = document.getElementById('p-occ').value;
+  var box = document.getElementById('occ-info');
+  if (!id || !window.VIQ) { box.style.display='none'; return; }
+  var occ = window.VIQ.get(id);
+  if (!occ) { box.style.display='none'; return; }
+  var tierColors={1:'#10B981',2:'#00C896',3:'#4E8EFF',4:'#F59E0B'};
+  var tierLabel={1:'Tier 1 — Highest Priority',2:'Tier 2 — High Priority',3:'Tier 3 — Standard',4:'Tier 4 — Oversupplied'};
+  var cutoffText = occ.cutoff189 ? occ.cutoff189+' pts' : (occ.list==='STSOL'?'No 189 pathway':'Not invited');
+  box.style.display='block';
+  box.innerHTML =
+    '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem">'+
+    '<span style="background:rgba(0,200,150,0.1);color:#00C896;border:1px solid rgba(0,200,150,0.3);border-radius:5px;padding:0.1rem 0.4rem;font-size:0.65rem;font-weight:700">'+occ.list+'</span>'+
+    (occ.tier?'<span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:0.1rem 0.4rem;font-size:0.65rem;font-weight:700;color:'+(tierColors[occ.tier]||'#7A8FA8')+'">'+tierLabel[occ.tier]+'</span>':'')+
+    '</div>'+
+    '<div style="font-size:0.75rem;color:#E8EDF5">ANZSCO '+occ.anzsco+' · Skills assessment: <strong>'+occ.assess+'</strong></div>'+
+    '<div style="font-size:0.75rem;color:#7A8FA8;margin-top:0.2rem">189 cutoff: <strong style="color:'+(occ.cutoff189?'#00C896':'#EF4444')+'">'+cutoffText+'</strong> · 190 cutoff: <strong style="color:#4E8EFF">'+(occ.cutoff190||65)+' pts</strong></div>';
+}
+
+/* ── CREATE PROFILE ─────────────────────────────────────────── */
+function createProfile() {
+  var name = document.getElementById('p-name').value.trim();
+  var email = document.getElementById('p-email').value.trim();
+  var occId = document.getElementById('p-occ').value;
+  var state = document.getElementById('p-state').value;
+
+  // Validation
+  if (!email || !email.includes('@')) {
+    document.getElementById('p-email').style.borderColor='rgba(239,68,68,0.5)';
+    document.getElementById('p-email').focus();
+    return;
+  }
+  if (!occId) {
+    document.getElementById('p-occ').style.borderColor='rgba(239,68,68,0.5)';
+    return;
+  }
+
+  var occ = window.VIQ ? window.VIQ.get(occId) : null;
+  var profile = {
+    name: name || 'Migrant',
+    email: email,
+    nat: P.nat || 'other',
+    occId: occId,
+    occLabel: occ ? occ.label : occId,
+    state: state || 'NSW',
+    pts: parseInt(P.pts) || 70,
+    visa: P.visa || 'unsure',
+    eoi: P.eoi || 'not_yet',
+    prefs: {
+      rounds: document.getElementById('pref-rounds').checked,
+      weekly: document.getElementById('pref-weekly').checked,
+      policy: document.getElementById('pref-policy').checked,
+      federal: document.getElementById('pref-189').checked
+    },
+    createdAt: new Date().toISOString()
+  };
+
+  try { localStorage.setItem('visaiq_profile_v2', JSON.stringify(profile)); } catch(e){}
+  showDashboard(profile);
+}
+
+/* ── SHOW DASHBOARD ─────────────────────────────────────────── */
+var ROUND_DATA = {
+  NSW:{ last:'March 2026',  next:'May–Jun 2026 (est)',  type:'190',   status:'closed' },
+  VIC:{ last:'Feb 2026',    next:'Apr–May 2026 (est)',  type:'190/491',status:'closed' },
+  QLD:{ last:'Jan 2026',    next:'Mar–Apr 2026 (est)',  type:'190/491',status:'upcoming' },
+  SA: { last:'Mar 2026',    next:'Ongoing (weekly)',    type:'190/491',status:'active' },
+  WA: { last:'Feb 2026',    next:'Apr 2026 (est)',      type:'190',   status:'upcoming' },
+  TAS:{ last:'Mar 2026',    next:'Ongoing (weekly)',    type:'190/491',status:'active' },
+  ACT:{ last:'Jan 2026',    next:'Mar–Apr 2026 (est)',  type:'190/491',status:'upcoming' },
+  NT: { last:'Dec 2025',    next:'Apr 2026 (est)',      type:'190/491',status:'upcoming' },
+  overseas:{ last:'N/A',   next:'N/A',                 type:'N/A',   status:'closed' }
+};
+
+function showDashboard(p) {
+  document.getElementById('screen-setup').classList.remove('active');
+  document.getElementById('screen-dashboard').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  var occ = window.VIQ ? window.VIQ.get(p.occId) : null;
+  var initials = p.name.charAt(0).toUpperCase();
+  document.getElementById('dash-avatar').textContent = initials;
+  document.getElementById('dash-name').textContent = p.name;
+  document.getElementById('dash-sub').textContent = p.occLabel + ' · ' + p.state + ' · ' + p.pts + ' pts';
+  document.getElementById('dash-pts').textContent = p.pts + ' pts';
+
+  var tierLabel={1:'Tier 1',2:'Tier 2',3:'Tier 3',4:'Tier 4'};
+  var tierColor={1:'#10B981',2:'#00C896',3:'#4E8EFF',4:'#F59E0B'};
+  if (occ) {
+    var tc = tierColor[occ.tier]||'#7A8FA8';
+    document.getElementById('dash-tier').innerHTML = '<span style="color:'+tc+'">'+(occ.tier?tierLabel[occ.tier]:'STSOL')+'</span>';
+    var cutoff = occ.cutoff189||occ.cutoff190||65;
+    var gap = cutoff - p.pts;
+    document.getElementById('dash-cutoff').innerHTML = cutoff<999?cutoff+' pts':'<span style="color:#EF4444">No 189</span>';
+
+    // Personalised insight
+    var insight = '';
+    if (!occ.cutoff189 || occ.cutoff189===999) {
+      insight = '<strong>' + p.occLabel + '</strong> was not invited in the 189 federal rounds for 2025–26. Your best pathway is <strong>SA 190 or 491 regional nomination</strong> at ' + p.pts + ' pts. South Australia accepts your occupation — apply to SA migration portal directly.';
+    } else if (p.pts >= occ.cutoff189) {
+      insight = '✅ At ' + p.pts + ' pts you are <strong>above the ' + occ.cutoff189 + ' pt cutoff</strong> for ' + p.occLabel + ' (Nov 2025 round). Ensure your EOI is lodged and current before the next quarterly round.';
+    } else if (gap <= 10) {
+      insight = '⚡ You are only <strong>' + gap + ' pts below</strong> the ' + occ.cutoff189 + ' pt cutoff for ' + p.occLabel + '. ' + (gap<=5?'NAATI CCL (+5 pts) alone could close this gap.':'Consider NAATI CCL (+5 pts) + state nomination as parallel strategies.');
+    } else {
+      insight = '📍 At ' + p.pts + ' pts you are ' + gap + ' pts below the ' + occ.cutoff189 + ' pt cutoff for ' + p.occLabel + '. <strong>491 regional nomination (+15 pts)</strong> or SA 190 are your most accessible pathways. Run the full PR tool for a complete action plan.';
+    }
+    document.getElementById('dash-insight').innerHTML = insight;
+  }
+
+  // Round activity
+  var rd = ROUND_DATA[p.state] || ROUND_DATA.NSW;
+  var statusClass = rd.status==='active'?'rb-active':rd.status==='upcoming'?'rb-upcoming':'rb-closed';
+  var statusLabel = rd.status==='active'?'Ongoing':rd.status==='upcoming'?'Upcoming':'Closed';
+  document.getElementById('dash-rounds').innerHTML =
+    '<div class="round-item">'+
+      '<div class="ri-header"><div class="ri-title">'+p.state+' · '+rd.type+' rounds</div><span class="ri-badge '+statusClass+'">'+statusLabel+'</span></div>'+
+      '<div class="ri-body">Last round: <strong>'+rd.last+'</strong><br>Next estimated: <strong>'+rd.next+'</strong></div>'+
+    '</div>'+
+    '<div class="round-item" style="border-left-color:#4E8EFF">'+
+      '<div class="ri-header"><div class="ri-title">189 Federal — SkillSelect</div><span class="ri-badge rb-upcoming">Expected</span></div>'+
+      '<div class="ri-body">Last round: <strong>Nov 13, 2025 (10,000 invitations)</strong><br>Next estimated: <strong>Jan–Mar 2026 (quarterly schedule)</strong></div>'+
+    '</div>';
+}
+
+/* ── CHECK EXISTING PROFILE ─────────────────────────────────── */
+function checkExistingProfile() {
+  try {
+    var saved = JSON.parse(localStorage.getItem('visaiq_profile_v2') || 'null');
+    if (saved && saved.email) showDashboard(saved);
+  } catch(e) {}
+}
+
+function editProfile() {
+  document.getElementById('screen-dashboard').classList.remove('active');
+  document.getElementById('screen-setup').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function clearProfile() {
+  if (!confirm('Delete your saved profile?')) return;
+  try { localStorage.removeItem('visaiq_profile_v2'); } catch(e){}
+  document.getElementById('screen-dashboard').classList.remove('active');
+  document.getElementById('screen-setup').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

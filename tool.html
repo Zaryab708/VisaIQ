@@ -116,6 +116,7 @@ select:focus{border-color:var(--tb)}select option{background:#0D1B2E}.fr{margin-
 footer{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);font-size:0.78rem;color:var(--muted);margin-top:2rem}
 footer a{color:var(--teal);text-decoration:none}
 </style>
+<script src="/occupations.js"></script>
 </head>
 <body>
 <div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;">
@@ -191,100 +192,8 @@ footer a{color:var(--teal);text-decoration:none}
       <span style="font-size:0.72rem;color:var(--muted)">MLTSSL = eligible for 189+190+491 · STSOL = 190/491 only (not 189)</span>
     </div>
     <div class="fr"><label>Your nominated occupation</label>
-      <select id="occ">
-        <option value="">Choose occupation…</option>
-        <optgroup label="── Accounting &amp; Finance ──">
-          <option value="accountant">Accountant — General / Tax / Management [MLTSSL · 🔴 Tier 4]</option>
-          <option value="auditor">Auditor [MLTSSL · 🔴 Tier 4]</option>
-          <option value="financial_analyst">Financial Analyst [MLTSSL · 🟡 Tier 3]</option>
-          <option value="actuary">Actuary [MLTSSL · 🟡 Tier 3]</option>
-          <option value="management_consultant">Management Consultant [MLTSSL · 🟡 Tier 3]</option>
-          <option value="finance_manager">Finance / Treasury Manager [MLTSSL · 🟡 Tier 3]</option>
-        </optgroup>
-        <optgroup label="── Technology ──">
-          <option value="software_engineer">Software Engineer / Developer [MLTSSL · 🔴 Tier 4]</option>
-          <option value="systems_analyst">Systems Analyst [MLTSSL · 🔴 Tier 4]</option>
-          <option value="network_engineer">Network Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="data_analyst">Data Analyst / Data Scientist [MLTSSL · 🟡 Tier 3]</option>
-          <option value="ict_manager">ICT Manager [MLTSSL · 🔴 Tier 4]</option>
-          <option value="cybersecurity">Cybersecurity Specialist / Analyst [MLTSSL · 🟡 Tier 3]</option>
-          <option value="cloud_engineer">Cloud Engineer / DevOps Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="ai_engineer">AI / Machine Learning Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="ict_business_analyst">ICT Business Analyst [MLTSSL · 🔴 Tier 4]</option>
-          <option value="database_admin">Database Administrator [MLTSSL · 🟡 Tier 3]</option>
-          <option value="web_developer">Web Developer [STSOL — 190/491 only]</option>
-          <option value="ux_designer">UX Designer / Product Designer [STSOL — 190/491 only]</option>
-          <option value="supply_chain_analyst">Supply Chain Analyst [STSOL — 190/491 only]</option>
-        </optgroup>
-        <optgroup label="── Engineering ──">
-          <option value="civil_engineer">Civil Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="structural_engineer">Structural Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="mechanical_engineer">Mechanical Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="electrical_engineer">Electrical Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="chemical_engineer">Chemical Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="mining_engineer">Mining Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="petroleum_engineer">Petroleum Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="environmental_engineer">Environmental Engineer / Consultant [MLTSSL · 🟡 Tier 3]</option>
-          <option value="geotechnical_engineer">Geotechnical Engineer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="project_engineer">Project Engineer / Manager [MLTSSL · 🟡 Tier 3]</option>
-          <option value="quantity_surveyor">Quantity Surveyor [MLTSSL · 🟡 Tier 3]</option>
-        </optgroup>
-        <optgroup label="── Healthcare ──">
-          <option value="registered_nurse">Registered Nurse [MLTSSL · 🟢 Tier 1]</option>
-          <option value="midwife">Midwife [MLTSSL · 🟢 Tier 1]</option>
-          <option value="gp">General Practitioner [MLTSSL · 🟢 Tier 1]</option>
-          <option value="specialist_doctor">Medical Specialist — Cardiologist / Surgeon etc [MLTSSL · 🟢 Tier 1]</option>
-          <option value="physiotherapist">Physiotherapist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="occupational_therapist">Occupational Therapist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="speech_pathologist">Speech Pathologist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="pharmacist">Pharmacist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="psychologist">Psychologist / Clinical Psychologist [MLTSSL · 🔵 Tier 2]</option>
-          <option value="radiographer">Medical Radiographer / Sonographer [MLTSSL · 🟢 Tier 1]</option>
-          <option value="paramedic">Paramedic [MLTSSL · 🟢 Tier 1]</option>
-          <option value="optometrist">Optometrist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="dental">Dentist / Dental Specialist [MLTSSL · 🟢 Tier 1]</option>
-          <option value="aged_care_worker">Aged Care Worker [STSOL — 190/491 only]</option>
-          <option value="disability_worker">Disability Support Worker [STSOL — 190/491 only]</option>
-          <option value="child_care_worker">Child Care Worker [STSOL — 190/491 only]</option>
-        </optgroup>
-        <optgroup label="── Trades ──">
-          <option value="electrician">Electrician — General [MLTSSL · 🟡 Tier 3]</option>
-          <option value="plumber">Plumber — General [MLTSSL · 🟡 Tier 3]</option>
-          <option value="carpenter">Carpenter / Joiner [MLTSSL · 🟡 Tier 3]</option>
-          <option value="welder">Welder / Metal Fabricator [MLTSSL · 🟡 Tier 3]</option>
-          <option value="bricklayer">Bricklayer [MLTSSL · 🟡 Tier 3]</option>
-          <option value="refrigeration_mechanic">Refrigeration &amp; AC Mechanic [MLTSSL · 🟡 Tier 3]</option>
-          <option value="motor_mechanic">Motor Mechanic / Diesel Mechanic [STSOL — 190/491 only]</option>
-          <option value="boilermaker">Boilermaker [MLTSSL · 🟡 Tier 3]</option>
-          <option value="painting_trades">Painting Trades Worker [STSOL — 190/491 only]</option>
-          <option value="cabinet_maker">Cabinet Maker [STSOL — 190/491 only]</option>
-        </optgroup>
-        <optgroup label="── Education ──">
-          <option value="teacher">Secondary / Primary Teacher [MLTSSL · 🔵 Tier 2]</option>
-          <option value="early_childhood">Early Childhood Teacher [MLTSSL · 🔵 Tier 2]</option>
-          <option value="special_ed_teacher">Special Education Teacher [MLTSSL · 🔵 Tier 2]</option>
-          <option value="vet_trainer">VET / TAFE Trainer [STSOL — 190/491 only]</option>
-        </optgroup>
-        <optgroup label="── Community Services ──">
-          <option value="social_worker">Social Worker [MLTSSL · 🔵 Tier 2]</option>
-          <option value="welfare_worker">Welfare Worker / Community Worker [STSOL — 190/491 only]</option>
-          <option value="counsellor">Counsellor [STSOL — 190/491 only]</option>
-        </optgroup>
-        <optgroup label="── Business &amp; Management ──">
-          <option value="business_manager">Business / Marketing Manager [MLTSSL · 🟡 Tier 3]</option>
-          <option value="hr_manager">Human Resources Manager [MLTSSL · 🟡 Tier 3]</option>
-          <option value="operations_manager">Operations Manager [MLTSSL · 🟡 Tier 3]</option>
-          <option value="project_manager">Project Manager (non-engineering) [MLTSSL · 🟡 Tier 3]</option>
-        </optgroup>
-        <optgroup label="── Architecture, Science &amp; Other ──">
-          <option value="architect">Architect [MLTSSL · 🟡 Tier 3]</option>
-          <option value="urban_planner">Urban / Town Planner [MLTSSL · 🟡 Tier 3]</option>
-          <option value="surveyor">Land Surveyor [MLTSSL · 🟡 Tier 3]</option>
-          <option value="agricultural_scientist">Agricultural Scientist / Consultant [MLTSSL · 🟡 Tier 3]</option>
-          <option value="chef">Chef / Cook [STSOL — 190/491 only · 🔴 Tier 4 if MLTSSL]</option>
-          <option value="other">Other occupation</option>
-        </optgroup>
-      </select>
+      <select id="occ" onchange="updateOccTierBadge()"><option value="">Choose occupation…</option></select>
+      <div id="occ-tier-badge" style="display:none;margin-top:0.5rem;padding:0.5rem 0.75rem;border-radius:8px;font-size:0.75rem"></div>
     </div>
     <div class="fr"><label>Visa targeting</label>
       <div class="pg" id="vp">
@@ -1083,6 +992,37 @@ async function dlsc(){
 }
 function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();}
 function wt(ctx,txt,x,y,mw,lh){const ws=txt.split(' ');let ln='';for(let i=0;i<ws.length;i++){const t=ln+ws[i]+' ';if(ctx.measureText(t).width>mw&&i>0){ctx.fillText(ln,x,y);ln=ws[i]+' ';y+=lh;}else ln=t;}ctx.fillText(ln,x,y);}
+
+// ── POPULATE OCCUPATION SELECT FROM SHARED LIST ────────
+document.addEventListener('DOMContentLoaded', function() {
+  var sel = document.getElementById('occ');
+  if (sel && window.VIQ) {
+    sel.innerHTML = window.VIQ.selectHTML();
+  }
+});
+
+function updateOccTierBadge() {
+  var id = document.getElementById('occ').value;
+  var badge = document.getElementById('occ-tier-badge');
+  if (!id || !window.VIQ) { badge.style.display='none'; return; }
+  var occ = window.VIQ.get(id);
+  if (!occ) { badge.style.display='none'; return; }
+  var tierColors={1:'rgba(16,185,129,0.12)',2:'rgba(0,200,150,0.1)',3:'rgba(78,142,255,0.1)',4:'rgba(245,158,11,0.08)'};
+  var tierBorder={1:'rgba(16,185,129,0.3)',2:'rgba(0,200,150,0.25)',3:'rgba(78,142,255,0.25)',4:'rgba(245,158,11,0.25)'};
+  var tierTextColors={1:'#10B981',2:'#00C896',3:'#4E8EFF',4:'#F59E0B'};
+  var tierLabel={1:'Tier 1 — Highest Priority · Invited at lowest cutoffs',2:'Tier 2 — High Priority · Steady invitation rates',3:'Tier 3 — Standard · Achievable cutoffs',4:'Tier 4 — Oversupplied · Consider 190/491 as primary pathway'};
+  var cutoffText = occ.cutoff189 ? occ.cutoff189+' pts' : 'Not invited via 189';
+  var bg = occ.tier ? tierColors[occ.tier] : 'rgba(255,255,255,0.04)';
+  var border = occ.tier ? tierBorder[occ.tier] : 'rgba(255,255,255,0.07)';
+  var tc = occ.tier ? tierTextColors[occ.tier] : '#7A8FA8';
+  badge.style.display = 'block';
+  badge.style.background = bg;
+  badge.style.border = '1px solid ' + border;
+  badge.innerHTML = '<strong style="color:'+tc+'">' + occ.list + (occ.tier?' · '+(tierLabel[occ.tier]||''):'') + '</strong>' +
+    '<span style="color:#7A8FA8;margin-left:0.75rem">189 cutoff: <strong style="color:'+tc+'">' + cutoffText + '</strong> · Skills assessment: <strong style="color:#E8EDF5">' + occ.assess + '</strong></span>';
+  // Also update S.occ if it exists
+  if (typeof S !== "undefined") S.occ = id;
+}
 
 cp();
 
