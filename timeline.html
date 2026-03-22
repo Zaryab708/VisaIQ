@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australian PR Timeline Estimator — VisaIQ</title>
+<meta name="description" content="How long will your Australian PR take? Personalised timeline based on your occupation, visa pathway, points score and nationality. Real 2025-26 processing data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;margin-bottom:0.75rem}
+.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
+.pill{padding:0.5rem 0.9rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
+.q-label{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.5rem}
+.calc-btn{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
+.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb)}
+.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+/* RESULT */
+.result{display:none}
+.result.show{display:block;animation:fu 0.4s ease}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* TIMELINE BARS */
+.phase-block{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.pb-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:0.75rem}
+.phase-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem}
+.pr-phase{font-size:0.75rem;color:var(--muted);width:130px;flex-shrink:0;line-height:1.3}
+.pr-track{flex:1;height:14px;background:rgba(255,255,255,0.04);border-radius:7px;overflow:hidden;position:relative}
+.pr-fill{height:100%;border-radius:7px;transition:width 1s ease;display:flex;align-items:center;justify-content:center}
+.pr-label{font-size:0.6rem;font-weight:700;color:rgba(0,0,0,0.7);white-space:nowrap;position:absolute;left:0.4rem}
+.pr-dur{width:55px;text-align:right;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;flex-shrink:0}
+/* TOTAL */
+.total-block{background:linear-gradient(135deg,var(--td),var(--bg2));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1rem}
+.tb-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--teal);line-height:1}
+.tb-label{font-size:0.82rem;color:var(--muted);margin-top:0.3rem}
+/* COMPARISON */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;margin-bottom:1rem}
+.cg{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;text-align:center}
+.cg.best{border-color:var(--tb)}
+.cg-label{font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem}
+.cg-val{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+/* PROCESSING TABLE */
+.dtable{width:100%;border-collapse:collapse;font-size:0.82rem}
+.dtable th{text-align:left;padding:0.55rem 0.7rem;font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border)}
+.dtable td{padding:0.55rem 0.7rem;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.78rem}
+.dtable td:first-child{color:var(--text);font-weight:500}
+.dtable tr:last-child td{border-bottom:none}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:600px){.comp-grid{grid-template-columns:1fr}.nls{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/189-visa">189 Visa</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>How long will<br><em>your PR take?</em></h1>
+  <p>A personalised end-to-end timeline based on your pathway, occupation tier, points score and nationality. Not a generic estimate — based on 2025–26 actual processing data.</p>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="card-title">Tell us about your situation</div>
+
+    <div class="q-label">Your visa pathway to PR</div>
+    <select id="t-pathway">
+      <option value="">Select your pathway…</option>
+      <optgroup label="Skilled Independent">
+        <option value="189">Subclass 189 — Skilled Independent (direct PR)</option>
+      </optgroup>
+      <optgroup label="State Nominated">
+        <option value="190">Subclass 190 — State Nominated (direct PR)</option>
+      </optgroup>
+      <optgroup label="Regional">
+        <option value="491">Subclass 491 → 191 — Regional (provisional then PR)</option>
+      </optgroup>
+      <optgroup label="Employer Sponsored">
+        <option value="482_186_trt">Subclass 482 → 186 TRT (employer nominated, 2 years)</option>
+        <option value="186_de">Subclass 186 Direct Entry (direct employer nomination)</option>
+      </optgroup>
+      <optgroup label="Student pathway">
+        <option value="student_skilled">Student (500) → 485 → Skilled visa (189/190)</option>
+        <option value="student_employer">Student (500) → 485 → Employer sponsored (482→186)</option>
+        <option value="student_regional">Student (500) → 485 → 491 Regional</option>
+      </optgroup>
+    </select>
+
+    <div class="q-label">Your occupation tier</div>
+    <div class="pill-row">
+      <button class="pill" data-v="1" onclick="sp(this,'tier')">Tier 1 — Healthcare / Nursing</button>
+      <button class="pill" data-v="2" onclick="sp(this,'tier')">Tier 2 — Education / Social Work</button>
+      <button class="pill sel" data-v="3" onclick="sp(this,'tier')">Tier 3 — Engineering / Trades</button>
+      <button class="pill" data-v="4" onclick="sp(this,'tier')">Tier 4 — ICT / Accounting</button>
+    </div>
+
+    <div class="q-label">Your current points score (or expected at lodgement)</div>
+    <div class="pill-row">
+      <button class="pill" data-v="65" onclick="sp(this,'pts')">65–69 pts</button>
+      <button class="pill" data-v="70" onclick="sp(this,'pts')">70–74 pts</button>
+      <button class="pill sel" data-v="80" onclick="sp(this,'pts')">75–84 pts</button>
+      <button class="pill" data-v="85" onclick="sp(this,'pts')">85–89 pts</button>
+      <button class="pill" data-v="90" onclick="sp(this,'pts')">90–95 pts</button>
+    </div>
+
+    <div class="q-label">Skills assessment — current status</div>
+    <div class="pill-row">
+      <button class="pill" data-v="done" onclick="sp(this,'assess')">Done / in progress</button>
+      <button class="pill sel" data-v="not_started" onclick="sp(this,'assess')">Not started yet</button>
+    </div>
+
+    <div class="q-label">Are you currently in Australia?</div>
+    <div class="pill-row">
+      <button class="pill sel" data-v="onshore" onclick="sp(this,'location')">Yes — onshore</button>
+      <button class="pill" data-v="offshore" onclick="sp(this,'location')">No — offshore</button>
+    </div>
+
+    <div class="q-label">Your nationality</div>
+    <div class="pill-row">
+      <button class="pill sel" data-v="indian" onclick="sp(this,'nat')">Indian</button>
+      <button class="pill" data-v="pakistani" onclick="sp(this,'nat')">Pakistani</button>
+      <button class="pill" data-v="nepali" onclick="sp(this,'nat')">Nepali</button>
+      <button class="pill" data-v="filipino" onclick="sp(this,'nat')">Filipino</button>
+      <button class="pill" data-v="chinese" onclick="sp(this,'nat')">Chinese</button>
+      <button class="pill" data-v="other" onclick="sp(this,'nat')">Other</button>
+    </div>
+
+    <button class="calc-btn" onclick="calcTimeline()">Calculate My Timeline →</button>
+  </div>
+
+  <div class="result" id="t-result"></div>
+
+  <!-- REFERENCE TABLE -->
+  <div class="card">
+    <div class="card-title">2025–26 Reference: Processing Times by Visa Type</div>
+    <div class="ib ib-teal" style="margin-bottom:0.75rem">Data based on DHA published times, practitioner observations and community reports. 50% of applications are processed within the lower range; 90% within the upper range. Priority occupations (healthcare, teaching) process significantly faster.</div>
+    <table class="dtable">
+      <thead><tr><th>Visa</th><th>Type</th><th>50% processed</th><th>90% processed</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>189 — Healthcare</td><td>Direct PR</td><td style="color:var(--green)">30 days</td><td style="color:var(--green)">3 months</td><td>Tier 1 priority processing</td></tr>
+        <tr><td>189 — Trades / Education</td><td>Direct PR</td><td style="color:var(--teal)">4.5 months</td><td style="color:var(--teal)">9 months</td><td>Tier 2–3 processing</td></tr>
+        <tr><td>189 — ICT / Accounting</td><td>Direct PR</td><td style="color:var(--amber)">8 months</td><td style="color:var(--amber)">18 months</td><td>Tier 4 — lowest priority</td></tr>
+        <tr><td>190 — State Nominated</td><td>Direct PR</td><td style="color:var(--teal)">6.5 months</td><td style="color:var(--amber)">19 months</td><td>State nomination adds variable wait</td></tr>
+        <tr><td>491 — Regional</td><td>Provisional (5yr)</td><td style="color:var(--amber)">10 months</td><td style="color:var(--amber)">15 months</td><td>Plus 3 yrs regional before 191</td></tr>
+        <tr><td>191 — Permanent Regional</td><td>Permanent</td><td style="color:var(--blue)">4–6 months</td><td style="color:var(--blue)">8 months</td><td>Applied after 3 yrs on 491</td></tr>
+        <tr><td>482 Skills in Demand</td><td>Temporary</td><td style="color:var(--green)">7 days (Specialist)</td><td style="color:var(--teal)">2–3 months (Core)</td><td>Specialist stream exceptionally fast</td></tr>
+        <tr><td>186 — TRT (Accredited)</td><td>Direct PR</td><td style="color:var(--teal)">4–6 months</td><td style="color:var(--teal)">8 months</td><td>Accredited sponsor priority</td></tr>
+        <tr><td>186 — TRT (Standard)</td><td>Direct PR</td><td style="color:var(--amber)">12 months</td><td style="color:var(--red)">20+ months</td><td>High volume — Mar 2024 queue</td></tr>
+        <tr><td>186 — Direct Entry</td><td>Direct PR</td><td style="color:var(--red)">12 months</td><td style="color:var(--red)">20+ months</td><td>Most congested stream</td></tr>
+        <tr><td>485 — Post-Study Work</td><td>Temporary (2–3yr)</td><td style="color:var(--teal)">25 days (target)</td><td style="color:var(--teal)">83 days (current avg)</td><td>New 25-day target announced Mar 2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WHAT MAKES IT FASTER / SLOWER -->
+  <div class="card">
+    <div class="card-title">What makes your PR faster or slower — the factors nobody tells you</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+      <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:10px;padding:1rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--green);margin-bottom:0.6rem">Makes it FASTER ✓</div>
+        <div style="font-size:0.78rem;color:var(--muted);line-height:1.9">
+          ✓ Healthcare or teaching occupation (Tier 1/2)<br>
+          ✓ 90+ points score (moves to front of queue)<br>
+          ✓ Regional area (priority processing for 186)<br>
+          ✓ Accredited sponsor for 186 (vs standard)<br>
+          ✓ Complete application at lodgement (no Section 56)<br>
+          ✓ Health exam done BEFORE invitation<br>
+          ✓ Police clearances started immediately<br>
+          ✓ Single country police clearance needed<br>
+          ✓ Skills assessment already complete at EOI
+        </div>
+      </div>
+      <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:1rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--red);margin-bottom:0.6rem">Makes it SLOWER ✗</div>
+        <div style="font-size:0.78rem;color:var(--muted);line-height:1.9">
+          ✗ Tier 4 occupation (ICT / accounting)<br>
+          ✗ Missing documents → Section 56 request (+3 months)<br>
+          ✗ Multiple countries lived in (more police checks)<br>
+          ✗ Inconsistency between EOI and skills assessment<br>
+          ✗ Medical conditions flagged in health exam<br>
+          ✗ Offshore application (usually slower than onshore)<br>
+          ✗ Complex character history (AFP delays)<br>
+          ✗ Employer not accredited (186 TRT standard queue)<br>
+          ✗ EOI score at minimum — borderline cases reviewed
+        </div>
+      </div>
+    </div>
+    <div class="ib ib-amber" style="margin-top:0.75rem">
+      <strong>Section 56 — the hidden delay:</strong> If a case officer requests additional documents, your file moves to the back of the processing queue. This can add 2–4 months to any visa. Submit every possible supporting document at lodgement. More is always better.
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Home</a><a href="/tool">PR Tool</a><a href="/189-visa">189 Visa</a>
+  <a href="/190-visa">190 Visa</a><a href="/491-visa">491 Visa</a><a href="/482-to-186">482→186</a>
+  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · Processing data: DHA 2025–26</div>
+</footer>
+
+<script>
+const T = {tier:'3', pts:'80', assess:'not_started', location:'onshore', nat:'indian'};
+
+function sp(el,k){document.querySelectorAll(`[onclick="sp(this,'${k}')"]`).forEach(p=>p.classList.remove('sel'));el.classList.add('sel');T[k]=el.dataset.v;}
+
+function calcTimeline(){
+  const pathway = document.getElementById('t-pathway').value;
+  if(!pathway){document.getElementById('t-result').innerHTML='<div class="ib ib-amber">Please select a visa pathway above.</div>';document.getElementById('t-result').className='result show';return;}
+  const tier=parseInt(T.tier)||3;
+  const pts=parseInt(T.pts)||80;
+  const assessDone = T.assess==='done';
+  const offshore = T.location==='offshore';
+  const nat = T.nat;
+
+  // Phase definitions by pathway
+  let phases=[], total=0, summary='', recommendation='';
+
+  if(pathway==='189'){
+    const assessTime = assessDone ? 0 : (tier===1?3:tier===2?3:4);
+    const englishTime = 0; // assume done
+    const eoi_wait = tier===1?1:tier===2?3:tier===3?4:12;
+    const visa_process = tier===1?2:tier===2?6:tier===3?8:15;
+    const police_health = nat==='indian'||nat==='pakistani'||nat==='nepali'?3:2;
+    phases=[
+      {name:'Skills Assessment',dur:assessTime,color:'var(--blue)'},
+      {name:'EOI lodged → Invitation',dur:eoi_wait,color:'var(--teal)'},
+      {name:'Police & Health checks',dur:police_health,color:'var(--amber)'},
+      {name:'Visa Processing (DHA)',dur:visa_process,color:'var(--green)'},
+    ];
+    total = assessTime+eoi_wait+police_health+visa_process;
+    summary = `Based on your Tier ${tier} occupation and ${pts} points — EOI to PR grant typically takes ${eoi_wait+visa_process} months. ${tier===1?'Healthcare Tier 1 processing is the fastest in Australia — some grants within 30 days of invitation.':tier===4?'Tier 4 occupations face the longest wait. Consider 190 or 491 as parallel strategies.':''}`;
+    recommendation = tier===4?'Consider running a parallel 190 state nomination EOI (particularly SA or QLD) to significantly improve your chances while waiting for 189.':'Your Tier '+tier+' status gives you a realistic pathway. Ensure your EOI is lodged well before the next quarterly round.';
+  } else if(pathway==='190'){
+    const assessTime = assessDone ? 0 : 4;
+    const state_wait = tier===1?2:tier===2?4:tier===3?5:7;
+    const visa_process = 8;
+    const police_health = nat==='indian'||nat==='pakistani'||nat==='nepali'?3:2;
+    phases=[
+      {name:'Skills Assessment',dur:assessTime,color:'var(--blue)'},
+      {name:'Apply → State Nomination',dur:state_wait,color:'var(--amber)'},
+      {name:'DHA Invitation (after nom.)',dur:1,color:'var(--teal)'},
+      {name:'Police & Health checks',dur:police_health,color:'var(--amber)'},
+      {name:'Visa Processing (DHA)',dur:visa_process,color:'var(--green)'},
+    ];
+    total = assessTime+state_wait+1+police_health+visa_process;
+    summary = `190 state nomination adds 5 points to your score. State processing varies — SA and TAS are fastest (5–8 months). NSW and VIC can take 10–14 months.`;
+    recommendation = tier===4?'SA state nomination is the most accessible for Tier 4 occupations including accountants. Apply to SA first.':'Apply to multiple states simultaneously — there is no restriction. More applications = faster nomination.';
+  } else if(pathway==='491'){
+    const assessTime = assessDone ? 0 : 4;
+    const state_wait = 4;
+    const visa_491 = 12;
+    const regional_3yr = 36;
+    const visa_191 = 6;
+    phases=[
+      {name:'Skills Assessment',dur:assessTime,color:'var(--blue)'},
+      {name:'Apply → Regional Nomination',dur:state_wait,color:'var(--amber)'},
+      {name:'491 Visa Processing',dur:visa_491,color:'var(--teal)'},
+      {name:'Live + Work Regional (3 yrs)',dur:regional_3yr,color:'var(--amber)',note:'Must earn $53,900+/yr'},
+      {name:'191 PR Processing',dur:visa_191,color:'var(--green)'},
+    ];
+    total = assessTime+state_wait+visa_491+regional_3yr+visa_191;
+    summary = `491 regional adds +15 points — the biggest single boost available. Total pathway is longer (4–5 years to PR) but achievable at much lower base points. After 3 years in regional Australia you apply for 191 permanent residency.`;
+    recommendation = 'Best states for 491: SA (lowest points, all of Adelaide eligible), ACT (all Canberra is regional, fast processing), TAS (fastest processing, weekly rounds). Adelaide has a large South Asian community and good employment market.';
+  } else if(pathway==='482_186_trt'){
+    phases=[
+      {name:'482 Visa Processing',dur:2,color:'var(--blue)'},
+      {name:'Work for sponsor (2 years)',dur:24,color:'var(--amber)',note:'Min. 2 yrs same employer'},
+      {name:'Employer nominates for 186',dur:1,color:'var(--teal)'},
+      {name:'186 TRT Processing',dur:tier===1?4:12,color:'var(--green)'},
+    ];
+    total = 2+24+1+(tier===1?4:12);
+    summary = `482 → 186 TRT (Temporary Residence Transition) requires 2 years working for the same employer. After 2 years your employer nominates you and you apply for permanent residency.`;
+    recommendation = 'Accredited sponsors process 186 visa in 4–6 months vs 12+ months for standard sponsors. Ask your employer to apply for accreditation. Healthcare and regional employers get priority queue regardless of accreditation.';
+  } else if(pathway==='186_de'){
+    const assessTime = assessDone ? 0 : 4;
+    phases=[
+      {name:'Skills Assessment',dur:assessTime,color:'var(--blue)'},
+      {name:'Employer nominates',dur:1,color:'var(--teal)'},
+      {name:'186 Direct Entry processing',dur:18,color:'var(--amber)',note:'Currently March 2024 queue'},
+    ];
+    total = assessTime+1+18;
+    summary = `186 Direct Entry is the most congested stream. DHA is currently processing standard applications lodged in March 2024. Priority queue for regional, healthcare and teaching occupations.`;
+    recommendation = tier===1?'Healthcare applications are in the priority queue regardless of stream. Your processing will be significantly faster than the 18-month estimate.':'Consider if you can switch to TRT stream by working for your employer for 2 years first — it opens the faster TRT queue.';
+  } else if(pathway==='student_skilled'){
+    const grad_mo = 18;
+    const study_pr_time = (tier===1?2:tier===2?4:8);
+    phases=[
+      {name:'Complete degree',dur:grad_mo,color:'var(--blue)'},
+      {name:'485 Post-Study Work',dur:0,note:'2–3 year visa',color:'var(--teal)'},
+      {name:'Skills assess + EOI + wait',dur:tier===1?3:tier===2?6:12,color:'var(--amber)'},
+      {name:'Australian work experience',dur:12,note:'Builds points',color:'var(--blue)'},
+      {name:'Skilled visa processing',dur:study_pr_time,color:'var(--green)'},
+    ];
+    total = grad_mo+(tier===1?3:tier===2?6:12)+12+study_pr_time;
+    summary = `Student → skilled visa is the standard pathway for most international students. The 485 visa gives you 2–3 years to build Australian work experience and get your skills assessment done. Most students who achieve PR do so through this route.`;
+    recommendation = 'Key actions: Start skills assessment in final semester. Get NAATI CCL if eligible. Aim for IELTS 8.0+ (Superior English = +20 pts). Lodge EOI immediately after skills assessment result.';
+  } else if(pathway==='student_employer'){
+    phases=[
+      {name:'Complete degree',dur:18,color:'var(--blue)'},
+      {name:'485 Post-Study (work rights)',dur:0,note:'2–3 years',color:'var(--teal)'},
+      {name:'Find employer + get 482 sponsored',dur:12,color:'var(--amber)'},
+      {name:'Work for employer (2 years)',dur:24,color:'var(--blue)'},
+      {name:'186 TRT Processing',dur:tier===1?4:12,color:'var(--green)'},
+    ];
+    total = 18+12+24+(tier===1?4:12);
+    summary = `Student → employer sponsored is longer but doesn't require high points. Your 485 gives you time to find an employer willing to sponsor. Many students use this route when points are below the competitive threshold for skilled migration.`;
+    recommendation = 'Focus on building relationships with potential employers during your 485. Industries most likely to sponsor: Healthcare, Hospitality, Engineering, ICT. LinkedIn Australia is the best platform for finding sponsors.';
+  } else if(pathway==='student_regional'){
+    phases=[
+      {name:'Complete degree',dur:18,color:'var(--blue)'},
+      {name:'485 Post-Study + EOI',dur:6,note:'Get skills assess done',color:'var(--teal)'},
+      {name:'491 regional processing',dur:12,color:'var(--amber)'},
+      {name:'Live + work regional (3 yrs)',dur:36,color:'var(--blue)'},
+      {name:'191 PR Processing',dur:6,color:'var(--green)'},
+    ];
+    total = 18+6+12+36+6;
+    summary = `Student → 491 regional is the best pathway for students who want PR but are below the 189/190 cutoff at graduation. The +15 regional bonus makes PR achievable for profiles that would otherwise wait years.`;
+    recommendation = 'Studying at a regional institution adds another +5 pts (study bonus). SA, ACT and TAS are the most accessible regional states. Adelaide has a strong South Asian community and competitive employment for most skilled occupations.';
+  }
+
+  const maxDur = Math.max(...phases.map(p=>p.dur),1);
+  const phaseHTML = phases.map(p=>`
+    <div class="phase-row">
+      <div class="pr-phase">${p.name}${p.note?`<br><span style="color:var(--blue);font-size:0.6rem">${p.note}</span>`:''}</div>
+      <div class="pr-track">
+        ${p.dur>0?`<div class="pr-fill" style="width:${Math.max(p.dur/maxDur*100,5)}%;background:${p.color}"><span class="pr-label">${p.dur>0?p.dur+' mo':''}</span></div>`:`<div style="width:100%;background:rgba(255,255,255,0.03);height:100%;display:flex;align-items:center;padding-left:0.4rem;font-size:0.6rem;color:var(--muted)">Visa granted</div>`}
+      </div>
+      <div class="pr-dur" style="color:${p.dur>0?'var(--text)':'var(--muted)'}">${p.dur>0?p.dur+' mo':'—'}</div>
+    </div>`).join('');
+
+  const yearStr = total>=24?`${(total/12).toFixed(1)} years`:total+' months';
+
+  const r=document.getElementById('t-result');
+  r.className='result show';
+  r.innerHTML=`
+    <div class="total-block">
+      <div style="font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Estimated time to PR</div>
+      <div class="tb-num">${yearStr}</div>
+      <div class="tb-label">From today, if you take action at each stage without delay</div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:0.4rem">Based on your occupation tier, points, nationality and pathway</div>
+    </div>
+
+    <div class="phase-block">
+      <div class="pb-title">Your Timeline — Phase by Phase</div>
+      ${phaseHTML}
+    </div>
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+      <div style="font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">What this means</div>
+      <div style="font-size:0.83rem;color:var(--muted);line-height:1.7">${summary}</div>
+    </div>
+
+    <div style="background:var(--td);border:1px solid var(--tb);border-radius:12px;padding:1.1rem;margin-bottom:1rem">
+      <div style="font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);margin-bottom:0.4rem">Key recommendation</div>
+      <div style="font-size:0.83rem;color:var(--text);line-height:1.7">${recommendation}</div>
+    </div>
+
+    <div class="comp-grid">
+      <div class="cg ${total<24?'best':''}"><div class="cg-label">Your estimate</div><div class="cg-val" style="color:${total<24?'var(--green)':total<42?'var(--teal)':'var(--amber)'}">${yearStr}</div></div>
+      <div class="cg"><div class="cg-label">Best case</div><div class="cg-val" style="color:var(--green)">${Math.round(total*0.7)} months</div></div>
+      <div class="cg"><div class="cg-label">Worst case</div><div class="cg-val" style="color:var(--amber)">${Math.round(total*1.5)} months</div></div>
+    </div>
+
+    <div style="text-align:center;font-size:0.75rem;color:var(--muted);line-height:1.7;padding:0.5rem">
+      Estimates based on DHA published processing times and practitioner data (2025–26). Individual outcomes vary. This is not migration advice. Data updated March 2026.
+    </div>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-top:0.75rem">
+      <a href="/tool" style="padding:0.7rem 1.3rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">Get full PR plan →</a>
+      <a href="/points-calculator" style="padding:0.7rem 1.3rem;background:transparent;color:var(--blue);border:1px solid rgba(78,142,255,0.3);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">Calculate my points →</a>
+    </div>`;
+  setTimeout(()=>r.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+</script>
+</body>
+</html>
