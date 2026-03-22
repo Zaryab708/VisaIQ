@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State Nomination Comparator — VisaIQ Australia</title>
+<meta name="description" content="Compare all 8 Australian states for 190 and 491 nomination. Cutoffs, processing times, priority occupations and 2025-26 allocations side by side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;line-height:1.7}
+.wrap{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 5rem}
+/* FILTER */
+.filter-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.ftag{padding:0.4rem 0.85rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.78rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s}
+.ftag.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
+select{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.6rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;padding-right:2rem}
+/* STATE GRID */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:2rem}
+.sc{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
+.sc:hover{border-color:var(--tb)}
+.sc-head{padding:1rem;border-bottom:1px solid var(--border)}
+.sc-name{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-bottom:0.25rem}
+.diff-badge{font-size:0.62rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;display:inline-block}
+.easy{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
+.mod{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.hard{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.vhard{background:rgba(239,68,68,0.07);color:var(--red);border:1px solid rgba(239,68,68,0.15)}
+.sc-body{padding:0.85rem 1rem}
+.sc-row{display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid var(--border);font-size:0.75rem}
+.sc-row:last-child{border-bottom:none}
+.sc-label{color:var(--muted)}
+.sc-val{font-weight:600;color:var(--text);text-align:right;font-size:0.75rem}
+.sc-occs{padding:0.75rem 1rem;background:var(--bg3);font-size:0.72rem;color:var(--muted);line-height:1.6}
+.sc-occs strong{color:var(--teal);display:block;margin-bottom:0.2rem}
+.sc-link{display:block;padding:0.65rem 1rem;text-align:center;background:var(--td);color:var(--teal);text-decoration:none;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;border-top:1px solid var(--border)}
+.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0 0 1rem}
+.ib-teal{background:var(--td);border:1px solid var(--tb)}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:800px){.sg{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.sg{grid-template-columns:1fr}.nls{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/190-visa">190 Visa</a>
+    <a href="/491-visa">491 Visa</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+<div class="hero">
+  <h1>State Nomination<br><em>Comparator</em></h1>
+  <p>All 8 states side by side — allocations, cutoffs, priority occupations and processing times for 190 and 491. Find your best state at a glance.</p>
+</div>
+<div class="wrap">
+  <div class="ib ib-teal">
+    <strong>How to use this:</strong> Filter by your occupation to see which states accept your role. Click any state card to go to the official state migration page and apply directly. Apply to multiple states simultaneously — there is no restriction on applying to several states at once.
+  </div>
+  <div class="filter-row">
+    <button class="ftag active" onclick="setFilter('all',this)">All States</button>
+    <button class="ftag" onclick="setFilter('easy',this)">Most Accessible</button>
+    <button class="ftag" onclick="setFilter('fast',this)">Fastest Processing</button>
+    <button class="ftag" onclick="setFilter('accountant',this)">Accepts Accountants</button>
+    <button class="ftag" onclick="setFilter('it',this)">IT / Tech</button>
+    <button class="ftag" onclick="setFilter('health',this)">Healthcare</button>
+    <button class="ftag" onclick="setFilter('engineer',this)">Engineering</button>
+    <button class="ftag" onclick="setFilter('teacher',this)">Education</button>
+  </div>
+  <div class="sg" id="state-grid">
+    <!-- NSW -->
+    <div class="sc" data-tags="health it engineer teacher">
+      <div class="sc-head"><div class="sc-name">New South Wales</div><span class="diff-badge vhard">Very Competitive</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">2,100</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">1,500</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff</span><span class="sc-val" style="color:var(--red)">No pts cutoff — merit</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">10–14 months</span></div>
+        <div class="sc-row"><span class="sc-label">Job required</span><span class="sc-val">Preferred</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val">Limited</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority sectors:</strong> Construction, Renewable Energy, Digital/Cyber, Care Economy. Accountants face very limited chances.</div>
+      <a href="https://www.nsw.gov.au/visas-and-migration/skilled-visas/skilled-nominated-visa-subclass-190" target="_blank" class="sc-link">Apply via NSW →</a>
+    </div>
+    <!-- VIC -->
+    <div class="sc" data-tags="health it engineer teacher">
+      <div class="sc-head"><div class="sc-name">Victoria</div><span class="diff-badge hard">Competitive</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">2,700</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">700</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff</span><span class="sc-val" style="color:var(--amber)">~85 pts effective</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">8–12 months</span></div>
+        <div class="sc-row"><span class="sc-label">Job required</span><span class="sc-val">Preferred</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val">Limited</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority sectors:</strong> Construction, Clean Tech/Renewables, Digital Economy, Care Economy. Largest allocation nationally.</div>
+      <a href="https://business.vic.gov.au/business-information/skilled-migrant-program-skilling-victoria" target="_blank" class="sc-link">Apply via VIC →</a>
+    </div>
+    <!-- QLD -->
+    <div class="sc" data-tags="health engineer teacher">
+      <div class="sc-head"><div class="sc-name">Queensland</div><span class="diff-badge mod">Accessible</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">1,850</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">750</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff (approx.)</span><span class="sc-val" style="color:var(--teal)">~75 pts</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">6–10 months</span></div>
+        <div class="sc-row"><span class="sc-label">Job required</span><span class="sc-val">Not always</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val" style="color:var(--teal)">Yes</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority sectors:</strong> Engineering (Olympics infra), Healthcare, Trades, Teachers. Brisbane Olympics driving construction demand.</div>
+      <a href="https://migration.qld.gov.au/" target="_blank" class="sc-link">Apply via QLD →</a>
+    </div>
+    <!-- SA -->
+    <div class="sc" data-tags="easy accountant health it engineer teacher">
+      <div class="sc-head"><div class="sc-name">South Australia</div><span class="diff-badge easy">Most Accessible</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">1,350</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">900</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff (approx.)</span><span class="sc-val" style="color:var(--green)">~65 pts</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">5–8 months</span></div>
+        <div class="sc-row"><span class="sc-label">Job required</span><span class="sc-val">Not always</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val" style="color:var(--teal)">Yes</span></div>
+      </div>
+      <div class="sc-occs"><strong>Accepts widely:</strong> Accountants ✓, Engineers, IT, Nurses, Teachers, Cooks/Chefs. Talent & Innovation stream for job offer holders.</div>
+      <a href="https://migration.sa.gov.au/" target="_blank" class="sc-link">Apply via SA →</a>
+    </div>
+    <!-- WA -->
+    <div class="sc" data-tags="health engineer">
+      <div class="sc-head"><div class="sc-name">Western Australia</div><span class="diff-badge mod">Accessible with job</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">2,000</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">1,400</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff (approx.)</span><span class="sc-val" style="color:var(--teal)">~70 pts</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">6–9 months</span></div>
+        <div class="sc-row"><span class="sc-label">Job required</span><span class="sc-val" style="color:var(--amber)">Usually yes</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val">With job offer</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority occupations:</strong> Mining/Petroleum Engineers, Nurses, Civil Engineers, Electricians, Plumbers. Strong resources sector.</div>
+      <a href="https://migration.wa.gov.au/" target="_blank" class="sc-link">Apply via WA →</a>
+    </div>
+    <!-- TAS -->
+    <div class="sc" data-tags="easy fast health teacher">
+      <div class="sc-head"><div class="sc-name">Tasmania</div><span class="diff-badge easy">Fastest State</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">1,200</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">650</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff (approx.)</span><span class="sc-val" style="color:var(--green)">~65 pts</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val" style="color:var(--green)">4–7 months</span></div>
+        <div class="sc-row"><span class="sc-label">Residence req.</span><span class="sc-val" style="color:var(--amber)">6–9 months first</span></div>
+        <div class="sc-row"><span class="sc-label">Round schedule</span><span class="sc-val" style="color:var(--green)">Weekly rounds</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority occupations:</strong> Teachers, GPs, Nurses, Software Engineers, Aged Care. Must live in TAS for 6–9 months first.</div>
+      <a href="https://www.stategrowth.tas.gov.au/migration" target="_blank" class="sc-link">Apply via TAS →</a>
+    </div>
+    <!-- ACT -->
+    <div class="sc" data-tags="fast it accountant teacher">
+      <div class="sc-head"><div class="sc-name">ACT (Canberra)</div><span class="diff-badge mod">Matrix-based</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">800</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">800</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff</span><span class="sc-val">Canberra Matrix</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val" style="color:var(--green)">3–6 months</span></div>
+        <div class="sc-row"><span class="sc-label">PhD fast-track</span><span class="sc-val" style="color:var(--teal)">Yes</span></div>
+        <div class="sc-row"><span class="sc-label">All ACT regional?</span><span class="sc-val" style="color:var(--teal)">Yes</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority occupations:</strong> IT/Cybersecurity, Teachers, Psychologists, Social Workers, Government roles. Matrix scores multiple factors.</div>
+      <a href="https://www.act.gov.au/migration" target="_blank" class="sc-link">Apply via ACT →</a>
+    </div>
+    <!-- NT -->
+    <div class="sc" data-tags="easy accountant health teacher">
+      <div class="sc-head"><div class="sc-name">Northern Territory</div><span class="diff-badge easy">Least Competitive</span></div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-label">190 places</span><span class="sc-val">850</span></div>
+        <div class="sc-row"><span class="sc-label">491 places</span><span class="sc-val">800</span></div>
+        <div class="sc-row"><span class="sc-label">Cutoff (approx.)</span><span class="sc-val" style="color:var(--green)">~65 pts</span></div>
+        <div class="sc-row"><span class="sc-label">Processing</span><span class="sc-val">4–8 months</span></div>
+        <div class="sc-row"><span class="sc-label">NT commitment</span><span class="sc-val" style="color:var(--amber)">2 years required</span></div>
+        <div class="sc-row"><span class="sc-label">Offshore?</span><span class="sc-val" style="color:var(--teal)">Yes</span></div>
+      </div>
+      <div class="sc-occs"><strong>Priority occupations:</strong> Remote Health Workers, Nurses, GPs, Teachers, Engineers (infrastructure). Must commit to 2 years NT residence.</div>
+      <a href="https://migrate.nt.gov.au/" target="_blank" class="sc-link">Apply via NT →</a>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.08));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;text-align:center">
+    <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.4rem">Check your score against all state cutoffs</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">The full PR tool shows your eligibility across all 8 states with your current points score.</p>
+    <a href="/tool" style="display:inline-block;padding:0.75rem 1.5rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none">Get Full PR Report →</a>
+  </div>
+</div>
+<footer>
+  <a href="/">Home</a><a href="/190-visa">190 Visa</a><a href="/491-visa">491 Visa</a><a href="/tool">PR Tool</a>
+  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · Data: DHA 2025–26 state allocations</div>
+</footer>
+<script>
+function setFilter(f,btn){
+  document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.sc').forEach(c=>{
+    if(f==='all'){c.parentElement.style.display='block';}
+    else{const tags=c.dataset.tags||'';c.parentElement.style.display=tags.includes(f)?'block':'none';}
+  });
+}
+</script>
+</body>
+</html>
