@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Occupation Demand Score — VisaIQ Australia</title>
+<meta name="description" content="Check your occupation's demand score for Australian PR 2025-26. Based on Jobs and Skills Australia shortage data, 189 tier, state nomination priority and salary benchmarks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.15);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--purple:#9B7FFF;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;line-height:1.7}
+.wrap{max-width:960px;margin:0 auto;padding:2rem 1.5rem 5rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
+.ib-teal{background:var(--td);border:1px solid var(--tb)}
+.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+/* SEARCH */
+.search-wrap{position:relative;margin-bottom:1rem}
+.search-input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:0.9rem 1rem 0.9rem 2.75rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s}
+.search-input:focus{border-color:var(--tb)}
+.search-icon{position:absolute;left:0.9rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem}
+/* CATEGORIES */
+.cat-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.cat-btn{padding:0.4rem 0.8rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.75rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.cat-btn.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
+/* OCC GRID */
+.occ-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.occ-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem;cursor:pointer;transition:all 0.2s}
+.occ-card:hover{border-color:var(--tb);transform:translateY(-1px)}
+.occ-card.selected{border-color:var(--teal);background:rgba(0,200,150,0.04)}
+.oc-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem}
+.oc-name{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700}
+.oc-anzsco{font-size:0.65rem;color:var(--muted);margin-top:0.15rem}
+.oc-score{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;line-height:1}
+.score-label{font-size:0.6rem;color:var(--muted);text-align:right}
+.oc-bars{display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.6rem}
+.bar-row{display:flex;align-items:center;gap:0.5rem}
+.bar-label{font-size:0.65rem;color:var(--muted);width:80px;flex-shrink:0}
+.bar-track{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px;transition:width 0.8s ease}
+.oc-tags{display:flex;gap:0.3rem;flex-wrap:wrap}
+.ot{font-size:0.62rem;padding:0.15rem 0.4rem;border-radius:5px;font-weight:600}
+.ot-mltssl{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.ot-stsol{background:var(--bd);color:var(--blue);border:1px solid rgba(78,142,255,0.3)}
+.ot-regional{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.ot-critical{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
+/* DETAIL PANEL */
+.detail-panel{display:none;background:var(--bg2);border:1px solid var(--tb);border-radius:14px;padding:1.5rem;margin-top:1rem;animation:fu 0.3s ease}
+.detail-panel.show{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.dp-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.4rem;font-weight:400;margin-bottom:0.25rem}
+.dp-title em{font-style:italic;color:var(--teal)}
+.dp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;margin:1rem 0}
+.dp-stat{background:var(--bg3);border-radius:10px;padding:0.75rem;text-align:center}
+.dp-stat-val{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+.dp-stat-label{font-size:0.65rem;color:var(--muted);margin-top:0.15rem}
+.dp-section{margin-top:1rem}
+.dp-section-title{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+.dp-row{display:flex;justify-content:space-between;padding:0.45rem 0;border-bottom:1px solid var(--border);font-size:0.8rem}
+.dp-row:last-child{border-bottom:none}
+.dp-row-label{color:var(--muted)}
+.dp-row-val{font-weight:600;color:var(--text)}
+/* SCORE RING */
+.score-ring{position:relative;width:80px;height:80px;margin:0 auto 0.5rem}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:600px){.occ-grid{grid-template-columns:1fr}.dp-grid{grid-template-columns:1fr 1fr}.nls{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/189-visa">189 Visa</a>
+    <a href="/eoi-queue">EOI Queue</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Occupation<br><em>Demand Score</em></h1>
+  <p>Every skilled occupation scored across shortage severity, PR pathway difficulty, salary and regional demand. Based on Jobs and Skills Australia 2025 OSL data and DHA invitation round results.</p>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="card-title">What the Demand Score measures</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem">
+      <div style="background:var(--bg3);border-radius:8px;padding:0.65rem;text-align:center"><div style="font-size:1rem;margin-bottom:0.2rem">🏥</div><div style="font-size:0.7rem;font-weight:600;color:var(--teal)">Shortage severity</div><div style="font-size:0.65rem;color:var(--muted);margin-top:0.15rem">JSA 2025 OSL</div></div>
+      <div style="background:var(--bg3);border-radius:8px;padding:0.65rem;text-align:center"><div style="font-size:1rem;margin-bottom:0.2rem">🎯</div><div style="font-size:0.7rem;font-weight:600;color:var(--teal)">189 invitation rate</div><div style="font-size:0.65rem;color:var(--muted);margin-top:0.15rem">Tier system</div></div>
+      <div style="background:var(--bg3);border-radius:8px;padding:0.65rem;text-align:center"><div style="font-size:1rem;margin-bottom:0.2rem">🗺️</div><div style="font-size:0.7rem;font-weight:600;color:var(--teal)">State nomination</div><div style="font-size:0.65rem;color:var(--muted);margin-top:0.15rem">States accepting</div></div>
+      <div style="background:var(--bg3);border-radius:8px;padding:0.65rem;text-align:center"><div style="font-size:1rem;margin-bottom:0.2rem">💰</div><div style="font-size:0.7rem;font-weight:600;color:var(--teal)">Salary range</div><div style="font-size:0.65rem;color:var(--muted);margin-top:0.15rem">SEEK/ABS 2025</div></div>
+      <div style="background:var(--bg3);border-radius:8px;padding:0.65rem;text-align:center"><div style="font-size:1rem;margin-bottom:0.2rem">🌿</div><div style="font-size:0.7rem;font-weight:600;color:var(--teal)">Regional demand</div><div style="font-size:0.65rem;color:var(--muted);margin-top:0.15rem">Regional OSL</div></div>
+    </div>
+  </div>
+
+  <!-- SEARCH + FILTER -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="occ-search" placeholder="Search occupation e.g. nurse, accountant, engineer…" oninput="filterOccs()">
+  </div>
+  <div class="cat-row">
+    <button class="cat-btn active" onclick="setcat('all',this)">All</button>
+    <button class="cat-btn" onclick="setcat('healthcare',this)">Healthcare</button>
+    <button class="cat-btn" onclick="setcat('engineering',this)">Engineering</button>
+    <button class="cat-btn" onclick="setcat('ict',this)">ICT / Tech</button>
+    <button class="cat-btn" onclick="setcat('trades',this)">Trades</button>
+    <button class="cat-btn" onclick="setcat('education',this)">Education</button>
+    <button class="cat-btn" onclick="setcat('accounting',this)">Accounting</button>
+    <button class="cat-btn" onclick="setcat('hospitality',this)">Hospitality</button>
+  </div>
+
+  <!-- OCC GRID -->
+  <div class="occ-grid" id="occ-grid"></div>
+
+  <!-- DETAIL PANEL -->
+  <div class="detail-panel" id="detail-panel"></div>
+
+  <div class="ib ib-teal" style="margin-top:1.5rem">
+    <strong>Data source:</strong> Jobs and Skills Australia Occupation Shortage List 2025 · DHA SkillSelect November 2025 results · DHA 2025–26 State Nomination Allocations · SEEK / ABS Average Weekly Earnings 2025. Scores are composite indicators, not official DHA rankings. Last updated March 2026.
+  </div>
+</div>
+
+<footer>
+  <a href="/">Home</a><a href="/189-visa">189 Visa</a><a href="/190-visa">190 Visa</a>
+  <a href="/eoi-queue">EOI Queue</a><a href="/tool">PR Tool</a>
+  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · JSA OSL 2025 data</div>
+</footer>
+
+<script>
+const OCCS = [
+  // HEALTHCARE
+  {id:'gp',name:'General Practitioner',anzsco:'253111',cat:'healthcare',score:98,shortage:10,pr:10,state:9,salary:10,regional:9,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
+   salary_range:'$180,000–$280,000',median:'$230,000',
+   assessment:'AMC (Australian Medical Council)',
+   states_accepting:'All 8 states — highest priority everywhere',
+   pr_note:'Lowest 189 cutoffs in Australia (75 pts). Direct grants common for Tier 1 healthcare. Fastest processing 30 days for some healthcare roles.',
+   regional_note:'Critical shortage in ALL regional areas. Remote area doctors earn $300,000+. Multiple incentive packages available.',
+   insight:'If you are a GP, Australia is currently the single best PR opportunity for your occupation on the planet. 75 point cutoff vs 95+ for accountants. Apply immediately.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'nurse',name:'Registered Nurse (General)',anzsco:'254416',cat:'healthcare',score:95,shortage:10,pr:9,state:10,salary:7,regional:10,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
+   salary_range:'$65,000–$120,000',median:'$86,000',
+   assessment:'AHPRA (Nursing & Midwifery Board)',
+   states_accepting:'All 8 states — highest allocation for nursing everywhere',
+   pr_note:'189 cutoff 75 pts (Tier 1). State nomination available from all 8 states. Fastest pathway to PR of any common occupation.',
+   regional_note:'Critical shortage in regional and remote areas. ICU, mental health, aged care roles can earn $120,000+ in regional.',
+   insight:'Registered Nurses have the best overall PR landscape in Australia. 75 pt cutoff, every state accepting, and the JSA 2025 report shows this shortage will deepen not ease.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'midwife',name:'Midwife',anzsco:'254111',cat:'healthcare',score:93,shortage:10,pr:9,state:9,salary:7,regional:9,
+   tier:1,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'National Shortage',
+   salary_range:'$70,000–$110,000',median:'$90,000',
+   assessment:'AHPRA (Nursing & Midwifery Board)',
+   states_accepting:'All 8 states',
+   pr_note:'189 cutoff 75 pts (Tier 1). Similar pathway to Registered Nurse.',
+   regional_note:'High demand in regional maternity services.',
+   insight:'Midwives benefit from the same Tier 1 priority as general nurses. 75 pt cutoff is highly achievable.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'physio',name:'Physiotherapist',anzsco:'252511',cat:'healthcare',score:90,shortage:9,pr:9,state:9,salary:7,regional:9,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$65,000–$110,000',median:'$80,000',
+   assessment:'AHPRA (Physiotherapy Board)',
+   states_accepting:'All 8 states',
+   pr_note:'189 Tier 1. 75 pts cutoff. Direct PR processing 1–3 months for healthcare.',
+   regional_note:'High demand in sports medicine, aged care, NDIS. Regional shortages severe.',
+   insight:'Allied health professionals are riding the same Tier 1 wave as nurses. If you are a physio at 75+ points your invitation is a matter of when, not if.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'dentist',name:'Dentist',anzsco:'252311',cat:'healthcare',score:88,shortage:9,pr:8,state:8,salary:9,regional:9,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$100,000–$220,000',median:'$150,000',
+   assessment:'ADC (Australian Dental Council)',
+   states_accepting:'All 8 states',
+   pr_note:'189 Tier 1. 80 pts cutoff. ADC assessment is rigorous — 12–18 months. Plan early.',
+   regional_note:'Very high demand. Regional dentists can earn $200,000+. Some regional areas have 0 practising dentists.',
+   insight:'Dentistry has one of the strongest PR cases in Australia once ADC assessment is cleared. The assessment process is the main bottleneck — start it before anything else.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'pharmacist',name:'Pharmacist',anzsco:'251511',cat:'healthcare',score:84,shortage:8,pr:8,state:8,salary:7,regional:8,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$70,000–$110,000',median:'$88,000',
+   assessment:'AHPRA (Pharmacy Board)',
+   states_accepting:'All 8 states',pr_note:'189 Tier 1. 75 pts cutoff.',regional_note:'Regional community pharmacies in critical shortage.',
+   insight:'Strong pathway. AHPRA assessment is straightforward for degree-qualified pharmacists.',tags:['ot-mltssl','ot-critical']},
+  {id:'ot',name:'Occupational Therapist',anzsco:'252411',cat:'healthcare',score:86,shortage:8,pr:9,state:8,salary:7,regional:8,
+   tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$65,000–$100,000',median:'$78,000',
+   assessment:'AHPRA (OT Board)',
+   states_accepting:'All 8 states',pr_note:'189 Tier 1. 75 pts.',regional_note:'NDIS expansion driving huge OT demand nationally.',
+   insight:'NDIS funding has created extraordinary demand for OTs. Tier 1 priority status with accessible cutoffs.',tags:['ot-mltssl','ot-critical']},
+
+  // ENGINEERING
+  {id:'civil',name:'Civil Engineer',anzsco:'233211',cat:'engineering',score:78,shortage:8,pr:6,state:8,salary:8,regional:7,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$85,000–$150,000',median:'$115,000',
+   assessment:'Engineers Australia',
+   states_accepting:'All 8 states — priority in NSW, QLD, WA, SA',
+   pr_note:'189 Tier 3. 85 pts cutoff. Brisbane Olympics + housing construction driving demand. Engineers Australia assessment takes 2–4 months.',
+   regional_note:'High demand in infrastructure, water, mining regions (WA, QLD). Regional civil engineers earn premium rates.',
+   insight:'Civil engineers are in the sweet spot — Tier 3 with a competitive but achievable 85 pt cutoff. NSW and QLD Olympics and housing programs are creating sustained demand.',
+   tags:['ot-mltssl']},
+  {id:'structural',name:'Structural Engineer',anzsco:'233214',cat:'engineering',score:76,shortage:8,pr:6,state:7,salary:8,regional:6,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$90,000–$155,000',median:'$120,000',
+   assessment:'Engineers Australia',
+   states_accepting:'NSW, VIC, QLD, WA, SA',
+   pr_note:'189 Tier 3. ~85 pts. Engineers Australia assessment required.',
+   regional_note:'Moderate regional demand. Major cities more opportunities.',
+   insight:'Strong long-term pathway. 85 pt cutoff achievable for most engineering graduates with 3+ years experience and IELTS 7+.',tags:['ot-mltssl']},
+  {id:'electrical_eng',name:'Electrical Engineer',anzsco:'233311',cat:'engineering',score:75,shortage:8,pr:6,state:7,salary:8,regional:7,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$90,000–$160,000',median:'$120,000',
+   assessment:'Engineers Australia',
+   states_accepting:'All 8 states — energy transition driving demand',
+   pr_note:'189 Tier 3. ~85 pts. Renewable energy sector creating new demand for electrical engineers.',
+   regional_note:'High regional demand in resources, renewable energy, mining.',
+   insight:'Renewable energy transition is transforming the electrical engineering landscape. SA, WA and QLD are particularly active.',tags:['ot-mltssl']},
+  {id:'mechanical_eng',name:'Mechanical Engineer',anzsco:'233512',cat:'engineering',score:73,shortage:7,pr:6,state:6,salary:8,regional:6,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$85,000–$145,000',median:'$110,000',
+   assessment:'Engineers Australia',states_accepting:'WA, QLD, SA, NT primarily',
+   pr_note:'189 Tier 3. ~85 pts.',regional_note:'Resources sector drives regional demand particularly in WA.',
+   insight:'Solid pathway. WA resources sector is the primary driver. Consider WA 190/491 for faster processing.',tags:['ot-mltssl']},
+  {id:'construction_pm',name:'Construction Project Manager',anzsco:'133111',cat:'engineering',score:72,shortage:8,pr:5,state:7,salary:9,regional:6,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$120,000–$180,000',median:'$145,000',
+   assessment:'AIPM or Engineers Australia',
+   states_accepting:'NSW, VIC, QLD, SA, WA',
+   pr_note:'189 Tier 3. 85 pts. Highest paid common engineering occupation. Olympics infrastructure creating 2026+ demand.',
+   regional_note:'Strong regional demand for infrastructure projects.',
+   insight:'High salary and strong demand. 189 Tier 3 means achievable cutoffs. NSW and VIC highly competitive for state nomination — consider QLD or SA.',tags:['ot-mltssl']},
+
+  // ICT
+  {id:'software',name:'Software Engineer / Developer',anzsco:'261313',cat:'ict',score:58,shortage:7,pr:3,state:5,salary:9,regional:5,
+   tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$95,000–$170,000',median:'$130,000',
+   assessment:'ACS (Australian Computer Society)',
+   states_accepting:'VIC, ACT, NSW (limited) — sector-based',
+   pr_note:'189 Tier 4. 90 pts cutoff. Very large EOI pool (8,200+). NOT recommended as primary pathway at 189. VIC or ACT state nomination significantly more achievable.',
+   regional_note:'Adelaide (SA), Canberra (ACT) have meaningful tech sectors and are regional-eligible. Consider SA/ACT 491 as primary pathway.',
+   insight:'Great salary. Difficult PR path via 189 due to massive EOI pool and Tier 4 status. Superior English (IELTS 8+) + ACT or SA nomination is the most effective strategy for most software engineers.',
+   tags:['ot-mltssl']},
+  {id:'cybersecurity',name:'Cybersecurity Specialist',anzsco:'262112',cat:'ict',score:68,shortage:8,pr:4,state:6,salary:9,regional:4,
+   tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage — growing',
+   salary_range:'$100,000–$160,000',median:'$125,000',
+   assessment:'ACS',states_accepting:'NSW, VIC, ACT — cyber specifically prioritised',
+   pr_note:'189 Tier 4 but cyber is NSWs highest digital priority. NSW and VIC both list cybersecurity as priority sector.',
+   regional_note:'Limited regional demand outside ACT and Adelaide.',
+   insight:'Cybersecurity is the one ICT occupation getting specific priority treatment. NSW explicitly names it. ACT government roles drive demand. If you are a cyber professional, target NSW or ACT nomination first.',
+   tags:['ot-mltssl']},
+  {id:'data_scientist',name:'Data Analyst / Scientist',anzsco:'224211',cat:'ict',score:55,shortage:6,pr:3,state:4,salary:8,regional:3,
+   tier:4,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'Regional or no shortage (69 removed in 2025)',
+   salary_range:'$85,000–$140,000',median:'$105,000',
+   assessment:'ACS',states_accepting:'Limited — VIC and ACT sector-based',
+   pr_note:'189 Tier 4. 90+ pts needed. Data roles were among the 69 occupations removed from shortage in 2025 OSL — demand stabilising.',
+   regional_note:'Very limited regional demand.',
+   insight:'Data science demand has normalised. The 69 occupations removed from the 2025 shortage list include analytics roles. 189 is very difficult — employer sponsorship (482) is a more realistic pathway for most data professionals.',
+   tags:['ot-mltssl']},
+  {id:'ict_manager',name:'ICT Manager',anzsco:'135111',cat:'ict',score:50,shortage:5,pr:2,state:4,salary:9,regional:3,
+   tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'Oversupplied — not in national shortage',
+   salary_range:'$130,000–$200,000',median:'$160,000',
+   assessment:'ACS',states_accepting:'ACT (Canberra Matrix) — very limited',
+   pr_note:'189 Tier 4. 95 pts pro-rata. Accountants AND ICT managers face the same oversupply problem. Not invited in either 2025–26 round.',
+   regional_note:'Minimal regional demand.',
+   insight:'Very difficult 189 path. Employer sponsorship (482 → 186) is the most realistic PR pathway for ICT managers. Build 2 years with one employer and transition via TRT stream.',
+   tags:['ot-mltssl']},
+
+  // TRADES
+  {id:'electrician',name:'Electrician (General)',anzsco:'341111',cat:'trades',score:88,shortage:9,pr:9,state:9,salary:8,regional:9,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
+   salary_range:'$80,000–$140,000',median:'$100,000',
+   assessment:'TRA (Trades Recognition Australia)',
+   states_accepting:'All 8 states — highest priority trade occupation',
+   pr_note:'189 Tier 3. 65 pts cutoff — lowest professional cutoff available. Easiest high-skilled PR pathway in Australia right now.',
+   regional_note:'Critical shortage everywhere. Regional electricians earn $130,000+ with overtime.',
+   insight:'Electricians at 65 points have access to Australia PR that accountants at 95 points cannot reach. The trades shortage is a genuine crisis — the government is prioritising it heavily. Best PR opportunity in trades.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'plumber',name:'Plumber (General)',anzsco:'334111',cat:'trades',score:85,shortage:9,pr:9,state:8,salary:7,regional:9,
+   tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
+   salary_range:'$75,000–$120,000',median:'$92,000',
+   assessment:'TRA',states_accepting:'All 8 states',
+   pr_note:'189 Tier 3. 65 pts. TRA assessment required — can take 4–6 months.',
+   regional_note:'Critical shortage in housing construction. Demand driven by housing affordability crisis.',
+   insight:'Near-identical pathway to electricians. 65 pts is the floor. If you have your TRA assessment done, lodge EOI immediately.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'carpenter',name:'Carpenter / Joiner',anzsco:'331212',cat:'trades',score:82,shortage:9,pr:9,state:8,salary:7,regional:8,
+   tier:3,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'National Critical',
+   salary_range:'$70,000–$110,000',median:'$85,000',
+   assessment:'TRA',states_accepting:'All 8 states',
+   pr_note:'189 Tier 3. 65 pts. Housing construction crisis driving demand.',
+   regional_note:'Housing shortage driving extreme demand in regional areas.',
+   insight:'Construction trades are the government\'s top priority. Carpenters at 65 pts have excellent invitation prospects under the 4-tier system.',
+   tags:['ot-mltssl','ot-critical']},
+
+  // EDUCATION
+  {id:'teacher_secondary',name:'Secondary School Teacher',anzsco:'241411',cat:'education',score:82,shortage:9,pr:7,state:8,salary:6,regional:8,
+   tier:2,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage — persistent',
+   salary_range:'$65,000–$105,000',median:'$82,000',
+   assessment:'AITSL (Australian Institute for Teaching)',
+   states_accepting:'All 8 states — ACT and TAS most active',
+   pr_note:'189 Tier 2. 85 pts cutoff. 139 occupations in persistent shortage since 2021 — teachers in that list.',
+   regional_note:'Critical shortage in regional schools especially maths, science, languages.',
+   insight:'Teaching is a Tier 2 priority with consistent state nomination opportunities. STEM subjects (maths, science, engineering studies) have significantly better prospects than general teachers.',
+   tags:['ot-mltssl']},
+  {id:'teacher_ece',name:'Early Childhood Teacher',anzsco:'241111',cat:'education',score:86,shortage:10,pr:7,state:9,salary:5,regional:9,
+   tier:2,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical — #1 education shortage',
+   salary_range:'$55,000–$90,000',median:'$70,000',
+   assessment:'AITSL',states_accepting:'All 8 states — highest education priority',
+   pr_note:'189 Tier 2. 80–85 pts. ECE is listed as the most undersupplied education occupation in JSA 2025.',
+   regional_note:'Extreme regional shortage. The government has launched specific incentive programs.',
+   insight:'ECE is the most undersupplied teaching occupation in Australia. Despite lower salary, the PR pathway is among the most accessible in the education sector. If you can get AITSL assessment, act quickly.',
+   tags:['ot-mltssl','ot-critical']},
+  {id:'psychologist',name:'Psychologist',anzsco:'272311',cat:'education',score:80,shortage:9,pr:7,state:7,salary:7,regional:8,
+   tier:2,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'National Shortage',
+   salary_range:'$75,000–$130,000',median:'$95,000',
+   assessment:'AHPRA (Psychology Board)',
+   states_accepting:'ACT, WA, SA, NSW',
+   pr_note:'189 Tier 2. ~80 pts. NDIS, mental health national strategy driving demand.',
+   regional_note:'Regional psychology services severely underprovided. Strong 491 pathway.',
+   insight:'Mental health services investment has created sustained demand. NDIS is the main driver. AHPRA assessment needed — plan 6 months.',
+   tags:['ot-mltssl']},
+  {id:'social_worker',name:'Social Worker',anzsco:'272511',cat:'education',score:76,shortage:8,pr:7,state:7,salary:5,regional:7,
+   tier:2,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
+   salary_range:'$65,000–$95,000',median:'$75,000',
+   assessment:'AASW (Australian Association of Social Workers)',
+   states_accepting:'ACT, WA, NSW, SA',
+   pr_note:'189 Tier 2. 80 pts. AASW assessment required. Nov 2025 round issued invitations.',
+   regional_note:'Strong regional demand in child protection, family services.',
+   insight:'Social workers received invitations in the November 2025 round at 80 pts. Tier 2 priority means steady invitation rates.',
+   tags:['ot-mltssl']},
+
+  // ACCOUNTING
+  {id:'accountant',name:'Accountant (General)',anzsco:'221111',cat:'accounting',score:35,shortage:2,pr:1,state:4,salary:6,regional:3,
+   tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'NOT in national shortage — oversupplied',
+   salary_range:'$60,000–$120,000',median:'$80,000',
+   assessment:'CPA Australia or CAANZ or IPA',
+   states_accepting:'SA, NT, ACT (limited), QLD (limited)',
+   pr_note:'189: NOT invited in August OR November 2025. Tier 4 — 0.5× multiplier. EOI pool 15,000+. SA 190 at 65 pts is the most realistic pathway.',
+   regional_note:'SA, NT and ACT are the most accessible pathways. Adelaide specifically accepts accountants where Sydney/Melbourne do not.',
+   insight:'The hard truth: Accountants face the worst 189 prospects in the Australian migration system. Not invited in either 2025–26 round. But this does NOT mean no pathway — it means SA 190 or 491 is your route, not 189. 65 base points + SA nomination = PR. Do NAATI CCL and get to SA as quickly as possible.',
+   tags:['ot-mltssl']},
+  {id:'auditor',name:'Auditor / External Auditor',anzsco:'221213',cat:'accounting',score:38,shortage:3,pr:2,state:4,salary:7,regional:2,
+   tier:4,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'No national shortage',
+   salary_range:'$70,000–$130,000',median:'$90,000',
+   assessment:'CPA or CAANZ',states_accepting:'SA, ACT (limited)',
+   pr_note:'189 Tier 4. Same oversupply problem as general accountants. SA 190 is primary pathway.',
+   regional_note:'Minimal regional demand.',
+   insight:'Auditors face the same structural oversupply as accountants in the PR system. SA or employer sponsorship are the main routes.',tags:['ot-mltssl']},
+  {id:'tax_accountant',name:'Tax Agent / Management Accountant',anzsco:'221112',cat:'accounting',score:37,shortage:2,pr:2,state:4,salary:7,regional:2,
+   tier:4,list:'MLTSSL',lists:['MLTSSL'],shortage_status:'No national shortage',
+   salary_range:'$65,000–$115,000',median:'$83,000',
+   assessment:'CPA or CAANZ',states_accepting:'SA, NT (limited)',
+   pr_note:'189 Tier 4. Not invited 2025–26. Consider SA 190 at 65 base points.',
+   regional_note:'Very limited regional demand.',
+   insight:'Similar to Accountant — SA nomination is the key. Get to Adelaide, build 12 months experience, apply for SA 190.',tags:['ot-mltssl']},
+
+  // HOSPITALITY
+  {id:'chef',name:'Cook / Chef',anzsco:'351311',cat:'hospitality',score:62,shortage:8,pr:5,state:6,salary:4,regional:9,
+   tier:null,list:'STSOL',lists:['STSOL','CSOL'],shortage_status:'National Shortage — regional critical',
+   salary_range:'$52,000–$80,000',median:'$62,000',
+   assessment:'TRA or VETASSESS',
+   states_accepting:'SA, QLD, WA, NT for 190/491',
+   pr_note:'STSOL — NO 189 pathway at all. Chef is not on MLTSSL. Primary PR route: 190/491 regional nomination (SA, NT, QLD) OR 482 → 186 employer sponsored.',
+   regional_note:'78% of invited chefs in recent years received regional nomination. Critical shortage in rural hospitality. 491 regional is the primary pathway.',
+   insight:'Chefs cannot access 189 at all. But SA 190 and 491 regional have been generous to chefs — 65 pts is achievable. The other viable route is employer sponsorship through a regional restaurant or hotel. Do NAATI if you speak Urdu, Hindi or Tagalog — +5 pts.',
+   tags:['ot-stsol','ot-regional']},
+  {id:'hospitality_manager',name:'Hotel / Motel Manager',anzsco:'141311',cat:'hospitality',score:48,shortage:6,pr:4,state:5,salary:4,regional:8,
+   tier:null,list:'STSOL',lists:['STSOL','CSOL'],shortage_status:'Regional shortage',
+   salary_range:'$55,000–$90,000',median:'$68,000',
+   assessment:'VETASSESS or TRA',states_accepting:'NT, SA, QLD, WA for regional',
+   pr_note:'STSOL — no 189 pathway. 190/491 from regional states, or 482 employer sponsored.',
+   regional_note:'Strong demand in tourism regions — Cairns, Darwin, Tasmania coastal, WA regions.',
+   insight:'Hospitality managers are best served by 491 regional nomination through NT, SA or QLD. The tourism sector drives consistent regional demand.',tags:['ot-stsol','ot-regional']},
+];
+
+let currentCat = 'all';
+let searchTerm = '';
+
+function getScoreColor(s){
+  if(s>=85) return 'var(--green)';
+  if(s>=70) return 'var(--teal)';
+  if(s>=55) return 'var(--amber)';
+  return 'var(--red)';
+}
+
+function renderBar(pct, color){
+  return `<div class="bar-track"><div class="bar-fill" style="width:${pct*10}%;background:${color}"></div></div>`;
+}
+
+function renderCard(o){
+  const sc = getScoreColor(o.score);
+  const tags = o.tags.map(t => {
+    const labels = {'ot-mltssl':'MLTSSL','ot-stsol':'STSOL','ot-regional':'Regional','ot-critical':'Critical Shortage'};
+    return `<span class="ot ${t}">${labels[t]||t}</span>`;
+  }).join('');
+  return `
+    <div class="occ-card" data-id="${o.id}" data-cat="${o.cat}" data-name="${o.name.toLowerCase()}" onclick="showDetail('${o.id}')">
+      <div class="oc-header">
+        <div><div class="oc-name">${o.name}</div><div class="oc-anzsco">${o.anzsco}</div></div>
+        <div style="text-align:right"><div class="oc-score" style="color:${sc}">${o.score}</div><div class="score-label">/ 100</div></div>
+      </div>
+      <div class="oc-bars">
+        <div class="bar-row"><span class="bar-label">Shortage</span>${renderBar(o.shortage,'var(--green)')}</div>
+        <div class="bar-row"><span class="bar-label">PR ease</span>${renderBar(o.pr,'var(--teal)')}</div>
+        <div class="bar-row"><span class="bar-label">State nom.</span>${renderBar(o.state,'var(--blue)')}</div>
+        <div class="bar-row"><span class="bar-label">Regional</span>${renderBar(o.regional,'var(--amber)')}</div>
+      </div>
+      <div class="oc-tags">${tags}</div>
+    </div>`;
+}
+
+function renderAll(){
+  const grid = document.getElementById('occ-grid');
+  const filtered = OCCS.filter(o => {
+    const catMatch = currentCat==='all' || o.cat===currentCat;
+    const searchMatch = !searchTerm || o.name.toLowerCase().includes(searchTerm) || o.anzsco.includes(searchTerm);
+    return catMatch && searchMatch;
+  });
+  grid.innerHTML = filtered.length ? filtered.map(renderCard).join('') : '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--muted);font-size:0.85rem">No occupations match. Try a different search or category.</div>';
+}
+
+function setcat(c,btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat=c;
+  renderAll();
+}
+
+function filterOccs(){
+  searchTerm=document.getElementById('occ-search').value.toLowerCase().trim();
+  renderAll();
+}
+
+function showDetail(id){
+  const o=OCCS.find(x=>x.id===id);
+  if(!o) return;
+  document.querySelectorAll('.occ-card').forEach(c=>c.classList.remove('selected'));
+  document.querySelector(`[data-id="${id}"]`).classList.add('selected');
+  const sc=getScoreColor(o.score);
+  const tierLabel={1:'Tier 1 — Highest Priority',2:'Tier 2 — High Priority',3:'Tier 3 — Standard',4:'Tier 4 — Oversupplied'};
+  const tierColor={'1':'var(--green)','2':'var(--teal)','3':'var(--blue)','4':'var(--amber)'};
+  const panel=document.getElementById('detail-panel');
+  panel.className='detail-panel show';
+  panel.innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem">
+      <div>
+        <div class="dp-title"><em>${o.name}</em></div>
+        <div style="font-size:0.75rem;color:var(--muted)">ANZSCO ${o.anzsco} · ${o.list} · ${o.shortage_status}</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:${sc};line-height:1">${o.score}</div>
+        <div style="font-size:0.7rem;color:var(--muted)">Demand Score</div>
+      </div>
+    </div>
+    <div class="dp-grid">
+      <div class="dp-stat"><div class="dp-stat-val" style="color:${o.tier?tierColor[o.tier]:'var(--blue)'}">${o.tier?tierLabel[o.tier].split('—')[0].trim():'STSOL'}</div><div class="dp-stat-label">189 tier</div></div>
+      <div class="dp-stat"><div class="dp-stat-val" style="color:var(--teal)">${o.median}</div><div class="dp-stat-label">Median salary</div></div>
+      <div class="dp-stat"><div class="dp-stat-val" style="color:var(--teal)">${o.assessment.split(' ')[0]}</div><div class="dp-stat-label">Assessing body</div></div>
+      <div class="dp-stat"><div class="dp-stat-val" style="color:var(--text)">${o.salary_range}</div><div class="dp-stat-label">Salary range</div></div>
+    </div>
+    <div class="dp-section">
+      <div class="dp-section-title">PR Pathway</div>
+      <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;background:var(--bg3);border-radius:8px;padding:0.85rem">${o.pr_note}</div>
+    </div>
+    <div class="dp-section">
+      <div class="dp-section-title">State Nomination</div>
+      <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;background:var(--bg3);border-radius:8px;padding:0.85rem">${o.states_accepting}</div>
+    </div>
+    <div class="dp-section">
+      <div class="dp-section-title">Regional Demand</div>
+      <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;background:var(--bg3);border-radius:8px;padding:0.85rem">${o.regional_note}</div>
+    </div>
+    <div class="dp-section">
+      <div class="dp-section-title">VisaIQ Insight</div>
+      <div style="font-size:0.85rem;color:var(--text);line-height:1.7;background:var(--td);border:1px solid var(--tb);border-radius:10px;padding:1rem;border-left:3px solid var(--teal)">${o.insight}</div>
+    </div>
+    <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+      <a href="/tool" style="padding:0.6rem 1.1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Calculate my points for ${o.name.split(' ')[0]} →</a>
+      <a href="/189-visa" style="padding:0.6rem 1.1rem;background:transparent;color:var(--blue);border:1px solid rgba(78,142,255,0.3);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">189 cutoffs →</a>
+    </div>`;
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+
+renderAll();
+</script>
+</body>
+</html>
