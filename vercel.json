@@ -1,4 +1,21 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/tool",             "destination": "/tool.html" },
+    { "source": "/policy-updates",   "destination": "/policy-updates.html" },
+    { "source": "/methodology",      "destination": "/methodology.html" },
+    { "source": "/points-calculator","destination": "/points-calculator.html" },
+    { "source": "/eoi-queue",        "destination": "/eoi-queue.html" },
+    { "source": "/189-visa",         "destination": "/189-visa.html" },
+    { "source": "/190-visa",         "destination": "/190-visa.html" },
+    { "source": "/491-visa",         "destination": "/491-visa.html" },
+    { "source": "/482-visa",         "destination": "/482-visa.html" },
+    { "source": "/485-visa",         "destination": "/485-visa.html" },
+    { "source": "/student-pathway",  "destination": "/student-pathway.html" },
+    { "source": "/state-comparator", "destination": "/state-comparator.html" },
+    { "source": "/occupation-demand","destination": "/occupation-demand.html" },
+    { "source": "/rounds",           "destination": "/rounds.html" },
+    { "source": "/timeline",         "destination": "/timeline.html" }
+  ]
 }
