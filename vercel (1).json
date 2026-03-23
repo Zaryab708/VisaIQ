@@ -4,6 +4,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/tool", "destination": "/tool.html" },
+    { "source": "/profile", "destination": "/profile.html" },
     { "source": "/policy-updates", "destination": "/policy-updates.html" },
     { "source": "/482-visa", "destination": "/482-visa.html" },
     { "source": "/482-to-186", "destination": "/482-to-186.html" },
@@ -17,8 +18,11 @@
     { "source": "/state-comparator", "destination": "/state-comparator.html" },
     { "source": "/occupation-demand", "destination": "/occupation-demand.html" },
     { "source": "/student-pathway", "destination": "/student-pathway.html" },
+    { "source": "/best-degrees-pr", "destination": "/best-degrees-pr.html" },
+    { "source": "/regional-study-bonus", "destination": "/regional-study-bonus.html" },
     { "source": "/timeline", "destination": "/timeline.html" },
     { "source": "/methodology", "destination": "/methodology.html" },
-    { "source": "/submit", "destination": "/submit.html" }
+    { "source": "/submit", "destination": "/submit.html" },
+    { "source": "/outcomes", "destination": "/outcomes.html" }
   ]
 }
