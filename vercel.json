@@ -22,6 +22,7 @@
     { "source": "/regional-study-bonus", "destination": "/regional-study-bonus.html" },
     { "source": "/timeline", "destination": "/timeline.html" },
     { "source": "/methodology", "destination": "/methodology.html" },
-    { "source": "/submit", "destination": "/submit.html" }
+    { "source": "/submit", "destination": "/submit.html" },
+    { "source": "/outcomes", "destination": "/outcomes.html" }
   ]
 }

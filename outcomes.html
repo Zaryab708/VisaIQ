@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Visa Outcomes — Australian PR Community Feed | VisaIQ</title>
+<meta name="description" content="Real anonymised Australian visa grant outcomes submitted by the community. Filter by occupation, state, and nationality. See what's actually happening right now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+#viq-ticker{width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101}
+#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent)}
+#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent)}
+#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0}
+#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite}
+@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto}
+.wrap{max-width:780px;margin:0 auto;padding:2rem 1.5rem 5rem}
+
+/* LIVE PULSE */
+.live-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:700;color:#10B981;margin-bottom:1.25rem}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#10B981;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* WEEKLY SUMMARY */
+.week-box{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1.5rem}
+.week-title{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.6rem}
+.week-stats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.ws{font-size:0.82rem;color:var(--muted)}
+.ws strong{color:var(--text);display:block;font-family:'Syne',sans-serif;font-size:1rem;font-weight:800}
+.week-actions{display:flex;gap:0.6rem;flex-wrap:wrap}
+.btn-teal{display:inline-block;padding:0.55rem 1.1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none}
+.btn-ghost{display:inline-block;padding:0.55rem 1.1rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none;cursor:pointer}
+
+/* FILTERS */
+.filters{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.filter-btn{padding:0.35rem 0.85rem;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.78rem;cursor:pointer;transition:all 0.2s}
+.filter-btn.active,.filter-btn:hover{border-color:var(--tb);background:var(--td);color:var(--teal)}
+
+/* OUTCOME CARDS */
+.outcome-card{display:flex;align-items:flex-start;gap:0.85rem;padding:0.9rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px;margin-bottom:0.5rem;transition:border-color 0.2s}
+.outcome-card:hover{border-color:rgba(0,200,150,0.2)}
+.oc-flag{font-size:1.4rem;flex-shrink:0;margin-top:0.05rem}
+.oc-body{flex:1;min-width:0}
+.oc-main{font-size:0.88rem;color:var(--text);line-height:1.5;margin-bottom:0.2rem}
+.oc-main strong{color:var(--text);font-weight:600}
+.oc-meta{font-size:0.74rem;color:var(--muted);line-height:1.5}
+.oc-comment{font-size:0.72rem;color:var(--muted);font-style:italic;margin-top:0.25rem;padding-top:0.25rem;border-top:1px solid var(--border)}
+.oc-right{flex-shrink:0;text-align:right}
+.oc-status{font-size:0.65rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;white-space:nowrap}
+.status-granted{background:rgba(16,185,129,0.1);color:#10B981;border:1px solid rgba(16,185,129,0.25)}
+.status-invited{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
+.oc-ago{font-size:0.68rem;color:var(--muted);margin-top:0.25rem}
+
+/* EMPTY */
+.empty-state{text-align:center;padding:2.5rem 1rem;color:var(--muted);font-size:0.85rem}
+
+/* LOAD MORE */
+.load-more{width:100%;padding:0.7rem;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;margin-top:0.5rem}
+.load-more:hover{border-color:var(--tb);color:var(--teal)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:600px){.nls{display:none}.week-stats{gap:1rem}}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div id="viq-ticker">
+  <div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;z-index:3">Live</div>
+  <div id="viq-ticker-mask"><div id="viq-ticker-track">
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer</b> · VIC 190 · 85 pts · offshore · granted 6 Mar 2026</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">VIC ran a 190/491 round</b> · 17 March 2026 · Engineers, teachers, nurses invited</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted 17 Mar 2026 · no s59</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">QLD + ACT ran rounds</b> · 12 March 2026 · healthcare and engineers invited</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer</b> · VIC 190 · 85 pts · offshore · granted 6 Mar 2026</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">VIC ran a 190/491 round</b> · 17 March 2026 · Engineers, teachers, nurses invited</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted 17 Mar 2026 · no s59</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">QLD + ACT ran rounds</b> · 12 March 2026 · healthcare and engineers invited</span><span class="viq-dot"></span></span>
+  </div></div>
+</div>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/rounds">Rounds</a>
+    <a href="/outcomes" style="color:var(--teal)">Outcomes</a>
+    <a href="/submit" class="ncta">Submit Outcome →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="live-badge"><span class="live-dot"></span> Live community feed</div>
+  <h1>Real outcomes from<br><em>real applicants</em></h1>
+  <p>Every entry below was submitted by someone who was in the same position you are now. Anonymised and unfiltered.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- WEEKLY SUMMARY -->
+  <div class="week-box" id="week-summary"></div>
+
+  <!-- FILTERS -->
+  <div class="filters" id="filter-bar">
+    <button class="filter-btn active" onclick="filterOutcomes('all',this)">All outcomes</button>
+    <button class="filter-btn" onclick="filterOutcomes('healthcare',this)">🏥 Healthcare</button>
+    <button class="filter-btn" onclick="filterOutcomes('engineering',this)">⚙️ Engineering</button>
+    <button class="filter-btn" onclick="filterOutcomes('ict',this)">💻 ICT</button>
+    <button class="filter-btn" onclick="filterOutcomes('accounting',this)">📊 Accounting</button>
+    <button class="filter-btn" onclick="filterOutcomes('education',this)">🎓 Education</button>
+    <button class="filter-btn" onclick="filterOutcomes('trades',this)">🔧 Trades</button>
+    <button class="filter-btn" onclick="filterOutcomes('granted',this)">✓ Granted only</button>
+  </div>
+
+  <!-- FEED -->
+  <div id="outcomes-feed"></div>
+  <button class="load-more" id="load-more-btn" onclick="loadMore()" style="display:none">Load more outcomes ↓</button>
+
+  <!-- SUBMIT CTA -->
+  <div style="margin-top:2rem;background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;text-align:center">
+    <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.4rem">Got your grant or invitation?</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.6;max-width:400px;margin-left:auto;margin-right:auto">Submit your outcome and help thousands of applicants who are exactly where you were. Takes 2 minutes.</p>
+    <a href="/submit" class="btn-teal">Submit your outcome →</a>
+    <div style="font-size:0.7rem;color:var(--muted);margin-top:0.6rem">Fully anonymised · No personal details stored</div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/rounds">Rounds</a><a href="/outcomes">Outcomes</a><a href="/submit">Submit</a></div>
+  <div>© 2026 VisaIQ · Not migration advice · <a href="/methodology">Methodology</a></div>
+</footer>
+
+<script>
+var ALL_OUTCOMES = [];
+var VISIBLE_COUNT = 10;
+var CURRENT_FILTER = 'all';
+
+var OCC_GROUP_MAP = {
+  healthcare:  ['registered_nurse','nurse_practitioner','enrolled_nurse','midwife','general_practitioner','medical_specialist','physiotherapist','occupational_therapist','pharmacist','optometrist','speech_pathologist','podiatrist','dentist','paramedic','medical_lab_scientist','audiologist','dietitian','aged_care_worker','veterinarian','radiographer','sonographer','chiropractor','osteopath'],
+  engineering: ['civil_engineer','structural_engineer','electrical_engineer','mechanical_engineer','chemical_engineer','mining_engineer','petroleum_engineer','construction_pm','quantity_surveyor','architect','urban_planner','geologist','environmental_engineer','transport_engineer','biomedical_engineer','aeronautical_engineer'],
+  ict:         ['software_engineer','software_developer','cybersecurity_analyst','network_engineer','database_admin','ict_manager','systems_analyst','data_scientist','ai_ml_engineer','devops_engineer','ict_project_manager'],
+  accounting:  ['accountant','management_accountant','taxation_accountant','external_auditor','internal_auditor','finance_manager','financial_analyst','actuary'],
+  education:   ['early_childhood_teacher','primary_teacher','secondary_teacher','secondary_teacher_maths','secondary_teacher_english','special_ed_teacher','psychologist','social_worker','counsellor','vet_trainer'],
+  trades:      ['electrician','plumber','carpenter','bricklayer','welder','boilermaker','refrigeration_mechanic','fitter_machinist','motor_mechanic','diesel_mechanic','plasterer','chef','pastrycook','cabinetmaker']
+};
+
+function getGroup(occId) {
+  for (var g in OCC_GROUP_MAP) {
+    if (OCC_GROUP_MAP[g].indexOf(occId) !== -1) return g;
+  }
+  return 'other';
+}
+
+function daysAgoLabel(n) {
+  if (n === 0) return 'today';
+  if (n === 1) return '1 day ago';
+  if (n < 7)  return n + ' days ago';
+  if (n < 14) return '1 week ago';
+  if (n < 30) return Math.floor(n/7) + ' weeks ago';
+  return Math.floor(n/30) + ' months ago';
+}
+
+function renderCard(o) {
+  var statusClass = o.status === 'granted' ? 'status-granted' : 'status-invited';
+  var statusLabel = o.status === 'granted' ? '✓ Granted' : '→ Invited';
+  var comment = o.comment ? '<div class="oc-comment">' + o.comment + '</div>' : '';
+  return '<div class="outcome-card" data-group="' + getGroup(o.occupation_id) + '" data-status="' + o.status + '">' +
+    '<div class="oc-flag">' + (o.flag || '🌍') + '</div>' +
+    '<div class="oc-body">' +
+      '<div class="oc-main"><strong>' + o.occupation_label + '</strong> · ' + o.state + ' ' + o.visa + ' · ' + o.points + ' pts · ' + (o.onshore ? 'Onshore' : 'Offshore') + '</div>' +
+      '<div class="oc-meta">Waited ' + o.wait_months + ' months · ' + o.nationality + '</div>' +
+      comment +
+    '</div>' +
+    '<div class="oc-right">' +
+      '<div class="oc-status ' + statusClass + '">' + statusLabel + '</div>' +
+      '<div class="oc-ago">' + daysAgoLabel(o.days_ago) + '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function getFiltered() {
+  return ALL_OUTCOMES.filter(function(o) {
+    if (CURRENT_FILTER === 'all') return true;
+    if (CURRENT_FILTER === 'granted') return o.status === 'granted';
+    return getGroup(o.occupation_id) === CURRENT_FILTER;
+  });
+}
+
+function renderFeed() {
+  var filtered = getFiltered();
+  var feed = document.getElementById('outcomes-feed');
+  if (filtered.length === 0) {
+    feed.innerHTML = '<div class="empty-state">No outcomes match this filter yet.<br><a href="/submit" style="color:var(--teal)">Be the first to submit →</a></div>';
+    document.getElementById('load-more-btn').style.display = 'none';
+    return;
+  }
+  var toShow = filtered.slice(0, VISIBLE_COUNT);
+  feed.innerHTML = toShow.map(renderCard).join('');
+  var btn = document.getElementById('load-more-btn');
+  btn.style.display = filtered.length > VISIBLE_COUNT ? 'block' : 'none';
+  btn.textContent = 'Load more (' + (filtered.length - VISIBLE_COUNT) + ' remaining) ↓';
+}
+
+function filterOutcomes(filter, btn) {
+  CURRENT_FILTER = filter;
+  VISIBLE_COUNT = 10;
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  renderFeed();
+}
+
+function loadMore() {
+  VISIBLE_COUNT += 10;
+  renderFeed();
+}
+
+function renderWeeklySummary(data) {
+  var s = data.weekly_summary;
+  var shareMsg = encodeURIComponent(s.most_active_state + ' is moving fast for ' + s.fastest_outcome.split('·')[0].trim().toLowerCase() + 's right now — check your Australian PR chances at visaiq.com.au/outcomes');
+  document.getElementById('week-summary').innerHTML =
+    '<div class="week-title">This week — ' + s.week + '</div>' +
+    '<div class="week-stats">' +
+      '<div class="ws"><strong>' + s.total_submitted + '</strong>outcomes submitted</div>' +
+      '<div class="ws"><strong>' + s.most_active_state + '</strong>most active state</div>' +
+      '<div class="ws"><strong>' + s.occupations_represented + '</strong>occupations</div>' +
+      '<div class="ws"><strong>' + s.fastest_outcome.split('·').pop().trim() + '</strong>fastest outcome</div>' +
+    '</div>' +
+    '<div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.85rem">Fastest: <strong style="color:var(--text)">' + s.fastest_outcome + '</strong></div>' +
+    '<div class="week-actions">' +
+      '<a href="/submit" class="btn-teal">Submit your outcome →</a>' +
+      '<button class="btn-ghost" onclick="shareWeekly(\'' + shareMsg + '\')">Share on WhatsApp 📲</button>' +
+    '</div>';
+}
+
+function shareWeekly(msg) {
+  window.open('https://wa.me/?text=' + msg, '_blank');
+}
+
+// Load data
+fetch('/outcomes-data.json?v=' + Date.now())
+  .then(function(r){ return r.json(); })
+  .then(function(data) {
+    ALL_OUTCOMES = data.outcomes || [];
+    renderWeeklySummary(data);
+    renderFeed();
+  })
+  .catch(function() {
+    document.getElementById('outcomes-feed').innerHTML = '<div class="empty-state">Feed loading… check back shortly.</div>';
+  });
+</script>
+</body>
+</html>
