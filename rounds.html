@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitation Round Tracker — VisaIQ Australia</title>
-<meta name="description" content="Every 189 SkillSelect and state nomination round — plain English analysis within 48 hours. Real cutoffs, what changed and what it means for your occupation.">
+<title>Invitation Round Tracker — Live Confidence Meters | VisaIQ</title>
+<meta name="description" content="Track Australian skilled migration invitation rounds. Live confidence meters for all 8 states and federal 189. Days since last round, next expected window, offshore eligibility.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,213 +12,364 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
 .nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
 .nls{display:flex;align-items:center;gap:1.5rem}
 .nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
-.nls a:hover{color:var(--teal)}
-.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.nls a:hover,.nls a.active{color:var(--teal)}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
 .hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem}
 .hero h1 em{font-style:italic;color:var(--teal)}
-.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto 1.5rem;line-height:1.7}
-/* ALERT BANNER */
-.alert-banner{max-width:720px;margin:0 auto 2rem;background:linear-gradient(135deg,var(--td),var(--bg2));border:1px solid var(--tb);border-radius:16px;padding:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.ab-icon{font-size:1.5rem;flex-shrink:0}
-.ab-text{flex:1;min-width:200px}
-.ab-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.2rem}
-.ab-sub{font-size:0.78rem;color:var(--muted)}
-.ab-form{display:flex;gap:0.5rem;flex-wrap:wrap;flex-shrink:0}
-.ab-input{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.82rem;outline:none;min-width:160px}
-.ab-input:focus{border-color:var(--tb)}
-.ab-btn{padding:0.55rem 1rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
-.wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem}
-/* ROUND CARDS */
-.rc{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1rem;position:relative}
-.rc-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1rem}
-.rc-meta{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
-.rc-type{font-size:0.65rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:6px;text-transform:uppercase;letter-spacing:0.06em}
-.rt-189{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
-.rt-nsw{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
-.rt-state{background:rgba(155,127,255,0.1);color:#9B7FFF;border:1px solid rgba(155,127,255,0.2)}
-.rc-date{font-size:0.72rem;color:var(--muted)}
-.rc-invites{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text)}
-.rc-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
-.rc-summary{font-size:0.83rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
-.rc-cutoffs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.4rem;margin-bottom:1rem}
-.rc-co{background:var(--bg3);border-radius:8px;padding:0.55rem 0.75rem;font-size:0.75rem}
-.co-label{color:var(--muted);margin-bottom:0.1rem}
-.co-val{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;color:var(--teal)}
-.rc-source{font-size:0.72rem;color:var(--blue);text-decoration:none;font-weight:600}
-.rc-source:hover{text-decoration:underline}
-/* UPCOMING */
-.upcoming{background:rgba(245,158,11,0.05);border:1px solid rgba(245,158,11,0.2);border-radius:14px;padding:1.25rem;margin-bottom:1rem}
-.up-title{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--amber);margin-bottom:0.4rem}
-.up-body{font-size:0.8rem;color:var(--muted);line-height:1.6}
-/* FILTER */
-.filter-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
-.ftag{padding:0.4rem 0.85rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.78rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s}
-.ftag.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
-footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+.hero p{color:var(--muted);font-size:0.9rem;max-width:520px;margin:0 auto}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem 6rem}
+.federal-card{background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(13,27,46,0.9));border:1px solid rgba(0,200,150,0.25);border-radius:18px;padding:1.75rem;margin-bottom:2rem;position:relative;overflow:hidden}
+.federal-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,200,150,0.08),transparent 70%);pointer-events:none}
+.fc-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem}
+.fc-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.3rem}
+.fc-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+.counter-block{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem 1.25rem;text-align:center;min-width:150px}
+.counter-label{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.5rem}
+.counter-digits{display:flex;gap:0.3rem;justify-content:center}
+.digit-block{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.65rem;min-width:46px;text-align:center}
+.digit-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;line-height:1}
+.digit-num.green{color:#10B981}
+.digit-num.amber{color:var(--amber)}
+.digit-num.red{color:#f87171}
+.conf-section{margin-bottom:0.75rem}
+.conf-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem}
+.conf-lbl{font-size:0.72rem;color:var(--muted)}
+.conf-badge{font-size:0.65rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:5px;text-transform:uppercase;letter-spacing:0.06em}
+.conf-low{background:rgba(16,185,129,0.1);color:#10B981;border:1px solid rgba(16,185,129,0.25)}
+.conf-medium{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.25)}
+.conf-high{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.25)}
+.conf-bar-track{background:rgba(255,255,255,0.06);border-radius:20px;height:8px;overflow:hidden}
+.conf-bar-fill{height:100%;border-radius:20px;transition:width 1.2s ease}
+.section-title{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:1rem}
+.state-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:2rem}
+.state-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;transition:border-color 0.2s}
+.state-card.overdue{border-color:rgba(239,68,68,0.2)}
+.state-card.approaching{border-color:rgba(245,158,11,0.2)}
+.state-card.recent{border-color:rgba(16,185,129,0.12)}
+.sc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem}
+.sc-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800}
+.sc-visa{font-size:0.68rem;color:var(--muted);margin-top:0.1rem}
+.sc-days-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;line-height:1;text-align:right}
+.sc-days-lbl{font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;text-align:right}
+.sc-last{font-size:0.72rem;color:var(--muted);margin-bottom:0.7rem;line-height:1.5}
+
+/* LIVE COUNTDOWN for announced dates */
+.countdown-block{background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(0,0,0,0.2));border:1px solid var(--tb);border-radius:10px;padding:0.75rem;margin-bottom:0.7rem;display:none}
+.cd-label{font-size:0.58rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.4rem}
+.cd-digits{display:flex;gap:0.25rem;align-items:flex-end;flex-wrap:wrap}
+.cd-unit{text-align:center}
+.cd-num{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--teal);display:block;line-height:1;background:rgba(0,0,0,0.25);border-radius:5px;padding:0.2rem 0.4rem;min-width:30px}
+.cd-lbl{font-size:0.5rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;display:block;margin-top:0.15rem;text-align:center}
+.cd-sep{color:rgba(0,200,150,0.3);font-size:0.9rem;padding-bottom:0.2rem}
+
+.sc-window{font-size:0.7rem;color:var(--muted);margin-top:0.5rem;line-height:1.5}
+.sc-offshore{display:flex;align-items:center;gap:0.35rem;margin-top:0.6rem;font-size:0.68rem;color:var(--muted);padding:0.3rem 0.55rem;background:rgba(255,255,255,0.03);border-radius:6px;border:1px solid var(--border)}
+.sc-offshore-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.apply-btn{display:block;margin-top:0.75rem;padding:0.5rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;text-decoration:none;text-align:center;transition:background 0.2s}
+.apply-btn:hover{background:#00e0aa}
+.apply-btn.ghost{background:transparent;color:var(--teal);border:1px solid var(--tb)}
+.apply-btn.ghost:hover{background:var(--td)}
+.disclaimer{background:rgba(245,158,11,0.05);border:1px solid rgba(245,158,11,0.18);border-radius:12px;padding:1rem 1.25rem;font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.method-note{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
-@media(max-width:600px){.nls{display:none}}
+@media(max-width:640px){.state-grid{grid-template-columns:1fr}.fc-top{flex-direction:column}.nls{display:none}}
 </style>
 </head>
 <body>
-<div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;"><div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;white-space:nowrap;z-index:3;">Live</div><style>#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent);}#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent);}#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0;}#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite;}#viq-ticker-mask:hover #viq-ticker-track{animation-play-state:paused;}@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:"DM Sans",sans-serif;white-space:nowrap;line-height:1;}.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px;}@media(max-width:600px){.viq-item{font-size:0.7rem;padding:0 16px;}}</style><div id="viq-ticker-mask"><div id="viq-ticker-track"><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span></div></div></div>
+
 <nav>
   <a href="/" class="nl">VisaIQ</a>
   <div class="nls">
-    <a href="/189-visa">189 Visa</a>
-    <a href="/190-visa">190 Visa</a>
-    <a href="/points-calculator">Points Calc</a>
+    <a href="/tool">PR Tool</a>
+    <a href="/rounds" class="active">Rounds</a>
+    <a href="/outcomes">Outcomes</a>
     <a href="/tool" class="ncta">Get My Score →</a>
   </div>
 </nav>
 
 <div class="hero">
-  <h1>Invitation Round<br><em>Tracker</em></h1>
-  <p>Every federal and state nomination round in plain English — within 48 hours of announcement. Filter by visa type or state. Get alerted when your occupation is affected.</p>
-</div>
-
-<!-- ALERT SIGNUP -->
-<div style="max-width:860px;margin:0 auto;padding:0 1.5rem">
-  <div class="alert-banner">
-    <div class="ab-icon">📡</div>
-    <div class="ab-text">
-      <div class="ab-title">Get round alerts before everyone else</div>
-      <div class="ab-sub">Enter your email. Every round posted within 48 hours — filtered to what matters for your occupation.</div>
-    </div>
-    <div class="ab-form">
-      <input type="email" class="ab-input" id="alert-email" placeholder="your@email.com">
-      <select class="ab-input" id="alert-occ" style="-webkit-appearance:none;min-width:130px">
-        <option>My occupation</option>
-        <option>Accountant</option><option>Software Engineer</option><option>Civil Engineer</option>
-        <option>Registered Nurse</option><option>Teacher</option><option>Electrician</option>
-        <option>Social Worker</option><option>Chef</option><option>Other</option>
-      </select>
-      <button class="ab-btn" onclick="signupAlert()">Activate Alerts →</button>
-    </div>
-  </div>
+  <h1>Round <em>Tracker</em></h1>
+  <p>Days since every state ran a round. Confidence it's due soon. Live countdown when a date is confirmed. Updated within 48 hours of every announcement.</p>
 </div>
 
 <div class="wrap">
-  <!-- UPCOMING -->
-  <div class="upcoming">
-    <div class="up-title">⏳ Next round expected — Q1 2026 (January–March)</div>
-    <div class="up-body">Based on the quarterly round schedule introduced for 2025–26, the next 189 federal round is expected in the January–March 2026 window. Two rounds have already been held in 2025–26 (August and November 2025), issuing a combined 16,887 invitations — close to the full program year planning level. It is possible no further 189 rounds are held in 2025–26. Multiple state 190/491 rounds are ongoing — check your state's migration page for current round status.<br><br>
-    Source: <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" style="color:var(--teal)">DHA SkillSelect Invitation Rounds →</a></div>
+
+  <div class="disclaimer">
+    <strong style="color:var(--amber)">Authentic data only.</strong> DHA does not announce exact 189 federal round dates in advance. States occasionally announce dates — when they do, a live countdown appears automatically. When no date is announced we show elapsed days and a confidence estimate from historical patterns. We never fabricate a deadline.
   </div>
 
-  <!-- FILTERS -->
-  <div class="filter-row">
-    <button class="ftag active" onclick="filter('all',this)">All Rounds</button>
-    <button class="ftag" onclick="filter('189',this)">189 Federal</button>
-    <button class="ftag" onclick="filter('nsw',this)">NSW</button>
-    <button class="ftag" onclick="filter('vic',this)">VIC</button>
-    <button class="ftag" onclick="filter('qld',this)">QLD</button>
-    <button class="ftag" onclick="filter('sa',this)">SA</button>
-    <button class="ftag" onclick="filter('wa',this)">WA</button>
-    <button class="ftag" onclick="filter('tas',this)">TAS</button>
-  </div>
+  <div id="last-updated-row" style="text-align:center;font-size:0.68rem;color:var(--muted);margin-bottom:1.5rem"></div>
 
-  <!-- ROUND CARDS -->
-  <div data-type="189">
-    <div class="rc">
-      <div class="rc-header">
-        <div class="rc-meta">
-          <span class="rc-type rt-189">189 Federal</span>
-          <span class="rc-date">13 November 2025</span>
-        </div>
-        <span class="rc-invites">10,000 invitations issued</span>
+  <!-- FEDERAL 189 HERO CARD -->
+  <div class="federal-card">
+    <div class="fc-top">
+      <div>
+        <div class="fc-label">Federal Round — DHA SkillSelect</div>
+        <div class="fc-title">189 Skilled Independent Visa</div>
+        <div id="fed-last-note" style="font-size:0.78rem;color:var(--muted);margin-top:0.35rem"></div>
       </div>
-      <div class="rc-title">189 Round 2 — 2025–26 · 10,000 Invitations · New Tier System Results</div>
-      <div class="rc-summary">The second 189 SkillSelect invitation round for the 2025–26 program year issued 10,000 invitations across priority occupations. Combined with the August 2025 round (6,887 invitations), total 2025–26 invitations reached 16,887 — approaching the annual planning level. Trades and healthcare received the most invitations at the lowest cutoffs. ICT and accounting remained highly competitive with cutoffs at 90–95 points.</div>
-      <div class="rc-cutoffs">
-        <div class="rc-co"><div class="co-label">Electrician / Plumber / Trades</div><div class="co-val">65 pts (Tier 3)</div></div>
-        <div class="rc-co"><div class="co-label">Registered Nurse / GP</div><div class="co-val">75 pts (Tier 1)</div></div>
-        <div class="rc-co"><div class="co-label">Physiotherapist / Allied Health</div><div class="co-val">75 pts (Tier 1)</div></div>
-        <div class="rc-co"><div class="co-label">Civil / Structural Engineer</div><div class="co-val">85 pts (Tier 3)</div></div>
-        <div class="rc-co"><div class="co-label">Secondary School Teacher</div><div class="co-val">85 pts (Tier 2)</div></div>
-        <div class="rc-co"><div class="co-label">Software Engineer</div><div class="co-val">90 pts (Tier 4)</div></div>
-        <div class="rc-co"><div class="co-label">ICT Manager / Systems Analyst</div><div class="co-val">95 pts — pro-rata</div></div>
-        <div class="rc-co"><div class="co-label">Accountant (General)</div><div class="co-val" style="color:var(--red)">Not invited</div></div>
+      <div class="counter-block">
+        <div class="counter-label" id="fed-counter-label">Days since last round</div>
+        <div class="counter-digits" id="fed-digits"></div>
       </div>
-      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="rc-source">Source: DHA SkillSelect Invitation Rounds →</a>
+    </div>
+
+    <!-- Announced countdown — hidden until announced_date is set -->
+    <div class="countdown-block" id="fed-countdown-block">
+      <div class="cd-label">🗓 DHA confirmed round date — live countdown</div>
+      <div class="cd-digits" id="fed-countdown"></div>
+    </div>
+
+    <div class="conf-section">
+      <div class="conf-label-row">
+        <div class="conf-lbl">Round likelihood — next 2 weeks</div>
+        <div class="conf-badge" id="fed-conf-badge">—</div>
+      </div>
+      <div class="conf-bar-track">
+        <div class="conf-bar-fill" id="fed-conf-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.85rem;margin-bottom:1rem">
+      <div style="background:rgba(0,0,0,0.2);border-radius:8px;padding:0.7rem;font-size:0.78rem">
+        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:0.2rem">Expected window</div>
+        <div id="fed-window" style="font-weight:600;color:var(--text);font-size:0.8rem">—</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.2);border-radius:8px;padding:0.7rem;font-size:0.78rem">
+        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:0.2rem">Offshore applicants</div>
+        <div style="font-weight:600;color:#10B981;font-size:0.8rem">✓ Open to all locations</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" style="display:inline-block;padding:0.55rem 1.1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Check DHA SkillSelect →</a>
+      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/previous-rounds" target="_blank" style="display:inline-block;padding:0.55rem 1.1rem;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Previous rounds data →</a>
     </div>
   </div>
 
-  <div data-type="189">
-    <div class="rc">
-      <div class="rc-header">
-        <div class="rc-meta">
-          <span class="rc-type rt-189">189 Federal</span>
-          <span class="rc-date">August 2025</span>
-        </div>
-        <span class="rc-invites">6,887 invitations issued</span>
-      </div>
-      <div class="rc-title">189 Round 1 — 2025–26 · First Round Under New Quarterly System</div>
-      <div class="rc-summary">The first 189 SkillSelect invitation round under the new quarterly schedule for 2025–26. The round introduced the four-tier occupation prioritisation system for the first time — healthcare (Tier 1) and education (Tier 2) received the most invitations relative to their EOI pool size. Smaller than the November round at 6,887 invitations total.</div>
-      <div class="rc-cutoffs">
-        <div class="rc-co"><div class="co-label">Healthcare (Tier 1)</div><div class="co-val">65–75 pts</div></div>
-        <div class="rc-co"><div class="co-label">Education (Tier 2)</div><div class="co-val">75–85 pts</div></div>
-        <div class="rc-co"><div class="co-label">Engineering / Trades (Tier 3)</div><div class="co-val">65–85 pts</div></div>
-        <div class="rc-co"><div class="co-label">ICT / Accounting (Tier 4)</div><div class="co-val">90–95 pts</div></div>
-      </div>
-      <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" class="rc-source">Source: DHA SkillSelect Invitation Rounds →</a>
-    </div>
+  <!-- STATE ROUNDS -->
+  <div class="section-title">State & Territory Rounds — 2025–26 Program Year</div>
+
+  <div class="method-note">
+    <strong style="color:var(--text)">How to read this:</strong> Each card shows days since that state's last round and a confidence meter. <strong style="color:#10B981">Low</strong> = round just happened, unlikely soon. <strong style="color:var(--amber)">Medium</strong> = approaching typical window. <strong style="color:#f87171">High</strong> = overdue, apply your interest now. When a state officially announces a date, a live second-by-second countdown replaces the confidence meter automatically.
   </div>
 
-  <div data-type="nsw">
-    <div class="rc">
-      <div class="rc-header">
-        <div class="rc-meta">
-          <span class="rc-type rt-nsw">NSW 190</span>
-          <span class="rc-date">March 2026</span>
-        </div>
-        <span class="rc-invites">EOI deadline: 1 March 2026</span>
-      </div>
-      <div class="rc-title">NSW 190 Invitation Round — March 2026</div>
-      <div class="rc-summary">NSW announced a Subclass 190 invitation round for the first week of March 2026. Applicants were required to have their SkillSelect EOI updated and lodged by COB Sunday 1 March 2026. NSW uses merit and sector-based selection — no published points cutoff. Priority sectors: Construction, Renewable Energy, Digital and Cyber, Care Economy.</div>
-      <div class="rc-cutoffs">
-        <div class="rc-co"><div class="co-label">Construction / Engineering</div><div class="co-val">✓ Priority</div></div>
-        <div class="rc-co"><div class="co-label">Digital / Cybersecurity</div><div class="co-val">✓ Priority</div></div>
-        <div class="rc-co"><div class="co-label">Healthcare / Aged Care</div><div class="co-val">✓ Priority</div></div>
-        <div class="rc-co"><div class="co-label">Accountants</div><div class="co-val" style="color:var(--red)">Limited — not priority</div></div>
-      </div>
-      <a href="https://www.nsw.gov.au/visas-and-migration/skilled-visas/skilled-nominated-visa-subclass-190" target="_blank" class="rc-source">Source: NSW Government Skilled Visas →</a>
-    </div>
-  </div>
+  <div class="state-grid" id="state-grid"></div>
 
-  <!-- MORE ROUNDS COMING NOTE -->
-  <div style="text-align:center;padding:2rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;margin-top:0.5rem">
-    <div style="font-size:1.2rem;margin-bottom:0.5rem">📡</div>
-    <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.4rem">New rounds added within 48 hours</div>
-    <div style="font-size:0.8rem;color:var(--muted);max-width:400px;margin:0 auto 1rem;line-height:1.6">Every federal and state round will be published here as soon as it is announced. Set up your email alert above to get notified the moment a round affects your occupation.</div>
-    <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" style="display:inline-block;padding:0.6rem 1.2rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none">Check DHA directly →</a>
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center">
+    <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;margin-bottom:0.4rem">Get alerted the moment a round is announced</div>
+    <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;max-width:420px;margin:0 auto 1rem">We publish round analysis within 48 hours. Save your profile to get a personalised alert for your occupation and state.</p>
+    <a href="/tool" style="display:inline-block;padding:0.7rem 1.4rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">Check my chances + activate alerts →</a>
   </div>
 
 </div>
 
 <footer>
-  <a href="/">Home</a><a href="/189-visa">189 Visa</a><a href="/190-visa">190 Visa</a>
-  <a href="/491-visa">491 Visa</a><a href="/policy-updates">Policy Updates</a><a href="/tool">PR Tool</a>
-  <div style="margin-top:0.75rem">© 2026 VisaIQ · All round data sourced from DHA</div>
+  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/outcomes">Outcomes</a><a href="/methodology">Methodology</a></div>
+  <div>© 2026 VisaIQ · Updated within 48hrs of each round · Not migration advice</div>
 </footer>
 
 <script>
-function filter(type, btn) {
-  document.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('[data-type]').forEach(el => {
-    el.style.display = (type === 'all' || el.dataset.type === type) ? 'block' : 'none';
+// ── HELPERS ─────────────────────────────────────────────────────
+var TODAY = new Date(new Date().toDateString()); // midnight local
+
+function daysSince(ds) {
+  return Math.max(0, Math.floor((TODAY - new Date(ds)) / 86400000));
+}
+
+function daysUntil(ds) {
+  return Math.floor((new Date(ds) - TODAY) / 86400000);
+}
+
+function fmtDate(ds) {
+  return new Date(ds).toLocaleDateString('en-AU', {day:'numeric',month:'short',year:'numeric'});
+}
+
+function getConf(days, low, med) {
+  if (days < low) {
+    return {level:'low', label:'Low', pct: Math.round((days/low)*33), col:'#10B981'};
+  }
+  if (days < med) {
+    return {level:'medium', label:'Medium', pct: Math.round(33+((days-low)/(med-low))*33), col:'#F59E0B'};
+  }
+  var over = Math.min(100, Math.round(66+((days-med)/med)*34));
+  return {level:'high', label:'High', pct:over, col:'#EF4444'};
+}
+
+function digitsHTML(num, colClass) {
+  return String(num).split('').map(function(d){
+    return '<div class="digit-block"><div class="digit-num '+colClass+'">'+d+'</div></div>';
+  }).join('');
+}
+
+// Live countdown — ticks every second
+function startCountdown(targetDateStr, containerEl, blockEl) {
+  blockEl.style.display = 'block';
+  function tick() {
+    var rem = new Date(targetDateStr) - new Date();
+    if (rem <= 0) { blockEl.style.display='none'; return; }
+    var d = Math.floor(rem/86400000);
+    var h = Math.floor((rem%86400000)/3600000);
+    var m = Math.floor((rem%3600000)/60000);
+    var s = Math.floor((rem%60000)/1000);
+    containerEl.innerHTML =
+      cdUnit(d,'days') + '<span class="cd-sep">:</span>' +
+      cdUnit(h,'hrs')  + '<span class="cd-sep">:</span>' +
+      cdUnit(m,'min')  + '<span class="cd-sep">:</span>' +
+      cdUnit(s,'sec');
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+function cdUnit(n, l) {
+  return '<div class="cd-unit"><span class="cd-num">'+String(n).padStart(2,'0')+'</span><span class="cd-lbl">'+l+'</span></div>';
+}
+
+// ── FEDERAL CARD ─────────────────────────────────────────────────
+function renderFederal(f) {
+  var days = daysSince(f.last_round_date);
+  var conf = getConf(days, f.low_threshold_days, f.medium_threshold_days);
+  var colClass = conf.level==='low'?'green':conf.level==='medium'?'amber':'red';
+
+  // Last round note
+  document.getElementById('fed-last-note').innerHTML =
+    'Last round: <strong>' + fmtDate(f.last_round_date) + '</strong> &nbsp;·&nbsp; ' +
+    f.last_round_invitations.toLocaleString() + ' invitations &nbsp;·&nbsp; ' +
+    '<a href="'+f.dha_url+'" target="_blank" style="color:var(--teal);font-size:0.72rem">Verify on DHA →</a>';
+
+  // Days digits
+  document.getElementById('fed-digits').innerHTML = digitsHTML(days, colClass);
+  document.getElementById('fed-counter-label').textContent =
+    f.announced_date ? 'Confirmed date countdown' : 'Days since last round';
+
+  // Announced countdown
+  if (f.announced_date && daysUntil(f.announced_date) >= 0) {
+    startCountdown(f.announced_date,
+      document.getElementById('fed-countdown'),
+      document.getElementById('fed-countdown-block'));
+  }
+
+  // Confidence
+  var badge = document.getElementById('fed-conf-badge');
+  badge.textContent = conf.label;
+  badge.className = 'conf-badge conf-'+conf.level;
+  document.getElementById('fed-conf-bar').style.width = conf.pct+'%';
+  document.getElementById('fed-conf-bar').style.background = conf.col;
+
+  // Window text
+  var win = f.announced_date
+    ? '🗓 Confirmed: ' + fmtDate(f.announced_date)
+    : conf.level==='high'
+      ? '⚠️ Overdue — Round 3 could be announced any day'
+      : 'Expected in ~' + (f.medium_threshold_days-days) + ' days · ' + f.frequency_note;
+  document.getElementById('fed-window').textContent = win;
+}
+
+// ── STATE CARDS ──────────────────────────────────────────────────
+function renderStates(states) {
+  var grid = document.getElementById('state-grid');
+  grid.innerHTML = '';
+
+  states.forEach(function(s) {
+    var days = daysSince(s.last_round_date);
+    var conf = getConf(days, s.low_threshold_days, s.medium_threshold_days);
+    var daysCol = conf.level==='low'?'#10B981':conf.level==='medium'?'#F59E0B':'#f87171';
+    var cardClass = conf.level==='high'?'overdue':conf.level==='medium'?'approaching':'recent';
+
+    // Window text
+    var win = '';
+    if (s.announced_date && daysUntil(s.announced_date) >= 0) {
+      win = '🗓 Confirmed date: ' + fmtDate(s.announced_date);
+    } else if (conf.level === 'high') {
+      win = '⚠️ Overdue — submit your ROI/expression of interest now';
+    } else if (conf.level === 'medium') {
+      win = 'Approaching window — est. ~' + (s.medium_threshold_days-days) + ' days';
+    } else {
+      win = s.frequency_note;
+    }
+
+    var countdownId = 'cd-' + s.code;
+    var cdBlockId   = 'cdb-' + s.code;
+
+    var card = document.createElement('div');
+    card.className = 'state-card ' + cardClass;
+    card.innerHTML =
+      '<div class="sc-top">' +
+        '<div>' +
+          '<div class="sc-name">' + s.code + '</div>' +
+          '<div class="sc-visa">' + s.visa + '</div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="sc-days-num" style="color:'+daysCol+'">'+days+'</div>' +
+          '<div class="sc-days-lbl">days ago</div>' +
+        '</div>' +
+      '</div>' +
+
+      // Announced countdown block (hidden by default, shown by JS if date set)
+      '<div class="countdown-block" id="'+cdBlockId+'">' +
+        '<div class="cd-label">🗓 Official date confirmed — live countdown</div>' +
+        '<div class="cd-digits" id="'+countdownId+'"></div>' +
+      '</div>' +
+
+      '<div class="sc-last">Last: <strong>' + fmtDate(s.last_round_date) + '</strong> · ' + s.last_round_note + '</div>' +
+
+      '<div class="conf-section">' +
+        '<div class="conf-label-row">' +
+          '<div class="conf-lbl">Next round likelihood</div>' +
+          '<div class="conf-badge conf-'+conf.level+'">'+conf.label+'</div>' +
+        '</div>' +
+        '<div class="conf-bar-track">' +
+          '<div class="conf-bar-fill" style="width:'+conf.pct+'%;background:'+conf.col+'"></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="sc-window">' + win + '</div>' +
+
+      '<div class="sc-offshore">' +
+        '<span class="sc-offshore-dot" style="background:'+(s.offshore_included?'#10B981':'#EF4444')+'"></span>' +
+        '<span style="color:'+(s.offshore_included?'#10B981':'#7A8FA8')+';font-weight:600">' +
+          (s.offshore_included ? '✓ Offshore applicants: Yes' : '✗ Offshore applicants: No') +
+        '</span>' +
+      '</div>' +
+      '<div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;line-height:1.4">' + s.offshore_note + '</div>' +
+
+      '<a href="'+s.apply_url+'" target="_blank" class="apply-btn '+(conf.level==='high'?'':'ghost')+'">' +
+        (conf.level==='high' ? 'Apply now — round overdue →' : 'State portal →') +
+      '</a>';
+
+    grid.appendChild(card);
+
+    // Start countdown if announced
+    if (s.announced_date && daysUntil(s.announced_date) >= 0) {
+      startCountdown(s.announced_date,
+        document.getElementById(countdownId),
+        document.getElementById(cdBlockId));
+    }
   });
 }
-function signupAlert() {
-  const email = document.getElementById('alert-email').value;
-  if (!email || !email.includes('@')) { document.getElementById('alert-email').style.borderColor = 'rgba(239,68,68,0.5)'; return; }
-  document.querySelector('.alert-banner').innerHTML = `<div style="font-size:1.5rem">✅</div><div><div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.2rem">Alerts activated for ${email}</div><div style="font-size:0.78rem;color:var(--muted)">You'll receive round notifications within 48 hours of each DHA announcement.</div></div>`;
-}
+
+// ── LOAD DATA ────────────────────────────────────────────────────
+fetch('/rounds-data.json?v=' + Date.now())
+  .then(function(r){ return r.json(); })
+  .then(function(data) {
+    if (data.last_updated) {
+      document.getElementById('last-updated-row').textContent =
+        'Data last updated: ' + data.last_updated + ' · Updated within 48hrs of each round';
+    }
+    renderFederal(data.federal_189);
+    renderStates(data.states);
+  })
+  .catch(function() {
+    document.querySelector('.wrap').innerHTML +=
+      '<div style="text-align:center;padding:2rem;color:var(--muted)">Unable to load round data. Please refresh.</div>';
+  });
 </script>
 <script src="/ticker.js"></script>
 </body>
