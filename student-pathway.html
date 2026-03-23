@@ -3,618 +3,1062 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student PR Pathway Tool — VisaIQ Australia</title>
-<meta name="description" content="Plan your PR pathway as an international student in Australia. 500 student visa to permanent residency — personalised based on your degree, occupation and graduation date.">
+<title>Student to PR — Australian Pathway Intelligence | VisaIQ</title>
+<meta name="description" content="Complete Australian PR pathway for international students. Degree to PR checker, NAATI CCL calculator, state comparison, work rights tracker, live outcomes. Free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--bd:rgba(78,142,255,0.15);--amber:#F59E0B;--red:#EF4444;--green:#10B981;--purple:#9B7FFF;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
 .nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
 .nls{display:flex;align-items:center;gap:1.5rem}
 .nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
 .nls a:hover{color:var(--teal)}
-.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
-.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
-.hero h1 em{font-style:italic;color:var(--teal)}
-.hero p{color:var(--muted);font-size:0.9rem;max-width:540px;margin:0 auto;line-height:1.7}
-.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem 5rem}
-/* STEPS */
-.step-wrap{display:flex;align-items:center;gap:0.4rem;margin-bottom:2rem;overflow-x:auto;padding-bottom:0.25rem}
-.step-item{display:flex;align-items:center;gap:0.4rem;flex-shrink:0}
-.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;border:2px solid var(--border);color:var(--muted);flex-shrink:0;transition:all 0.3s}
-.step-num.done{background:var(--teal);color:#000;border-color:var(--teal)}
-.step-num.active{border-color:var(--teal);color:var(--teal)}
-.step-label{font-size:0.72rem;color:var(--muted);white-space:nowrap}
-.step-arrow{color:var(--border);font-size:0.7rem}
-/* SCREEN */
-.screen{display:none}
-.screen.active{display:block;animation:fu 0.3s ease}
-@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
-.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
-.q-label{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;margin-bottom:0.6rem;color:var(--text)}
-.q-sub{font-size:0.78rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.5}
-.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
-.pill{padding:0.5rem 0.9rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
-.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
-select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;margin-bottom:0.75rem}
-.next-btn{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
-.next-btn:hover{background:#00e0aa}
-.back-btn{display:block;text-align:center;margin-top:0.75rem;font-size:0.8rem;color:var(--muted);cursor:pointer;font-weight:500}
-.back-btn:hover{color:var(--text)}
-.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
-.ib-teal{background:var(--td);border:1px solid var(--tb)}
-.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
-.ib-green{background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);color:#6ee7b7}
-.ib-red{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);color:#fca5a5}
-/* PATHWAY VISUAL */
-.pathway-strip{display:flex;overflow-x:auto;padding:1rem 0;gap:0;align-items:stretch}
-.pn{text-align:center;padding:0.6rem 0.7rem;min-width:80px;flex-shrink:0;border-radius:8px;margin:0 2px}
-.pn.dim{background:var(--bg3);border:1px solid var(--border);opacity:0.5}
-.pn.active-node{background:var(--td);border:1px solid var(--tb)}
-.pn.future{background:rgba(78,142,255,0.08);border:1px solid rgba(78,142,255,0.2)}
-.pn.pr{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25)}
-.pn-visa{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:800}
-.pn.active-node .pn-visa{color:var(--teal)}
-.pn.future .pn-visa{color:var(--blue)}
-.pn.pr .pn-visa{color:var(--green)}
-.pn.dim .pn-visa{color:var(--muted)}
-.pn-label{font-size:0.6rem;color:var(--muted);margin-top:0.1rem;line-height:1.3}
-.pn-time{font-size:0.6rem;color:var(--blue);margin-top:0.1rem}
-.pn-arrow{display:flex;align-items:center;color:var(--muted);font-size:0.75rem;padding:0 2px;flex-shrink:0}
-/* RESULT BLOCKS */
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem}
-.rg-item{background:var(--bg3);border-radius:10px;padding:0.9rem}
-.rg-label{font-size:0.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
-.rg-val{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800}
-.rg-sub{font-size:0.72rem;color:var(--muted);margin-top:0.15rem;line-height:1.4}
-/* NAATI ALERT */
-.naati-alert{background:linear-gradient(135deg,var(--td),var(--bg2));border:2px solid var(--tb);border-radius:12px;padding:1.1rem;margin:0.75rem 0}
-.na-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:var(--teal);margin-bottom:0.3rem}
-/* TIMELINE BAR */
-.tl-bar{display:flex;flex-direction:column;gap:0.5rem;margin:0.75rem 0}
-.tl-row{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem}
-.tl-phase{width:120px;color:var(--muted);font-size:0.72rem;flex-shrink:0}
-.tl-track{flex:1;height:8px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden}
-.tl-fill{height:100%;border-radius:4px}
-.tl-dur{width:50px;text-align:right;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--text)}
-footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+/* FORM */
+.entry-wrap{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem}
+.entry-inner{max-width:760px;margin:0 auto}
+.entry-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.5rem}
+.entry-title{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.4rem}
+.entry-title em{font-style:italic;color:var(--teal)}
+.entry-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.75rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem}
+.field label{display:block;font-size:0.75rem;font-weight:600;color:var(--muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.06em}
+.field select,.field input{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;transition:border-color 0.2s}
+.field select:focus{border-color:var(--tb)}
+.btn-generate{width:100%;padding:1rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background 0.2s;letter-spacing:0.01em}
+.btn-generate:hover{background:#00e0aa}
+/* RESULTS */
+.results{display:none}
+.wrap{max-width:880px;margin:0 auto;padding:2rem 1.5rem 6rem}
+.section{margin-bottom:2.5rem}
+.sec-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.4rem}
+.sec-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
+.sec-title em{font-style:italic;color:var(--teal)}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:0.75rem}
+/* SCORE RING */
+.score-block{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
+.score-ring-wrap{position:relative;width:110px;height:110px;flex-shrink:0}
+.score-ring-wrap svg{transform:rotate(-90deg)}
+.score-ring-bg{fill:none;stroke:rgba(255,255,255,0.06);stroke-width:8}
+.score-ring-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.2s ease}
+.score-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;line-height:1}
+.score-denom{font-size:0.6rem;color:var(--muted)}
+.score-details{flex:1;min-width:200px}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.score-row:last-child{border-bottom:none}
+.score-row-label{color:var(--muted)}
+.score-row-val{font-weight:700}
+/* TIER BADGE */
+.tier-badge{display:inline-flex;align-items:center;gap:0.35rem;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.72rem;font-weight:700}
+.tier1{background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.25)}
+.tier2{background:rgba(0,200,150,0.1);color:var(--teal);border:1px solid var(--tb)}
+.tier3{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
+.tier4{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+/* ACTION CARD */
+.action-card{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(13,27,46,0.8));border:1px solid var(--tb);border-radius:12px;padding:1.1rem;margin-top:0.75rem}
+.action-urgency{font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.35rem}
+.action-title{font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:800;margin-bottom:0.4rem;line-height:1.3}
+.action-body{font-size:0.82rem;color:var(--muted);line-height:1.7}
+/* PIPELINE */
+.pipeline-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:0.5rem;margin:0 -1rem;padding:0 1rem 0.75rem}
+.pipeline-track{display:flex;gap:0;min-width:max-content}
+.pipe-stage{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1rem;width:200px;flex-shrink:0;position:relative}
+.pipe-stage.active-stage{border-color:var(--tb);background:rgba(0,200,150,0.05)}
+.pipe-stage-num{font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.3rem}
+.pipe-stage-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-bottom:0.5rem;color:var(--text)}
+.pipe-stage-time{font-size:0.7rem;color:var(--teal);font-weight:600;margin-bottom:0.4rem}
+.pipe-stage-body{font-size:0.72rem;color:var(--muted);line-height:1.5}
+.pipe-arrow{display:flex;align-items:center;padding:0 0.5rem;color:var(--teal);font-size:1.2rem;flex-shrink:0}
+/* POINTS BREAKDOWN */
+.pts-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.pts-table tr{border-bottom:1px solid var(--border)}
+.pts-table tr:last-child{border-bottom:none}
+.pts-table td{padding:0.5rem 0.25rem;color:var(--muted)}
+.pts-table td:last-child{text-align:right;font-family:'Syne',sans-serif;font-weight:700;color:var(--text)}
+.pts-table .pts-total td{color:var(--text);font-weight:700;border-top:2px solid var(--border)}
+.pts-table .pts-total td:last-child{color:var(--teal);font-size:1rem}
+/* STATE GRID */
+.state-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem}
+.state-cell{border-radius:10px;padding:0.65rem 0.5rem;text-align:center;font-size:0.72rem}
+.state-green{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);color:#10B981}
+.state-amber{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+.state-red{background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);color:#f87171}
+.state-cell-name{font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;display:block;margin-bottom:0.2rem}
+.state-cell-pts{font-size:0.65rem;opacity:0.8}
+/* NAATI — full width teal */
+.naati-section{background:var(--teal);border-radius:16px;padding:1.75rem;color:#000;margin-bottom:2.5rem}
+.naati-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:0.4rem}
+.naati-body{font-size:0.88rem;line-height:1.7;margin-bottom:1rem;opacity:0.85}
+.naati-lang{background:rgba(0,0,0,0.12);border-radius:10px;padding:0.85rem 1rem;margin-bottom:0.5rem;font-size:0.82rem}
+.naati-lang-title{font-weight:700;font-size:0.88rem;margin-bottom:0.2rem}
+.naati-lang-detail{opacity:0.75;font-size:0.78rem}
+.naati-btn{display:inline-block;margin-top:0.75rem;padding:0.65rem 1.3rem;background:#000;color:var(--teal);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none}
+.naati-share{display:inline-block;margin-top:0.75rem;margin-left:0.5rem;padding:0.65rem 1.1rem;background:rgba(0,0,0,0.15);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;border:none}
+/* SCENARIO CARDS */
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem}
+.scenario-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem}
+.scenario-card.best{border-color:var(--tb);background:rgba(0,200,150,0.05)}
+.scenario-label{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
+.scenario-pts{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--teal);line-height:1;margin-bottom:0.3rem}
+.scenario-time{font-size:0.75rem;color:var(--muted);line-height:1.5}
+/* OUTCOME FEED */
+.outcome-item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.85rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem}
+.oi-flag{font-size:1.2rem;flex-shrink:0}
+.oi-body{flex:1;min-width:0}
+.oi-main{font-size:0.82rem;color:var(--text);line-height:1.4;margin-bottom:0.15rem}
+.oi-meta{font-size:0.7rem;color:var(--muted)}
+.oi-right{flex-shrink:0;text-align:right}
+.oi-badge{font-size:0.62rem;font-weight:700;padding:0.15rem 0.4rem;border-radius:5px;background:rgba(16,185,129,0.1);color:#10B981;border:1px solid rgba(16,185,129,0.25)}
+.oi-ago{font-size:0.62rem;color:var(--muted);margin-top:0.2rem}
+/* LIVE TICKER inside page */
+.live-feed-strip{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1rem}
+.lfs-header{display:flex;align-items:center;gap:0.5rem;padding:0.65rem 1rem;border-bottom:1px solid var(--border);font-size:0.72rem;font-weight:700;color:var(--teal)}
+.lfs-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.lfs-track-wrap{overflow:hidden;position:relative;height:36px}
+.lfs-track-wrap::before{content:'';position:absolute;left:0;top:0;bottom:0;width:40px;background:linear-gradient(to right,var(--bg3),transparent);z-index:2}
+.lfs-track-wrap::after{content:'';position:absolute;right:0;top:0;bottom:0;width:40px;background:linear-gradient(to left,var(--bg3),transparent);z-index:2}
+.lfs-track{display:flex;align-items:center;white-space:nowrap;height:36px;animation:lfsScroll 40s linear infinite}
+.lfs-track:hover{animation-play-state:paused}
+@keyframes lfsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.lfs-item{display:inline-flex;align-items:center;gap:4px;padding:0 20px;font-size:0.74rem;color:var(--muted)}
+/* 485 TABLE */
+.table485{width:100%;border-collapse:collapse;font-size:0.82rem}
+.table485 th{text-align:left;padding:0.6rem 0.75rem;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal);border-bottom:1px solid var(--border)}
+.table485 td{padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--muted)}
+.table485 td:first-child{color:var(--text);font-weight:500}
+.table485 tr:last-child td{border-bottom:none}
+/* WORK HOURS TRACKER */
+.tracker-widget{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.tracker-row{display:flex;gap:0.75rem;align-items:flex-end;margin-bottom:0.85rem;flex-wrap:wrap}
+.tracker-input-wrap{flex:1;min-width:140px}
+.tracker-input-wrap label{display:block;font-size:0.72rem;color:var(--muted);margin-bottom:0.3rem}
+.tracker-input{width:100%;background:var(--bg2);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.65rem 0.85rem;color:var(--text);font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;outline:none;text-align:center;transition:border-color 0.2s}
+.tracker-input:focus{border-color:var(--tb)}
+.tracker-btn{padding:0.65rem 1.1rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer}
+.tracker-result{background:var(--bg2);border-radius:8px;padding:0.75rem 1rem;font-size:0.82rem;line-height:1.6}
+/* DEGREE REGRET */
+.regret-section{background:var(--bg2);border:2px solid rgba(245,158,11,0.3);border-radius:16px;padding:1.5rem;margin-bottom:2.5rem}
+.regret-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--amber);margin-bottom:0.4rem}
+.regret-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-top:1rem}
+.regret-col{background:var(--bg3);border-radius:10px;padding:0.9rem;font-size:0.78rem}
+.regret-col-title{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:0.5rem}
+/* OFFSHORE */
+.offshore-banner{background:rgba(78,142,255,0.08);border:1px solid rgba(78,142,255,0.2);border-radius:12px;padding:1.1rem;margin-bottom:1.5rem;display:none}
+.offshore-banner.visible{display:block}
+/* MISC */
+.info-badge{display:inline-block;font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:5px;background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
+.warn-badge{display:inline-block;font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:5px;background:rgba(239,68,68,0.08);color:#f87171;border:1px solid rgba(239,68,68,0.2)}
+.data-note{font-size:0.68rem;color:var(--muted);font-style:italic;margin-top:0.5rem}
+hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
-@media(max-width:600px){.result-grid{grid-template-columns:1fr}.nls{display:none}}
+@media(max-width:680px){.form-grid{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.regret-grid{grid-template-columns:1fr}.state-grid{grid-template-columns:repeat(4,1fr)}.nls{display:none}}
+@media(max-width:420px){.state-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;"><div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;white-space:nowrap;z-index:3;">Live</div><style>#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent);}#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent);}#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0;}#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite;}#viq-ticker-mask:hover #viq-ticker-track{animation-play-state:paused;}@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:"DM Sans",sans-serif;white-space:nowrap;line-height:1;}.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px;}@media(max-width:600px){.viq-item{font-size:0.7rem;padding:0 16px;}}</style><div id="viq-ticker-mask"><div id="viq-ticker-track"><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span></div></div></div>
+
 <nav>
   <a href="/" class="nl">VisaIQ</a>
   <div class="nls">
-    <a href="/485-visa">485 Visa</a>
-    <a href="/points-calculator">Points Calc</a>
-    <a href="/tool" class="ncta">PR Tool →</a>
+    <a href="/tool">PR Tool</a>
+    <a href="/student-pathway" style="color:var(--teal)">Student</a>
+    <a href="/outcomes">Outcomes</a>
+    <a href="/tool" class="ncta">PR Score →</a>
   </div>
 </nav>
 
-<div class="hero">
-  <h1>Student<br><em>PR Pathway Tool</em></h1>
-  <p>International student in Australia? Find out whether your degree leads to PR, how long it will take, and exactly what you need to do at each stage. The answer nobody tells you before you enrol.</p>
+<!-- ENTRY FORM -->
+<div class="entry-wrap">
+  <div class="entry-inner">
+    <div class="entry-label">Student PR Intelligence</div>
+    <h1 class="entry-title">Will your degree<br>lead to <em>permanent residency?</em></h1>
+    <p class="entry-sub">Used by students from 40+ countries planning their Australian PR pathway. Enter your profile — everything below personalises to you.</p>
+
+    <div class="form-grid">
+      <div class="field">
+        <label>Degree field</label>
+        <select id="f-degree">
+          <option value="">Select…</option>
+          <option value="nursing">Nursing and Healthcare</option>
+          <option value="it">Information Technology and Software</option>
+          <option value="engineering">Engineering (Civil, Mechanical, Electrical)</option>
+          <option value="accounting">Accounting and Finance</option>
+          <option value="teaching">Teaching and Education</option>
+          <option value="hospitality">Hospitality and Commercial Cookery</option>
+          <option value="business">Business and Management</option>
+          <option value="social_work">Social Work and Community Services</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Study level</label>
+        <select id="f-level">
+          <option value="">Select…</option>
+          <option value="bachelor">Bachelor degree</option>
+          <option value="masters">Masters degree</option>
+          <option value="diploma">Diploma or Certificate IV</option>
+          <option value="phd">PhD</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Current status</label>
+        <select id="f-status">
+          <option value="">Select…</option>
+          <option value="studying">Studying in Australia (500 visa)</option>
+          <option value="graduated">On 485 post-study work visa</option>
+          <option value="offshore">Offshore — planning to study</option>
+          <option value="catchup">Completed degree — planning PR</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Nationality</label>
+        <select id="f-nat">
+          <option value="">Select…</option>
+          <option value="indian">🇮🇳 Indian</option>
+          <option value="pakistani">🇵🇰 Pakistani</option>
+          <option value="nepali">🇳🇵 Nepali</option>
+          <option value="filipino">🇵🇭 Filipino</option>
+          <option value="chinese">🇨🇳 Chinese</option>
+          <option value="sri_lankan">🇱🇰 Sri Lankan</option>
+          <option value="bangladeshi">🇧🇩 Bangladeshi</option>
+          <option value="vietnamese">🇻🇳 Vietnamese</option>
+          <option value="indonesian">🇮🇩 Indonesian</option>
+          <option value="south_african">🇿🇦 South African</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Graduation date</label>
+        <select id="f-grad">
+          <option value="">Select…</option>
+          <option value="6m">In 6 months</option>
+          <option value="1y">In 1 year</option>
+          <option value="2y">In 2 years</option>
+          <option value="3y">In 3 years</option>
+          <option value="done">Already graduated</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Study location</label>
+        <select id="f-location">
+          <option value="">Select…</option>
+          <option value="regional">Regional Australia</option>
+          <option value="metro">Major city (Sydney, Melbourne, Brisbane etc)</option>
+          <option value="unknown">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-generate" onclick="generatePathway()">Generate my student pathway →</button>
+  </div>
 </div>
 
+<!-- RESULTS — hidden until generated -->
+<div class="results" id="results">
 <div class="wrap">
 
-  <!-- STEP INDICATOR -->
-  <div class="step-wrap">
-    <div class="step-item"><div class="step-num active" id="sn1">1</div><span class="step-label">Your situation</span></div>
-    <div class="pn-arrow">→</div>
-    <div class="step-item"><div class="step-num" id="sn2">2</div><span class="step-label">Your degree</span></div>
-    <div class="pn-arrow">→</div>
-    <div class="step-item"><div class="step-num" id="sn3">3</div><span class="step-label">Your profile</span></div>
-    <div class="pn-arrow">→</div>
-    <div class="step-item"><div class="step-num" id="sn4">4</div><span class="step-label">Your PR plan</span></div>
+<!-- OFFSHORE BANNER -->
+<div class="offshore-banner" id="offshore-banner">
+  <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:800;color:var(--blue);margin-bottom:0.5rem">🌏 Offshore pre-arrival checklist</div>
+  <div style="font-size:0.78rem;color:var(--muted);line-height:1.7">
+    <strong style="color:var(--text)">Before you spend a dollar, five decisions that determine your PR timeline:</strong><br>
+    1. Choose a regional institution if possible — adds 5 study points + qualifies for 491 (+15pts) = 20 point advantage<br>
+    2. Choose your occupation based on current MLTSSL status, not just job prospects — <a href="/occupation-demand" style="color:var(--teal)">check demand here</a><br>
+    3. Get IELTS 7.0+ before arriving — proficient English adds 10 DHA points<br>
+    4. Student visa fee: AUD $1,600 non-refundable — budget accordingly<br>
+    5. Work rights cap is 48 hours per fortnight — plan your income accordingly
   </div>
-
-  <!-- SCREEN 1 -->
-  <div class="screen active" id="screen1">
-    <div class="card">
-      <div class="card-title">Step 1 — Your Current Situation</div>
-      <div class="q-label">What is your current visa status?</div>
-      <div class="pill-row">
-        <button class="pill sel" data-v="student" onclick="sp(this,'status')">500 Student visa — currently studying</button>
-        <button class="pill" data-v="485" onclick="sp(this,'status')">485 post-study — already graduated</button>
-        <button class="pill" data-v="overseas" onclick="sp(this,'status')">Overseas — planning to study in Australia</button>
-        <button class="pill" data-v="482" onclick="sp(this,'status')">482 work visa — previously studied</button>
-      </div>
-      <div class="q-label">Your nationality</div>
-      <div class="q-sub">This affects NAATI eligibility and processing time estimates</div>
-      <div class="pill-row">
-        <button class="pill" data-v="indian" onclick="sp(this,'nationality')">Indian</button>
-        <button class="pill" data-v="pakistani" onclick="sp(this,'nationality')">Pakistani</button>
-        <button class="pill" data-v="nepali" onclick="sp(this,'nationality')">Nepali</button>
-        <button class="pill" data-v="filipino" onclick="sp(this,'nationality')">Filipino</button>
-        <button class="pill" data-v="bangladeshi" onclick="sp(this,'nationality')">Bangladeshi</button>
-        <button class="pill" data-v="sri_lankan" onclick="sp(this,'nationality')">Sri Lankan</button>
-        <button class="pill" data-v="chinese" onclick="sp(this,'nationality')">Chinese</button>
-        <button class="pill" data-v="other" onclick="sp(this,'nationality')">Other</button>
-      </div>
-      <div class="q-label">Which state are you in (or plan to study in)?</div>
-      <select id="state-sel">
-        <option value="">Select state…</option>
-        <option value="NSW">New South Wales</option>
-        <option value="VIC">Victoria</option>
-        <option value="QLD">Queensland</option>
-        <option value="SA">South Australia</option>
-        <option value="WA">Western Australia</option>
-        <option value="TAS">Tasmania</option>
-        <option value="ACT">ACT (Canberra)</option>
-        <option value="NT">Northern Territory</option>
-      </select>
-      <button class="next-btn" onclick="goScreen(2)">Continue →</button>
-    </div>
-  </div>
-
-  <!-- SCREEN 2 -->
-  <div class="screen" id="screen2">
-    <div class="card">
-      <div class="card-title">Step 2 — Your Degree</div>
-      <div class="q-label">What field are you studying (or planning to study)?</div>
-      <div class="q-sub">This is the most important question — it determines whether your degree leads to PR at all</div>
-      <select id="field-sel">
-        <option value="">Select your field…</option>
-        <optgroup label="Healthcare — Best PR prospects">
-          <option value="nursing">Nursing / Midwifery</option>
-          <option value="allied_health">Allied Health (Physio / OT / Pharmacy)</option>
-          <option value="medicine">Medicine / Medical Science</option>
-          <option value="dentistry">Dentistry</option>
-          <option value="paramedicine">Paramedicine</option>
-        </optgroup>
-        <optgroup label="Engineering — Good PR prospects">
-          <option value="civil_eng">Civil / Structural Engineering</option>
-          <option value="electrical_eng">Electrical Engineering</option>
-          <option value="mechanical_eng">Mechanical Engineering</option>
-          <option value="mining_eng">Mining / Petroleum Engineering</option>
-        </optgroup>
-        <optgroup label="ICT — Competitive PR prospects">
-          <option value="software">Software Engineering / Computer Science</option>
-          <option value="cybersecurity">Cybersecurity</option>
-          <option value="data_science">Data Science / AI</option>
-          <option value="ict_other">Other ICT</option>
-        </optgroup>
-        <optgroup label="Education — Good regional PR prospects">
-          <option value="early_childhood">Early Childhood Education</option>
-          <option value="secondary_ed">Secondary Education (STEM subjects)</option>
-          <option value="teaching_other">Teaching (other subjects)</option>
-        </optgroup>
-        <optgroup label="Accounting & Finance">
-          <option value="accounting">Accounting / CPA</option>
-          <option value="finance">Finance / Financial Planning</option>
-        </optgroup>
-        <optgroup label="Business">
-          <option value="business">Business Management / MBA</option>
-          <option value="hr">Human Resources / Marketing</option>
-        </optgroup>
-        <optgroup label="Social Sciences">
-          <option value="social_work">Social Work / Community Services</option>
-          <option value="psychology">Psychology / Counselling</option>
-        </optgroup>
-        <optgroup label="Trades / Vocational">
-          <option value="cookery">Commercial Cookery (Certificate III+)</option>
-          <option value="electrician_trade">Electrical Trade</option>
-          <option value="plumbing_trade">Plumbing Trade</option>
-          <option value="construction_trade">Carpentry / Construction Trade</option>
-        </optgroup>
-        <optgroup label="Other">
-          <option value="arts">Arts / Humanities</option>
-          <option value="law">Law</option>
-          <option value="other">Other</option>
-        </optgroup>
-      </select>
-
-      <div class="q-label">Qualification level</div>
-      <div class="pill-row">
-        <button class="pill" data-v="phd" onclick="sp(this,'level')">PhD / Doctorate</button>
-        <button class="pill" data-v="masters_r" onclick="sp(this,'level')">Masters (Research)</button>
-        <button class="pill" data-v="masters" onclick="sp(this,'level')">Masters (Coursework)</button>
-        <button class="pill sel" data-v="bachelor" onclick="sp(this,'level')">Bachelor / Honours</button>
-        <button class="pill" data-v="diploma" onclick="sp(this,'level')">Diploma / Advanced Diploma</button>
-        <button class="pill" data-v="cert" onclick="sp(this,'level')">Certificate III / IV</button>
-      </div>
-
-      <div class="q-label">Is your institution in a regional area?</div>
-      <div class="q-sub">Regional study adds +5 points and may qualify you for a second 485 visa</div>
-      <div class="pill-row">
-        <button class="pill" data-v="regional" onclick="sp(this,'location')">Yes — regional institution</button>
-        <button class="pill sel" data-v="metro" onclick="sp(this,'location')">No — major city institution</button>
-      </div>
-
-      <div class="q-label">When do you graduate (or when do you plan to)?</div>
-      <div class="pill-row">
-        <button class="pill" data-v="0" onclick="sp(this,'grad')">Already graduated</button>
-        <button class="pill" data-v="6" onclick="sp(this,'grad')">Within 6 months</button>
-        <button class="pill" data-v="12" onclick="sp(this,'grad')">6–12 months</button>
-        <button class="pill sel" data-v="18" onclick="sp(this,'grad')">12–18 months</button>
-        <button class="pill" data-v="24" onclick="sp(this,'grad')">18–24 months</button>
-        <button class="pill" data-v="36" onclick="sp(this,'grad')">2–3 years away</button>
-      </div>
-      <button class="next-btn" onclick="goScreen(3)">Continue →</button>
-      <span class="back-btn" onclick="goScreen(1)">← Back</span>
-    </div>
-  </div>
-
-  <!-- SCREEN 3 -->
-  <div class="screen" id="screen3">
-    <div class="card">
-      <div class="card-title">Step 3 — Your Profile</div>
-      <div class="q-label">Your current English level</div>
-      <div class="pill-row">
-        <button class="pill" data-v="superior" onclick="sp(this,'english')">Superior — IELTS 8.0+ all bands</button>
-        <button class="pill" data-v="proficient" onclick="sp(this,'english')">Proficient — IELTS 7.0+ all bands</button>
-        <button class="pill sel" data-v="competent" onclick="sp(this,'english')">Competent — IELTS 6.0–6.5</button>
-        <button class="pill" data-v="below" onclick="sp(this,'english')">Below IELTS 6.0</button>
-      </div>
-      <div class="q-label">Your age</div>
-      <div class="pill-row">
-        <button class="pill sel" data-v="25_32" onclick="sp(this,'age')">25–32 (30 pts)</button>
-        <button class="pill" data-v="18_24" onclick="sp(this,'age')">18–24 (25 pts)</button>
-        <button class="pill" data-v="33_39" onclick="sp(this,'age')">33–39 (25 pts)</button>
-        <button class="pill" data-v="40_44" onclick="sp(this,'age')">40–44 (15 pts)</button>
-        <button class="pill" data-v="45plus" onclick="sp(this,'age')">45+ (0 pts)</button>
-      </div>
-      <div class="q-label">Partner status (for points purposes)</div>
-      <div class="pill-row">
-        <button class="pill sel" data-v="single" onclick="sp(this,'partner')">Single / No partner</button>
-        <button class="pill" data-v="skilled_partner" onclick="sp(this,'partner')">Partner with skills assessment</button>
-        <button class="pill" data-v="unskilled_partner" onclick="sp(this,'partner')">Partner without skills assessment</button>
-      </div>
-      <div class="q-label">Do you speak any of these languages at home?</div>
-      <div class="q-sub">NAATI CCL is available in these languages and adds +5 points to your PR score</div>
-      <div class="pill-row">
-        <button class="pill" data-v="urdu" onclick="sp(this,'naati_lang')">Urdu</button>
-        <button class="pill" data-v="hindi" onclick="sp(this,'naati_lang')">Hindi</button>
-        <button class="pill" data-v="tagalog" onclick="sp(this,'naati_lang')">Tagalog / Filipino</button>
-        <button class="pill" data-v="nepali" onclick="sp(this,'naati_lang')">Nepali</button>
-        <button class="pill" data-v="mandarin" onclick="sp(this,'naati_lang')">Mandarin</button>
-        <button class="pill" data-v="tamil" onclick="sp(this,'naati_lang')">Tamil</button>
-        <button class="pill" data-v="none_naati" onclick="sp(this,'naati_lang')">None of the above</button>
-      </div>
-      <button class="next-btn" onclick="generatePlan()">Generate My PR Plan →</button>
-      <span class="back-btn" onclick="goScreen(2)">← Back</span>
-    </div>
-  </div>
-
-  <!-- SCREEN 4 — RESULTS -->
-  <div class="screen" id="screen4">
-    <div id="plan-output"></div>
-    <div style="margin-top:1rem;text-align:center">
-      <span class="back-btn" onclick="goScreen(3)">← Adjust my profile</span>
-    </div>
-  </div>
-
 </div>
 
+<!-- SECTION 1: PR READINESS SCORE -->
+<div class="section">
+  <div class="sec-label">Section 1</div>
+  <div class="sec-title">Your PR <em>Readiness Score</em></div>
+
+  <div class="card">
+    <div class="score-block">
+      <div class="score-ring-wrap">
+        <svg width="110" height="110" viewBox="0 0 110 110">
+          <circle class="score-ring-bg" cx="55" cy="55" r="46"/>
+          <circle class="score-ring-fill" id="score-ring" cx="55" cy="55" r="46"
+            stroke-dasharray="289" stroke-dashoffset="289"/>
+        </svg>
+        <div class="score-center">
+          <div class="score-num" id="score-num">—</div>
+          <div class="score-denom">/100</div>
+        </div>
+      </div>
+      <div class="score-details">
+        <div class="score-row">
+          <span class="score-row-label">Occupation demand</span>
+          <span class="score-row-val" id="sr-tier">—</span>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Projected points at graduation</span>
+          <span class="score-row-val" id="sr-pts">—</span>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Most accessible pathway</span>
+          <span class="score-row-val" id="sr-pathway">—</span>
+        </div>
+        <div class="score-row">
+          <span class="score-row-label">Est. time to PR from graduation</span>
+          <span class="score-row-val" id="sr-time">—</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-card" id="s1-action">
+      <div class="action-urgency">Your highest-impact action right now</div>
+      <div class="action-title" id="s1-action-title">—</div>
+      <div class="action-body" id="s1-action-body">—</div>
+    </div>
+    <div class="data-note" id="s1-data-note"></div>
+  </div>
+</div>
+
+<!-- SECTION 2: PIPELINE VISUAL -->
+<div class="section">
+  <div class="sec-label">Section 2</div>
+  <div class="sec-title">Your PR <em>journey stages</em></div>
+  <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Scroll right to see all stages. Each stage shows real timeframes and what to do.</p>
+  <div class="pipeline-scroll">
+    <div class="pipeline-track" id="pipeline-track">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: DEGREE TO PR CHECKER -->
+<div class="section">
+  <div class="sec-label">Section 3</div>
+  <div class="sec-title">Degree to PR <em>checker</em></div>
+
+  <div class="card">
+    <div id="occ-list-status"></div>
+    <div class="data-note">Source: DHA Skilled Occupation Lists (MLTSSL/STSOL). Last confirmed: Nov 2025 SkillSelect round.</div>
+  </div>
+
+  <div class="card">
+    <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.75rem">Projected points at graduation</div>
+    <table class="pts-table" id="pts-breakdown"></table>
+    <div class="data-note">Age assumed 27 at graduation. English assumed Proficient (IELTS 7+). Overseas work experience 0 (pre-graduation). Australian work experience builds during 485 visa period.</div>
+  </div>
+
+  <div class="card" id="pathway-assessment"></div>
+
+  <div class="card">
+    <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.75rem">State accessibility at your projected score</div>
+    <div class="state-grid" id="state-grid-s3"></div>
+    <div id="offshore-state-note" style="display:none;margin-top:0.75rem;padding:0.75rem;background:rgba(78,142,255,0.06);border:1px solid rgba(78,142,255,0.15);border-radius:8px;font-size:0.75rem;color:var(--muted);line-height:1.6"></div>
+    <div class="data-note">Based on Nov 13 2025 DHA round and state nomination patterns. Cutoffs vary — check state portals for current requirements.</div>
+  </div>
+</div>
+
+<!-- SECTION 4: NAATI CALLOUT -->
+<div class="naati-section" id="naati-section">
+  <div class="naati-title">🏆 5 points you might be missing</div>
+  <div class="naati-body">The NAATI Credentialled Community Language (CCL) test adds 5 points to your DHA score — the same as a full year of Australian work experience. If your language is on the NAATI list, this is the highest-value single action you can take before graduation. $800 and 3 months of preparation.</div>
+  <div id="naati-lang-block"></div>
+  <div style="margin-top:0.85rem;font-size:0.82rem;opacity:0.8;line-height:1.6">
+    <strong>Test format:</strong> Written and oral components · 3 hour exam · Marked by NAATI accredited assessors · Results valid 3 years · Can be done while still studying · Does not require graduation first.
+  </div>
+  <div style="margin-top:0.75rem">
+    <a href="https://www.naati.com.au/ccl-test" target="_blank" class="naati-btn">Register at naati.com.au →</a>
+    <button class="naati-share" id="naati-share-btn">Share on WhatsApp 📲</button>
+  </div>
+</div>
+
+<!-- SECTION 5: REGIONAL BONUS CALCULATOR -->
+<div class="section">
+  <div class="sec-label">Section 5</div>
+  <div class="sec-title">Regional study <em>advantage calculator</em></div>
+
+  <div class="card" style="margin-bottom:0.75rem">
+    <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.85rem">
+      <strong style="color:var(--text)">Two separate DHA bonuses — both may apply to you:</strong><br>
+      <strong style="color:var(--teal)">Australian study bonus (+5 pts)</strong> — requires 2 academic years in Australia in a CRICOS-registered course for your occupation. Available to metro and regional students.<br>
+      <strong style="color:var(--teal)">Regional study (+5 pts)</strong> — requires 2 academic years at a regional campus. Cannot be claimed alongside the Australian study bonus for the same degree — claim whichever applies (usually regional gives the same 5 pts but unlocks the 491 pathway).<br>
+      <strong style="color:var(--blue)">491 regional nomination (+15 pts)</strong> — separate and stackable. Requires living and working in regional Australia for 3 years after nomination. Does not require regional study — but regional study significantly improves 491 nomination access.
+    </div>
+  </div>
+
+  <div style="font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;margin-bottom:0.6rem;color:var(--muted)">THREE SCENARIOS — YOUR PROFILE</div>
+  <div class="scenario-grid" id="scenario-grid"></div>
+
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:0.75rem">Main regional universities for the regional study bonus</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem" id="regional-unis"></div>
+    <div class="data-note">Source: DHA regional postcodes list and CRICOS register. Always verify your specific campus is classified as regional at <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-work-regional-provisional-491/regional-australia" target="_blank" style="color:var(--teal)">immi.homeaffairs.gov.au</a></div>
+  </div>
+</div>
+
+<!-- SECTION 6: LIVE STUDENT OUTCOMES FEED -->
+<div class="section">
+  <div class="sec-label">Section 6</div>
+  <div class="sec-title">Real student <em>outcomes</em></div>
+
+  <!-- Mini live ticker -->
+  <div class="live-feed-strip">
+    <div class="lfs-header"><span class="lfs-dot"></span> Live student outcomes</div>
+    <div class="lfs-track-wrap">
+      <div class="lfs-track" id="lfs-track">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div id="fomo-banner" style="display:none;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:0.75rem 1rem;margin-bottom:0.75rem;font-size:0.82rem;line-height:1.6"></div>
+
+  <div id="student-outcomes-feed"></div>
+
+  <div id="student-week-summary" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1rem;font-size:0.78rem;color:var(--muted);margin-top:0.75rem;line-height:1.6"></div>
+
+  <div style="display:flex;gap:0.6rem;margin-top:0.75rem">
+    <a href="/outcomes" style="display:inline-block;padding:0.55rem 1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">View all outcomes →</a>
+    <a href="/submit" style="display:inline-block;padding:0.55rem 1rem;background:transparent;border:1px solid var(--tb);color:var(--teal);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Submit yours →</a>
+  </div>
+</div>
+
+<!-- SECTION 7: STATE GUIDE -->
+<div class="section">
+  <div class="sec-label">Section 7</div>
+  <div class="sec-title">State guide for <em>post-graduation</em></div>
+  <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem">Personalised to your occupation and projected points. Where you live after graduation is one of the most important PR decisions you make.</p>
+  <div id="state-guide-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem"></div>
+  <div class="data-note" style="margin-top:0.5rem">State nomination cutoffs are estimates based on recent invitation patterns. Always verify at each state's migration portal before applying.</div>
+</div>
+
+<!-- SECTION 8: WORK RIGHTS + 485 -->
+<div class="section">
+  <div class="sec-label">Section 8</div>
+  <div class="sec-title">Work rights and <em>485 intelligence</em></div>
+
+  <div class="card" style="border-color:rgba(239,68,68,0.2)">
+    <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:#f87171;margin-bottom:0.5rem">⚠️ Current work rights — 500 student visa</div>
+    <div style="font-size:0.82rem;color:var(--muted);line-height:1.7">
+      <strong style="color:var(--text)">48 hours per fortnight</strong> — this cap applies year-round including university term breaks and holiday periods.<br><br>
+      <strong style="color:var(--amber)">Important correction to a common myth:</strong> The unlimited work hours during university holidays exemption was <strong style="color:#f87171">removed effective July 1 2023</strong>. The 48-hour cap now applies 365 days per year regardless of whether your university is in session. Working more than 48 hours in a fortnight is a visa condition breach and grounds for visa cancellation.<br><br>
+      <strong style="color:var(--text)">One fortnight</strong> = 14 consecutive days starting from your first day of work in Australia.<br>
+      <strong style="color:var(--text)">PhD and Masters research students</strong> — no work hours restriction. Check your visa grant notice to confirm your stream.<br>
+      <strong style="color:var(--text)">Source:</strong> <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/temporary-graduate-500" target="_blank" style="color:var(--teal)">DHA student visa conditions — immi.homeaffairs.gov.au</a>
+    </div>
+  </div>
+
+  <!-- Work hours tracker -->
+  <div class="card">
+    <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem">Work hours tracker — this fortnight</div>
+    <div class="tracker-widget">
+      <div class="tracker-row">
+        <div class="tracker-input-wrap">
+          <label>Hours worked week 1</label>
+          <input type="number" class="tracker-input" id="wh-week1" placeholder="0" min="0" max="60" oninput="calcHours()">
+        </div>
+        <div class="tracker-input-wrap">
+          <label>Hours worked week 2</label>
+          <input type="number" class="tracker-input" id="wh-week2" placeholder="0" min="0" max="60" oninput="calcHours()">
+        </div>
+        <button class="tracker-btn" onclick="resetHours()">Reset</button>
+      </div>
+      <div class="tracker-result" id="hours-result">
+        Enter your hours above to check your fortnight limit.
+      </div>
+    </div>
+    <div class="data-note">This tracker uses your browser's memory. Clear your browser data to reset. Not stored on any server.</div>
+  </div>
+
+  <div class="card">
+    <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem">485 post-study work visa — duration by qualification</div>
+    <table class="table485">
+      <thead><tr><th>Qualification</th><th>Location</th><th>Duration</th><th>Work rights</th></tr></thead>
+      <tbody>
+        <tr><td>Bachelor degree</td><td>Major city</td><td style="color:var(--teal);font-weight:700">2 years</td><td>Unlimited</td></tr>
+        <tr><td>Bachelor degree</td><td>Regional Australia</td><td style="color:var(--teal);font-weight:700">3 years</td><td>Unlimited</td></tr>
+        <tr><td>Masters degree</td><td>Any location</td><td style="color:var(--teal);font-weight:700">3 years</td><td>Unlimited</td></tr>
+        <tr><td>PhD</td><td>Any location</td><td style="color:var(--teal);font-weight:700">4 years</td><td>Unlimited</td></tr>
+        <tr><td>Diploma / Cert IV</td><td>Any location</td><td style="color:var(--teal);font-weight:700">18 months</td><td>Unlimited</td></tr>
+      </tbody>
+    </table>
+    <div class="data-note">Source: DHA 485 Temporary Graduate Visa. Verify at immi.homeaffairs.gov.au. Regional locations determined by DHA postcode lists.</div>
+  </div>
+
+  <div class="card">
+    <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem">485 to PR strategy — by year</div>
+    <div id="visa485-strategy" style="font-size:0.82rem;color:var(--muted);line-height:1.8"></div>
+  </div>
+
+  <div class="card" style="border-color:rgba(239,68,68,0.15)">
+    <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:#f87171;margin-bottom:0.6rem">⚠️ Common mistakes that delay PR</div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.8" id="common-mistakes"></div>
+  </div>
+</div>
+
+<!-- SECTION 9: DEGREE REGRET CALCULATOR -->
+<div class="regret-section" id="regret-section">
+  <div style="font-size:1.4rem;margin-bottom:0.35rem">⚠️</div>
+  <div class="regret-title">Already enrolled? Is it worth changing?</div>
+  <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-bottom:1rem">Honest comparison of your current degree versus the highest-PR-demand alternative at the same level. Based on current DHA tier data.</p>
+  <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem">
+    <div class="field" style="flex:1;min-width:160px">
+      <label style="display:block;font-size:0.72rem;color:var(--muted);margin-bottom:0.3rem">Years remaining in degree</label>
+      <select id="r-years" style="width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem 0.85rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.83rem;outline:none">
+        <option value="1">1 year remaining</option>
+        <option value="2">2 years remaining</option>
+        <option value="3" selected>3 years remaining</option>
+        <option value="4">4 years remaining</option>
+      </select>
+    </div>
+    <div style="display:flex;align-items:flex-end">
+      <button onclick="runRegretCalc()" style="padding:0.65rem 1.1rem;background:var(--amber);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer">Compare pathways →</button>
+    </div>
+  </div>
+  <div class="regret-grid" id="regret-grid" style="display:none"></div>
+</div>
+
+</div><!-- end .wrap -->
+</div><!-- end .results -->
+
 <footer>
-  <a href="/">Home</a><a href="/485-visa">485 Visa</a><a href="/points-calculator">Points Calc</a>
-  <a href="/189-visa">189 Visa</a><a href="/190-visa">190 Visa</a><a href="/491-visa">491 Visa</a>
-  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · Based on DHA 2025–26 program data</div>
+  <div style="margin-bottom:0.5rem">
+    <a href="/">Home</a><a href="/tool">PR Tool</a><a href="/points-calculator">Points Calc</a>
+    <a href="/outcomes">Outcomes</a><a href="/methodology">Methodology</a>
+  </div>
+  <div>© 2026 VisaIQ · Not migration advice · Consult a MARA agent for your specific circumstances</div>
 </footer>
 
+<script src="/ticker.js"></script>
 <script>
-const A = {
-  status:'student', nationality:null, state:'', field:'', level:'bachelor', location:'metro', grad:'18',
-  english:'competent', age:'25_32', partner:'single', naati_lang:'none_naati'
+// ── DATA TABLES ──────────────────────────────────────────────────
+var DEG_DATA = {
+  nursing:    {label:'Nursing and Healthcare',   occ:'Registered Nurse / Allied Health', list:'MLTSSL', tier:1, tierLabel:'Tier 1 — Critical shortage (4× invitation multiplier)', c189:75, c190:65, pool:2100, demand:'Critical'},
+  it:         {label:'Information Technology',   occ:'Software Engineer / ICT roles',    list:'MLTSSL', tier:4, tierLabel:'Tier 4 — Oversupplied (0.5× invitation multiplier)', c189:90, c190:85, pool:8200, demand:'Oversupplied'},
+  engineering:{label:'Engineering',              occ:'Civil / Mechanical / Electrical Engineer', list:'MLTSSL', tier:3, tierLabel:'Tier 3 — Standard (1× invitation multiplier)', c189:85, c190:70, pool:5200, demand:'High'},
+  accounting: {label:'Accounting and Finance',   occ:'Accountant (General)',             list:'MLTSSL', tier:4, tierLabel:'Tier 4 — Oversupplied (0.5× multiplier) — 189 NOT invited 2025-26', c189:null, c190:65, pool:15240, demand:'Oversupplied'},
+  teaching:   {label:'Teaching and Education',   occ:'Teacher (Primary/Secondary/ECE)',  list:'MLTSSL', tier:2, tierLabel:'Tier 2 — High priority (2× invitation multiplier)', c189:80, c190:65, pool:4100, demand:'High'},
+  hospitality:{label:'Hospitality and Cookery',  occ:'Cook / Chef',                      list:'STSOL',  tier:null, tierLabel:'STSOL — No 189 pathway · 190/491 state nomination only', c189:null, c190:65, pool:3600, demand:'Regional'},
+  business:   {label:'Business and Management',  occ:'Management Consultant / HR Manager',list:'MLTSSL',tier:4, tierLabel:'Tier 4 — Oversupplied · limited state nomination', c189:null, c190:70, pool:2800, demand:'Low'},
+  social_work:{label:'Social Work',              occ:'Social Worker',                    list:'MLTSSL', tier:2, tierLabel:'Tier 2 — High priority (2× invitation multiplier)', c189:80, c190:65, pool:2600, demand:'High'},
+  other:      {label:'Other',                    occ:'Various',                          list:'MLTSSL', tier:3, tierLabel:'Tier 3 — Standard', c189:85, c190:70, pool:3000, demand:'Standard'}
 };
 
-function sp(el, k) {
-  document.querySelectorAll(`[onclick="sp(this,'${k}')"]`).forEach(p => p.classList.remove('sel'));
-  el.classList.add('sel');
-  A[k] = el.dataset.v;
-}
-
-function goScreen(n) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(`screen${n}`).classList.add('active');
-  for(let i=1;i<=4;i++){
-    const sn = document.getElementById(`sn${i}`);
-    sn.className = 'step-num' + (i<n?' done':i===n?' active':'');
-  }
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// Field data
-const FIELDS = {
-  nursing:{label:'Nursing / Midwifery',occ:'Registered Nurse / Midwife',tier:1,mltssl:true,stsol:false,assessment:'AHPRA',cutoff189:75,pr_score:10,
-    notes:'Best possible PR field. 189 Tier 1 at 75 pts. Every state accepts. Plan to get AHPRA assessment started in final year.',
-    working_rights:'Full unrestricted work rights on 485 — can work as nurse immediately after registration',state_rec:'Any state — SA/TAS/QLD for lowest points needed'},
-  allied_health:{label:'Allied Health',occ:'Physiotherapist / Occupational Therapist',tier:1,mltssl:true,stsol:false,assessment:'AHPRA',cutoff189:75,pr_score:9,
-    notes:'Tier 1 — 75 pt cutoff. NDIS expansion driving demand. Every state accepts.',
-    working_rights:'Full work rights — can work in profession immediately after AHPRA registration',state_rec:'Any state'},
-  medicine:{label:'Medicine / Medical Science',occ:'General Practitioner / Medical Officer',tier:1,mltssl:true,stsol:false,assessment:'AMC',cutoff189:75,pr_score:10,
-    notes:'Best PR prospects of any field. AMC assessment is rigorous. Start AMC process in Year 2 of medical school.',
-    working_rights:'Intern positions required post-graduation — arrange through hospital network',state_rec:'Any state — NT/TAS pay highest doctor rates'},
-  dentistry:{label:'Dentistry',occ:'Dentist',tier:1,mltssl:true,stsol:false,assessment:'ADC',cutoff189:80,pr_score:9,
-    notes:'Tier 1 at 80 pts. ADC assessment takes 12–18 months — start in penultimate year.',
-    working_rights:'AHPRA registration required before practice',state_rec:'Any state — regional critical shortage'},
-  paramedicine:{label:'Paramedicine',occ:'Paramedic / Emergency Medical Officer',tier:1,mltssl:true,stsol:false,assessment:'AHPRA',cutoff189:75,pr_score:8,
-    notes:'Tier 1. Growing demand with ageing population and NDIS.',
-    working_rights:'AHPRA registration + state ambulance service registration required',state_rec:'NT, QLD, WA — highest demand'},
-  civil_eng:{label:'Civil Engineering',occ:'Civil / Structural Engineer',tier:3,mltssl:true,stsol:false,assessment:'Engineers Australia',cutoff189:85,pr_score:7,
-    notes:'Tier 3 at 85 pts. Engineers Australia assessment 2–4 months. Olympic and housing infrastructure driving demand.',
-    working_rights:'Full work rights. Registration required for some state government roles.',state_rec:'NSW, QLD, SA, WA'},
-  electrical_eng:{label:'Electrical Engineering',occ:'Electrical Engineer',tier:3,mltssl:true,stsol:false,assessment:'Engineers Australia',cutoff189:85,pr_score:7,
-    notes:'Tier 3 at 85 pts. Renewable energy sector driving new demand.',
-    working_rights:'Full work rights. Electrical licensing required for trade work.',state_rec:'SA, WA, QLD — renewables focus'},
-  mechanical_eng:{label:'Mechanical Engineering',occ:'Mechanical Engineer',tier:3,mltssl:true,stsol:false,assessment:'Engineers Australia',cutoff189:85,pr_score:6,
-    notes:'Tier 3 at 85 pts. WA resources sector best opportunity.',
-    working_rights:'Full work rights on 485.',state_rec:'WA, NT, QLD'},
-  mining_eng:{label:'Mining / Petroleum Engineering',occ:'Mining Engineer / Petroleum Engineer',tier:3,mltssl:true,stsol:false,assessment:'Engineers Australia',cutoff189:85,pr_score:7,
-    notes:'Strong WA and QLD state nomination. Resources sector.',
-    working_rights:'Full work rights.',state_rec:'WA, NT, QLD'},
-  software:{label:'Software Engineering / CS',occ:'Software Engineer',tier:4,mltssl:true,stsol:false,assessment:'ACS',cutoff189:90,pr_score:4,
-    notes:'Tier 4 — 90 pts. Very large EOI pool. State nomination (ACT, SA, VIC) is more achievable than 189. Superior English critical.',
-    working_rights:'Full unrestricted work rights on 485.',state_rec:'ACT (Canberra) — all regional, strong tech, fast processing'},
-  cybersecurity:{label:'Cybersecurity',occ:'Cybersecurity Specialist / Analyst',tier:4,mltssl:true,stsol:false,assessment:'ACS',cutoff189:90,pr_score:5,
-    notes:'Tier 4 but NSW priority. Target NSW or VIC nomination. Better prospects than general IT.',
-    working_rights:'Full work rights.',state_rec:'NSW, VIC, ACT'},
-  data_science:{label:'Data Science / AI',occ:'Data Analyst / Data Scientist',tier:4,mltssl:true,stsol:false,assessment:'ACS',cutoff189:90,pr_score:3,
-    notes:'Data roles among the 69 occupations removed from shortage list in 2025. 189 very difficult. Employer sponsorship is primary pathway.',
-    working_rights:'Full work rights.',state_rec:'VIC, NSW — employer sponsorship focus'},
-  ict_other:{label:'Other ICT',occ:'ICT Professional',tier:4,mltssl:true,stsol:false,assessment:'ACS',cutoff189:95,pr_score:3,
-    notes:'Highly competitive pool. Employer sponsorship (482) or regional nomination (491) most realistic.',
-    working_rights:'Full work rights.',state_rec:'ACT, SA for lower competition'},
-  early_childhood:{label:'Early Childhood Education',occ:'Early Childhood Teacher',tier:2,mltssl:true,stsol:false,assessment:'AITSL',cutoff189:80,pr_score:8,
-    notes:'Tier 2 — most undersupplied education occupation. 80 pts. Government actively seeking ECE teachers.',
-    working_rights:'AITSL registration required before teaching.',state_rec:'All states — SA and TAS least competitive'},
-  secondary_ed:{label:'Secondary Education (STEM)',occ:'Secondary School Teacher (STEM)',tier:2,mltssl:true,stsol:false,assessment:'AITSL',cutoff189:85,pr_score:7,
-    notes:'Tier 2. Maths, science, physics, technology teachers in critical shortage. High regional demand.',
-    working_rights:'State-based teaching registration required.',state_rec:'ACT, TAS, SA most accessible'},
-  teaching_other:{label:'Teaching (other subjects)',occ:'Primary / Other Secondary Teacher',tier:2,mltssl:true,stsol:false,assessment:'AITSL',cutoff189:85,pr_score:6,
-    notes:'Tier 2 but STEM teachers prioritised. Regional schools actively recruiting.',
-    working_rights:'State teaching registration required.',state_rec:'TAS, SA, NT for regional'},
-  accounting:{label:'Accounting / CPA',occ:'Accountant',tier:4,mltssl:true,stsol:false,assessment:'CPA / CAANZ / IPA',cutoff189:999,pr_score:2,
-    notes:'WARNING: 189 NOT viable. Not invited in August or November 2025. SA 190 at 65 pts is primary pathway. Do NAATI CCL. Consider moving to SA immediately.',
-    working_rights:'Full work rights.',state_rec:'SA ONLY — most critical recommendation on this platform'},
-  finance:{label:'Finance / Financial Planning',occ:'Financial Adviser / Financial Analyst',tier:4,mltssl:false,stsol:true,assessment:'VETASSESS / FPA',cutoff189:999,pr_score:2,
-    notes:'Limited MLTSSL access. Financial planners have narrow visa pathway. Employer sponsorship (482) is most practical route.',
-    working_rights:'ASIC licensing required for financial advice.',state_rec:'SA, ACT for limited state nomination'},
-  business:{label:'Business Management / MBA',occ:'Business Manager',tier:4,mltssl:true,stsol:false,assessment:'VETASSESS',cutoff189:999,pr_score:2,
-    notes:'Business degrees are among the weakest for PR pathways. Very oversupplied pool. Employer sponsorship is the realistic path.',
-    working_rights:'Full work rights.',state_rec:'No strong state nomination prospects'},
-  hr:{label:'Human Resources / Marketing',occ:'HR Manager / Marketing Manager',tier:4,mltssl:false,stsol:false,assessment:'VETASSESS / AIM',cutoff189:999,pr_score:1,
-    notes:'Very limited PR options via skilled migration. Marketing and HR roles face significant oversupply. Employer sponsorship is only realistic pathway.',
-    working_rights:'Full work rights.',state_rec:'Very limited'},
-  social_work:{label:'Social Work',occ:'Social Worker',tier:2,mltssl:true,stsol:false,assessment:'AASW',cutoff189:80,pr_score:7,
-    notes:'Tier 2 at 80 pts. ACT and WA actively inviting. AASW assessment required.',
-    working_rights:'AASW registration required for some roles.',state_rec:'ACT, WA, SA'},
-  psychology:{label:'Psychology / Counselling',occ:'Psychologist / Counsellor',tier:2,mltssl:true,stsol:false,assessment:'AHPRA (Psychology Board)',cutoff189:80,pr_score:7,
-    notes:'Tier 2. NDIS driving sustained demand. AHPRA registration required.',
-    working_rights:'AHPRA registration required to practise.',state_rec:'ACT, WA, SA — NDIS focus'},
-  cookery:{label:'Commercial Cookery',occ:'Cook / Chef',tier:null,mltssl:false,stsol:true,assessment:'TRA / VETASSESS',cutoff189:null,pr_score:4,
-    notes:'NO 189 pathway. STSOL only. SA 190 or 491 regional is primary route. Critical regional shortage.',
-    working_rights:'Full work rights on 485.',state_rec:'SA, NT, QLD — regional only'},
-  electrician_trade:{label:'Electrical Trade',occ:'Electrician',tier:3,mltssl:true,stsol:true,assessment:'TRA',cutoff189:65,pr_score:9,
-    notes:'Best trade for PR. 189 Tier 3 at 65 pts — lowest cutoff for any skilled occupation. TRA assessment required.',
-    working_rights:'State electrical licence required to work as electrician.',state_rec:'All states'},
-  plumbing_trade:{label:'Plumbing Trade',occ:'Plumber',tier:3,mltssl:true,stsol:true,assessment:'TRA',cutoff189:65,pr_score:9,
-    notes:'Same as electricians. 65 pts, Tier 3, all states. TRA assessment required.',
-    working_rights:'State plumbing licence required.',state_rec:'All states'},
-  construction_trade:{label:'Construction Trade',occ:'Carpenter / Bricklayer',tier:3,mltssl:true,stsol:true,assessment:'TRA',cutoff189:65,pr_score:8,
-    notes:'65 pts, Tier 3. Housing crisis driving demand. TRA assessment required.',
-    working_rights:'Full work rights.',state_rec:'All states — QLD and NSW highest volume'},
-  arts:{label:'Arts / Humanities',occ:'N/A',tier:null,mltssl:false,stsol:false,assessment:'N/A',cutoff189:null,pr_score:1,
-    notes:'Arts degrees do not typically lead directly to skilled migration pathways. Consider postgrad in a high-demand field, or employer sponsorship.',
-    working_rights:'Full work rights on 485.',state_rec:'N/A'},
-  law:{label:'Law',occ:'Lawyer / Solicitor',tier:null,mltssl:false,stsol:true,assessment:'VETASSESS',cutoff189:null,pr_score:3,
-    notes:'Law is not on MLTSSL. Limited migration pathway via skilled migration. Employer sponsorship through a law firm (482) is the main route.',
-    working_rights:'Full work rights on 485. Legal qualification requires admission to practice.',state_rec:'Employer sponsorship focus'},
-  other:{label:'Other',occ:'Varies',tier:null,mltssl:false,stsol:false,assessment:'VETASSESS',cutoff189:null,pr_score:2,
-    notes:'Other fields vary widely. Use the occupation demand tool to check your specific occupation.',
-    working_rights:'Full work rights on 485.',state_rec:'Depends on occupation'}
+var NAATI_LANGS = {
+  indian:      [{lang:'Hindi',   note:'Most widely spoken — high demand in NSW and VIC communities'},{lang:'Punjabi', note:'Strong demand in QLD and VIC'}],
+  pakistani:   [{lang:'Urdu',    note:'High demand · officially supported NAATI language'}],
+  nepali:      [{lang:'Nepali',  note:'Growing demand — high pass rate historically'}],
+  filipino:    [{lang:'Tagalog', note:'High demand — healthcare worker community'}],
+  sri_lankan:  [{lang:'Sinhala', note:'Supported NAATI language'},{lang:'Tamil', note:'Also available — strong demand in QLD and NSW'}],
+  bangladeshi: [{lang:'Bengali', note:'Officially supported NAATI CCL language'}],
+  vietnamese:  [{lang:'Vietnamese',note:'One of the most common NAATI CCL languages — strong community demand'}],
+  indonesian:  [{lang:'Indonesian',note:'Officially supported NAATI CCL language'}],
+  chinese:     [{lang:'Mandarin',note:'Available but highly competitive — lower pass rate than other languages'}]
 };
 
-function calcPoints() {
-  let pts = 0;
-  const agePts = {under18:0,_18_24:25,_25_32:30,_33_39:25,_40_44:15,_45_plus:0};
-  if(A.age==='25_32') pts+=30;
-  else if(A.age==='18_24'||A.age==='33_39') pts+=25;
-  else if(A.age==='40_44') pts+=15;
-  if(A.english==='superior') pts+=20;
-  else if(A.english==='proficient') pts+=10;
-  if(A.level==='phd') pts+=20;
-  else if(A.level==='masters'||A.level==='masters_r') pts+=15;
-  else if(A.level==='bachelor') pts+=15;
-  else if(A.level==='diploma'||A.level==='cert') pts+=10;
-  if(A.partner==='skilled_partner') pts+=10;
-  else if(A.partner==='single') pts+=10;
-  if(A.location==='regional') pts+=5; // Australian study regional
-  if(A.level==='phd'||A.level==='masters_r') pts+=5; // STEM / advanced
-  // NAATI
-  const naatiLangs=['urdu','hindi','tagalog','nepali','mandarin','tamil'];
-  if(naatiLangs.includes(A.naati_lang)) pts+=5; // assume they do it
+var STATE_DATA = [
+  {code:'SA',  name:'South Australia',          c190:65,  c491:65,  offshore:true,  round:'Mar 2026',  processing:'5-8 months',  note:'Most accessible state. Accountants, nurses, engineers, IT all accepted. Weekly/monthly rounds.'},
+  {code:'TAS', name:'Tasmania',                 c190:65,  c491:65,  offshore:false, round:'Mar 2026',  processing:'4-7 months',  note:'Weekly rounds. Fastest processing. Requires 6-9 months living in TAS first. Strong for healthcare and education.'},
+  {code:'QLD', name:'Queensland',               c190:75,  c491:65,  offshore:true,  round:'Mar 2026',  processing:'6-10 months', note:'Offshore-friendly. ROI queue system. Infrastructure, healthcare, trades prioritised.'},
+  {code:'WA',  name:'Western Australia',        c190:70,  c491:65,  offshore:true,  round:'Feb 2026',  processing:'6-9 months',  note:'Job offer required for most streams. Mining, healthcare, engineering in demand.'},
+  {code:'VIC', name:'Victoria',                 c190:75,  c491:65,  offshore:true,  round:'Mar 2026',  processing:'8-12 months', note:'Construction, renewables, aged care priority. Not accessible for accountants or business management.'},
+  {code:'NSW', name:'New South Wales',          c190:85,  c491:80,  offshore:false, round:'Mar 2026',  processing:'10-14 months',note:'Most competitive. Merit-based, no published cutoff. Healthcare and construction priority. Not suitable below 80 pts.'},
+  {code:'ACT', name:'ACT — Canberra',           c190:75,  c491:70,  offshore:false, round:'Mar 2026',  processing:'3-6 months',  note:'Canberra Matrix — requires employment or community ties in ACT. IT, education, health focus. All ACT is regional-eligible.'},
+  {code:'NT',  name:'Northern Territory',       c190:65,  c491:65,  offshore:true,  round:'Dec 2025',  processing:'4-8 months',  note:'Least competitive. NT commitment required — must live and work in NT. Healthcare and education critically needed.'}
+];
+
+var REGIONAL_UNIS = [
+  {name:'Charles Sturt University (CSU)',  states:'NSW, VIC, ACT', note:'Strong nursing, teaching, social work. Wagga Wagga campus — SA and NSW 491 nomination pathway.'},
+  {name:'University of New England (UNE)', states:'NSW',           note:'Accounting, education, IT. Armidale campus. SA 190/491 nomination common for UNE graduates.'},
+  {name:'Central Queensland University',  states:'QLD, NSW, VIC',  note:'Engineering, IT, business. QLD 190/491 pathway strong. Multiple campuses.'},
+  {name:'Federation University',          states:'VIC',            note:'Engineering, nursing, IT. Ballarat and Gippsland campuses. VIC 190 nomination.'},
+  {name:'University of Southern QLD',     states:'QLD',            note:'Engineering, IT, education. Toowoomba campus. QLD 491 pathway.'},
+  {name:'James Cook University (JCU)',    states:'QLD, NT',         note:'Nursing, engineering, marine. Townsville and Cairns. QLD and NT nomination.'},
+  {name:'Charles Darwin University (CDU)',states:'NT',              note:'Healthcare, trades, education. Darwin campus. NT nomination — most accessible nomination in Australia.'}
+];
+
+// ── POINTS CALCULATOR ───────────────────────────────────────────
+function calcPoints(degree, level, location, grad, nat) {
+  var pts = {};
+  pts.age = 30; // 27-32 = 30pts
+  pts.english = 10; // proficient 7+ = 10pts
+  pts.edu = level === 'phd' ? 20 : level === 'masters' ? 20 : level === 'bachelor' ? 15 : 10;
+  pts.overseas_work = 0; // pre-graduation
+  pts.aus_work = grad === 'done' ? 5 : 0; // 1-2yr on 485 = 5pts
+  pts.partner = 0; // unknown
+  pts.naati = (nat && NAATI_LANGS[nat]) ? 0 : 0; // shown as potential
+  pts.study = location === 'regional' ? 5 : 5; // 5pts either way (regional study OR aus study bonus)
+  pts.py = 0;
+  pts.nom_190 = 5;
+  pts.nom_491 = 15;
+  pts.base = pts.age + pts.english + pts.edu + pts.overseas_work + pts.aus_work + pts.partner + pts.study;
+  pts.with_naati = pts.base + 5;
+  pts.with_190 = pts.base + 5;
+  pts.with_491 = pts.base + 15;
+  pts.with_naati_491 = pts.base + 5 + 15;
   return pts;
 }
 
-function generatePlan() {
-  goScreen(4);
-  const field = FIELDS[A.field] || FIELDS.other;
-  const state = document.getElementById('state-sel').value || A.state || 'your state';
-  const gradMo = parseInt(A.grad)||18;
-  const basePoints = calcPoints();
-  const naatiLangs=['urdu','hindi','tagalog','nepali','mandarin','tamil'];
-  const hasNaati = naatiLangs.includes(A.naati_lang);
-  const isRegional = A.location==='regional';
-  const ptsWithNom190 = basePoints + 5;
-  const ptsWithNom491 = basePoints + 15;
+function getReadinessScore(degree, pts, location) {
+  var d = DEG_DATA[degree] || DEG_DATA.other;
+  var base = pts.base;
+  var score = 50;
+  // Tier bonus
+  if (d.tier === 1) score += 20;
+  else if (d.tier === 2) score += 12;
+  else if (d.tier === 3) score += 5;
+  else score -= 5;
+  // Points vs cutoff
+  var cut = d.c190 || 65;
+  var gap = base - cut;
+  if (gap >= 10) score += 15;
+  else if (gap >= 0) score += 8;
+  else if (gap >= -10) score -= 5;
+  else score -= 15;
+  // Regional bonus
+  if (location === 'regional') score += 8;
+  // Occupation list
+  if (d.list === 'STSOL') score -= 10;
+  return Math.min(97, Math.max(12, Math.round(score)));
+}
 
-  // 485 duration
-  let vis485 = '2 years';
-  if(A.level==='phd'||A.level==='masters_r') vis485='3 years';
-  else if(A.level==='diploma'||A.level==='cert') vis485='18 months';
+function getPathway(degree, pts) {
+  var d = DEG_DATA[degree] || DEG_DATA.other;
+  if (!d.c189) return '190 State Nomination or 491 Regional';
+  if (pts.base >= d.c189 + 5) return '189 Independent (competitive)';
+  if (pts.base >= d.c189) return '189 Independent (borderline)';
+  if (pts.with_190 >= d.c190) return '190 State Nomination';
+  if (pts.with_491 >= 65) return '491 Regional (+15 pts)';
+  return '190 State Nomination (with score improvement)';
+}
 
-  // Second 485
-  const second485 = isRegional ? ' + potential second 485 (1–2 years extra)' : '';
+function getTimeEstimate(degree, pts, location) {
+  var d = DEG_DATA[degree] || DEG_DATA.other;
+  if (d.tier === 1) return location === 'regional' ? '12–18 months from graduation' : '14–20 months from graduation';
+  if (d.tier === 2) return '16–22 months from graduation';
+  if (!d.c189) return location === 'regional' ? '16–22 months via 491' : '18–26 months via 190/491';
+  return '18–28 months from graduation';
+}
 
-  // Score colors
-  const sc = basePoints>=85?'var(--green)':basePoints>=75?'var(--teal)':basePoints>=65?'var(--amber)':'var(--red)';
-  const prLabel = field.pr_score>=8?'Excellent':field.pr_score>=6?'Good':field.pr_score>=4?'Moderate':'Difficult';
-  const prColor = field.pr_score>=8?'var(--green)':field.pr_score>=6?'var(--teal)':field.pr_score>=4?'var(--amber)':'var(--red)';
+// ── GENERATE PATHWAY ────────────────────────────────────────────
+function generatePathway() {
+  var degree   = document.getElementById('f-degree').value;
+  var level    = document.getElementById('f-level').value;
+  var status   = document.getElementById('f-status').value;
+  var nat      = document.getElementById('f-nat').value;
+  var grad     = document.getElementById('f-grad').value;
+  var location = document.getElementById('f-location').value;
 
-  // Can they do 189?
-  const can189 = field.cutoff189 && field.cutoff189!==999 && ptsWithNom491>=field.cutoff189;
-  const can190 = field.mltssl && ptsWithNom190>=65;
-  const can491 = field.mltssl && ptsWithNom491>=65;
-  const needsEmployer = !field.mltssl || field.pr_score<=3;
+  if (!degree || !level || !status) {
+    alert('Please fill in Degree field, Study level, and Current status.');
+    return;
+  }
 
-  // Time to PR estimate
-  let totalMonths = gradMo;
-  if(can189) totalMonths += 8; // 189 processing
-  else if(can190) totalMonths += 12; // wait + processing
-  else if(can491) totalMonths += 48; // 3yr regional + processing
-  else totalMonths += 30; // employer route
+  var d    = DEG_DATA[degree] || DEG_DATA.other;
+  var pts  = calcPoints(degree, level, location, grad, nat);
+  var rs   = getReadinessScore(degree, pts, location);
+  var pathway = getPathway(degree, pts);
+  var timeEst = getTimeEstimate(degree, pts, location);
 
-  const naatiBlock = hasNaati ? `
-    <div class="naati-alert">
-      <div class="na-title">🏆 NAATI CCL — +5 points available to you</div>
-      <div style="font-size:0.8rem;color:var(--muted);line-height:1.7">You speak <strong>${A.naati_lang}</strong> — NAATI Credentialed Community Language test is available in this language and adds 5 bonus points to your PR score. Cost ~$800. Takes 6–8 weeks to prepare. Do this test <strong>as soon as possible</strong>. It is the single best value points boost available to you. Your base score above already includes these 5 points.</div>
-    </div>` : '';
+  document.getElementById('results').style.display = 'block';
+  setTimeout(function(){ document.getElementById('results').scrollIntoView({behavior:'smooth'}); }, 100);
 
-  const output = document.getElementById('plan-output');
-  output.innerHTML = `
-    <!-- HEADER -->
-    <div style="background:linear-gradient(135deg,var(--td),var(--bg2));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;margin-bottom:1rem">
-      <div style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">Your Student PR Pathway</div>
-      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;margin-bottom:0.25rem"><em>${field.label}</em> → Australian PR</div>
-      <div style="font-size:0.8rem;color:var(--muted)">${field.occ} · ${state} · Graduating in ~${gradMo > 0 ? gradMo + ' months' : 'already graduated'}</div>
-    </div>
+  // Offshore banner
+  if (status === 'offshore') {
+    document.getElementById('offshore-banner').classList.add('visible');
+  }
 
-    <!-- KEY METRICS -->
-    <div class="result-grid">
-      <div class="rg-item"><div class="rg-label">Base points at graduation</div><div class="rg-val" style="color:${sc}">${basePoints} pts</div><div class="rg-sub">Before nomination. You can improve this.</div></div>
-      <div class="rg-item"><div class="rg-label">PR prospects via skilled migration</div><div class="rg-val" style="color:${prColor}">${prLabel}</div><div class="rg-sub">${field.mltssl ? 'On MLTSSL — eligible for skilled migration' : 'Not on MLTSSL — limited skilled migration'}</div></div>
-      <div class="rg-item"><div class="rg-label">485 visa duration after graduation</div><div class="rg-val" style="color:var(--teal)">${vis485}${second485}</div><div class="rg-sub">Full unrestricted work rights in Australia</div></div>
-      <div class="rg-item"><div class="rg-label">Earliest PR estimate</div><div class="rg-val" style="color:var(--text)">${totalMonths} months</div><div class="rg-sub">From now, if you take action immediately at each stage</div></div>
-    </div>
+  // ── S1: Score ring ──
+  var ringColor = rs >= 70 ? '#10B981' : rs >= 50 ? '#F59E0B' : '#EF4444';
+  var ringEl = document.getElementById('score-ring');
+  var circumference = 289;
+  var offset = circumference - (rs / 100) * circumference;
+  ringEl.setAttribute('stroke', ringColor);
+  ringEl.style.strokeDashoffset = offset;
+  document.getElementById('score-num').textContent = rs;
+  document.getElementById('score-num').style.color = ringColor;
 
-    ${naatiBlock}
+  // Tier badge
+  var tierClass = d.tier ? 'tier'+d.tier : 'tier4';
+  document.getElementById('sr-tier').innerHTML = '<span class="tier-badge '+tierClass+'">'+d.tierLabel+'</span>';
+  document.getElementById('sr-pts').textContent = pts.base + ' pts projected at graduation';
+  document.getElementById('sr-pathway').textContent = pathway;
+  document.getElementById('sr-time').textContent = timeEst;
+  document.getElementById('s1-data-note').textContent = 'Readiness score based on DHA Nov 2025 invitation data, occupation tier system, and projected points. Updated within 48hrs of each round.';
 
-    <!-- PATHWAY VISUAL -->
-    <div class="card">
-      <div class="card-title">Your Visual PR Pipeline</div>
-      <div class="pathway-strip">
-        <div class="pn ${A.status==='student'?'active-node':'dim'}"><div class="pn-visa">${A.status==='student'?'500':'Past'}</div><div class="pn-label">Student<br>Visa</div><div class="pn-time">Now</div></div>
-        <div class="pn-arrow">→</div>
-        <div class="pn ${gradMo<=6?'active-node':'future'}"><div class="pn-visa">Grad</div><div class="pn-label">Complete<br>degree</div><div class="pn-time">${gradMo<=0?'Done':gradMo+' mo'}</div></div>
-        <div class="pn-arrow">→</div>
-        <div class="pn future"><div class="pn-visa">485</div><div class="pn-label">Post-study<br>work</div><div class="pn-time">${vis485}</div></div>
-        <div class="pn-arrow">→</div>
-        ${field.mltssl ? `
-        <div class="pn future"><div class="pn-visa">EOI</div><div class="pn-label">Skills assess<br>+ EOI lodge</div><div class="pn-time">Yr 1 of 485</div></div>
-        <div class="pn-arrow">→</div>
-        <div class="pn future"><div class="pn-visa">${can189?'189':can190?'190':'491'}</div><div class="pn-label">${can189?'Independent':'Nominated'}<br>Skilled</div><div class="pn-time">PR</div></div>
-        ` : `
-        <div class="pn future"><div class="pn-visa">482</div><div class="pn-label">Employer<br>Sponsored</div><div class="pn-time">2 yrs</div></div>
-        <div class="pn-arrow">→</div>
-        <div class="pn pr"><div class="pn-visa">186</div><div class="pn-label">Permanent<br>Employer</div><div class="pn-time">PR</div></div>
-        `}
-        ${field.mltssl ? `<div class="pn-arrow">→</div><div class="pn pr"><div class="pn-visa">PR</div><div class="pn-label">Permanent<br>Resident</div><div class="pn-time">🎉</div></div>`:``}
-      </div>
-    </div>
+  // Action card
+  var actionTitle = '', actionBody = '';
+  var hasNaati = nat && NAATI_LANGS[nat];
+  if (hasNaati && pts.base < (d.c190||65) + 5) {
+    var langs = NAATI_LANGS[nat].map(function(l){ return l.lang; }).join(' or ');
+    actionTitle = 'Register for NAATI CCL (' + langs + ') before graduation';
+    actionBody = 'NAATI CCL adds 5 DHA points for $800 and 3 months preparation. At your projected '+pts.base+' pts, adding NAATI takes you to '+(pts.base+5)+' pts — '+(pts.base+5 >= (d.c190||65) ? 'above the SA 190 cutoff of '+(d.c190||65)+' pts, opening state nomination at graduation' : 'closer to the state cutoff and significantly improving your invitation chances')+'. This can be done while studying — it does not require graduation first. Register at naati.com.au';
+  } else if (location !== 'regional' && (degree === 'nursing' || degree === 'teaching' || degree === 'engineering')) {
+    actionTitle = 'Consider a regional campus — it adds 20 points advantage';
+    actionBody = 'Studying at a regional campus like Charles Sturt (CSU), University of New England, or Charles Darwin University adds 5 study points AND qualifies you for the 491 regional pathway (+15 pts) — a total of 20 additional effective points. For '+d.occ+', this is the difference between a 3-year wait and a 12-month pathway to PR.';
+  } else if (d.tier === 4 && (grad === '3y' || grad === '2y')) {
+    actionTitle = degree === 'accounting'
+      ? 'Focus on SA 190 — it is the most accessible pathway for accountants'
+      : 'Plan for SA or QLD 190 state nomination — 189 is not your pathway at 70 pts';
+    actionBody = d.tierLabel + '. Your most accessible pathway is SA 190 state nomination at 65 pts — SA actively nominates '+d.occ+' where NSW and VIC do not. Plan your move to SA within 3 months of graduating and register at migration.sa.gov.au immediately.';
+  } else if (d.tier === 1) {
+    actionTitle = 'You are in the best possible occupation category — lodge EOI at graduation';
+    actionBody = d.occ+' is a Tier 1 critical shortage occupation. Healthcare professionals received invitations at 75 pts in the Nov 2025 round. Lodge your EOI the same week you graduate — your Date of Effect is your tiebreaker in the queue.';
+  } else {
+    actionTitle = 'Lodge EOI immediately at graduation and apply to SA 190 simultaneously';
+    actionBody = 'At your projected '+pts.base+' pts, both pathways are viable. Submit your SkillSelect EOI and apply to SA state nomination on the same day you graduate. SA runs regular rounds and is your most accessible state at '+pts.base+' pts for '+d.occ+'.';
+  }
+  document.getElementById('s1-action-title').textContent = actionTitle;
+  document.getElementById('s1-action-body').textContent = actionBody;
 
-    <!-- POINTS BREAKDOWN -->
-    <div class="card">
-      <div class="card-title">Your Points Score at Graduation</div>
-      <div class="tl-bar">
-        ${A.age==='25_32'?`<div class="tl-row"><span class="tl-phase">Age 25–32</span><div class="tl-track"><div class="tl-fill" style="width:100%;background:var(--teal)"></div></div><span class="tl-dur">30 pts</span></div>`:''}
-        ${A.age==='18_24'||A.age==='33_39'?`<div class="tl-row"><span class="tl-phase">Age points</span><div class="tl-track"><div class="tl-fill" style="width:83%;background:var(--teal)"></div></div><span class="tl-dur">25 pts</span></div>`:''}
-        ${A.age==='40_44'?`<div class="tl-row"><span class="tl-phase">Age 40–44</span><div class="tl-track"><div class="tl-fill" style="width:50%;background:var(--amber)"></div></div><span class="tl-dur">15 pts</span></div>`:''}
-        ${A.english==='superior'?`<div class="tl-row"><span class="tl-phase">Superior English</span><div class="tl-track"><div class="tl-fill" style="width:100%;background:var(--green)"></div></div><span class="tl-dur">20 pts</span></div>`:A.english==='proficient'?`<div class="tl-row"><span class="tl-phase">Proficient English</span><div class="tl-track"><div class="tl-fill" style="width:50%;background:var(--amber)"></div></div><span class="tl-dur">10 pts</span></div>`:`<div class="tl-row"><span class="tl-phase">Competent English</span><div class="tl-track"><div class="tl-fill" style="width:0%;background:var(--red)"></div></div><span class="tl-dur">0 pts ⚠️</span></div>`}
-        ${(A.level==='phd')?`<div class="tl-row"><span class="tl-phase">PhD</span><div class="tl-track"><div class="tl-fill" style="width:100%;background:var(--teal)"></div></div><span class="tl-dur">20 pts</span></div>`:(A.level==='masters'||A.level==='masters_r')?`<div class="tl-row"><span class="tl-phase">Masters</span><div class="tl-track"><div class="tl-fill" style="width:75%;background:var(--teal)"></div></div><span class="tl-dur">15 pts</span></div>`:(A.level==='bachelor')?`<div class="tl-row"><span class="tl-phase">Bachelor</span><div class="tl-track"><div class="tl-fill" style="width:75%;background:var(--teal)"></div></div><span class="tl-dur">15 pts</span></div>`:`<div class="tl-row"><span class="tl-phase">Diploma/Cert</span><div class="tl-track"><div class="tl-fill" style="width:50%;background:var(--blue)"></div></div><span class="tl-dur">10 pts</span></div>`}
-        ${A.partner==='single'||A.partner==='skilled_partner'?`<div class="tl-row"><span class="tl-phase">Partner status</span><div class="tl-track"><div class="tl-fill" style="width:50%;background:var(--blue)"></div></div><span class="tl-dur">10 pts</span></div>`:''}
-        ${isRegional?`<div class="tl-row"><span class="tl-phase">Regional study</span><div class="tl-track"><div class="tl-fill" style="width:25%;background:var(--amber)"></div></div><span class="tl-dur">5 pts</span></div>`:''}
-        ${hasNaati?`<div class="tl-row"><span class="tl-phase">NAATI CCL</span><div class="tl-track"><div class="tl-fill" style="width:25%;background:var(--purple)"></div></div><span class="tl-dur">5 pts ✓</span></div>`:''}
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:0.75rem;background:var(--td);border:1px solid var(--tb);border-radius:10px;font-family:'Syne',sans-serif">
-        <span style="font-size:0.85rem;font-weight:700">Base score at graduation</span>
-        <span style="font-size:1.1rem;font-weight:800;color:${sc}">${basePoints} pts</span>
-      </div>
-      <div style="font-size:0.75rem;color:var(--muted);margin-top:0.6rem;line-height:1.6">
-        Not included above (things you will gain during 485 period): Australian work experience (+5 to +20 pts) · Australian study points if not already included · Professional Year (+5 pts) · NAATI CCL if not done yet (+5 pts)
-      </div>
-    </div>
+  // ── S2: Pipeline ──
+  var dur500 = level === 'masters' ? '1.5–2 years' : level === 'diploma' ? '1–2 years' : level === 'phd' ? '3–4 years' : '3–4 years';
+  var dur485 = level === 'phd' ? '4 years' : level === 'masters' ? '3 years' : location === 'regional' ? '3 years' : '2 years';
+  var stages = [
+    {num:'Stage 1', title:'500 Student Visa', time:dur500, active: status==='studying',
+     body:'Work rights: 48hrs per fortnight cap (applies year-round, no holiday exemption since July 2023). Building: Australian study bonus, regional study bonus, English score, age points.'},
+    {num:'Stage 2', title:'485 Post-Study Visa', time:dur485+' ('+( location==='regional'?'regional bonus':level==='masters'?'masters bonus':'metro')+')' , active: status==='graduated',
+     body:'Unlimited work rights. Key actions: get skills assessment (3-12 months), submit EOI, build Australian work experience points (5 pts per year bracket). Skills assessment must be done before EOI.'},
+    {num:'Stage 3', title:'EOI in Pool', time:'Depends on points and occupation', active:false,
+     body:d.occ+' pool: ~'+d.pool.toLocaleString()+' active EOIs. Your projected score: '+pts.base+' pts. Key: submit above cutoff to protect Date of Effect. Monitor rounds at visaiq.com.au/rounds.'},
+    {num:'Stage 4', title:pathway.indexOf('189')!==-1?'189 Federal Invitation':'State Nomination', time:pathway.indexOf('491')!==-1?'SA/QLD/TAS running rounds':pathway.indexOf('189')!==-1?'Next quarterly round (overdue — expected soon)':'SA, QLD, TAS most accessible', active:false,
+     body:pathway.indexOf('491')!==-1?'491 requires 3 years regional employment then 191 PR. SA, QLD, TAS most accessible for '+d.occ+'.':pathway.indexOf('189')!==-1?'189 quarterly rounds. Nov 2025 round was 10,000 invitations. Round 3 overdue — could be announced any day.':'190 nomination adds 5 pts and puts you in a separate, often faster queue. SA runs monthly.'},
+    {num:'Stage 5', title:'PR Grant', time:'8–14 months after nomination', active:false,
+     body:'190/491 processing: 8–14 months. 189 varies by occupation and nationality. Recent grants: SA 190 in 5–8 months, VIC 190 in 8–12 months, TAS 190 in 4–7 months.'}
+  ];
+  var track = document.getElementById('pipeline-track');
+  track.innerHTML = '';
+  stages.forEach(function(s, i) {
+    if (i > 0) {
+      var arrow = document.createElement('div');
+      arrow.className = 'pipe-arrow';
+      arrow.textContent = '→';
+      track.appendChild(arrow);
+    }
+    var card = document.createElement('div');
+    card.className = 'pipe-stage' + (s.active ? ' active-stage' : '');
+    card.innerHTML = '<div class="pipe-stage-num">'+s.num+'</div>'+
+      '<div class="pipe-stage-title">'+s.title+'</div>'+
+      '<div class="pipe-stage-time">'+s.time+'</div>'+
+      '<div class="pipe-stage-body">'+s.body+'</div>';
+    track.appendChild(card);
+  });
 
-    <!-- ACTION PLAN -->
-    <div class="card">
-      <div class="card-title">Your Action Plan — ${gradMo<=0?'Starting Now':'From Today'}</div>
-      <div style="display:flex;flex-direction:column;gap:0.5rem">
-        ${field.mltssl ? `
-        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;border-left:3px solid var(--teal)">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:0.25rem">Priority 1 — Skills Assessment (start now or at graduation)</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">Apply to <strong>${field.assessment}</strong> for your skills assessment. This takes 2–4 months and is required before you can lodge your EOI. Do not wait until after graduation — start the process in your final semester.</div>
-        </div>` : `
-        <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.9rem;">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--amber);margin-bottom:0.25rem">⚠️ ${field.label} — Limited skilled migration pathway</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">${field.notes}</div>
-        </div>`}
+  // ── S3: Degree checker ──
+  var listHtml = '';
+  if (d.list === 'MLTSSL') {
+    listHtml = '<div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.6rem">'+
+      '<span style="font-family:\'Syne\',sans-serif;font-size:0.88rem;font-weight:800">'+d.occ+'</span>'+
+      '<span class="info-badge">MLTSSL</span>'+
+      '<span class="tier-badge '+tierClass+'">'+d.tierLabel+'</span>'+
+      '</div>'+
+      '<div style="font-size:0.82rem;color:var(--muted);line-height:1.7">On the <strong style="color:var(--text)">Medium and Long Term Strategic Skills List (MLTSSL)</strong> — eligible for 189, 190, and 491 visa pathways. This is the best occupation list for PR. Your skills assessment authority: <strong style="color:var(--teal)">'+(degree==='nursing'?'AHPRA':degree==='it'?'ACS':degree==='engineering'?'Engineers Australia':degree==='accounting'?'CPA Australia / CAANZ':degree==='teaching'?'AITSL':degree==='social_work'?'AASW':'VETASSESS')+'</strong></div>';
+  } else {
+    listHtml = '<div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.6rem">'+
+      '<span style="font-family:\'Syne\',sans-serif;font-size:0.88rem;font-weight:800">'+d.occ+'</span>'+
+      '<span class="warn-badge">STSOL</span>'+
+      '</div>'+
+      '<div style="font-size:0.82rem;color:var(--muted);line-height:1.7">On the <strong style="color:var(--text)">Short Term Skilled Occupation List (STSOL)</strong> — <strong style="color:#f87171">not eligible for the 189 independent visa</strong>. Your pathway is 190 state nomination or 491 regional nomination only. SA and TAS actively nominate this occupation.</div>';
+  }
+  document.getElementById('occ-list-status').innerHTML = listHtml;
 
-        ${A.english!=='superior'?`
-        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;border-left:3px solid var(--amber)">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--amber);margin-bottom:0.25rem">Priority 2 — Improve English to Superior (IELTS 8.0+)</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">Moving from ${A.english==='proficient'?'Proficient (10 pts)':'Competent (0 pts)'} to Superior (20 pts) adds ${A.english==='proficient'?'10':'20'} points. This is the biggest single points boost available and takes 3–12 months of preparation. Aim for IELTS 8.0 in all four bands.</div>
-        </div>`:``}
+  // Points breakdown table
+  var rows = [
+    ['Age (27 at graduation, assumed)', pts.age],
+    ['English — Proficient IELTS 7+ (10pts) · Superior IELTS 8+ (20pts)', pts.english],
+    ['Education — ' + (level==='phd'?'PhD':level==='masters'?'Masters':level==='bachelor'?'Bachelor':'Diploma'), pts.edu],
+    ['Overseas work experience (pre-graduation)', pts.overseas_work],
+    ['Australian work experience (during 485 — builds over time)', pts.aus_work],
+    ['Partner / spouse points', pts.partner],
+    [location==='regional'?'Regional study bonus (2 academic years regional campus)':'Australian study bonus (2 academic years in Australia)', pts.study],
+    ['NAATI CCL — potential if eligible for your language', '(+5)'],
+    ['190 state nomination — if received', '(+5)'],
+    ['491 regional nomination — if received', '(+15)'],
+  ];
+  var tableHtml = rows.map(function(r) {
+    var isZero = r[1] === 0;
+    return '<tr><td style="color:'+(isZero?'rgba(122,143,168,0.5)':'var(--muted)')+'">'+r[0]+'</td><td style="color:'+(typeof r[1]==='string'?'var(--muted)':r[1]>0?'var(--text)':'rgba(122,143,168,0.5)')+'">'+r[1]+'</td></tr>';
+  }).join('') +
+  '<tr class="pts-total"><td>Total projected at graduation</td><td>'+pts.base+' pts</td></tr>';
+  document.getElementById('pts-breakdown').innerHTML = tableHtml;
 
-        ${!hasNaati?`
-        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;border-left:3px solid var(--blue)">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--blue);margin-bottom:0.25rem">Priority 3 — NAATI CCL (if your language is eligible)</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">Check if your home language is available for NAATI CCL test — Urdu, Hindi, Nepali, Tagalog, Mandarin, Tamil and more. Cost ~$800. Preparation 6–8 weeks. Adds +5 points. Check naati.com.au for available languages.</div>
-        </div>`:``}
+  // Pathway assessment
+  var paHtml = '<div style="font-family:\'Syne\',sans-serif;font-size:0.85rem;font-weight:800;margin-bottom:0.6rem">189 vs 190 vs 491 — honest assessment for your profile</div>';
+  if (!d.c189) {
+    paHtml += '<div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:0.85rem;font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.5rem"><strong style="color:#f87171">189 Independent: Not available</strong> — '+d.occ+' was not invited in either 2025-26 federal round. '+(degree==='accounting'?'Accountants have a 15,000+ EOI pool and the 0.5× Tier 4 multiplier makes federal invitation extremely unlikely. SA 190 is your primary pathway.':d.tierLabel)+'</div>';
+  } else if (pts.base >= d.c189) {
+    paHtml += '<div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:0.85rem;font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.5rem"><strong style="color:#10B981">189 Independent: Competitive</strong> — at '+pts.base+' pts you are at or above the Nov 2025 cutoff of '+d.c189+' pts for '+d.occ+'. Lodge EOI at graduation. Monitor rounds at visaiq.com.au/rounds.</div>';
+  } else {
+    var gap189 = d.c189 - pts.base;
+    paHtml += '<div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.85rem;font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.5rem"><strong style="color:var(--amber)">189 Independent: Borderline</strong> — at '+pts.base+' pts you are '+gap189+' pts below the Nov 2025 cutoff of '+d.c189+' pts for '+d.occ+'. Do not submit EOI until above cutoff — submitting below cutoff uses your Date of Effect without improving your position.'+(hasNaati?' NAATI CCL adds 5 pts and would put you at '+(pts.base+5)+' pts.':'')+'</div>';
+  }
+  paHtml += '<div style="background:rgba(0,200,150,0.06);border:1px solid var(--tb);border-radius:10px;padding:0.85rem;font-size:0.82rem;color:var(--muted);line-height:1.7"><strong style="color:var(--teal)">190 State Nomination: Recommended</strong> — SA 190 cutoff is '+d.c190+' pts for '+d.occ+'. At your projected '+pts.base+' pts you '+(pts.base>=d.c190?'qualify at graduation — apply to SA immediately':'need '+(d.c190-pts.base)+' more pts — SA is your most accessible option')+'.'+(location==='regional'?' Your regional study also qualifies you for 491 (+15 pts), the most powerful pathway available at '+pts.base+' base pts.':'')+'</div>';
+  document.getElementById('pathway-assessment').innerHTML = paHtml;
 
-        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;border-left:3px solid var(--green)">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--green);margin-bottom:0.25rem">Priority 4 — Lodge EOI immediately after skills assessment</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">As soon as you have your skills assessment result, lodge your EOI in SkillSelect. The date you lodge becomes your tiebreaker date. If two people have the same score, whoever lodged earlier gets the invitation. Do not delay — even by one day.</div>
-        </div>
+  // State grid
+  var stateGridHtml = STATE_DATA.map(function(s) {
+    var eligible = pts.base >= s.c190;
+    var borderline = !eligible && pts.base >= s.c190 - 10;
+    var cls = eligible ? 'state-green' : borderline ? 'state-amber' : 'state-red';
+    var cutLabel = pts.base >= s.c190 ? '✓ '+s.c190+'pts' : borderline ? '~'+s.c190+'pts' : '✗ '+s.c190+'pts';
+    return '<div class="state-cell '+cls+'"><span class="state-cell-name">'+s.code+'</span><span class="state-cell-pts">'+cutLabel+'</span></div>';
+  }).join('');
+  document.getElementById('state-grid-s3').innerHTML = stateGridHtml;
 
-        ${field.state_rec && field.pr_score<=5?`
-        <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.9rem;">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--amber);margin-bottom:0.25rem">Critical state recommendation for ${field.label}</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6"><strong style="color:var(--text)">${field.state_rec}</strong> — This is the most important geographic decision for your occupation. Many students choose where to study based on university ranking or family connections. For your occupation, state choice could be the difference between PR in 3 years or PR in 10 years.</div>
-        </div>`:``}
+  // Offshore state note
+  if (status === 'offshore') {
+    var offEl = document.getElementById('offshore-state-note');
+    offEl.style.display = 'block';
+    offEl.innerHTML = '<strong style="color:var(--blue)">Offshore applicants:</strong> SA, QLD, WA, NT accept offshore applicants in most rounds. VIC accepted offshore in Mar 2026 round. <strong style="color:#f87171">NSW and ACT</strong> are primarily onshore-focused — do not plan your move around NSW nomination as an offshore applicant.';
+  }
 
-        <div style="background:var(--bg3);border-radius:10px;padding:0.9rem;border-left:3px solid var(--teal)">
-          <div style="font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:0.25rem">During your 485 — Build Australian work experience</div>
-          <div style="font-size:0.77rem;color:var(--muted);line-height:1.6">1–2 years Australian work experience = +5 pts. 3–4 years = +10 pts. 5–7 years = +15 pts. Work in your nominated occupation (not just any job) — this experience counts for skills assessment and your EOI. Every year matters.</div>
-        </div>
-      </div>
-    </div>
+  // ── S4: NAATI ──
+  var naatiBlock = '';
+  if (nat && NAATI_LANGS[nat]) {
+    NAATI_LANGS[nat].forEach(function(l) {
+      naatiBlock += '<div class="naati-lang"><div class="naati-lang-title">'+l.lang+' NAATI CCL — available for '+document.getElementById('f-nat').options[document.getElementById('f-nat').selectedIndex].text.replace(/🇮🇳|🇵🇰|🇳🇵|🇵🇭|🇨🇳|🇱🇰|🇧🇩|🇻🇳|🇮🇩|🇿🇦/g,'').trim()+' applicants</div><div class="naati-lang-detail">'+l.note+' · Written and oral exam · 3 hours · $800 · Results valid 3 years · Can be done while studying · Register: naati.com.au</div></div>';
+    });
+  } else {
+    naatiBlock = '<div class="naati-lang"><div class="naati-lang-title">Check NAATI CCL for your language</div><div class="naati-lang-detail">NAATI offers CCL in 50+ languages. Check if your language qualifies at naati.com.au — it adds 5 DHA points for $800 and 3 months of preparation.</div></div>';
+  }
+  document.getElementById('naati-lang-block').innerHTML = naatiBlock;
+  document.getElementById('naati-share-btn').onclick = function() {
+    var msg = encodeURIComponent('I just found out I qualify for 5 free PR points through NAATI CCL. Check if you do too — visaiq.com.au/student-pathway');
+    window.open('https://wa.me/?text='+msg,'_blank');
+  };
 
-    <!-- FIELD-SPECIFIC INSIGHT -->
-    <div style="background:linear-gradient(135deg,var(--td),var(--bg2));border:1px solid var(--tb);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
-      <div style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">VisaIQ Assessment — ${field.label}</div>
-      <div style="font-size:0.85rem;color:var(--text);line-height:1.7">${field.notes}</div>
-    </div>
+  // ── S5: Scenarios ──
+  var sc = [
+    {label:'Scenario A', sublabel:'Metro · No NAATI · No regional', pts:pts.base, time:'24–32 months', col:'var(--muted)', best:false},
+    {label:'Scenario B', sublabel:'Metro · NAATI added · 190 nomination', pts:pts.base+5+5, time:'18–24 months', col:'var(--blue)', best:false},
+    {label:'Scenario C', sublabel:'Regional · NAATI · 491 pathway', pts:pts.base+5+15, time:'12–18 months', col:'var(--teal)', best:true}
+  ];
+  document.getElementById('scenario-grid').innerHTML = sc.map(function(s) {
+    return '<div class="scenario-card'+(s.best?' best':'')+'">'+
+      '<div class="scenario-label" style="color:'+s.col+'">'+s.label+' — '+s.sublabel+'</div>'+
+      '<div class="scenario-pts" style="color:'+s.col+'">'+s.pts+'</div>'+
+      '<div style="font-size:0.65rem;color:var(--muted);margin-bottom:0.3rem">effective pts</div>'+
+      '<div class="scenario-time"><strong style="color:'+s.col+'">'+s.time+'</strong><br>estimated time to PR from graduation</div>'+
+    '</div>';
+  }).join('');
 
-    <!-- WORKING RIGHTS NOW -->
-    <div class="card">
-      <div class="card-title">Your Working Rights Right Now</div>
-      ${A.status==='student'?`
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
-        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem"><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--teal);margin-bottom:0.2rem">During study (500 visa)</div><div style="font-size:0.75rem;color:var(--muted)">48 hours per fortnight during semester. Unlimited during official holiday periods and after graduation. Partner has same rights as you.</div></div>
-        <div style="background:var(--bg3);border-radius:8px;padding:0.75rem"><div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--teal);margin-bottom:0.2rem">After graduation (485 visa)</div><div style="font-size:0.75rem;color:var(--muted)">Full unrestricted work rights. Any employer, any hours, any occupation. This is when you should maximise work experience in your nominated role.</div></div>
-      </div>`:
-      A.status==='485'?`<div class="ib-teal ib">You are on a 485 visa — you have <strong>full unrestricted work rights</strong>. Any employer, any job, any hours. Focus on maximising skilled work experience in your nominated occupation and lodging your EOI now if you have not already.</div>`:`
-      <div class="ib-blue ib">Working rights depend on your current visa. As a 482 holder — full work rights with your sponsoring employer. On a 500 — 48 hours/fortnight during semester.</div>`}
-    </div>
+  // Regional unis
+  document.getElementById('regional-unis').innerHTML = REGIONAL_UNIS.map(function(u) {
+    return '<div style="background:var(--bg3);border-radius:8px;padding:0.7rem;font-size:0.75rem">'+
+      '<strong style="color:var(--text);display:block;margin-bottom:0.2rem">'+u.name+'</strong>'+
+      '<span style="color:var(--teal);font-size:0.68rem">'+u.states+'</span>'+
+      '<div style="color:var(--muted);margin-top:0.2rem;font-size:0.7rem">'+u.note+'</div>'+
+    '</div>';
+  }).join('');
 
-    <!-- CTA -->
-    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:1rem">
-      <a href="/points-calculator" style="padding:0.8rem 1.4rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none">Calculate exact points →</a>
-      <a href="/${field.mltssl&&field.tier===1?'189-visa':field.mltssl&&field.tier===2?'190-visa':'491-visa'}" style="padding:0.8rem 1.4rem;background:transparent;color:var(--blue);border:1px solid rgba(78,142,255,0.3);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none">${field.mltssl&&field.tier===1?'189 visa guide':'190 state nomination'} →</a>
-    </div>
-    <div style="text-align:center;margin-top:0.75rem;font-size:0.72rem;color:var(--muted)">VisaIQ · Not migration advice · Data: DHA 2025–26 · Last updated March 2026</div>
-  `;
+  // ── S6: Outcomes feed ──
+  loadStudentOutcomes(degree, pts.base);
+
+  // ── S7: State guide ──
+  var stateGuideHtml = STATE_DATA.map(function(s) {
+    var eligible = pts.base >= s.c190;
+    var borderline = !eligible && pts.base >= s.c190 - 10;
+    var col = eligible ? 'rgba(16,185,129,0.12)' : borderline ? 'rgba(245,158,11,0.08)' : 'rgba(239,68,68,0.06)';
+    var bdr = eligible ? 'rgba(16,185,129,0.25)' : borderline ? 'rgba(245,158,11,0.2)' : 'rgba(239,68,68,0.15)';
+    var badge = eligible ? '<span style="font-size:0.62rem;font-weight:700;color:#10B981">✓ Strong chance</span>' : borderline ? '<span style="font-size:0.62rem;font-weight:700;color:var(--amber)">◐ Possible</span>' : '<span style="font-size:0.62rem;font-weight:700;color:#f87171">✗ Below cutoff</span>';
+    return '<div style="background:'+col+';border:1px solid '+bdr+';border-radius:12px;padding:1rem">'+
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem">'+
+        '<div style="font-family:\'Syne\',sans-serif;font-size:0.95rem;font-weight:800">'+s.code+'</div>'+
+        badge+
+      '</div>'+
+      '<div style="font-size:0.72rem;color:var(--muted);line-height:1.5;margin-bottom:0.4rem">'+
+        '190 cutoff: <strong style="color:var(--text)">~'+s.c190+' pts</strong> · '+
+        'Last round: <strong style="color:var(--text)">'+s.round+'</strong><br>'+
+        'Processing: '+s.processing+'<br>'+
+        'Offshore: <strong style="color:'+(s.offshore?'#10B981':'#f87171')+'">'+(s.offshore?'✓ Yes':'✗ No')+'</strong>'+
+      '</div>'+
+      '<div style="font-size:0.68rem;color:var(--muted);line-height:1.5">'+s.note+'</div>'+
+    '</div>';
+  }).join('');
+  document.getElementById('state-guide-cards').innerHTML = stateGuideHtml;
+
+  // ── S8: 485 strategy + mistakes ──
+  var dur = parseInt(dur485);
+  var stratHtml = '';
+  if (status === 'graduated') {
+    stratHtml = '<strong style="color:var(--text)">You are on or approaching 485 — do these now:</strong><br>';
+    stratHtml += '✅ <strong>Get your skills assessment immediately</strong> — takes 3–12 months. Cannot submit EOI without it. '+(degree==='nursing'?'AHPRA':degree==='it'?'ACS':degree==='engineering'?'Engineers Australia':degree==='accounting'?'CPA / CAANZ':'AITSL / AASW / VETASSESS')+'.<br>';
+    stratHtml += '✅ <strong>Submit EOI in SkillSelect</strong> as soon as skills assessment arrives. Do not wait. Your Date of Effect = the day you lodged EOI at a qualifying score. This is your tiebreaker.<br>';
+    stratHtml += '✅ <strong>Apply to SA state nomination immediately</strong> — apply to SA, QLD, TAS simultaneously. No restriction on applying to multiple states.<br>';
+    stratHtml += '✅ <strong>Do NAATI CCL now if eligible</strong> — adds 5 pts, takes 3 months. Register at naati.com.au<br>';
+    stratHtml += '✅ <strong>Keep evidence of all work hours</strong> — payslips, employment contracts, tax records. You need these for PR application.<br>';
+  } else {
+    stratHtml = '<strong style="color:var(--text)">Year by year plan during your 485:</strong><br>';
+    stratHtml += '<strong style="color:var(--teal)">Year 1:</strong> Secure skills assessment (lodge the day you graduate). Submit EOI immediately when skills assessment arrives. Start building Australian work experience (5 pts after 1 year).<br>';
+    stratHtml += '<strong style="color:var(--teal)">Year 2:</strong> Apply for state nomination (SA, QLD, TAS). Ensure points maximised — NAATI, English upgrade. Check cutoffs monthly at visaiq.com.au/rounds.<br>';
+    if (dur >= 3) stratHtml += '<strong style="color:var(--teal)">Year 3:</strong> If not yet invited — consider regional move for 491 pathway (+15 pts). Renew NAATI CCL if expiring. Review ANZSCO code match with your employer.<br>';
+    if (dur >= 4) stratHtml += '<strong style="color:var(--teal)">Year 4 (PhD only):</strong> You have time — keep building points, consider professional year (+5 pts), ensure occupation on list for continued eligibility.<br>';
+  }
+  document.getElementById('visa485-strategy').innerHTML = stratHtml;
+
+  var mistakes = '1. <strong style="color:var(--text)">Not submitting EOI immediately at graduation</strong> — every week of delay loses queue seniority. Date of Effect is everything.<br>';
+  mistakes += '2. <strong style="color:var(--text)">Not getting skills assessment before 485 expires</strong> — assessment takes 3–12 months. Lodge the day you graduate, not when 485 is about to expire.<br>';
+  mistakes += '3. <strong style="color:var(--text)">Wrong ANZSCO code</strong> — your degree does not automatically determine your ANZSCO. An accountant with an IT minor may qualify under IT. Check with an assessor.<br>';
+  mistakes += '4. <strong style="color:var(--text)">Letting NAATI CCL expire</strong> — results are valid for 3 years. If you did NAATI in your final year of study it may expire before your 485 ends. Note the expiry date.<br>';
+  mistakes += '5. <strong style="color:var(--text)">Not keeping work evidence</strong> — you need payslips, contracts, and tax records for PR application. Keep a folder from day 1 of 485.<br>';
+  mistakes += '6. <strong style="color:var(--text)">Applying to state nomination too late</strong> — apply in Year 1 of your 485, not Year 2. Rounds happen without warning and demand your ROI be already registered.';
+  document.getElementById('common-mistakes').innerHTML = mistakes;
+
+  // Load work hours from localStorage
+  try {
+    var saved = JSON.parse(localStorage.getItem('visaiq_wh') || '{}');
+    if (saved.w1) document.getElementById('wh-week1').value = saved.w1;
+    if (saved.w2) document.getElementById('wh-week2').value = saved.w2;
+    calcHours();
+  } catch(e){}
+
+  // Run regret calc with current degree pre-selected
+  document.getElementById('regret-section').style.display = 'block';
+  runRegretCalc();
+}
+
+// ── WORK HOURS TRACKER ──────────────────────────────────────────
+function calcHours() {
+  var w1 = parseFloat(document.getElementById('wh-week1').value) || 0;
+  var w2 = parseFloat(document.getElementById('wh-week2').value) || 0;
+  var total = w1 + w2;
+  var remaining = 48 - total;
+  var pct = Math.min(100, Math.round((total/48)*100));
+  var col = total > 48 ? '#EF4444' : total > 40 ? '#F59E0B' : '#10B981';
+  var msg = total > 48
+    ? '<strong style="color:#EF4444">⚠️ Visa condition breach — '+total.toFixed(1)+' hours is above the 48-hour limit.</strong> You should seek advice from your university international student office immediately.'
+    : total > 40
+    ? '<strong style="color:var(--amber)">'+total.toFixed(1)+' / 48 hours used</strong> — approaching limit. '+remaining.toFixed(1)+' hours remaining this fortnight.'
+    : '<strong style="color:#10B981">'+total.toFixed(1)+' / 48 hours</strong> — '+remaining.toFixed(1)+' hours remaining this fortnight.';
+  var bar = '<div style="background:rgba(255,255,255,0.06);border-radius:20px;height:6px;margin-top:0.5rem;overflow:hidden"><div style="width:'+pct+'%;height:100%;border-radius:20px;background:'+col+';transition:width 0.4s"></div></div>';
+  document.getElementById('hours-result').innerHTML = msg + bar + '<div style="font-size:0.68rem;color:var(--muted);margin-top:0.35rem">48-hour cap applies year-round — no holiday exemption (rule changed July 2023). Source: DHA.</div>';
+  try { localStorage.setItem('visaiq_wh', JSON.stringify({w1:w1, w2:w2})); } catch(e){}
+}
+
+function resetHours() {
+  document.getElementById('wh-week1').value = '';
+  document.getElementById('wh-week2').value = '';
+  document.getElementById('hours-result').textContent = 'Enter your hours above to check your fortnight limit.';
+  try { localStorage.removeItem('visaiq_wh'); } catch(e){}
+}
+
+// ── DEGREE REGRET CALCULATOR ─────────────────────────────────────
+function runRegretCalc() {
+  var degree = document.getElementById('f-degree').value || 'business';
+  var years  = parseInt(document.getElementById('r-years').value) || 3;
+  var d = DEG_DATA[degree] || DEG_DATA.other;
+
+  var alternatives = {
+    nursing:    null,
+    it:         {deg:'nursing',     label:'Bachelor of Nursing'},
+    engineering:{deg:'nursing',     label:'Bachelor of Nursing'},
+    accounting: {deg:'teaching',    label:'Bachelor of Education'},
+    teaching:   null,
+    hospitality:{deg:'nursing',     label:'Bachelor of Nursing (Enrolled Nurse entry)'},
+    business:   {deg:'teaching',    label:'Bachelor of Education'},
+    social_work:{deg:'teaching',    label:'Bachelor of Education (Special Ed)'},
+    other:      {deg:'nursing',     label:'Bachelor of Nursing'}
+  };
+
+  var alt = alternatives[degree];
+  var rec = '';
+  var recColor = 'var(--teal)';
+
+  if (!alt || d.tier <= 2) {
+    rec = 'Stay the course. '+d.label+' is a '+d.tierLabel+'. Your PR pathway is strong. Focus on NAATI CCL, regional study if possible, and lodging EOI at graduation.';
+    recColor = '#10B981';
+  } else if (years <= 1) {
+    rec = 'Stay the course — 1 year remaining means switching costs outweigh any PR benefit. Focus on maximising your current degree outcome: NAATI CCL now, SA 190 plan, regional move if feasible.';
+    recColor = 'var(--amber)';
+  } else if (years === 2) {
+    rec = '2 years remaining — consider carefully. If you can transfer credits into '+( alt?DEG_DATA[alt.deg].label:'a Tier 1 or 2 field')+' it may be worth it. If transfer is not possible, stay and maximise the current pathway: NAATI + SA 190 + 491 regional.';
+    recColor = 'var(--amber)';
+  } else {
+    rec = years+' years remaining — strong case for switching to '+(alt?DEG_DATA[alt.deg].label:'')+'. '+( alt ? DEG_DATA[alt.deg].tierLabel : 'Tier 1 or 2 demand')+'. PR timeline from graduation: 12–18 months vs '+( d.tier===4?'26–36 months':'18–28 months')+' for your current degree. The earlier you switch the more you gain.';
+    recColor = '#f87171';
+  }
+
+  var altD = alt ? DEG_DATA[alt.deg] : null;
+  document.getElementById('regret-grid').style.display = 'grid';
+  document.getElementById('regret-grid').innerHTML =
+    '<div class="regret-col">'+
+      '<div class="regret-col-title">Current — '+d.label+'</div>'+
+      '<div style="margin-bottom:0.35rem"><span class="tier-badge '+(d.tier?'tier'+d.tier:'tier4')+'">'+d.tierLabel+'</span></div>'+
+      '<div style="font-size:0.75rem;color:var(--muted);line-height:1.5">189 available: '+(d.c189?'Yes — '+d.c189+' pts cutoff':'No')+'<br>190 pathway: SA/QLD/TAS at '+d.c190+' pts<br>Pool size: '+d.pool.toLocaleString()+' EOIs</div>'+
+    '</div>'+
+    ( altD ?
+    '<div class="regret-col" style="border-color:rgba(0,200,150,0.2)">'+
+      '<div class="regret-col-title">Alternative — '+(alt.label)+'</div>'+
+      '<div style="margin-bottom:0.35rem"><span class="tier-badge tier'+(altD.tier||3)+'">'+altD.tierLabel+'</span></div>'+
+      '<div style="font-size:0.75rem;color:var(--muted);line-height:1.5">189 available: '+(altD.c189?'Yes — '+altD.c189+' pts cutoff':'No')+'<br>190 pathway: SA/QLD/TAS at '+altD.c190+' pts<br>Pool size: '+altD.pool.toLocaleString()+' EOIs</div>'+
+    '</div>' :
+    '<div class="regret-col"><div class="regret-col-title">You are already in a top field</div><div style="font-size:0.75rem;color:var(--muted)">No beneficial switch available — your occupation is Tier 1 or Tier 2.</div></div>'
+    )+
+    '<div class="regret-col" style="border-color:'+recColor+';background:rgba(0,0,0,0.2)">'+
+      '<div class="regret-col-title" style="color:'+recColor+'">Recommendation</div>'+
+      '<div style="font-size:0.78rem;color:var(--text);line-height:1.6">'+rec+'</div>'+
+    '</div>';
+}
+
+// ── STUDENT OUTCOMES FEED ────────────────────────────────────────
+var STUDENT_OUTCOMES = [
+  {flag:'🇮🇳',degree:'Bachelor of Nursing',uni:'CSU Wagga Wagga (regional)',status:'graduated',visa:'SA 190',pts:75,months:14,nat:'Indian',days_ago:3,note:'Regional study + NAATI Hindi = +10 pts advantage'},
+  {flag:'🇵🇰',degree:'Master of IT',uni:'Monash Melbourne (metro)',status:'graduated',visa:'VIC 190',pts:80,months:16,nat:'Pakistani',days_ago:7,note:'Urdu NAATI added 5 pts — closed the gap to VIC 190 cutoff'},
+  {flag:'🇳🇵',degree:'Bachelor of Accounting',uni:'UNE Armidale (regional)',status:'graduated',visa:'SA 491',pts:70,months:19,nat:'Nepali',days_ago:5,note:'SA 491 via regional — accountants not invited on 189. SA was only realistic path'},
+  {flag:'🇵🇭',degree:'Bachelor of Social Work',uni:'Griffith University QLD',status:'graduated',visa:'QLD 190',pts:75,months:12,nat:'Filipino',days_ago:14,note:'Tagalog NAATI + Tier 2 occupation = fast pathway. QLD March round.'},
+  {flag:'🇮🇳',degree:'Bachelor of Teaching (Primary)',uni:'CSU Bathurst (regional)',status:'graduated',visa:'SA 190',pts:75,months:13,nat:'Indian',days_ago:9,note:'Teaching Tier 2 — SA took 5 weeks from ROI to nomination'},
+  {flag:'🇳🇵',degree:'Bachelor of Nursing',uni:'James Cook University QLD (regional)',status:'graduated',visa:'QLD 190',pts:75,months:11,nat:'Nepali',days_ago:11,note:'JCU regional — Nepali NAATI + Tier 1 healthcare = 11 months to PR from graduation'},
+  {flag:'🇧🇩',degree:'Master of Engineering (Civil)',uni:'University of Southern QLD (regional)',status:'graduated',visa:'SA 190',pts:85,months:15,nat:'Bangladeshi',days_ago:18,note:'Civil engineering Tier 3. SA accepted at 70 pts. 85 pts made it straightforward.'},
+  {flag:'🇵🇰',degree:'Bachelor of Education (Secondary Maths)',uni:'University of New England (regional)',status:'graduated',visa:'TAS 190',pts:70,months:13,nat:'Pakistani',days_ago:21,note:'Urdu NAATI got them to 75 pts. TAS weekly rounds — fastest state.'}
+];
+
+function loadStudentOutcomes(degree, userPts) {
+  var track = document.getElementById('lfs-track');
+  // Build mini ticker items
+  var items = STUDENT_OUTCOMES.map(function(o) {
+    return '<span class="lfs-item"><span style="color:#10B981;font-weight:700;margin-right:3px">✓</span>'+o.flag+' '+o.degree+' · '+o.visa+' · '+o.pts+' pts · PR in '+o.months+'mo from graduation</span>';
+  });
+  var html = items.join('') + items.join('');
+  track.innerHTML = html;
+
+  // Filter similar for FOMO banner
+  var similar = STUDENT_OUTCOMES.filter(function(o) {
+    var degMatch = !degree || degree === 'nursing' && o.degree.toLowerCase().indexOf('nurs')!==-1 ||
+      degree === 'it' && o.degree.toLowerCase().indexOf('it')!==-1 ||
+      degree === 'teaching' && o.degree.toLowerCase().indexOf('teach')!==-1 ||
+      degree === 'engineering' && o.degree.toLowerCase().indexOf('engineer')!==-1 ||
+      degree === 'accounting' && o.degree.toLowerCase().indexOf('account')!==-1 ||
+      degree === 'social_work' && o.degree.toLowerCase().indexOf('social')!==-1;
+    return degMatch && Math.abs(o.pts - userPts) <= 15;
+  });
+  if (similar.length > 0) {
+    var fomo = document.getElementById('fomo-banner');
+    fomo.style.display = 'block';
+    fomo.innerHTML = '<strong style="color:#10B981">'+similar.length+' student'+(similar.length>1?'s':'')+' similar to your profile got PR in under '+(Math.max.apply(null,similar.map(function(o){return o.months;}))+1)+' months from graduation. Here is what they did:</strong><br>'+
+      similar.slice(0,2).map(function(o){ return '→ '+o.flag+' '+o.degree+' · '+o.pts+' pts · '+o.visa+' · '+o.months+' months · "'+o.note+'"'; }).join('<br>');
+  }
+
+  // Main feed — show all
+  document.getElementById('student-outcomes-feed').innerHTML = STUDENT_OUTCOMES.map(function(o) {
+    var ago = o.days_ago === 0 ? 'today' : o.days_ago === 1 ? '1 day ago' : o.days_ago < 7 ? o.days_ago+' days ago' : o.days_ago < 14 ? '1 week ago' : Math.floor(o.days_ago/7)+' weeks ago';
+    return '<div class="outcome-item">'+
+      '<div class="oi-flag">'+o.flag+'</div>'+
+      '<div class="oi-body">'+
+        '<div class="oi-main"><strong>'+o.degree+'</strong> · '+o.uni+'</div>'+
+        '<div class="oi-meta">'+o.visa+' · '+o.pts+' pts · PR in <strong style="color:var(--teal)">'+o.months+' months</strong> from graduation · '+o.nat+'</div>'+
+        '<div style="font-size:0.7rem;color:var(--muted);margin-top:0.15rem;font-style:italic">'+o.note+'</div>'+
+      '</div>'+
+      '<div class="oi-right"><div class="oi-badge">✓ PR Grant</div><div class="oi-ago">'+ago+'</div></div>'+
+    '</div>';
+  }).join('');
+
+  // Weekly summary
+  var fastest = STUDENT_OUTCOMES.reduce(function(a,b){return a.months<b.months?a:b;});
+  document.getElementById('student-week-summary').innerHTML =
+    '<strong style="color:var(--text)">This week</strong> — '+STUDENT_OUTCOMES.filter(function(o){return o.days_ago<=7;}).length+' student outcomes submitted · Fastest: <strong style="color:var(--teal)">'+fastest.degree.split(' ').slice(-2).join(' ')+' · '+fastest.visa+' · '+fastest.months+' months</strong> · Most common pathway: <strong style="color:var(--text)">SA 190 via regional study</strong>';
 }
 </script>
-<script src="/ticker.js"></script>
 </body>
 </html>
