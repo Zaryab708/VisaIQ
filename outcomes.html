@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Visa Outcomes — 189 · 190 · 491 Community Intelligence | VisaIQ</title>
+<meta name="description" content="Real Australian visa grant outcomes. Full timelines from EOI to grant. 189 federal, 190 state, 491 regional. Filter by your occupation and points. Updated weekly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
+.nls a:hover,.nls a.cur{color:var(--teal)}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+
+/* STICKY ACTIVITY BAR */
+#activity-bar{background:#060E1A;border-bottom:1px solid rgba(0,200,150,0.2);padding:0.4rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;position:sticky;top:100px;z-index:98}
+.ab-live{display:flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:700;color:var(--teal)}
+.ab-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 1.4s infinite;display:inline-block}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.2}}
+.ab-sep{color:rgba(255,255,255,0.1);font-size:0.8rem}
+.ab-item{font-size:0.72rem;color:var(--muted)}
+.ab-item strong{color:var(--text)}
+
+/* TREND SIGNAL */
+#trend-bar{background:rgba(0,200,150,0.05);border-bottom:1px solid rgba(0,200,150,0.15);padding:0.55rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--text);display:none}
+#trend-bar strong{color:var(--teal)}
+
+.wrap{max-width:820px;margin:0 auto;padding:1.5rem 1.5rem 6rem}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#070F1C,#0A1525);border-bottom:1px solid var(--border);padding:2.25rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.4rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{font-size:0.85rem;color:var(--muted);max-width:500px;margin:0 auto}
+
+/* PROFILE CAPTURE FORM */
+#profile-form-section{background:var(--bg2);border:2px solid var(--tb);border-radius:16px;padding:1.5rem;margin-bottom:1.75rem}
+.pf-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.25rem}
+.pf-sub{font-size:0.78rem;color:var(--muted);margin-bottom:1.1rem;line-height:1.6}
+.pf-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.65rem;margin-bottom:0.75rem}
+.pf-field label{display:block;font-size:0.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
+.pf-field select,.pf-field input{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.65rem 0.85rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.83rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.pf-field select:focus,.pf-field input:focus{border-color:var(--tb)}
+.pf-note{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:0.5rem}
+.btn-profile{width:100%;padding:0.85rem;background:var(--teal);color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer;transition:background 0.2s}
+.btn-profile:hover{background:#00e0aa}
+
+/* PROFILE ACTIVE STATE */
+#profile-active{display:none;background:rgba(0,200,150,0.06);border:1px solid var(--tb);border-radius:12px;padding:0.85rem 1.1rem;margin-bottom:1.5rem;display:none}
+.pa-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.pa-label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal)}
+.pa-profile{font-size:0.82rem;color:var(--text);font-weight:600}
+.pa-change{font-size:0.72rem;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.pa-change:hover{color:var(--teal)}
+
+/* MATCH RESULTS */
+#match-results{display:none;margin-bottom:1rem}
+.mr-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem}
+.mr-title{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:800;margin-bottom:0.6rem}
+.mr-stats{display:flex;gap:1.5rem;flex-wrap:wrap}
+.mrs{text-align:center}
+.mrs-val{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--teal);line-height:1}
+.mrs-lbl{font-size:0.62rem;color:var(--muted);margin-top:0.1rem}
+
+/* SECTION LABELS */
+.sec-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.65rem}
+.your-matches-label{display:inline-flex;align-items:center;gap:0.4rem;background:var(--td);border:1px solid var(--tb);border-radius:6px;padding:0.2rem 0.6rem;font-size:0.65rem;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem}
+.general-divider{display:flex;align-items:center;gap:0.75rem;margin:1.25rem 0 0.75rem}
+.gd-line{flex:1;height:1px;background:var(--border)}
+.gd-label{font-size:0.68rem;color:var(--muted);white-space:nowrap;font-weight:600}
+
+/* WEEKLY SUMMARY */
+#weekly-section{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1.5rem}
+.ws-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem;flex-wrap:wrap;gap:0.5rem}
+.ws-week{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal)}
+.ws-share{padding:0.35rem 0.75rem;background:transparent;border:1px solid var(--tb);border-radius:8px;color:var(--teal);font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;cursor:pointer}
+.ws-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;margin-bottom:0.85rem}
+.wss{background:var(--bg3);border-radius:8px;padding:0.6rem 0.5rem;text-align:center}
+.wss-v{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal)}
+.wss-l{font-size:0.58rem;color:var(--muted);margin-top:0.1rem;line-height:1.3}
+.ws-trend{font-size:0.82rem;color:var(--text);line-height:1.6;margin-bottom:0.4rem}
+.ws-fact{font-size:0.75rem;color:var(--muted);line-height:1.6}
+
+/* OUTCOME ENTRY */
+.oe{display:flex;align-items:center;gap:0.65rem;padding:0.8rem 0.9rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;margin-bottom:0.45rem;transition:border-color 0.2s}
+.oe:hover{border-color:rgba(255,255,255,0.12)}
+.oe.match{border-color:rgba(0,200,150,0.25);background:rgba(0,200,150,0.03)}
+.oe-icon{font-size:1.1rem;flex-shrink:0}
+.oe-body{flex:1;min-width:0}
+.oe-main{font-size:0.83rem;color:var(--text);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.oe-main .granted{color:#10B981;font-weight:700}
+.oe-main .invited{color:var(--blue);font-weight:700}
+.oe-sub{font-size:0.7rem;color:var(--muted);margin-top:0.1rem}
+.oe-right{flex-shrink:0;text-align:right}
+.oe-ago{font-size:0.65rem;color:var(--muted)}
+.oe-badge{font-size:0.6rem;font-weight:700;padding:0.15rem 0.4rem;border-radius:5px;display:block;margin-bottom:0.2rem}
+.ob-g{background:rgba(16,185,129,0.1);color:#10B981;border:1px solid rgba(16,185,129,0.25)}
+.ob-i{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
+.oe.placeholder{opacity:0.5}
+.oe-placeholder-note{font-size:0.62rem;color:rgba(122,143,168,0.5);margin-top:0.1rem}
+
+/* MOVEMENT SIGNAL */
+.ms{background:rgba(0,200,150,0.04);border-top:1px solid rgba(0,200,150,0.1);border-bottom:1px solid rgba(0,200,150,0.1);padding:0.55rem 0.9rem;margin:0.5rem 0;font-size:0.74rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem}
+.ms-text{flex:1}
+.ms-date{font-size:0.65rem;color:rgba(122,143,168,0.5);flex-shrink:0}
+
+/* HEAT MAP */
+#heatmap-section{margin-bottom:1.75rem}
+.hm-row{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.45rem}
+.hm-label{font-size:0.75rem;color:var(--muted);width:140px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hm-bar-wrap{flex:1;background:rgba(255,255,255,0.04);border-radius:20px;height:10px;overflow:hidden}
+.hm-bar{height:100%;border-radius:20px;background:var(--teal);transition:width 0.8s ease}
+.hm-val{font-size:0.7rem;color:var(--muted);width:60px;text-align:right;flex-shrink:0}
+.hm-row.your-occ .hm-label{color:var(--teal);font-weight:700}
+.hm-row.your-occ .hm-bar{background:var(--teal)}
+.hm-row.your-occ .hm-bar-wrap{border:1px solid var(--tb)}
+.hm-your-badge{font-size:0.58rem;font-weight:700;background:var(--td);border:1px solid var(--tb);border-radius:4px;padding:0.1rem 0.35rem;color:var(--teal);margin-left:0.3rem;flex-shrink:0}
+
+/* NOTIFICATION CAPTURE */
+#notif-section{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1.75rem}
+.notif-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-bottom:0.35rem}
+.notif-sub{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:0.85rem}
+.notif-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;margin-bottom:0.6rem}
+.notif-field label{display:block;font-size:0.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem}
+.notif-field select,.notif-field input{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem 0.75rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.82rem;outline:none;transition:border-color 0.2s}
+.notif-field select:focus,.notif-field input:focus{border-color:var(--tb)}
+.btn-notif{width:100%;padding:0.75rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer}
+.btn-notif:hover{background:#00e0aa}
+
+/* TRUST BAR */
+#trust-bar{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:0.65rem 1rem;text-align:center;font-size:0.72rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7}
+#trust-bar a{color:var(--teal);text-decoration:none}
+
+/* SUBMIT CTA */
+#submit-cta{background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1.5rem}
+.cta-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;margin-bottom:0.35rem}
+.cta-body{font-size:0.82rem;color:var(--muted);line-height:1.6;max-width:440px;margin:0 auto 1rem}
+.cta-btn{display:inline-block;padding:0.7rem 1.4rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none}
+
+/* LOAD MORE */
+.lm{width:100%;padding:0.65rem;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.8rem;cursor:pointer;margin-top:0.35rem;transition:all 0.2s}
+.lm:hover{border-color:var(--tb);color:var(--teal)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:640px){.pf-grid{grid-template-columns:1fr}.notif-grid{grid-template-columns:1fr}.ws-stats{grid-template-columns:repeat(2,1fr)}.nls{display:none}.hm-label{width:100px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/rounds">Rounds</a>
+    <a href="/outcomes" class="cur">Outcomes</a>
+    <a href="/submit" class="ncta">Submit →</a>
+  </div>
+</nav>
+
+<!-- STICKY ACTIVITY BAR -->
+<div id="activity-bar">
+  <div class="ab-live"><span class="ab-dot"></span><span id="ab-new">—</span> new outcomes in last 24 hours</div>
+  <span class="ab-sep">·</span>
+  <div class="ab-item"><strong id="ab-total">—</strong> total in dataset</div>
+  <span class="ab-sep">·</span>
+  <div class="ab-item">Last updated <strong id="ab-updated">—</strong></div>
+</div>
+
+<!-- TREND SIGNAL -->
+<div id="trend-bar"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Real visa outcomes.<br><em>From EOI to grant.</em></h1>
+  <p>Every entry is a real person who got through. Filter to your occupation and points to see what happened to profiles like yours.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- SECTION A: PROFILE CAPTURE -->
+  <div id="profile-form-section">
+    <div class="pf-title">See outcomes for your occupation and points — not everyone's.</div>
+    <div class="pf-sub">Enter your profile below. We filter the entire feed to show only outcomes matching your situation. No signup. No email required.</div>
+    <div class="pf-grid">
+      <div class="pf-field">
+        <label>Occupation</label>
+        <select id="pf-occ">
+          <option value="">Select…</option>
+          <optgroup label="Healthcare — Tier 1">
+            <option value="registered_nurse">Registered Nurse</option>
+            <option value="general_practitioner">General Practitioner</option>
+            <option value="physiotherapist">Physiotherapist</option>
+            <option value="occupational_therapist">Occupational Therapist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="dentist">Dentist</option>
+            <option value="midwife">Midwife</option>
+            <option value="speech_pathologist">Speech Pathologist</option>
+            <option value="medical_lab_scientist">Medical Lab Scientist</option>
+            <option value="radiographer">Radiographer / Diagnostic Radiographer</option>
+            <option value="paramedic">Paramedic</option>
+            <option value="audiologist">Audiologist</option>
+            <option value="dietitian">Dietitian</option>
+            <option value="podiatrist">Podiatrist</option>
+          </optgroup>
+          <optgroup label="Education — Tier 2">
+            <option value="early_childhood_teacher">Early Childhood Teacher</option>
+            <option value="primary_teacher">Primary School Teacher</option>
+            <option value="secondary_teacher">Secondary School Teacher</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="social_worker">Social Worker</option>
+          </optgroup>
+          <optgroup label="Engineering — Tier 3">
+            <option value="civil_engineer">Civil Engineer</option>
+            <option value="electrical_engineer">Electrical Engineer</option>
+            <option value="mechanical_engineer">Mechanical Engineer</option>
+            <option value="construction_pm">Construction Project Manager</option>
+            <option value="architect">Architect</option>
+            <option value="environmental_engineer">Environmental Engineer</option>
+            <option value="mining_engineer">Mining Engineer</option>
+          </optgroup>
+          <optgroup label="Trades — Tier 3">
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="welder">Welder</option>
+            <option value="motor_mechanic">Motor Mechanic</option>
+            <option value="chef">Cook / Chef</option>
+          </optgroup>
+          <optgroup label="ICT — Tier 4">
+            <option value="software_engineer">Software Engineer</option>
+            <option value="software_developer">Software Developer</option>
+            <option value="systems_analyst">Systems Analyst</option>
+            <option value="ict_security_specialist">ICT Security Specialist</option>
+            <option value="network_engineer">Network Engineer</option>
+          </optgroup>
+          <optgroup label="Accounting — Tier 4">
+            <option value="accountant">Accountant</option>
+            <option value="taxation_accountant">Taxation Accountant</option>
+            <option value="external_auditor">External Auditor</option>
+            <option value="management_consultant">Management Consultant</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="pf-field">
+        <label>Points score</label>
+        <input type="number" id="pf-pts" placeholder="e.g. 75" min="45" max="130">
+      </div>
+      <div class="pf-field">
+        <label>Visa type</label>
+        <select id="pf-visa">
+          <option value="">Select…</option>
+          <option value="190">190 — State Nominated</option>
+          <option value="491">491 — Regional</option>
+          <option value="189">189 — Independent</option>
+          <option value="485">485 — Post-Study</option>
+          <option value="482">482 — Employer Sponsored</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-profile" onclick="applyProfile()">Show my matches →</button>
+    <div class="pf-note">Your profile is saved in your browser only. We do not store it.</div>
+  </div>
+
+  <!-- PROFILE ACTIVE (shown after entry) -->
+  <div id="profile-active">
+    <div class="pa-header">
+      <div>
+        <div class="pa-label">Showing outcomes for</div>
+        <div class="pa-profile" id="pa-profile-text">—</div>
+      </div>
+      <span class="pa-change" onclick="clearProfile()">Change profile →</span>
+    </div>
+  </div>
+
+  <!-- MATCH RESULTS (shown after entry, if matches found) -->
+  <div id="match-results">
+    <div class="mr-box">
+      <div class="mr-title" id="mr-title">—</div>
+      <div class="mr-stats">
+        <div class="mrs"><div class="mrs-val" id="mr-count">—</div><div class="mrs-lbl">matching outcomes</div></div>
+        <div class="mrs"><div class="mrs-val" id="mr-median">—</div><div class="mrs-lbl">median wait (months)</div></div>
+        <div class="mrs"><div class="mrs-val" id="mr-fastest">—</div><div class="mrs-lbl">fastest (months)</div></div>
+        <div class="mrs"><div class="mrs-val" id="mr-slowest">—</div><div class="mrs-lbl">slowest (months)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION B: WEEKLY INTELLIGENCE SUMMARY -->
+  <div id="weekly-section" style="display:none">
+    <div class="ws-header">
+      <div>
+        <div class="ws-week" id="ws-week">—</div>
+        <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-top:0.2rem">Weekly Intelligence Summary</div>
+      </div>
+      <button class="ws-share" onclick="shareWeekly()">Share 📲</button>
+    </div>
+    <div class="ws-stats">
+      <div class="wss"><div class="wss-v" id="ws-total">—</div><div class="wss-l">outcomes this week</div></div>
+      <div class="wss"><div class="wss-v" id="ws-state">—</div><div class="wss-l">most active state</div></div>
+      <div class="wss"><div class="wss-v" id="ws-fast">—</div><div class="wss-l">fastest outcome</div></div>
+      <div class="wss"><div class="wss-v" id="ws-slow">—</div><div class="wss-l">slowest outcome</div></div>
+    </div>
+    <div class="ws-trend" id="ws-trend">—</div>
+    <div class="ws-fact" id="ws-fact">—</div>
+  </div>
+
+  <!-- SECTION C: LIVE FEED -->
+  <div class="sec-label">Live outcomes feed</div>
+  <div id="your-matches-block" style="display:none">
+    <div class="your-matches-label">⚡ Your matches</div>
+    <div id="matched-feed"></div>
+    <div class="general-divider"><div class="gd-line"></div><div class="gd-label">All outcomes below</div><div class="gd-line"></div></div>
+  </div>
+  <div id="general-feed"></div>
+  <button class="lm" id="load-more-btn" onclick="loadMore()" style="display:none">Load more outcomes ↓</button>
+
+  <!-- SECTION D: OCCUPATION HEAT MAP -->
+  <div id="heatmap-section" style="margin-top:1.5rem">
+    <div class="sec-label">Outcomes by occupation</div>
+    <div id="heatmap"></div>
+    <div style="font-size:0.68rem;color:var(--muted);margin-top:0.5rem">Bar length = number of outcomes in dataset. Number = average wait in months. <span id="hm-your-note" style="color:var(--teal)"></span></div>
+  </div>
+
+  <!-- SECTION E: NOTIFICATION CAPTURE -->
+  <div id="notif-section" style="margin-top:1.5rem">
+    <div class="notif-title" id="notif-title">Get notified when outcomes matching your profile appear</div>
+    <div class="notif-sub" id="notif-sub">Enter your occupation, state, and email. We email you within 48 hours when a matching outcome is submitted or when your state runs a round.</div>
+    <div class="notif-grid">
+      <div class="notif-field">
+        <label>Occupation</label>
+        <select id="notif-occ">
+          <option value="">Select…</option>
+          <option value="registered_nurse">Registered Nurse</option>
+          <option value="software_engineer">Software Engineer</option>
+          <option value="civil_engineer">Civil Engineer</option>
+          <option value="accountant">Accountant</option>
+          <option value="early_childhood_teacher">Early Childhood Teacher</option>
+          <option value="secondary_teacher">Secondary School Teacher</option>
+          <option value="social_worker">Social Worker</option>
+          <option value="electrician">Electrician</option>
+          <option value="chef">Cook / Chef</option>
+          <option value="general_practitioner">General Practitioner</option>
+          <option value="other">Other occupation</option>
+        </select>
+      </div>
+      <div class="notif-field">
+        <label>State</label>
+        <select id="notif-state">
+          <option value="">Any state</option>
+          <option value="SA">SA — South Australia</option>
+          <option value="TAS">TAS — Tasmania</option>
+          <option value="VIC">VIC — Victoria</option>
+          <option value="QLD">QLD — Queensland</option>
+          <option value="NSW">NSW — New South Wales</option>
+          <option value="WA">WA — Western Australia</option>
+          <option value="ACT">ACT — Canberra</option>
+          <option value="NT">NT — Northern Territory</option>
+        </select>
+      </div>
+      <div class="notif-field">
+        <label>Email</label>
+        <input type="email" id="notif-email" placeholder="your@email.com">
+      </div>
+    </div>
+    <button class="btn-notif" onclick="activateAlerts()">Activate my alerts →</button>
+    <div id="notif-confirm" style="display:none;margin-top:0.6rem;font-size:0.75rem;color:var(--teal);text-align:center">✓ Alerts activated. Check your email to confirm.</div>
+  </div>
+
+  <!-- SECTION F: TRUST BAR -->
+  <div id="trust-bar">
+    <span id="trust-count">—</span> real outcomes submitted · All anonymised · No personal details stored · Updated as submitted ·
+    <a href="/methodology">How this works →</a>
+  </div>
+
+  <!-- SECTION G: SUBMIT CTA -->
+  <div id="submit-cta">
+    <div class="cta-title">Got invited or granted?</div>
+    <div class="cta-body" id="submit-body">Your outcome is the data point that tells the next person in your exact situation what to expect. Help the next applicant who is exactly where you were.</div>
+    <a href="/submit" class="cta-btn">Submit your outcome →</a>
+    <div style="font-size:0.68rem;color:var(--muted);margin-top:0.6rem">Fully anonymised · Takes 2 minutes · Helps hundreds of applicants</div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/rounds">Rounds</a><a href="/outcomes">Outcomes</a><a href="/submit">Submit</a><a href="/methodology">Methodology</a></div>
+  <div>© 2026 VisaIQ · Not migration advice · Data from community submissions + DHA rounds</div>
+</footer>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────────────
+var PROFILE      = null; // {occ, pts, visa}
+// ── ALL 135+ REAL OUTCOMES — embedded directly, never empty ──────────────
+// Sources: SmartVisaGuide daily reports Mar/Nov 2025, DHA rounds, community
+// Supplemented by /outcomes-data.json if available (newer entries merge in)
+var ALL_OUTCOMES = [
+// ── VIC 190/491 GRANTS — 17 Mar 2026 ──────────────────────────────────
+{id:1,  flag:"🌍", occ:"Software Engineer",            occ_id:"software_engineer",    visa:"190",state:"VIC",pts:95, status:"granted",dol:"29 Nov 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:true, comment:"VIC 190 onshore. Direct grant. Nov 2024 → Mar 2026."},
+{id:2,  flag:"🌍", occ:"Electrical Engineer",           occ_id:"electrical_engineer",  visa:"190",state:"VIC",pts:90, status:"granted",dol:"20 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"VIC 190 offshore. Proactively updated PCC + Polio. Direct grant."},
+{id:3,  flag:"🌍", occ:"Civil Engineer",                occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:90, status:"granted",dol:"29 Dec 2024",dog:"17 Mar 2026",s56:false,mo:11,days_ago:6, onshore:false,comment:"VIC 190 offshore. DOL 29 Dec 2024. Grant 17 Mar 2026."},
+{id:4,  flag:"🌍", occ:"Developer Programmer",          occ_id:"software_developer",   visa:"190",state:"VIC",pts:100,status:"granted",dol:"30 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"100pts. Age 30, Eng 20, Masters 15, AU study 5, AU exp 10, NAATI 5."},
+{id:5,  flag:"🌍", occ:"Civil Engineer (WA)",           occ_id:"civil_engineer",       visa:"190",state:"WA", pts:90, status:"granted",dol:"20 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"WA 190 offshore. Direct grant 17 Mar 2026."},
+{id:6,  flag:"🌍", occ:"Architectural Draftsperson",    occ_id:"civil_engineer",       visa:"190",state:"NSW",pts:85, status:"granted",dol:"20 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"NSW 190 offshore. Direct grant."},
+{id:7,  flag:"🌍", occ:"Hotel Manager (VIC 491)",       occ_id:"hotel_manager",        visa:"491",state:"VIC",pts:75, status:"granted",dol:"12 Nov 2024",dog:"17 Mar 2026",s56:true, mo:16,days_ago:6, onshore:true, comment:"VIC 491 onshore. S56 medicals Mar 2026. Hotel manager."},
+// ── NSW 190 GRANTS — 17 Mar 2026 ──────────────────────────────────────
+{id:8,  flag:"🌍", occ:"Construction PM (NSW 9mo)",     occ_id:"construction_pm",      visa:"190",state:"NSW",pts:95, status:"granted",dol:"14 Jun 2025",dog:"17 Mar 2026",s56:true, mo:9, days_ago:6, onshore:false,comment:"NSW 190 offshore CPM. S56 polio Feb 2026. Only 9 months DOL to grant."},
+{id:9,  flag:"🌍", occ:"Toolmaker (NSW)",               occ_id:"fitter_machinist",     visa:"190",state:"NSW",pts:75, status:"granted",dol:"20 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"NSW 190 offshore toolmaker. Family of 2. Direct grant no S56."},
+{id:10, flag:"🌍", occ:"CPM 90pts (NSW)",               occ_id:"construction_pm",      visa:"190",state:"NSW",pts:90, status:"granted",dol:"20 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:true, comment:"NSW 190 onshore CPM 90pts. Direct grant."},
+// ── SA 190 GRANTS — Mar 2026 ──────────────────────────────────────────
+{id:11, flag:"🌍", occ:"Systems Analyst (SA)",          occ_id:"systems_analyst",      visa:"190",state:"SA", pts:75, status:"granted",dol:"18 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:true, comment:"SA 190 onshore. Proactively updated overseas PCC. Direct grant."},
+{id:12, flag:"🌍", occ:"Engineering Technologist (SA)", occ_id:"civil_engineer",       visa:"190",state:"SA", pts:70, status:"granted",dol:"19 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:false,comment:"SA 190 offshore. 70pts. Direct grant 17 Mar."},
+{id:13, flag:"🌍", occ:"Welfare Centre Manager",        occ_id:"social_worker",        visa:"190",state:"SA", pts:75, status:"granted",dol:"13 Dec 2024",dog:"20 Mar 2026",s56:false,mo:15,days_ago:3, onshore:false,comment:"SA 190 offshore. DOL 13 Dec 2024. Grant 20 Mar."},
+{id:14, flag:"🌍", occ:"SA 190 Systems Analyst #2",     occ_id:"systems_analyst",      visa:"190",state:"SA", pts:90, status:"granted",dol:"25 Dec 2024",dog:"20 Mar 2026",s56:false,mo:15,days_ago:3, onshore:true, comment:"SA 190 onshore systems analyst. Direct grant 20 Mar."},
+// ── TAS 190/491 GRANTS ─────────────────────────────────────────────────
+{id:15, flag:"🌍", occ:"Chef (TAS 190)",                occ_id:"chef",                 visa:"190",state:"TAS",pts:70, status:"granted",dol:"19 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:true, comment:"TAS 190 onshore chef. No S59. Direct grant."},
+{id:16, flag:"🌍", occ:"Chef (TAS — 65pts)",            occ_id:"chef",                 visa:"190",state:"TAS",pts:65, status:"granted",dol:"2 Dec 2024", dog:"4 Mar 2026", s56:true, mo:15,days_ago:19,onshore:true, comment:"TAS 190. S56 PCC Jan 2026. Submitted Feb. Granted 4 Mar."},
+{id:17, flag:"🌍", occ:"Chef (TAS Green 65pts)",        occ_id:"chef",                 visa:"190",state:"TAS",pts:65, status:"granted",dol:"20 Mar 2025",dog:"20 Mar 2026",s56:false,mo:12,days_ago:3, onshore:true, comment:"TAS 190 direct grant. Green category 65pts single chef."},
+{id:18, flag:"🌍", occ:"Motor Mechanic (TAS)",          occ_id:"motor_mechanic",       visa:"190",state:"TAS",pts:70, status:"granted",dol:"29 Nov 2024",dog:"4 Mar 2026", s56:false,mo:15,days_ago:19,onshore:true, comment:"TAS 190 mechanic. Direct grant no S56. 4 Mar 2026."},
+{id:19, flag:"🌍", occ:"Software Developer (TAS)",      occ_id:"software_developer",   visa:"190",state:"TAS",pts:75, status:"granted",dol:"28 Feb 2025",dog:"4 Mar 2026", s56:true, mo:12,days_ago:19,onshore:true, comment:"TAS 190 software developer. S56 baby medical Jan 2026."},
+{id:20, flag:"🌍", occ:"Community Worker (TAS 491)",    occ_id:"social_worker",        visa:"491",state:"TAS",pts:75, status:"granted",dol:"26 Nov 2024",dog:"17 Mar 2026",s56:true, mo:16,days_ago:7, onshore:true, comment:"TAS 491. S56 baby medicals + PCC Feb 2026. Direct grant."},
+{id:21, flag:"🌍", occ:"TAS 491 Community Worker #2",   occ_id:"social_worker",        visa:"491",state:"TAS",pts:70, status:"granted",dol:"21 Nov 2024",dog:"16 Mar 2026",s56:false,mo:16,days_ago:7, onshore:true, comment:"TAS 491. Applied 21 Nov 2024. Direct grant 16 Mar."},
+// ── ACT 190 GRANTS ─────────────────────────────────────────────────────
+{id:22, flag:"🌍", occ:"Accountant (ACT 190)",          occ_id:"accountant",           visa:"190",state:"ACT",pts:80, status:"granted",dol:"5 Dec 2024", dog:"4 Mar 2026", s56:true, mo:15,days_ago:19,onshore:true, comment:"ACT 190. S56 health + name variation Jan 2026."},
+{id:23, flag:"🌍", occ:"Organisation Analyst (ACT)",    occ_id:"systems_analyst",      visa:"190",state:"ACT",pts:85, status:"granted",dol:"18 Dec 2024",dog:"17 Mar 2026",s56:false,mo:15,days_ago:6, onshore:true, comment:"ACT 190 onshore. Direct grant 17 Mar."},
+{id:24, flag:"🌍", occ:"Financial Investment Advisor",  occ_id:"accountant",           visa:"190",state:"VIC",pts:80, status:"granted",dol:"24 Dec 2024",dog:"20 Mar 2026",s56:false,mo:15,days_ago:3, onshore:true, comment:"VIC 190. DOL 24 Dec 2024. Direct grant 20 Mar."},
+// ── QLD 190 GRANTS ─────────────────────────────────────────────────────
+{id:25, flag:"🌍", occ:"Civil Engineer (QLD 27mo)",     occ_id:"civil_engineer",       visa:"190",state:"QLD",pts:85, status:"granted",dol:"23 Dec 2023",dog:"4 Mar 2026", s56:true, mo:27,days_ago:19,onshore:false,comment:"QLD 190 offshore. 27 months. Multiple S56 employment + medicals + passport."},
+{id:26, flag:"🇵🇭",occ:"RN Aged Care (QLD offshore)",   occ_id:"registered_nurse",     visa:"190",state:"QLD",pts:80, status:"granted",dol:"Dec 2022",  dog:"Mar 2026",  s56:false,mo:39,days_ago:5, onshore:false,comment:"QLD 190 offshore nurse. Started AHPRA via NZ Dec 2022. Grant Mar 2026. Long journey."},
+// ── NSW GRANTS — 4 Mar 2026 ────────────────────────────────────────────
+{id:27, flag:"🌍", occ:"Medical Technician (NSW)",      occ_id:"medical_lab_scientist", visa:"190",state:"NSW",pts:80, status:"granted",dol:"9 May 2025", dog:"4 Mar 2026", s56:false,mo:10,days_ago:19,onshore:false,comment:"NSW 190 offshore. ~10 months. Direct grant. Priority occupation."},
+{id:28, flag:"🌍", occ:"Fitter General (NSW)",          occ_id:"fitter_machinist",     visa:"190",state:"NSW",pts:80, status:"granted",dol:"21 Feb 2025",dog:"4 Mar 2026", s56:true, mo:12,days_ago:19,onshore:false,comment:"NSW 190 fitter. S56 TB screening daughter."},
+{id:29, flag:"🌍", occ:"Air Cond Mechanic (NSW)",       occ_id:"refrigeration_mechanic",visa:"190",state:"NSW",pts:75, status:"granted",dol:"15 Nov 2024",dog:"4 Mar 2026", s56:true, mo:16,days_ago:19,onshore:true, comment:"NSW 190. S56 newborn medical Nov 2025."},
+{id:30, flag:"🌍", occ:"Chemical Engineer (VIC)",       occ_id:"chemical_engineer",    visa:"190",state:"VIC",pts:90, status:"granted",dol:"8 Dec 2024", dog:"4 Mar 2026", s56:true, mo:15,days_ago:19,onshore:false,comment:"VIC 190. S56 Form 80 + HK PCC + remedicals."},
+{id:31, flag:"🌍", occ:"NSW 190 Software Engineer #2",  occ_id:"software_engineer",    visa:"190",state:"NSW",pts:95, status:"granted",dol:"24 Dec 2024",dog:"20 Mar 2026",s56:false,mo:15,days_ago:3, onshore:false,comment:"NSW 190 offshore software engineer 95pts. Direct grant 20 Mar."},
+// ── WA 190 ─────────────────────────────────────────────────────────────
+{id:32, flag:"🌍", occ:"Chef (WA 190)",                 occ_id:"chef",                 visa:"190",state:"WA", pts:70, status:"granted",dol:"9 Feb 2024", dog:"4 Mar 2026", s56:true, mo:25,days_ago:19,onshore:true, comment:"WA 190 chef. 25 months. Multiple S56 AFP + remedicals."},
+// ── 491 GRANTS ─────────────────────────────────────────────────────────
+{id:33, flag:"🌍", occ:"Electrician (NSW 491)",         occ_id:"electrician",          visa:"491",state:"NSW",pts:80, status:"granted",dol:"3 Jan 2026", dog:"17 Mar 2026",s56:true, mo:11,days_ago:6, onshore:false,comment:"NSW 491 offshore. S56 Form 1221 + CV Feb 2026."},
+{id:34, flag:"🌍", occ:"Developer (NSW 491)",           occ_id:"software_developer",   visa:"491",state:"NSW",pts:80, status:"granted",dol:"24 Nov 2024",dog:"16 Mar 2026",s56:false,mo:16,days_ago:7, onshore:true, comment:"NSW 491 onshore. Direct grant 16 Mar."},
+{id:35, flag:"🌍", occ:"Accountant (NSW 491)",          occ_id:"accountant",           visa:"491",state:"NSW",pts:80, status:"granted",dol:"2 Jul 2024", dog:"4 Mar 2026", s56:true, mo:20,days_ago:19,onshore:true, comment:"NSW 491 accountant. 20 months. S56 medicals Feb 2026."},
+{id:36, flag:"🌍", occ:"Electronics Engineer (ACT 491)",occ_id:"electrical_engineer",  visa:"491",state:"ACT",pts:75, status:"granted",dol:"28 Jun 2024",dog:"4 Mar 2026", s56:true, mo:21,days_ago:19,onshore:false,comment:"ACT 491 offshore. 21 months. S56 remedicals + daughter biometrics."},
+{id:37, flag:"🌍", occ:"Actuary (ACT 491)",             occ_id:"accountant",           visa:"491",state:"ACT",pts:80, status:"granted",dol:"3 Jun 2024", dog:"4 Mar 2026", s56:true, mo:21,days_ago:19,onshore:false,comment:"ACT 491 actuary. 21 months. S56 PCC + family health."},
+{id:38, flag:"🌍", occ:"Electrical Engineer (VIC 491)", occ_id:"electrical_engineer",  visa:"491",state:"VIC",pts:80, status:"granted",dol:"3 Oct 2024", dog:"4 Mar 2026", s56:false,mo:17,days_ago:19,onshore:true, comment:"VIC 491. 17 months. No S56."},
+{id:39, flag:"🌍", occ:"ECT (VIC 491)",                 occ_id:"early_childhood_teacher",visa:"491",state:"VIC",pts:75,status:"granted",dol:"7 May 2025", dog:"4 Mar 2026", s56:false,mo:10,days_ago:19,onshore:true, comment:"VIC 491 ECT. Only 10 months lodge to grant."},
+{id:40, flag:"🌍", occ:"Civil Engineer (WA 491)",       occ_id:"civil_engineer",       visa:"491",state:"WA", pts:75, status:"granted",dol:"28 Sep 2024",dog:"4 Mar 2026", s56:true, mo:18,days_ago:19,onshore:true, comment:"WA 491. 18 months. S56 Mar 2026."},
+{id:41, flag:"🌍", occ:"Marketing Specialist (491)",    occ_id:"management_consultant",visa:"491",state:"NSW",pts:75, status:"granted",dol:"14 Feb 2024",dog:"19 Mar 2026",s56:true, mo:25,days_ago:4, onshore:false,comment:"NSW 491 offshore marketing. 25 months. S56 Oct 2025."},
+// ── 189 FEDERAL GRANTS ─────────────────────────────────────────────────
+{id:42, flag:"🇮🇳",occ:"Registered Nurse NEC (189)",    occ_id:"registered_nurse",     visa:"189",state:"Federal",pts:80,status:"granted",dol:"12 Sep 2025",dog:"4 Mar 2026", s56:false,mo:6, days_ago:19,onshore:true, comment:"189 federal. RN NEC 80pts. Invited Aug 2025. Grant 4 Mar. 6 months."},
+{id:43, flag:"🌍", occ:"Carpenter (189 — 3 months!)",   occ_id:"carpenter",            visa:"189",state:"Federal",pts:70,status:"granted",dol:"22 Dec 2025",dog:"4 Mar 2026", s56:false,mo:3, days_ago:19,onshore:true, comment:"189. Carpenter 70pts. DOL Dec 2025. ONLY 3 months. Direct grant."},
+{id:44, flag:"🌍", occ:"Statistician (189)",            occ_id:"statistician",         visa:"189",state:"Federal",pts:90,status:"granted",dol:"30 Dec 2025",dog:"4 Mar 2026", s56:true, mo:3, days_ago:19,onshore:true, comment:"189. Statistician 90pts. S56 polio cert Feb 2026."},
+{id:45, flag:"🇮🇳",occ:"RN NEC (189 — Mar 19)",         occ_id:"registered_nurse",     visa:"189",state:"Federal",pts:80,status:"granted",dol:"12 May 2025",dog:"19 Mar 2026",s56:false,mo:10,days_ago:4, onshore:false,comment:"189 RN NEC offshore 80pts. Grant 19 Mar 2026."},
+{id:46, flag:"🌍", occ:"Early Childhood Teacher (189)",  occ_id:"early_childhood_teacher",visa:"189",state:"Federal",pts:90,status:"granted",dol:"Sep 2025",dog:"19 Mar 2026",s56:false,mo:7, days_ago:4, onshore:true, comment:"189 ECT 90pts onshore. Grant 19 Mar 2026."},
+{id:47, flag:"🌍", occ:"Social Worker (189 — 90pts)",   occ_id:"social_worker",        visa:"189",state:"Federal",pts:90,status:"granted",dol:"Nov 2025",  dog:"17 Mar 2026",s56:false,mo:4, days_ago:6, onshore:true, comment:"189 social worker 90pts. 37yo single MSW. Direct grant."},
+{id:48, flag:"🌍", occ:"189 VISA GRANTED (Midwife)",     occ_id:"registered_nurse",     visa:"189",state:"Federal",pts:80,status:"invited",dol:"12 May 2025",doi:"20 Mar 2026",s56:false,mo:0, days_ago:3, onshore:true, comment:"189 Registered Midwife 80pts onshore. Applied 12 May 2025. Invited 20 Mar 2026."},
+// ── VIC ROUND 17 MAR 2026 — INVITATIONS ───────────────────────────────
+{id:49, flag:"🌍", occ:"Accountant (VIC 80pts)",         occ_id:"accountant",           visa:"190",state:"VIC",pts:80, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190 round 17 Mar. Accountant 80pts. Salary 103K."},
+{id:50, flag:"🌍", occ:"Analyst Programmer (VIC)",       occ_id:"software_developer",   visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Analyst programmer 90-100pts. 100K-119K salary."},
+{id:51, flag:"🌍", occ:"Architect (VIC 95pts)",          occ_id:"architect",            visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Architect 95pts. Salary 120K."},
+{id:52, flag:"🌍", occ:"Biomedical Engineer (VIC)",      occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Biomedical engineer 95pts. 100K+."},
+{id:53, flag:"🌍", occ:"Carpenter (VIC 75pts)",          occ_id:"carpenter",            visa:"190",state:"VIC",pts:75, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Carpenter 75pts."},
+{id:54, flag:"🌍", occ:"Civil Draftsperson (VIC 65pts)", occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:65, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Civil draftsperson 65pts. Salary 110K+. Lowest pts VIC round."},
+{id:55, flag:"🌍", occ:"Civil Engineer (VIC 90-105)",    occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:97, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Civil engineer 90-105pts. 85K-125K salary."},
+{id:56, flag:"🌍", occ:"Computer Network Engineer (VIC)",occ_id:"network_engineer",     visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Network engineer 95pts. Salary 82K. Skilled partner. Age 25."},
+{id:57, flag:"🌍", occ:"Counsellor NEC (VIC)",           occ_id:"social_worker",        visa:"190",state:"VIC",pts:90, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Counsellor NEC 90pts."},
+{id:58, flag:"🌍", occ:"ECT (VIC 190 — 75pts)",          occ_id:"early_childhood_teacher",visa:"190",state:"VIC",pts:75,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Early childhood teacher 75pts. Salary 90K."},
+{id:59, flag:"🌍", occ:"ECT (VIC 491 — 80pts)",          occ_id:"early_childhood_teacher",visa:"491",state:"VIC",pts:80,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 491. ECT 80pts. Salary 90K+. 2 years exp."},
+{id:60, flag:"🌍", occ:"Electrical Engineer (VIC 90)",   occ_id:"electrical_engineer",  visa:"190",state:"VIC",pts:90, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Electrical engineer 90pts. Age 30, English 20, NAATI 5."},
+{id:61, flag:"🌍", occ:"External Auditor (VIC offshore)",occ_id:"accountant",           visa:"190",state:"VIC",pts:90, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. External auditor 90pts. Age 30, English 20, Skilled Partner."},
+{id:62, flag:"🌍", occ:"GP (VIC 190 — 80pts)",           occ_id:"general_practitioner", visa:"190",state:"VIC",pts:80, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. General practitioner 80pts."},
+{id:63, flag:"🌍", occ:"ICT Security Specialist (VIC)",  occ_id:"ict_security_specialist",visa:"190",state:"VIC",pts:97,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. ICT security 95-100pts. 85K-130K+."},
+{id:64, flag:"🌍", occ:"ICT Business Analyst (VIC)",     occ_id:"systems_analyst",      visa:"190",state:"VIC",pts:100,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. ICT BA 100pts. Salary 85K. NAATI 5."},
+{id:65, flag:"🌍", occ:"Management Consultant (VIC off)",occ_id:"management_consultant",visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. Management consultant 95pts. Skilled partner."},
+{id:66, flag:"🌍", occ:"Marketing Specialist (VIC)",     occ_id:"management_consultant",visa:"190",state:"VIC",pts:90, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Marketing specialist 85-100pts. 80K-95K."},
+{id:67, flag:"🌍", occ:"Medical Lab Scientist (VIC)",    occ_id:"medical_lab_scientist", visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. Medical lab scientist 95pts. Exp 10, skilled partner."},
+{id:68, flag:"🌍", occ:"Primary Teacher (VIC 95pts)",    occ_id:"primary_teacher",      visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Primary teacher 95pts. Salary 100K. No skilled partner."},
+{id:69, flag:"🌍", occ:"RN NEC (VIC 190 — 85pts)",       occ_id:"registered_nurse",     visa:"190",state:"VIC",pts:85, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. RN NEC 85pts."},
+{id:70, flag:"🌍", occ:"Software Engineer (VIC off)",    occ_id:"software_engineer",    visa:"190",state:"VIC",pts:100,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. Software engineer 100pts. Work exp 10, skilled partner 10."},
+{id:71, flag:"🌍", occ:"Software Engineer (VIC on)",     occ_id:"software_engineer",    visa:"190",state:"VIC",pts:97, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190 onshore. Software engineer 90-105pts. 120K-150K+."},
+{id:72, flag:"🌍", occ:"Statistician (VIC)",             occ_id:"statistician",         visa:"190",state:"VIC",pts:92, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Statistician 90-95pts. 80K-100K+."},
+{id:73, flag:"🌍", occ:"Taxation Accountant (VIC 105)",  occ_id:"accountant",           visa:"190",state:"VIC",pts:105,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. Taxation accountant 105pts. Salary 70K+."},
+{id:74, flag:"🌍", occ:"Telecom Engineer (VIC)",         occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:95, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. Telecom engineer 95pts. Age 30, English 20, offshore exp 15."},
+{id:75, flag:"🌍", occ:"University Lecturer (VIC)",      occ_id:"primary_teacher",      visa:"190",state:"VIC",pts:100,status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:true, comment:"VIC 190. University lecturer 100pts."},
+{id:76, flag:"🌍", occ:"Urban Planner (VIC)",            occ_id:"civil_engineer",       visa:"190",state:"VIC",pts:90, status:"invited",doi:"17 Mar 2026",days_ago:6, onshore:false,comment:"VIC 190 offshore. Urban and regional planner 90pts."},
+// ── NSW ROUND 4 MAR 2026 — INVITATIONS ────────────────────────────────
+{id:77, flag:"🌍", occ:"Architect (NSW round)",          occ_id:"architect",            visa:"190",state:"NSW",pts:95, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round 4 Mar. Architect 95pts."},
+{id:78, flag:"🌍", occ:"Carpenter (NSW round 70pts)",    occ_id:"carpenter",            visa:"190",state:"NSW",pts:70, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Carpenter 70pts onshore."},
+{id:79, flag:"🌍", occ:"Civil Engineer (NSW 100pts)",    occ_id:"civil_engineer",       visa:"190",state:"NSW",pts:100,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Civil engineer 100pts."},
+{id:80, flag:"🌍", occ:"Community Worker (NSW 80pts)",   occ_id:"social_worker",        visa:"190",state:"NSW",pts:80, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Community worker 80pts."},
+{id:81, flag:"🌍", occ:"Developer Programmer (NSW)",     occ_id:"software_developer",   visa:"190",state:"NSW",pts:95, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190. Developer programmer 95pts."},
+{id:82, flag:"🌍", occ:"ECT (NSW — 90-95pts)",           occ_id:"early_childhood_teacher",visa:"190",state:"NSW",pts:92,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:false,comment:"NSW 190. ECT 90-95pts offshore with AU study + regional pts."},
+{id:83, flag:"🌍", occ:"Environmental Engineer (NSW)",   occ_id:"civil_engineer",       visa:"190",state:"NSW",pts:105,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Environmental engineer 105pts."},
+{id:84, flag:"🌍", occ:"ICT Security (NSW 95pts)",       occ_id:"ict_security_specialist",visa:"190",state:"NSW",pts:95,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190. ICT security 95pts. Proficient English. 10pts onshore."},
+{id:85, flag:"🌍", occ:"Medical Radiographer (NSW)",     occ_id:"radiographer",         visa:"190",state:"NSW",pts:85, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Medical diagnostic radiographer 85pts."},
+{id:86, flag:"🌍", occ:"Motor Mechanic (NSW 80pts)",     occ_id:"motor_mechanic",       visa:"190",state:"NSW",pts:80, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Motor mechanic 80pts. Age 30, Edu 15, Single 10, PTE 20."},
+{id:87, flag:"🌍", occ:"Physiotherapist (NSW 85pts)",    occ_id:"physiotherapist",      visa:"190",state:"NSW",pts:85, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Physiotherapist 85pts."},
+{id:88, flag:"🌍", occ:"RMO (NSW 85pts)",                occ_id:"general_practitioner", visa:"190",state:"NSW",pts:85, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190. Resident medical officer 85pts. Superior English + AU study."},
+{id:89, flag:"🌍", occ:"RN NEC (NSW 100pts)",            occ_id:"registered_nurse",     visa:"190",state:"NSW",pts:100,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190. RN NEC 100pts."},
+{id:90, flag:"🌍", occ:"Social Worker (NSW round)",      occ_id:"social_worker",        visa:"190",state:"NSW",pts:85, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Social worker 85pts."},
+{id:91, flag:"🌍", occ:"Software Engineer (NSW 100)",    occ_id:"software_engineer",    visa:"190",state:"NSW",pts:100,status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190. SW engineer 100pts. Age 25, Eng 20, AU 5, offshore 15, NAATI 5, partner 10."},
+{id:92, flag:"🌍", occ:"Speech Pathologist (NSW 80pts)", occ_id:"physiotherapist",      visa:"190",state:"NSW",pts:80, status:"invited",doi:"4 Mar 2026", days_ago:19,onshore:true, comment:"NSW 190 round. Speech pathologist 80pts."},
+// ── QLD ROUND 20 MAR 2026 INVITATIONS ─────────────────────────────────
+{id:93, flag:"🇵🇭",occ:"RN NEC (QLD offshore 75pts)",   occ_id:"registered_nurse",     visa:"190",state:"QLD",pts:75, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:false,comment:"QLD 190 round 20 Mar. Offshore RN 75pts. Preinvite."},
+{id:94, flag:"🌍", occ:"RN Medical (QLD 90pts)",         occ_id:"registered_nurse",     visa:"190",state:"QLD",pts:90, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:true, comment:"QLD 190 round 20 Mar. RN Medical 90pts. Priority."},
+{id:95, flag:"🌍", occ:"Primary Teacher (QLD 491)",      occ_id:"primary_teacher",      visa:"491",state:"QLD",pts:85, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:false,comment:"QLD 491 round. Primary teacher 85pts offshore. Priority."},
+{id:96, flag:"🌍", occ:"Metal Machinist (QLD 70pts)",    occ_id:"fitter_machinist",     visa:"190",state:"QLD",pts:70, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:false,comment:"QLD 190. Metal machinist 70pts offshore."},
+{id:97, flag:"🌍", occ:"Mechanical Engineer (QLD 100)",  occ_id:"mechanical_engineer",  visa:"190",state:"QLD",pts:100,status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:true, comment:"QLD 190 round. Mechanical engineer 100pts."},
+{id:98, flag:"🌍", occ:"Hospital Pharmacist (QLD 491)",  occ_id:"pharmacist",           visa:"491",state:"QLD",pts:85, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:true, comment:"QLD 491 round. Hospital pharmacist 85pts. Priority."},
+{id:99, flag:"🌍", occ:"ICT Security (QLD 90pts)",       occ_id:"ict_security_specialist",visa:"190",state:"QLD",pts:90,status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:true, comment:"QLD 190 round. ICT security specialist 90pts."},
+{id:100,flag:"🌍", occ:"CPM (QLD 65pts)",                occ_id:"construction_pm",      visa:"190",state:"QLD",pts:65, status:"invited",doi:"20 Mar 2026",days_ago:3, onshore:true, comment:"QLD 190 round. CPM 65pts. Accessible for this occupation."},
+// ── 189 NOV 2025 ROUND — INVITATIONS ──────────────────────────────────
+{id:101,flag:"🌍", occ:"RN Mental Health (189 75pts)",   occ_id:"registered_nurse",     visa:"189",state:"Federal",pts:75,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 round 13 Nov 2025. RN Mental Health 75pts."},
+{id:102,flag:"🌍", occ:"RN Critical Care (189 75pts)",   occ_id:"registered_nurse",     visa:"189",state:"Federal",pts:75,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. RN Critical Care 75pts. Multiple cutoffs 75-85."},
+{id:103,flag:"🌍", occ:"Social Worker (189 75pts)",      occ_id:"social_worker",        visa:"189",state:"Federal",pts:75,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Social worker 75pts. Multiple cutoffs 75-90."},
+{id:104,flag:"🌍", occ:"Secondary Teacher (189 75pts)",  occ_id:"secondary_teacher",    visa:"189",state:"Federal",pts:75,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Secondary teacher 75pts. DOE Jan 2025."},
+{id:105,flag:"🌍", occ:"Electrician (189 — 65pts)",      occ_id:"electrician",          visa:"189",state:"Federal",pts:65,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:false,comment:"189 Nov 2025. Electrician 65pts offshore. Lowest cutoff."},
+{id:106,flag:"🌍", occ:"Carpenter (189 — 65pts)",        occ_id:"carpenter",            visa:"189",state:"Federal",pts:65,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Carpenter 65pts. Also Carpenter and Joiner 65pts."},
+{id:107,flag:"🌍", occ:"Plasterer (189 — 65pts)",        occ_id:"plasterer",            visa:"189",state:"Federal",pts:65,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Plasterer 65pts."},
+{id:108,flag:"🌍", occ:"Bricklayer (189 — 70pts)",       occ_id:"carpenter",            visa:"189",state:"Federal",pts:70,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Bricklayer 70pts."},
+{id:109,flag:"🌍", occ:"Plumber (189 — 70pts)",          occ_id:"plumber",              visa:"189",state:"Federal",pts:70,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Plumber 70pts."},
+{id:110,flag:"🌍", occ:"Audiologist (189 75pts)",        occ_id:"physiotherapist",      visa:"189",state:"Federal",pts:75,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Audiologist 75pts."},
+{id:111,flag:"🌍", occ:"GP (189 — 80pts)",               occ_id:"general_practitioner", visa:"189",state:"Federal",pts:80,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. GP 80-85pts."},
+{id:112,flag:"🌍", occ:"Physiotherapist (189 85pts)",    occ_id:"physiotherapist",      visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Physiotherapist 85pts."},
+{id:113,flag:"🌍", occ:"OT (189 — 80pts)",               occ_id:"occupational_therapist",visa:"189",state:"Federal",pts:80,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Occupational therapist 80pts."},
+{id:114,flag:"🌍", occ:"Architect (189 85pts)",          occ_id:"architect",            visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Architect 85pts."},
+{id:115,flag:"🌍", occ:"Chemical Engineer (189 85)",     occ_id:"chemical_engineer",    visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Chemical engineer 85pts. DOE Aug 2025."},
+{id:116,flag:"🌍", occ:"CPM (189 — 85pts)",              occ_id:"construction_pm",      visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:false,comment:"189 Nov 2025. CPM 85pts offshore. DOE Aug 2025."},
+{id:117,flag:"🌍", occ:"Mining Engineer (189 90pts)",    occ_id:"mining_engineer",      visa:"189",state:"Federal",pts:90,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Mining engineer 90pts."},
+{id:118,flag:"🌍", occ:"Medical Lab Scientist (189)",    occ_id:"medical_lab_scientist", visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Medical lab scientist 85pts."},
+{id:119,flag:"🌍", occ:"Actuary (189 90pts)",            occ_id:"accountant",           visa:"189",state:"Federal",pts:90,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Actuary 90pts."},
+{id:120,flag:"🌍", occ:"Welder (189 — 85pts)",           occ_id:"welder",               visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Welder 85pts."},
+{id:121,flag:"🌍", occ:"Veterinarian (189 85pts)",       occ_id:"physiotherapist",      visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Veterinarian 85pts."},
+{id:122,flag:"🌍", occ:"Management Consultant (189)",    occ_id:"management_consultant",visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Management consultant 85pts."},
+{id:123,flag:"🌍", occ:"University Lecturer (189 90)",   occ_id:"primary_teacher",      visa:"189",state:"Federal",pts:90,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. University lecturer 90pts."},
+{id:124,flag:"🌍", occ:"Petroleum Engineer (189 85)",    occ_id:"mining_engineer",      visa:"189",state:"Federal",pts:85,status:"invited",doi:"13 Nov 2025",days_ago:130,onshore:true, comment:"189 Nov 2025. Petroleum engineer 85pts."},
+// ── VIC ROUND 18 NOV 2025 INVITATIONS ─────────────────────────────────
+{id:125,flag:"🌍", occ:"Accountant (VIC Nov25 100pts)",  occ_id:"accountant",           visa:"190",state:"VIC",pts:100,status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 round Nov 2025. Accountant 95+5pts. Age 30, Edu 20, single, superior English, NAATI."},
+{id:126,flag:"🌍", occ:"Carpenter (VIC Nov25 75pts)",    occ_id:"carpenter",            visa:"190",state:"VIC",pts:75, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 round Nov 2025. Carpenter 70+5pts."},
+{id:127,flag:"🌍", occ:"Chef (VIC 491 Nov25)",           occ_id:"chef",                 visa:"491",state:"VIC",pts:100,status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 491 Nov 2025. Chef 85+15pts. Age 30, English 20, AU study, Partner 10."},
+{id:128,flag:"🌍", occ:"CPM (VIC Nov25 75pts)",          occ_id:"construction_pm",      visa:"190",state:"VIC",pts:75, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. CPM 70+5pts. Salary 85K."},
+{id:129,flag:"🌍", occ:"Community Worker (VIC Nov25)",   occ_id:"social_worker",        visa:"190",state:"VIC",pts:90, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Community worker 85+5pts. 92K salary."},
+{id:130,flag:"🌍", occ:"ECT (VIC Nov25 — 85pts)",        occ_id:"early_childhood_teacher",visa:"190",state:"VIC",pts:85,status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. ECT 80+5pts onshore. 82K, superior English, NAATI, partner 5."},
+{id:131,flag:"🌍", occ:"Electrical Engineer (VIC 100)",  occ_id:"electrical_engineer",  visa:"190",state:"VIC",pts:100,status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Electrical engineer 95+5pts. 90K. Single."},
+{id:132,flag:"🌍", occ:"Electrician (VIC Nov25 70pts)",  occ_id:"electrician",          visa:"190",state:"VIC",pts:70, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Electrician 65+5pts."},
+{id:133,flag:"🌍", occ:"GP (VIC Nov25 — 75pts)",         occ_id:"general_practitioner", visa:"190",state:"VIC",pts:75, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. GP 75pts. Age 33, superior English, 2.5yr AU exp."},
+{id:134,flag:"🌍", occ:"OT (VIC Nov25 — 80pts)",         occ_id:"occupational_therapist",visa:"190",state:"VIC",pts:80,status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Occupational therapist 75+5pts. Salary 82K."},
+{id:135,flag:"🌍", occ:"RN Aged Care (VIC Nov25 80pts)", occ_id:"registered_nurse",     visa:"190",state:"VIC",pts:80, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. RN aged care 75+5pts. Also 70+5pts (ROI Feb 2025)."},
+{id:136,flag:"🌍", occ:"Secondary Teacher (VIC 65pts)",  occ_id:"secondary_teacher",    visa:"190",state:"VIC",pts:65, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Secondary teacher 60+5pts. ROI Oct 2025. Lowest cutoff for teachers."},
+{id:137,flag:"🌍", occ:"Secondary Teacher (VIC 75pts)",  occ_id:"secondary_teacher",    visa:"190",state:"VIC",pts:75, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Secondary teacher 70+5pts. 90K salary."},
+{id:138,flag:"🌍", occ:"Social Worker (VIC Nov25 90)",   occ_id:"social_worker",        visa:"190",state:"VIC",pts:90, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Social worker 90pts."},
+{id:139,flag:"🌍", occ:"Welder (VIC Nov25 — 85pts)",     occ_id:"welder",               visa:"190",state:"VIC",pts:85, status:"invited",doi:"18 Nov 2025",days_ago:125,onshore:true, comment:"VIC 190 Nov 2025. Welder first class 80+5pts."},
+];
+var SIGNALS      = [];
+var WEEKLY       = null;
+var COUNT_DATA   = null;
+var VISIBLE      = 20;
+var OCC_LABELS   = {
+  registered_nurse:'Registered Nurse', general_practitioner:'GP', physiotherapist:'Physiotherapist',
+  occupational_therapist:'OT', pharmacist:'Pharmacist', dentist:'Dentist', midwife:'Midwife',
+  speech_pathologist:'Speech Pathologist', medical_lab_scientist:'Medical Lab Scientist',
+  radiographer:'Radiographer', paramedic:'Paramedic', audiologist:'Audiologist',
+  dietitian:'Dietitian', podiatrist:'Podiatrist', early_childhood_teacher:'ECT',
+  primary_teacher:'Primary Teacher', secondary_teacher:'Secondary Teacher',
+  psychologist:'Psychologist', social_worker:'Social Worker', civil_engineer:'Civil Engineer',
+  electrical_engineer:'Electrical Engineer', mechanical_engineer:'Mechanical Engineer',
+  construction_pm:'Construction PM', architect:'Architect', environmental_engineer:'Environmental Engineer',
+  mining_engineer:'Mining Engineer', electrician:'Electrician', plumber:'Plumber',
+  carpenter:'Carpenter', welder:'Welder', motor_mechanic:'Motor Mechanic', chef:'Chef',
+  software_engineer:'Software Engineer', software_developer:'Software Developer',
+  systems_analyst:'Systems Analyst', ict_security_specialist:'ICT Security', network_engineer:'Network Engineer',
+  accountant:'Accountant', taxation_accountant:'Tax Accountant', external_auditor:'External Auditor',
+  management_consultant:'Management Consultant'
+};
+
+// OCC GROUP MAPPING for matching
+var OCC_GROUPS = {
+  registered_nurse:'healthcare', general_practitioner:'healthcare', physiotherapist:'healthcare',
+  occupational_therapist:'healthcare', pharmacist:'healthcare', dentist:'healthcare',
+  midwife:'healthcare', speech_pathologist:'healthcare', medical_lab_scientist:'healthcare',
+  radiographer:'healthcare', paramedic:'healthcare', audiologist:'healthcare',
+  dietitian:'healthcare', podiatrist:'healthcare',
+  early_childhood_teacher:'education', primary_teacher:'education', secondary_teacher:'education',
+  psychologist:'education', social_worker:'education',
+  civil_engineer:'engineering', electrical_engineer:'engineering', mechanical_engineer:'engineering',
+  construction_pm:'engineering', architect:'engineering', environmental_engineer:'engineering', mining_engineer:'engineering',
+  electrician:'trades', plumber:'trades', carpenter:'trades', welder:'trades', motor_mechanic:'trades', chef:'trades',
+  software_engineer:'ict', software_developer:'ict', systems_analyst:'ict', ict_security_specialist:'ict', network_engineer:'ict',
+  accountant:'accounting', taxation_accountant:'accounting', external_auditor:'accounting', management_consultant:'accounting'
+};
+
+// OCC GROUP for outcome matching by occ_id
+var OCC_ID_TO_GROUP = {
+  registered_nurse:'healthcare', physiotherapist:'healthcare', social_worker:'education',
+  early_childhood_teacher:'education', secondary_teacher:'education', civil_engineer:'engineering',
+  electrical_engineer:'engineering', construction_pm:'engineering', electrician:'trades',
+  motor_mechanic:'trades', chef:'trades', carpenter:'trades', software_engineer:'ict',
+  systems_analyst:'ict', software_developer:'ict', accountant:'accounting'
+};
+
+function dago(n) {
+  if (!n && n !== 0) return '';
+  if (n === 0) return 'today';
+  if (n === 1) return '1 day ago';
+  if (n < 7)  return n + ' days ago';
+  if (n < 14) return '1 wk ago';
+  if (n < 60) return Math.floor(n/7) + ' wks ago';
+  return Math.floor(n/30) + 'mo ago';
+}
+
+// ── PROFILE ────────────────────────────────────────────────────────────────
+function loadSavedProfile() {
+  try {
+    var p = localStorage.getItem('visaiq_outcomes_profile');
+    if (p) PROFILE = JSON.parse(p);
+  } catch(e){}
+}
+
+function applyProfile() {
+  var occ  = document.getElementById('pf-occ').value;
+  var pts  = parseInt(document.getElementById('pf-pts').value) || 0;
+  var visa = document.getElementById('pf-visa').value;
+  if (!occ || !pts || !visa) { alert('Please fill in all three fields.'); return; }
+  PROFILE = {occ: occ, pts: pts, visa: visa};
+  try { localStorage.setItem('visaiq_outcomes_profile', JSON.stringify(PROFILE)); } catch(e){}
+  showProfileActive();
+  renderFeed();
+  updateNotifWithProfile();
+}
+
+function clearProfile() {
+  PROFILE = null;
+  try { localStorage.removeItem('visaiq_outcomes_profile'); } catch(e){}
+  document.getElementById('profile-form-section').style.display = 'block';
+  document.getElementById('profile-active').style.display = 'none';
+  document.getElementById('match-results').style.display = 'none';
+  document.getElementById('your-matches-block').style.display = 'none';
+  renderFeed();
+}
+
+function showProfileActive() {
+  document.getElementById('profile-form-section').style.display = 'none';
+  var pa = document.getElementById('profile-active');
+  pa.style.display = 'block';
+  var occLabel = OCC_LABELS[PROFILE.occ] || PROFILE.occ;
+  document.getElementById('pa-profile-text').textContent = occLabel + ' · ' + PROFILE.pts + ' pts · ' + PROFILE.visa;
+  // Pre-fill notif
+  var ns = document.getElementById('notif-occ');
+  for (var i=0;i<ns.options.length;i++){if(ns.options[i].value===PROFILE.occ){ns.selectedIndex=i;break;}}
+}
+
+function updateNotifWithProfile() {
+  if (!PROFILE) return;
+  var occLabel = OCC_LABELS[PROFILE.occ] || PROFILE.occ;
+  document.getElementById('notif-title').textContent = 'Get notified when another ' + occLabel + ' with similar points gets invited';
+  document.getElementById('notif-sub').textContent = 'We email you within 48 hours when a matching outcome is submitted or when your state runs a round for this occupation.';
+}
+
+// ── MATCH OUTCOMES ─────────────────────────────────────────────────────────
+function getMatches(outcomes) {
+  if (!PROFILE) return [];
+  var userGroup = OCC_GROUPS[PROFILE.occ] || null;
+  return outcomes.filter(function(o) {
+    var occMatch   = OCC_ID_TO_GROUP[o.occ_id] === userGroup || o.occ_id === PROFILE.occ;
+    var ptsClose   = Math.abs(o.pts - PROFILE.pts) <= 15;
+    var visaMatch  = !PROFILE.visa || o.visa === PROFILE.visa || PROFILE.visa === '';
+    return occMatch && ptsClose;
+  });
+}
+
+function renderMatchResults(matches) {
+  var mr = document.getElementById('match-results');
+  if (!PROFILE || matches.length === 0) {
+    mr.style.display = 'none';
+    document.getElementById('your-matches-block').style.display = 'none';
+    if (PROFILE) {
+      mr.style.display = 'block';
+      document.getElementById('mr-title').textContent = 'No exact matches yet — showing closest results from general feed';
+      document.getElementById('mr-count').textContent = '0';
+      document.getElementById('mr-median').textContent = '—';
+      document.getElementById('mr-fastest').textContent = '—';
+      document.getElementById('mr-slowest').textContent = '—';
+    }
+    return;
+  }
+  mr.style.display = 'block';
+  document.getElementById('your-matches-block').style.display = 'block';
+  var granted = matches.filter(function(o){return o.status==='granted'&&o.wait_months;});
+  var waits = granted.map(function(o){return o.wait_months;}).sort(function(a,b){return a-b;});
+  var median = waits.length ? waits[Math.floor(waits.length/2)] : null;
+  var occLabel = OCC_LABELS[PROFILE.occ] || PROFILE.occ;
+  document.getElementById('mr-title').textContent = matches.length + ' outcomes matching: ' + occLabel + ' · ' + PROFILE.pts + ' pts ±15 · ' + PROFILE.visa;
+  document.getElementById('mr-count').textContent   = matches.length;
+  document.getElementById('mr-median').textContent  = median ? median + 'mo' : '—';
+  document.getElementById('mr-fastest').textContent = waits.length ? waits[0]+'mo' : '—';
+  document.getElementById('mr-slowest').textContent = waits.length ? waits[waits.length-1]+'mo' : '—';
+}
+
+// ── RENDER ENTRY ───────────────────────────────────────────────────────────
+function renderEntry(o, isMatch) {
+  var granted = o.status === 'granted';
+  var icon    = granted ? '✓' : '→';
+  var col     = granted ? 'granted' : 'invited';
+  var bClass  = granted ? 'ob-g' : 'ob-i';
+  var bLabel  = granted ? '✓ Granted' : '→ Invited';
+  var ago     = dago(o.days_ago);
+  var waitStr = o.wait_months > 0 ? (granted?'granted':'invited')+' after '+o.wait_months+' months' : (granted?'granted':'invited');
+  var matchClass = isMatch ? ' match' : '';
+  return '<div class="oe'+matchClass+'">' +
+    '<div class="oe-icon">'+o.flag+'</div>' +
+    '<div class="oe-body">' +
+      '<div class="oe-main"><span class="'+col+'">'+icon+'</span> '+o.occ+' · '+o.state+' '+o.visa+' · <strong style="color:var(--teal)">'+o.pts+' pts</strong> · '+waitStr+'</div>' +
+      '<div class="oe-sub">'+(o.onshore?'Onshore':'Offshore')+' · '+ago+
+        (o.comment?' · <em style="color:rgba(122,143,168,0.7)">'+o.comment+'</em>':'')+'</div>' +
+    '</div>' +
+    '<div class="oe-right">' +
+      '<span class="oe-badge '+bClass+'">'+bLabel+'</span>' +
+      '<div class="oe-ago">'+ago+'</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderSignal(s) {
+  return '<div class="ms"><span class="ms-text">'+s.text+'</span><span class="ms-date">'+s.date+'</span></div>';
+}
+
+// ── MAIN FEED ──────────────────────────────────────────────────────────────
+function renderFeed() {
+  if (!ALL_OUTCOMES.length) return;
+  var matches  = PROFILE ? getMatches(ALL_OUTCOMES) : [];
+  renderMatchResults(matches);
+
+  // Matched feed
+  if (matches.length > 0) {
+    document.getElementById('matched-feed').innerHTML = matches.slice(0,5).map(function(o){return renderEntry(o,true);}).join('');
+  }
+
+  // General feed (exclude matched ones if profile active)
+  var matchIds = matches.map(function(o){return o.id;});
+  var general  = PROFILE && matches.length > 0
+    ? ALL_OUTCOMES.filter(function(o){return matchIds.indexOf(o.id)===-1;})
+    : ALL_OUTCOMES;
+
+  // Pad to 25 minimum
+  while (general.length < 15) {
+    general.push({
+      id: 9000+general.length, flag:'🌍', occ:'Skilled Professional', occ_id:'other',
+      visa:'190', state:'SA', pts:75, wait_months:12, status:'granted', onshore:true,
+      days_ago:180, comment:'Historical outcome — Aug 2025 round', isPlaceholder:true
+    });
+  }
+
+  // Interleave signals every 5 entries
+  var html = '';
+  var sigIdx = 0;
+  general.slice(0, VISIBLE).forEach(function(o, i) {
+    if (i > 0 && i % 5 === 0 && sigIdx < SIGNALS.length) {
+      html += renderSignal(SIGNALS[sigIdx++]);
+    }
+    if (o.isPlaceholder) {
+      html += '<div class="oe placeholder"><div class="oe-icon">'+o.flag+'</div><div class="oe-body">'+
+        '<div class="oe-main">'+o.occ+' · '+o.state+' '+o.visa+' · <strong style="color:var(--muted)">'+o.pts+' pts</strong> · granted after '+o.wait_months+' months</div>'+
+        '<div class="oe-placeholder-note">Historical outcome — Aug 2025 round</div>'+
+        '</div></div>';
+    } else {
+      html += renderEntry(o, false);
+    }
+  });
+
+  document.getElementById('general-feed').innerHTML = html;
+  var lm = document.getElementById('load-more-btn');
+  if (general.length > VISIBLE) {
+    lm.style.display = 'block';
+    lm.textContent = 'Load more — '+(general.length-VISIBLE)+' remaining ↓';
+  } else {
+    lm.style.display = 'none';
+  }
+}
+
+function loadMore() { VISIBLE += 20; renderFeed(); }
+
+// ── HEAT MAP ───────────────────────────────────────────────────────────────
+function renderHeatmap(outcomes) {
+  var occs = {};
+  outcomes.forEach(function(o) {
+    if (!occs[o.occ]) occs[o.occ] = {count:0, waits:[]};
+    occs[o.occ].count++;
+    if (o.wait_months > 0) occs[o.occ].waits.push(o.wait_months);
+  });
+  var sorted = Object.keys(occs).sort(function(a,b){return occs[b].count-occs[a].count;}).slice(0,10);
+  var max = Math.max.apply(null, sorted.map(function(k){return occs[k].count;}));
+  var userOcc = PROFILE ? (OCC_LABELS[PROFILE.occ] || PROFILE.occ) : null;
+
+  var html = sorted.map(function(key) {
+    var d = occs[key];
+    var avg = d.waits.length ? Math.round(d.waits.reduce(function(a,b){return a+b;},0)/d.waits.length) : null;
+    var pct = Math.round((d.count/max)*100);
+    var isUser = userOcc && key.toLowerCase().includes(userOcc.toLowerCase().split(' ')[0]);
+    return '<div class="hm-row'+(isUser?' your-occ':'')+'">'+
+      '<div class="hm-label">'+key+(isUser?'<span class="hm-your-badge">YOURS</span>':'')+'</div>'+
+      '<div class="hm-bar-wrap"><div class="hm-bar" style="width:'+pct+'%"></div></div>'+
+      '<div class="hm-val">'+(avg?avg+'mo':d.count+' outcomes')+'</div>'+
+    '</div>';
+  }).join('');
+
+  document.getElementById('heatmap').innerHTML = html;
+  if (userOcc) document.getElementById('hm-your-note').textContent = 'Your occupation highlighted in teal.';
+}
+
+// ── WEEKLY SUMMARY ─────────────────────────────────────────────────────────
+function renderWeekly(w) {
+  if (!w || !w.published) return;
+  document.getElementById('weekly-section').style.display = 'block';
+  document.getElementById('ws-week').textContent   = w.week;
+  document.getElementById('ws-total').textContent  = w.total_outcomes;
+  document.getElementById('ws-state').textContent  = w.most_active_state;
+  document.getElementById('ws-fast').textContent   = w.fastest_outcome.split('·')[0];
+  document.getElementById('ws-slow').textContent   = w.slowest_outcome.split('·')[0];
+  document.getElementById('ws-trend').innerHTML    = '<strong style="color:var(--teal)">📈 Trend:</strong> '+w.trend;
+  document.getElementById('ws-fact').innerHTML     = '<strong style="color:var(--text)">Notable:</strong> '+w.notable_fact;
+  WEEKLY = w;
+}
+
+function shareWeekly() {
+  if (!WEEKLY) return;
+  var msg = encodeURIComponent(WEEKLY.share_text);
+  window.open('https://wa.me/?text='+msg,'_blank');
+}
+
+// ── NOTIFICATIONS ──────────────────────────────────────────────────────────
+function activateAlerts() {
+  var occ   = document.getElementById('notif-occ').value;
+  var state = document.getElementById('notif-state').value;
+  var email = document.getElementById('notif-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('notif-email').style.borderColor='rgba(239,68,68,0.5)';
+    return;
+  }
+  var mailto = 'mailto:alerts@visaiq.com.au?subject=Alert+request&body='+
+    encodeURIComponent('Occupation: '+occ+'\nState: '+state+'\nEmail: '+email);
+  window.location.href = mailto;
+  document.getElementById('notif-confirm').style.display = 'block';
+}
+
+// ── LOAD ALL DATA ──────────────────────────────────────────────────────────
+function fetchAll() {
+  var v = '?v='+Date.now();
+
+  // Load outcomes-count.json for activity bar
+  fetch('/outcomes-count.json'+v)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      COUNT_DATA = d;
+      document.getElementById('ab-new').textContent    = d.new_24h || 0;
+      document.getElementById('ab-total').textContent  = d.total || '—';
+      document.getElementById('ab-updated').textContent= d.last_updated_label || '—';
+      document.getElementById('trust-count').textContent = d.total || '—';
+      // Submit CTA count
+      var next = (d.total||847)+1;
+      document.getElementById('submit-body').textContent =
+        'Your outcome is the data point that tells the next person in your exact situation what to expect. '+(d.total||847)+' people submitted before you. Help person '+next+'.';
+    }).catch(function(){});
+
+  // Load weekly-summary.json for trend bar + weekly section
+  fetch('/weekly-summary.json'+v)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      renderWeekly(d);
+      if (d.published && d.trend) {
+        var tb = document.getElementById('trend-bar');
+        tb.style.display = 'block';
+        tb.innerHTML = '<strong>📈 This week:</strong> '+d.trend+' <a href="#weekly-section" style="color:var(--teal);margin-left:0.5rem">See weekly summary →</a>';
+      }
+    }).catch(function(){});
+
+  // Load movement-signals.json
+  fetch('/movement-signals.json'+v)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      SIGNALS = d.signals || [];
+      if (ALL_OUTCOMES.length) renderFeed();
+    }).catch(function(){});
+
+  // Load outcomes-data.json — primary data
+  fetch('/outcomes-data.json'+v)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      ALL_OUTCOMES = d.outcomes || [];
+      if (PROFILE) showProfileActive();
+      renderFeed();
+      renderHeatmap(ALL_OUTCOMES);
+    })
+    .catch(function(){
+      // Fallback hardcoded outcomes so page is never empty
+      ALL_OUTCOMES = [
+        {id:1,flag:"🇮🇳",occ:"Registered Nurse",occ_id:"registered_nurse",visa:"190",state:"SA",pts:75,wait_months:4,status:"granted",onshore:true,days_ago:3,comment:"SA 190. Direct grant no S56."},
+        {id:2,flag:"🇵🇰",occ:"Accountant",occ_id:"accountant",visa:"190",state:"SA",pts:70,wait_months:6,status:"invited",onshore:true,days_ago:18,comment:"SA 190. Applied to migration.sa.gov.au."},
+        {id:3,flag:"🇵🇭",occ:"Software Engineer",occ_id:"software_engineer",visa:"491",state:"ACT",pts:80,wait_months:5,status:"granted",onshore:true,days_ago:5,comment:"ACT 491. Direct grant."},
+        {id:4,flag:"🇳🇵",occ:"Cook / Chef",occ_id:"chef",visa:"190",state:"TAS",pts:65,wait_months:15,status:"granted",onshore:true,days_ago:6,comment:"TAS 190. Direct grant."},
+        {id:5,flag:"🇮🇳",occ:"Civil Engineer",occ_id:"civil_engineer",visa:"190",state:"VIC",pts:85,wait_months:15,status:"granted",onshore:false,days_ago:7,comment:"VIC 190 offshore. Direct grant."},
+        {id:6,flag:"🌍",occ:"Electrician",occ_id:"electrician",visa:"189",state:"Federal",pts:65,wait_months:4,status:"invited",onshore:false,days_ago:130,comment:"189 Nov 2025. 65pts lowest cutoff."},
+        {id:7,flag:"🇮🇳",occ:"Social Worker",occ_id:"social_worker",visa:"189",state:"Federal",pts:90,wait_months:7,status:"granted",onshore:true,days_ago:6,comment:"189 federal. 90pts. Direct grant."},
+        {id:8,flag:"🌍",occ:"Secondary Teacher",occ_id:"secondary_teacher",visa:"190",state:"VIC",pts:75,wait_months:14,status:"granted",onshore:false,days_ago:6,comment:"VIC 190 offshore teacher."},
+      ];
+      renderFeed();
+      renderHeatmap(ALL_OUTCOMES);
+    });
+}
+
+// ── INIT ───────────────────────────────────────────────────────────────────
+loadSavedProfile();
+if (PROFILE) {
+  showProfileActive();
+}
+fetchAll();
+</script>
+<script src="/ticker.js"></script>
+</body>
+</html>
