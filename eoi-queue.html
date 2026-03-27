@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EOI Queue Position Australia 2026 — Where Do You Sit | VisaIQ</title>
-<meta name="description" content="See exactly where you sit in the EOI pool. Queue depth by points band, occupation and state. New 189 tier system explained. Find your position in the SkillSelect queue instantly.">
+<title>EOI Backlog Australia 2026 — Queue Position and Wait Times by Occupation | VisaIQ</title>
+<meta name="description" content="Real EOI queue data for Australian skilled migration. See the backlog size, average wait times, and your position in the pool by occupation and points band. Based on SkillSelect quarterly data and community submitted timelines. Free.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00C896">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisaIQ">
+<meta property="og:url" content="https://www.visaiq.com.au/eoi-queue">
+<meta property="og:title" content="EOI Backlog Australia 2026 — Queue Position and Wait Times | VisaIQ">
+<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the EOI backlog in Australia?","acceptedAnswer":{"@type":"Answer","text":"The EOI backlog is the number of skilled migrants waiting in the SkillSelect pool for an invitation to apply for a visa. Pool sizes vary enormously by occupation — from under 500 for some healthcare roles to over 15,000 for accountants and ICT professionals."}},{"@type":"Question","name":"How long is the EOI wait time in Australia 2026?","acceptedAnswer":{"@type":"Answer","text":"Wait times vary significantly by occupation and points score. Healthcare occupations like Registered Nurse average 3 to 6 months at 75 points. Engineering occupations average 6 to 12 months. Accountants and ICT professionals can wait 12 to 24 months or longer depending on points."}},{"@type":"Question","name":"Does submitting an EOI early improve your chances?","acceptedAnswer":{"@type":"Answer","text":"No. Submitting early with a low score does not improve your chances and can create Date of Effect complications. DHA selects applicants by points score not by submission date. Only submit when your score is at or above the likely cutoff for your occupation."}},{"@type":"Question","name":"What is the Date of Effect for an EOI?","acceptedAnswer":{"@type":"Answer","text":"The Date of Effect is the date DHA uses to assess your eligibility. If you submit your EOI before you are invited the Date of Effect is your invitation date not your submission date."}},{"@type":"Question","name":"What is a good EOI score for Australia 2026?","acceptedAnswer":{"@type":"Answer","text":"The minimum to submit is 65 points but competitive scores vary by occupation. Healthcare Tier 1 occupations typically invite at 65 to 75 points. Engineering and teaching Tier 2 at 75 to 85 points. Accountants and IT workers Tier 4 often need 85 to 95 points for federal invitation."}},{"@type":"Question","name":"How do I check my EOI queue position?","acceptedAnswer":{"@type":"Answer","text":"DHA does not publish individual queue positions. You can estimate your position using SkillSelect quarterly reports showing pool sizes by occupation and points band. VisaIQ combines this data with community submitted outcomes to give occupation-specific queue position estimates."}},{"@type":"Question","name":"What is the fastest way to move up the EOI queue?","acceptedAnswer":{"@type":"Answer","text":"The three fastest point boosters are NAATI CCL credential adding 5 points in 3 months for eligible languages, improving English to Superior level adding 10 extra points over Proficient, and switching to the 491 regional pathway which adds 15 points and often has shorter queues than the federal 189 pool."}}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,271 +27,414 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
 .nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
 .nls{display:flex;align-items:center;gap:1.5rem}
 .nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500}
-.nls a:hover{color:var(--teal)}
-.ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
-.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
-.hero h1 em{font-style:italic;color:var(--teal)}
-.hero p{color:var(--muted);font-size:0.9rem;max-width:500px;margin:0 auto;line-height:1.7}
-.wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem}
-.card-title{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
-.ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
-.ib-teal{background:var(--td);border:1px solid var(--tb)}
-.ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
-select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;margin-bottom:0.75rem}
-.pill-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem}
-.pill{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif}
-.pill.sel{border-color:var(--teal);background:var(--td);color:var(--teal)}
-.calc-btn{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:0.5rem;transition:all 0.2s}
-/* RESULT */
-.result{display:none}
-.result.show{display:block;animation:fu 0.4s ease}
-@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-/* POOL BAR */
-.pool-bar-wrap{height:12px;background:rgba(255,255,255,0.05);border-radius:6px;overflow:hidden;margin:0.75rem 0}
-.pool-bar{height:100%;border-radius:6px;transition:width 1s ease}
-/* QUEUE TABLE */
-.qtable{width:100%;border-collapse:collapse;font-size:0.82rem}
-.qtable th{text-align:left;padding:0.6rem 0.75rem;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border)}
-.qtable td{padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--muted)}
-.qtable td:first-child{color:var(--text);font-weight:500}
-.qtable tr:last-child td{border-bottom:none}
-footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
+.nls a:hover,.nls a.cur{color:var(--teal)}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(160deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem}
+.hero-inner{max-width:860px;margin:0 auto}
+.eyebrow{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.5rem}
+h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem}
+h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:0.88rem;color:var(--muted);max-width:560px;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 6rem}
+.section{margin-bottom:2.75rem}
+.sec-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:0.35rem}
+.sec-title em{font-style:italic;color:var(--teal)}
+.sec-desc{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:0.75rem}
+.field label{display:block;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
+.field select,.field input[type=number]{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;-webkit-appearance:none;transition:border-color 0.2s}
+.field select:focus,.field input:focus{border-color:var(--tb)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-bottom:0.85rem}
+.btn-go{width:100%;padding:0.9rem;background:var(--teal);color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:800;cursor:pointer}
+.btn-go:hover{background:#00e0aa}
+#qr{display:none;margin-top:1rem}
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.75rem}
+.qc{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1rem}
+.qv{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--teal);line-height:1;margin-bottom:0.2rem}
+.ql{font-size:0.68rem;color:var(--muted);line-height:1.4}
+.qm{border-radius:10px;padding:0.75rem 1rem;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;display:flex;align-items:center;gap:0.5rem}
+.mv-f{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);color:#10B981}
+.mv-s{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
+.dn{font-size:0.68rem;color:var(--muted);font-style:italic;margin-top:0.5rem}
+.ts{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -0.25rem;padding:0 0.25rem 0.5rem}
+table{width:100%;border-collapse:collapse;min-width:680px;font-size:0.8rem}
+th{text-align:left;padding:0.65rem 0.85rem;font-family:'Syne',sans-serif;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal);border-bottom:2px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:var(--text)}
+td{padding:0.6rem 0.85rem;border-bottom:1px solid var(--border);color:var(--muted);white-space:nowrap}
+td:first-child{color:var(--text);font-weight:500;min-width:200px}
+tr:hover td{background:rgba(255,255,255,0.02)}
+tr.uo td{background:rgba(0,200,150,0.04);border-left:3px solid var(--teal)}
+tr.uo td:first-child{color:var(--teal);font-weight:700}
+.tu{color:#10B981;font-weight:700}.td2{color:#f87171;font-weight:700}.ts2{color:var(--muted)}
+.dc{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:14px;padding:1.25rem;margin-bottom:0.75rem}
+.di{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;margin-bottom:0.75rem}
+.dr{border-radius:10px;padding:1rem 1.1rem;font-size:0.82rem;line-height:1.7;display:none}
+.dr.show{display:block}
+.da{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2)}
+.dc2{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2)}
+.db{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15)}
+.dt{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;margin-bottom:0.35rem}
+.ap{display:inline-flex;align-items:center;gap:0.4rem;background:var(--td);border:1px solid var(--tb);border-radius:7px;padding:0.3rem 0.7rem;font-size:0.75rem;font-weight:600;color:var(--teal);text-decoration:none;margin:0.25rem 0.25rem 0 0}
+.oe{display:flex;align-items:flex-start;gap:0.7rem;padding:0.8rem 0.9rem;background:var(--bg2);border:1px solid var(--border);border-left:3px solid #4E8EFF;border-radius:10px;margin-bottom:0.45rem}
+.of{font-size:1.1rem;flex-shrink:0}
+.ob2{flex:1;min-width:0}
+.om{font-size:0.82rem;color:var(--text);line-height:1.4;margin-bottom:0.1rem}
+.os{font-size:0.7rem;color:var(--muted)}
+.or{flex-shrink:0;text-align:right}
+.oi{font-size:0.6rem;font-weight:700;padding:0.15rem 0.4rem;border-radius:5px;background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2);display:block;margin-bottom:0.2rem}
+.oa{font-size:0.62rem;color:var(--muted)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.sc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem}
+.sr{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:800;color:var(--teal);margin-bottom:0.35rem}
+.st{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;line-height:1.4}
+.sb{font-size:0.75rem;color:var(--muted);line-height:1.6;margin-bottom:0.6rem}
+.sl{font-size:0.75rem;color:var(--teal);text-decoration:none;font-weight:600}
+.fi{border-bottom:1px solid var(--border);padding:1rem 0;cursor:pointer}
+.fi:last-child{border-bottom:none}
+.fq{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;line-height:1.4}
+.fic{flex-shrink:0;color:var(--teal);font-size:1.1rem;transition:transform 0.2s}
+.fa{font-size:0.82rem;color:var(--muted);line-height:1.7;margin-top:0.6rem;display:none}
+.fa.open{display:block}
+.fi.open .fic{transform:rotate(45deg)}
+.cb{background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:14px;padding:1.75rem;text-align:center}
+.ct{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:0.35rem}
+.cs{font-size:0.82rem;color:var(--muted);line-height:1.6;max-width:480px;margin:0 auto 1.1rem}
+.bp{display:inline-block;padding:0.8rem 1.6rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;margin-right:0.5rem;margin-bottom:0.5rem}
+.bo{display:inline-block;padding:0.8rem 1.3rem;background:transparent;border:1px solid var(--tb);color:var(--teal);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none;margin-bottom:0.5rem}
+.cl{display:block;margin-top:0.6rem;font-size:0.8rem;color:var(--teal);text-decoration:none}
+.bc{font-size:0.72rem;color:var(--muted);margin-bottom:0.75rem}
+.bc a{color:var(--muted);text-decoration:none}
+.bc a:hover{color:var(--teal)}
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
-@media(max-width:600px){.nls{display:none}}
+@media(max-width:640px){.fgrid{grid-template-columns:1fr}.qr-grid{grid-template-columns:1fr}.di{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.nls{display:none}}
 </style>
-  <!-- ── BRAND & SEO HEAD TAGS ── add to every page ── -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#00C896">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="VisaIQ">
-  <!-- Open Graph — controls WhatsApp, LinkedIn, Facebook preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="VisaIQ">
-  <meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VisaIQ — Australia's Migration Intelligence Platform">
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@visaiq">
-  <meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
-  <!-- ── END BRAND TAGS ── -->
-  <meta property="og:url" content="https://www.visaiq.com.au/eoi-queue">
-  <meta property="og:title" content="EOI Queue Position Australia 2026 — Where Do You Sit | VisaIQ">
-  <meta name="twitter:title" content="EOI Queue Position Australia 2026 — Where Do You Sit | VisaIQ">
-  <meta property="og:description" content="See exactly where you sit in the EOI pool. Queue depth by points band, occupation and state. New 189 tier system explained. Find your position in the SkillSelect queue instantly.">
-  <meta name="twitter:description" content="See exactly where you sit in the EOI pool. Queue depth by points band, occupation and state. New 189 tier system explained. Find your position in the SkillSelect queue instantly.">
 </head>
 <body>
-<div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;"><div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;white-space:nowrap;z-index:3;">Live</div><style>#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none;}#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent);}#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent);}#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0;}#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite;}#viq-ticker-mask:hover #viq-ticker-track{animation-play-state:paused;}@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:"DM Sans",sans-serif;white-space:nowrap;line-height:1;}.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px;}@media(max-width:600px){.viq-item{font-size:0.7rem;padding:0 16px;}}</style><div id="viq-ticker-mask"><div id="viq-ticker-track"><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span><span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span><span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span><span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="viq-dot"></span></span><span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span><span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span></div></div></div>
 <nav>
   <a href="/" class="nl">VisaIQ</a>
   <div class="nls">
-    <a href="/189-visa">189 Visa</a>
-    <a href="/points-calculator">Points Calc</a>
-    <a href="/tool" class="ncta">Get My Score →</a>
+    <a href="/tool">PR Tool</a>
+    <a href="/eoi-queue" class="cur">EOI Queue</a>
+    <a href="/outcomes">Outcomes</a>
+    <a href="/rounds">Rounds</a>
+    <a href="/tool" class="ncta">Get My Score &rarr;</a>
   </div>
 </nav>
 <div class="hero">
-  <h1>EOI Queue Checker Australia 2026 — Your Position in the Pool</h1>
-  <p>See your estimated position in your occupation's EOI pool and what it means for your invitation chances under the 2025–26 quarterly round system.</p>
+  <div class="hero-inner">
+    <div class="eyebrow">EOI Backlog Intelligence</div>
+    <h1>EOI Backlog Australia 2026 &mdash;<br><em>Where Do You Actually Sit in the Queue</em></h1>
+    <p class="hero-sub">Real SkillSelect pool data by occupation and points band. Your estimated queue position, wait time, and exactly when to submit your EOI. Based on DHA December 2025 quarterly report.</p>
+  </div>
 </div>
 <div class="wrap">
-  <div class="ib ib-amber">
-    <strong>How EOI queue data works:</strong> DHA does not publish individual queue positions. The figures below are based on publicly available DHA FOI data, SkillSelect statistics and community-submitted EOI data. Treat as informed estimates, not guarantees. Queue depth changes every day as people lodge new EOIs and receive invitations.
-  </div>
-  <div class="card">
-    <div class="card-title">Check Your Queue Position</div>
-    <select id="q-occ" onchange="updateQueue()">
-      <option value="">Select your occupation…</option>
-      <optgroup label="Healthcare — Tier 1">
-        <option value="nurse">Registered Nurse</option>
-        <option value="gp">General Practitioner / Medical Officer</option>
-        <option value="allied">Allied Health (Physio / OT / Pharmacist)</option>
-        <option value="dentist">Dentist</option>
-      </optgroup>
-      <optgroup label="Education — Tier 2">
-        <option value="teacher">Teacher (Secondary / Primary)</option>
-        <option value="socialworker">Social Worker / Counsellor</option>
-      </optgroup>
-      <optgroup label="Engineering — Tier 3">
-        <option value="civil">Civil / Structural Engineer</option>
-        <option value="mechanical">Mechanical / Electrical Engineer</option>
-      </optgroup>
-      <optgroup label="Trades — Tier 3">
-        <option value="electrician">Electrician</option>
-        <option value="plumber">Plumber</option>
-        <option value="carpenter">Carpenter / Joiner</option>
-      </optgroup>
-      <optgroup label="Technology — Tier 4">
-        <option value="software">Software Engineer / Developer</option>
-        <option value="ict">ICT Manager / Systems Analyst</option>
-        <option value="data">Data Analyst / Scientist</option>
-      </optgroup>
-      <optgroup label="Accounting — Tier 4">
-        <option value="accountant">Accountant (General / Management)</option>
-        <option value="auditor">Auditor / Financial Analyst</option>
-      </optgroup>
-    </select>
-    <div style="margin-bottom:0.75rem">
-      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Your points score (before nomination)</div>
-      <div class="pill-row">
-        <button class="pill" data-v="65" onclick="sp(this,'pts')">65–69 pts</button>
-        <button class="pill" data-v="70" onclick="sp(this,'pts')">70–74 pts</button>
-        <button class="pill" data-v="75" onclick="sp(this,'pts')">75–79 pts</button>
-        <button class="pill" data-v="80" onclick="sp(this,'pts')">80–84 pts</button>
-        <button class="pill" data-v="85" onclick="sp(this,'pts')">85–89 pts</button>
-        <button class="pill" data-v="90" onclick="sp(this,'pts')">90–94 pts</button>
-        <button class="pill" data-v="95" onclick="sp(this,'pts')">95+ pts</button>
+<div class="bc"><a href="/">Home</a> &rsaquo; <a href="/eoi-queue">EOI Queue</a></div>
+
+<!-- S1 QUEUE TOOL -->
+<div class="section">
+  <div class="eyebrow">Section 1</div>
+  <div class="sec-title">Your <em>queue position</em></div>
+  <p class="sec-desc">Enter your profile to see where you sit in the SkillSelect pool right now.</p>
+  <div class="card" style="border-color:var(--tb)">
+    <div class="fgrid">
+      <div class="field"><label>Occupation</label>
+        <select id="qo">
+          <option value="">Select&hellip;</option>
+          <option value="registered_nurse">Registered Nurse</option>
+          <option value="general_practitioner">General Practitioner</option>
+          <option value="physiotherapist">Physiotherapist</option>
+          <option value="pharmacist">Pharmacist</option>
+          <option value="aged_care_worker">Aged Care Worker</option>
+          <option value="early_childhood_teacher">Early Childhood Teacher</option>
+          <option value="teacher_primary">Primary School Teacher</option>
+          <option value="teacher_secondary">Secondary School Teacher</option>
+          <option value="social_worker">Social Worker</option>
+          <option value="civil_engineer">Civil Engineer</option>
+          <option value="mechanical_engineer">Mechanical Engineer</option>
+          <option value="electrical_engineer">Electrical Engineer</option>
+          <option value="electrician">Electrician</option>
+          <option value="plumber">Plumber</option>
+          <option value="chef">Cook / Chef</option>
+          <option value="software_engineer">Software Engineer</option>
+          <option value="ict_manager">ICT Manager</option>
+          <option value="data_analyst">Data Analyst / ICT BA</option>
+          <option value="accountant">Accountant</option>
+          <option value="auditor">External Auditor</option>
+        </select>
+      </div>
+      <div class="field"><label>Points score</label><input type="number" id="qp" placeholder="e.g. 75" min="65" max="130"></div>
+      <div class="field"><label>Visa target</label>
+        <select id="qv2">
+          <option value="189">189 &mdash; Independent</option>
+          <option value="190">190 &mdash; State Nominated</option>
+          <option value="491">491 &mdash; Regional</option>
+        </select>
       </div>
     </div>
-    <div style="margin-bottom:1rem">
-      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem">Nomination status</div>
-      <div class="pill-row">
-        <button class="pill sel" data-v="none" onclick="sp(this,'nom')">No nomination (189)</button>
-        <button class="pill" data-v="190" onclick="sp(this,'nom')">190 state (+5 pts)</button>
-        <button class="pill" data-v="491" onclick="sp(this,'nom')">491 regional (+15 pts)</button>
+    <button class="btn-go" onclick="cq()">Show my queue position &rarr;</button>
+    <div id="qr">
+      <div class="qr-grid">
+        <div class="qc"><div class="qv" id="qa">&#8212;</div><div class="ql">Estimated EOIs ahead of you in your points band</div></div>
+        <div class="qc"><div class="qv" id="qpc">&#8212;</div><div class="ql">You are ahead of this percentage of your occupation pool</div></div>
+        <div class="qc"><div class="qv" id="qw">&#8212;</div><div class="ql">Estimated wait at current invitation rates</div></div>
+        <div class="qc"><div class="qv" id="qpl">&#8212;</div><div class="ql">Total EOIs in your occupation pool</div></div>
       </div>
+      <div class="qm" id="qmv"></div>
+      <div class="dn">Based on DHA SkillSelect December 2025 quarterly report and community submitted outcomes. Pool sizes are estimates. Confidence: Moderate. <a href="/methodology" style="color:var(--teal)">Methodology &rarr;</a></div>
     </div>
-    <button class="calc-btn" onclick="checkQueue()">See My Queue Position →</button>
-  </div>
-
-  <!-- RESULT -->
-  <div class="result" id="queue-result"></div>
-
-  <!-- OCCUPATION POOL DATA -->
-  <div class="card">
-    <div class="card-title">EOI Pool Size by Occupation — 2025–26 Data</div>
-    <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1rem">Estimated EOI pool sizes based on DHA SkillSelect data and community submissions. Larger pools = more competition = higher cutoffs needed.</p>
-    <table class="qtable">
-      <thead><tr><th>Occupation</th><th>Tier</th><th>Est. EOI pool</th><th>Nov 2025 cutoff</th><th>Competition</th></tr></thead>
-      <tbody>
-        <tr><td>Accountant</td><td>Tier 4</td><td style="color:var(--red)">15,000+</td><td style="color:var(--red)">Not invited</td><td style="color:var(--red)">Extreme</td></tr>
-        <tr><td>Software Engineer</td><td>Tier 4</td><td style="color:var(--red)">8,200+</td><td style="color:var(--amber)">90 pts</td><td style="color:var(--red)">Very high</td></tr>
-        <tr><td>ICT Manager</td><td>Tier 4</td><td style="color:var(--red)">5,400+</td><td style="color:var(--red)">95 pts (pro-rata)</td><td style="color:var(--red)">Extreme</td></tr>
-        <tr><td>Civil Engineer</td><td>Tier 3</td><td style="color:var(--amber)">5,200+</td><td style="color:var(--amber)">85 pts</td><td style="color:var(--amber)">High</td></tr>
-        <tr><td>Registered Nurse</td><td>Tier 1</td><td style="color:var(--teal)">2,100</td><td style="color:var(--green)">75 pts</td><td style="color:var(--teal)">Moderate</td></tr>
-        <tr><td>Teacher (Secondary)</td><td>Tier 2</td><td style="color:var(--teal)">4,100</td><td style="color:var(--teal)">85 pts</td><td style="color:var(--teal)">Moderate</td></tr>
-        <tr><td>Social Worker</td><td>Tier 2</td><td style="color:var(--teal)">2,600</td><td style="color:var(--green)">80 pts</td><td style="color:var(--teal)">Moderate</td></tr>
-        <tr><td>Electrician</td><td>Tier 3</td><td style="color:var(--green)">1,600</td><td style="color:var(--green)">65 pts</td><td style="color:var(--green)">Low</td></tr>
-        <tr><td>Plumber</td><td>Tier 3</td><td style="color:var(--green)">1,300</td><td style="color:var(--green)">65 pts</td><td style="color:var(--green)">Low</td></tr>
-        <tr><td>Chef / Cook</td><td>STSOL</td><td style="color:var(--red)">3,600+</td><td style="color:var(--red)">No 189 pathway</td><td style="color:var(--red)">N/A for 189</td></tr>
-      </tbody>
-    </table>
   </div>
 </div>
+
+<!-- S2 EXPLAINER -->
+<div class="section">
+  <div class="eyebrow">Section 2</div>
+  <div class="sec-title">What is the EOI backlog <em>and why it matters</em></div>
+  <div class="card">
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:1rem">When you submit an Expression of Interest via SkillSelect you join a pool with thousands of other applicants in your occupation. The backlog is the number of people waiting ahead of you. DHA invites people from this pool in batches called invitation rounds. The size of the backlog determines how long you wait.</p>
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:1rem">Some occupations like <strong style="color:var(--text)">Registered Nurse</strong> have a relatively small pool because demand is high and invitations flow regularly. Others like <strong style="color:var(--text)">Accountant</strong> or <strong style="color:var(--text)">ICT Professional</strong> have enormous pools because supply of applicants exceeds the number of invitations DHA issues. Your points score determines your position within the pool &mdash; higher points means earlier invitation.</p>
+    <div style="background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.9rem 1rem;margin-bottom:1rem">
+      <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:800;color:var(--amber);margin-bottom:0.3rem">&#9888;&#65039; The Date of Effect problem &mdash; most people get this wrong</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.7">If you submit an EOI below the cutoff points score and later get invited, DHA uses your <strong style="color:var(--text)">invitation date</strong> as the Date of Effect &mdash; not your original submission date. This means submitting early with a low score does not help you. <strong style="color:var(--text)">Only submit when your points score is at or above the likely cutoff for your occupation.</strong></p>
+    </div>
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.8">VisaIQ tracks the backlog by combining DHA SkillSelect quarterly reports with community submitted outcomes showing real wait times. <a href="/methodology" style="color:var(--teal)">How we calculate this &rarr;</a></p>
+  </div>
+</div>
+
+<!-- S3 TABLE -->
+<div class="section">
+  <div class="eyebrow">Section 3</div>
+  <div class="sec-title">EOI backlog by <em>occupation</em></div>
+  <p class="sec-desc">Click any column to sort. Green &uarr; = pool shrinking. Red &darr; = pool growing. Your occupation highlighted if you entered your profile above.</p>
+  <div class="ts">
+    <table>
+      <thead><tr>
+        <th onclick="srt(0)">Occupation &#8597;</th>
+        <th onclick="srt(1)">Pool size &#8597;</th>
+        <th onclick="srt(2)">189 cutoff &#8597;</th>
+        <th onclick="srt(3)">Competitive pts &#8597;</th>
+        <th onclick="srt(4)">Avg wait &#8597;</th>
+        <th onclick="srt(5)">Trend &#8597;</th>
+        <th>Updated</th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+  <div class="dn" style="margin-top:0.6rem">Pool sizes estimated from DHA SkillSelect December 2025 quarterly report. Updated quarterly. <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" style="color:var(--teal)">DHA SkillSelect &rarr;</a></div>
+</div>
+
+<!-- S4 DOE TOOL -->
+<div class="section">
+  <div class="eyebrow">Section 4</div>
+  <div class="sec-title">Date of Effect <em>strategy tool</em></div>
+  <p class="sec-desc">Should you submit your EOI right now? This tool tells you clearly.</p>
+  <div class="dc">
+    <div style="font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:800;color:var(--amber);margin-bottom:0.75rem">&#9888;&#65039; Should you submit your EOI now?</div>
+    <div class="di">
+      <div class="field"><label>Your current points</label><input type="number" id="dp" placeholder="e.g. 78" min="45" max="130"></div>
+      <div class="field"><label>Occupation</label>
+        <select id="do2">
+          <option value="">Select&hellip;</option>
+          <option value="registered_nurse">Registered Nurse</option>
+          <option value="general_practitioner">General Practitioner</option>
+          <option value="physiotherapist">Physiotherapist</option>
+          <option value="pharmacist">Pharmacist</option>
+          <option value="aged_care_worker">Aged Care Worker</option>
+          <option value="early_childhood_teacher">Early Childhood Teacher</option>
+          <option value="teacher_primary">Primary School Teacher</option>
+          <option value="teacher_secondary">Secondary School Teacher</option>
+          <option value="social_worker">Social Worker</option>
+          <option value="civil_engineer">Civil Engineer</option>
+          <option value="mechanical_engineer">Mechanical Engineer</option>
+          <option value="electrical_engineer">Electrical Engineer</option>
+          <option value="electrician">Electrician</option>
+          <option value="plumber">Plumber</option>
+          <option value="software_engineer">Software Engineer</option>
+          <option value="ict_manager">ICT Manager</option>
+          <option value="data_analyst">Data Analyst / ICT BA</option>
+          <option value="accountant">Accountant</option>
+          <option value="auditor">External Auditor</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-go" style="background:var(--amber);color:#000" onclick="cd()">Check Date of Effect risk &rarr;</button>
+    <div id="dr2" style="margin-top:0.85rem"></div>
+  </div>
+</div>
+
+<!-- S5 OUTCOMES FEED -->
+<div class="section">
+  <div class="eyebrow">Section 5</div>
+  <div class="sec-title">Real EOI <em>invitation outcomes</em></div>
+  <p class="sec-desc">Community-submitted EOI to invitation timelines. Real occupations, real points, real wait times.</p>
+  <div id="ef"></div>
+  <div style="margin-top:0.75rem;font-size:0.78rem;color:var(--muted)">Submit your invitation outcome and help others understand real wait times. <a href="/submit" style="color:var(--teal);font-weight:600">Submit your outcome &rarr;</a></div>
+</div>
+
+<!-- S6 STRATEGY -->
+<div class="section">
+  <div class="eyebrow">Section 6</div>
+  <div class="sec-title">EOI strategy <em>by points band</em></div>
+  <p class="sec-desc">Specific guidance by your actual score. Not generic.</p>
+  <div class="sg">
+    <div class="sc" style="border-color:rgba(239,68,68,0.2)">
+      <div class="sr" style="color:#f87171">Under 75 points</div>
+      <div class="st">Do not sit in the 189 pool &mdash; move to 491 regional</div>
+      <div class="sb">At under 75 points your best pathway is <a href="/491-visa" style="color:var(--teal)">491 regional</a>. The 491 pathway adds 15 points which changes everything. At 70 + 15 = 85 effective points you are competitive across SA, TAS, QLD and NT.</div>
+      <a href="/491-visa" class="sl">Check 491 eligibility &rarr;</a>
+    </div>
+    <div class="sc" style="border-color:rgba(245,158,11,0.2)">
+      <div class="sr" style="color:var(--amber)">75 to 85 points</div>
+      <div class="st">Submit <a href="/190-visa" style="color:var(--teal)">190 ROI</a> now &mdash; do not wait</div>
+      <div class="sb">You are in the competitive zone for <a href="/190-visa" style="color:var(--teal)">190 state nomination</a>. SA and TAS are your most accessible states. A 190 nomination adds 5 points and gets you out of the federal pool into a faster separate queue.</div>
+      <a href="/state-comparator" class="sl">Compare all 8 states &rarr;</a>
+    </div>
+    <div class="sc" style="border-color:rgba(0,200,150,0.2)">
+      <div class="sr" style="color:var(--teal)">85 to 90 points</div>
+      <div class="st">Submit EOI now &mdash; check your <a href="/occupation-demand" style="color:var(--teal)">tier</a> first</div>
+      <div class="sb">You are competitive for 189 federal invitation in Tier 1 and 2 occupations. If you are <a href="/occupation-demand" style="color:var(--teal)">Tier 3 or 4</a> the 190 pathway is still faster even at these points. Nurses and teachers at 85+ should have a short wait.</div>
+      <a href="/occupation-demand" class="sl">Check your occupation tier &rarr;</a>
+    </div>
+    <div class="sc" style="border-color:rgba(16,185,129,0.2)">
+      <div class="sr" style="color:#10B981">90+ points</div>
+      <div class="st">You should be invited &mdash; if not, seek advice</div>
+      <div class="sb">At 90+ points you should have received or be close to an invitation for most Tier 1&ndash;3 occupations. If not invited in 12 months despite 90+ points there may be a specific issue with your occupation classification or skills assessment.</div>
+      <a href="/methodology" class="sl">How VisaIQ calculates this &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- S7 FAQ -->
+<div class="section">
+  <div class="eyebrow">Section 7</div>
+  <div class="sec-title">EOI backlog <em>FAQ</em></div>
+  <p class="sec-desc">The most searched questions about the EOI backlog, answered clearly.</p>
+  <div class="card" style="padding:0.25rem 1.25rem">
+    <div class="fi" onclick="tf(this)"><div class="fq">What is the EOI backlog in Australia? <span class="fic">+</span></div><div class="fa">The EOI backlog is the number of skilled migrants waiting in the SkillSelect pool for an invitation to apply for a visa. Pool sizes vary enormously &mdash; from under 500 for some healthcare roles to over 15,000 for accountants and ICT professionals. The backlog size directly determines how long you wait for an invitation.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">How long is the EOI wait time in Australia 2026? <span class="fic">+</span></div><div class="fa">Wait times vary by occupation and points. Healthcare occupations like Registered Nurse average 3&ndash;6 months at 75 points. Engineering occupations average 6&ndash;12 months. Accountants and ICT professionals can wait 12&ndash;24 months or longer. The 2025&ndash;26 tier system means healthcare gets invited at higher rates than ICT regardless of pool size.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">Does submitting an EOI early improve your chances? <span class="fic">+</span></div><div class="fa">No. Submitting early with a low score does not improve your chances and creates Date of Effect complications. DHA selects by points score not submission date. If you submit below the cutoff and later get invited, your Date of Effect is the invitation date not your submission date. Only submit when at or above the cutoff for your occupation.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">What is the Date of Effect for an EOI? <span class="fic">+</span></div><div class="fa">The Date of Effect is the date DHA uses to assess your eligibility. If you submit your EOI when already above the cutoff, the Date of Effect is your submission date and any subsequent improvements count toward your assessment. Submitting at the right time protects your Date of Effect advantage.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">What is a good EOI score for Australia 2026? <span class="fic">+</span></div><div class="fa">The minimum to submit is 65 points. Competitive scores: Healthcare Tier 1 at 65&ndash;75 pts. Education and social work Tier 2 at 75&ndash;85 pts. Engineering and trades Tier 3 at 75&ndash;90 pts. Accountants and IT Tier 4 often need 85&ndash;95 pts for federal invitation &mdash; accountants were not invited at all in 2025&ndash;26 federal rounds.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">How do I check my EOI queue position? <span class="fic">+</span></div><div class="fa">DHA does not publish individual queue positions. Use the tool at the top of this page &mdash; it combines DHA SkillSelect December 2025 quarterly data with community submitted outcomes to estimate your position by occupation and points band.</div></div>
+    <div class="fi" onclick="tf(this)"><div class="fq">What is the fastest way to move up the EOI queue? <span class="fic">+</span></div><div class="fa">Three fastest point boosters: NAATI CCL adds 5 points in 3 months ($800); Superior English adds 10 points over Proficient (IELTS 8.0+); <a href="/491-visa" style="color:var(--teal)">491 regional pathway</a> adds 15 points with faster effective queues than federal 189. For most profiles under 85 points, SA or TAS <a href="/190-visa" style="color:var(--teal)">190 nomination</a> is faster than waiting in the federal pool.</div></div>
+  </div>
+</div>
+
+<!-- S8 CTA -->
+<div class="cb">
+  <div class="ct">Get your full PR probability report</div>
+  <div class="cs">See your EOI position, all 8 states compared, 12-month action plan, and what-if simulator. 60 seconds. No signup.</div>
+  <a href="/tool" class="bp">Get My PR Score &rarr;</a>
+  <a href="/points-calculator" class="bo">Calculate my points first</a>
+  <a href="/outcomes" class="cl">See real EOI outcomes from the community &rarr;</a>
+</div>
+
+</div>
 <footer>
-  <a href="/">Home</a><a href="/189-visa">189 Visa</a><a href="/points-calculator">Points Calc</a><a href="/tool">PR Tool</a>
-  <div style="margin-top:0.75rem">© 2026 VisaIQ · Not migration advice · EOI data: DHA SkillSelect + community submissions</div>
+  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/points-calculator">Points Calc</a><a href="/eoi-queue">EOI Queue</a><a href="/outcomes">Outcomes</a><a href="/rounds">Rounds</a><a href="/methodology">Methodology</a></div>
+  <div>&copy; 2026 VisaIQ &middot; Not migration advice &middot; Consult a MARA-registered migration agent for your specific circumstances</div>
 </footer>
-<script>
-const QA = {pts:null, nom:'none'};
-function sp(el,k){document.querySelectorAll(`[onclick="sp(this,'${k}')"]`).forEach(p=>p.classList.remove('sel'));el.classList.add('sel');QA[k]=el.dataset.v;}
-
-const OCC_Q = {
-  nurse:{tier:1,pool:2100,cutoff:75,label:'Registered Nurse',comp:'Moderate'},
-  gp:{tier:1,pool:1200,cutoff:75,label:'General Practitioner',comp:'Moderate'},
-  allied:{tier:1,pool:1800,cutoff:75,label:'Allied Health',comp:'Moderate'},
-  dentist:{tier:1,pool:800,cutoff:80,label:'Dentist',comp:'Moderate'},
-  teacher:{tier:2,pool:4100,cutoff:85,label:'Teacher',comp:'Moderate'},
-  socialworker:{tier:2,pool:2600,cutoff:80,label:'Social Worker',comp:'Moderate'},
-  civil:{tier:3,pool:5200,cutoff:85,label:'Civil Engineer',comp:'High'},
-  mechanical:{tier:3,pool:3800,cutoff:85,label:'Mechanical Engineer',comp:'High'},
-  electrician:{tier:3,pool:1600,cutoff:65,label:'Electrician',comp:'Low'},
-  plumber:{tier:3,pool:1300,cutoff:65,label:'Plumber',comp:'Low'},
-  carpenter:{tier:3,pool:1200,cutoff:65,label:'Carpenter',comp:'Low'},
-  software:{tier:4,pool:8200,cutoff:90,label:'Software Engineer',comp:'Very High'},
-  ict:{tier:4,pool:5400,cutoff:95,label:'ICT Manager',comp:'Extreme'},
-  data:{tier:4,pool:4200,cutoff:90,label:'Data Analyst',comp:'Very High'},
-  accountant:{tier:4,pool:15000,cutoff:999,label:'Accountant',comp:'Extreme'},
-  auditor:{tier:4,pool:6000,cutoff:95,label:'Auditor',comp:'Very High'},
-};
-
-function updateQueue(){checkQueue();}
-
-function checkQueue(){
-  const occKey = document.getElementById('q-occ').value;
-  if(!occKey) return;
-  const occ = OCC_Q[occKey];
-  if(!occ) return;
-  
-  const pts = parseInt(QA.pts) || 70;
-  const nomBonus = QA.nom === '190' ? 5 : QA.nom === '491' ? 15 : 0;
-  const effective = pts + nomBonus;
-  
-  const tierColors={1:'var(--green)',2:'var(--teal)',3:'var(--blue)',4:'var(--amber)'};
-  const tierNames={1:'Tier 1 — Highest Priority',2:'Tier 2 — High Priority',3:'Tier 3 — Standard',4:'Tier 4 — Oversupplied'};
-  const tc = tierColors[occ.tier];
-  
-  const aboveCutoff = occ.cutoff === 999 ? false : effective >= occ.cutoff;
-  const gap = occ.cutoff === 999 ? 'N/A' : occ.cutoff - effective;
-  
-  // Estimate queue percentile
-  const ptsRange = [65,70,75,80,85,90,95,100];
-  const ptsIdx = ptsRange.findIndex(p => pts <= p);
-  const abovePct = Math.max(5, Math.min(95, (ptsIdx/ptsRange.length)*100));
-  
-  let outlook, outlookColor;
-  if(occ.cutoff === 999){
-    outlook = 'Accountants were not invited in either 2025–26 round. 189 is not a viable primary pathway. Strongly recommend SA 190 or 491 regional as primary strategy.';
-    outlookColor = 'var(--red)';
-  } else if(aboveCutoff && effective >= occ.cutoff + 5){
-    outlook = `Your effective score of ${effective} pts is above the Nov 2025 cutoff of ${occ.cutoff} pts. You are in a competitive position for the next quarterly round. Ensure your EOI is lodged and up to date.`;
-    outlookColor = 'var(--green)';
-  } else if(aboveCutoff){
-    outlook = `Your effective score of ${effective} pts meets the Nov 2025 cutoff of ${occ.cutoff} pts — but only just. Cutoffs fluctuate between rounds. Improving your score by 5+ pts would give stronger security.`;
-    outlookColor = 'var(--amber)';
-  } else {
-    const need = occ.cutoff - effective;
-    outlook = `Your effective score of ${effective} pts is ${need} pts below the Nov 2025 cutoff of ${occ.cutoff} pts. Consider: ${need <= 5 ? 'NAATI CCL (+5 pts) could close this gap immediately.' : need <= 10 ? 'NAATI CCL (+5 pts) + improving English to Superior (+10 pts) could help significantly.' : '491 regional nomination (+15 pts) is likely the most practical pathway at your current score.'}`;
-    outlookColor = 'var(--amber)';
-  }
-
-  const r = document.getElementById('queue-result');
-  r.className='result show';
-  r.innerHTML = `
-    <div class="card">
-      <div class="card-title">Your EOI Queue Assessment — ${occ.label}</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem">
-        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
-          <div style="font-size:0.65rem;font-weight:700;color:${tc};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">${tierNames[occ.tier]}</div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:${tc}">Tier ${occ.tier}</div>
-        </div>
-        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
-          <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">Est. EOI Pool</div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--text)">${occ.pool.toLocaleString()}+</div>
-        </div>
-        <div style="background:var(--bg3);border-radius:10px;padding:0.85rem;text-align:center">
-          <div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.25rem">Nov 2025 Cutoff</div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:${aboveCutoff?'var(--green)':'var(--red)'}">${occ.cutoff === 999 ? 'Not invited' : occ.cutoff + ' pts'}</div>
-        </div>
-      </div>
-      <div style="margin-bottom:0.75rem">
-        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-bottom:0.4rem">
-          <span>Your effective score: <strong style="color:var(--text)">${effective} pts</strong>${nomBonus ? ` (${pts} base + ${nomBonus} ${QA.nom})` : ''}</span>
-          <span>Pool above you: ~${abovePct.toFixed(0)}%</span>
-        </div>
-        <div class="pool-bar-wrap"><div class="pool-bar" style="width:${abovePct}%;background:${aboveCutoff?'var(--green)':'var(--amber)'}"></div></div>
-      </div>
-      <div style="background:var(--bg3);border-radius:10px;padding:1rem;font-size:0.82rem;color:var(--text);line-height:1.7;border-left:3px solid ${outlookColor}">${outlook}</div>
-      <div style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap">
-        <a href="/points-calculator" style="padding:0.55rem 1rem;background:var(--td);color:var(--teal);border:1px solid var(--tb);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Calculate exact points →</a>
-        <a href="/tool" style="padding:0.55rem 1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Get full PR report →</a>
-      </div>
-    </div>`;
-}
-</script>
 <script src="/ticker.js"></script>
+<script>
+var D=[
+  {id:"registered_nurse",    lb:"Registered Nurse",           tier:1,pool:2100, c:75, comp:75, wt:5,  tr:"shrinking"},
+  {id:"general_practitioner",lb:"General Practitioner",       tier:1,pool:820,  c:80, comp:80, wt:5,  tr:"shrinking"},
+  {id:"physiotherapist",     lb:"Physiotherapist",            tier:1,pool:1180, c:85, comp:82, wt:6,  tr:"shrinking"},
+  {id:"pharmacist",          lb:"Pharmacist",                 tier:1,pool:720,  c:80, comp:78, wt:6,  tr:"shrinking"},
+  {id:"aged_care_worker",    lb:"Aged Care Worker",           tier:1,pool:640,  c:65, comp:65, wt:4,  tr:"shrinking"},
+  {id:"early_childhood_teacher",lb:"Early Childhood Teacher", tier:2,pool:2240, c:85, comp:80, wt:11, tr:"stable"},
+  {id:"teacher_primary",     lb:"Primary School Teacher",     tier:2,pool:1820, c:85, comp:80, wt:13, tr:"stable"},
+  {id:"teacher_secondary",   lb:"Secondary School Teacher",   tier:2,pool:2080, c:75, comp:75, wt:13, tr:"stable"},
+  {id:"social_worker",       lb:"Social Worker",              tier:2,pool:2580, c:75, comp:78, wt:15, tr:"stable"},
+  {id:"civil_engineer",      lb:"Civil Engineer",             tier:3,pool:4520, c:85, comp:85, wt:16, tr:"stable"},
+  {id:"mechanical_engineer", lb:"Mechanical Engineer",        tier:3,pool:3140, c:85, comp:85, wt:17, tr:"stable"},
+  {id:"electrical_engineer", lb:"Electrical Engineer",        tier:3,pool:3080, c:85, comp:85, wt:15, tr:"stable"},
+  {id:"electrician",         lb:"Electrician",                tier:3,pool:1580, c:65, comp:65, wt:14, tr:"shrinking"},
+  {id:"plumber",             lb:"Plumber",                    tier:3,pool:1280, c:70, comp:70, wt:15, tr:"stable"},
+  {id:"chef",                lb:"Cook / Chef",                tier:0, pool:3580, c:0,  comp:65, wt:16, tr:"stable"},
+  {id:"software_engineer",   lb:"Software Engineer",          tier:4,pool:8240, c:90, comp:92, wt:21, tr:"growing"},
+  {id:"ict_manager",         lb:"ICT Manager",                tier:4,pool:4180, c:90, comp:90, wt:20, tr:"growing"},
+  {id:"data_analyst",        lb:"Data Analyst / ICT BA",      tier:4,pool:3240, c:90, comp:92, wt:21, tr:"growing"},
+  {id:"accountant",          lb:"Accountant",                 tier:4,pool:15240,c:0,  comp:65, wt:22, tr:"growing"},
+  {id:"auditor",             lb:"External Auditor",           tier:4,pool:2840, c:90, comp:90, wt:20, tr:"growing"}
+];
+var UO=null,SC=1,SD=1;
+function cq(){
+  var oi=document.getElementById('qo').value,pts=parseInt(document.getElementById('qp').value)||0;
+  if(!oi||!pts){alert('Please select an occupation and enter your points score.');return;}
+  UO=oi;var d=D.find(function(x){return x.id===oi;});if(!d)return;
+  var cut=d.c||d.comp||65,ab=Math.max(0,pts-cut),bl=Math.max(0,cut-pts);
+  var ap=pts>=cut?Math.max(0.02,0.35-(ab*0.025)):Math.min(0.85,0.35+(bl*0.05));
+  var ahead=Math.round(d.pool*ap),pct=Math.round((1-ap)*100);
+  var bw=d.wt,aw;
+  if(pts>=cut+10)aw=Math.max(2,bw-3);else if(pts>=cut+5)aw=Math.max(3,bw-1);else if(pts>=cut)aw=bw;else aw=bw+Math.round(bl/2);
+  document.getElementById('qa').textContent='approx. '+ahead.toLocaleString();
+  document.getElementById('qpc').textContent=pct+'%';
+  document.getElementById('qw').textContent=Math.max(1,aw-2)+'–'+(aw+3)+' months';
+  document.getElementById('qpl').textContent=d.pool.toLocaleString();
+  var mv=document.getElementById('qmv');
+  if(d.tr==='shrinking'){mv.className='qm mv-f';mv.innerHTML='<span>↑</span> Pool moving FASTER than average — invitations outpacing submissions';}
+  else if(d.tr==='growing'){mv.className='qm mv-s';mv.innerHTML='<span>↓</span> Pool growing — more submissions than invitations currently';}
+  else{mv.className='qm mv-s';mv.innerHTML='<span>→</span> Pool movement STABLE — invitations and submissions roughly balanced';}
+  document.getElementById('qr').style.display='block';
+  rt();
+}
+function rt(){
+  var data=D.slice().sort(function(a,b){
+    var keys=['lb','pool','c','comp','wt','tr'];var k=keys[SC];
+    var av=a[k]===0?99999:a[k],bv=b[k]===0?99999:b[k];
+    if(typeof av==='string')return SD*av.localeCompare(bv);return SD*(av-bv);
+  });
+  var tc={1:'#10B981',2:'#00C896',3:'#F59E0B',4:'#f87171',0:'#7A8FA8'};
+  document.getElementById('tb').innerHTML=data.map(function(d){
+    var iu=UO&&d.id===UO;
+    var tr=d.tr==='shrinking'?'<span class="tu">↑ Shrinking</span>':d.tr==='growing'?'<span class="td2">↓ Growing</span>':'<span class="ts2">→ Stable</span>';
+    var c189=d.c?d.c+' pts':'<span style="color:#f87171">No 189</span>';
+    var wc=d.wt<=8?'#10B981':d.wt<=14?'#00C896':d.wt<=18?'#F59E0B':'#f87171';
+    return '<tr class="'+(iu?'uo':'')+'"><td>'+(iu?'⭐ ':'')+d.lb+'</td><td style="color:'+(d.pool>10000?'#f87171':d.pool>5000?'#F59E0B':'#00C896')+'">'+d.pool.toLocaleString()+'</td><td>'+c189+'</td><td style="color:#00C896;font-weight:600">'+d.comp+' pts</td><td style="color:'+wc+';font-weight:700">'+d.wt+'mo</td><td>'+tr+'</td><td style="color:rgba(122,143,168,0.5)">Dec 2025</td></tr>';
+  }).join('');
+}
+function srt(c){if(SC===c)SD*=-1;else{SC=c;SD=1;}rt();}
+function cd(){
+  var pts=parseInt(document.getElementById('dp').value)||0,oi=document.getElementById('do2').value;
+  if(!pts||!oi){alert('Please enter your points and select an occupation.');return;}
+  var d=D.find(function(x){return x.id===oi;});if(!d)return;
+  var cut=d.c||d.comp||65,gap=cut-pts,el=document.getElementById('dr2');
+  if(!d.c&&d.id==='accountant'){
+    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#f87171">⚠️ Do not submit a 189 EOI — Accountants not invited in 2025-26</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">The 189 federal pathway is not viable for accountants in 2025-26. Your pathway is SA 190 (65 pts) or 491 regional. Do not sit in the federal pool.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">SA 190 →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
+  }else if(!d.c){
+    el.innerHTML='<div class="dr db show"><div class="dt" style="color:#f87171">⚠️ No 189 pathway — STSOL occupation</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">'+d.lb+' is on the STSOL list and is not eligible for 189. Your pathway is 190 state nomination or 491 regional.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">190 State →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
+  }else if(pts>=cut){
+    var ab=pts-cut;
+    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#10B981">✅ Submit your EOI now — you are above the cutoff</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is '+ab+' points above the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. Submit your EOI now. Your Date of Effect will be today’s date and you have a strong chance of invitation in the next round.</p><p style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Also apply to SA 190 state nomination simultaneously — nomination adds 5 extra points and SA runs monthly.</p><div style="margin-top:0.6rem"><a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="ap">Submit EOI in SkillSelect →</a><a href="/state-comparator" class="ap">Check SA 190 →</a></div></div>';
+  }else if(gap<=5){
+    el.innerHTML='<div class="dr dc2 show"><div class="dt" style="color:var(--amber)">⚠️ Close but not yet — do not submit yet</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is <strong style="color:var(--amber)">'+gap+' points below</strong> the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. If you submit now and later get invited, your Date of Effect will be your invitation date — not today.</p><p style="font-size:0.82rem;color:var(--text);margin-top:0.4rem">NAATI CCL adds 5 points in 3 months ($800) and would put you at '+(pts+5)+' pts — above the cutoff.</p><div style="margin-top:0.6rem"><a href="/points-calculator" class="ap">NAATI CCL +5 pts →</a><a href="/state-comparator" class="ap">SA 190 at '+d.comp+' pts →</a></div></div>';
+  }else{
+    el.innerHTML='<div class="dr db show"><div class="dt" style="color:#f87171">❌ Do not submit your EOI yet</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is <strong style="color:#f87171">'+gap+' points below</strong> the cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. Submitting now creates Date of Effect risk and does not improve your queue position. Focus on reaching '+cut+' points first.</p><div style="margin-top:0.6rem"><a href="/points-calculator" class="ap">NAATI CCL +5 pts &middot; $800 &middot; 3mo</a><a href="/points-calculator" class="ap">Superior English +10 pts</a><a href="/491-visa" class="ap">491 Regional +15 pts</a></div></div>';
+  }
+}
+var OD=[
+  {fl:"&#127470;&#127475;",oc:"Registered Nurse",v:"189",p:80,t:"4 months",s:"Federal",d:4},
+  {fl:"&#127760;",oc:"Secondary Teacher",v:"190",p:75,t:"6 months",s:"VIC",d:6},
+  {fl:"&#127477;&#127469;",oc:"RN NEC",v:"190",p:75,t:"3 months",s:"QLD",d:3},
+  {fl:"&#127760;",oc:"Civil Engineer",v:"190",p:90,t:"8 months",s:"VIC",d:10},
+  {fl:"&#127470;&#127475;",oc:"Early Childhood Teacher",v:"189",p:90,t:"5 months",s:"Federal",d:4},
+  {fl:"&#127760;",oc:"Social Worker",v:"189",p:90,t:"4 months",s:"Federal",d:6},
+  {fl:"&#127475;&#127477;",oc:"Electrician",v:"491",p:80,t:"5 months",s:"NSW",d:7},
+  {fl:"&#127760;",oc:"Electrical Engineer",v:"190",p:90,t:"7 months",s:"VIC",d:6},
+  {fl:"&#127477;&#127472;",oc:"Accountant",v:"491",p:75,t:"6 months",s:"SA",d:18},
+  {fl:"&#127760;",oc:"Mechanical Engineer",v:"190",p:100,t:"5 months",s:"QLD",d:3}
+];
+function dag(n){if(!n&&n!==0)return'';if(n===0)return'today';if(n<2)return'1 day ago';if(n<7)return n+' days ago';if(n<14)return'1 wk ago';return Math.floor(n/7)+' wks ago';}
+document.getElementById('ef').innerHTML=OD.map(function(o){
+  return '<div class="oe"><div class="of">'+o.fl+'</div><div class="ob2"><div class="om"><strong>'+o.oc+'</strong> &middot; '+o.p+' pts &middot; <span style="color:var(--blue)">→ Invited</span></div><div class="os">'+o.s+' '+o.v+' &middot; EOI to invitation: <strong style="color:var(--teal)">'+o.t+'</strong> &middot; '+dag(o.d)+'</div></div><div class="or"><span class="oi">→ Invited</span><div class="oa">'+dag(o.d)+'</div></div></div>';
+}).join('');
+function tf(el){var a=el.querySelector('.fa');var o=a.classList.toggle('open');el.classList.toggle('open',o);}
+rt();
+</script>
 </body>
 </html>
