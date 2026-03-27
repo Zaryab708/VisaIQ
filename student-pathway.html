@@ -160,6 +160,34 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 @media(max-width:680px){.form-grid{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.regret-grid{grid-template-columns:1fr}.state-grid{grid-template-columns:repeat(4,1fr)}.nls{display:none}}
 @media(max-width:420px){.state-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* GRADUATION COUNTDOWN */
+.countdown-block{border-radius:14px;padding:1.25rem;margin-bottom:1.25rem;text-align:center;border:2px solid}
+.countdown-green{background:rgba(16,185,129,0.07);border-color:rgba(16,185,129,0.25)}
+.countdown-amber{background:rgba(245,158,11,0.07);border-color:rgba(245,158,11,0.3)}
+.countdown-red{background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);animation:urgPulse 3s infinite}
+@keyframes urgPulse{0%,100%{border-color:rgba(239,68,68,0.35)}50%{border-color:rgba(239,68,68,0.7)}}
+.cd-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1}
+.cd-label{font-size:0.78rem;margin-top:0.3rem}
+.cd-sub{font-size:0.72rem;color:var(--muted);margin-top:0.2rem}
+/* RISK + FIX */
+.risk-fix{border-radius:12px;padding:1rem 1.1rem;margin-bottom:1.25rem}
+.risk-fix.low{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)}
+.risk-fix.medium{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2)}
+.risk-fix.high{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2)}
+.rf-risk{font-size:0.82rem;color:var(--text);line-height:1.6;margin-bottom:0.6rem}
+.rf-fix{background:rgba(0,200,150,0.08);border:1px solid var(--tb);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--text);line-height:1.6}
+.rf-fix-label{font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal);margin-bottom:0.3rem}
+/* CHANGES FEED */
+.change-item{display:flex;align-items:flex-start;gap:0.65rem;padding:0.65rem 0.75rem;background:var(--bg2);border:1px solid var(--border);border-radius:9px;margin-bottom:0.4rem}
+.ci-icon{font-size:0.9rem;flex-shrink:0;margin-top:0.1rem}
+.ci-body{flex:1;min-width:0}
+.ci-text{font-size:0.8rem;color:var(--text);line-height:1.4}
+.ci-meta{font-size:0.68rem;color:var(--muted);margin-top:0.1rem}
+.ci-badge{font-size:0.6rem;font-weight:700;padding:0.12rem 0.38rem;border-radius:4px;margin-right:0.3rem}
+.ci-policy{background:rgba(78,142,255,0.1);color:var(--blue);border:1px solid rgba(78,142,255,0.2)}
+.ci-demand{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.ci-cutoff{background:rgba(0,200,150,0.08);color:var(--teal);border:1px solid var(--tb)}
 </style>
 </head>
 <body>
@@ -277,7 +305,12 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </div>
 
 <!-- SECTION 1: PR READINESS SCORE -->
-<div class="section">
+  <!-- GRADUATION COUNTDOWN -->
+  <div id="countdown-block" style="display:none"></div>
+  <!-- RISK + FIX -->
+  <div id="risk-fix-block" style="display:none"></div>
+
+  <div class="section">
   <div class="sec-label">Section 1</div>
   <div class="sec-title">Your PR <em>Readiness Score</em></div>
 
@@ -439,15 +472,34 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
   <div class="sec-label">Section 8</div>
   <div class="sec-title">Work rights and <em>485 intelligence</em></div>
 
-  <div class="card" style="border-color:rgba(239,68,68,0.2)">
-    <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:#f87171;margin-bottom:0.5rem">⚠️ Current work rights — 500 student visa</div>
-    <div style="font-size:0.82rem;color:var(--muted);line-height:1.7">
-      <strong style="color:var(--text)">48 hours per fortnight</strong> — this cap applies year-round including university term breaks and holiday periods.<br><br>
-      <strong style="color:var(--amber)">Important correction to a common myth:</strong> The unlimited work hours during university holidays exemption was <strong style="color:#f87171">removed effective July 1 2023</strong>. The 48-hour cap now applies 365 days per year regardless of whether your university is in session. Working more than 48 hours in a fortnight is a visa condition breach and grounds for visa cancellation.<br><br>
-      <strong style="color:var(--text)">One fortnight</strong> = 14 consecutive days starting from your first day of work in Australia.<br>
-      <strong style="color:var(--text)">PhD and Masters research students</strong> — no work hours restriction. Check your visa grant notice to confirm your stream.<br>
-      <strong style="color:var(--text)">Source:</strong> <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/temporary-graduate-500" target="_blank" style="color:var(--teal)">DHA student visa conditions — immi.homeaffairs.gov.au</a>
+  <div class="card" style="border-color:rgba(0,200,150,0.2)">
+    <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:var(--teal);margin-bottom:0.75rem">Work rights — 500 Student Visa (DHA Condition 8105)</div>
+    <div style="font-size:0.82rem;color:var(--muted);line-height:1.8">
+
+      <div style="background:rgba(0,200,150,0.07);border:1px solid var(--tb);border-radius:8px;padding:0.75rem 0.9rem;margin-bottom:0.65rem">
+        <strong style="color:var(--text)">While your course is IN SESSION</strong><br>
+        Maximum <strong style="color:var(--teal)">48 hours per fortnight.</strong> Applies during all teaching periods, exam periods, and any period you are enrolled in subjects counting toward your degree. Applies across all employers combined — including unpaid work that would normally attract payment.
+      </div>
+
+      <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.25);border-radius:8px;padding:0.75rem 0.9rem;margin-bottom:0.65rem">
+        <strong style="color:#10B981">During official course breaks and holidays</strong><br>
+        <strong style="color:#10B981">Unlimited work hours.</strong> No cap applies when your course is not in session — semester breaks, summer holidays, mid-semester breaks. The 48-hour limit resumes the moment your next teaching period begins.
+      </div>
+
+      <div style="background:rgba(78,142,255,0.07);border:1px solid rgba(78,142,255,0.2);border-radius:8px;padding:0.75rem 0.9rem;margin-bottom:0.65rem">
+        <strong style="color:var(--blue)">Masters by Research and PhD students</strong><br>
+        <strong style="color:var(--blue)">No work hour restriction at any time</strong> once your course has commenced. Applies to research-stream degrees only — not coursework Masters. Confirm your stream via VEVO or your visa grant notice.
+      </div>
+
+      <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;padding-top:0.25rem">
+        <strong style="color:var(--text)">The July 2023 change</strong> increased the cap from 40 to 48 hours per fortnight during study periods. It did not remove the course break exemption — unlimited hours during official breaks has always applied and continues to apply in 2025-26.<br><br>
+        <strong style="color:var(--text)">One fortnight</strong> = 14 consecutive days starting on a Monday. Calculate rolling 14-day periods — not just week by week. You can breach the cap across a fortnight even if each individual week looks fine.<br><br>
+        <strong style="color:var(--text)">Mandatory CRICOS-registered work placements</strong> are exempt from the 48-hour cap. Check if your course has a work component listed on CRICOS.<br><br>
+        <strong style="color:var(--text)">Source:</strong> <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/temporary-relaxation-of-working-hours-for-student-visa-holders" target="_blank" style="color:var(--teal)">DHA Condition 8105 — immi.homeaffairs.gov.au</a> · Verify your specific conditions via VEVO.
+      </div>
     </div>
+  </div>
+
   </div>
 
   <!-- Work hours tracker -->
@@ -519,6 +571,17 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
   </div>
   <div class="regret-grid" id="regret-grid" style="display:none"></div>
 </div>
+
+  <!-- CHANGES FEED -->
+  <div class="wrap" style="padding-top:0">
+    <div class="section">
+      <div class="sec-label">Change feed</div>
+      <div class="sec-title">Updates for <em>your occupation</em></div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.85rem;line-height:1.6">Policy and demand changes relevant to your specific degree and occupation. Updated when anything shifts. This is why you check back.</p>
+      <div id="changes-feed"></div>
+      <div style="font-size:0.68rem;color:var(--muted);margin-top:0.6rem">Changes sourced from DHA policy updates, state nomination changes, and community reports. Updated within 48 hours of any shift.</div>
+    </div>
+  </div>
 
 </div><!-- end .wrap -->
 </div><!-- end .results -->
@@ -659,10 +722,12 @@ function generatePathway() {
   var d    = DEG_DATA[degree] || DEG_DATA.other;
   var pts  = calcPoints(degree, level, location, grad, nat);
   var rs   = getReadinessScore(degree, pts, location);
+  setTimeout(function(){ buildRiskFix(rs, degree, nat, location, pts.base); buildChangesFeed(degree); }, 200);
   var pathway = getPathway(degree, pts);
   var timeEst = getTimeEstimate(degree, pts, location);
 
   document.getElementById('results').style.display = 'block';
+  buildCountdown(grad);
   setTimeout(function(){ document.getElementById('results').scrollIntoView({behavior:'smooth'}); }, 100);
 
   // Offshore banner
@@ -1059,6 +1124,129 @@ function loadStudentOutcomes(degree, userPts) {
   document.getElementById('student-week-summary').innerHTML =
     '<strong style="color:var(--text)">This week</strong> — '+STUDENT_OUTCOMES.filter(function(o){return o.days_ago<=7;}).length+' student outcomes submitted · Fastest: <strong style="color:var(--teal)">'+fastest.degree.split(' ').slice(-2).join(' ')+' · '+fastest.visa+' · '+fastest.months+' months</strong> · Most common pathway: <strong style="color:var(--text)">SA 190 via regional study</strong>';
 }
+
+// ── GRADUATION COUNTDOWN ──────────────────────────────────────────────────
+function buildCountdown(grad) {
+  var daysMap = {'6m':180,'1y':365,'2y':730,'3y':1095,'done':0};
+  var days = daysMap[grad] || 0;
+  var block = document.getElementById('countdown-block');
+  if (!block) return;
+  if (grad === 'done') {
+    block.style.display = 'none';
+    return;
+  }
+  block.style.display = 'block';
+  var cls = days > 180 ? 'countdown-green' : days > 90 ? 'countdown-amber' : 'countdown-red';
+  var col = days > 180 ? '#10B981' : days > 90 ? 'var(--amber)' : 'var(--red)';
+  var msg = days > 180
+    ? 'Time to take action on every point available to you.'
+    : days > 90
+    ? 'Time is getting tight. Prioritise the highest-impact actions now.'
+    : '⚠️ Under 90 days. If your readiness score is below 70, act on NAATI and skills assessment immediately.';
+  block.innerHTML = '<div class="countdown-block ' + cls + '">' +
+    '<div class="cd-num" style="color:' + col + '">' + days + '</div>' +
+    '<div class="cd-label" style="color:' + col + '">days until graduation</div>' +
+    '<div class="cd-sub">' + msg + '</div>' +
+    '</div>';
+}
+
+// ── RISK + FIX ────────────────────────────────────────────────────────────
+function buildRiskFix(score, degree, nat, location, pts) {
+  var block = document.getElementById('risk-fix-block');
+  if (!block) return;
+  var naatiLangs = {
+    pakistani:'Urdu NAATI CCL',indian:'Hindi or Punjabi NAATI CCL',
+    nepali:'Nepali NAATI CCL',filipino:'Tagalog NAATI CCL',
+    sri_lankan:'Sinhala NAATI CCL',bangladeshi:'Bengali NAATI CCL',
+    vietnamese:'Vietnamese NAATI CCL',indonesian:'Indonesian NAATI CCL'
+  };
+  var hasNaati = naatiLangs[nat];
+  var riskLevel = score >= 70 ? 'high' : score >= 50 ? 'medium' : 'low';
+  var riskText, fixText, fixAction, fixLink;
+
+  if (score < 50) {
+    riskText = 'At your current path your PR readiness is low (' + score + '/100). Without action, this degree has a difficult PR pathway at standard points.';
+  } else if (score < 70) {
+    riskText = 'Your PR readiness is moderate (' + score + '/100). You have a viable path but specific actions before graduation will make a significant difference.';
+  } else {
+    riskText = 'Your PR readiness is strong (' + score + '/100). Focus on protecting this advantage and acting before graduation while your points are optimal.';
+  }
+
+  if (hasNaati && score < 70) {
+    var newScore = Math.min(97, score + 14);
+    fixText = hasNaati + ' — $800, 3 months, adds 5 DHA points. This moves your readiness score from ' + score + ' to approximately ' + newScore + ' and opens SA 190 nomination at graduation.';
+    fixLink = 'https://www.naati.com.au/ccl-test';
+    fixAction = 'Register at naati.com.au →';
+  } else if (location !== 'regional' && (degree === 'nursing' || degree === 'teaching' || degree === 'engineering')) {
+    var newScore2 = Math.min(97, score + 20);
+    fixText = 'Transfer to a regional campus — adds 5 study points and +15 pts via 491 nomination. Changes your readiness from ' + score + ' to approximately ' + newScore2 + ' and opens the fastest PR pathway available.';
+    fixLink = '/regional-study-bonus';
+    fixAction = 'See regional university options →';
+  } else if (pts && pts < 70) {
+    fixText = 'Apply to SA 190 state nomination at graduation — SA accepts ' + (degree === 'accounting' ? 'accountants' : 'your occupation') + ' at ' + pts + ' pts and runs monthly rounds. This is your most accessible pathway without waiting for 189.';
+    fixLink = 'https://migration.sa.gov.au';
+    fixAction = 'Apply to SA 190 →';
+  } else {
+    fixText = 'Lodge your EOI in SkillSelect the same week you graduate. Every week of delay loses queue seniority. Your Date of Effect is your tiebreaker in the invitation queue.';
+    fixLink = 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect';
+    fixAction = 'SkillSelect EOI →';
+  }
+
+  block.style.display = 'block';
+  block.innerHTML = '<div class="risk-fix ' + riskLevel + '">' +
+    '<div class="rf-risk">' + riskText + '</div>' +
+    '<div class="rf-fix">' +
+      '<div class="rf-fix-label">The one thing that changes this most before graduation</div>' +
+      fixText + ' <a href="' + fixLink + '" target="_blank" style="color:var(--teal);font-weight:600">' + fixAction + '</a>' +
+    '</div>' +
+  '</div>';
+}
+
+// ── CHANGES FEED ──────────────────────────────────────────────────────────
+var CHANGES_FALLBACK = [
+  {type:'demand', icon:'📊', text:'ICT occupations dropped to Tier 4 this year — software engineers face higher competition for 189 invitations.', date:'Mar 2026', occs:['it']},
+  {type:'policy', icon:'📋', text:'485 processing now targeting 25 days for straightforward applications — faster than the previous 6–8 week average.', date:'Mar 2026', occs:['all']},
+  {type:'cutoff', icon:'📍', text:'SA 190 cutoff for nursing unchanged at 65 pts — still the most accessible state nomination for healthcare graduates.', date:'Mar 2026', occs:['nursing','teaching']},
+  {type:'policy', icon:'📋', text:'48-hour work rights cap confirmed year-round for 500 student visa holders — the holiday exemption was removed July 2023.', date:'Nov 2023', occs:['all']},
+  {type:'demand', icon:'📊', text:'Registered Nursing remains Tier 1 Critical Shortage — fastest pathway to PR invitation of any occupation.', date:'Mar 2026', occs:['nursing']},
+  {type:'cutoff', icon:'📍', text:'VIC 190 ECT cutoff at 75 pts in Mar 2026 round — teaching graduates are competitive at standard points scores.', date:'Mar 2026', occs:['teaching']},
+  {type:'demand', icon:'📊', text:'Social Work Tier 2 High Priority maintained — 189 invitations at 75 pts in Nov 2025 round.', date:'Nov 2025', occs:['social_work']},
+  {type:'policy', icon:'📋', text:'NAATI CCL results now valid for 3 years from test date — plan the timing to ensure it does not expire before your PR application.', date:'2024', occs:['all']},
+  {type:'cutoff', icon:'📍', text:'189 Round 3 for 2025-26 overdue — last round was 13 Nov 2025. Accountants and ICT were not invited. Healthcare and trades were.', date:'Mar 2026', occs:['it','accounting','nursing','engineering']},
+  {type:'demand', icon:'📊', text:'Civil Engineering Tier 3 Standard — 189 cutoff at 85 pts. SA and QLD actively nominating engineers for 190.', date:'Mar 2026', occs:['engineering']},
+];
+
+function buildChangesFeed(degree) {
+  fetch('/changes-data.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){ renderChanges(d.changes || CHANGES_FALLBACK, degree); })
+    .catch(function(){ renderChanges(CHANGES_FALLBACK, degree); });
+}
+
+function renderChanges(changes, degree) {
+  var el = document.getElementById('changes-feed');
+  if (!el) return;
+  var relevant = changes.filter(function(c) {
+    if (!c.occs || c.occs.indexOf('all') !== -1) return true;
+    return c.occs.indexOf(degree) !== -1;
+  });
+  if (relevant.length === 0) relevant = changes.slice(0, 4);
+  var typeLabel = {demand:'Demand change', policy:'Policy update', cutoff:'Cutoff update'};
+  var typeCls   = {demand:'ci-demand', policy:'ci-policy', cutoff:'ci-cutoff'};
+  el.innerHTML = relevant.slice(0, 6).map(function(c) {
+    return '<div class="change-item">' +
+      '<div class="ci-icon">' + c.icon + '</div>' +
+      '<div class="ci-body">' +
+        '<div class="ci-text">' +
+          '<span class="ci-badge ' + (typeCls[c.type]||'ci-policy') + '">' + (typeLabel[c.type]||'Update') + '</span>' +
+          c.text +
+        '</div>' +
+        '<div class="ci-meta">' + c.date + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
 </script>
 </body>
 </html>
