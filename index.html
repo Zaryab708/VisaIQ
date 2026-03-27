@@ -741,14 +741,4 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
 })();
 </script>
 </body>
-  if (!n && n !== 0) return '';
-  if (n === 0) return 'today';
-  if (n === 1) return '1 day ago';
-  if (n < 7)  return n + ' days ago';
-  if (n < 14) return '1 week ago';
-  if (n < 30) return Math.floor(n/7) + ' weeks ago';
-  return Math.floor(n/30) + ' months ago';
-}
-</script>
-</body>
 </html>
