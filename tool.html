@@ -64,6 +64,10 @@ select:focus{border-color:var(--tb)}select option{background:#0D1B2E}.fr{margin-
 .sc2{font-size:0.72rem;color:var(--muted)}
 .sb{display:inline-block;font-size:0.62rem;padding:0.15rem 0.5rem;border-radius:8px;margin-top:0.3rem;font-weight:600}
 .bel{background:var(--td);color:var(--teal)}.bpt{background:rgba(245,158,11,0.1);color:var(--amber)}.bno{background:rgba(255,255,255,0.05);color:var(--muted)}
+.bgreen{background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.68rem;font-weight:700}
+.bamber{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.3);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.68rem;font-weight:700}
+.bred{background:rgba(239,68,68,0.08);color:#f87171;border:1px solid rgba(239,68,68,0.25);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.68rem;font-weight:700}
+.state-note{font-size:0.62rem;color:var(--muted);margin-top:0.35rem;line-height:1.5}
 .ac{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:0.6rem;display:flex;gap:0.75rem;align-items:flex-start}
 .ai{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 .ai.hi{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.25)}
@@ -116,6 +120,33 @@ select:focus{border-color:var(--tb)}select option{background:#0D1B2E}.fr{margin-
 footer{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);font-size:0.78rem;color:var(--muted);margin-top:2rem}
 footer a{color:var(--teal);text-decoration:none}
 </style>
+  <!-- ── BRAND & SEO HEAD TAGS ── add to every page ── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00C896">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="VisaIQ">
+  <!-- Open Graph — controls WhatsApp, LinkedIn, Facebook preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VisaIQ">
+  <meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VisaIQ — Australia's Migration Intelligence Platform">
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@visaiq">
+  <meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
+  <!-- ── END BRAND TAGS ── -->
+  <meta property="og:url" content="https://www.visaiq.com.au/tool">
+  <meta property="og:title" content="PR Probability Tool — Your Australian PR Chances | VisaIQ">
+  <meta name="twitter:title" content="PR Probability Tool — Your Australian PR Chances | VisaIQ">
+  <meta property="og:description" content="Australian PR points calculator using official DHA criteria and real 2025-26 invitation round cutoffs by occupation.">
+  <meta name="twitter:description" content="Australian PR points calculator using official DHA criteria and real 2025-26 invitation round cutoffs by occupation.">
 </head>
 <body>
 <div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;">
@@ -134,27 +165,31 @@ footer a{color:var(--teal);text-decoration:none}
   </style>
   <div id="viq-ticker-mask">
     <div id="viq-ticker-track">
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span>
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026 · applies now</span><span class="viq-dot"></span></span>
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer</b> · VIC 190 · 85 pts · offshore · granted 6 Mar 2026</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">VIC ran a 190/491 round</b> · 17 March 2026 · Engineers, teachers, nurses invited</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted 17 Mar 2026 · no s59</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">QLD + ACT ran rounds</b> · 12 March 2026 · healthcare and engineers invited</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Developer</b> · VIC 190 · 90 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places remaining</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Physiotherapist</b> · QLD 190 · 75 pts · invited March round</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 overdue · expected any day · keep EOI current</span><span class="viq-dot"></span></span>
+      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 SA processing</b> · currently 5–8 months · fastest state</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Secondary Teacher</b> · VIC 190 · 75 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · 189 not invited 2025-26</span><span class="viq-dot"></span></span>
       <!-- duplicate for seamless loop -->
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="viq-dot"></span></span>
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 · expected Jan-Mar 2026</span><span class="viq-dot"></span></span>
-      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026 · applies now</span><span class="viq-dot"></span></span>
-      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="viq-dot"></span></span>
-      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Registered Nurse EOI pool</b> · 2,100 active EOIs · Tier 1</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer</b> · VIC 190 · 85 pts · offshore · granted 6 Mar 2026</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">VIC ran a 190/491 round</b> · 17 March 2026 · Engineers, teachers, nurses invited</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted 17 Mar 2026 · no s59</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">QLD + ACT ran rounds</b> · 12 March 2026 · healthcare and engineers invited</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Developer</b> · VIC 190 · 90 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places remaining</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Physiotherapist</b> · QLD 190 · 75 pts · invited March round</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">189 Round 3</b> · 2025-26 overdue · expected any day · keep EOI current</span><span class="viq-dot"></span></span>
+      <span class="viq-item">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 SA processing</b> · currently 5–8 months · fastest state</span><span class="viq-dot"></span></span>
+      <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Secondary Teacher</b> · VIC 190 · 75 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+      <span class="viq-item">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · 189 not invited 2025-26</span><span class="viq-dot"></span></span>
     </div>
   </div>
 </div>
@@ -615,6 +650,15 @@ footer a{color:var(--teal);text-decoration:none}
 
   <div class="sc">
     <div class="st">Historical Outcomes for Similar Profiles</div>
+    <!-- TIME ESTIMATE WINDOW -->
+    <div id="time-estimate-banner" style="background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.3);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div>
+        <div style="font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.2rem">Estimated invite window</div>
+        <div id="time-window" style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--text);line-height:1">— months</div>
+        <div id="time-window-sub" style="font-size:0.75rem;color:var(--muted);margin-top:0.2rem">Based on similar profiles in dataset</div>
+      </div>
+      <div style="flex:1;min-width:160px;font-size:0.78rem;color:var(--muted);line-height:1.7" id="time-window-note"></div>
+    </div>
     <div class="tr">
       <div class="ti"><div class="td2"></div>DHA 2025–26 data</div>
       <div class="ti"><div class="td2"></div><span id="case-count">Calculating cases…</span></div>
@@ -629,6 +673,37 @@ footer a{color:var(--teal);text-decoration:none}
     <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:8px;padding:0.6rem 0.9rem;margin-top:0.75rem;font-size:0.74rem;color:var(--muted);line-height:1.6">
       This reflects past outcomes from similar profiles — not a recommendation or prediction of your result.
     </div>
+  </div>
+
+  <!-- WHAT-IF SIMULATOR -->
+  <div class="sc" id="sc-whatif" style="border:1px solid rgba(0,200,150,0.25);background:linear-gradient(135deg,rgba(0,200,150,0.04),rgba(13,27,46,0.9))">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem">
+      <span style="font-size:1rem">⚡</span>
+      <div class="st" style="margin:0">What-if simulator</div>
+      <span style="font-size:0.65rem;font-weight:700;background:var(--td);border:1px solid var(--tb);border-radius:5px;padding:0.1rem 0.4rem;color:var(--teal)">Interactive</span>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;line-height:1.6">Toggle improvements to see how they change your score and invite window instantly.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1rem">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:0.85rem;text-align:center">
+        <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.4rem">Current</div>
+        <div id="wif-before-pts" style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--text);line-height:1">— pts</div>
+        <div id="wif-before-window" style="font-size:0.75rem;color:var(--muted);margin-top:0.25rem">— chance in 12mo</div>
+      </div>
+      <div style="background:rgba(0,200,150,0.08);border:1px solid var(--tb);border-radius:10px;padding:0.85rem;text-align:center">
+        <div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal);margin-bottom:0.4rem">With improvements</div>
+        <div id="wif-after-pts" style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--teal);line-height:1">— pts</div>
+        <div id="wif-after-window" style="font-size:0.75rem;color:var(--teal);margin-top:0.25rem">— chance in 12mo</div>
+      </div>
+    </div>
+    <div id="wif-toggles" style="display:flex;flex-direction:column;gap:0.45rem"></div>
+    <div id="wif-summary" style="margin-top:0.85rem;padding:0.75rem;background:var(--bg3);border-radius:8px;font-size:0.78rem;color:var(--muted);line-height:1.7;display:none"></div>
+  </div>
+
+  <!-- ACTION CARDS -->
+  <div class="sc" id="sc-action-cards">
+    <div class="st">Your top 3 actions — ranked by points impact</div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:0.85rem;line-height:1.6">Specific actions with exact points gain, cost, and time. Not generic advice.</p>
+    <div id="action-cards-list"></div>
   </div>
 
   <div class="sc">
@@ -648,6 +723,14 @@ footer a{color:var(--teal);text-decoration:none}
     <div class="st">State Nomination — 2025–26 Program</div>
     <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0.75rem">All states use merit-based selection. Points alone do not guarantee nomination. NSW does not publish a cutoff — they select based on occupation, employment evidence and sector alignment. An accountant with 80 pts has near-zero chance at NSW 190.</p>
     <div class="sgr" id="sgrid"></div>
+  </div>
+
+  <div class="sc" id="sc-nextmove" style="background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.35)">
+    <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
+      <span style="font-size:1.1rem">⚡</span>
+      <div class="st" style="margin:0;color:var(--teal)">Your Recommended Next Move This Week</div>
+    </div>
+    <div id="nextmove-content"></div>
   </div>
 
   <div class="sc">
@@ -699,61 +782,139 @@ footer a{color:var(--teal);text-decoration:none}
     </div>
   </div>
   <!-- ── PROFILE TRACKER / ALERT SIGNUP ───────────────── -->
+  <!-- ── SIMILAR OUTCOMES FEED ─────────────────────────────────── -->
+  <div class="sc" id="sc-similar-outcomes" style="border:1px solid rgba(0,200,150,0.2)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
+      <div style="display:flex;align-items:center;gap:0.5rem">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;animation:pulse 2s infinite"></span>
+        <div class="st" style="margin:0">Recent outcomes similar to your profile</div>
+      </div>
+      <div id="similar-count-badge" style="font-size:0.68rem;color:var(--teal);font-weight:700;background:var(--td);border:1px solid var(--tb);border-radius:5px;padding:0.15rem 0.5rem"></div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-bottom:0.85rem;line-height:1.6">Real grant outcomes from profiles with the same occupation group, similar points, and same visa type. These are people who were in your position — this is what happened to them.</p>
+    <div id="similar-outcomes-list"></div>
+    <div id="similar-outcomes-empty" style="display:none;padding:1rem;background:var(--bg3);border-radius:10px;text-align:center;font-size:0.82rem;color:var(--muted)">
+      No outcomes in the dataset yet for this exact profile combination.<br>
+      <a href="/submit" style="color:var(--teal);font-weight:600">Be the first to submit your outcome →</a>
+    </div>
+    <div style="margin-top:0.75rem;display:flex;justify-content:space-between;align-items:center">
+      <div style="font-size:0.7rem;color:var(--muted)">Data from community submissions · Updated as outcomes are submitted</div>
+      <a href="/submit" style="font-size:0.72rem;color:var(--teal);font-weight:600;text-decoration:none">Submit yours →</a>
+    </div>
+  </div>
+
+  <!-- ── ENGAGEMENT LOOP ─────────────────────────────────────── -->
   <div id="tracker-section" style="margin-top:1rem">
 
-    <!-- NOT YET SAVED STATE -->
-    <div id="tracker-save" style="background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.3);border-radius:14px;padding:1.5rem">
-      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem">
-        <span style="font-size:1.2rem">📡</span>
-        <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800">Get notified when your state runs a round</div>
-      </div>
-      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.1rem;line-height:1.6">Save your profile. We'll alert you within 48 hours of any invitation round or policy change affecting your occupation and state.</p>
-      <div style="display:flex;flex-direction:column;gap:0.6rem">
-        <input type="email" id="tracker-email" placeholder="your@email.com" style="background:#0A1525;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.75rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;width:100%;box-sizing:border-box" onfocus="this.style.borderColor='rgba(0,200,150,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
-          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.65rem 1rem;font-size:0.78rem">
-            <div style="color:#7A8FA8;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Occupation</div>
+    <!-- TAB SWITCHER -->
+    <div style="display:flex;gap:0.4rem;background:#0D1B2E;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:0.4rem;margin-bottom:1rem">
+      <button onclick="elTab('alerts',this)" id="el-tab-alerts" class="el-tab el-active" style="flex:1;padding:0.55rem;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;background:var(--teal);color:#000;transition:all 0.2s">📡 Get Alerts</button>
+      <button onclick="elTab('tracker',this)" id="el-tab-tracker" class="el-tab" style="flex:1;padding:0.55rem;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;background:transparent;color:#7A8FA8;transition:all 0.2s">📈 Score Tracker</button>
+      <button onclick="elTab('rounds',this)" id="el-tab-rounds" class="el-tab" style="flex:1;padding:0.55rem;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;cursor:pointer;background:transparent;color:#7A8FA8;transition:all 0.2s">⏳ Round Watch</button>
+    </div>
+
+    <!-- TAB 1: ALERTS -->
+    <div id="el-panel-alerts">
+      <div id="tracker-save" style="background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.3);border-radius:14px;padding:1.5rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.35rem">Get notified when your state runs a round</div>
+        <p style="font-size:0.8rem;color:#7A8FA8;margin-bottom:1rem;line-height:1.6">We'll alert you within 48 hours of any round or policy change affecting your occupation and state. Your profile is pre-filled from this session.</p>
+        <input type="email" id="tracker-email" placeholder="your@email.com" style="width:100%;background:#0A1525;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.75rem 1rem;color:#E8EDF5;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;box-sizing:border-box;margin-bottom:0.6rem">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.6rem 0.85rem;font-size:0.78rem">
+            <div style="color:#7A8FA8;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">Occupation</div>
             <div id="tracker-occ-display" style="color:#E8EDF5;font-weight:600">—</div>
           </div>
-          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.65rem 1rem;font-size:0.78rem">
-            <div style="color:#7A8FA8;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">State · Points</div>
+          <div style="background:#0A1525;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.6rem 0.85rem;font-size:0.78rem">
+            <div style="color:#7A8FA8;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">State · Points</div>
             <div id="tracker-state-display" style="color:#E8EDF5;font-weight:600">—</div>
           </div>
         </div>
-        <button onclick="saveProfile()" style="width:100%;padding:0.85rem;background:#00C896;color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:background 0.2s" onmouseover="this.style.background='#00e0aa'" onmouseout="this.style.background='#00C896'">Activate My Alerts →</button>
+        <button onclick="saveProfile()" style="width:100%;padding:0.85rem;background:#00C896;color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer">Activate My Alerts →</button>
+        <p style="font-size:0.68rem;color:#7A8FA8;margin-top:0.5rem;text-align:center">Free · No spam · Unsubscribe anytime</p>
       </div>
-      <p style="font-size:0.68rem;color:#7A8FA8;margin-top:0.6rem;text-align:center">Free · No spam · Unsubscribe anytime</p>
+      <div id="tracker-dashboard" style="display:none;background:#0D1B2E;border:1px solid rgba(0,200,150,0.3);border-radius:14px;overflow:hidden">
+        <div style="background:linear-gradient(135deg,rgba(0,200,150,0.12),rgba(13,27,46,0.6));padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:0.5rem">
+          <span>✅</span><div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:800;color:#00C896">Alerts active</div>
+        </div>
+        <div style="padding:1.1rem">
+          <div id="tracker-confirmation" style="font-size:0.82rem;color:#E8EDF5;line-height:1.7;margin-bottom:0.75rem;background:rgba(0,200,150,0.06);border-radius:8px;padding:0.75rem;border-left:3px solid #00C896"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.6rem">
+            <div style="background:#0A1525;border-radius:8px;padding:0.65rem"><div style="font-size:0.6rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">Profile</div><div id="dash-profile" style="font-size:0.78rem;color:#E8EDF5;font-weight:600;line-height:1.4">—</div></div>
+            <div style="background:#0A1525;border-radius:8px;padding:0.65rem"><div style="font-size:0.6rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">Last Round</div><div id="dash-last-round" style="font-size:0.78rem;color:#E8EDF5;font-weight:600">—</div></div>
+            <div style="background:#0A1525;border-radius:8px;padding:0.65rem"><div style="font-size:0.6rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">Queue Position</div><div id="dash-queue" style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#00C896">—</div></div>
+            <div style="background:#0A1525;border-radius:8px;padding:0.65rem"><div style="font-size:0.6rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem">Next Round</div><div id="dash-next-round" style="font-size:0.78rem;color:#4E8EFF;font-weight:600">—</div></div>
+          </div>
+          <button onclick="clearProfile()" style="width:100%;padding:0.55rem;background:transparent;color:#7A8FA8;border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.75rem;cursor:pointer">Clear saved profile</button>
+        </div>
+      </div>
     </div>
 
-    <!-- SAVED / DASHBOARD STATE -->
-    <div id="tracker-dashboard" style="display:none;background:#0D1B2E;border:1px solid rgba(0,200,150,0.3);border-radius:14px;overflow:hidden">
-      <div style="background:linear-gradient(135deg,rgba(0,200,150,0.12),rgba(13,27,46,0.6));padding:1.1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:0.6rem">
-        <span style="font-size:1rem">✅</span>
-        <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;color:#00C896">Alerts active</div>
-      </div>
-      <div style="padding:1.25rem">
-        <div id="tracker-confirmation" style="font-size:0.82rem;color:#E8EDF5;line-height:1.7;margin-bottom:1rem;background:rgba(0,200,150,0.06);border-radius:8px;padding:0.85rem;border-left:3px solid #00C896"></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem">
-          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
-            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Your Profile</div>
-            <div id="dash-profile" style="font-size:0.78rem;color:#E8EDF5;font-weight:600;line-height:1.5">—</div>
+    <!-- TAB 2: SCORE TRACKER -->
+    <div id="el-panel-tracker" style="display:none">
+      <div style="background:#0D1B2E;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-bottom:0.35rem">Track your score over time</div>
+        <p style="font-size:0.78rem;color:#7A8FA8;line-height:1.6;margin-bottom:1rem">Save your score each time you run the tool. Come back after a NAATI test, English exam, or new work experience — see exactly what moved.</p>
+
+        <!-- Current score display -->
+        <div id="score-current-block" style="background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(13,27,46,0.8));border:1px solid rgba(0,200,150,0.3);border-radius:10px;padding:1rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:0.65rem;color:#00C896;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:0.2rem">Current session score</div>
+            <div id="score-current-val" style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#00C896;line-height:1">—</div>
+            <div id="score-current-occ" style="font-size:0.75rem;color:#7A8FA8;margin-top:0.15rem">—</div>
           </div>
-          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
-            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Queue Position</div>
-            <div id="dash-queue" style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#00C896">—</div>
-          </div>
-          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
-            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Last Round</div>
-            <div id="dash-last-round" style="font-size:0.78rem;color:#E8EDF5;font-weight:600">—</div>
-          </div>
-          <div style="background:#0A1525;border-radius:8px;padding:0.75rem">
-            <div style="font-size:0.62rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.2rem">Next Round Est.</div>
-            <div id="dash-next-round" style="font-size:0.78rem;color:#4E8EFF;font-weight:600">—</div>
+          <div id="score-delta-block" style="text-align:right;display:none">
+            <div style="font-size:0.65rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.2rem">vs last saved</div>
+            <div id="score-delta-val" style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;line-height:1"></div>
           </div>
         </div>
-        <button onclick="clearProfile()" style="width:100%;padding:0.6rem;background:transparent;color:#7A8FA8;border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.75rem;cursor:pointer">Clear saved profile</button>
+
+        <!-- History -->
+        <div id="score-history-block" style="margin-bottom:0.75rem;display:none">
+          <div style="font-size:0.68rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:0.4rem">Score history</div>
+          <div id="score-history-list" style="display:flex;flex-direction:column;gap:0.35rem"></div>
+        </div>
+
+        <!-- Cutoff watch for their occupation -->
+        <div id="cutoff-watch-block" style="background:#0A1525;border-radius:10px;padding:0.85rem;margin-bottom:0.75rem">
+          <div style="font-size:0.65rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:0.5rem">Cutoff watch — your occupation</div>
+          <div id="cutoff-watch-content" style="font-size:0.82rem;color:#E8EDF5;line-height:1.7">Loading…</div>
+        </div>
+
+        <button onclick="saveScore()" style="width:100%;padding:0.8rem;background:#00C896;color:#000;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer">Save this score →</button>
+        <div id="score-saved-msg" style="text-align:center;font-size:0.75rem;color:#00C896;margin-top:0.5rem;display:none">✓ Score saved. Come back after your next exam or experience milestone.</div>
       </div>
     </div>
+
+    <!-- TAB 3: ROUND WATCH -->
+    <div id="el-panel-rounds" style="display:none">
+      <div style="background:#0D1B2E;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:800;margin-bottom:0.35rem">Round Watch — Live Status</div>
+        <p style="font-size:0.78rem;color:#7A8FA8;line-height:1.6;margin-bottom:1rem">Federal and state invitation round status. Updated within 48 hours of each announcement.</p>
+
+        <!-- 189 Federal -->
+        <div style="background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.2);border-radius:10px;padding:1rem;margin-bottom:0.75rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.4rem">
+            <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700">189 Federal — SkillSelect</div>
+            <span id="federal-badge" style="font-size:0.62rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;background:rgba(245,158,11,0.1);color:#F59E0B;border:1px solid rgba(245,158,11,0.25)">Overdue</span>
+          </div>
+          <div id="federal-detail" style="font-size:0.78rem;color:#7A8FA8;line-height:1.6">
+            Last round: <strong style="color:#E8EDF5">13 November 2025</strong> (10,000 invitations)<br>
+            Round 3 was expected Jan–Mar 2026. Still pending — could be announced any day.<br>
+            Round 4 expected: <strong style="color:#4E8EFF">April–June 2026</strong>
+          </div>
+          <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds" target="_blank" style="display:inline-block;margin-top:0.6rem;font-size:0.72rem;color:#00C896;font-weight:600">Check DHA SkillSelect →</a>
+        </div>
+
+        <!-- State rounds -->
+        <div style="font-size:0.68rem;color:#7A8FA8;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:0.5rem">State Rounds — March 2026</div>
+        <div id="state-rounds-list" style="display:flex;flex-direction:column;gap:0.35rem"></div>
+
+        <div style="margin-top:0.75rem;padding:0.75rem;background:#0A1525;border-radius:8px;font-size:0.72rem;color:#7A8FA8;line-height:1.6">
+          <strong style="color:#E8EDF5">How to use this:</strong> Apply to multiple states simultaneously — there is no restriction. SA and TAS run the most frequent rounds. Set up alerts on the tab above to be notified the moment a round is announced.
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <button class="bs" style="margin-top:1rem" onclick="location.reload()">← Start new analysis</button>
@@ -946,7 +1107,7 @@ function gen(){
   document.getElementById('loading').classList.add('active');
   uprog(4);window.scrollTo({top:0,behavior:'smooth'});
   ['ls1','ls2','ls3','ls4'].forEach((id,i)=>setTimeout(()=>document.getElementById(id).classList.add('done'),700*(i+1)));
-  setTimeout(()=>{document.getElementById('loading').classList.remove('active');br();document.getElementById('screen4').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});fetchAI();initTracker();},3600);
+  setTimeout(()=>{document.getElementById('loading').classList.remove('active');br();document.getElementById('screen4').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});fetchAI();initTracker();initEngagementLoop();},3600);
 }
 
 function prob(pts,occ,mo,vt){
@@ -1023,13 +1184,120 @@ function br(){
   document.getElementById('qdesc').textContent=`${ol} has approximately ${o.pool.toLocaleString()}+ EOIs in the SkillSelect pool. At ${total} pts you are in the ${total>=rc?'competitive':'lower'} tier.`;
   document.getElementById('qins').textContent=o.ins;
 
-  // State grid
-  document.getElementById('sgrid').innerHTML=SD.map(st=>{
-    const el=total>=65&&(o.list==='mltssl'||o.list==='stsol');
-    const el491=total+15>=65;
-    const cls=el?'el':el491?'pt':'';
-    const badge=el?'<span class="sb bel">Potentially eligible</span>':el491?'<span class="sb bpt">491 with +15 pts</span>':'<span class="sb bno">Check eligibility</span>';
-    return `<div class="si ${cls}"><div class="sn">${st.n}</div><div class="sc2">Processing: ${st.spd}</div>${badge}<div style="font-size:0.62rem;color:var(--muted);margin-top:0.3rem">${st.note.substring(0,80)}${st.note.length>80?'…':''}</div></div>`;
+  // ── STATE GRID — 3-tier colour system ────────────────────────
+  function getStateRating(stateCode, occ, pts) {
+    var list = occ ? occ.list : 'mltssl';
+    var tier = occ ? occ.tier : 3;
+    var occId = S.occ || '';
+    var nswNever = ['accountant','management_accountant','taxation_accountant','external_auditor','internal_auditor','finance_manager','financial_analyst','management_consultant','hr_manager','marketing_specialist'];
+    var actNever = ['chef','pastrycook','hotel_manager','cafe_manager'];
+    var isStsol = (list === 'STSOL' || list === 'stsol');
+    var isAccounting  = ['accountant','management_accountant','taxation_accountant','external_auditor','internal_auditor','finance_manager','financial_analyst','actuary'].includes(occId);
+    var isHealthcare  = (tier === 1);
+    var isEducation   = (tier === 2);
+    var isTrades      = ['electrician','electrical_linesworker','plumber','gasfitter','carpenter','bricklayer','plasterer','painting_trades','floor_finisher','roof_tiler','wall_tiler','refrigeration_mechanic','sheet_metal_worker','welder','boilermaker','fitter_machinist','toolmaker','motor_mechanic','diesel_mechanic','cabinetmaker','electronics_tech'].includes(occId);
+    var isEngineering = (tier === 3 && !isTrades);
+    var isICT         = ['software_engineer','software_developer','cybersecurity_analyst','network_engineer','database_admin','ict_manager','systems_analyst','ict_project_manager','data_scientist','ai_ml_engineer','devops_engineer','ux_designer','ict_security_specialist','telecommunications_eng'].includes(occId);
+    switch (stateCode) {
+      case 'NSW':
+        if (nswNever.includes(occId)) return {rating:'red', label:'Unlikely now', note:'NSW does not currently nominate accounting or general business management roles.', upgrade:'SA is your best alternative — accepts this occupation at 65 pts.'};
+        if (isHealthcare && pts>=65)  return {rating:'green', label:'Strong chance', note:'Healthcare is a NSW priority sector. Your score is competitive.', upgrade:''};
+        if (isTrades && pts>=65)      return {rating:'green', label:'Strong chance', note:'NSW construction trades are actively nominated.', upgrade:''};
+        if (isICT && pts>=85)         return {rating:'green', label:'Strong chance', note:'Digital and Cyber is a NSW declared priority sector.', upgrade:''};
+        if (isICT && pts>=75)         return {rating:'amber', label:'Possible', note:'NSW nominates ICT but merit selection means no guaranteed cutoff.', upgrade:'Reach 85+ pts for Strong Chance.'};
+        if (isEngineering && pts>=80) return {rating:'green', label:'Strong chance', note:'Engineering (construction, renewables) is a NSW priority.', upgrade:''};
+        if (isEngineering && pts>=70) return {rating:'amber', label:'Possible', note:'NSW nominates engineers but competition is high.', upgrade:'Reach 80+ pts for Strong Chance.'};
+        if (isEducation && pts>=75)   return {rating:'amber', label:'Possible', note:'Education is sometimes nominated but not a NSW declared priority.', upgrade:'ACT or TAS are better for teachers.'};
+        if (pts<65)                   return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum threshold.', upgrade:'Need 65+ pts to be eligible.'};
+        return {rating:'amber', label:'Possible', note:'NSW uses merit selection — no guaranteed cutoff. Priority sector alignment matters.', upgrade:'Reach 80+ pts and align with a priority sector.'};
+      case 'VIC':
+        if (isAccounting && pts<85)   return {rating:'red', label:'Unlikely now', note:'VIC rarely nominates accounting roles. National oversupply makes selection very unlikely.', upgrade:'SA 190 at 65 pts is far more accessible for accountants.'};
+        if (isAccounting && pts>=85)  return {rating:'amber', label:'Possible', note:'VIC has limited accounting nomination — very competitive at any score.', upgrade:'SA 190 at 65 pts is still faster.'};
+        if (isHealthcare && pts>=65)  return {rating:'green', label:'Strong chance', note:'Care economy is a VIC priority. Healthcare nominated consistently.', upgrade:''};
+        if (isTrades && pts>=70)      return {rating:'green', label:'Strong chance', note:'Construction trades are a VIC priority for housing and infrastructure.', upgrade:''};
+        if (isEngineering && pts>=80) return {rating:'green', label:'Strong chance', note:'Engineering for construction, renewables and clean tech is a VIC priority.', upgrade:''};
+        if (isEngineering && pts>=70) return {rating:'amber', label:'Possible', note:'VIC nominates engineers but competition is high.', upgrade:'Reach 80+ pts for Strong Chance.'};
+        if (isICT && pts>=80)         return {rating:'green', label:'Strong chance', note:'Digital economy is a VIC priority. Cyber and software nominated actively.', upgrade:''};
+        if (isICT && pts>=70)         return {rating:'amber', label:'Possible', note:'ICT is a VIC priority but the pool is large — score needs to be strong.', upgrade:'Reach 80+ pts for Strong Chance.'};
+        if (pts<65)                   return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum.', upgrade:'Need 65+ pts.'};
+        if (pts<75)                   return {rating:'red', label:'Unlikely now', note:'VIC effective cutoff is approximately 75–80 pts for most occupations.', upgrade:'Need approx 75+ pts to reach Possible.'};
+        return {rating:'amber', label:'Possible', note:'VIC selects on sector alignment. Priority sector employment strengthens application.', upgrade:'Reach 80+ pts in a priority sector for Strong Chance.'};
+      case 'QLD':
+        if (pts<65) return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum.', upgrade:'Need 65+ pts.'};
+        if (pts<75) return {rating:'amber', label:'Possible', note:'QLD effective cutoff is ~75 pts. Your score is borderline.', upgrade:'Reach 75+ pts for Strong Chance.'};
+        if (isHealthcare) return {rating:'green', label:'Strong chance', note:'QLD actively nominates healthcare. Strong allocation and consistent rounds.', upgrade:''};
+        if (isTrades)     return {rating:'green', label:'Strong chance', note:'QLD construction and infrastructure demand is high.', upgrade:''};
+        if (isEngineering) return {rating:'green', label:'Strong chance', note:'Engineering is a QLD priority — infrastructure and mining related roles especially.', upgrade:''};
+        if (isAccounting && pts>=75) return {rating:'amber', label:'Possible', note:'QLD nominates some accounting roles but allocation is limited.', upgrade:'SA 190 is a faster route for accountants.'};
+        if (isICT && pts>=75) return {rating:'amber', label:'Possible', note:'QLD nominates ICT but competition is significant.', upgrade:''};
+        return {rating:'green', label:'Strong chance', note:'At 75+ pts, QLD offers strong nomination for most eligible occupations.', upgrade:''};
+      case 'SA':
+        if (pts<65) return {rating:'amber', label:'Possible', note:'SA cutoff is ~65 pts. You are just below — a small improvement qualifies you.', upgrade:'Need 65+ pts. NAATI CCL (+5 pts) could close this gap immediately.'};
+        if (isStsol)    return {rating:'green', label:'Strong chance', note:'SA nominates hospitality occupations via 190/491 — one of very few states that does.', upgrade:''};
+        if (isAccounting) return {rating:'green', label:'Strong chance', note:'SA is the best state for accountants. Accepts accounting nominations where NSW and VIC do not.', upgrade:''};
+        if (isHealthcare) return {rating:'green', label:'Strong chance', note:'Healthcare is top SA priority. Critical shortage across Adelaide and regional SA.', upgrade:''};
+        if (isTrades)     return {rating:'green', label:'Strong chance', note:'Trades accepted by SA. Housing demand is strong.', upgrade:''};
+        if (isEngineering) return {rating:'green', label:'Strong chance', note:'Engineering is a declared SA priority sector for 2025-26.', upgrade:''};
+        if (isICT)         return {rating:'green', label:'Strong chance', note:'SA nominates ICT. Adelaide tech sector is growing with lower competition than Sydney/Melbourne.', upgrade:''};
+        return {rating:'green', label:'Strong chance', note:'SA has the most accessible nomination program in Australia for most occupations at 65+ pts.', upgrade:''};
+      case 'WA':
+        if (pts<65) return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum.', upgrade:'Need 65+ pts.'};
+        if (pts<70) return {rating:'red', label:'Unlikely now', note:'WA requires ~70 pts plus a WA job offer (6+ month contract).', upgrade:'Reach 70+ pts AND secure a WA job offer.'};
+        if (isHealthcare)  return {rating:'green', label:'Strong chance', note:'WA healthcare is a critical priority. Job offer strengthens application.', upgrade:''};
+        if (isEngineering) return {rating:'green', label:'Strong chance', note:'Mining, resources and infrastructure engineering is in high demand in WA.', upgrade:''};
+        if (isTrades)      return {rating:'green', label:'Strong chance', note:'Trades are in demand for WA resources and housing sector. Job offer preferred.', upgrade:''};
+        if (isAccounting && pts>=70) return {rating:'amber', label:'Possible', note:'WA nominates some accounting but typically requires a WA job offer.', upgrade:'SA is more accessible without a job offer.'};
+        if (isICT && pts>=70)        return {rating:'amber', label:'Possible', note:'WA nominates ICT but usually requires a WA employment contract.', upgrade:'ACT or SA have lower barriers for ICT.'};
+        return {rating:'amber', label:'Possible', note:'WA requires a full-time WA job offer for most streams. With a WA job offer, chances improve significantly.', upgrade:'Secure a WA job offer to move to Strong Chance.'};
+      case 'TAS':
+        if (pts<65) return {rating:'amber', label:'Possible', note:'TAS cutoff is ~65 pts. Small improvement gets you there — and TAS runs weekly rounds.', upgrade:'Need 65+ pts. TAS is the fastest state once you qualify.'};
+        if (isHealthcare) return {rating:'green', label:'Strong chance', note:'Healthcare is TAS top priority. Nominated weekly. Fastest state processing (4-7 months).', upgrade:''};
+        if (isEducation)  return {rating:'green', label:'Strong chance', note:'Teachers are a TAS priority with weekly rounds and fastest processing.', upgrade:''};
+        if (isICT)        return {rating:'green', label:'Strong chance', note:'TAS nominates IT professionals. Weekly rounds and accessible cutoff.', upgrade:''};
+        if (isTrades)     return {rating:'green', label:'Strong chance', note:'Trades accepted by TAS. Weekly rounds.', upgrade:''};
+        if (isAccounting) return {rating:'amber', label:'Possible', note:'TAS nominates some accounting but SA is more accessible for this occupation.', upgrade:''};
+        return {rating:'green', label:'Strong chance', note:'At 65+ pts TAS accepts most eligible occupations. Note: must live in TAS 6-9 months before applying.', upgrade:''};
+      case 'ACT':
+        if (actNever.includes(occId)) return {rating:'red', label:'Unlikely now', note:'ACT does not nominate hospitality. ACT focuses on knowledge economy roles.', upgrade:'SA or NT are better options for this occupation.'};
+        if (pts<65) return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum.', upgrade:'Need 65+ pts.'};
+        if (isICT && pts>=75)         return {rating:'green', label:'Strong chance', note:'ICT is ACT's primary priority. Cybersecurity and software engineers strongly favoured. All of ACT is regional-eligible (+15 pts 491).', upgrade:''};
+        if (isICT && pts>=65)         return {rating:'amber', label:'Possible', note:'ICT is ACT priority but Canberra Matrix requires employment or community ties.', upgrade:'Reach 75+ pts and secure ACT employment for Strong Chance.'};
+        if (isEducation && pts>=75)   return {rating:'green', label:'Strong chance', note:'Education is ACT priority. Strong demand for teachers and psychologists.', upgrade:''};
+        if (isHealthcare && pts>=70)  return {rating:'amber', label:'Possible', note:'Healthcare is nominated by ACT. Matrix considers employment and community ties.', upgrade:''};
+        if (isEngineering && pts>=80) return {rating:'amber', label:'Possible', note:'Some engineering roles nominated — especially government infrastructure related.', upgrade:''};
+        if (isAccounting && pts>=80)  return {rating:'amber', label:'Possible', note:'Very limited accounting nominations in ACT. SA 190 far more accessible.', upgrade:'SA 190 at 65 pts is far more accessible for accountants.'};
+        if (pts<75) return {rating:'red', label:'Unlikely now', note:'ACT Matrix typically requires 75+ pts plus demonstrated ACT employment or community connection.', upgrade:'Reach 75+ pts and consider securing ACT employment.'};
+        return {rating:'amber', label:'Possible', note:'ACT uses the Canberra Matrix — points alone are not enough. ACT employment or community ties required.', upgrade:'Secure ACT employment to improve chances.'};
+      case 'NT':
+        if (pts<65) return {rating:'amber', label:'Possible', note:'NT cutoff is ~65 pts. You are close — small improvement qualifies you.', upgrade:'Need 65+ pts. NT is the least competitive state in Australia.'};
+        if (isStsol)    return {rating:'green', label:'Strong chance', note:'NT actively nominates hospitality and trades. Tourism and remote industries in demand.', upgrade:''};
+        if (isHealthcare) return {rating:'green', label:'Strong chance', note:'Healthcare is critically needed in the NT. Top priority occupation group.', upgrade:''};
+        if (isEducation)  return {rating:'green', label:'Strong chance', note:'Teachers and social workers in high demand. Remote schools actively recruiting.', upgrade:''};
+        if (isTrades)     return {rating:'green', label:'Strong chance', note:'Trades in demand for NT government infrastructure projects.', upgrade:''};
+        if (isAccounting) return {rating:'green', label:'Strong chance', note:'NT accepts accountants. Least competitive state for this occupation.', upgrade:''};
+        return {rating:'green', label:'Strong chance', note:'NT is the least competitive state. At 65+ pts, most occupations are accepted. Genuine NT commitment required.', upgrade:''};
+      default:
+        return {rating:'amber', label:'Possible', note:'Check state requirements directly.', upgrade:''};
+    }
+  }
+
+  document.getElementById('sgrid').innerHTML = SD.map(function(st) {
+    var occ = TOOL_OCC_DATA[S.occ] || null;
+    var rating = getStateRating(st.n, occ, total);
+    var badgeClass = rating.rating === 'green' ? 'bgreen' : rating.rating === 'amber' ? 'bamber' : 'bred';
+    var upgradeHtml = (rating.rating !== 'green' && rating.upgrade)
+      ? '<div class="state-note" style="color:' + (rating.rating==='red'?'#f87171':'#F59E0B') + ';margin-top:0.25rem">→ ' + rating.upgrade + '</div>'
+      : '';
+    return '<div class="si">' +
+      '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.3rem">' +
+        '<div class="sn">' + st.n + '</div>' +
+        '<span class="' + badgeClass + '">' + rating.label + '</span>' +
+      '</div>' +
+      '<div class="sc2" style="margin-bottom:0.25rem">Processing: ' + st.spd + '</div>' +
+      '<div class="state-note">' + rating.note + '</div>' +
+      upgradeHtml +
+      '<div class="state-note" style="color:rgba(255,255,255,0.2);margin-top:0.25rem">' + st.alloc + '</div>' +
+    '</div>';
   }).join('');
 
   // Observed Next Steps — pattern language, not advice
@@ -1043,6 +1311,165 @@ function br(){
   if(S.py===0&&['accountant','software_engineer','civil_engineer','electrical_engineer','mechanical_engineer'].includes(S.occ))acts.push({i:'🎓',p:'md',t:'Professional Year observed in profiles 5–10 pts below cutoff',d:'Profiles 5–10 pts below cutoff in this occupation commonly completed a Professional Year (12 months, ~$3,500–5,000). This pattern coincided with successful invitation in many cases.',pts:'Adds 5 pts + Australian work experience'});
   acts.push({i:'📊',p:'lo',t:'EOI timing patterns observed in dataset',d:'Profiles who submitted EOI after reaching the cutoff showed better outcomes in the dataset than those who submitted early with lower scores — submitting early consumes Date of Effect priority. Monitoring rounds for this occupation is the other common pattern.',pts:'Timing observation from dataset'});
   document.getElementById('acts').innerHTML=acts.map(a=>`<div class="ac"><div class="ai ${a.p}">${a.i}</div><div class="at"><h4>${a.t}</h4><p>${a.d}</p><div class="ap">${a.pts}</div></div></div>`).join('');
+
+  // ── DECISION ENGINE — Your Recommended Next Move ────────────────
+  (function buildNextMove() {
+    const gap = (cut < 900) ? cut - total : null;
+    const isAccounting = ['accountant','management_accountant','taxation_accountant','external_auditor','internal_auditor','finance_manager','financial_analyst'].includes(S.occ);
+    const isHealthcare = (o.tier === 1);
+    const isTrade = ['electrician','plumber','carpenter','bricklayer','welder','boilermaker','refrigeration_mechanic','fitter_machinist','motor_mechanic','diesel_mechanic','plasterer','painter'].includes(S.occ);
+    const isICT = ['software_engineer','software_developer','cybersecurity_analyst','network_engineer','database_admin','ict_manager','systems_analyst','data_scientist','ai_ml_engineer','devops_engineer'].includes(S.occ);
+    const canNaati = ['pakistani','indian','nepali','bangladeshi','sri_lankan','filipino','chinese'].includes(S.nat);
+    const naatiDone = S.naati > 0;
+    const englishGap = 20 - S.eng;
+    const stateNom = S.nom > 0;
+    const isRegional = S.regional !== 'no';
+
+    let move = null;
+
+    // Priority logic — most specific and impactful first
+
+    // 1. ACCOUNTANT — 189 not viable, push SA 190
+    if (isAccounting && !stateNom) {
+      move = {
+        icon: '🗺️',
+        urgency: 'This week',
+        title: 'Apply to SA state nomination — your fastest realistic PR pathway',
+        body: 'Accountants were not invited in either 2025–26 federal round. Your pathway is SA 190 state nomination, which accepts accounting professionals at 65+ base points. SA ran a nomination round in March 2026 and runs them regularly. Register your interest now — the next round could be within weeks.',
+        action: 'Register at migration.sa.gov.au',
+        link: 'https://migration.sa.gov.au',
+        time: 'Typical grant timeline: 12–18 months via SA 190',
+        pts: null
+      };
+    }
+
+    // 2. NAATI gap — small points gap, NAATI closes it
+    else if (!naatiDone && canNaati && gap !== null && gap > 0 && gap <= 5) {
+      move = {
+        icon: '🏆',
+        urgency: 'This week',
+        title: 'Register for NAATI CCL — it closes your ' + gap + ' point gap immediately',
+        body: 'You are ' + gap + ' points below the ' + cut + ' pt cutoff for ' + ol + '. NAATI CCL certification adds exactly 5 points and is available in your language. Cost: ~$800. Preparation time: 6–8 weeks. This is your single highest-impact action right now — it closes the gap without needing more work experience or a higher English score.',
+        action: 'Register at naati.com.au',
+        link: 'https://www.naati.com.au/ccl-test',
+        time: 'Results in ~8 weeks · Points added to EOI immediately',
+        pts: '+5 pts · ~$800'
+      };
+    }
+
+    // 3. Above cutoff, no EOI lodged yet
+    else if (gap !== null && gap <= 0 && S.eoi === 'no') {
+      move = {
+        icon: '📋',
+        urgency: 'This week — do not wait',
+        title: 'Lodge your EOI in SkillSelect now — your date of effect is your tiebreaker',
+        body: 'At ' + total + ' pts you are above the ' + cut + ' pt cutoff for ' + ol + '. The next quarterly round is expected in the coming months. Your Date of Effect (the date you first reached this score) is the tiebreaker when two applicants have identical points — lodging now protects your position in the queue. Every day you wait costs you seniority.',
+        action: 'Lodge EOI at immi.homeaffairs.gov.au',
+        link: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect',
+        time: 'Next quarterly round: Jan–Mar 2026 window',
+        pts: 'Free to lodge · Takes 20 minutes'
+      };
+    }
+
+    // 4. Healthcare — above cutoff, push EOI
+    else if (isHealthcare && gap !== null && gap <= 0) {
+      move = {
+        icon: '✅',
+        urgency: 'This week',
+        title: 'Lodge your EOI immediately — Tier 1 healthcare gets the most invitations',
+        body: ol + ' is a Tier 1 priority occupation — the highest priority in the DHA system. Healthcare professionals received invitations at just 75 points in the November 2025 round. At ' + total + ' pts you are competitive. The next quarterly round is expected in the coming months. Lodge your EOI today and you will be in the pool.',
+        action: 'Lodge EOI at SkillSelect',
+        link: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect',
+        time: 'Tier 1 healthcare — typical processing 1–3 months after invitation',
+        pts: null
+      };
+    }
+
+    // 5. Trades — at or above 65 pts
+    else if (isTrade && total >= 65) {
+      move = {
+        icon: '⚡',
+        urgency: 'This week',
+        title: 'Lodge your EOI — trades are invited at 65 points, the lowest cutoff available',
+        body: ol + ' was invited at 65 points in the November 2025 round — the lowest cutoff of any skilled occupation in Australia. At ' + total + ' pts you qualify. The federal 189 round is your primary pathway. Lodge your EOI in SkillSelect now and make sure your TRA assessment is current. You do not need state nomination.',
+        action: 'Lodge EOI at SkillSelect',
+        link: 'https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect',
+        time: 'Trades invited every quarterly round · processing 5–9 months',
+        pts: null
+      };
+    }
+
+    // 6. Regional eligible under 80 pts — push 491
+    else if (isRegional && total < 80 && !stateNom) {
+      const pts491 = total + 15;
+      move = {
+        icon: '🌿',
+        urgency: 'This week',
+        title: '491 regional nomination adds 15 points — putting you at ' + pts491 + ' pts effective',
+        body: 'At ' + total + ' pts your 189 invitation chances are limited. But the 491 regional visa adds 15 points — the biggest single boost in the entire DHA system. At ' + pts491 + ' effective points you become competitive for most regional states. SA, ACT and TAS all accept your occupation and are the most accessible. After 3 years regional, you apply for 191 permanent residency.',
+        action: 'Apply to SA 491 at migration.sa.gov.au',
+        link: 'https://migration.sa.gov.au',
+        time: 'SA 491 median timeline: 14–18 months to grant · then 3 years regional · 191 PR',
+        pts: '+15 pts via 491 nomination'
+      };
+    }
+
+    // 7. English gap — most impactful upgrade available
+    else if (englishGap >= 10 && gap !== null && gap > 5) {
+      move = {
+        icon: '📝',
+        urgency: 'Next 3 months',
+        title: 'Superior English (IELTS 8.0+) adds 10 points — your biggest available boost',
+        body: 'Moving from Proficient (IELTS 7+, 10 pts) to Superior (IELTS 8+, 20 pts) adds 10 points to your score — more than any single action other than regional nomination. At your current score of ' + total + ' pts, that would put you at ' + (total + 10) + ' pts. Most test centres run IELTS multiple times per month. Preparation time: 1–3 months for most applicants already at 7+.',
+        action: 'Book IELTS at ielts.org',
+        link: 'https://www.ielts.org/book-a-test',
+        time: 'Results in 3–5 days (computer) or 13 days (paper)',
+        pts: '+10 pts · ~$350–400'
+      };
+    }
+
+    // 8. Above cutoff, EOI lodged — wait and monitor
+    else if (gap !== null && gap <= 0 && S.eoi !== 'no') {
+      move = {
+        icon: '📡',
+        urgency: 'This week',
+        title: 'Monitor SA and QLD state nomination — they are actively running rounds now',
+        body: 'Your EOI is lodged and your score is above the federal cutoff. The next action is state nomination, which adds 5 points and puts you in a separate, often faster queue. SA ran a round in March 2026. QLD and TAS also run regular rounds. Apply to all three simultaneously — there is no restriction on applying to multiple states.',
+        action: 'Apply to SA at migration.sa.gov.au',
+        link: 'https://migration.sa.gov.au',
+        time: 'SA typically runs monthly · TAS runs weekly',
+        pts: '+5 pts via 190 nomination'
+      };
+    }
+
+    // 9. Generic — significant gap, no specific fast action
+    else {
+      const needed = gap !== null && gap > 0 ? gap : 10;
+      move = {
+        icon: '📈',
+        urgency: 'Next 3–6 months',
+        title: 'Build your score to ' + (total + needed) + ' pts — then lodge EOI',
+        body: 'At ' + total + ' pts your fastest path to improving invitation chances is to reach ' + (total + needed) + ' pts before lodging your EOI. Lodging below the cutoff uses your Date of Effect without improving your position. Focus on the highest-impact actions: NAATI CCL (+5 pts), Superior English (+10 pts), or Australian work experience (+5 pts per year-bracket crossed). Use the points calculator to see exactly what moves your score.',
+        action: 'Calculate your exact score',
+        link: '/points-calculator',
+        time: 'Target: reach ' + (cut < 900 ? cut : 80) + ' pts before lodging EOI',
+        pts: null
+      };
+    }
+
+    if (!move) return;
+
+    document.getElementById('nextmove-content').innerHTML = `
+      <div style="display:inline-block;background:rgba(0,200,150,0.15);border:1px solid var(--tb);border-radius:6px;padding:0.2rem 0.6rem;font-size:0.68rem;font-weight:700;color:var(--teal);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.06em">${move.urgency}</div>
+      <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.5rem;line-height:1.3">${move.icon} ${move.title}</div>
+      <div style="font-size:0.83rem;color:var(--muted);line-height:1.75;margin-bottom:0.9rem">${move.body}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+        <a href="${move.link}" target="_blank" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.6rem 1.1rem;background:var(--teal);color:#000;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none">${move.action} →</a>
+        ${move.pts ? `<span style="font-size:0.75rem;color:var(--teal);font-weight:600;padding:0.5rem 0.75rem;background:var(--td);border:1px solid var(--tb);border-radius:8px">${move.pts}</span>` : ''}
+        <span style="font-size:0.72rem;color:var(--muted)">${move.time}</span>
+      </div>
+    `;
+  })();
 
   // Similar profiles
   const profs=o.sim&&o.sim.length>0?o.sim:[{f:'🇮🇳',n:ol+' · SA · 75 pts',d:'SA 190 nomination — most accessible state',m:'9 mo',l:'SA 190'},{f:'🇵🇰',n:ol+' · TAS · 70 pts',d:'TAS 190 — employed in Tasmania 8 months',m:'10 mo',l:'TAS 190'},{f:'🇵🇭',n:ol+' · QLD · 75 pts',d:'QLD 190 offshore stream',m:'11 mo',l:'QLD 190'}];
@@ -1283,9 +1710,285 @@ function updateOccTierBadge() {
   if (typeof S !== 'undefined') S.occ = id;
 }
 
-cp();
+// ── SIMILAR OUTCOMES FEED ──────────────────────────────────────
+var OCC_GROUPS = {
+  healthcare_tier1: ["registered_nurse","nurse_practitioner","enrolled_nurse","midwife","general_practitioner","medical_specialist","physiotherapist","occupational_therapist","pharmacist","optometrist","speech_pathologist","podiatrist","dentist","paramedic","medical_lab_scientist","audiologist","dietitian","aged_care_worker","veterinarian","radiographer","sonographer","medical_radiation_tech","chiropractor","osteopath","psychiatrist","anaesthetist","paediatrician","obstetrician"],
+  education_tier2: ["early_childhood_teacher","primary_teacher","secondary_teacher","secondary_teacher_maths","secondary_teacher_english","special_ed_teacher","psychologist","social_worker","counsellor","welfare_worker","disability_worker","vet_trainer"],
+  engineering_tier3: ["civil_engineer","structural_engineer","electrical_engineer","mechanical_engineer","chemical_engineer","mining_engineer","petroleum_engineer","construction_pm","quantity_surveyor","architect","urban_planner","geologist","environmental_engineer","transport_engineer","biomedical_engineer","aeronautical_engineer","electronics_engineer","naval_architect","land_surveyor","landscape_architect"],
+  trades_tier3: ["electrician","plumber","carpenter","bricklayer","welder","boilermaker","refrigeration_mechanic","fitter_machinist","motor_mechanic","diesel_mechanic","plasterer","wall_tiler","electronics_tech","cabinetmaker","gasfitter","electrical_linesworker","painting_trades","floor_finisher","roof_tiler","sheet_metal_worker","toolmaker"],
+  ict_tier4: ["software_engineer","software_developer","cybersecurity_analyst","network_engineer","database_admin","ict_manager","systems_analyst","data_scientist","ai_ml_engineer","devops_engineer","ict_project_manager","ict_security_specialist","telecommunications_eng","ux_designer"],
+  accounting_tier4: ["accountant","management_accountant","taxation_accountant","external_auditor","internal_auditor","finance_manager","financial_analyst","actuary"],
+  hospitality: ["chef","pastrycook","hotel_manager","cafe_manager"]
+};
 
-// ── PROFILE TRACKER ────────────────────────────────
+function getOccGroup(occId) {
+  for (var g in OCC_GROUPS) {
+    if (OCC_GROUPS[g].indexOf(occId) !== -1) return g;
+  }
+  return null;
+}
+
+function daysAgo(dateStr) {
+  if (!dateStr) return null;
+  var now = new Date('2026-03-23');
+  var parts = dateStr.split(' ');
+  var monthMap = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  if (parts.length === 2) {
+    var d = new Date(parseInt(parts[1]), monthMap[parts[0]] || 0, 1);
+    return Math.floor((now - d) / (1000 * 60 * 60 * 24));
+  }
+  return null;
+}
+
+function renderOutcomeCard(o, userPts) {
+  var ptsMatch = Math.abs(o.points - userPts) <= 10;
+  var granted = !!o.grant_date;
+  var statusColor = granted ? '#10B981' : '#4E8EFF';
+  var statusLabel = granted ? 'Granted' : 'Invited';
+  var d = daysAgo(o.grant_date || o.invite_date);
+  var daysLabel = d !== null ? (d <= 7 ? d + ' days ago' : d <= 30 ? Math.floor(d/7) + ' weeks ago' : Math.floor(d/30) + ' months ago') : 'Recently';
+  var timeline = o.days_eoi_to_grant ? Math.round(o.days_eoi_to_grant/30) + ' month grant timeline' : 'Invitation received';
+
+  return '<div style="background:var(--bg3);border-radius:10px;padding:0.9rem;margin-bottom:0.5rem;border-left:3px solid ' + statusColor + '">' +
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.35rem">' +
+      '<div style="font-family:\'Syne\',sans-serif;font-size:0.85rem;font-weight:700;color:#E8EDF5">' + o.occupation_label + '</div>' +
+      '<div style="display:flex;align-items:center;gap:0.35rem;flex-shrink:0">' +
+        '<span style="font-size:0.62rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;background:rgba(' + (granted?'16,185,129':'78,142,255') + ',0.12);color:' + statusColor + '">' + statusLabel + '</span>' +
+        '<span style="font-size:0.65rem;color:#7A8FA8">' + daysLabel + '</span>' +
+      '</div>' +
+    '</div>' +
+    '<div style="font-size:0.78rem;color:#7A8FA8;line-height:1.7">' +
+      '<strong style="color:#E8EDF5">' + o.points + ' pts</strong> · ' +
+      o.visa + ' · ' + o.state +
+      (o.onshore ? ' · Onshore' : ' · Offshore') +
+      ' · ' + timeline +
+    '</div>' +
+    (o.note ? '<div style="font-size:0.72rem;color:#7A8FA8;margin-top:0.2rem;font-style:italic">' + o.note + '</div>' : '') +
+  '</div>';
+}
+
+function loadSimilarOutcomes() {
+  var userOcc   = S.occ || '';
+  var userPts   = (S.age||0)+(S.eng||0)+(S.edu||0)+(S.stem||0)+Math.min(20,(S.ow||0)+(S.aw||0))+(S.part||0)+(S.naati||0)+(S.ausst||0)+(S.regst||0)+(S.py||0)+(S.nom||0);
+  var userVisa  = S.visa || '189';
+  var userState = S.state || '';
+  var userGroup = getOccGroup(userOcc);
+
+  fetch('/outcomes.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      var outcomes = data.outcomes || [];
+
+      // Filter — same occupation group, within ±15 pts, recent (within 6 months)
+      var similar = outcomes.filter(function(o) {
+        var sameGroup = userGroup && getOccGroup(o.occupation) === userGroup;
+        var ptsClose  = Math.abs(o.points - userPts) <= 15;
+        return sameGroup && ptsClose;
+      });
+
+      // Sort by recency — granted first, then invited
+      similar.sort(function(a, b) {
+        var aDate = a.grant_date || a.invite_date || '';
+        var bDate = b.grant_date || b.invite_date || '';
+        return bDate.localeCompare(aDate);
+      });
+
+      var listEl  = document.getElementById('similar-outcomes-list');
+      var emptyEl = document.getElementById('similar-outcomes-empty');
+      var badge   = document.getElementById('similar-count-badge');
+
+      if (similar.length === 0) {
+        listEl.style.display = 'none';
+        emptyEl.style.display = 'block';
+        badge.textContent = '0 matches';
+      } else {
+        emptyEl.style.display = 'none';
+        listEl.style.display = 'block';
+        badge.textContent = similar.length + ' similar profile' + (similar.length > 1 ? 's' : '');
+
+        // Show max 5
+        listEl.innerHTML = similar.slice(0, 5).map(function(o) {
+          return renderOutcomeCard(o, userPts);
+        }).join('');
+
+        // If more than 5
+        if (similar.length > 5) {
+          listEl.innerHTML += '<div style="text-align:center;padding:0.6rem;font-size:0.75rem;color:#7A8FA8">' +
+            (similar.length - 5) + ' more similar outcomes in the dataset</div>';
+        }
+      }
+
+      // Build summary line for FOMO effect
+      var grantedSimilar = similar.filter(function(o){ return !!o.grant_date; });
+      var thisWeek = similar.filter(function(o){ return o.week && o.week.indexOf('Mar 17') !== -1; });
+      if (thisWeek.length > 0) {
+        var occ = thisWeek[0].occupation_label;
+        var summary = document.createElement('div');
+        summary.style.cssText = 'background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:0.65rem 0.85rem;font-size:0.8rem;color:#E8EDF5;margin-bottom:0.75rem;line-height:1.6';
+        summary.innerHTML = '<strong style="color:#10B981">' + thisWeek.length + ' ' + occ + (thisWeek.length > 1 ? 's' : '') + ' with similar points got ' + (thisWeek[0].grant_date ? 'granted' : 'invited') + ' this week.</strong> This is what\'s happening right now for profiles like yours.';
+        listEl.insertBefore(summary, listEl.firstChild);
+      } else if (grantedSimilar.length > 0) {
+        var recent = grantedSimilar[0];
+        var summary2 = document.createElement('div');
+        summary2.style.cssText = 'background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:0.65rem 0.85rem;font-size:0.8rem;color:#E8EDF5;margin-bottom:0.75rem;line-height:1.6';
+        summary2.innerHTML = '<strong style="color:#10B981">' + recent.occupation_label + ' · ' + recent.points + ' pts · ' + recent.state + ' ' + recent.visa + ' granted</strong> — same occupation group, similar points to you.';
+        listEl.insertBefore(summary2, listEl.firstChild);
+      }
+    })
+    .catch(function() {
+      // Fail silently — show empty state
+      document.getElementById('similar-outcomes-list').style.display = 'none';
+      document.getElementById('similar-outcomes-empty').style.display = 'block';
+      document.getElementById('similar-count-badge').textContent = '—';
+    });
+}
+
+// ── ENGAGEMENT LOOP JS ─────────────────────────────────────────
+
+// Tab switching
+function elTab(name, btn) {
+  ['alerts','tracker','rounds'].forEach(function(t) {
+    document.getElementById('el-panel-'+t).style.display = t===name ? 'block' : 'none';
+    var tb = document.getElementById('el-tab-'+t);
+    tb.style.background = t===name ? 'var(--teal)' : 'transparent';
+    tb.style.color = t===name ? '#000' : '#7A8FA8';
+  });
+}
+
+// ── SCORE TRACKER ──────────────────────────────────────────────
+function initScoreTracker() {
+  var pts = (S.age||0)+(S.eng||0)+(S.edu||0)+(S.stem||0)+Math.min(20,(S.ow||0)+(S.aw||0))+(S.part||0)+(S.naati||0)+(S.ausst||0)+(S.regst||0)+(S.py||0)+(S.nom||0);
+  var occLabel = TOOL_OCC_DATA[S.occ] ? TOOL_OCC_DATA[S.occ].label : (S.occ || '—');
+  var occData  = TOOL_OCC_DATA[S.occ] || null;
+
+  // Show current score
+  document.getElementById('score-current-val').textContent = pts + ' pts';
+  document.getElementById('score-current-occ').textContent = occLabel + ' · ' + (S.state || 'your state');
+
+  // Load history from localStorage
+  var history = [];
+  try { history = JSON.parse(localStorage.getItem('visaiq_score_history') || '[]'); } catch(e){}
+
+  // Show delta vs last saved
+  if (history.length > 0) {
+    var last = history[history.length - 1];
+    var delta = pts - last.pts;
+    var deltaEl = document.getElementById('score-delta-block');
+    var deltaVal = document.getElementById('score-delta-val');
+    deltaEl.style.display = 'block';
+    if (delta > 0) {
+      deltaVal.textContent = '+' + delta + ' pts ↑';
+      deltaVal.style.color = '#10B981';
+    } else if (delta < 0) {
+      deltaVal.textContent = delta + ' pts ↓';
+      deltaVal.style.color = '#EF4444';
+    } else {
+      deltaVal.textContent = 'No change';
+      deltaVal.style.color = '#7A8FA8';
+    }
+  }
+
+  // Show history list
+  if (history.length > 0) {
+    var hBlock = document.getElementById('score-history-block');
+    hBlock.style.display = 'block';
+    document.getElementById('score-history-list').innerHTML = history.slice(-5).reverse().map(function(h) {
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0.65rem;background:#0A1525;border-radius:7px;font-size:0.78rem">' +
+        '<span style="color:#7A8FA8">' + h.date + '</span>' +
+        '<span style="color:#E8EDF5;font-weight:600">' + h.occ + '</span>' +
+        '<span style="font-family:\'Syne\',sans-serif;font-weight:800;color:#00C896">' + h.pts + ' pts</span>' +
+        '</div>';
+    }).join('');
+  }
+
+  // Cutoff watch
+  var cutBlock = document.getElementById('cutoff-watch-content');
+  if (occData && S.occ) {
+    var cut189 = occData.cutoff189;
+    var cut190 = occData.cutoff190 || 65;
+    var gap189 = cut189 ? cut189 - pts : null;
+    var gap190 = cut190 - pts;
+    var html = '';
+    if (!cut189) {
+      html = '<span style="color:#EF4444;font-weight:700">189: Not invited this program year</span> · Your pathway is state nomination (190/491).<br>';
+    } else if (gap189 <= 0) {
+      html = '<span style="color:#10B981;font-weight:700">189: ✓ Above cutoff</span> — ' + cut189 + ' pts required, you have ' + pts + ' pts.<br>';
+    } else {
+      html = '<span style="color:#F59E0B;font-weight:700">189: ' + gap189 + ' pts below cutoff</span> — need ' + cut189 + ' pts, you have ' + pts + ' pts.<br>';
+    }
+    if (gap190 <= 0) {
+      html += '<span style="color:#10B981;font-weight:700">190: ✓ Above typical cutoff</span> — ' + cut190 + ' pts threshold, you have ' + pts + ' pts.';
+    } else {
+      html += '<span style="color:#F59E0B;font-weight:700">190: ' + gap190 + ' pts below typical cutoff</span> — need ~' + cut190 + ' pts.';
+    }
+    html += '<div style="font-size:0.68rem;color:#7A8FA8;margin-top:0.35rem">Cutoffs based on Nov 13 2025 DHA round · Updated within 48hrs of each new round</div>';
+    cutBlock.innerHTML = html;
+  } else {
+    cutBlock.textContent = 'Select an occupation to see cutoff tracking.';
+  }
+}
+
+function saveScore() {
+  var pts = (S.age||0)+(S.eng||0)+(S.edu||0)+(S.stem||0)+Math.min(20,(S.ow||0)+(S.aw||0))+(S.part||0)+(S.naati||0)+(S.ausst||0)+(S.regst||0)+(S.py||0)+(S.nom||0);
+  var occLabel = TOOL_OCC_DATA[S.occ] ? TOOL_OCC_DATA[S.occ].label : (S.occ || 'Unknown');
+  var now = new Date();
+  var dateStr = now.toLocaleDateString('en-AU', {day:'numeric',month:'short',year:'numeric'});
+  var entry = { pts:pts, occ:occLabel, date:dateStr };
+  var history = [];
+  try { history = JSON.parse(localStorage.getItem('visaiq_score_history') || '[]'); } catch(e){}
+  history.push(entry);
+  if (history.length > 20) history = history.slice(-20);
+  try { localStorage.setItem('visaiq_score_history', JSON.stringify(history)); } catch(e){}
+  document.getElementById('score-saved-msg').style.display = 'block';
+  initScoreTracker(); // refresh display
+}
+
+// ── ROUND WATCH ─────────────────────────────────────────────────
+function initRoundWatch() {
+  var states = [
+    {state:'SA',  status:'active',   type:'190/491', note:'Running regular rounds. Most accessible state.',    last:'March 2026',  url:'https://migration.sa.gov.au'},
+    {state:'TAS', status:'active',   type:'190/491', note:'Weekly nomination rounds — fastest state.',          last:'March 2026',  url:'https://www.stategrowth.tas.gov.au/migration'},
+    {state:'VIC', status:'active',   type:'190/491', note:'Round ran 17 March 2026.',                           last:'17 Mar 2026',  url:'https://business.vic.gov.au'},
+    {state:'QLD', status:'active',   type:'190/491', note:'Round ran 12 March 2026.',                           last:'12 Mar 2026',  url:'https://migration.qld.gov.au'},
+    {state:'ACT', status:'active',   type:'190/491', note:'Matrix round ran 12 March 2026.',                    last:'12 Mar 2026',  url:'https://www.act.gov.au/migration'},
+    {state:'NSW', status:'upcoming', type:'190',     note:'Next round expected soon. Watch for EOI deadlines.', last:'March 2026',  url:'https://www.nsw.gov.au/visas-and-migration/skilled-visas'},
+    {state:'WA',  status:'upcoming', type:'190/491', note:'Next round expected April 2026.',                    last:'Feb 2026',     url:'https://migration.wa.gov.au'},
+    {state:'NT',  status:'upcoming', type:'190/491', note:'Next round expected April 2026.',                    last:'Dec 2025',     url:'https://migrate.nt.gov.au'}
+  ];
+  var statusColors = {active:'#10B981', upcoming:'#4E8EFF', closed:'#7A8FA8'};
+  var statusLabels = {active:'Active', upcoming:'Upcoming', closed:'Closed'};
+  document.getElementById('state-rounds-list').innerHTML = states.map(function(s) {
+    var col = statusColors[s.status] || '#7A8FA8';
+    var lbl = statusLabels[s.status] || s.status;
+    return '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:0.6rem 0.75rem;background:#0A1525;border-radius:8px;gap:0.5rem">' +
+      '<div style="flex:1">' +
+        '<span style="font-family:\'Syne\',sans-serif;font-size:0.82rem;font-weight:700;color:#E8EDF5">' + s.state + '</span>' +
+        '<span style="font-size:0.68rem;color:#7A8FA8;margin-left:0.5rem">' + s.type + '</span>' +
+        '<div style="font-size:0.72rem;color:#7A8FA8;margin-top:0.2rem;line-height:1.5">' + s.note + ' · Last: ' + s.last + '</div>' +
+      '</div>' +
+      '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem;flex-shrink:0">' +
+        '<span style="font-size:0.62rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:5px;background:rgba('+( s.status==='active'?'16,185,129':s.status==='upcoming'?'78,142,255':'255,255,255')+',0.1);color:'+col+'">' + lbl + '</span>' +
+        '<a href="' + s.url + '" target="_blank" style="font-size:0.65rem;color:#00C896;text-decoration:none;font-weight:600">Apply →</a>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ── INIT ALL ENGAGEMENT FEATURES ────────────────────────────────
+function initEngagementLoop() {
+  setTimeout(function() {
+    try { initScoreTracker(); } catch(e){}
+    try { initRoundWatch(); } catch(e){}
+    try { loadSimilarOutcomes(); } catch(e){}
+  // TIME WINDOW
+  try { buildTimeWindow(total, o, pr12, pr18); } catch(e){}
+  // WHAT-IF SIMULATOR
+  try { buildSimulator(total, o); } catch(e){}
+  // ACTION CARDS
+  try { buildActionCards(total, o, ol); } catch(e){}
+  }, 600);
+}
+
 const ROUND_DATA = {
   nsw:  { last:'March 2026',  next:'May–Jun 2026 (est)',  type:'190' },
   vic:  { last:'Feb 2026',    next:'Apr–May 2026 (est)',  type:'190/491' },
@@ -1367,6 +2070,225 @@ function initTracker() {
   }, 500);
 }
 </script>
-<script src="/ticker.js"></script>
+<script src="/ticker.js">
+// ── TIME WINDOW ──────────────────────────────────────────────────────────
+function buildTimeWindow(total, o, pr12, pr18) {
+  var cut = o.c189 === 999 ? (o.c190 || 65) : (o.c189 || 75);
+  var window_str, note;
+  if (total >= cut + 15) {
+    window_str = "3 – 8 months";
+    note = "At " + total + " pts you are well above the Nov 2025 cutoff. Profiles at this level in the dataset received invitations within 3–8 months in most cases.";
+  } else if (total >= cut + 5) {
+    window_str = "6 – 14 months";
+    note = "At " + total + " pts you are above the cutoff. Most similar profiles received invitations within 6–14 months. State nomination (190) often faster than 189 at this level.";
+  } else if (total >= cut) {
+    window_str = "8 – 18 months";
+    note = "You are at the cutoff threshold. Similar profiles at this level had more variable wait times — 8–18 months depending on round timing and occupation demand changes.";
+  } else if (total >= cut - 10) {
+    window_str = "Not yet — " + (cut - total) + " pts needed first";
+    note = "You are " + (cut - total) + " pts below the Nov 2025 cutoff. Adding points before submitting EOI protects your Date of Effect. See the what-if simulator below.";
+  } else {
+    window_str = "Focus on points first";
+    note = "At " + total + " pts, invitation via 189 is not realistic yet. State nomination (190 SA/TAS) is accessible at your current score — see the state grid above.";
+  }
+  document.getElementById('time-window').textContent = window_str;
+  document.getElementById('time-window-note').textContent = note;
+}
+
+// ── WHAT-IF SIMULATOR ─────────────────────────────────────────────────────
+var WIF_STATE = { naati: false, superior_english: false, regional: false, partner: false, prof_year: false };
+var WIF_BASE_TOTAL = 0;
+var WIF_BASE_O = null;
+
+function buildSimulator(total, o) {
+  WIF_BASE_TOTAL = total;
+  WIF_BASE_O = o;
+  var hasNaati = (window.S && window.S.naati) || false;
+  var hasPartner = (window.S && window.S.partner) || false;
+  var currentEng = (window.S && window.S.eng) || 10;
+  var isRegional = (window.S && (window.S.state === 'SA' || window.S.state === 'TAS' || window.S.state === 'NT' || window.S.state === 'regional')) || false;
+
+  var toggles = [
+    { id:'naati',            label:'Add NAATI CCL',              pts:5,  disabled: hasNaati,   detail:'$800 · 3 months · qualifying language required · naati.com.au',  link:'/student-pathway#naati' },
+    { id:'superior_english', label:'Improve to Superior English',pts:10, disabled: currentEng>=20, detail:'IELTS 8.0+ required · adds 10 pts vs proficient English',        link:'https://ielts.org' },
+    { id:'regional',         label:'Move to regional Australia', pts:15, disabled: isRegional, detail:'491 nomination · +15 pts · must live/work regional 3 years',       link:'/regional-study-bonus' },
+    { id:'partner',          label:'Add skilled partner',        pts:10, disabled: hasPartner, detail:'Partner needs skills assessment in MLTSSL occupation',              link:'/tool' },
+    { id:'prof_year',        label:'Complete Professional Year', pts:5,  disabled: false,       detail:'IT/Accounting fields only · 1 year program · $3,500–$5,000',        link:'/occupation-demand' },
+  ];
+
+  var html = toggles.map(function(t) {
+    var dis = t.disabled;
+    var checked = WIF_STATE[t.id];
+    return '<div style="display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.85rem;background:var(--bg3);border-radius:9px;' + (dis ? 'opacity:0.4;' : '') + '">' +
+      '<label style="display:flex;align-items:center;gap:0.6rem;flex:1;cursor:' + (dis ? 'default' : 'pointer') + ';min-width:0">' +
+        '<div style="position:relative;flex-shrink:0">' +
+          '<input type="checkbox" id="wif-' + t.id + '" ' + (checked ? 'checked' : '') + ' ' + (dis ? 'disabled' : '') +
+            ' onchange="wifToggle('' + t.id + '',' + t.pts + ')" style="position:absolute;opacity:0;width:0;height:0">' +
+          '<div id="wif-box-' + t.id + '" style="width:20px;height:20px;border-radius:5px;border:2px solid ' + (checked ? 'var(--teal)' : 'rgba(255,255,255,0.15)') + ';background:' + (checked ? 'var(--teal)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#000;transition:all 0.15s" onclick="' + (dis ? '' : 'wifToggle('' + t.id + '',' + t.pts + ')') + '">' + (checked ? '✓' : '') + '</div>' +
+        '</div>' +
+        '<div style="min-width:0">' +
+          '<div style="font-size:0.82rem;font-weight:600;color:var(--text)">' + t.label + '</div>' +
+          '<div style="font-size:0.68rem;color:var(--muted)">' + t.detail + (dis ? ' · Already applied' : '') + '</div>' +
+        '</div>' +
+      '</label>' +
+      '<div style="flex-shrink:0;text-align:right">' +
+        '<div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal)">+' + t.pts + '</div>' +
+        '<div style="font-size:0.6rem;color:var(--muted)">pts</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('wif-toggles').innerHTML = html;
+  updateSimulator();
+}
+
+function wifToggle(id, pts) {
+  WIF_STATE[id] = !WIF_STATE[id];
+  var box = document.getElementById('wif-box-' + id);
+  if (box) {
+    box.style.background = WIF_STATE[id] ? 'var(--teal)' : 'transparent';
+    box.style.borderColor = WIF_STATE[id] ? 'var(--teal)' : 'rgba(255,255,255,0.15)';
+    box.textContent = WIF_STATE[id] ? '✓' : '';
+  }
+  updateSimulator();
+}
+
+function updateSimulator() {
+  if (!WIF_BASE_O) return;
+  var added = 0;
+  if (WIF_STATE.naati)            added += 5;
+  if (WIF_STATE.superior_english) added += 10;
+  if (WIF_STATE.regional)         added += 15;
+  if (WIF_STATE.partner)          added += 10;
+  if (WIF_STATE.prof_year)        added += 5;
+
+  var basePts  = WIF_BASE_TOTAL;
+  var afterPts = basePts + added;
+  var basePr12  = prob(basePts, WIF_BASE_O, 12, 'vt');
+  var afterPr12 = prob(afterPts, WIF_BASE_O, 12, 'vt');
+
+  document.getElementById('wif-before-pts').textContent    = basePts + ' pts';
+  document.getElementById('wif-before-window').textContent = (Math.max(2,basePr12-7))+'–'+(Math.min(97,basePr12+7))+'% chance in 12mo';
+  document.getElementById('wif-after-pts').textContent     = afterPts + ' pts';
+  document.getElementById('wif-after-window').textContent  = (Math.max(2,afterPr12-7))+'–'+(Math.min(97,afterPr12+7))+'% chance in 12mo';
+
+  var summaryEl = document.getElementById('wif-summary');
+  if (added > 0) {
+    summaryEl.style.display = 'block';
+    var improvement = afterPr12 - basePr12;
+    summaryEl.innerHTML = '<strong style="color:var(--teal)">+' + added + ' pts unlocked</strong> — ' +
+      basePts + ' pts → <strong style="color:var(--teal)">' + afterPts + ' pts</strong> · ' +
+      'Invite probability in 12 months: ' + (Math.max(2,basePr12-7))+'–'+(Math.min(97,basePr12+7))+'% → ' +
+      '<strong style="color:var(--teal)">' + (Math.max(2,afterPr12-7))+'–'+(Math.min(97,afterPr12+7))+'%</strong>' +
+      (improvement >= 15 ? ' · <strong style="color:#10B981">Significant improvement</strong>' :
+       improvement >= 8  ? ' · Meaningful improvement' : ' · Marginal improvement');
+  } else {
+    summaryEl.style.display = 'none';
+  }
+}
+
+// ── ACTION CARDS ──────────────────────────────────────────────────────────
+function buildActionCards(total, o, ol) {
+  var cut = o.c189 === 999 ? (o.c190 || 65) : (o.c189 || 75);
+  var currentEng = (window.S && window.S.eng) || 10;
+  var hasNaati   = (window.S && window.S.naati) || false;
+  var hasPartner = (window.S && window.S.partner) || false;
+
+  var actions = [];
+
+  // NAATI — if not already added and qualifying
+  if (!hasNaati) {
+    actions.push({
+      rank: 1,
+      icon: '🏆',
+      title: 'Add NAATI CCL',
+      pts: '+5 points',
+      ptscol: 'var(--teal)',
+      cost: '$800',
+      time: '3 months',
+      detail: 'The highest-value single action per dollar spent. The NAATI Credentialled Community Language test adds 5 DHA points if your language is on the qualifying list. Can be done while still working — does not require any visa change.',
+      link: 'https://www.naati.com.au/ccl-test',
+      linkLabel: 'Register at naati.com.au →'
+    });
+  }
+
+  // English improvement
+  if (currentEng < 20) {
+    actions.push({
+      rank: actions.length + 1,
+      icon: '📝',
+      title: 'Improve English to Superior',
+      pts: '+10 points',
+      ptscol: 'var(--teal)',
+      cost: 'IELTS retake ~$340',
+      time: '1–6 months prep',
+      detail: 'Moving from Proficient English (IELTS 7.0) to Superior English (IELTS 8.0+) adds 10 DHA points — the largest single-test points jump available. In the dataset, this is the most common action taken by profiles in the 70–85 pt range before invitation.',
+      link: 'https://ielts.org',
+      linkLabel: 'Book IELTS →'
+    });
+  }
+
+  // State nomination / Regional
+  if (total < cut || o.c189 === 999) {
+    actions.push({
+      rank: actions.length + 1,
+      icon: '🗺️',
+      title: total < 80 ? 'Apply to SA 190 state nomination' : 'Apply to SA or TAS 190 state nomination',
+      pts: '+5 points via nomination',
+      ptscol: 'var(--blue)',
+      cost: 'Free to apply',
+      time: 'SA runs monthly rounds',
+      detail: 'SA 190 cutoff for ' + ol + ' is approximately ' + (o.c190 || 65) + ' pts. At your current ' + total + ' pts you ' + (total >= (o.c190||65) ? 'qualify — apply now' : 'are ' + ((o.c190||65)-total) + ' pts below the SA cutoff — add points first') + '. Nomination adds 5 pts and puts you in a separate, often faster queue than 189.',
+      link: 'https://migration.sa.gov.au',
+      linkLabel: 'Apply at migration.sa.gov.au →'
+    });
+  }
+
+  // Regional
+  actions.push({
+    rank: actions.length + 1,
+    icon: '🌿',
+    title: 'Move to regional Australia for 491',
+    pts: '+15 points',
+    ptscol: '#10B981',
+    cost: 'Lifestyle change',
+    time: '3 years regional commitment',
+    detail: '491 regional nomination adds 15 DHA points — the largest single points addition available. SA, TAS and NT actively nominate ' + ol + ' for 491. The trade-off is 3 years living and working in regional Australia before applying for the 191 permanent visa.',
+    link: '/state-comparator',
+    linkLabel: 'Compare regional states →'
+  });
+
+  // Skills assessment timing
+  actions.push({
+    rank: actions.length + 1,
+    icon: '📋',
+    title: 'Start skills assessment immediately',
+    pts: 'Prerequisite',
+    ptscol: 'var(--amber)',
+    cost: '$500–$1,000',
+    time: '3–12 months',
+    detail: 'Skills assessment is required before you can submit an EOI. It takes 3–12 months depending on the assessing authority. Starting it now means you lose no queue time waiting.',
+    link: '/occupation-demand',
+    linkLabel: 'Check your assessing authority →'
+  });
+
+  var html = actions.slice(0, 3).map(function(a, i) {
+    return '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:0.55rem;display:flex;align-items:flex-start;gap:0.75rem">' +
+      '<div style="width:28px;height:28px;border-radius:50%;background:rgba(0,200,150,0.1);border:1px solid var(--tb);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:var(--teal);flex-shrink:0">' + a.rank + '</div>' +
+      '<div style="flex:1;min-width:0">' +
+        '<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.2rem">' +
+          '<span style="font-size:0.88rem;font-weight:700;color:var(--text)">' + a.icon + ' ' + a.title + '</span>' +
+          '<span style="font-size:0.68rem;font-weight:800;background:rgba(0,200,150,0.1);border:1px solid var(--tb);border-radius:5px;padding:0.12rem 0.45rem;color:' + a.ptscol + '">' + a.pts + '</span>' +
+        '</div>' +
+        '<div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.4rem">' + a.cost + ' · ' + a.time + '</div>' +
+        '<div style="font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:0.45rem">' + a.detail + '</div>' +
+        '<a href="' + a.link + '" style="font-size:0.75rem;color:var(--teal);font-weight:600;text-decoration:none">' + a.linkLabel + '</a>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('action-cards-list').innerHTML = html;
+}
+</script>
 </body>
 </html>

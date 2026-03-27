@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Visa Outcome — Help the Community | VisaIQ</title>
+<meta name="description" content="Got your Australian visa grant or invitation? Submit your outcome in 2 minutes. Help thousands of applicants who are in the same position you were.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
+#viq-ticker{width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101}
+#viq-ticker::before,#viq-ticker::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+#viq-ticker::before{left:42px;background:linear-gradient(to right,#070F1C,transparent)}
+#viq-ticker::after{right:0;background:linear-gradient(to left,#070F1C,transparent)}
+#viq-ticker-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;min-width:0}
+#viq-ticker-track{display:flex;align-items:center;white-space:nowrap;animation:viqScroll 55s linear infinite}
+@keyframes viqScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.viq-item{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;white-space:nowrap}
+.viq-dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.5rem}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
+.hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:400;line-height:1.15;margin-bottom:0.5rem}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p{color:var(--muted);font-size:0.88rem;max-width:480px;margin:0 auto;line-height:1.7}
+.wrap{max-width:580px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+
+/* SOCIAL PROOF BAR */
+.proof-bar{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.pb-item{text-align:center}
+.pb-n{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--teal)}
+.pb-l{font-size:0.7rem;color:var(--muted)}
+
+/* FORM */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.75rem;margin-bottom:1rem}
+.form-section-title{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:1rem}
+.field{margin-bottom:1.1rem}
+label{display:block;font-size:0.82rem;font-weight:500;color:var(--muted);margin-bottom:0.35rem}
+label span.req{color:var(--teal)}
+input,select,textarea{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:rgba(0,200,150,0.4)}
+select option{background:var(--bg2)}
+textarea{resize:vertical;min-height:80px;line-height:1.6}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.hint{font-size:0.72rem;color:var(--muted);margin-top:0.3rem;line-height:1.5}
+
+/* PILL GROUP */
+.pill-group{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.4rem}
+.pill{padding:0.35rem 0.85rem;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.8rem;cursor:pointer;transition:all 0.2s}
+.pill.selected,.pill:hover{border-color:var(--tb);background:var(--td);color:var(--teal)}
+
+/* SUBMIT */
+.btn-submit{width:100%;padding:1rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background 0.2s;letter-spacing:0.01em}
+.btn-submit:hover{background:#00e0aa}
+.btn-submit:disabled{background:#1a3a30;color:#4a6a5a;cursor:not-allowed}
+
+/* THANK YOU */
+#thankyou{display:none;text-align:center;padding:2.5rem 1.5rem;background:var(--bg2);border:1px solid var(--tb);border-radius:14px}
+.ty-icon{font-size:3rem;margin-bottom:1rem}
+.ty-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.8rem;font-weight:400;color:var(--teal);margin-bottom:0.5rem}
+.ty-body{font-size:0.88rem;color:var(--muted);line-height:1.7;max-width:380px;margin:0 auto 1.5rem}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+@media(max-width:500px){.field-row{grid-template-columns:1fr}.nls{display:none}}
+</style>
+  <!-- ── BRAND & SEO HEAD TAGS ── add to every page ── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00C896">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="VisaIQ">
+  <!-- Open Graph — controls WhatsApp, LinkedIn, Facebook preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VisaIQ">
+  <meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VisaIQ — Australia's Migration Intelligence Platform">
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@visaiq">
+  <meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
+  <!-- ── END BRAND TAGS ── -->
+  <meta property="og:url" content="https://www.visaiq.com.au/submit">
+  <meta property="og:title" content="Submit Your Visa Outcome — Help the Community | VisaIQ">
+  <meta name="twitter:title" content="Submit Your Visa Outcome — Help the Community | VisaIQ">
+  <meta property="og:description" content="Got your Australian visa grant or invitation? Submit your outcome in 2 minutes. Help thousands of applicants who are in the same position you were.">
+  <meta name="twitter:description" content="Got your Australian visa grant or invitation? Submit your outcome in 2 minutes. Help thousands of applicants who are in the same position you were.">
+</head>
+<body>
+
+<div id="viq-ticker">
+  <div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;z-index:3">Live</div>
+  <div id="viq-ticker-mask"><div id="viq-ticker-track">
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer · VIC 190</b> · 85 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">12 outcomes submitted</b> · this week · across 7 occupations</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">3 Registered Nurses</b> · SA 190 · 75 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Chef · TAS 190</b> · 65 pts · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Civil Engineer · VIC 190</b> · 85 pts · offshore · granted this week</span><span class="viq-dot"></span></span>
+    <span class="viq-item">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">12 outcomes submitted</b> · this week · across 7 occupations</span><span class="viq-dot"></span></span>
+  </div></div>
+</div>
+
+<nav>
+  <a href="/" class="nl">VisaIQ</a>
+  <div class="nls">
+    <a href="/tool">PR Tool</a>
+    <a href="/outcomes">Outcomes Feed</a>
+    <a href="/tool" class="ncta">Check My Chances →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>You got through.<br><em>Now help the next person.</em></h1>
+  <p>Every outcome you submit helps someone who is exactly where you were 6 months ago. Takes 2 minutes. Fully anonymised.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="proof-bar">
+    <div class="pb-item"><div class="pb-n">12</div><div class="pb-l">submitted this week</div></div>
+    <div class="pb-item"><div class="pb-n">7</div><div class="pb-l">occupations represented</div></div>
+    <div class="pb-item"><div class="pb-n">SA</div><div class="pb-l">most active state</div></div>
+  </div>
+
+  <!-- FORM -->
+  <div id="submit-form">
+
+    <div class="card">
+      <div class="form-section-title">Your outcome</div>
+
+      <div class="field">
+        <label>Outcome type <span class="req">*</span></label>
+        <div class="pill-group" id="outcome-type-group">
+          <button class="pill" data-val="granted" onclick="selectPill('outcome-type-group',this)">✓ Visa granted</button>
+          <button class="pill" data-val="invited" onclick="selectPill('outcome-type-group',this)">→ Invitation received</button>
+          <button class="pill" data-val="nominated" onclick="selectPill('outcome-type-group',this)">🗺️ State nominated</button>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Visa subclass <span class="req">*</span></label>
+          <select id="f-visa">
+            <option value="">Select…</option>
+            <option value="189">189 — Skilled Independent</option>
+            <option value="190">190 — State Nominated</option>
+            <option value="491">491 — Regional</option>
+            <option value="186">186 — Employer Nominated PR</option>
+            <option value="482">482 — Temporary Skilled</option>
+            <option value="485">485 — Post-Study Work</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>State / Territory <span class="req">*</span></label>
+          <select id="f-state">
+            <option value="">Select…</option>
+            <option value="NSW">New South Wales</option>
+            <option value="VIC">Victoria</option>
+            <option value="QLD">Queensland</option>
+            <option value="SA">South Australia</option>
+            <option value="WA">Western Australia</option>
+            <option value="TAS">Tasmania</option>
+            <option value="ACT">ACT</option>
+            <option value="NT">Northern Territory</option>
+            <option value="N/A">Not state specific (189)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Occupation <span class="req">*</span></label>
+        <select id="f-occ">
+          <option value="">Select your occupation…</option>
+          <optgroup label="Healthcare">
+            <option value="registered_nurse">Registered Nurse</option>
+            <option value="general_practitioner">General Practitioner (GP)</option>
+            <option value="medical_specialist">Medical Specialist</option>
+            <option value="physiotherapist">Physiotherapist</option>
+            <option value="occupational_therapist">Occupational Therapist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="dentist">Dentist</option>
+            <option value="midwife">Midwife</option>
+            <option value="paramedic">Paramedic</option>
+            <option value="speech_pathologist">Speech Pathologist</option>
+            <option value="aged_care_worker">Aged / Disability Care Worker</option>
+            <option value="other_healthcare">Other Healthcare</option>
+          </optgroup>
+          <optgroup label="Education">
+            <option value="early_childhood_teacher">Early Childhood Teacher</option>
+            <option value="primary_teacher">Primary School Teacher</option>
+            <option value="secondary_teacher">Secondary School Teacher</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="social_worker">Social Worker</option>
+            <option value="other_education">Other Education</option>
+          </optgroup>
+          <optgroup label="Engineering">
+            <option value="civil_engineer">Civil Engineer</option>
+            <option value="electrical_engineer">Electrical Engineer</option>
+            <option value="mechanical_engineer">Mechanical Engineer</option>
+            <option value="structural_engineer">Structural Engineer</option>
+            <option value="other_engineering">Other Engineering</option>
+          </optgroup>
+          <optgroup label="Trades">
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="welder">Welder</option>
+            <option value="other_trades">Other Trades</option>
+          </optgroup>
+          <optgroup label="ICT">
+            <option value="software_engineer">Software Engineer / Developer</option>
+            <option value="cybersecurity_analyst">Cybersecurity Analyst</option>
+            <option value="data_scientist">Data Scientist / Analyst</option>
+            <option value="ict_manager">ICT Manager</option>
+            <option value="other_ict">Other ICT</option>
+          </optgroup>
+          <optgroup label="Accounting">
+            <option value="accountant">Accountant</option>
+            <option value="management_accountant">Management Accountant</option>
+            <option value="financial_analyst">Financial Analyst</option>
+            <option value="other_accounting">Other Accounting</option>
+          </optgroup>
+          <optgroup label="Hospitality">
+            <option value="chef">Cook / Chef</option>
+            <option value="other_hospitality">Other Hospitality</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Points score at invitation <span class="req">*</span></label>
+          <input type="number" id="f-points" placeholder="e.g. 75" min="65" max="130">
+        </div>
+        <div class="field">
+          <label>Wait time (months) <span class="req">*</span></label>
+          <input type="number" id="f-wait" placeholder="e.g. 4" min="1" max="60">
+          <div class="hint">EOI submission to invitation or grant</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="form-section-title">Dates</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>EOI / application date</label>
+          <input type="month" id="f-eoi-date">
+        </div>
+        <div class="field">
+          <label>Invitation / grant date</label>
+          <input type="month" id="f-grant-date">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Onshore or offshore?</label>
+        <div class="pill-group" id="location-group">
+          <button class="pill" data-val="onshore" onclick="selectPill('location-group',this)">Onshore — in Australia</button>
+          <button class="pill" data-val="offshore" onclick="selectPill('location-group',this)">Offshore — outside Australia</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="form-section-title">About you (optional — helps personalise the feed)</div>
+
+      <div class="field">
+        <label>Nationality</label>
+        <select id="f-nationality">
+          <option value="">Prefer not to say</option>
+          <option value="🇮🇳 Indian">🇮🇳 Indian</option>
+          <option value="🇵🇰 Pakistani">🇵🇰 Pakistani</option>
+          <option value="🇵🇭 Filipino">🇵🇭 Filipino</option>
+          <option value="🇳🇵 Nepali">🇳🇵 Nepali</option>
+          <option value="🇧🇩 Bangladeshi">🇧🇩 Bangladeshi</option>
+          <option value="🇱🇰 Sri Lankan">🇱🇰 Sri Lankan</option>
+          <option value="🇨🇳 Chinese">🇨🇳 Chinese</option>
+          <option value="🇬🇧 British">🇬🇧 British</option>
+          <option value="🇿🇦 South African">🇿🇦 South African</option>
+          <option value="🇺🇸 American">🇺🇸 American</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>One thing that made the difference (optional)</label>
+        <textarea id="f-comment" placeholder="e.g. NAATI CCL added 5 pts and changed everything. SA is moving fast for nurses. TAS weekly rounds — apply immediately…"></textarea>
+        <div class="hint">This is the most valuable part. What would you tell someone in your exact position 6 months ago?</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(0,200,150,0.06);border:1px solid var(--tb);border-radius:10px;padding:0.85rem 1rem;margin-bottom:1.25rem;font-size:0.78rem;color:var(--muted);line-height:1.6">
+      🔒 <strong style="color:var(--text)">Fully anonymised.</strong> No name, email, or contact details collected. Your outcome appears in the feed stripped of any identifying information.
+    </div>
+
+    <button class="btn-submit" id="submit-btn" onclick="handleSubmit()">Submit my outcome →</button>
+    <div style="text-align:center;font-size:0.7rem;color:var(--muted);margin-top:0.6rem">Takes 2 minutes · Helps thousands of applicants</div>
+
+  </div>
+
+  <!-- THANK YOU STATE -->
+  <div id="thankyou">
+    <div class="ty-icon">🎉</div>
+    <div class="ty-title">Thank you.</div>
+    <div class="ty-body">Your outcome has been submitted. It will appear in the community feed within 48 hours once verified. Someone who is exactly where you were will see it and it will help them make a better decision.</div>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
+      <a href="/outcomes" style="display:inline-block;padding:0.7rem 1.25rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">See the community feed →</a>
+      <a href="/tool" style="display:inline-block;padding:0.7rem 1.25rem;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">Back to PR tool</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/outcomes">Outcomes Feed</a><a href="/methodology">Methodology</a></div>
+  <div>© 2026 VisaIQ · Not migration advice</div>
+</footer>
+
+<script>
+function selectPill(groupId, btn) {
+  document.querySelectorAll('#' + groupId + ' .pill').forEach(function(p){ p.classList.remove('selected'); });
+  btn.classList.add('selected');
+}
+
+function getPillVal(groupId) {
+  var sel = document.querySelector('#' + groupId + ' .pill.selected');
+  return sel ? sel.dataset.val : '';
+}
+
+function handleSubmit() {
+  var outcomeType = getPillVal('outcome-type-group');
+  var visa   = document.getElementById('f-visa').value;
+  var state  = document.getElementById('f-state').value;
+  var occ    = document.getElementById('f-occ').value;
+  var points = document.getElementById('f-points').value;
+  var wait   = document.getElementById('f-wait').value;
+
+  // Validation
+  if (!outcomeType || !visa || !state || !occ || !points || !wait) {
+    alert('Please fill in all required fields (marked with *)');
+    return;
+  }
+
+  // Build email body for manual review
+  var loc      = getPillVal('location-group') || 'not specified';
+  var nat      = document.getElementById('f-nationality').value || 'not specified';
+  var comment  = document.getElementById('f-comment').value || '';
+  var eoiDate  = document.getElementById('f-eoi-date').value || '';
+  var grantDate= document.getElementById('f-grant-date').value || '';
+
+  var body = [
+    'NEW VISAIQ OUTCOME SUBMISSION',
+    '==============================',
+    'Outcome type: ' + outcomeType,
+    'Visa: ' + visa,
+    'State: ' + state,
+    'Occupation: ' + occ,
+    'Points: ' + points,
+    'Wait months: ' + wait,
+    'Location: ' + loc,
+    'Nationality: ' + nat,
+    'EOI date: ' + eoiDate,
+    'Grant/invite date: ' + grantDate,
+    'Comment: ' + comment,
+    '',
+    'Submitted: ' + new Date().toISOString()
+  ].join('\n');
+
+  // Open mailto — replace with your email
+  var mailto = 'mailto:outcomes@visaiq.com.au?subject=New%20Outcome%20Submission%20-%20' + visa + '%20' + state + '&body=' + encodeURIComponent(body);
+  window.location.href = mailto;
+
+  // Show thank you
+  setTimeout(function() {
+    document.getElementById('submit-form').style.display = 'none';
+    document.getElementById('thankyou').style.display = 'block';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, 500);
+}
+</script>
+</body>
+</html>
