@@ -1,0 +1,27 @@
+{
+  "last_updated": "Dec 2025",
+  "source": "DHA SkillSelect December 2025 Quarterly Report + community submitted outcomes",
+  "note": "Pool sizes are estimates. Update quarterly from DHA SkillSelect reports at immi.homeaffairs.gov.au/visas/working-in-australia/skillselect",
+  "occupations": [
+    {"id":"registered_nurse","label":"Registered Nurse","anzsco":"254499","tier":1,"pool":2100,"c189":75,"competitive_pts":75,"avg_wait_months":5,"trend":"shrinking","trend_note":"Tier 1 — invitations outpacing submissions","last_updated":"Dec 2025"},
+    {"id":"general_practitioner","label":"General Practitioner","anzsco":"253111","tier":1,"pool":820,"c189":80,"competitive_pts":80,"avg_wait_months":5,"trend":"shrinking","trend_note":"Critical shortage — fast movement","last_updated":"Dec 2025"},
+    {"id":"physiotherapist","label":"Physiotherapist","anzsco":"252511","tier":1,"pool":1180,"c189":85,"competitive_pts":82,"avg_wait_months":6,"trend":"shrinking","trend_note":"Tier 1 healthcare — regular invitations","last_updated":"Dec 2025"},
+    {"id":"pharmacist","label":"Pharmacist","anzsco":"251511","tier":1,"pool":720,"c189":80,"competitive_pts":78,"avg_wait_months":6,"trend":"shrinking","trend_note":"QLD 491 active — fast movement","last_updated":"Dec 2025"},
+    {"id":"aged_care_worker","label":"Aged Care Worker","anzsco":"423111","tier":1,"pool":640,"c189":65,"competitive_pts":65,"avg_wait_months":4,"trend":"shrinking","trend_note":"Critical shortage — lowest cutoff","last_updated":"Dec 2025"},
+    {"id":"early_childhood_teacher","label":"Early Childhood Teacher","anzsco":"241111","tier":2,"pool":2240,"c189":85,"competitive_pts":80,"avg_wait_months":11,"trend":"stable","trend_note":"Tier 2 — steady invitation rate","last_updated":"Dec 2025"},
+    {"id":"teacher_primary","label":"Primary School Teacher","anzsco":"241213","tier":2,"pool":1820,"c189":85,"competitive_pts":80,"avg_wait_months":13,"trend":"stable","trend_note":"Tier 2 — QLD 491 active","last_updated":"Dec 2025"},
+    {"id":"teacher_secondary","label":"Secondary School Teacher","anzsco":"241411","tier":2,"pool":2080,"c189":75,"competitive_pts":75,"avg_wait_months":13,"trend":"stable","trend_note":"Tier 2 — VIC at 65+5pts Nov 2025","last_updated":"Dec 2025"},
+    {"id":"social_worker","label":"Social Worker","anzsco":"272511","tier":2,"pool":2580,"c189":75,"competitive_pts":78,"avg_wait_months":15,"trend":"stable","trend_note":"Tier 2 — multiple cutoffs 75–90pts","last_updated":"Dec 2025"},
+    {"id":"civil_engineer","label":"Civil Engineer","anzsco":"233211","tier":3,"pool":4520,"c189":85,"competitive_pts":85,"avg_wait_months":16,"trend":"stable","trend_note":"Tier 3 — state nomination faster at this level","last_updated":"Dec 2025"},
+    {"id":"mechanical_engineer","label":"Mechanical Engineer","anzsco":"233512","tier":3,"pool":3140,"c189":85,"competitive_pts":85,"avg_wait_months":17,"trend":"stable","trend_note":"Tier 3 — QLD and WA most active","last_updated":"Dec 2025"},
+    {"id":"electrical_engineer","label":"Electrical Engineer","anzsco":"233311","tier":3,"pool":3080,"c189":85,"competitive_pts":85,"avg_wait_months":15,"trend":"stable","trend_note":"Tier 3 — VIC and NSW active","last_updated":"Dec 2025"},
+    {"id":"electrician","label":"Electrician","anzsco":"341111","tier":3,"pool":1580,"c189":65,"competitive_pts":65,"avg_wait_months":14,"trend":"shrinking","trend_note":"Tier 3 — 65pts invited Nov 2025","last_updated":"Dec 2025"},
+    {"id":"plumber","label":"Plumber","anzsco":"334111","tier":3,"pool":1280,"c189":70,"competitive_pts":70,"avg_wait_months":15,"trend":"stable","trend_note":"Tier 3 — less competitive than electricians","last_updated":"Dec 2025"},
+    {"id":"chef","label":"Cook / Chef","anzsco":"351311","tier":null,"pool":3580,"c189":null,"competitive_pts":65,"avg_wait_months":16,"trend":"stable","trend_note":"STSOL — no 189 pathway. TAS/SA 190 only","last_updated":"Dec 2025"},
+    {"id":"software_engineer","label":"Software Engineer","anzsco":"261313","tier":4,"pool":8240,"c189":90,"competitive_pts":92,"avg_wait_months":21,"trend":"growing","trend_note":"Tier 4 — pool growing faster than invitations","last_updated":"Dec 2025"},
+    {"id":"ict_manager","label":"ICT Manager","anzsco":"135111","tier":4,"pool":4180,"c189":90,"competitive_pts":90,"avg_wait_months":20,"trend":"growing","trend_note":"Tier 4 — oversupplied","last_updated":"Dec 2025"},
+    {"id":"data_analyst","label":"Data Analyst / ICT BA","anzsco":"261111","tier":4,"pool":3240,"c189":90,"competitive_pts":92,"avg_wait_months":21,"trend":"growing","trend_note":"Tier 4 — ICT oversupplied","last_updated":"Dec 2025"},
+    {"id":"accountant","label":"Accountant","anzsco":"221111","tier":4,"pool":15240,"c189":null,"competitive_pts":65,"avg_wait_months":22,"trend":"growing","trend_note":"Tier 4 — NOT invited on 189 in 2025-26. SA 190 only realistic path","last_updated":"Dec 2025"},
+    {"id":"auditor","label":"External Auditor","anzsco":"221213","tier":4,"pool":2840,"c189":90,"competitive_pts":90,"avg_wait_months":20,"trend":"growing","trend_note":"Tier 4 — VIC 190 at 90pts most active","last_updated":"Dec 2025"}
+  ]
+}
