@@ -29,6 +29,8 @@
   <url><loc>https://www.visaiq.com.au/submit</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.visaiq.com.au/methodology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
+  <url><loc>https://www.visaiq.com.au/student-visa</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Nationality landing pages — pending build -->
   <url><loc>https://www.visaiq.com.au/australia-pr-for-indians</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/australia-pr-for-pakistanis</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
