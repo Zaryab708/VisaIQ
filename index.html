@@ -110,6 +110,28 @@ hr{border:none;border-top:1px solid var(--border)}
 .ptab{padding:0.5rem 1rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
 .ptab.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
 .ptc{display:none}.ptc.active{display:block;animation:fu 0.3s ease}
+/* Audience cards + pathway tabs */
+.atab{flex:1;padding:0.75rem 0.5rem;background:transparent;border:none;border-bottom:3px solid transparent;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.2s;white-space:nowrap;text-align:center}
+.atab:hover{color:var(--text)}
+.atab.active{color:var(--teal);border-bottom-color:var(--teal)}
+.atab-panel{display:none;animation:fu 0.2s ease}
+.atab-panel.active{display:block}
+/* Audience selector cards */
+.acard{display:flex;flex-direction:column;align-items:flex-start;gap:0.35rem;background:#0D1B2E;border:1px solid #1A3050;border-bottom:3px solid transparent;border-radius:14px 14px 0 0;padding:1.4rem 1.5rem 1.25rem;cursor:pointer;transition:all 0.2s;text-align:left;width:100%}
+.acard:hover{border-color:#2A4A6A;border-bottom-color:transparent}
+.acard.active{border-color:rgba(0,200,150,0.35);border-bottom-color:var(--teal);background:rgba(0,200,150,0.06)}
+.acard-icon{font-size:2rem;line-height:1;margin-bottom:0.3rem}
+.acard-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#E8EDF5;line-height:1.3}
+.acard-sub{font-size:0.75rem;color:#7A8FA8;line-height:1.45}
+/* Tool grid inside panels */
+.atgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.75rem}
+.atc{display:flex;flex-direction:column;gap:0.4rem;background:#0D1B2E;border:1px solid #1A3050;border-radius:12px;padding:1.1rem 1.25rem;text-decoration:none;color:inherit;transition:all 0.2s;position:relative}
+.atc:hover{border-color:var(--teal);box-shadow:0 0 18px rgba(0,200,150,0.12);transform:translateY(-2px)}
+.atc-badge{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--teal);background:var(--td);border:1px solid var(--tb);border-radius:4px;padding:0.1rem 0.45rem;width:fit-content;width:-moz-fit-content}
+.atc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;color:#E8EDF5;line-height:1.3}
+.atc-desc{font-size:0.72rem;color:#7A8FA8;line-height:1.55;flex:1}
+.atc-link{font-size:0.72rem;font-weight:600;color:var(--teal);margin-top:0.25rem}
+@media(max-width:600px){#audience-cards{grid-template-columns:1fr 1fr}.acard{border-radius:10px;border-bottom-width:3px}}
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .rsec{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
 .rsec::before{content:'';position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(0,200,150,0.08),transparent 70%);pointer-events:none}
@@ -197,19 +219,10 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
       <p>Australia's migration intelligence platform — real DHA data, personalised to your occupation, points, and state. Free — no signup needed.</p>
       <div class="hbtns">
         <a href="/tool" class="bth">Check My PR Chances →</a>
-        <a href="/student-pathway" class="btg">Student Pathway</a>
       </div>
-      <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1.25rem">The government tells you the rules. We tell you what the rules mean for <em>your</em> specific profile.</p>
 
-      <!-- Pathway pills -->
-      <div class="pathway-pills">
-        <a href="/189-visa" class="ppill ppill-green">189 Independent</a>
-        <a href="/190-visa" class="ppill ppill-green">190 State Nominated</a>
-        <a href="/491-visa" class="ppill ppill-green">491 Regional +15pts</a>
-        <a href="/482-visa" class="ppill ppill-blue">482 Sponsored</a>
-        <a href="/485-visa" class="ppill ppill-blue">485 Post-Study</a>
-        <a href="/student-pathway" class="ppill ppill-purple">Student → PR</a>
-      </div>
+
+
 
       <!-- Stats -->
       <div class="hero-stats" style="margin-top:2rem">
@@ -245,186 +258,187 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 <hr>
 
 <!-- TOOLS SECTION -->
-<section>
+<section style="padding-top:2.5rem;padding-bottom:2.5rem">
   <div class="sw">
-    <div class="slabel">Tools &amp; Intelligence</div>
-    <h2 class="stitle">Every tool you need.<br>All in one place.</h2>
-    <p class="ssub">Four pillars serving the same anxious migrant at every stage of the same journey.</p>
+    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-bottom:1.5rem">2.9 million people in Australia on temporary visas — which pathway is yours?</p>
 
-    <div class="ptabs">
-      <button class="ptab active" onclick="sw('skilled',this)">🎯 Skilled Migration</button>
-      <button class="ptab" onclick="sw('student',this)">🎓 Student Pathways</button>
-      <button class="ptab" onclick="sw('employer',this)">💼 Employer Sponsored</button>
-      <button class="ptab" onclick="sw('rounds',this)">📡 Round Tracker</button>
+    <!-- ── AUDIENCE CARDS AS TAB TRIGGERS ──────────────────────────── -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.65rem;margin-bottom:0px" id="audience-cards">
+      <button class="acard active" onclick="showPathway('skilled',this)">
+        <div class="acard-icon">🎯</div>
+        <div class="acard-title">Check my PR chances</div>
+        <div class="acard-sub">Points · States · EOI queue</div>
+      </button>
+      <button class="acard" onclick="showPathway('student',this)">
+        <div class="acard-icon">🎓</div>
+        <div class="acard-title">Plan my student pathway</div>
+        <div class="acard-sub">500 visa · 485 · Degree to PR</div>
+      </button>
+      <button class="acard" onclick="showPathway('482',this)">
+        <div class="acard-icon">💼</div>
+        <div class="acard-title">Understand my 482 visa</div>
+        <div class="acard-sub">Skills in demand · 186 PR</div>
+      </button>
+      <button class="acard" onclick="showPathway('partner',this)">
+        <div class="acard-icon">💑</div>
+        <div class="acard-title">Partner or family visa</div>
+        <div class="acard-sub">820 onshore · 309 offshore</div>
+      </button>
     </div>
 
-    <!-- SKILLED -->
-    <div class="ptc active" id="tab-skilled">
-      <div class="tgrid">
-        <a href="/tool" class="tc">
-          <div class="tbadge hot">Most Used</div>
-          <div class="ti">📊</div>
-          <div class="tn">Full PR Intelligence Report</div>
-          <div class="td2">4-screen analysis. Official DHA points score, EOI queue position, all 8 states, 12-month action plan and shareable scorecard.</div>
-          <div class="tm">Your full analysis — free</div>
+    <!-- Active indicator strip -->
+    <div style="height:3px;background:var(--bg2);margin-bottom:1.75rem;position:relative">
+      <div id="acard-indicator" style="position:absolute;top:0;height:3px;background:var(--teal);width:25%;left:0;transition:left 0.2s ease"></div>
+    </div>
+
+    <!-- ── SKILLED MIGRATION ──────────────────────────────────────── -->
+    <div class="atab-panel active" id="atab-skilled">
+      <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:1.25rem">Your PR pathway starts here</div>
+      <div class="atgrid">
+        <a href="/tool" class="atc">
+          <div class="atc-badge">Most used</div>
+          <div class="atc-name">Full PR Intelligence Report</div>
+          <div class="atc-desc">4-screen analysis. DHA points, EOI queue, all 8 states, 12-month action plan and shareable scorecard.</div>
+          <div class="atc-link">Start free →</div>
         </a>
-        <a href="/points-calculator" class="tc">
-          <div class="ti">🔢</div>
-          <div class="tn">Points Calculator</div>
-          <div class="td2">Official DHA points test with real cutoffs. New 4-tier 189 invitation system explained by occupation.</div>
-          <div class="tm">Instant DHA points score</div>
+        <a href="/points-calculator" class="atc">
+          <div class="atc-name">Points Calculator</div>
+          <div class="atc-desc">Official DHA Schedule 6D. Real 2025–26 cutoffs by occupation. 189 tier system explained.</div>
+          <div class="atc-link">Calculate →</div>
         </a>
-        <a href="/eoi-queue" class="tc" style="border-color:rgba(0,200,150,0.25)">
-          <div class="tbadge" style="background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3)">New</div>
-          <div class="ti">📈</div>
-          <div class="tn">EOI Backlog Intelligence</div>
-          <div class="td2">How long is your queue? Estimated EOIs ahead of you, Date of Effect strategy tool, backlog by occupation, and exactly when to submit.</div>
-          <div class="tm">Your queue position →</div>
+        <a href="/eoi-queue" class="atc">
+          <div class="atc-badge" style="color:#10B981;border-color:rgba(16,185,129,0.3)">New</div>
+          <div class="atc-name">EOI Backlog Intelligence</div>
+          <div class="atc-desc">Queue depth by occupation and points band. Date of Effect strategy tool. When to submit your EOI.</div>
+          <div class="atc-link">Check queue →</div>
         </a>
-        <a href="/189-visa" class="tc">
-          <div class="ti">🏆</div>
-          <div class="tn">189 Independent Visa</div>
-          <div class="td2">No employer or state needed. Understand the new 4-tier invitation system and where your occupation sits.</div>
-          <div class="tm">Nov 2025 cutoffs by occupation</div>
+        <a href="/189-visa" class="atc">
+          <div class="atc-name">189 Independent Visa</div>
+          <div class="atc-desc">No employer or state needed. New 4-tier invitation system and Nov 2025 cutoffs by occupation.</div>
+          <div class="atc-link">189 guide →</div>
         </a>
-        <a href="/190-visa" class="tc">
-          <div class="ti">🎖️</div>
-          <div class="tn">190 State Nomination</div>
-          <div class="td2">+5 bonus points. All 8 states compared. Which is fastest for your occupation. 2025–26 allocations.</div>
-          <div class="tm">All 8 states compared</div>
+        <a href="/190-visa" class="atc">
+          <div class="atc-name">190 State Nomination</div>
+          <div class="atc-desc">+5 bonus points. All 8 states compared — processing times, cutoffs, offshore eligibility.</div>
+          <div class="atc-link">Compare states →</div>
         </a>
-        <a href="/491-visa" class="tc">
-          <div class="ti">🌏</div>
-          <div class="tn">491 Regional Visa</div>
-          <div class="td2">+15 bonus points — the single biggest points boost available. Fastest PR for most profiles under 80 points.</div>
-          <div class="tm">+15 pts — biggest bonus available</div>
+        <a href="/491-visa" class="atc">
+          <div class="atc-name">491 Regional Visa</div>
+          <div class="atc-desc">+15 bonus points — the single biggest points boost available. Fastest PR for most profiles under 80 pts.</div>
+          <div class="atc-link">491 guide →</div>
         </a>
-        <a href="/state-comparator" class="tc">
-          <div class="ti">🗺️</div>
-          <div class="tn">State Comparator</div>
-          <div class="td2">All 8 states side by side. Processing times, requirements, priority occupations and 2025–26 allocations.</div>
-          <div class="tm">All states at a glance</div>
+        <a href="/state-comparator" class="atc">
+          <div class="atc-name">State Comparator</div>
+          <div class="atc-desc">All 8 states side by side. Priority occupations, allocations and speed for your profile.</div>
+          <div class="atc-link">Compare →</div>
         </a>
-        <a href="/occupation-demand" class="tc">
-          <div class="ti">📋</div>
-          <div class="tn">Occupation Demand Score</div>
-          <div class="td2">Is your occupation Tier 1, 2, 3 or 4 under the new 189 system? EOI pool and state demand by occupation.</div>
-          <div class="tm">189 tier + state demand</div>
+        <a href="/occupation-demand" class="atc">
+          <div class="atc-name">Occupation Demand Score</div>
+          <div class="atc-desc">Is your occupation Tier 1, 2, 3 or 4 under the new 189 system? EOI pool and state demand data.</div>
+          <div class="atc-link">Check tier →</div>
         </a>
+      </div>
+      <div style="margin-top:1.1rem;font-size:0.8rem;color:var(--muted)">
+        <a href="/rounds" style="color:var(--teal);font-weight:600;text-decoration:none">Live round tracker</a> — updated within 48 hours of every invitation round
       </div>
     </div>
 
-    <!-- STUDENT -->
-    <div class="ptc" id="tab-student">
-
-      <!-- PRIMARY CARD — full width -->
-      <a href="/student-pathway" style="display:block;background:linear-gradient(135deg,rgba(0,200,150,0.09),rgba(13,27,46,0.9));border:1px solid rgba(0,200,150,0.35);border-radius:16px;padding:1.5rem;text-decoration:none;color:inherit;margin-bottom:0.85rem;position:relative;overflow:hidden;transition:border-color 0.2s">
-        <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(0,200,150,0.08),transparent 70%);pointer-events:none"></div>
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap">
-          <div style="flex:1;min-width:200px">
-            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem">
-              <span style="font-size:1.3rem">🎓</span>
-              <span style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800">Student PR Intelligence Platform</span>
-              <span style="font-size:0.62rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:5px;background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.3)">Everything in one page</span>
-            </div>
-            <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:0.85rem">Enter your degree, nationality and status — everything below personalises to you instantly.</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">PR Readiness Score</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Degree → PR Checker</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">NAATI +5 pts</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Regional Bonus Calc</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Live Outcomes Feed</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">8-State Guide</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Work Hours Tracker</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">485 Strategy</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Degree Regret Calc</span>
-              <span style="font-size:0.7rem;padding:0.2rem 0.55rem;background:var(--td);border:1px solid var(--tb);border-radius:5px;color:var(--teal)">Offshore Checklist</span>
-            </div>
-          </div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--teal);flex-shrink:0;align-self:center">Start here →</div>
-        </div>
-      </a>
-
-      <!-- SECONDARY CARDS -->
-      <div class="tgrid">
-        <a href="/485-visa" class="tc">
-          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
-          <div class="ti">⏱️</div>
-          <div class="tn">485 Visa Guide</div>
-          <div class="td2">Duration by degree and location. Work rights — 48hr cap applies year-round. Standalone reference page.</div>
-          <div class="tm">485 details →</div>
+    <!-- ── STUDENT PATHWAY ────────────────────────────────────────── -->
+    <div class="atab-panel" id="atab-student">
+      <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:1.25rem">From student visa to Australian PR</div>
+      <div class="atgrid">
+        <a href="/student-pathway" class="atc">
+          <div class="atc-badge">Complete platform</div>
+          <div class="atc-name">Student PR Intelligence Platform</div>
+          <div class="atc-desc">Enter your degree, nationality and status. PR readiness score, degree checker, NAATI calculator, 8-state guide and live outcomes feed.</div>
+          <div class="atc-link">Start here →</div>
         </a>
-        <a href="/best-degrees-pr" class="tc">
-          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
-          <div class="ti">🎯</div>
-          <div class="tn">Best Degrees for PR</div>
-          <div class="td2">Degree-by-degree PR outlook. Which fields lead to fast PR. Which ones don't. Before you enrol.</div>
-          <div class="tm">Compare degrees →</div>
+        <a href="/student-visa" class="atc">
+          <div class="atc-name">Student Visa Guide</div>
+          <div class="atc-desc">500 visa conditions, work rights, transition to 485, what to do before you graduate.</div>
+          <div class="atc-link">500 visa guide →</div>
         </a>
-        <a href="/regional-study-bonus" class="tc">
-          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
-          <div class="ti">🌱</div>
-          <div class="tn">Regional Study Bonus</div>
-          <div class="td2">+5 study points + 491 nomination (+15 pts) = 20-point advantage. The most powerful combo for borderline scores.</div>
-          <div class="tm">+20 pts strategy →</div>
+        <a href="/485-visa" class="atc">
+          <div class="atc-name">485 Post-Study Visa</div>
+          <div class="atc-desc">Duration by degree level and city. Unlimited work rights. New 25-day processing target. Pathway to PR.</div>
+          <div class="atc-link">485 details →</div>
         </a>
+        <a href="/naati-ccl" class="atc">
+          <div class="atc-name">NAATI CCL — 5 bonus points</div>
+          <div class="atc-desc">$800. 3 months. 5 DHA points. Available for Urdu, Hindi, Nepali, Tagalog, Bengali, Vietnamese and more.</div>
+          <div class="atc-link">NAATI guide →</div>
+        </a>
+        <a href="/best-degrees-pr" class="atc">
+          <div class="atc-name">Best Degrees for PR</div>
+          <div class="atc-desc">Degree-by-degree PR outlook. Which fields lead to fast PR. Which ones trap you in a 15,000-person queue.</div>
+          <div class="atc-link">Compare degrees →</div>
+        </a>
+        <a href="/regional-study-bonus" class="atc">
+          <div class="atc-name">Regional Study Bonus</div>
+          <div class="atc-desc">+5 study points + 491 nomination (+15 pts) = 20-point advantage. Most powerful combo for borderline scores.</div>
+          <div class="atc-link">+20 pts strategy →</div>
+        </a>
+      </div>
+      <div style="margin-top:1.1rem;font-size:0.8rem;color:var(--muted)">
+        39% of international students achieve PR. Planning early is the difference. <a href="/student-pathway" style="color:var(--teal);font-weight:600;text-decoration:none">Check your pathway now →</a>
       </div>
     </div>
 
-    <!-- EMPLOYER -->
-    <div class="ptc" id="tab-employer">
-      <div class="tgrid">
-        <a href="/482-visa" class="tc">
-          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
-          <div class="ti">💼</div>
-          <div class="tn">482 Skills in Demand Visa</div>
-          <div class="td2">Complete A–Z guide. Check your eligibility, find your stream, occupation checker, PR pathway, costs and conditions. Everything in one place.</div>
-          <div class="tm">Full tool — live now</div>
+    <!-- ── 482 VISA ───────────────────────────────────────────────── -->
+    <div class="atab-panel" id="atab-482">
+      <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:1.25rem">Employer sponsored pathway to permanent residency</div>
+      <div class="atgrid">
+        <a href="/482-visa" class="atc">
+          <div class="atc-badge">Complete guide</div>
+          <div class="atc-name">482 Skills in Demand Complete Guide</div>
+          <div class="atc-desc">Three streams explained. 456 occupations. Eligibility checker, costs, processing times and PR pathway. Everything in one page.</div>
+          <div class="atc-link">Full guide →</div>
         </a>
-        <a href="/482-to-186" class="tc">
-          <div class="tbadge" style="background:var(--td);color:var(--teal);border:1px solid var(--tb)">Live</div>
-          <div class="ti">🔄</div>
-          <div class="tn">482 → 186 PR Calculator</div>
-          <div class="td2">Already on a 482 visa? Enter your start date and see exactly when you become eligible for permanent residency via the 186 ENS pathway.</div>
-          <div class="tm">PR timeline calculator</div>
+        <a href="/482-to-186" class="atc">
+          <div class="atc-name">482 to 186 PR Timeline Calculator</div>
+          <div class="atc-desc">Already on a 482? Enter your start date and see exactly when you qualify for 186 permanent residency.</div>
+          <div class="atc-link">Calculate timeline →</div>
         </a>
+        <a href="/state-comparator" class="atc">
+          <div class="atc-name">State Comparator for 482 holders</div>
+          <div class="atc-desc">If your employer switches you to a state-nominated pathway — which state is fastest for your occupation?</div>
+          <div class="atc-link">Compare states →</div>
+        </a>
+      </div>
+      <div style="margin-top:1.1rem;font-size:0.8rem;color:var(--muted)">
+        482 visa salary threshold rising to $79,499 from 1 July 2026. <a href="/482-visa" style="color:var(--teal);font-weight:600;text-decoration:none">Check your eligibility now →</a>
       </div>
     </div>
 
-    <!-- ROUNDS -->
-    <div class="ptc" id="tab-rounds">
-      <div class="rsec">
-        <div class="slabel" style="margin-bottom:0.5rem">Live Intelligence</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:0.5rem">Invitation Round Tracker</h3>
-        <p style="font-size:0.85rem;color:var(--muted);max-width:480px;line-height:1.6">Every federal and state invitation round — published in plain English within 48 hours. The feature that turns one-time visitors into monthly returning users.</p>
-        <div class="rgrid">
-          <div class="ri">
-            <div class="rst">NSW 190</div>
-            <div class="rdt">March 2026 round · EOI deadline 1 Mar 2026</div>
-            <div class="rb rbl">Active — Round Open</div>
-          </div>
-          <div class="ri">
-            <div class="rst">Federal 189</div>
-            <div class="rdt">Nov 2025 round · 10,000 invitations issued</div>
-            <div class="rb rbc">Completed · Analysis Live</div>
-          </div>
-          <div class="ri">
-            <div class="rst">TAS 190/491</div>
-            <div class="rdt">Weekly rounds · Fast processing</div>
-            <div class="rb rbl">Weekly rounds active</div>
-          </div>
-          <div class="ri">
-            <div class="rst">SA 190</div>
-            <div class="rdt">Monthly rounds · Talent &amp; Innovation stream</div>
-            <div class="rb rbu">Processing backlog</div>
-          </div>
-        </div>
-        <a href="/rounds" style="display:inline-block;margin-top:1.25rem;padding:0.7rem 1.4rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none">View All Rounds →</a>
-        <button onclick="showRoundsGate()" style="display:inline-block;margin-top:1.25rem;margin-left:0.75rem;padding:0.7rem 1.4rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer">🔔 Get Round Alerts</button>
+    <!-- ── PARTNER VISA ───────────────────────────────────────────── -->
+    <div class="atab-panel" id="atab-partner">
+      <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:1.25rem">Bringing your partner to Australia</div>
+      <div class="atgrid">
+        <a href="/partner-visa" class="atc">
+          <div class="atc-badge">Complete guide</div>
+          <div class="atc-name">Partner Visa Complete Guide</div>
+          <div class="atc-desc">820/801 onshore and 309/100 offshore pathways explained. Requirements, costs, evidence checklist and timeline.</div>
+          <div class="atc-link">Partner visa guide →</div>
+        </a>
+        <a href="/partner-visa" class="atc">
+          <div class="atc-name">Processing Time Calculator</div>
+          <div class="atc-desc">820/801 onshore · 309/100 offshore. Current DHA processing times with nationality breakdowns.</div>
+          <div class="atc-link">Check timeline →</div>
+        </a>
+        <a href="/partner-visa-student-visa" class="atc">
+          <div class="atc-name">Partner Visa While on Student Visa</div>
+          <div class="atc-desc">Can you apply for a partner visa while on a 500 student visa? Work rights for your partner. What changes when you graduate.</div>
+          <div class="atc-link">Student visa guide →</div>
+        </a>
+      </div>
+      <div style="margin-top:1.1rem;font-size:0.8rem;color:var(--muted)">
+        Current processing time 12 to 20 months for most applications. <a href="/partner-visa" style="color:var(--teal);font-weight:600;text-decoration:none">Check your timeline now →</a>
       </div>
     </div>
+
   </div>
 </section>
+
 
 <hr>
 
@@ -449,18 +463,18 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
             <div><div style="font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal)">VisaIQ</div><div style="font-size:0.68rem;color:var(--muted)">Migration Intelligence</div></div>
             <div style="font-size:0.68rem;color:var(--muted)">March 2026</div>
           </div>
-          <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.75rem">Software Engineer · NSW · 85 pts</div>
+          <div style="font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.75rem">Registered Nurse · SA · 75 pts</div>
           <div style="font-size:0.7rem;color:var(--muted);margin-bottom:0.5rem">12-month historical invitation rate</div>
           <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">189</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:42%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">42%</span></div>
           <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">190</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:68%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">68%</span></div>
           <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;font-size:0.75rem"><span style="width:50px;color:var(--muted);flex-shrink:0">491</span><div style="flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden"><div style="height:100%;width:85%;border-radius:3px;background:var(--teal)"></div></div><span style="width:32px;text-align:right;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700">85%</span></div>
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin-bottom:0.75rem">
-            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">85</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">DHA Points</div></div>
-            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">🔴 T4</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Tier</div></div>
-            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">90pts</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Cutoff</div></div>
-            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">3/8</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">States ✓</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">75</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">DHA Points</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#10B981">🟢 T1</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Tier</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">75pts</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">189 Cutoff</div></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--teal)">6/8</div><div style="font-size:0.62rem;color:var(--muted);margin-top:0.1rem">States ✓</div></div>
           </div>
-          <div style="text-align:center;padding:0.65rem;background:var(--td);border:1px solid var(--tb);border-radius:8px;margin-bottom:0.65rem"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--teal)">71</div><div style="font-size:0.68rem;color:var(--muted)">PR Chance Score / 100</div></div>
+          <div style="text-align:center;padding:0.65rem;background:var(--td);border:1px solid var(--tb);border-radius:8px;margin-bottom:0.65rem"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--teal)">82</div><div style="font-size:0.68rem;color:var(--muted)">PR Chance Score / 100</div></div>
           <div style="text-align:center;font-size:0.68rem;color:var(--muted)">Free analysis at <span style="color:var(--teal)">visaiq.com.au</span></div>
         </div>
       </div>
@@ -543,17 +557,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 
 <!-- gap removed -->
 
-<hr>
 
-<!-- FINAL CTA -->
-<section style="padding-top:3rem;padding-bottom:3rem">
-  <div class="sw" style="text-align:center">
-    <div class="hbadge" style="margin-bottom:1.25rem">Free · No signup · 60 seconds</div>
-    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:0.75rem">Ready to understand your<br>Australian PR options?</h2>
-    <p style="color:var(--muted);font-size:0.95rem;max-width:420px;margin:0 auto 1.75rem;line-height:1.7">Enter your occupation, points and location. Get your full report. Download your scorecard.</p>
-    <a href="/tool" class="bth" style="display:inline-block">Get My PR Score →</a>
-  </div>
-</section>
 
 <div class="dis"><strong>⚠️ Important:</strong> VisaIQ provides AI-informed research based on publicly available DHA data and community-submitted timelines. This is not migration advice. For advice specific to your circumstances, consult a MARA-registered migration agent.</div>
 
@@ -595,6 +599,27 @@ function sw(id,btn){
   document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
   btn.classList.add('active');
+}
+function showTab(id, btn) {
+  document.querySelectorAll('.atab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.atab').forEach(function(b){b.classList.remove('active');});
+  var panel = document.getElementById('atab-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+function showPathway(id, btn) {
+  // Update audience cards
+  document.querySelectorAll('.acard').forEach(function(c){c.classList.remove('active');});
+  if (btn) btn.classList.add('active');
+  // Move indicator
+  var cards = document.querySelectorAll('.acard');
+  var idx = Array.prototype.indexOf.call(cards, btn);
+  var ind = document.getElementById('acard-indicator');
+  if (ind) ind.style.left = (idx * 25) + '%';
+  // Show panel
+  document.querySelectorAll('.atab-panel').forEach(function(p){p.classList.remove('active');});
+  var panel = document.getElementById('atab-' + id);
+  if (panel) panel.classList.add('active');
 }
 function handleEmail(){
   const inp=document.querySelector('.ei');
@@ -668,7 +693,7 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
   var FALLBACK = [
     {flag:'🇮🇳',occupation_label:'Registered Nurse',state:'SA',visa:'190',points:75,wait_months:4,status:'granted',days_ago:3,onshore:true},
     {flag:'🇵🇰',occupation_label:'Accountant',state:'SA',visa:'190',points:70,wait_months:6,status:'invited',days_ago:18,onshore:true},
-    {flag:'🇵🇭',occupation_label:'Software Engineer',state:'ACT',visa:'491',points:80,wait_months:5,status:'granted',days_ago:5,onshore:true},
+    {flag:'🇵🇭',occupation_label:'Registered Nurse',state:'QLD',visa:'190',points:75,wait_months:4,status:'granted',days_ago:5,onshore:false},
     {flag:'🇳🇵',occupation_label:'Cook / Chef',state:'TAS',visa:'190',points:65,wait_months:3,status:'granted',days_ago:6,onshore:true},
     {flag:'🇮🇳',occupation_label:'Civil Engineer',state:'VIC',visa:'190',points:85,wait_months:7,status:'invited',days_ago:7,onshore:false},
     {flag:'🇵🇭',occupation_label:'Physiotherapist',state:'QLD',visa:'190',points:75,wait_months:2,status:'invited',days_ago:11,onshore:true},
