@@ -9,6 +9,7 @@
 
   <!-- Visa subclass pages -->
   <url><loc>https://www.visaiq.com.au/student-visa</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.visaiq.com.au/partner-visa-while-on-student-visa</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/partner-visa</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visaiq.com.au/482-visa</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visaiq.com.au/485-visa</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -20,12 +21,15 @@
   <!-- Tools and intelligence -->
   <url><loc>https://www.visaiq.com.au/points-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visaiq.com.au/eoi-queue</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.visaiq.com.au/genuine-student-requirement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/student-pathway</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/state-comparator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/occupation-demand</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visaiq.com.au/best-degrees-pr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.visaiq.com.au/regional-study-bonus</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.visaiq.com.au/timeline</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.visaiq.com.au/genuine-student-requirement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Community and trust -->
   <url><loc>https://www.visaiq.com.au/submit</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
