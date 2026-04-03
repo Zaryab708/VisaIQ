@@ -432,7 +432,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </div>
 
 <!-- SECTION 4: NAATI CALLOUT -->
-<div class="naati-section" id="naati-section">
+<div class="naati-section" id="naati-section" style="display:none">
   <div class="naati-title">🏆 5 points you might be missing</div>
   <div class="naati-body">The NAATI Credentialled Community Language (CCL) test adds 5 points to your DHA score — the same as a full year of Australian work experience. If your language is on the NAATI list, this is the highest-value single action you can take before graduation. $800 and 3 months of preparation.</div>
   <div id="naati-lang-block"></div>
@@ -623,6 +623,18 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 
 </div><!-- end .wrap -->
 </div><!-- end .results -->
+
+<div style="background:var(--bg2);border-top:1px solid var(--border);padding:1.25rem 1.5rem">
+  <div style="max-width:880px;margin:0 auto">
+    <div style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.65rem">Related guides</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+      <a href="/genuine-student-requirement" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;text-decoration:none">GS Requirement</a>
+      <a href="/australian-citizenship" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;text-decoration:none">Australian Citizenship</a>
+      <a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;text-decoration:none">Bridging Visa</a>
+      <a href="/partner-visa-while-on-student-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;text-decoration:none">Partner Visa on Student Visa</a>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div style="margin-bottom:0.5rem">
@@ -926,6 +938,7 @@ function generatePathway() {
   } else {
     naatiBlock = '<div class="naati-lang"><div class="naati-lang-title">Check NAATI CCL for your language</div><div class="naati-lang-detail">NAATI offers CCL in 50+ languages. Check if your language qualifies at naati.com.au — it adds 5 DHA points for $800 and 3 months of preparation.</div></div>';
   }
+  document.getElementById('naati-section').style.display = 'block';
   document.getElementById('naati-lang-block').innerHTML = naatiBlock;
   document.getElementById('naati-share-btn').onclick = function() {
     var msg = encodeURIComponent('I just found out I qualify for 5 free PR points through NAATI CCL. Check if you do too — visaiq.com.au/student-pathway');

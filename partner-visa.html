@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -136,7 +135,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 <body>
 
 <!-- TICKER -->
-
 <div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:36px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101"><div style="flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center">Live</div><style>#viq-ticker::after{content:"";position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to left,#070F1C,transparent);pointer-events:none;z-index:2}#tt{display:flex;align-items:center;white-space:nowrap;animation:hs 50s linear infinite}.vit{display:inline-flex;align-items:center;gap:6px;padding:0 24px;font-size:0.75rem;font-family:'DM Sans',sans-serif;white-space:nowrap}.vd{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px}@keyframes hs{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style><div style="flex:1;overflow:hidden;height:100%;display:flex;align-items:center"><div id="tt"><span class="vit">⏱ <span style="color:#E8EDF5"><b style="color:#4E8EFF">820 partner visa</b> — median 16 months onshore · 90% within 24 months</span><span class="vd"></span></span><span class="vit">💰 <span style="color:#E8EDF5"><b style="color:#F59E0B">Partner visa fee</b> — AUD $9,095 covers both temporary and permanent stages</span><span class="vd"></span></span><span class="vit">✓ <span style="color:#E8EDF5"><b style="color:#10B981">Work rights</b> — BVA granted automatically · full work and study rights</span><span class="vd"></span></span><span class="vit">📊 <span style="color:#E8EDF5"><b style="color:#7A8FA8">309 offshore</b> — median 14 months · 90% within 24 to 26 months</span><span class="vd"></span></span><span class="vit">⏱ <span style="color:#E8EDF5"><b style="color:#4E8EFF">820 partner visa</b> — median 16 months onshore · 90% within 24 months</span><span class="vd"></span></span><span class="vit">💰 <span style="color:#E8EDF5"><b style="color:#F59E0B">Partner visa fee</b> — AUD $9,095 covers both temporary and permanent stages</span><span class="vd"></span></span><span class="vit">✓ <span style="color:#E8EDF5"><b style="color:#10B981">Work rights</b> — BVA granted automatically · full work and study rights</span><span class="vd"></span></span><span class="vit">📊 <span style="color:#E8EDF5"><b style="color:#7A8FA8">309 offshore</b> — median 14 months · 90% within 24 to 26 months</span><span class="vd"></span></span></div></div></div>
 
 <nav>
@@ -162,7 +160,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 <div class="bc"><a href="/">Home</a> › <a href="/partner-visa">Partner Visa</a></div>
 
 <!-- ════════════ TOOL ════════════ -->
-
 <div class="sec">
   <div class="tool-wrap">
     <div class="tool-h">Partner Visa Timeline Calculator <span style="font-size:0.72rem;font-weight:400;color:var(--muted)">— personalised to your situation</span></div>
@@ -192,49 +189,45 @@ footer a{color:var(--teal);margin:0 0.4rem}
     </div>
     <button class="btn-t" onclick="runPVTool()">Calculate my partner visa timeline →</button>
 
-```
-<div id="tout">
-  <div class="og">
-    <div class="oc">
-      <div class="ov" id="pv-visa">—</div>
-      <div class="ol">Your visa pathway</div>
-    </div>
-    <div class="oc">
-      <div class="ov" id="pv-cost">AUD $9,095</div>
-      <div class="ol">Primary applicant fee — covers both stages</div>
-    </div>
-    <div class="oc">
-      <div class="ov" id="pv-p50">—</div>
-      <div class="ol">50% of applicants decided by this date</div>
-    </div>
-    <div class="oc">
-      <div class="ov" id="pv-p90">—</div>
-      <div class="ol">90% of applicants decided by this date</div>
-    </div>
-  </div>
+    <div id="tout">
+      <div class="og">
+        <div class="oc">
+          <div class="ov" id="pv-visa">—</div>
+          <div class="ol">Your visa pathway</div>
+        </div>
+        <div class="oc">
+          <div class="ov" id="pv-cost">AUD $9,095</div>
+          <div class="ol">Primary applicant fee — covers both stages</div>
+        </div>
+        <div class="oc">
+          <div class="ov" id="pv-p50">—</div>
+          <div class="ol">50% of applicants decided by this date</div>
+        </div>
+        <div class="oc">
+          <div class="ov" id="pv-p90">—</div>
+          <div class="ol">90% of applicants decided by this date</div>
+        </div>
+      </div>
 
-  <!-- COUNTDOWN -->
-  <div class="countdown" id="pv-countdown">
-    <div>
-      <div class="cd-label">Estimated decision window</div>
-      <div class="cd-val" id="pv-window">—</div>
+      <!-- COUNTDOWN -->
+      <div class="countdown" id="pv-countdown">
+        <div>
+          <div class="cd-label">Estimated decision window</div>
+          <div class="cd-val" id="pv-window">—</div>
+        </div>
+        <div class="cd-units" id="pv-cd-units"></div>
+      </div>
+
+      <div class="act-box">
+        <div class="act-lbl">Your one action this week</div>
+        <div id="pv-act" style="font-size:0.84rem;color:var(--text);line-height:1.7"></div>
+      </div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:0.5rem">Processing times are DHA medians (50th and 90th percentile). Individual outcomes vary based on complexity, evidence quality and DHA workload. Source: DHA processing times dashboard 2026.</div>
     </div>
-    <div class="cd-units" id="pv-cd-units"></div>
-  </div>
-
-  <div class="act-box">
-    <div class="act-lbl">Your one action this week</div>
-    <div id="pv-act" style="font-size:0.84rem;color:var(--text);line-height:1.7"></div>
-  </div>
-  <div style="font-size:0.72rem;color:var(--muted);margin-top:0.5rem">Processing times are DHA medians (50th and 90th percentile). Individual outcomes vary based on complexity, evidence quality and DHA workload. Source: DHA processing times dashboard 2026.</div>
-</div>
-```
-
   </div>
 </div>
 
 <!-- ════════════ S1 TWO PATHWAYS ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 1</div>
   <div class="sec-title">Two pathways — <em>onshore and offshore</em></div>
@@ -270,7 +263,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 </div>
 
 <!-- ════════════ S2 PROCESSING TIMES ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 2</div>
   <div class="sec-title">Processing <em>times 2026</em></div>
@@ -293,7 +285,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 </div>
 
 <!-- ════════════ S3 COSTS ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 3</div>
   <div class="sec-title">Complete <em>cost breakdown 2026</em></div>
@@ -318,7 +309,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 </div>
 
 <!-- ════════════ S4 EVIDENCE ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 4</div>
   <div class="sec-title">Evidence <em>requirements 2026</em></div>
@@ -327,24 +317,20 @@ footer a{color:var(--teal);margin:0 0.4rem}
     <div class="card-h">📄 Four categories DHA assesses</div>
     <p style="font-size:0.84rem;color:var(--muted);line-height:1.75;margin-bottom:0.85rem">DHA assesses your relationship across four distinct categories. You need strong evidence in each category — not just one or two. Weak categories can lead to requests for further information, which significantly extends processing time.</p>
 
-```
-<table class="it">
-  <tr><td>1. Financial</td><td>Joint bank accounts showing regular transactions. Joint lease or mortgage. Shared utility bills, insurance policies, credit cards. Joint investments or assets. Evidence of financial interdependence — not just a shared address.</td></tr>
-  <tr><td>2. Nature of household</td><td>Shared living arrangements — tenancy agreements, letters addressed to both at same address. Shared household responsibilities — chores, groceries, caring for children or pets. Joint mail and correspondence at the same address.</td></tr>
-  <tr><td>3. Social</td><td>Photographs together across time — not just recent. Statutory declarations from friends and family (Form 888 — maximum 2). Recognition by family members of both partners. Joint social activities, holidays, events. Social media showing relationship over time.</td></tr>
-  <tr><td>4. Commitment</td><td>Joint future plans — property purchases, children, travel. Knowledge of each other — each partner's daily routine, family, history, preferences. Correspondence history — messages, emails. Knowledge of each other's immigration status.</td></tr>
-</table>
+    <table class="it">
+      <tr><td>1. Financial</td><td>Joint bank accounts showing regular transactions. Joint lease or mortgage. Shared utility bills, insurance policies, credit cards. Joint investments or assets. Evidence of financial interdependence — not just a shared address.</td></tr>
+      <tr><td>2. Nature of household</td><td>Shared living arrangements — tenancy agreements, letters addressed to both at same address. Shared household responsibilities — chores, groceries, caring for children or pets. Joint mail and correspondence at the same address.</td></tr>
+      <tr><td>3. Social</td><td>Photographs together across time — not just recent. Statutory declarations from friends and family (Form 888 — maximum 2). Recognition by family members of both partners. Joint social activities, holidays, events. Social media showing relationship over time.</td></tr>
+      <tr><td>4. Commitment</td><td>Joint future plans — property purchases, children, travel. Knowledge of each other — each partner's daily routine, family, history, preferences. Correspondence history — messages, emails. Knowledge of each other's immigration status.</td></tr>
+    </table>
 
-<div class="al aa" style="margin-top:0.75rem">
-  <strong style="color:var(--amber)">2026 change — digital evidence scrutiny:</strong> DHA is placing greater emphasis on digital evidence including social media cross-referencing, messaging app histories, and dating app records for de facto applications. Inconsistencies between what you claim and what appears online are a red flag. Review your digital footprint before lodging.
-</div>
-```
-
+    <div class="al aa" style="margin-top:0.75rem">
+      <strong style="color:var(--amber)">2026 change — digital evidence scrutiny:</strong> DHA is placing greater emphasis on digital evidence including social media cross-referencing, messaging app histories, and dating app records for de facto applications. Inconsistencies between what you claim and what appears online are a red flag. Review your digital footprint before lodging.
+    </div>
   </div>
 </div>
 
 <!-- ════════════ S5 TWO YEAR RULE ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 5</div>
   <div class="sec-title">The two year rule <em>and double grant</em></div>
@@ -364,7 +350,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 </div>
 
 <!-- ════════════ S6 ON STUDENT VISA ════════════ -->
-
 <div class="sec">
   <div class="sec-label">Section 6</div>
   <div class="sec-title">Partner visa <em>while on student visa</em></div>
@@ -380,7 +365,7 @@ footer a{color:var(--teal);margin:0 0.4rem}
       <tr><td>Work rights</td><td>The BVA grants full unlimited work rights — the student visa 48 hr/fortnight limit no longer applies once the 820 BVA is your primary visa document.</td></tr>
     </table>
     <div style="margin-top:0.75rem">
-      <a href="/partner-visa-student-visa" class="ilink">Complete guide: partner visa on student visa →</a>
+      <a href="/partner-visa-while-on-student-visa" class="ilink">Complete guide: partner visa on student visa →</a>
     </div>
   </div>
 </div>
@@ -388,7 +373,6 @@ footer a{color:var(--teal);margin:0 0.4rem}
 <hr class="divider">
 
 <!-- ════════════ EMAIL CAPTURE ════════════ -->
-
 <div class="sec">
   <div class="cap">
     <div class="cap-h">Save your partner visa timeline</div>
@@ -433,6 +417,16 @@ footer a{color:var(--teal);margin:0 0.4rem}
   </div>
 </div>
 
+
+      <div style="border-top:1px solid var(--border);margin-top:1.5rem;padding-top:1.25rem">
+        <div style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.65rem">Related guides</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+          <a href="/genuine-student-requirement" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--muted)'">GS Requirement</a>
+          <a href="/australian-citizenship" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--muted)'">Australian Citizenship</a>
+          <a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--muted)'">Bridging Visa</a>
+          <a href="/partner-visa-while-on-student-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.65rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--muted)'">Partner Visa on Student Visa</a>
+        </div>
+      </div>
 </div>
 
 <div class="dis"><strong>⚠️ Important:</strong> VisaIQ provides data-informed research based on publicly available DHA information. This is not migration advice. For advice specific to your circumstances consult a MARA-registered migration agent. Processing times and fees change — verify at <a href="https://immi.homeaffairs.gov.au" target="_blank" style="color:var(--teal)">immi.homeaffairs.gov.au</a></div>
@@ -440,7 +434,7 @@ footer a{color:var(--teal);margin:0 0.4rem}
 <footer>
   <div style="margin-bottom:0.5rem">
     <a href="/">Home</a><a href="/student-pathway">Student PR</a>
-    <a href="/partner-visa-student-visa">Partner on Student Visa</a>
+    <a href="/partner-visa-while-on-student-visa">Partner on Student Visa</a>
     <a href="/482-visa">482 Visa</a><a href="/points-calculator">Points Calc</a>
     <a href="/methodology">Methodology</a>
   </div>
@@ -557,6 +551,5 @@ function submitCap() {
   document.getElementById("csuc").style.display = "block";
 }
 </script>
-
 </body>
 </html>
