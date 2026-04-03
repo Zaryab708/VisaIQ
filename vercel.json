@@ -2,27 +2,159 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/tool", "destination": "/tool.html" },
-    { "source": "/profile", "destination": "/profile.html" },
-    { "source": "/policy-updates", "destination": "/policy-updates.html" },
-    { "source": "/482-visa", "destination": "/482-visa.html" },
-    { "source": "/482-to-186", "destination": "/482-to-186.html" },
-    { "source": "/points-calculator", "destination": "/points-calculator.html" },
-    { "source": "/485-visa", "destination": "/485-visa.html" },
-    { "source": "/189-visa", "destination": "/189-visa.html" },
-    { "source": "/190-visa", "destination": "/190-visa.html" },
-    { "source": "/491-visa", "destination": "/491-visa.html" },
-    { "source": "/rounds", "destination": "/rounds.html" },
-    { "source": "/eoi-queue", "destination": "/eoi-queue.html" },
-    { "source": "/state-comparator", "destination": "/state-comparator.html" },
-    { "source": "/occupation-demand", "destination": "/occupation-demand.html" },
-    { "source": "/student-pathway", "destination": "/student-pathway.html" },
-    { "source": "/best-degrees-pr", "destination": "/best-degrees-pr.html" },
-    { "source": "/regional-study-bonus", "destination": "/regional-study-bonus.html" },
-    { "source": "/timeline", "destination": "/timeline.html" },
-    { "source": "/methodology", "destination": "/methodology.html" },
-    { "source": "/submit", "destination": "/submit.html" },
-    { "source": "/outcomes", "destination": "/outcomes.html" }
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tool",
+      "destination": "/tool.html"
+    },
+    {
+      "source": "/profile",
+      "destination": "/profile.html"
+    },
+    {
+      "source": "/policy-updates",
+      "destination": "/policy-updates.html"
+    },
+    {
+      "source": "/482-visa",
+      "destination": "/482-visa.html"
+    },
+    {
+      "source": "/482-to-186",
+      "destination": "/482-to-186.html"
+    },
+    {
+      "source": "/points-calculator",
+      "destination": "/points-calculator.html"
+    },
+    {
+      "source": "/485-visa",
+      "destination": "/485-visa.html"
+    },
+    {
+      "source": "/189-visa",
+      "destination": "/189-visa.html"
+    },
+    {
+      "source": "/190-visa",
+      "destination": "/190-visa.html"
+    },
+    {
+      "source": "/491-visa",
+      "destination": "/491-visa.html"
+    },
+    {
+      "source": "/rounds",
+      "destination": "/rounds.html"
+    },
+    {
+      "source": "/eoi-queue",
+      "destination": "/eoi-queue.html"
+    },
+    {
+      "source": "/state-comparator",
+      "destination": "/state-comparator.html"
+    },
+    {
+      "source": "/occupation-demand",
+      "destination": "/occupation-demand.html"
+    },
+    {
+      "source": "/student-pathway",
+      "destination": "/student-pathway.html"
+    },
+    {
+      "source": "/best-degrees-pr",
+      "destination": "/best-degrees-pr.html"
+    },
+    {
+      "source": "/regional-study-bonus",
+      "destination": "/regional-study-bonus.html"
+    },
+    {
+      "source": "/timeline",
+      "destination": "/timeline.html"
+    },
+    {
+      "source": "/methodology",
+      "destination": "/methodology.html"
+    },
+    {
+      "source": "/submit",
+      "destination": "/submit.html"
+    },
+    {
+      "source": "/outcomes",
+      "destination": "/outcomes.html"
+    },
+    {
+      "source": "/student-visa",
+      "destination": "/student-visa.html"
+    },
+    {
+      "source": "/partner-visa",
+      "destination": "/partner-visa.html"
+    },
+    {
+      "source": "/partner-visa-while-on-student-visa",
+      "destination": "/partner-visa-while-on-student-visa.html"
+    },
+    {
+      "source": "/genuine-student-requirement",
+      "destination": "/genuine-student-requirement.html"
+    },
+    {
+      "source": "/australian-citizenship",
+      "destination": "/australian-citizenship.html"
+    },
+    {
+      "source": "/bridging-visa",
+      "destination": "/bridging-visa.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/partner-visa-student-visa",
+      "destination": "/partner-visa-while-on-student-visa",
+      "permanent": true
+    },
+    {
+      "source": "/naati-ccl",
+      "destination": "/student-pathway",
+      "permanent": true
+    },
+    {
+      "source": "/australia-pr-for-indians",
+      "destination": "/tool",
+      "permanent": true
+    },
+    {
+      "source": "/australia-pr-for-pakistanis",
+      "destination": "/tool",
+      "permanent": true
+    },
+    {
+      "source": "/skills-in-demand-visa-2026",
+      "destination": "/occupation-demand",
+      "permanent": true
+    },
+    {
+      "source": "/student-visa-to-pr",
+      "destination": "/student-pathway",
+      "permanent": true
+    },
+    {
+      "source": "/student-visa-evidence-level-3",
+      "destination": "/student-visa",
+      "permanent": true
+    },
+    {
+      "source": "/genuine-student-requirement-guide",
+      "destination": "/genuine-student-requirement",
+      "permanent": true
+    }
   ]
 }
