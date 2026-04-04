@@ -1339,7 +1339,7 @@ function br(){
       case 'ACT':
         if (actNever.includes(occId)) return {rating:'red', label:'Unlikely now', note:'ACT does not nominate hospitality. ACT focuses on knowledge economy roles.', upgrade:'SA or NT are better options for this occupation.'};
         if (pts<65) return {rating:'red', label:'Unlikely now', note:'Below 65 pt minimum.', upgrade:'Need 65+ pts.'};
-        if (isICT && pts>=75)         return {rating:'green', label:'Strong chance', note:'ICT is ACT's primary priority. Cybersecurity and software engineers strongly favoured. All of ACT is regional-eligible (+15 pts 491).', upgrade:''};
+        if (isICT && pts>=75)         return {rating:'green', label:'Strong chance', note:'ICT is ACT\'s primary priority. Cybersecurity and software engineers strongly favoured. All of ACT is regional-eligible (+15 pts 491).', upgrade:''};
         if (isICT && pts>=65)         return {rating:'amber', label:'Possible', note:'ICT is ACT priority but Canberra Matrix requires employment or community ties.', upgrade:'Reach 75+ pts and secure ACT employment for Strong Chance.'};
         if (isEducation && pts>=75)   return {rating:'green', label:'Strong chance', note:'Education is ACT priority. Strong demand for teachers and psychologists.', upgrade:''};
         if (isHealthcare && pts>=70)  return {rating:'amber', label:'Possible', note:'Healthcare is nominated by ACT. Matrix considers employment and community ties.', upgrade:''};
@@ -1611,8 +1611,9 @@ Profile: ${ol}, ${total} pts, ${S.state||'not specified'}, ${S.nat||'not specifi
     const t2=tot(),o2=OD[S.occ]||OD.other;
     const oEl=document.getElementById('occ');
     const oL2=oEl.value?(oEl.options[oEl.selectedIndex]||{}).text:'this occupation';
-    document.getElementById('aitext').innerHTML=`<p style="font-size:0.85rem;color:var(--text);line-height:1.8">Historical data for ${oL2} shows that at ${t2} points, ${o2.c189<900&&t2<o2.c189?'profiles below the Nov 2025 189 cutoff of '+o2.c189+' pts achieved PR primarily through state nomination — SA, TAS and QLD being the most successful states for this occupation category.':'profiles at this score have secured invitations through both the 189 independent and 190 state-nominated pathways, with state nomination typically delivering faster outcomes at most points levels.'} The ${o2.d.toLowerCase()} demand classification means ${o2.d==='Critical'?'processing times are below average and priority consideration is frequently applied across state programs.':o2.d==='Oversupplied'?'competition is high and every additional point matters — profiles at or just above cutoff experience significantly longer wait times than those 10+ pts above.':'state nomination is often faster than the 189 independent queue for this occupation.'} Profiles similar to yours who achieved PR fastest typically ${t2<75?'invested 6–12 months on targeted improvements — primarily IELTS to 8+ and NAATI CCL where eligible — before submitting EOI to protect their Date of Effect':'submitted their EOI immediately after skills assessment and applied for state nomination in all eligible states simultaneously, not  } catch(e) {}
+    document.getElementById('aitext').innerHTML=`<p style="font-size:0.85rem;color:var(--text);line-height:1.8">Historical data for ${oL2} shows that at ${t2} points, ${o2.c189<900&&t2<o2.c189?'profiles below the Nov 2025 189 cutoff of '+o2.c189+' pts achieved PR primarily through state nomination — SA, TAS and QLD being the most successful states for this occupation category.':'profiles at this score have secured invitations through both the 189 independent and 190 state-nominated pathways, with state nomination typically delivering faster outcomes at most points levels.'} The ${o2.d.toLowerCase()} demand classification means ${o2.d==='Critical'?'processing times are below average and priority consideration is frequently applied across state programs.':o2.d==='Oversupplied'?'competition is high and every additional point matters — profiles at or just above cutoff experience significantly longer wait times than those 10+ pts above.':'state nomination is often faster than the 189 independent queue for this occupation.'} Profiles similar to yours who achieved PR fastest typically ${t2<75?'invested 6–12 months on targeted improvements — primarily IELTS to 8+ and NAATI CCL where eligible — before submitting EOI to protect their Date of Effect':'submitted their EOI immediately after skills assessment and applied for state nomination in all eligible states simultaneously, not waiting for a 189 federal round.'}`; 
 }
+} catch(e){}
 
 async function dlsc(){
   const btn=document.querySelector('.bd');btn.textContent='⏳ Generating…';
@@ -1987,7 +1988,6 @@ function loadSimilarOutcomes() {
         summary2.innerHTML = '<strong style="color:#10B981">' + recent.occupation_label + ' · ' + recent.points + ' pts · ' + recent.state + ' ' + recent.visa + ' granted</strong> — same occupation group, similar points to you.';
         listEl.insertBefore(summary2, listEl.firstChild);
       }
-    })
   })(); // end IIFE
 }
 
@@ -2211,7 +2211,8 @@ function initTracker() {
     checkSavedProfile();
   }, 500);
 }
-</script>
+
+}</script>
 <script src="/ticker.js"></script>
 <script>
 
