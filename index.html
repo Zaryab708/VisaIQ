@@ -221,6 +221,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
     <a href="/student-pathway">Students</a>
     <a href="/partner-visa">Partner</a>
     <a href="/rounds">Rounds</a>
+    <a href="/outcomes">Outcomes</a>
     <a href="/tool" class="ncta">Get My Score →</a>
   </div>
 </nav>
@@ -664,14 +665,8 @@ function showTab(id, btn) {
   if (btn) btn.classList.add('active');
 }
 function showPathway(id, btn) {
-  // Update audience cards
   document.querySelectorAll('.acard').forEach(function(c){c.classList.remove('active');});
   if (btn) btn.classList.add('active');
-  // Move indicator
-  var cards = document.querySelectorAll('.acard');
-  var idx = Array.prototype.indexOf.call(cards, btn);
-
-  // Show panel
   document.querySelectorAll('.atab-panel').forEach(function(p){p.classList.remove('active');});
   var panel = document.getElementById('atab-' + id);
   if (panel) panel.classList.add('active');
@@ -700,16 +695,13 @@ function submitGate(){
     if(btn){btn.textContent='✅ Alerts Active';btn.style.color='var(--green)';}
   }
 }
-// Close on backdrop click
 document.getElementById('rounds-gate').addEventListener('click',function(e){
   if(e.target===this)closeGate();
 });
 </script>
 <script src="/ticker.js"></script>
 <script>
-// ── HERO LIVE FEED ──────────────────────────────────────────────
 (function() {
-
   function daysAgoLabel(n) {
     if (n === 0) return 'today';
     if (n === 1) return '1 day ago';
@@ -718,7 +710,6 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
     if (n < 30) return Math.floor(n/7) + ' weeks ago';
     return Math.floor(n/30) + ' months ago';
   }
-
   function makeCard(o) {
     var granted = o.status === 'granted';
     var col = granted ? '#10B981' : '#4E8EFF';
@@ -726,7 +717,6 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
     var ago = (o.days_ago !== undefined) ? daysAgoLabel(o.days_ago) : '';
     var div = document.createElement('div');
     div.className = 'feed-card';
-    // Format: ✓ 🇮🇳 Software Engineer · NSW 190 · 80 pts · Invited after 4 months · 2 days ago
     div.innerHTML =
       '<div style="display:flex;align-items:center;gap:0.5rem;padding:0.8rem 1rem;border-bottom:1px solid rgba(255,255,255,0.05)">' +
         '<span style="color:' + col + ';font-weight:800;font-size:0.9rem;flex-shrink:0">' + icon + '</span>' +
@@ -744,90 +734,60 @@ document.getElementById('rounds-gate').addEventListener('click',function(e){
       '</div>';
     return div;
   }
-
   var FALLBACK = [
-    {flag:'🇮🇳',occupation_label:'Registered Nurse',state:'SA',visa:'190',points:75,wait_months:4,status:'granted',days_ago:3,onshore:true},
-    {flag:'🇵🇰',occupation_label:'Accountant',state:'SA',visa:'190',points:70,wait_months:6,status:'invited',days_ago:18,onshore:true},
-    {flag:'🇵🇭',occupation_label:'Registered Nurse',state:'QLD',visa:'190',points:75,wait_months:4,status:'granted',days_ago:5,onshore:false},
-    {flag:'🇳🇵',occupation_label:'Cook / Chef',state:'TAS',visa:'190',points:65,wait_months:3,status:'granted',days_ago:6,onshore:true},
-    {flag:'🇮🇳',occupation_label:'Civil Engineer',state:'VIC',visa:'190',points:85,wait_months:7,status:'invited',days_ago:7,onshore:false},
-    {flag:'🇵🇭',occupation_label:'Physiotherapist',state:'QLD',visa:'190',points:75,wait_months:2,status:'invited',days_ago:11,onshore:true},
-    {flag:'🇧🇩',occupation_label:'Electrician',state:'NSW',visa:'491',points:80,wait_months:4,status:'granted',days_ago:5,onshore:true},
-    {flag:'🇮🇳',occupation_label:'Secondary Teacher',state:'VIC',visa:'190',points:75,wait_months:2,status:'invited',days_ago:6,onshore:false},
-    {flag:'🇵🇰',occupation_label:'Management Accountant',state:'SA',visa:'491',points:75,wait_months:5,status:'invited',days_ago:28,onshore:true},
-    {flag:'🇵🇭',occupation_label:'Early Childhood Teacher',state:'SA',visa:'190',points:80,wait_months:2,status:'invited',days_ago:12,onshore:true},
-    {flag:'🇳🇵',occupation_label:'Registered Nurse',state:'TAS',visa:'190',points:75,wait_months:3,status:'granted',days_ago:6,onshore:false},
-    {flag:'🇮🇳',occupation_label:'Social Worker',state:'NSW',visa:'189',points:90,wait_months:12,status:'granted',days_ago:5,onshore:true}
+    {flag:'🇮🇳',occupation_label:'Registered Nurse',state:'SA',visa:'190',points:75,wait_months:4,status:'granted',days_ago:3},
+    {flag:'🇵🇰',occupation_label:'Accountant',state:'SA',visa:'190',points:70,wait_months:6,status:'invited',days_ago:18},
+    {flag:'🇵🇭',occupation_label:'Registered Nurse',state:'QLD',visa:'190',points:75,wait_months:4,status:'granted',days_ago:5},
+    {flag:'🇳🇵',occupation_label:'Cook / Chef',state:'TAS',visa:'190',points:65,wait_months:3,status:'granted',days_ago:6},
+    {flag:'🇮🇳',occupation_label:'Civil Engineer',state:'VIC',visa:'190',points:85,wait_months:7,status:'invited',days_ago:7},
+    {flag:'🇵🇭',occupation_label:'Physiotherapist',state:'QLD',visa:'190',points:75,wait_months:2,status:'invited',days_ago:11},
+    {flag:'🇧🇩',occupation_label:'Electrician',state:'NSW',visa:'491',points:80,wait_months:4,status:'granted',days_ago:5},
+    {flag:'🇮🇳',occupation_label:'Secondary Teacher',state:'VIC',visa:'190',points:75,wait_months:2,status:'invited',days_ago:6},
+    {flag:'🇵🇰',occupation_label:'Management Accountant',state:'SA',visa:'491',points:75,wait_months:5,status:'invited',days_ago:28},
+    {flag:'🇵🇭',occupation_label:'Early Childhood Teacher',state:'SA',visa:'190',points:80,wait_months:2,status:'invited',days_ago:12},
+    {flag:'🇳🇵',occupation_label:'Registered Nurse',state:'TAS',visa:'190',points:75,wait_months:3,status:'granted',days_ago:6},
+    {flag:'🇮🇳',occupation_label:'Social Worker',state:'NSW',visa:'189',points:90,wait_months:12,status:'granted',days_ago:5}
   ];
-
-  var track    = document.getElementById('feed-track');
+  var track = document.getElementById('feed-track');
   var viewport = document.getElementById('feed-viewport');
-  var totalEl  = document.getElementById('feed-total');
+  var totalEl = document.getElementById('feed-total');
   if (!track || !viewport) return;
-
-  var outcomes = [];
-  var currentIdx = 0;
-  var isPaused = false;
-
+  var outcomes = [], currentIdx = 0, isPaused = false;
   function renderInitial(data) {
-    var initial = data.slice(0, 6);
-    initial.forEach(function(o) {
-      track.appendChild(makeCard(o));
-    });
-    currentIdx = initial.length % data.length;
+    data.slice(0, 6).forEach(function(o){ track.appendChild(makeCard(o)); });
+    currentIdx = 6 % data.length;
   }
-
   function addCard(o) {
     var card = makeCard(o);
-    // Slide in from top
     card.style.cssText = 'opacity:0;transform:translateY(-100%);transition:opacity 0.4s ease,transform 0.4s ease';
-    // Prepend — new items appear at top
     track.insertBefore(card, track.firstChild);
-    // Animate in
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      });
-    });
-    // Remove bottom card if too many
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ card.style.opacity='1';card.style.transform='translateY(0)'; }); });
     var cards = track.querySelectorAll('.feed-card');
     if (cards.length > 7) {
-      var old = cards[cards.length - 1];
-      old.style.opacity = '0';
-      old.style.transition = 'opacity 0.3s';
-      setTimeout(function(){ if (old.parentNode) old.parentNode.removeChild(old); }, 350);
+      var old = cards[cards.length-1];
+      old.style.opacity='0';old.style.transition='opacity 0.3s';
+      setTimeout(function(){ if(old.parentNode)old.parentNode.removeChild(old); },350);
     }
   }
-
   function startCycle() {
-    setInterval(function() {
-      if (isPaused || outcomes.length === 0) return;
+    setInterval(function(){
+      if(isPaused||outcomes.length===0)return;
       addCard(outcomes[currentIdx]);
-      currentIdx = (currentIdx + 1) % outcomes.length;
-    }, 3200); // new card every 3.2 seconds
+      currentIdx=(currentIdx+1)%outcomes.length;
+    },3200);
   }
-
-  // Pause on hover
-  if (viewport) {
-    viewport.addEventListener('mouseenter', function(){ isPaused = true; });
-    viewport.addEventListener('mouseleave', function(){ isPaused = false; });
-  }
-
+  viewport.addEventListener('mouseenter',function(){isPaused=true;});
+  viewport.addEventListener('mouseleave',function(){isPaused=false;});
   function init(data) {
-    outcomes = data;
-    if (totalEl) totalEl.textContent = data.length + ' outcomes this week';
+    outcomes=data;
+    if(totalEl)totalEl.textContent=data.length+' outcomes this week';
     renderInitial(data);
-    // Start cycling after a short delay
-    setTimeout(startCycle, 2000);
+    setTimeout(startCycle,2000);
   }
-
-  // Try to fetch real data, fall back to hardcoded
-  fetch('/outcomes-data.json?v=' + Date.now())
-    .then(function(r){ return r.json(); })
-    .then(function(d){ init(d.outcomes && d.outcomes.length ? d.outcomes : FALLBACK); })
-    .catch(function(){ init(FALLBACK); });
-
+  fetch('/outcomes-data.json?v='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(d){init(d.outcomes&&d.outcomes.length?d.outcomes:FALLBACK);})
+    .catch(function(){init(FALLBACK);});
 })();
 </script>
 </body>
