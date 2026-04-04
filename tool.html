@@ -23,6 +23,11 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;line-height:1.6}
 nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.95);backdrop-filter:blur(12px);z-index:100}
 .nl{font-family:Syne,sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
+.nls{display:flex;align-items:center;gap:1.25rem}
+.nls a{font-size:0.83rem;color:var(--muted);font-weight:500;text-decoration:none;transition:color 0.2s}
+.nls a:hover{color:var(--teal)}
+.ncta{background:var(--teal)!important;color:#000!important;padding:0.45rem 1rem;border-radius:8px;font-weight:700;font-family:'Syne',sans-serif;font-size:0.8rem}
+@media(max-width:640px){.nls{display:none}}
 .nh{color:var(--muted);text-decoration:none;font-size:0.85rem}.nh:hover{color:var(--teal)}
 .hero{text-align:center;padding:2.5rem 1.5rem 2rem;max-width:600px;margin:0 auto}
 .hero h1{font-family:Syne,sans-serif;font-size:clamp(1.4rem,3.5vw,1.9rem);font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:0.75rem}
@@ -156,6 +161,9 @@ footer a{color:var(--teal);text-decoration:none}
   <meta name="twitter:title" content="PR Probability Tool — Your Australian PR Chances | VisaIQ">
   <meta property="og:description" content="Australian PR points calculator using official DHA criteria and real 2026 invitation round cutoffs by occupation.">
   <meta name="twitter:description" content="Australian PR points calculator using official DHA criteria and real 2026 invitation round cutoffs by occupation.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.visaiq.com.au"},{"@type":"ListItem","position":2,"name":"PR Tool","item":"https://www.visaiq.com.au/tool"}]}
+</script>
 </head>
 <body>
 <div id="viq-ticker" style="width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101;box-sizing:border-box;">
