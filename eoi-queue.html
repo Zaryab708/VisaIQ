@@ -121,16 +121,20 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr}.qr-grid{grid-template-columns:1fr}.di{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.nls{display:none}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":'Home',"item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":'EOI Queue',"item":"https://www.visaiq.com.au/eoi-queue"}]}
+</script>
 </head>
 <body>
 <nav>
   <a href="/" class="nl">VisaIQ</a>
   <div class="nls">
-    <a href="/tool">PR Tool</a>
-    <a href="/eoi-queue" class="cur">EOI Queue</a>
-    <a href="/outcomes">Outcomes</a>
+    <a href="/tool">PR Report</a>
+    <a href="/points-calculator">Points</a>
+    <a href="/student-pathway">Students</a>
+    <a href="/partner-visa">Partner</a>
     <a href="/rounds">Rounds</a>
-    <a href="/tool" class="ncta">Get My Score &rarr;</a>
+    <a href="/tool" class="ncta">Get My Score →</a>
   </div>
 </nav>
 <div class="hero">
@@ -342,9 +346,58 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </div>
 
 </div>
+<div style="font-size:0.72rem;color:var(--muted);text-align:right;padding:0 1.5rem;max-width:880px;margin:0.5rem auto 0">Last updated: April 2026</div>
 <footer>
-  <div style="margin-bottom:0.5rem"><a href="/">Home</a><a href="/tool">PR Tool</a><a href="/points-calculator">Points Calc</a><a href="/eoi-queue">EOI Queue</a><a href="/outcomes">Outcomes</a><a href="/rounds">Rounds</a><a href="/methodology">Methodology</a></div>
-  <div>&copy; 2026 VisaIQ &middot; Not migration advice &middot; Consult a MARA-registered migration agent for your specific circumstances</div>
+  <div style="max-width:880px;margin:0 auto;padding:2rem 1.5rem 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1rem">
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Skilled Migration</div>
+      <div style="display:flex;flex-direction:column;gap:0.3rem">
+        <a href="/tool" style="font-size:0.78rem;color:var(--muted)">PR Intelligence Report</a>
+        <a href="/points-calculator" style="font-size:0.78rem;color:var(--muted)">Points Calculator</a>
+        <a href="/eoi-queue" style="font-size:0.78rem;color:var(--muted)">EOI Queue Tracker</a>
+        <a href="/189-visa" style="font-size:0.78rem;color:var(--muted)">189 Independent Visa</a>
+        <a href="/190-visa" style="font-size:0.78rem;color:var(--muted)">190 State Nomination</a>
+        <a href="/491-visa" style="font-size:0.78rem;color:var(--muted)">491 Regional Visa</a>
+        <a href="/state-comparator" style="font-size:0.78rem;color:var(--muted)">State Comparator</a>
+        <a href="/occupation-demand" style="font-size:0.78rem;color:var(--muted)">Occupation Demand</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Student Pathway</div>
+      <div style="display:flex;flex-direction:column;gap:0.3rem">
+        <a href="/student-pathway" style="font-size:0.78rem;color:var(--muted)">Student PR Platform</a>
+        <a href="/student-visa" style="font-size:0.78rem;color:var(--muted)">Student Visa 500</a>
+        <a href="/485-visa" style="font-size:0.78rem;color:var(--muted)">485 Graduate Visa</a>
+        <a href="/genuine-student-requirement" style="font-size:0.78rem;color:var(--muted)">GS Requirement</a>
+        <a href="/best-degrees-pr" style="font-size:0.78rem;color:var(--muted)">Best Degrees for PR</a>
+        <a href="/regional-study-bonus" style="font-size:0.78rem;color:var(--muted)">Regional Study Bonus</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Employer &amp; Partner</div>
+      <div style="display:flex;flex-direction:column;gap:0.3rem">
+        <a href="/482-visa" style="font-size:0.78rem;color:var(--muted)">482 Visa Guide</a>
+        <a href="/482-to-186" style="font-size:0.78rem;color:var(--muted)">482 to 186 Calculator</a>
+        <a href="/partner-visa" style="font-size:0.78rem;color:var(--muted)">Partner Visa 820/801</a>
+        <a href="/partner-visa-while-on-student-visa" style="font-size:0.78rem;color:var(--muted)">Partner on Student Visa</a>
+        <a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted)">Bridging Visa</a>
+        <a href="/australian-citizenship" style="font-size:0.78rem;color:var(--muted)">Australian Citizenship</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Intelligence</div>
+      <div style="display:flex;flex-direction:column;gap:0.3rem">
+        <a href="/rounds" style="font-size:0.78rem;color:var(--muted)">Invitation Rounds</a>
+        <a href="/outcomes" style="font-size:0.78rem;color:var(--muted)">Community Outcomes</a>
+        <a href="/policy-updates" style="font-size:0.78rem;color:var(--muted)">Policy Updates</a>
+        <a href="/submit" style="font-size:0.78rem;color:var(--muted)">Submit Your Outcome</a>
+        <a href="/methodology" style="font-size:0.78rem;color:var(--muted)">Methodology</a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:1rem 1.5rem;font-size:0.72rem;color:var(--muted)">
+    © 2026 VisaIQ · <a href="/" style="color:var(--teal)">visaiq.com.au</a> · Not migration advice · <a href="/methodology" style="color:var(--muted)">Methodology</a>
+  </div>
 </footer>
 <script src="/ticker.js"></script>
 <script>
@@ -413,7 +466,7 @@ function cd(){
   var d=D.find(function(x){return x.id===oi;});if(!d)return;
   var cut=d.c||d.comp||65,gap=cut-pts,el=document.getElementById('dr2');
   if(!d.c&&d.id==='accountant'){
-    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#f87171">⚠️ Do not submit a 189 EOI — Accountants not invited in 2025-26</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">The 189 federal pathway is not viable for accountants in 2025-26. Your pathway is SA 190 (65 pts) or 491 regional. Do not sit in the federal pool.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">SA 190 →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
+    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#f87171">⚠️ Do not submit a 189 EOI — Accountants not invited in 2026</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">The 189 federal pathway is not viable for accountants in 2026. Your pathway is SA 190 (65 pts) or 491 regional. Do not sit in the federal pool.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">SA 190 →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
   }else if(!d.c){
     el.innerHTML='<div class="dr db show"><div class="dt" style="color:#f87171">⚠️ No 189 pathway — STSOL occupation</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">'+d.lb+' is on the STSOL list and is not eligible for 189. Your pathway is 190 state nomination or 491 regional.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">190 State →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
   }else if(pts>=cut){
