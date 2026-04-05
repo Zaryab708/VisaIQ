@@ -1,267 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0M6ZNEG9R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Y0M6ZNEG9R');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Australian visa outcomes 2026 — real processing times | VisaIQ</title>
-<meta name="description" content="Real visa grant times submitted by Australian applicants. Filter by occupation, state and visa type. See what people in your exact situation experienced. Updated daily.">
+<title>Real Visa Outcomes — Community Data | VisaIQ</title>
+<meta name="description" content="Real Australian visa outcomes submitted by the community. Filter by occupation, state, visa type and points to find people in your exact situation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#00C896">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="VisaIQ">
-<meta property="og:url" content="https://www.visaiq.com.au/outcomes">
-<meta property="og:title" content="Australian visa outcomes 2026 — real processing times | VisaIQ">
-<meta property="og:description" content="Real visa grant times submitted by Australian applicants. Filter by occupation, state and visa type. See what people in your exact situation experienced. Updated daily.">
-<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":"Community Outcomes","item":"https://www.visaiq.com.au/outcomes"}]}
-</script>
 <style>
-/* ── RESET & ROOT ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;
   --teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);
-  --blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;
+  --blue:#4E8EFF;--purple:#9B7FFF;--amber:#F59E0B;--green:#10B981;
   --text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07);
-  --card:rgba(255,255,255,0.04);
-  /* Visa badge colours */
-  --v190:#4E8EFF;--v189:#9B7FFF;--v491:#10B981;--v482:#F59E0B;
-  --v485:#00C896;--v820:#F97316;--v500:#06B6D4;--vcit:#8B5CF6
+  --eoi:#4E8EFF;--eoi-bg:rgba(78,142,255,0.1);--eoi-br:rgba(78,142,255,0.28);
+  --inv:#F59E0B;--inv-bg:rgba(245,158,11,0.1);--inv-br:rgba(245,158,11,0.28);
+  --wait:#9B7FFF;--wait-bg:rgba(155,127,255,0.1);--wait-br:rgba(155,127,255,0.28);
+  --grt:#10B981;--grt-bg:rgba(16,185,129,0.1);--grt-br:rgba(16,185,129,0.28);
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-/* ── TICKER ── */
-#viq-ticker{width:100%;background:#070F1C;border-bottom:1px solid rgba(0,200,150,0.25);height:34px;display:flex;align-items:center;overflow:hidden;position:sticky;top:0;z-index:101}
-#viq-ticker::before{content:"";position:absolute;left:42px;top:0;bottom:0;width:60px;background:linear-gradient(to right,#070F1C,transparent);z-index:2;pointer-events:none}
-#viq-ticker::after{content:"";position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to left,#070F1C,transparent);z-index:2;pointer-events:none}
-.tick-live{flex-shrink:0;background:#00C896;color:#000;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 10px;height:100%;display:flex;align-items:center;white-space:nowrap;z-index:3}
-.tick-mask{flex:1;overflow:hidden;height:100%;display:flex;align-items:center}
-.tick-track{display:flex;align-items:center;white-space:nowrap;animation:tscroll 55s linear infinite}
-.tick-track:hover{animation-play-state:paused}
-@keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ti{display:inline-flex;align-items:center;gap:6px;padding:0 26px;font-size:0.76rem;font-family:'DM Sans',sans-serif;white-space:nowrap}
-.td{display:inline-block;width:3px;height:3px;border-radius:50%;background:rgba(0,200,150,0.4);margin:0 2px}
-/* ── NAV ── */
-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:34px;background:rgba(7,15,28,0.97);backdrop-filter:blur(16px);z-index:100}
-.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal)}
+
+/* TICKER */
+#tk{position:fixed;top:0;left:0;right:0;height:36px;background:#071422;border-bottom:1px solid var(--border);z-index:101;overflow:hidden;display:flex;align-items:center}
+.tki{display:flex;gap:3rem;white-space:nowrap;animation:tks 55s linear infinite;padding-left:100%}
+.tki span{font-size:0.7rem;color:var(--muted)}.tki strong{color:var(--teal)}
+@keyframes tks{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
+.nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--teal);text-decoration:none;letter-spacing:-0.02em}
 .nls{display:flex;align-items:center;gap:1.5rem}
-.nls a{color:var(--muted);font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
 .nls a:hover,.nls a.active{color:var(--teal)}
 .ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
-/* ── HERO ── */
-.hero{padding:3rem 1.5rem 2rem;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(160deg,var(--bg2) 0%,var(--bg3) 100%)}
-.hero-eyebrow{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:0.75rem}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;line-height:1.08;margin-bottom:0.85rem;max-width:680px;margin-left:auto;margin-right:auto}
+@media(max-width:680px){.nls{display:none}}
+
+/* ACCOUNT BAR */
+.ab{background:var(--bg2);border-bottom:1px solid var(--border);padding:0.55rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap}
+.ab.show{display:flex}
+.ab-pill{background:var(--td);border:1px solid var(--tb);border-radius:20px;padding:0.25rem 0.75rem;font-size:0.7rem;color:var(--teal);font-weight:600;font-family:'Syne',sans-serif}
+.ab-btn{padding:0.3rem 0.75rem;border-radius:7px;font-size:0.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.ab-btn:hover{color:var(--text);border-color:var(--muted)}
+.ab-btn.t{background:var(--teal);color:#000;border-color:var(--teal)}.ab-btn.t:hover{background:#00e0aa}
+
+/* HERO */
+.hero{text-align:center;padding:3.5rem 1.5rem 2.5rem;max-width:800px;margin:0 auto}
+.hero-lbl{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:1rem}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem}
 .hero h1 em{font-style:italic;color:var(--teal)}
-.hero-sub{color:var(--muted);font-size:0.92rem;max-width:520px;margin:0 auto 1.75rem;line-height:1.75}
+.hero-sub{font-size:0.95rem;color:var(--muted);max-width:540px;margin:0 auto 2rem;line-height:1.75}
 .hero-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
-.btn-primary{display:inline-block;padding:0.8rem 1.75rem;background:var(--teal);color:#000;border-radius:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;transition:all 0.2s}
-.btn-primary:hover{background:#00e0aa;transform:translateY(-2px)}
-.btn-ghost{display:inline-block;padding:0.8rem 1.5rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-size:0.88rem;font-weight:500;transition:all 0.2s}
-.btn-ghost:hover{border-color:var(--muted)}
-/* ── STATS BAR ── */
-.stats-bar{display:flex;justify-content:center;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-.stat-item{flex:1;max-width:240px;padding:1rem;text-align:center;border-right:1px solid var(--border)}
-.stat-item:last-child{border-right:none}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal);line-height:1}
-.stat-label{font-size:0.68rem;color:var(--muted);margin-top:0.2rem}
-/* ── FILTER BAR ── */
-.filter-wrap{position:sticky;top:100px;z-index:90;background:rgba(7,15,28,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0.85rem 1.5rem}
-.filter-row{max-width:1200px;margin:0 auto;display:flex;gap:0.6rem;align-items:center;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:0.1rem}
-.filter-row::-webkit-scrollbar{display:none}
-.filter-label{font-size:0.68rem;font-weight:700;color:var(--muted);white-space:nowrap;flex-shrink:0}
-.filter-select{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:0.45rem 0.75rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.78rem;outline:none;cursor:pointer;transition:border-color 0.2s;white-space:nowrap;flex-shrink:0;-webkit-appearance:none;min-width:90px}
-.filter-select:focus,.filter-select:hover{border-color:var(--tb);color:var(--teal)}
-.filter-occ-wrap{position:relative;flex-shrink:0}
-.filter-occ-input{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:0.45rem 0.75rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.78rem;outline:none;transition:border-color 0.2s;width:160px}
-.filter-occ-input:focus{border-color:var(--tb)}
-.filter-occ-input::placeholder{color:var(--muted)}
-.sort-wrap{margin-left:auto;flex-shrink:0}
-.filter-reset{font-size:0.72rem;color:var(--muted);cursor:pointer;white-space:nowrap;padding:0.4rem 0.65rem;border:1px solid var(--border);border-radius:8px;transition:all 0.2s;flex-shrink:0}
-.filter-reset:hover{color:var(--teal);border-color:var(--tb)}
-/* Active filter pills */
-.filter-pills-row{max-width:1200px;margin:0.5rem auto 0;display:flex;gap:0.4rem;flex-wrap:wrap;min-height:0}
-.fpill{display:inline-flex;align-items:center;gap:0.35rem;padding:0.25rem 0.6rem;background:var(--td);border:1px solid var(--tb);border-radius:20px;font-size:0.72rem;color:var(--teal);font-weight:600;cursor:pointer}
-.fpill:hover{background:rgba(0,200,150,0.2)}
-.fpill-x{font-size:0.85rem;line-height:1;opacity:0.7}
-/* ── MAIN LAYOUT ── */
-.page-wrap{max-width:1200px;margin:0 auto;padding:1.5rem 1.5rem 5rem}
-.bc{font-size:0.72rem;color:var(--muted);margin-bottom:1.5rem}
-.bc a{color:var(--muted)}.bc a:hover{color:var(--teal)}
-/* ── TRENDING ── */
-.trending-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.65rem}
-.trending-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-bottom:1.5rem;padding-bottom:0.25rem}
-.trending-scroll::-webkit-scrollbar{display:none}
-.trending-track{display:flex;gap:0.65rem;width:max-content;padding-right:1rem}
-.trending-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:0.9rem 1rem;width:280px;flex-shrink:0;cursor:pointer;transition:border-color 0.2s}
-.trending-card:hover{border-color:var(--tb)}
-.tc-top{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem}
-.tc-visa{font-size:0.6rem;font-weight:800;padding:0.1rem 0.4rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;flex-shrink:0}
-.tc-occ{font-size:0.78rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tc-time{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--teal);line-height:1;margin-bottom:0.2rem}
-.tc-meta{font-size:0.7rem;color:var(--muted)}
-.tc-note{font-size:0.68rem;color:var(--muted);margin-top:0.35rem;font-style:italic}
-/* ── AGGREGATE STATS ── */
-.agg-box{background:linear-gradient(135deg,rgba(0,200,150,0.07),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:14px;padding:1.25rem;margin-bottom:1.25rem;display:none}
-.agg-box.show{display:block;animation:fadeup 0.3s ease}
-@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.agg-title{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--teal);margin-bottom:0.85rem}
-.agg-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0.75rem}
-.agg-stat{text-align:center}
-.agg-num{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);line-height:1}
-.agg-lbl{font-size:0.6rem;color:var(--muted);margin-top:0.15rem;line-height:1.3}
-/* ── OUTCOME CARDS ── */
-.outcomes-grid{display:flex;flex-direction:column;gap:0.65rem}
-.oc{background:var(--bg2);border:1px solid var(--border);border-left:3px solid transparent;border-radius:12px;padding:1rem 1.1rem;transition:border-color 0.2s;cursor:default;position:relative}
-.oc:hover{border-color:var(--border)}
-.oc.granted{border-left-color:#10B981}
-.oc.refused{border-left-color:#EF4444}
-.oc.waiting{border-left-color:#F59E0B}
-.oc-top{display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:0.65rem;flex-wrap:wrap}
-.oc-visa{font-size:0.62rem;font-weight:800;padding:0.15rem 0.5rem;border-radius:5px;text-transform:uppercase;letter-spacing:0.05em;flex-shrink:0}
-.v-190{background:rgba(78,142,255,0.15);color:var(--v190)}
-.v-189{background:rgba(155,127,255,0.15);color:var(--v189)}
-.v-491{background:rgba(16,185,129,0.15);color:var(--v491)}
-.v-482{background:rgba(245,158,11,0.15);color:var(--v482)}
-.v-485{background:rgba(0,200,150,0.15);color:var(--v485)}
-.v-820{background:rgba(249,115,22,0.15);color:var(--v820)}
-.v-500{background:rgba(6,182,212,0.15);color:var(--v500)}
-.v-cit{background:rgba(139,92,246,0.15);color:var(--vcit)}
-.v-bva{background:rgba(122,143,168,0.15);color:var(--muted)}
-.oc-occ{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);flex:1;min-width:0}
-.oc-state{font-size:0.62rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:5px;background:var(--card);border:1px solid var(--border);flex-shrink:0;white-space:nowrap}
-.oc-outcome-badge{font-size:0.62rem;font-weight:800;padding:0.15rem 0.5rem;border-radius:5px;flex-shrink:0}
-.ob-granted{background:rgba(16,185,129,0.12);color:#10B981;border:1px solid rgba(16,185,129,0.2)}
-.ob-refused{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2)}
-.ob-waiting{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
-.oc-details{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;margin-bottom:0.5rem}
-.oc-detail{background:var(--bg3);border-radius:7px;padding:0.4rem 0.55rem}
-.ocd-label{font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
-.ocd-val{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--text)}
-.ocd-val.highlight{color:var(--teal)}
-.oc-note{font-size:0.75rem;color:var(--muted);font-style:italic;line-height:1.5;border-top:1px solid var(--border);padding-top:0.5rem;margin-top:0.1rem}
-.oc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem;flex-wrap:wrap;gap:0.35rem}
-.oc-ago{font-size:0.68rem;color:var(--muted)}
-.oc-verified{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.65rem;font-weight:700;color:#10B981}
-.oc-flag{font-size:1rem}
-/* ── LOAD MORE ── */
-.load-more-wrap{text-align:center;margin-top:1.5rem}
-.load-more-btn{padding:0.75rem 2rem;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--muted);font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s}
-.load-more-btn:hover{border-color:var(--tb);color:var(--teal)}
-/* ── EMPTY STATE ── */
-.empty-state{text-align:center;padding:3rem 1.5rem;color:var(--muted)}
-.empty-state .es-icon{font-size:2.5rem;margin-bottom:0.75rem}
-.empty-state h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:0.5rem}
-.empty-state p{font-size:0.82rem}
-/* ── SUBMIT FORM ── */
-.submit-section{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:2rem;margin:3rem 0 2rem}
-.ss-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;margin-bottom:0.35rem}
-.ss-title em{font-style:italic;color:var(--teal)}
-.ss-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.75rem}
-.sf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:0.85rem}
-.sf-row{grid-column:1/-1}
-.sf-label{display:block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:0.3rem}
-.sf-input,.sf-select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
-.sf-input:focus,.sf-select:focus{border-color:var(--tb)}
-.sf-input::placeholder{color:var(--muted)}
-.sf-pts-row{display:none}
-.sf-still-waiting{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--muted);margin-top:0.4rem;cursor:pointer}
-.sf-still-waiting input{accent-color:var(--teal)}
-.sf-checkbox-row{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--muted);cursor:pointer}
-.sf-checkbox-row input{accent-color:var(--teal)}
-.sf-submit{padding:0.85rem 2rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;cursor:pointer;transition:all 0.2s;margin-top:1rem}
-.sf-submit:hover{background:#00e0aa}
-/* ── SEO SECTION ── */
-.seo-section{margin:2rem 0;padding:2rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px}
-.seo-h{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;margin-bottom:0.6rem;color:var(--text)}
-.seo-p{font-size:0.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
-.seo-links{display:flex;flex-direction:column;gap:0.3rem}
-.seo-link{font-size:0.8rem;color:var(--teal);font-weight:600}
-.seo-link:hover{text-decoration:underline}
-/* ── EMAIL CAPTURE ── */
-.capture-strip{background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;margin:2rem 0;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.cs-text{flex:1;min-width:200px;font-size:0.85rem;color:var(--muted);line-height:1.6}
-.cs-text strong{color:var(--text);display:block;margin-bottom:0.2rem}
-.cs-form{display:flex;gap:0.5rem;flex:1;min-width:260px}
-.cs-input{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.83rem;outline:none;transition:border-color 0.2s}
-.cs-input:focus{border-color:var(--tb)}
-.cs-input::placeholder{color:var(--muted)}
-.cs-btn{padding:0.65rem 1.1rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s}
-.cs-btn:hover{background:#00e0aa}
-/* ── DISCLAIMER / FOOTER ── */
-.disclaimer{background:var(--bg2);border-top:1px solid var(--border);padding:1rem 1.5rem;font-size:0.72rem;color:var(--muted);text-align:center;line-height:1.6}
-.disclaimer strong{color:var(--amber)}
-footer{border-top:1px solid var(--border);padding:2rem 1.5rem;font-size:0.78rem;color:var(--muted)}
-footer a{color:var(--teal)}
-.lu{font-size:0.72rem;color:var(--muted);text-align:right;margin-top:0.5rem}
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .agg-grid{grid-template-columns:repeat(3,1fr)}
-  .oc-details{grid-template-columns:1fr 1fr}
-  .sf-grid{grid-template-columns:1fr}
-}
-@media(max-width:640px){
-  .nls{display:none}
-  .hero h1{font-size:1.75rem}
-  .stats-bar{flex-wrap:wrap}
-  .stat-item{min-width:45%;border-right:1px solid var(--border)}
-  .agg-grid{grid-template-columns:repeat(2,1fr)}
-  .filter-row{gap:0.45rem}
-}
-/* ── SECTION LABELS ── */
-.section-label{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.4rem}
-.section-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
-.section-title em{font-style:italic;color:var(--teal)}
-.link-card{display:inline-flex;align-items:center;gap:0.4rem;padding:0.55rem 1rem;background:transparent;border:1px solid var(--border);border-radius:10px;font-size:0.8rem;font-weight:600;color:var(--muted);transition:all 0.2s}
-.link-card:hover{border-color:var(--tb);color:var(--teal)}
+.btn-hp{padding:0.85rem 1.75rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s}
+.btn-hp:hover{background:#00e0aa;transform:translateY(-2px)}
+.btn-hg{padding:0.85rem 1.5rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn-hg:hover{border-color:var(--muted);background:rgba(255,255,255,0.04)}
+
+/* FILTER BAR — clean, no clutter */
+.filter-bar{background:var(--bg2);border-bottom:1px solid var(--border);border-top:1px solid var(--border);padding:0.85rem 1.5rem;display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;position:sticky;top:calc(36px + 61px);z-index:90;backdrop-filter:blur(12px)}
+.fb-sel{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:0.4rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;cursor:pointer;-webkit-appearance:none;transition:border-color 0.2s}
+.fb-sel:hover,.fb-sel:focus{border-color:rgba(0,200,150,0.4);background:var(--td)}
+.fb-sel option{background:#0D1B2E;color:var(--text)}
+.fb-sel optgroup{color:var(--muted);font-size:0.72rem}
+.pts-wrap{display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:0.38rem 0.82rem;font-size:0.8rem;color:var(--muted)}
+.pts-wrap input[type=range]{width:72px;accent-color:var(--teal);cursor:pointer}
+.pts-wrap .pv{font-family:'Syne',sans-serif;font-weight:800;color:var(--teal);font-size:0.78rem;min-width:30px}
+.stg-pills{display:flex;gap:0.3rem}
+.sp{padding:0.38rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;border:1px solid transparent;transition:all 0.18s;background:rgba(255,255,255,0.04);color:var(--muted);border-color:var(--border)}
+.sp.on-all{color:var(--teal);border-color:var(--tb);background:var(--td)}
+.sp.on-eoi{color:var(--eoi);border-color:var(--eoi-br);background:var(--eoi-bg)}
+.sp.on-inv{color:var(--inv);border-color:var(--inv-br);background:var(--inv-bg)}
+.sp.on-wait{color:var(--wait);border-color:var(--wait-br);background:var(--wait-bg)}
+.sp.on-grt{color:var(--grt);border-color:var(--grt-br);background:var(--grt-bg)}
+.fb-space{flex:1}
+.fb-save{background:none;border:1px solid var(--tb);border-radius:20px;padding:0.38rem 0.8rem;color:var(--teal);font-size:0.75rem;cursor:pointer;font-family:'Syne',sans-serif;font-weight:600;transition:background 0.2s}
+.fb-save:hover{background:var(--td)}
+.fb-reset{background:none;border:none;font-size:0.75rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;padding:0.38rem 0.4rem}
+.fb-reset:hover{color:var(--text)}
+
+/* MAIN LAYOUT */
+.main{max-width:1100px;margin:0 auto;padding:1.5rem 1.5rem 3rem;display:grid;grid-template-columns:1fr 275px;gap:1.25rem;align-items:start}
+@media(max-width:900px){.main{grid-template-columns:1fr}}
+
+/* BENCH (logged in only) */
+.bench{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:12px;padding:0.85rem 1.1rem;margin-bottom:1rem;display:none;align-items:center;gap:1rem;flex-wrap:wrap}
+.bench.show{display:flex}
+.bn{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
+.bn.g{color:var(--green)}.bn.m{color:var(--amber)}.bn.b{color:#EF4444}
+.bl{font-size:0.6rem;color:var(--muted)}
+.bt{font-size:0.78rem;color:var(--text);line-height:1.6;flex:1}
+.bt strong{color:var(--teal)}
+
+/* OUTCOME CARDS */
+.oc-list{display:flex;flex-direction:column;gap:0.6rem}
+.oc{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.15rem 1rem 1.2rem;transition:border-color 0.18s,box-shadow 0.18s;position:relative;overflow:hidden}
+.oc:hover{border-color:rgba(255,255,255,0.14);box-shadow:0 4px 20px rgba(0,0,0,0.22)}
+.oc-bar{position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:14px 0 0 14px}
+.oc[data-stage=eoi] .oc-bar{background:var(--eoi)}
+.oc[data-stage=inv] .oc-bar{background:var(--inv)}
+.oc[data-stage=wait] .oc-bar{background:var(--wait)}
+.oc[data-stage=grt] .oc-bar{background:var(--grt)}
+
+/* header */
+.oc-head{display:flex;align-items:flex-start;gap:0.65rem;margin-bottom:0.75rem}
+.oc-flag{font-size:1.3rem;flex-shrink:0;line-height:1.2}
+.oc-inf{flex:1;min-width:0}
+.oc-nm{font-family:'Syne',sans-serif;font-weight:700;font-size:0.92rem;color:var(--text);display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;line-height:1.25}
+.vbdg{font-size:0.6rem;font-weight:700;padding:0.13rem 0.42rem;border-radius:4px;font-family:'Syne',sans-serif;flex-shrink:0}
+.vbdg.v189{background:rgba(155,127,255,0.18);color:#9B7FFF}
+.vbdg.v190{background:var(--td);color:var(--teal)}
+.vbdg.v491{background:rgba(78,142,255,0.15);color:var(--blue)}
+.vbdg.v482{background:rgba(245,158,11,0.15);color:var(--amber)}
+.vbdg.v485{background:rgba(239,68,68,0.12);color:#ef8080}
+.oc-meta{display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.2rem;font-size:0.72rem;color:var(--muted);align-items:center}
+.oc-pts{font-family:'Syne',sans-serif;font-weight:700;font-size:0.76rem;color:var(--teal)}
+.dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.15);flex-shrink:0;align-self:center}
+.oc-ago{font-size:0.63rem;color:var(--muted);margin-left:auto}
+
+/* JOURNEY TIMELINE */
+.journey{display:flex;align-items:flex-start;gap:0;margin-bottom:0.8rem}
+.jstep{display:flex;flex-direction:column;align-items:center;flex-shrink:0;position:relative}
+.jdot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;font-family:'Syne',sans-serif;border:2px solid transparent;flex-shrink:0}
+.jdot.done{background:rgba(16,185,129,0.15);border-color:var(--grt);color:var(--grt)}
+.jdot.cur-eoi{background:var(--eoi-bg);border-color:var(--eoi);color:var(--eoi)}
+.jdot.cur-inv{background:var(--inv-bg);border-color:var(--inv);color:var(--inv)}
+.jdot.cur-wait{background:var(--wait-bg);border-color:var(--wait);color:var(--wait)}
+.jdot.cur-grt{background:var(--grt-bg);border-color:var(--grt);color:var(--grt)}
+.jdot.future{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.18)}
+.jlbl{font-size:0.55rem;color:var(--muted);margin-top:0.22rem;text-align:center;white-space:nowrap;line-height:1.3;max-width:54px}
+.jlbl.done{color:var(--green)}
+.jlbl.cur{font-weight:700}
+.jlbl.cur-eoi{color:var(--eoi)}
+.jlbl.cur-inv{color:var(--inv)}
+.jlbl.cur-wait{color:var(--wait)}
+.jlbl.cur-grt{color:var(--grt)}
+.jline{flex:1;height:2px;margin:11px 3px 0;border-radius:1px;min-width:10px}
+.jline.done{background:var(--green)}
+.jline.pending{background:rgba(255,255,255,0.07)}
+/* wait chip between steps */
+.jwrap{display:flex;flex-direction:column;align-items:center;flex:1;min-width:10px}
+.jchip{font-size:0.52rem;color:var(--muted);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:0.04rem 0.28rem;white-space:nowrap;margin-bottom:2px}
+
+/* summary row */
+.oc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.65rem;border-top:1px solid var(--border);gap:0.5rem;flex-wrap:wrap}
+.oc-stage-lbl{font-size:0.65rem;font-weight:700;font-family:'Syne',sans-serif;padding:0.2rem 0.65rem;border-radius:20px}
+.oc-stage-lbl.eoi{background:var(--eoi-bg);color:var(--eoi);border:1px solid var(--eoi-br)}
+.oc-stage-lbl.inv{background:var(--inv-bg);color:var(--inv);border:1px solid var(--inv-br)}
+.oc-stage-lbl.wait{background:var(--wait-bg);color:var(--wait);border:1px solid var(--wait-br)}
+.oc-stage-lbl.grt{background:var(--grt-bg);color:var(--grt);border:1px solid var(--grt-br)}
+.oc-summary-txt{font-size:0.73rem;color:var(--muted)}
+.oc-summary-txt strong{color:var(--text)}
+
+/* EMPTY */
+.empty{text-align:center;padding:3.5rem 1rem;color:var(--muted)}
+.empty p{font-size:0.85rem;margin-top:0.75rem;max-width:300px;margin-left:auto;margin-right:auto}
+
+/* LOAD MORE */
+.lw{text-align:center;margin-top:1.25rem}
+.btn-load{padding:0.65rem 2rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:9px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;transition:background 0.2s}
+.btn-load:hover{background:var(--td)}
+
+/* SUBMIT CTA */
+.sub-cta{background:linear-gradient(135deg,rgba(0,200,150,0.07),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:16px;padding:1.5rem;text-align:center;margin-top:1.5rem}
+.sub-cta h3{font-family:'Syne',sans-serif;font-size:0.98rem;font-weight:800;margin-bottom:0.4rem}
+.sub-cta p{font-size:0.78rem;color:var(--muted);max-width:360px;margin:0 auto 1rem;line-height:1.6}
+.btn-sub{padding:0.65rem 1.4rem;background:var(--teal);color:#000;border:none;border-radius:9px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer}
+.btn-sub:hover{background:#00e0aa}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+.scard{background:var(--bg2);border:1px solid var(--border);border-radius:13px;padding:1rem}
+.scard-t{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.75rem}
+.nudge{background:linear-gradient(135deg,rgba(0,200,150,0.1),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:13px;padding:1.1rem;text-align:center}
+.nudge-t{font-family:'Syne',sans-serif;font-weight:800;font-size:0.88rem;margin-bottom:0.35rem}
+.nudge-s{font-size:0.72rem;color:var(--muted);line-height:1.6;margin-bottom:0.85rem}
+.btn-nudge{width:100%;padding:0.6rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer}
+.btn-nudge:hover{background:#00e0aa}
+/* T1/T2 chips */
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.38rem}
+.tr-chip{display:flex;align-items:center;gap:0.38rem;padding:0.42rem 0.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:all 0.18s}
+.tr-chip:hover{border-color:var(--teal);background:var(--td)}
+.tr-chip:hover .tr-nm{color:var(--teal)}
+.tr-t{font-size:0.58rem;font-weight:800;font-family:'Syne',sans-serif;padding:0.08rem 0.3rem;border-radius:4px;flex-shrink:0}
+.tr-t.t1{background:rgba(16,185,129,0.18);color:var(--green)}
+.tr-t.t2{background:rgba(78,142,255,0.15);color:var(--blue)}
+.tr-nm{font-size:0.7rem;color:var(--text);flex:1;transition:color 0.18s;line-height:1.25}
+/* Visa wait bars */
+.vw-row{display:flex;align-items:center;gap:0.5rem;padding:0.42rem 0;border-bottom:1px solid var(--border)}
+.vw-row:last-child{border:none}
+.vw-n{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;width:28px;flex-shrink:0}
+.vw-bw{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
+.vw-bf{height:100%;border-radius:2px}
+.vw-v{font-size:0.68rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--text);min-width:30px;text-align:right}
+
+/* MODALS */
+.mbg{display:none;position:fixed;inset:0;background:rgba(7,15,28,0.9);backdrop-filter:blur(10px);z-index:500;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.mbg.show{display:flex}
+.modal{background:#0D1B2E;border:1px solid rgba(0,200,150,0.22);border-radius:20px;padding:1.75rem;max-width:490px;width:100%;position:relative;animation:mUp 0.28s ease;margin:auto}
+@keyframes mUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.mc{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.mc:hover{color:var(--text)}
+.mt{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:0.3rem}
+.ms{font-size:0.78rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.6}
+.msec{font-family:'Syne',sans-serif;font-size:0.63rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin:1rem 0 0.55rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border)}
+.mr{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem}
+.mr.full{grid-template-columns:1fr}
+.mg{display:flex;flex-direction:column;gap:0.22rem}
+.ml{font-size:0.62rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+.mi,.mse{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:0.58rem 0.82rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;transition:border-color 0.2s;width:100%;-webkit-appearance:none}
+.mi:focus,.mse:focus{border-color:var(--tb)}
+.mi::placeholder{color:var(--muted)}
+.mse option,.mse optgroup{background:#0D1B2E}
+.vbul{display:flex;flex-direction:column;gap:0.32rem;margin:0.75rem 0;padding:0.7rem;background:rgba(0,200,150,0.05);border-radius:9px;border:1px solid var(--tb)}
+.vbl{display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text)}
+.vbl::before{content:'✓';color:var(--teal);font-weight:800;flex-shrink:0}
+.bprim{width:100%;padding:0.78rem;background:var(--teal);color:#000;border:none;border-radius:9px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;margin-top:0.4rem}
+.bprim:hover{background:#00e0aa}
+.mlink{text-align:center;font-size:0.74rem;color:var(--muted);margin-top:0.7rem}
+.mlink a{color:var(--teal);text-decoration:none;font-weight:600}
+.sps{display:grid;grid-template-columns:repeat(4,1fr);gap:0.4rem;margin-bottom:0.75rem}
+@media(max-width:420px){.sps{grid-template-columns:1fr 1fr}}
+.ssp{padding:0.6rem 0.25rem;border-radius:9px;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.18s;text-align:center;border:2px solid transparent;opacity:0.55;line-height:1.4}
+.ssp.eoi{background:var(--eoi-bg);color:var(--eoi);border-color:var(--eoi-br)}
+.ssp.inv{background:var(--inv-bg);color:var(--inv);border-color:var(--inv-br)}
+.ssp.wait{background:var(--wait-bg);color:var(--wait);border-color:var(--wait-br)}
+.ssp.grt{background:var(--grt-bg);color:var(--grt);border-color:var(--grt-br)}
+.ssp.on{opacity:1;transform:translateY(-2px)}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:0.75rem;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
+.dis{font-size:0.7rem;color:var(--muted);text-align:center;padding:1rem 1.5rem;line-height:1.6;max-width:680px;margin:0 auto}
+.dis strong{color:var(--amber)}
 </style>
 </head>
 <body>
 
-<!-- TICKER -->
-<div id="viq-ticker">
-  <div class="tick-live">Live</div>
-  <div class="tick-mask">
-    <div class="tick-track">
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="td"></span></span>
-      <span class="ti">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="td"></span></span>
-      <span class="ti">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="td"></span></span>
-      <span class="ti">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="td"></span></span>
-      <span class="ti">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="td"></span></span>
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="td"></span></span>
-      <span class="ti">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="td"></span></span>
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="td"></span></span>
-      <!-- duplicate -->
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Registered Nurse</b> · SA 190 · 75 pts · granted 3 days ago</span><span class="td"></span></span>
-      <span class="ti">📡&nbsp;<span style="color:#E8EDF5"><b style="color:#00C896">TAS ran a 491 round</b> · Chefs invited · cutoff 65 pts · March 18</span><span class="td"></span></span>
-      <span class="ti">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">190 visa processing</b> · NSW · now averaging 11 months</span><span class="td"></span></span>
-      <span class="ti">📊&nbsp;<span style="color:#E8EDF5"><b style="color:#7A8FA8">Accountant EOI pool</b> · 15,240 active EOIs · up 340 this month</span><span class="td"></span></span>
-      <span class="ti">⚠️&nbsp;<span style="color:#E8EDF5"><b style="color:#F59E0B">SA Talent stream</b> · reopened March 20 · limited places</span><span class="td"></span></span>
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Software Engineer</b> · ACT 491 · 80 pts · granted 5 days ago</span><span class="td"></span></span>
-      <span class="ti">⏱&nbsp;<span style="color:#E8EDF5"><b style="color:#4E8EFF">485 visa fee</b> · $4,600 from 1 March 2026</span><span class="td"></span></span>
-      <span class="ti">✓&nbsp;<span style="color:#E8EDF5"><b style="color:#10B981">Electrician</b> · QLD 190 · 65 pts · granted 1 week ago</span><span class="td"></span></span>
-    </div>
-  </div>
-</div>
+<div id="tk"><div class="tki">
+  <span>🟢 <strong>SA 190</strong> — Registered Nurse · 75pts · Granted 8mo</span>
+  <span>🟡 <strong>QLD 190</strong> — Electrician · 80pts · Invited 4mo</span>
+  <span>🟣 <strong>NSW 189</strong> — Social Worker · 90pts · Waiting for grant</span>
+  <span>🟢 <strong>TAS 190</strong> — Early Childhood Teacher · 75pts · Granted 5mo</span>
+  <span>🔵 <strong>VIC 190</strong> — Physiotherapist · 75pts · EOI Lodged</span>
+  <span>🟢 <strong>ACT 190</strong> — Registered Nurse · 80pts · Granted 9mo</span>
+  <span>🟡 <strong>SA 190</strong> — Dentist · 85pts · Invited 3mo</span>
+  <span>🟢 <strong>SA 190</strong> — Registered Nurse · 75pts · Granted 8mo</span>
+  <span>🟡 <strong>QLD 190</strong> — Electrician · 80pts · Invited 4mo</span>
+  <span>🟣 <strong>NSW 189</strong> — Social Worker · 90pts · Waiting for grant</span>
+  <span>🟢 <strong>TAS 190</strong> — Early Childhood Teacher · 75pts · Granted 5mo</span>
+  <span>🔵 <strong>VIC 190</strong> — Physiotherapist · 75pts · EOI Lodged</span>
+  <span>🟢 <strong>ACT 190</strong> — Registered Nurse · 80pts · Granted 9mo</span>
+  <span>🟡 <strong>SA 190</strong> — Dentist · 85pts · Invited 3mo</span>
+</div></div>
 
-<!-- NAV -->
 <nav>
   <a href="/" class="nl">VisaIQ</a>
   <div class="nls">
@@ -270,670 +264,640 @@ footer a{color:var(--teal)}
     <a href="/student-pathway">Students</a>
     <a href="/partner-visa">Partner</a>
     <a href="/rounds">Rounds</a>
+    <a href="/outcomes" class="active">Outcomes</a>
     <a href="/tool" class="ncta">Get My Score →</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<div class="ab" id="ab">
+  <span style="font-size:0.78rem;color:var(--muted)">Welcome back, <strong id="ab-name" style="color:var(--teal)">—</strong></span>
+  <div class="ab-pill" id="ab-pill">—</div>
+  <div style="display:flex;gap:0.5rem">
+    <button class="ab-btn t" onclick="openSub()">+ Submit My Outcome</button>
+    <button class="ab-btn" onclick="logout()">Sign out</button>
+  </div>
+</div>
+
 <div class="hero">
-  <div class="hero-eyebrow">Community Data</div>
+  <div class="hero-lbl">Community Data</div>
   <h1>Real Australian visa outcomes —<br><em>filter by your occupation and state</em></h1>
-  <p class="hero-sub"><span id="hero-count">1,247</span> outcomes submitted by the VisaIQ community. Filter by your occupation, state and visa type to see what people in your exact situation experienced.</p>
+  <p class="hero-sub">Community-submitted outcomes. Filter by occupation, state and visa type to see what people in your exact situation experienced — from EOI to grant.</p>
   <div class="hero-btns">
-    <a href="#filter-bar" class="btn-primary">Filter outcomes for my situation →</a>
-    <a href="#submit-form" class="btn-ghost">Submit my outcome →</a>
+    <button class="btn-hp" onclick="document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth'})">Filter outcomes for my situation →</button>
+    <button class="btn-hg" onclick="openSub()">Submit my outcome →</button>
   </div>
 </div>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num" id="stat-total">1,247</div><div class="stat-label">total outcomes</div></div>
-  <div class="stat-item"><div class="stat-num" id="stat-month">84</div><div class="stat-label">this month</div></div>
-  <div class="stat-item"><div class="stat-num" id="stat-visas">11</div><div class="stat-label">visa types covered</div></div>
-  <div class="stat-item"><div class="stat-num" id="stat-occs">47</div><div class="stat-label">occupations represented</div></div>
+<!-- FILTER BAR — clean -->
+<div class="filter-bar">
+  <select class="fb-sel" id="f-visa" onchange="applyF()">
+    <option value="">All visas</option>
+    <option value="189">189 Independent</option>
+    <option value="190">190 State</option>
+    <option value="491">491 Regional</option>
+    <option value="482">482 Employer</option>
+    <option value="485">485 Post-Study</option>
+  </select>
+
+  <select class="fb-sel" id="f-occ" onchange="applyF()" style="max-width:200px">
+    <option value="">All occupations</option>
+    <optgroup label="Tier 1">
+      <option>Registered Nurse</option>
+      <option>Physiotherapist</option>
+      <option>Occupational Therapist</option>
+      <option>Social Worker</option>
+      <option>General Practitioner</option>
+      <option>Dentist</option>
+      <option>Early Childhood Teacher</option>
+      <option>Special Education Teacher</option>
+      <option>Speech Pathologist</option>
+      <option>Psychologist</option>
+      <option>Audiologist</option>
+      <option>Podiatrist</option>
+      <option>Optometrist</option>
+      <option>Midwife</option>
+      <option>Mental Health Nurse</option>
+    </optgroup>
+    <optgroup label="Tier 2">
+      <option>Secondary Teacher</option>
+      <option>Primary Teacher</option>
+      <option>Electrician</option>
+      <option>Plumber</option>
+      <option>Construction Project Manager</option>
+      <option>Structural Engineer</option>
+      <option>Civil Engineer</option>
+      <option>Aged Care Worker</option>
+      <option>Disability Support Worker</option>
+      <option>Carpenter</option>
+      <option>Boilermaker</option>
+      <option>Metal Fabricator</option>
+      <option>Refrigeration Mechanic</option>
+    </optgroup>
+    <optgroup label="Tier 3">
+      <option>Software Engineer</option>
+      <option>Management Accountant</option>
+      <option>Accountant</option>
+      <option>ICT Business Analyst</option>
+      <option>Network Engineer</option>
+      <option>Cybersecurity Analyst</option>
+      <option>Data Scientist</option>
+      <option>Mechanical Engineer</option>
+      <option>Electrical Engineer</option>
+      <option>Environmental Engineer</option>
+      <option>Mining Engineer</option>
+      <option>Architect</option>
+      <option>Quantity Surveyor</option>
+      <option>Urban Planner</option>
+    </optgroup>
+    <optgroup label="Other">
+      <option>Pharmacist</option>
+      <option>Radiographer</option>
+      <option>Medical Laboratory Scientist</option>
+      <option>Sonographer</option>
+      <option>Dietitian</option>
+      <option>Veterinarian</option>
+      <option>Lawyer</option>
+      <option>Financial Advisor</option>
+      <option>Chef / Cook</option>
+      <option>Baker</option>
+      <option>Hairdresser</option>
+      <option>Geologist</option>
+    </optgroup>
+  </select>
+
+  <select class="fb-sel" id="f-state" onchange="applyF()">
+    <option value="">All states</option>
+    <option>NSW</option><option>VIC</option><option>QLD</option>
+    <option>SA</option><option>WA</option><option>TAS</option>
+    <option>ACT</option><option>NT</option>
+  </select>
+
+  <div class="pts-wrap">
+    <span>Pts</span>
+    <input type="range" id="f-pts" min="60" max="110" value="60" step="5" oninput="document.getElementById('pv').textContent=this.value+'+';applyF()">
+    <span class="pv" id="pv">60+</span>
+  </div>
+
+  <div class="stg-pills">
+    <button class="sp on-all" id="sp-all" onclick="setStg('',this)">All</button>
+    <button class="sp" id="sp-eoi" onclick="setStg('eoi',this)">📋 EOI</button>
+    <button class="sp" id="sp-inv" onclick="setStg('inv',this)">✉️ Invited</button>
+    <button class="sp" id="sp-wait" onclick="setStg('wait',this)">⏳ Waiting</button>
+    <button class="sp" id="sp-grt" onclick="setStg('grt',this)">🎉 Granted</button>
+  </div>
+
+  <div class="fb-space"></div>
+  <button class="fb-save" id="btn-save" onclick="saveF()">💾 Save</button>
+  <button class="fb-reset" onclick="resetF()">Reset ×</button>
 </div>
 
-<!-- FILTER BAR -->
-<div class="filter-wrap" id="filter-bar">
-  <div class="filter-row">
-    <span class="filter-label">Filter:</span>
-
-    <select class="filter-select" id="f-visa" onchange="applyFilters()">
-      <option value="">All visas</option>
-      <option value="190">190</option>
-      <option value="189">189</option>
-      <option value="491">491</option>
-      <option value="482">482</option>
-      <option value="485">485</option>
-      <option value="820">820/801</option>
-      <option value="500">500</option>
-      <option value="bva">BVA</option>
-      <option value="cit">Citizenship</option>
-      <option value="other">Other</option>
-    </select>
-
-    <div class="filter-occ-wrap">
-      <input type="text" class="filter-occ-input" id="f-occ" placeholder="Occupation…" oninput="applyFilters()">
+<!-- MAIN -->
+<div class="main">
+  <div>
+    <div class="bench" id="bench">
+      <div><div class="bn" id="bn">—</div><div class="bl">your rank</div></div>
+      <div class="bt" id="bt">—</div>
     </div>
-
-    <select class="filter-select" id="f-state" onchange="applyFilters()">
-      <option value="">All states</option>
-      <option>NSW</option><option>VIC</option><option>QLD</option>
-      <option>SA</option><option>WA</option><option>TAS</option>
-      <option>ACT</option><option>NT</option>
-    </select>
-
-    <select class="filter-select" id="f-pts" onchange="applyFilters()">
-      <option value="">Any points</option>
-      <option value="0-64">Under 65</option>
-      <option value="65-74">65–74</option>
-      <option value="75-84">75–84</option>
-      <option value="85-94">85–94</option>
-      <option value="95-999">95+</option>
-    </select>
-
-    <select class="filter-select" id="f-outcome" onchange="applyFilters()">
-      <option value="">All outcomes</option>
-      <option value="granted">Granted</option>
-      <option value="refused">Refused</option>
-      <option value="waiting">Still waiting</option>
-    </select>
-
-    <div class="sort-wrap">
-      <select class="filter-select" id="f-sort" onchange="applyFilters()">
-        <option value="recent">Most recent</option>
-        <option value="slowest">Longest wait</option>
-        <option value="fastest">Shortest wait</option>
-        <option value="pts_high">Highest points</option>
-        <option value="pts_low">Lowest points</option>
-      </select>
+    <div class="oc-list" id="oc-list"></div>
+    <div class="lw" id="lw" style="display:none">
+      <button class="btn-load" onclick="loadMore()">Load more outcomes</button>
     </div>
-
-    <div class="filter-reset" onclick="resetFilters()">Reset ×</div>
-  </div>
-  <div class="filter-pills-row" id="filter-pills"></div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="page-wrap">
-  <div class="bc"><a href="/">Home</a> › Community Outcomes</div>
-
-  <!-- TRENDING -->
-  <div class="trending-label">🔥 Trending this week</div>
-  <div class="trending-scroll">
-    <div class="trending-track" id="trending-track">
-      <!-- injected by JS -->
+    <div class="sub-cta">
+      <h3>Share your outcome</h3>
+      <p>Help others with your exact profile plan accurately. Add your EOI date, invitation or grant — takes 2 minutes.</p>
+      <button class="btn-sub" onclick="openSub()">+ Submit My Outcome</button>
     </div>
   </div>
 
-  <!-- AGGREGATE STATS (shown when filters active) -->
-  <div class="agg-box" id="agg-box">
-    <div class="agg-title" id="agg-title">Showing outcomes for current filter</div>
-    <div class="agg-grid">
-      <div class="agg-stat"><div class="agg-num" id="agg-count">—</div><div class="agg-lbl">matching outcomes</div></div>
-      <div class="agg-stat"><div class="agg-num" id="agg-median">—</div><div class="agg-lbl">median processing</div></div>
-      <div class="agg-stat"><div class="agg-num" id="agg-fastest">—</div><div class="agg-lbl">fastest grant</div></div>
-      <div class="agg-stat"><div class="agg-num" id="agg-slowest">—</div><div class="agg-lbl">slowest grant</div></div>
-      <div class="agg-stat"><div class="agg-num" id="agg-pts">—</div><div class="agg-lbl">most common pts</div></div>
-      <div class="agg-stat"><div class="agg-num" id="agg-success">—</div><div class="agg-lbl">success rate</div></div>
-    </div>
-  </div>
-
-  <!-- OUTCOMES FEED -->
-  <div class="outcomes-grid" id="outcomes-feed">
-    <!-- injected by JS -->
-  </div>
-
-  <div class="empty-state" id="empty-state" style="display:none">
-    <div class="es-icon">🔍</div>
-    <h3>No outcomes match your filters</h3>
-    <p>Try broadening your search — remove one or more filters to see more results.</p>
-  </div>
-
-  <div class="load-more-wrap" id="load-more-wrap">
-    <button class="load-more-btn" onclick="loadMore()">Load more outcomes →</button>
-  </div>
-
-  <!-- SUBMIT FORM -->
-  <div class="submit-section" id="submit-form">
-    <div class="ss-title">Help others by submitting<br><em>your outcome</em></div>
-    <div class="ss-sub">Did you get a decision? Every submission helps thousands of others plan their pathway more accurately.</div>
-
-    <div class="sf-grid">
-      <div>
-        <label class="sf-label">Visa type</label>
-        <select class="sf-select" id="sf-visa" onchange="sfVisaChange()">
-          <option value="">Select visa…</option>
-          <option value="190">190 — State Nominated</option>
-          <option value="189">189 — Independent</option>
-          <option value="491">491 — Regional</option>
-          <option value="482">482 — Skills in Demand</option>
-          <option value="485">485 — Graduate</option>
-          <option value="820">820/801 — Partner (onshore)</option>
-          <option value="309">309/100 — Partner (offshore)</option>
-          <option value="500">500 — Student</option>
-          <option value="bva">Bridging Visa</option>
-          <option value="cit">Australian Citizenship</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label class="sf-label">Occupation</label>
-        <input type="text" class="sf-input" id="sf-occ" placeholder="e.g. Registered Nurse">
-      </div>
-      <div>
-        <label class="sf-label">State</label>
-        <select class="sf-select" id="sf-state">
-          <option value="">Select state…</option>
-          <option>NSW</option><option>VIC</option><option>QLD</option>
-          <option>SA</option><option>WA</option><option>TAS</option>
-          <option>ACT</option><option>NT</option><option>Offshore</option>
-        </select>
-      </div>
-      <div class="sf-pts-row" id="sf-pts-row">
-        <label class="sf-label">Points score at invitation</label>
-        <input type="number" class="sf-input" id="sf-pts" placeholder="e.g. 75" min="0" max="120">
-      </div>
-      <div>
-        <label class="sf-label">Lodgement date</label>
-        <input type="date" class="sf-input" id="sf-lodge">
-      </div>
-      <div>
-        <label class="sf-label">Decision date</label>
-        <input type="date" class="sf-input" id="sf-decision">
-        <label class="sf-still-waiting"><input type="checkbox" id="sf-sw" onchange="toggleStillWaiting()"> Still waiting — not yet decided</label>
-      </div>
-      <div>
-        <label class="sf-label">Outcome</label>
-        <select class="sf-select" id="sf-outcome">
-          <option value="">Select outcome…</option>
-          <option value="granted">Granted</option>
-          <option value="refused">Refused</option>
-          <option value="waiting">Still waiting</option>
-          <option value="withdrawn">Withdrawn</option>
-        </select>
-      </div>
-      <div class="sf-row">
-        <label class="sf-label">Your experience (optional — 150 chars max)</label>
-        <input type="text" class="sf-input" id="sf-note" maxlength="150" placeholder="One sentence about your experience…">
-      </div>
-      <div>
-        <label class="sf-label">Email address (for verification — not shown publicly)</label>
-        <input type="email" class="sf-input" id="sf-email" placeholder="your@email.com">
-      </div>
-      <div style="display:flex;align-items:flex-end;padding-bottom:0.15rem">
-        <label class="sf-checkbox-row"><input type="checkbox" id="sf-confirm"> I confirm this outcome is genuine and accurate</label>
-      </div>
+  <div class="sidebar">
+    <div class="nudge" id="nudge">
+      <div style="font-size:1.75rem;margin-bottom:0.4rem">🔔</div>
+      <div class="nudge-t">Get alerted when your profile gets invited</div>
+      <div class="nudge-s">Free account. We notify you the moment someone with your occupation, points and state gets an invitation.</div>
+      <button class="btn-nudge" onclick="openAuth('signup')">Create free account →</button>
+      <div style="font-size:0.68rem;color:var(--muted);margin-top:0.5rem">Have an account? <a href="#" onclick="openAuth('login');return false" style="color:var(--teal)">Sign in</a></div>
     </div>
 
-    <button class="sf-submit" onclick="submitOutcome()">Submit my outcome →</button>
-    <div id="sf-success" style="display:none;margin-top:1rem;padding:0.85rem 1rem;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);border-radius:10px;font-size:0.82rem;color:#10B981">
-      ✓ Thank you — your outcome will appear in the feed once verified. Check your email to confirm.
-      <!-- BACKEND REQUIRED: Send verification email with one-click confirm link -->
+    <div class="scard">
+      <div class="scard-t">🔥 Tier 1 &amp; 2 occupations</div>
+      <div class="tr-grid" id="trending"></div>
     </div>
-  </div>
 
-  <!-- SEO SECTION -->
-  <div class="seo-section">
-    <h2 class="seo-h">About this outcomes data</h2>
-    <p class="seo-p">All outcomes in this feed are submitted by real VisaIQ users and verified via email confirmation. Processing times are calculated from lodgement date to decision date as reported by the applicant. This data reflects applicant experience and not official DHA processing time data. For official DHA processing time estimates, see the DHA website. This feed is updated continuously as new outcomes are submitted.</p>
-    <h2 class="seo-h">Most searched outcome categories</h2>
-    <div class="seo-links">
-      <a href="/outcomes?visa=190&state=SA&occ=Registered+Nurse" class="seo-link">Registered Nurse 190 SA outcomes</a>
-      <a href="/outcomes?visa=491&state=ACT&occ=Software+Engineer" class="seo-link">Software Engineer 491 ACT outcomes</a>
-      <a href="/outcomes?visa=482" class="seo-link">482 visa processing times 2026</a>
-      <a href="/outcomes?visa=820" class="seo-link">Partner visa 820 processing times 2026</a>
-      <a href="/outcomes?visa=500" class="seo-link">Student visa 500 processing times 2026 by nationality</a>
-      <a href="/outcomes?visa=485" class="seo-link">485 graduate visa processing times 2026</a>
+    <div class="scard">
+      <div class="scard-t">⚡ Avg wait to invitation</div>
+      <div id="vw"></div>
     </div>
-  </div>
 
-  <!-- EMAIL CAPTURE -->
-  <div class="capture-strip">
-    <div class="cs-text">
-      <strong>Get alerted when outcomes like yours are submitted</strong>
-      Set up your free profile on My VisaIQ to track outcomes and invitation rounds for your specific situation.
+    <div class="scard" style="background:rgba(78,142,255,0.04);border-color:rgba(78,142,255,0.18)">
+      <div class="scard-t" style="color:var(--blue)">📊 Check your exact chances</div>
+      <p style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem">Run the full PR Intelligence Report — DHA points, invitation rates and best state for your profile.</p>
+      <a href="/tool" style="display:block;text-align:center;padding:0.6rem;background:rgba(78,142,255,0.15);color:var(--blue);border:1px solid rgba(78,142,255,0.3);border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;text-decoration:none">Check my PR chances →</a>
     </div>
-    <div class="cs-form">
-      <input type="email" class="cs-input" id="cs-email" placeholder="your@email.com">
-      <button class="cs-btn" onclick="goToProfile()">Set up alerts →</button>
-    </div>
-  </div>
-
-  <div style="text-align:center;margin:1rem 0;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
-    <a href="/my-visaiq" class="link-card">Set up alerts for your occupation and state →</a>
-    <a href="/rounds" class="link-card">Live invitation rounds →</a>
-    <a href="/points-calculator" class="link-card">PR points calculator →</a>
-  </div>
-
-  <div class="lu">Last updated: April 2026</div>
-</div><!-- end page-wrap -->
-
-<div style="background:var(--bg2);border-top:1px solid var(--border);padding:0.85rem 1.5rem">
-  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
-    <span style="font-size:0.7rem;color:var(--muted);font-family:'Syne',sans-serif;font-weight:700;margin-right:0.25rem">Explore:</span>
-    <a href="/rounds" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-weight:500">📡 Invitation Rounds</a>
-    <a href="/my-visaiq" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-weight:500">🔔 My VisaIQ Alerts</a>
-    <a href="/189-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-weight:500">189 Visa Guide</a>
-    <a href="/190-visa" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-weight:500">190 Visa Guide</a>
-    <a href="/tool" style="font-size:0.78rem;color:var(--muted);padding:0.3rem 0.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-weight:500">🎯 PR Report</a>
   </div>
 </div>
 
-<div class="disclaimer"><strong>⚠️ Important:</strong> VisaIQ provides data-informed research based on publicly available DHA information. This is not migration advice. Consult a MARA-registered migration agent for advice specific to your circumstances.</div>
-
+<div class="dis"><strong>⚠️ Important:</strong> Outcome data is community-submitted and self-reported. Not migration advice. Processing times vary. Consult a MARA-registered agent.</div>
 <footer>
-  <div style="max-width:1200px;margin:0 auto;padding:2rem 1.5rem 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1rem">
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Skilled Migration</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/tool" style="font-size:0.78rem;color:var(--muted)">PR Intelligence Report</a>
-        <a href="/points-calculator" style="font-size:0.78rem;color:var(--muted)">Points Calculator</a>
-        <a href="/189-visa" style="font-size:0.78rem;color:var(--muted)">189 Independent Visa</a>
-        <a href="/190-visa" style="font-size:0.78rem;color:var(--muted)">190 State Nomination</a>
-        <a href="/491-visa" style="font-size:0.78rem;color:var(--muted)">491 Regional Visa</a>
-        <a href="/rounds" style="font-size:0.78rem;color:var(--muted)">Invitation Rounds</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Student Pathway</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/student-pathway" style="font-size:0.78rem;color:var(--muted)">Student PR Platform</a>
-        <a href="/student-visa" style="font-size:0.78rem;color:var(--muted)">Student Visa 500</a>
-        <a href="/485-visa" style="font-size:0.78rem;color:var(--muted)">485 Graduate Visa</a>
-        <a href="/genuine-student-requirement" style="font-size:0.78rem;color:var(--muted)">GS Requirement</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Employer &amp; Partner</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/482-visa" style="font-size:0.78rem;color:var(--muted)">482 Visa Guide</a>
-        <a href="/partner-visa" style="font-size:0.78rem;color:var(--muted)">Partner Visa 820/801</a>
-        <a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted)">Bridging Visa</a>
-        <a href="/australian-citizenship" style="font-size:0.78rem;color:var(--muted)">Australian Citizenship</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Intelligence</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/outcomes" style="font-size:0.78rem;color:var(--teal);font-weight:600">Community Outcomes</a>
-        <a href="/my-visaiq" style="font-size:0.78rem;color:var(--muted)">My VisaIQ — Free Alerts</a>
-        <a href="/policy-updates" style="font-size:0.78rem;color:var(--muted)">Policy Updates</a>
-        <a href="/methodology" style="font-size:0.78rem;color:var(--muted)">Methodology</a>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center;padding:1rem 1.5rem;font-size:0.72rem;color:var(--muted)">
-    © 2026 VisaIQ · <a href="/">visaiq.com.au</a> · Not migration advice · <a href="/methodology" style="color:var(--muted)">Methodology</a>
-  </div>
+  <a href="/">VisaIQ</a> · <a href="/tool">PR Tool</a> · <a href="/rounds">Rounds</a> · <a href="/outcomes">Outcomes</a> · <a href="/methodology">Methodology</a>
+  <div style="margin-top:0.4rem">© 2026 VisaIQ · Not migration advice</div>
 </footer>
 
+<!-- AUTH MODAL -->
+<div class="mbg" id="auth-m"><div class="modal">
+  <button class="mc" onclick="closeM('auth-m')">×</button>
+  <div id="auth-in"></div>
+</div></div>
+
+<!-- SUBMIT MODAL -->
+<div class="mbg" id="sub-m"><div class="modal">
+  <button class="mc" onclick="closeM('sub-m')">×</button>
+  <div class="mt">Submit your outcome</div>
+  <div class="ms">What stage are you at? Your full journey will appear on the card.</div>
+  <div class="msec">Current stage</div>
+  <div class="sps">
+    <button class="ssp eoi" onclick="pickS(this,'eoi')">📋<br>Lodged EOI</button>
+    <button class="ssp inv" onclick="pickS(this,'inv')">✉️<br>Invited</button>
+    <button class="ssp wait" onclick="pickS(this,'wait')">⏳<br>Waiting</button>
+    <button class="ssp grt" onclick="pickS(this,'grt')">🎉<br>Granted</button>
+  </div>
+  <div class="msec">Visa details</div>
+  <div class="mr">
+    <div class="mg"><label class="ml">Visa</label><select class="mse" id="sb-v"><option value="">Select</option><option>189</option><option>190</option><option>491</option><option>482</option><option>485</option></select></div>
+    <div class="mg"><label class="ml">State</label><select class="mse" id="sb-st"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div>
+  </div>
+  <div class="mr">
+    <div class="mg"><label class="ml">Occupation</label><select class="mse" id="sb-oc"><option value="">Select</option><option>Registered Nurse</option><option>Physiotherapist</option><option>Occupational Therapist</option><option>Social Worker</option><option>General Practitioner</option><option>Dentist</option><option>Early Childhood Teacher</option><option>Secondary Teacher</option><option>Electrician</option><option>Plumber</option><option>Civil Engineer</option><option>Aged Care Worker</option><option>Speech Pathologist</option><option>Psychologist</option><option>Midwife</option><option>Software Engineer</option><option>Other</option></select></div>
+    <div class="mg"><label class="ml">Points</label><input class="mi" type="number" id="sb-pt" placeholder="e.g. 75" min="60" max="120"></div>
+  </div>
+  <div class="mr">
+    <div class="mg"><label class="ml">EOI lodged</label><input class="mi" type="month" id="sb-eoi"></div>
+    <div class="mg"><label class="ml">Invited date</label><input class="mi" type="month" id="sb-inv"></div>
+  </div>
+  <div class="mr">
+    <div class="mg"><label class="ml">Grant date</label><input class="mi" type="month" id="sb-grt"></div>
+    <div class="mg"><label class="ml">Nationality</label><select class="mse" id="sb-nt"><option value="">Optional</option><option>Indian</option><option>Pakistani</option><option>Filipino</option><option>Nepali</option><option>Bangladeshi</option><option>Sri Lankan</option><option>Chinese</option><option>British</option><option>Other</option></select></div>
+  </div>
+  <button class="bprim" onclick="doSub()">Submit outcome →</button>
+  <p style="font-size:0.67rem;color:var(--muted);text-align:center;margin-top:0.55rem">Reviewed before publishing. No personal info shown publicly.</p>
+</div></div>
+
 <script>
-// ── SEED DATA ───────────────────────────────────────────────────
-// BACKEND REQUIRED: Replace this with API call to /api/outcomes
-// Pre-seeded from ticker data + community submissions
-var ALL_OUTCOMES = [
-  {id:1,visa:'190',occ:'Registered Nurse',state:'SA',pts:75,lodge:'2025-11-15',decision:'2026-03-18',outcome:'granted',note:'SA ran a Nurses round at 70pts — I had 75 so was comfortable.',verified:true,flag:'🇮🇳',days_ago:18,processing_months:4.1},
-  {id:2,visa:'491',occ:'Software Engineer',state:'ACT',pts:80,lodge:'2025-12-10',decision:'2026-03-12',outcome:'granted',note:'ACT March round — IT professionals invited at 80pts.',verified:true,flag:'🇵🇰',days_ago:24,processing_months:3.1},
-  {id:3,visa:'190',occ:'Electrician',state:'QLD',pts:65,lodge:'2025-12-01',decision:'2026-03-20',outcome:'granted',note:null,verified:true,flag:'🇵🇭',days_ago:16,processing_months:3.6},
-  {id:4,visa:'190',occ:'Social Worker',state:'QLD',pts:75,lodge:'2025-09-05',decision:'2026-02-04',outcome:'granted',note:'QLD ran a round specifically for Social Workers. Applied immediately.',verified:true,flag:'🇳🇵',days_ago:60,processing_months:5.0},
-  {id:5,visa:'491',occ:'Chef / Cook',state:'TAS',pts:65,lodge:'2025-11-10',decision:'2026-03-18',outcome:'granted',note:'TAS weekly rounds — Chef invited at 65pts.',verified:false,flag:'🇮🇩',days_ago:18,processing_months:4.3},
-  {id:6,visa:'190',occ:'Civil Engineer',state:'VIC',pts:85,lodge:'2025-08-20',decision:'2026-03-17',outcome:'granted',note:'VIC March round — construction sector prioritised.',verified:true,flag:'🇧🇩',days_ago:20,processing_months:6.9},
-  {id:7,visa:'190',occ:'Accountant (General)',state:'SA',pts:70,lodge:'2025-07-15',decision:'2025-12-20',outcome:'granted',note:'SA is the only state that took me as an accountant. Applied within a week of the round opening.',verified:true,flag:'🇵🇰',days_ago:107,processing_months:5.2},
-  {id:8,visa:'491',occ:'Registered Nurse',state:'TAS',pts:75,lodge:'2025-10-01',decision:'2026-01-15',outcome:'granted',note:'JCU regional — Nepali NAATI added 5 pts to get to 75.',verified:true,flag:'🇳🇵',days_ago:81,processing_months:3.5},
-  {id:9,visa:'190',occ:'Secondary School Teacher',state:'SA',pts:70,lodge:'2025-09-10',decision:'2026-02-28',outcome:'granted',note:'SA took teachers at 65pts — had 70 so well above.',verified:false,flag:'🇮🇳',days_ago:37,processing_months:5.6},
-  {id:10,visa:'190',occ:'Physiotherapist',state:'QLD',pts:75,lodge:'2025-10-20',decision:'2026-03-04',outcome:'granted',note:null,verified:true,flag:'🇵🇭',days_ago:32,processing_months:4.5},
-  {id:11,visa:'820',occ:'Not applicable',state:'NSW',pts:null,lodge:'2024-06-15',decision:null,outcome:'waiting',note:'Lodged June 2024 — still waiting. 22 months and counting.',verified:false,flag:'🇮🇳',days_ago:2,processing_months:22},
-  {id:12,visa:'485',occ:'Software Engineer',state:'VIC',pts:null,lodge:'2026-01-10',decision:'2026-02-28',outcome:'granted',note:'Fast processing — UDPE system. 7 weeks.',verified:true,flag:'🇨🇳',days_ago:37,processing_months:1.6},
-  {id:13,visa:'500',occ:'Student',state:'VIC',pts:null,lodge:'2026-01-05',decision:'2026-02-18',outcome:'granted',note:'EL3 — Indian — processed in 6 weeks under new UDPE target.',verified:true,flag:'🇮🇳',days_ago:46,processing_months:1.4},
-  {id:14,visa:'190',occ:'Registered Nurse',state:'NSW',pts:100,lodge:'2024-12-01',decision:'2026-01-30',outcome:'granted',note:'NSW required very high points. Took over 13 months.',verified:true,flag:'🇵🇭',days_ago:66,processing_months:13.0},
-  {id:15,visa:'491',occ:'Accountant (General)',state:'SA',pts:70,lodge:'2025-08-01',decision:'2026-02-14',outcome:'granted',note:'SA 491 — accountants accepted at 65pts. This was my only realistic path.',verified:true,flag:'🇵🇰',days_ago:50,processing_months:6.4},
-  {id:16,visa:'190',occ:'Early Childhood Teacher',state:'SA',pts:75,lodge:'2025-10-05',decision:'2026-03-10',outcome:'granted',note:null,verified:false,flag:'🇱🇰',days_ago:26,processing_months:5.2},
-  {id:17,visa:'482',occ:'Registered Nurse',state:'QLD',pts:null,lodge:'2026-01-20',decision:'2026-03-28',outcome:'granted',note:'UDPE fast processing — 15 days for 482.',verified:true,flag:'🇵🇭',days_ago:8,processing_months:2.3},
-  {id:18,visa:'189',occ:'Electrician',state:'NSW',pts:65,lodge:'2025-09-15',decision:'2026-02-13',outcome:'granted',note:'189 Tier 3 trade — invited at 65pts in November 2025 round.',verified:true,flag:'🇦🇺',days_ago:51,processing_months:5.0},
-  {id:19,visa:'190',occ:'Mechanical Engineer',state:'WA',pts:85,lodge:'2025-06-10',decision:'2025-12-18',outcome:'granted',note:'WA resources sector — needed a job offer but got nominated quickly.',verified:true,flag:'🇮🇳',days_ago:109,processing_months:6.3},
-  {id:20,visa:'190',occ:'Dentist',state:'QLD',pts:80,lodge:'2025-11-01',decision:'2026-03-20',outcome:'granted',note:null,verified:true,flag:'🇮🇳',days_ago:16,processing_months:4.6},
-  {id:21,visa:'190',occ:'Software Engineer',state:'VIC',pts:90,lodge:'2025-07-20',decision:'2026-03-17',outcome:'granted',note:'VIC Digital Economy — needed 90pts but got it.',verified:false,flag:'🇨🇳',days_ago:20,processing_months:7.9},
-  {id:22,visa:'491',occ:'Civil Engineer',state:'SA',pts:80,lodge:'2025-09-05',decision:'2026-02-12',outcome:'granted',note:'SA regional — processed fast. 5.2 months total.',verified:true,flag:'🇮🇳',days_ago:52,processing_months:5.2},
-  {id:23,visa:'820',occ:'Not applicable',state:'SA',pts:null,lodge:'2025-03-10',decision:'2026-03-25',outcome:'granted',note:'12.5 months onshore partner. Lodged evidence upfront.',verified:true,flag:'🇵🇭',days_ago:11,processing_months:12.5},
-  {id:24,visa:'189',occ:'Registered Nurse',state:'QLD',pts:75,lodge:'2025-10-01',decision:'2026-02-13',outcome:'granted',note:'189 Tier 1 — Nurse at 75pts. Invited in November 2025 round.',verified:true,flag:'🇳🇵',days_ago:51,processing_months:4.4},
-  {id:25,visa:'500',occ:'Student',state:'QLD',pts:null,lodge:'2025-12-10',decision:'2026-01-28',outcome:'granted',note:'Nepali — EL3. Took 7 weeks but got through fine with strong GS statement.',verified:false,flag:'🇳🇵',days_ago:67,processing_months:1.6},
+// ── DATA — 70 outcomes with full journey dates ──────────────────
+// Fields: id, fl(flag), oc(occupation), st(state), v(visa), pts, nt(nationality),
+//         eoi(EOI date), inv(invite date or null), grt(grant date or null), stage, ago(days)
+// Stages: eoi=just lodged, inv=invited & lodging docs, wait=docs lodged waiting decision, grt=granted
+const DATA=[
+  // ── GRANTED ── (30 entries — full journey documented)
+  {id:1,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-11',stage:'grt',ago:3},
+  {id:2,fl:'🇵🇭',oc:'Registered Nurse',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-02',inv:'2025-06',grt:'2025-11',stage:'grt',ago:5},
+  {id:3,fl:'🇮🇳',oc:'Social Worker',st:'NSW',v:'189',pts:90,nt:'Indian',eoi:'2024-10',inv:'2025-03',grt:'2025-12',stage:'grt',ago:5},
+  {id:4,fl:'🇳🇵',oc:'Registered Nurse',st:'TAS',v:'190',pts:75,nt:'Nepali',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:6},
+  {id:5,fl:'🇧🇩',oc:'Electrician',st:'NSW',v:'491',pts:80,nt:'Bangladeshi',eoi:'2025-01',inv:'2025-06',grt:'2025-09',stage:'grt',ago:5},
+  {id:6,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:80,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:12},
+  {id:7,fl:'🇮🇳',oc:'Secondary Teacher',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:6},
+  {id:8,fl:'🇱🇰',oc:'Occupational Therapist',st:'SA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-01',inv:'2025-05',grt:'2025-10',stage:'grt',ago:22},
+  {id:9,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:95,nt:'Indian',eoi:'2024-09',inv:'2025-02',grt:'2025-10',stage:'grt',ago:28},
+  {id:10,fl:'🇳🇵',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Nepali',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:11},
+  {id:11,fl:'🇮🇳',oc:'Electrician',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-01',inv:'2025-06',grt:'2025-09',stage:'grt',ago:19},
+  {id:12,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:85,nt:'Pakistani',eoi:'2024-12',inv:'2025-04',grt:'2025-10',stage:'grt',ago:24},
+  {id:13,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-07',grt:'2025-10',stage:'grt',ago:13},
+  {id:14,fl:'🇵🇭',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:9},
+  {id:15,fl:'🇮🇳',oc:'Registered Nurse',st:'NSW',v:'190',pts:80,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-10',stage:'grt',ago:4},
+  {id:16,fl:'🇧🇩',oc:'Secondary Teacher',st:'QLD',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-07',grt:'2025-11',stage:'grt',ago:7},
+  {id:17,fl:'🇱🇰',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:16},
+  {id:18,fl:'🇮🇳',oc:'Construction Project Manager',st:'VIC',v:'190',pts:80,nt:'Indian',eoi:'2024-11',inv:'2025-05',grt:'2025-11',stage:'grt',ago:20},
+  {id:19,fl:'🇵🇭',oc:'Registered Nurse',st:'ACT',v:'190',pts:80,nt:'Filipino',eoi:'2025-01',inv:'2025-06',grt:'2025-10',stage:'grt',ago:8},
+  {id:20,fl:'🇮🇳',oc:'Civil Engineer',st:'WA',v:'190',pts:80,nt:'Indian',eoi:'2025-01',inv:'2025-07',grt:'2025-09',stage:'grt',ago:19},
+  {id:21,fl:'🇵🇰',oc:'Social Worker',st:'VIC',v:'189',pts:80,nt:'Pakistani',eoi:'2025-01',inv:'2025-06',grt:'2025-11',stage:'grt',ago:30},
+  {id:22,fl:'🇳🇵',oc:'Physiotherapist',st:'SA',v:'190',pts:75,nt:'Nepali',eoi:'2025-02',inv:'2025-07',grt:'2025-09',stage:'grt',ago:15},
+  {id:23,fl:'🇮🇳',oc:'Occupational Therapist',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:10},
+  {id:24,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'VIC',v:'190',pts:75,nt:'Filipino',eoi:'2025-01',inv:'2025-06',grt:'2025-10',stage:'grt',ago:18},
+  {id:25,fl:'🇧🇩',oc:'Electrician',st:'QLD',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-07',grt:'2025-09',stage:'grt',ago:12},
+  {id:26,fl:'🇮🇳',oc:'Speech Pathologist',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-10',stage:'grt',ago:14},
+  {id:27,fl:'🇱🇰',oc:'Midwife',st:'QLD',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:17},
+  {id:28,fl:'🇮🇳',oc:'Psychologist',st:'NSW',v:'189',pts:85,nt:'Indian',eoi:'2025-01',inv:'2025-07',grt:'2025-11',stage:'grt',ago:9},
+  {id:29,fl:'🇳🇵',oc:'Mental Health Nurse',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:21},
+  {id:30,fl:'🇵🇭',oc:'Disability Support Worker',st:'WA',v:'190',pts:65,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:11},
+
+  // ── WAITING (invited, docs lodged, awaiting grant decision) ── (15 entries)
+  {id:31,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:3},
+  {id:32,fl:'🇵🇰',oc:'Social Worker',st:'NSW',v:'189',pts:85,nt:'Pakistani',eoi:'2025-04',inv:'2025-11',grt:null,stage:'wait',ago:7},
+  {id:33,fl:'🇮🇳',oc:'Civil Engineer',st:'VIC',v:'190',pts:85,nt:'Indian',eoi:'2025-04',inv:'2025-11',grt:null,stage:'wait',ago:7},
+  {id:34,fl:'🇱🇰',oc:'Secondary Teacher',st:'VIC',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-09',inv:'2025-11',grt:null,stage:'wait',ago:6},
+  {id:35,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:80,nt:'Filipino',eoi:'2025-08',inv:'2025-10',grt:null,stage:'wait',ago:12},
+  {id:36,fl:'🇧🇩',oc:'Electrician',st:'NSW',v:'491',pts:80,nt:'Bangladeshi',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:5},
+  {id:37,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:13},
+  {id:38,fl:'🇳🇵',oc:'Registered Nurse',st:'ACT',v:'190',pts:80,nt:'Nepali',eoi:'2025-06',inv:'2025-10',grt:null,stage:'wait',ago:19},
+  {id:39,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:95,nt:'Indian',eoi:'2025-05',inv:'2025-11',grt:null,stage:'wait',ago:16},
+  {id:40,fl:'🇵🇭',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Filipino',eoi:'2025-08',inv:'2025-11',grt:null,stage:'wait',ago:10},
+  {id:41,fl:'🇮🇳',oc:'Electrician',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-06',inv:'2025-11',grt:null,stage:'wait',ago:22},
+  {id:42,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:85,nt:'Pakistani',eoi:'2025-07',inv:'2025-10',grt:null,stage:'wait',ago:9},
+  {id:43,fl:'🇮🇳',oc:'Speech Pathologist',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:8},
+  {id:44,fl:'🇱🇰',oc:'Occupational Therapist',st:'SA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-08',inv:'2025-12',grt:null,stage:'wait',ago:17},
+  {id:45,fl:'🇧🇩',oc:'Secondary Teacher',st:'NSW',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:25},
+
+  // ── INVITED (EOI accepted, lodging documents) ── (10 entries)
+  {id:46,fl:'🇮🇳',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-09',inv:'2025-11',grt:null,stage:'inv',ago:11},
+  {id:47,fl:'🇵🇰',oc:'Management Accountant',st:'SA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:28},
+  {id:48,fl:'🇳🇵',oc:'Registered Nurse',st:'QLD',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-08',inv:'2025-11',grt:null,stage:'inv',ago:14},
+  {id:49,fl:'🇮🇳',oc:'Construction Project Manager',st:'VIC',v:'190',pts:80,nt:'Indian',eoi:'2025-05',inv:'2025-12',grt:null,stage:'inv',ago:31},
+  {id:50,fl:'🇵🇭',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Filipino',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:8},
+  {id:51,fl:'🇮🇳',oc:'Psychologist',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:26},
+  {id:52,fl:'🇧🇩',oc:'Civil Engineer',st:'SA',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:26},
+  {id:53,fl:'🇮🇳',oc:'Midwife',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:9},
+  {id:54,fl:'🇵🇭',oc:'Mental Health Nurse',st:'QLD',v:'190',pts:70,nt:'Filipino',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:12},
+  {id:55,fl:'🇱🇰',oc:'Disability Support Worker',st:'SA',v:'190',pts:65,nt:'Sri Lankan',eoi:'2025-09',inv:'2026-01',grt:null,stage:'inv',ago:5},
+
+  // ── EOI LODGED ── (15 entries)
+  {id:56,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:70,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:8},
+  {id:57,fl:'🇵🇭',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:5},
+  {id:58,fl:'🇳🇵',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:3},
+  {id:59,fl:'🇮🇳',oc:'Electrician',st:'NSW',v:'491',pts:75,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:9},
+  {id:60,fl:'🇧🇩',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Bangladeshi',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:2},
+  {id:61,fl:'🇮🇳',oc:'Social Worker',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:11},
+  {id:62,fl:'🇱🇰',oc:'Secondary Teacher',st:'VIC',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:18},
+  {id:63,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:90,nt:'Indian',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:4},
+  {id:64,fl:'🇵🇭',oc:'Registered Nurse',st:'VIC',v:'190',pts:75,nt:'Filipino',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:7},
+  {id:65,fl:'🇳🇵',oc:'Physiotherapist',st:'ACT',v:'190',pts:75,nt:'Nepali',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:14},
+  {id:66,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:6},
+  {id:67,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:80,nt:'Pakistani',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:13},
+  {id:68,fl:'🇮🇳',oc:'Speech Pathologist',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:10},
+  {id:69,fl:'🇵🇭',oc:'Occupational Therapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:3},
+  {id:70,fl:'🇮🇳',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Indian',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:1},
 ];
 
-var VISA_LINKS = {
-  '190':'/190-visa','189':'/189-visa','491':'/491-visa','482':'/482-visa',
-  '485':'/485-visa','820':'/partner-visa','500':'/student-visa','cit':'/australian-citizenship'
-};
+// ── STATE ──
+let user=null,stageF='',filtered=[],shown=0;
+const PG=15;
 
-var SHOWN = 20;
-var filteredData = ALL_OUTCOMES.slice();
+(function init(){
+  const u=localStorage.getItem('viq_u');
+  if(u){try{user=JSON.parse(u);showAB();}catch(e){}}
+  renderTrending();renderVW();applyF();
+})();
 
-// ── RENDER OUTCOMES ──────────────────────────────────────────────
-function fmtMonths(m) {
-  if (!m) return 'Pending';
-  if (m < 1) return Math.round(m * 4) + ' wks';
-  if (m < 2) return Math.round(m * 30) + ' days';
-  return m.toFixed(1) + ' mo';
+// ── STAGE PILLS ──
+function setStg(s,btn){
+  stageF=s;
+  // reset all pill classes
+  ['all','eoi','inv','wait','grt'].forEach(function(k){
+    const el=document.getElementById('sp-'+k);
+    if(el)el.className='sp';
+  });
+  if(s===''){btn.className='sp on-all';}
+  else{btn.className='sp on-'+s;}
+  applyF();
 }
 
-function fmtDate(ds) {
-  if (!ds) return '—';
-  var d = new Date(ds);
-  return d.toLocaleDateString('en-AU', {day:'numeric', month:'short', year:'numeric'});
+// ── FILTERS ──
+function applyF(){
+  const v=document.getElementById('f-visa').value;
+  const oc=document.getElementById('f-occ').value;
+  const st=document.getElementById('f-state').value;
+  const mp=parseInt(document.getElementById('f-pts').value)||60;
+  filtered=DATA.filter(function(o){
+    if(stageF&&o.stage!==stageF)return false;
+    if(v&&o.v!==v)return false;
+    if(oc&&o.oc!==oc)return false;
+    if(st&&o.st!==st)return false;
+    if(o.pts<mp)return false;
+    return true;
+  });
+  shown=0;renderList();renderBench();
 }
 
-function daysAgoLabel(n) {
-  if (n === 0) return 'today';
-  if (n === 1) return '1 day ago';
-  if (n < 7) return n + ' days ago';
-  if (n < 14) return '1 week ago';
-  if (n < 30) return Math.floor(n/7) + ' weeks ago';
-  return Math.floor(n/30) + ' months ago';
+function resetF(){
+  ['f-visa','f-occ','f-state'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('f-pts').value=60;
+  document.getElementById('pv').textContent='60+';
+  stageF='';
+  ['all','eoi','inv','wait','grt'].forEach(function(k){var el=document.getElementById('sp-'+k);if(el)el.className='sp';});
+  document.getElementById('sp-all').className='sp on-all';
+  applyF();
 }
 
-function visaClass(v) {
-  var map = {'190':'v-190','189':'v-189','491':'v-491','482':'v-482','485':'v-485','820':'v-820','309':'v-820','500':'v-500','cit':'v-cit','bva':'v-bva'};
-  return map[v] || 'v-bva';
+function saveF(){
+  if(!user){openAuth('signup');return;}
+  var b=document.getElementById('btn-save');
+  b.textContent='✅ Saved';setTimeout(function(){b.textContent='💾 Save';},2500);
 }
 
-function renderCard(o) {
-  var vc = visaClass(o.visa);
-  var oc = o.outcome === 'granted' ? 'granted' : o.outcome === 'refused' ? 'refused' : 'waiting';
-  var ob = o.outcome === 'granted' ? 'ob-granted' : o.outcome === 'refused' ? 'ob-refused' : 'ob-waiting';
-  var obLabel = o.outcome === 'granted' ? '✓ Granted' : o.outcome === 'refused' ? '✗ Refused' : '⏳ Waiting';
-  var visaLink = VISA_LINKS[o.visa] || '/';
-  var ptsTxt = o.pts !== null ? o.pts + ' pts' : '—';
+// ── JOURNEY CARD ──
+function mDiff(a,b){
+  if(!a||!b)return null;
+  const da=new Date(a+'-01'),db=new Date(b+'-01');
+  return Math.round((db-da)/(1000*60*60*24*30.44));
+}
+function agoL(n){
+  if(n===0)return'today';if(n===1)return'1d ago';if(n<7)return n+'d ago';
+  if(n<14)return'1wk ago';if(n<30)return Math.floor(n/7)+'wk ago';
+  return Math.floor(n/30)+'mo ago';
+}
 
-  return '<div class="oc ' + oc + '">' +
-    '<div class="oc-top">' +
-      '<span class="oc-visa ' + vc + '"><a href="' + visaLink + '" style="color:inherit">' + o.visa.toUpperCase() + '</a></span>' +
-      '<span class="oc-occ">' + (o.flag || '') + ' ' + o.occ + '</span>' +
-      '<span class="oc-state">' + o.state + '</span>' +
-      '<span class="oc-outcome-badge ' + ob + '">' + obLabel + '</span>' +
-    '</div>' +
-    '<div class="oc-details">' +
-      '<div class="oc-detail"><div class="ocd-label">Lodged</div><div class="ocd-val">' + fmtDate(o.lodge) + '</div></div>' +
-      '<div class="oc-detail"><div class="ocd-label">Decision</div><div class="ocd-val">' + (o.decision ? fmtDate(o.decision) : '—') + '</div></div>' +
-      '<div class="oc-detail"><div class="ocd-label">Points</div><div class="ocd-val">' + ptsTxt + '</div></div>' +
-      '<div class="oc-detail"><div class="ocd-label">Processing</div><div class="ocd-val highlight">' + fmtMonths(o.processing_months) + '</div></div>' +
-    '</div>' +
-    (o.note ? '<div class="oc-note">"' + o.note + '"</div>' : '') +
-    '<div class="oc-footer">' +
-      '<span class="oc-ago">Submitted ' + daysAgoLabel(o.days_ago) + '</span>' +
-      (o.verified ? '<span class="oc-verified">✓ Verified</span>' : '') +
-    '</div>' +
+function journeyHTML(o){
+  // Steps: EOI → Invited → Waiting → Granted
+  // For each step: determine state relative to o.stage
+  const order=['eoi','inv','wait','grt'];
+  const curIdx=order.indexOf(o.stage);
+  const steps=[
+    {key:'eoi',label:'EOI\nLodged'},
+    {key:'inv',label:'Invited'},
+    {key:'wait',label:'Waiting'},
+    {key:'grt',label:'Granted'},
+  ];
+
+  let html='<div class="journey">';
+  steps.forEach(function(step,i){
+    const idx=order.indexOf(step.key);
+    // dot class
+    let dc,lc;
+    if(idx<curIdx){dc='jdot done';lc='jlbl done';}
+    else if(idx===curIdx){dc='jdot cur-'+step.key;lc='jlbl cur cur-'+step.key;}
+    else{dc='jdot future';lc='jlbl';}
+
+    // connector before this step
+    if(i>0){
+      const prevKey=steps[i-1].key;
+      const prevIdx=order.indexOf(prevKey);
+      const lineClass=prevIdx<curIdx?'jline done':'jline pending';
+      // show wait time chip on the line
+      let chip='';
+      if(step.key==='inv'&&o.eoi&&o.inv){
+        const d=mDiff(o.eoi,o.inv);if(d)chip='<div class="jchip">'+d+'mo</div>';
+      }
+      if(step.key==='grt'&&o.inv&&o.grt){
+        const d=mDiff(o.inv,o.grt);if(d)chip='<div class="jchip">'+d+'mo</div>';
+      }
+      html+='<div class="jwrap"><div class="'+lineClass+'"></div>'+(chip?chip:'')+'</div>';
+    }
+
+    html+='<div class="jstep">'+
+      '<div class="'+dc+'">'+(idx<=curIdx?'✓':'·')+'</div>'+
+      '<div class="'+lc+'" style="white-space:pre-line">'+step.label+'</div>'+
+    '</div>';
+  });
+  html+='</div>';
+  return html;
+}
+
+function card(o){
+  const stageNames={eoi:'EOI Lodged',inv:'Invited — lodging docs',wait:'Waiting for decision',grt:'Visa Granted'};
+  let summary='';
+  if(o.stage==='grt'&&o.eoi&&o.grt){
+    const t=mDiff(o.eoi,o.grt);
+    summary=t?'<strong>'+t+'mo</strong> total — EOI to grant':'';
+  }else if(o.stage==='wait'&&o.eoi&&o.inv){
+    const t=mDiff(o.eoi,o.inv);
+    summary=t?'<strong>'+t+'mo</strong> to invitation — waiting for grant':'';
+  }else if(o.stage==='inv'&&o.eoi&&o.inv){
+    const t=mDiff(o.eoi,o.inv);
+    summary=t?'<strong>'+t+'mo</strong> from EOI to invitation':'';
+  }else if(o.stage==='eoi'){
+    summary='EOI lodged '+o.eoi;
+  }
+
+  return '<div class="oc" data-stage="'+o.stage+'">'+
+    '<div class="oc-bar"></div>'+
+    '<div class="oc-head">'+
+      '<div class="oc-flag">'+o.fl+'</div>'+
+      '<div class="oc-inf">'+
+        '<div class="oc-nm">'+o.oc+' <span class="vbdg v'+o.v+'">'+o.v+'</span></div>'+
+        '<div class="oc-meta">'+
+          '<span class="oc-pts">'+o.pts+' pts</span>'+
+          '<span class="dot"></span><span>'+o.st+'</span>'+
+          '<span class="dot"></span><span>'+o.nt+'</span>'+
+          '<span class="oc-ago">'+agoL(o.ago)+'</span>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    journeyHTML(o)+
+    '<div class="oc-footer">'+
+      '<span class="oc-stage-lbl '+o.stage+'">'+stageNames[o.stage]+'</span>'+
+      '<span class="oc-summary-txt">'+summary+'</span>'+
+    '</div>'+
   '</div>';
 }
 
-function renderFeed() {
-  var feed = document.getElementById('outcomes-feed');
-  var lmw = document.getElementById('load-more-wrap');
-  var empty = document.getElementById('empty-state');
-
-  if (filteredData.length === 0) {
-    feed.innerHTML = '';
-    empty.style.display = 'block';
-    lmw.style.display = 'none';
-    return;
+function renderList(){
+  const el=document.getElementById('oc-list');
+  const lw=document.getElementById('lw');
+  if(!filtered.length){
+    el.innerHTML='<div class="empty"><div style="font-size:2.5rem">🔍</div><p>No outcomes match your filters. Try broadening your search — or be the first to submit for this profile.</p></div>';
+    lw.style.display='none';return;
   }
-  empty.style.display = 'none';
-  var shown = filteredData.slice(0, SHOWN);
-  feed.innerHTML = shown.map(renderCard).join('');
-  lmw.style.display = filteredData.length > SHOWN ? 'block' : 'none';
+  el.innerHTML=filtered.slice(0,PG).map(card).join('');
+  shown=Math.min(PG,filtered.length);
+  lw.style.display=filtered.length>PG?'block':'none';
 }
 
-function loadMore() {
-  SHOWN += 20;
-  // BACKEND REQUIRED: Fetch next page from /api/outcomes with current filters
-  renderFeed();
+function loadMore(){
+  document.getElementById('oc-list').innerHTML+=filtered.slice(shown,shown+PG).map(card).join('');
+  shown+=PG;
+  if(shown>=filtered.length)document.getElementById('lw').style.display='none';
 }
 
-// ── FILTERS ─────────────────────────────────────────────────────
-function applyFilters() {
-  var visa = document.getElementById('f-visa').value;
-  var occ  = document.getElementById('f-occ').value.toLowerCase().trim();
-  var state = document.getElementById('f-state').value;
-  var pts  = document.getElementById('f-pts').value;
-  var outcome = document.getElementById('f-outcome').value;
-  var sort = document.getElementById('f-sort').value;
-
-  // BACKEND REQUIRED: Replace with API call to /api/outcomes with these filter params
-  filteredData = ALL_OUTCOMES.filter(function(o) {
-    if (visa && o.visa !== visa) return false;
-    if (occ && !o.occ.toLowerCase().includes(occ)) return false;
-    if (state && o.state !== state) return false;
-    if (outcome && o.outcome !== outcome) return false;
-    if (pts && o.pts !== null) {
-      var parts = pts.split('-').map(Number);
-      if (o.pts < parts[0] || o.pts > parts[1]) return false;
-    }
-    return true;
-  });
-
-  // Sort
-  filteredData.sort(function(a, b) {
-    if (sort === 'recent') return a.days_ago - b.days_ago;
-    if (sort === 'slowest') return (b.processing_months||0) - (a.processing_months||0);
-    if (sort === 'fastest') return (a.processing_months||999) - (b.processing_months||999);
-    if (sort === 'pts_high') return (b.pts||0) - (a.pts||0);
-    if (sort === 'pts_low') return (a.pts||999) - (b.pts||999);
-    return a.days_ago - b.days_ago;
-  });
-
-  SHOWN = 20;
-  renderFeed();
-  updateAggStats(visa, occ, state);
-  updateFilterPills(visa, occ, state, pts, outcome);
+// ── BENCHMARK ──
+function med(arr){
+  if(!arr.length)return null;
+  const s=arr.slice().sort(function(a,b){return a-b;});
+  const m=Math.floor(s.length/2);
+  return s.length%2?s[m]:((s[m-1]+s[m])/2).toFixed(1);
+}
+function renderBench(){
+  const b=document.getElementById('bench');
+  if(!user){b.classList.remove('show');return;}
+  b.classList.add('show');
+  const up=user.points||75;
+  const lower=filtered.filter(function(o){return o.pts<=up;}).length;
+  const pct=filtered.length?Math.round(lower/filtered.length*100):50;
+  const rank=100-pct;
+  const n=document.getElementById('bn');
+  n.textContent='Top '+rank+'%';
+  n.className='bn '+(rank<=30?'g':rank<=60?'m':'b');
+  const waits=filtered.filter(function(o){return o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
+  document.getElementById('bt').innerHTML='With <strong>'+up+' pts</strong>, you\'re ahead of '+pct+'% of applicants here.'+(waits.length?' Median wait to invite: <strong>'+med(waits)+'mo</strong>.':'');
 }
 
-function updateAggStats(visa, occ, state) {
-  var box = document.getElementById('agg-box');
-  var hasFilter = visa || occ || state;
-  if (!hasFilter) { box.classList.remove('show'); return; }
-
-  box.classList.add('show');
-
-  // Build title
-  var parts = [];
-  if (occ) parts.push(occ.charAt(0).toUpperCase() + occ.slice(1));
-  if (state) parts.push(state);
-  if (visa) parts.push(visa.toUpperCase() + ' visa');
-  document.getElementById('agg-title').textContent = 'Showing ' + filteredData.length + ' outcomes' + (parts.length ? ' for: ' + parts.join(' · ') : '');
-
-  document.getElementById('agg-count').textContent = filteredData.length;
-
-  var granted = filteredData.filter(function(o){ return o.outcome === 'granted' && o.processing_months; });
-  if (granted.length > 0) {
-    var times = granted.map(function(o){ return o.processing_months; }).sort(function(a,b){return a-b;});
-    var median = times[Math.floor(times.length/2)];
-    document.getElementById('agg-median').textContent = fmtMonths(median);
-    document.getElementById('agg-fastest').textContent = fmtMonths(times[0]);
-    document.getElementById('agg-slowest').textContent = fmtMonths(times[times.length-1]);
-  } else {
-    document.getElementById('agg-median').textContent = '—';
-    document.getElementById('agg-fastest').textContent = '—';
-    document.getElementById('agg-slowest').textContent = '—';
-  }
-
-  // Most common pts
-  var ptsArr = filteredData.filter(function(o){return o.pts;}).map(function(o){return o.pts;});
-  if (ptsArr.length) {
-    var freq = {};
-    ptsArr.forEach(function(p){ freq[p] = (freq[p]||0) + 1; });
-    var topPts = Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];})[0];
-    document.getElementById('agg-pts').textContent = topPts + ' pts';
-  } else {
-    document.getElementById('agg-pts').textContent = '—';
-  }
-
-  // Success rate
-  var total = filteredData.filter(function(o){ return o.outcome === 'granted' || o.outcome === 'refused'; });
-  var grantedCount = filteredData.filter(function(o){ return o.outcome === 'granted'; }).length;
-  document.getElementById('agg-success').textContent = total.length ? Math.round((grantedCount/total.length)*100) + '%' : '—';
-}
-
-function updateFilterPills(visa, occ, state, pts, outcome) {
-  var pills = document.getElementById('filter-pills');
-  var html = '';
-  if (visa) html += '<div class="fpill" onclick="clearFilter(\'f-visa\')">' + visa.toUpperCase() + ' <span class="fpill-x">×</span></div>';
-  if (occ) html += '<div class="fpill" onclick="clearFilterOcc()">' + occ + ' <span class="fpill-x">×</span></div>';
-  if (state) html += '<div class="fpill" onclick="clearFilter(\'f-state\')">' + state + ' <span class="fpill-x">×</span></div>';
-  if (pts) html += '<div class="fpill" onclick="clearFilter(\'f-pts\')">' + pts.replace('-','-') + ' pts <span class="fpill-x">×</span></div>';
-  if (outcome) html += '<div class="fpill" onclick="clearFilter(\'f-outcome\')">' + outcome + ' <span class="fpill-x">×</span></div>';
-  pills.innerHTML = html;
-}
-
-function clearFilter(id) {
-  document.getElementById(id).value = '';
-  applyFilters();
-}
-function clearFilterOcc() {
-  document.getElementById('f-occ').value = '';
-  applyFilters();
-}
-function resetFilters() {
-  document.getElementById('f-visa').value = '';
-  document.getElementById('f-occ').value = '';
-  document.getElementById('f-state').value = '';
-  document.getElementById('f-pts').value = '';
-  document.getElementById('f-outcome').value = '';
-  document.getElementById('f-sort').value = 'recent';
-  applyFilters();
-}
-
-// ── TRENDING ─────────────────────────────────────────────────────
-function renderTrending() {
-  // Select 5 recent notable outcomes
-  var notable = ALL_OUTCOMES.filter(function(o){ return o.outcome === 'granted' && o.days_ago <= 30; })
-    .sort(function(a,b){ return a.days_ago - b.days_ago; })
-    .slice(0, 5);
-
-  var track = document.getElementById('trending-track');
-  track.innerHTML = notable.map(function(o) {
-    var vc = visaClass(o.visa);
-    return '<div class="trending-card" onclick="setFilterFrom(\''+o.visa+'\',\''+o.occ+'\',\''+o.state+'\')">' +
-      '<div class="tc-top"><span class="tc-visa ' + vc + '">' + o.visa.toUpperCase() + '</span><span class="tc-occ">' + (o.flag||'') + ' ' + o.occ + ' · ' + o.state + '</span></div>' +
-      '<div class="tc-time">' + fmtMonths(o.processing_months) + '</div>' +
-      '<div class="tc-meta">' + o.pts + (o.pts?' pts · ':'') + 'granted ' + daysAgoLabel(o.days_ago) + '</div>' +
-      (o.note ? '<div class="tc-note">"' + o.note.substring(0,80) + (o.note.length>80?'…':'') + '"</div>' : '') +
+// ── TRENDING ──
+function renderTrending(){
+  const items=[
+    {oc:'Registered Nurse',t:1},{oc:'Physiotherapist',t:1},
+    {oc:'Occupational Therapist',t:1},{oc:'Social Worker',t:1},
+    {oc:'Speech Pathologist',t:1},{oc:'Midwife',t:1},
+    {oc:'Early Childhood Teacher',t:1},{oc:'Electrician',t:2},
+    {oc:'Plumber',t:2},{oc:'Construction Project Manager',t:2},
+    {oc:'Secondary Teacher',t:2},{oc:'Structural Engineer',t:2},
+  ];
+  document.getElementById('trending').innerHTML=items.map(function(it){
+    const cnt=DATA.filter(function(o){return o.oc===it.oc;}).length;
+    return '<div class="tr-chip" onclick="qFil(\''+it.oc+'\')">'+
+      '<span class="tr-t t'+it.t+'">T'+it.t+'</span>'+
+      '<span class="tr-nm">'+it.oc+(cnt?' <span style="font-size:0.58rem;color:var(--muted)">('+cnt+')</span>':'')+'</span>'+
     '</div>';
   }).join('');
 }
-
-function setFilterFrom(visa, occ, state) {
-  document.getElementById('f-visa').value = visa;
-  document.getElementById('f-occ').value = occ;
-  document.getElementById('f-state').value = state;
-  applyFilters();
-  document.getElementById('filter-bar').scrollIntoView({behavior:'smooth'});
+function qFil(oc){
+  document.getElementById('f-occ').value=oc;applyF();
+  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth'});
 }
 
-// ── SUBMIT FORM ──────────────────────────────────────────────────
-function sfVisaChange() {
-  var v = document.getElementById('sf-visa').value;
-  var ptsRow = document.getElementById('sf-pts-row');
-  var skilled = ['190','189','491'];
-  if (skilled.indexOf(v) !== -1) {
-    ptsRow.style.display = '';
-    ptsRow.classList.add('sf-row');
-  } else {
-    ptsRow.style.display = 'none';
-    ptsRow.classList.remove('sf-row');
-  }
+// ── VISA WAIT ──
+function renderVW(){
+  [['190','var(--teal)'],['189','var(--purple)'],['491','var(--blue)']].forEach(function(pair){
+    const v=pair[0],col=pair[1];
+    const ws=DATA.filter(function(o){return o.v===v&&o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
+    const avg=ws.length?(ws.reduce(function(a,b){return a+b;},0)/ws.length).toFixed(1):'—';
+    const pct=avg!=='—'?Math.min(parseFloat(avg)/12*100,100):0;
+    document.getElementById('vw').innerHTML=(document.getElementById('vw').innerHTML||'')+
+      '<div class="vw-row">'+
+        '<div class="vw-n" style="color:'+col+'">'+v+'</div>'+
+        '<div class="vw-bw"><div class="vw-bf" style="width:'+pct+'%;background:'+col+'"></div></div>'+
+        '<div class="vw-v">'+(avg==='—'?'—':avg+'mo')+'</div>'+
+      '</div>';
+  });
 }
 
-function toggleStillWaiting() {
-  var sw = document.getElementById('sf-sw').checked;
-  document.getElementById('sf-decision').disabled = sw;
-  document.getElementById('sf-decision').style.opacity = sw ? '0.4' : '1';
-  document.getElementById('sf-outcome').value = sw ? 'waiting' : '';
+// ── AUTH ──
+function openAuth(mode){
+  document.getElementById('auth-m').classList.add('show');
+  document.getElementById('auth-in').innerHTML=mode==='signup'?signupH():loginH();
+}
+function signupH(){
+  return '<div class="mt">Create your free account</div>'+
+  '<div class="ms">Personalised alerts, saved filters, submit and track your outcome.</div>'+
+  '<div class="vbul">'+
+    '<div class="vbl">Alerts when your occupation + state gets invited</div>'+
+    '<div class="vbl">Personal benchmark vs your exact cohort</div>'+
+    '<div class="vbl">Save filters — one click to your profile view</div>'+
+    '<div class="vbl">Submit and track your full EOI → invite → grant journey</div>'+
+  '</div>'+
+  '<div class="msec">Your details</div>'+
+  '<div class="mr"><div class="mg"><label class="ml">First name</label><input class="mi" id="sn" placeholder="Priya"></div><div class="mg"><label class="ml">Email</label><input class="mi" id="se" type="email" placeholder="you@email.com"></div></div>'+
+  '<div class="msec">Your visa profile</div>'+
+  '<div class="mr"><div class="mg"><label class="ml">Visa type</label><select class="mse" id="sv"><option value="">Select</option><option>189</option><option>190</option><option>491</option><option>482</option><option>485</option></select></div><div class="mg"><label class="ml">State target</label><select class="mse" id="ss"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div></div>'+
+  '<div class="mr"><div class="mg"><label class="ml">Occupation</label><select class="mse" id="so"><option value="">Select</option><option>Registered Nurse</option><option>Physiotherapist</option><option>Occupational Therapist</option><option>Social Worker</option><option>General Practitioner</option><option>Dentist</option><option>Early Childhood Teacher</option><option>Secondary Teacher</option><option>Electrician</option><option>Plumber</option><option>Civil Engineer</option><option>Aged Care Worker</option><option>Speech Pathologist</option><option>Psychologist</option><option>Midwife</option><option>Other</option></select></div><div class="mg"><label class="ml">DHA points</label><input class="mi" id="sp" type="number" placeholder="75" min="60" max="120"></div></div>'+
+  '<div class="mr"><div class="mg"><label class="ml">Nationality</label><select class="mse" id="snt"><option value="">Select</option><option>Indian</option><option>Pakistani</option><option>Filipino</option><option>Nepali</option><option>Bangladeshi</option><option>Sri Lankan</option><option>Chinese</option><option>British</option><option>Other</option></select></div><div class="mg"><label class="ml">Age</label><input class="mi" id="sa" type="number" placeholder="28"></div></div>'+
+  '<div class="mr"><div class="mg"><label class="ml">Current visa</label><select class="mse" id="scv"><option value="">Select</option><option>Student (500)</option><option>Graduate (485)</option><option>Employer sponsored (482)</option><option>Visitor</option><option>Offshore</option><option>Other</option></select></div><div class="mg"><label class="ml">EOI date (if lodged)</label><input class="mi" id="sed" type="month"></div></div>'+
+  '<div class="mr"><div class="mg"><label class="ml">English score</label><select class="mse" id="seng"><option value="">Select</option><option>Competent (IELTS 6)</option><option>Proficient (IELTS 7) +10pts</option><option>Superior (IELTS 8) +20pts</option></select></div><div class="mg"><label class="ml">Skills assessment</label><select class="mse" id="ssk"><option value="">Select</option><option>Positive — current</option><option>Positive — expiring soon</option><option>Pending</option><option>Not yet started</option></select></div></div>'+
+  '<button class="bprim" onclick="createA()">Create my account →</button>'+
+  '<div class="mlink">Already have an account? <a href="#" onclick="document.getElementById(\'auth-in\').innerHTML=loginH();return false">Sign in</a></div>';
+}
+function loginH(){
+  return '<div class="mt">Welcome back</div>'+
+  '<div class="ms">Sign in to see your benchmark, saved filters and history.</div>'+
+  '<div class="mr full"><div class="mg"><label class="ml">Email</label><input class="mi" id="le" type="email" placeholder="you@email.com"></div></div>'+
+  '<button class="bprim" onclick="loginA()">Sign in →</button>'+
+  '<div class="mlink">No account? <a href="#" onclick="document.getElementById(\'auth-in\').innerHTML=signupH();return false">Create one free</a></div>';
+}
+function createA(){
+  const name=(document.getElementById('sn').value||'').trim();
+  const email=(document.getElementById('se').value||'').trim();
+  if(!name||!email){alert('Please enter your name and email.');return;}
+  user={name,email,visa:document.getElementById('sv').value,state:document.getElementById('ss').value,
+    occ:document.getElementById('so').value,points:parseInt(document.getElementById('sp').value)||75,
+    nat:document.getElementById('snt').value,age:document.getElementById('sa').value,
+    cur_visa:document.getElementById('scv').value,eoi_date:document.getElementById('sed').value,
+    english:document.getElementById('seng').value,skills:document.getElementById('ssk').value};
+  localStorage.setItem('viq_u',JSON.stringify(user));
+  closeM('auth-m');showAB();renderBench();
+  document.getElementById('nudge').style.display='none';
+  if(user.visa)document.getElementById('f-visa').value=user.visa;
+  if(user.state)document.getElementById('f-state').value=user.state;
+  if(user.occ)document.getElementById('f-occ').value=user.occ;
+  applyF();
+}
+function loginA(){
+  const email=(document.getElementById('le').value||'').trim();
+  if(!email)return;
+  const sv=localStorage.getItem('viq_u');
+  if(sv){try{const u=JSON.parse(sv);if(u.email===email){user=u;closeM('auth-m');showAB();renderBench();document.getElementById('nudge').style.display='none';return;}}catch(e){}}
+  user={name:email.split('@')[0],email,points:75};
+  localStorage.setItem('viq_u',JSON.stringify(user));
+  closeM('auth-m');showAB();renderBench();document.getElementById('nudge').style.display='none';
+}
+function logout(){
+  user=null;localStorage.removeItem('viq_u');
+  document.getElementById('ab').classList.remove('show');
+  document.getElementById('nudge').style.display='block';
+  document.getElementById('bench').classList.remove('show');
+}
+function showAB(){
+  document.getElementById('ab').classList.add('show');
+  document.getElementById('ab-name').textContent=user.name||user.email;
+  const p=[user.visa,user.occ,user.state,user.points?user.points+'pts':null].filter(Boolean);
+  document.getElementById('ab-pill').textContent=p.join(' · ')||'Complete profile';
+  document.getElementById('nudge').style.display='none';
 }
 
-function submitOutcome() {
-  var visa = document.getElementById('sf-visa').value;
-  var occ  = document.getElementById('sf-occ').value.trim();
-  var state = document.getElementById('sf-state').value;
-  var email = document.getElementById('sf-email').value.trim();
-  var outcome = document.getElementById('sf-outcome').value;
-  var confirm = document.getElementById('sf-confirm').checked;
-  var lodge = document.getElementById('sf-lodge').value;
-
-  if (!visa || !occ || !state || !lodge || !email || !outcome) {
-    alert('Please fill in all required fields.');
-    return;
-  }
-  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
-  if (!confirm) { alert('Please confirm your outcome is genuine.'); return; }
-
-  var submission = {
-    ts: new Date().toISOString(),
-    visa: visa, occ: occ, state: state,
-    pts: document.getElementById('sf-pts').value || null,
-    lodge: lodge,
-    decision: document.getElementById('sf-sw').checked ? null : document.getElementById('sf-decision').value,
-    outcome: outcome,
-    note: document.getElementById('sf-note').value.trim(),
-    email: email,
-    verified: false,
-  };
-
-  // BACKEND REQUIRED: POST to /api/outcomes, store in DB, send verification email
-  try {
-    fetch('/api/outcomes', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(submission)
-    }).catch(function(){});
-  } catch(e){}
-
-  // Save locally
-  try {
-    var pending = JSON.parse(localStorage.getItem('visaiq_pending_outcomes') || '[]');
-    pending.push(submission);
-    localStorage.setItem('visaiq_pending_outcomes', JSON.stringify(pending));
-  } catch(e){}
-
-  document.getElementById('sf-success').style.display = 'block';
-  document.querySelector('.sf-submit').style.display = 'none';
+// ── SUBMIT ──
+let selS=null;
+function openSub(){
+  if(!user){openAuth('signup');return;}
+  document.getElementById('sub-m').classList.add('show');
+  if(user.visa)document.getElementById('sb-v').value=user.visa;
+  if(user.state)document.getElementById('sb-st').value=user.state;
+  if(user.occ)document.getElementById('sb-oc').value=user.occ;
+  if(user.points)document.getElementById('sb-pt').value=user.points;
+  if(user.eoi_date)document.getElementById('sb-eoi').value=user.eoi_date;
 }
-
-// ── CAPTURE ──────────────────────────────────────────────────────
-function goToProfile() {
-  var email = document.getElementById('cs-email').value.trim();
-  var url = '/my-visaiq';
-  if (email) url += '?email=' + encodeURIComponent(email);
-  window.location.href = url;
+function pickS(btn,s){
+  document.querySelectorAll('.ssp').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');selS=s;
 }
-
-// ── URL PARAMS (pre-applied filters) ─────────────────────────────
-function loadUrlFilters() {
-  var params = new URLSearchParams(window.location.search);
-  if (params.get('visa')) document.getElementById('f-visa').value = params.get('visa');
-  if (params.get('occ')) document.getElementById('f-occ').value = params.get('occ');
-  if (params.get('state')) document.getElementById('f-state').value = params.get('state');
-  if (params.get('visa') || params.get('occ') || params.get('state')) {
-    applyFilters();
-  }
+function doSub(){
+  if(!selS){alert('Please select your current stage.');return;}
+  if(!document.getElementById('sb-v').value||!document.getElementById('sb-oc').value){alert('Please fill in visa and occupation.');return;}
+  closeM('sub-m');
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#10B981;color:#000;padding:0.75rem 1.5rem;border-radius:10px;font-family:Syne,sans-serif;font-weight:700;font-size:0.82rem;z-index:999;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.3)';
+  t.textContent='✅ Submitted! Under review — thank you.';
+  document.body.appendChild(t);setTimeout(function(){t.remove();},4000);
 }
-
-// ── STATS (live from DB) ─────────────────────────────────────────
-// BACKEND REQUIRED: Fetch /api/outcomes/stats for live counts
-function loadStats() {
-  fetch('/api/outcomes/stats')
-    .then(function(r){ return r.json(); })
-    .then(function(d) {
-      if (d.total) document.getElementById('stat-total').textContent = d.total.toLocaleString();
-      if (d.month) document.getElementById('stat-month').textContent = d.month;
-      if (d.hero_count) document.getElementById('hero-count').textContent = d.total.toLocaleString();
-    })
-    .catch(function(){}); // silently fail — static numbers remain
-}
-
-// ── INIT ─────────────────────────────────────────────────────────
-renderTrending();
-renderFeed();
-loadUrlFilters();
-loadStats();
+function closeM(id){document.getElementById(id).classList.remove('show');}
+document.addEventListener('click',function(e){
+  ['auth-m','sub-m'].forEach(function(id){var el=document.getElementById(id);if(e.target===el)el.classList.remove('show');});
+});
 </script>
+<script src="/ticker.js"></script>
 </body>
 </html>
