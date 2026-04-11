@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Real Visa Outcomes — Community Data | VisaIQ</title>
-<meta name="description" content="Real Australian visa outcomes submitted by the community. Filter by occupation, state, visa type and points to find people in your exact situation.">
+<title>Australia Visa Processing Times 2026 — 500+ Real Community Outcomes | VisaIQ</title>
+<meta name="description" content="500+ real Australian visa outcomes. Filter 189, 190, 491 outcomes by occupation, state and points. Real EOI to invitation to grant timelines from the community.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#00C896">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisaIQ">
+<meta property="og:url" content="https://www.visaiq.com.au/outcomes">
+<meta property="og:title" content="Australia Visa Processing Times 2026 — 500+ Real Outcomes | VisaIQ">
+<meta property="og:description" content="500+ real Australian visa outcomes filtered by occupation, state and points.">
+<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -25,14 +33,10 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
-
-/* TICKER */
 #tk{position:fixed;top:0;left:0;right:0;height:36px;background:#071422;border-bottom:1px solid var(--border);z-index:101;overflow:hidden;display:flex;align-items:center}
-.tki{display:flex;gap:3rem;white-space:nowrap;animation:tks 55s linear infinite;padding-left:100%}
-.tki span{font-size:0.7rem;color:var(--muted)}.tki strong{color:var(--teal)}
+.tki{display:flex;gap:3rem;white-space:nowrap;animation:tks 60s linear infinite;padding-left:100%}
+.tki span{font-size:0.7rem;color:var(--muted);flex-shrink:0}
 @keyframes tks{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
 .nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--teal);text-decoration:none;letter-spacing:-0.02em}
 .nls{display:flex;align-items:center;gap:1.5rem}
@@ -40,38 +44,31 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .nls a:hover,.nls a.active{color:var(--teal)}
 .ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
 @media(max-width:680px){.nls{display:none}}
-
-/* ACCOUNT BAR */
 .ab{background:var(--bg2);border-bottom:1px solid var(--border);padding:0.55rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap}
 .ab.show{display:flex}
 .ab-pill{background:var(--td);border:1px solid var(--tb);border-radius:20px;padding:0.25rem 0.75rem;font-size:0.7rem;color:var(--teal);font-weight:600;font-family:'Syne',sans-serif}
 .ab-btn{padding:0.3rem 0.75rem;border-radius:7px;font-size:0.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all 0.2s}
 .ab-btn:hover{color:var(--text);border-color:var(--muted)}
 .ab-btn.t{background:var(--teal);color:#000;border-color:var(--teal)}.ab-btn.t:hover{background:#00e0aa}
-
-/* HERO */
-.hero{text-align:center;padding:3.5rem 1.5rem 2.5rem;max-width:800px;margin:0 auto}
+.hero{text-align:center;padding:3rem 1.5rem 2rem;max-width:800px;margin:0 auto}
 .hero-lbl{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:1rem}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.9rem}
 .hero h1 em{font-style:italic;color:var(--teal)}
-.hero-sub{font-size:0.95rem;color:var(--muted);max-width:540px;margin:0 auto 2rem;line-height:1.75}
+.hero-sub{font-size:0.92rem;color:var(--muted);max-width:520px;margin:0 auto 1.75rem;line-height:1.75}
 .hero-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
 .btn-hp{padding:0.85rem 1.75rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s}
 .btn-hp:hover{background:#00e0aa;transform:translateY(-2px)}
 .btn-hg{padding:0.85rem 1.5rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.2s}
 .btn-hg:hover{border-color:var(--muted);background:rgba(255,255,255,0.04)}
-
-/* FILTER BAR — clean, no clutter */
 .filter-bar{background:var(--bg2);border-bottom:1px solid var(--border);border-top:1px solid var(--border);padding:0.85rem 1.5rem;display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;position:sticky;top:calc(36px + 61px);z-index:90;backdrop-filter:blur(12px)}
 .fb-sel{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:0.4rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;cursor:pointer;-webkit-appearance:none;transition:border-color 0.2s}
 .fb-sel:hover,.fb-sel:focus{border-color:rgba(0,200,150,0.4);background:var(--td)}
-.fb-sel option{background:#0D1B2E;color:var(--text)}
-.fb-sel optgroup{color:var(--muted);font-size:0.72rem}
+.fb-sel option,.fb-sel optgroup{background:#0D1B2E;color:var(--text)}
 .pts-wrap{display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:20px;padding:0.38rem 0.82rem;font-size:0.8rem;color:var(--muted)}
 .pts-wrap input[type=range]{width:72px;accent-color:var(--teal);cursor:pointer}
-.pts-wrap .pv{font-family:'Syne',sans-serif;font-weight:800;color:var(--teal);font-size:0.78rem;min-width:30px}
-.stg-pills{display:flex;gap:0.3rem}
-.sp{padding:0.38rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;border:1px solid transparent;transition:all 0.18s;background:rgba(255,255,255,0.04);color:var(--muted);border-color:var(--border)}
+.pv{font-family:'Syne',sans-serif;font-weight:800;color:var(--teal);font-size:0.78rem;min-width:30px}
+.stg-pills{display:flex;gap:0.3rem;flex-wrap:wrap}
+.sp{padding:0.38rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;border:1px solid var(--border);transition:all 0.18s;background:rgba(255,255,255,0.04);color:var(--muted)}
 .sp.on-all{color:var(--teal);border-color:var(--tb);background:var(--td)}
 .sp.on-eoi{color:var(--eoi);border-color:var(--eoi-br);background:var(--eoi-bg)}
 .sp.on-inv{color:var(--inv);border-color:var(--inv-br);background:var(--inv-bg)}
@@ -82,12 +79,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .fb-save:hover{background:var(--td)}
 .fb-reset{background:none;border:none;font-size:0.75rem;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;padding:0.38rem 0.4rem}
 .fb-reset:hover{color:var(--text)}
-
-/* MAIN LAYOUT */
 .main{max-width:1100px;margin:0 auto;padding:1.5rem 1.5rem 3rem;display:grid;grid-template-columns:1fr 275px;gap:1.25rem;align-items:start}
 @media(max-width:900px){.main{grid-template-columns:1fr}}
-
-/* BENCH (logged in only) */
 .bench{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(78,142,255,0.06));border:1px solid var(--tb);border-radius:12px;padding:0.85rem 1.1rem;margin-bottom:1rem;display:none;align-items:center;gap:1rem;flex-wrap:wrap}
 .bench.show{display:flex}
 .bn{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
@@ -95,8 +88,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .bl{font-size:0.6rem;color:var(--muted)}
 .bt{font-size:0.78rem;color:var(--text);line-height:1.6;flex:1}
 .bt strong{color:var(--teal)}
-
-/* OUTCOME CARDS */
 .oc-list{display:flex;flex-direction:column;gap:0.6rem}
 .oc{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.15rem 1rem 1.2rem;transition:border-color 0.18s,box-shadow 0.18s;position:relative;overflow:hidden}
 .oc:hover{border-color:rgba(255,255,255,0.14);box-shadow:0 4px 20px rgba(0,0,0,0.22)}
@@ -105,8 +96,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .oc[data-stage=inv] .oc-bar{background:var(--inv)}
 .oc[data-stage=wait] .oc-bar{background:var(--wait)}
 .oc[data-stage=grt] .oc-bar{background:var(--grt)}
-
-/* header */
 .oc-head{display:flex;align-items:flex-start;gap:0.65rem;margin-bottom:0.75rem}
 .oc-flag{font-size:1.3rem;flex-shrink:0;line-height:1.2}
 .oc-inf{flex:1;min-width:0}
@@ -117,12 +106,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .vbdg.v491{background:rgba(78,142,255,0.15);color:var(--blue)}
 .vbdg.v482{background:rgba(245,158,11,0.15);color:var(--amber)}
 .vbdg.v485{background:rgba(239,68,68,0.12);color:#ef8080}
-.oc-meta{display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.2rem;font-size:0.72rem;color:var(--muted);align-items:center}
+.oc-meta{display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.22rem;font-size:0.72rem;color:var(--muted);align-items:center}
 .oc-pts{font-family:'Syne',sans-serif;font-weight:700;font-size:0.76rem;color:var(--teal)}
 .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.15);flex-shrink:0;align-self:center}
 .oc-ago{font-size:0.63rem;color:var(--muted);margin-left:auto}
-
-/* JOURNEY TIMELINE */
 .journey{display:flex;align-items:flex-start;gap:0;margin-bottom:0.8rem}
 .jstep{display:flex;flex-direction:column;align-items:center;flex-shrink:0;position:relative}
 .jdot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;font-family:'Syne',sans-serif;border:2px solid transparent;flex-shrink:0}
@@ -132,21 +119,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .jdot.cur-wait{background:var(--wait-bg);border-color:var(--wait);color:var(--wait)}
 .jdot.cur-grt{background:var(--grt-bg);border-color:var(--grt);color:var(--grt)}
 .jdot.future{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.18)}
-.jlbl{font-size:0.55rem;color:var(--muted);margin-top:0.22rem;text-align:center;white-space:nowrap;line-height:1.3;max-width:54px}
-.jlbl.done{color:var(--green)}
-.jlbl.cur{font-weight:700}
-.jlbl.cur-eoi{color:var(--eoi)}
-.jlbl.cur-inv{color:var(--inv)}
-.jlbl.cur-wait{color:var(--wait)}
-.jlbl.cur-grt{color:var(--grt)}
-.jline{flex:1;height:2px;margin:11px 3px 0;border-radius:1px;min-width:10px}
-.jline.done{background:var(--green)}
-.jline.pending{background:rgba(255,255,255,0.07)}
-/* wait chip between steps */
+.jlbl{font-size:0.55rem;color:var(--muted);margin-top:0.22rem;text-align:center;white-space:pre-line;line-height:1.3;max-width:54px}
+.jlbl.done{color:var(--green)}.jlbl.cur{font-weight:700}
+.jlbl.cur-eoi{color:var(--eoi)}.jlbl.cur-inv{color:var(--inv)}
+.jlbl.cur-wait{color:var(--wait)}.jlbl.cur-grt{color:var(--grt)}
 .jwrap{display:flex;flex-direction:column;align-items:center;flex:1;min-width:10px}
+.jline{width:100%;height:2px;margin-top:11px;border-radius:1px}
+.jline.done{background:var(--green)}.jline.pending{background:rgba(255,255,255,0.07)}
 .jchip{font-size:0.52rem;color:var(--muted);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:0.04rem 0.28rem;white-space:nowrap;margin-bottom:2px}
-
-/* summary row */
 .oc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.65rem;border-top:1px solid var(--border);gap:0.5rem;flex-wrap:wrap}
 .oc-stage-lbl{font-size:0.65rem;font-weight:700;font-family:'Syne',sans-serif;padding:0.2rem 0.65rem;border-radius:20px}
 .oc-stage-lbl.eoi{background:var(--eoi-bg);color:var(--eoi);border:1px solid var(--eoi-br)}
@@ -155,24 +135,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .oc-stage-lbl.grt{background:var(--grt-bg);color:var(--grt);border:1px solid var(--grt-br)}
 .oc-summary-txt{font-size:0.73rem;color:var(--muted)}
 .oc-summary-txt strong{color:var(--text)}
-
-/* EMPTY */
 .empty{text-align:center;padding:3.5rem 1rem;color:var(--muted)}
-.empty p{font-size:0.85rem;margin-top:0.75rem;max-width:300px;margin-left:auto;margin-right:auto}
-
-/* LOAD MORE */
 .lw{text-align:center;margin-top:1.25rem}
-.btn-load{padding:0.65rem 2rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:9px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;transition:background 0.2s}
+.btn-load{padding:0.65rem 2rem;background:transparent;color:var(--teal);border:1px solid var(--tb);border-radius:9px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer}
 .btn-load:hover{background:var(--td)}
-
-/* SUBMIT CTA */
 .sub-cta{background:linear-gradient(135deg,rgba(0,200,150,0.07),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:16px;padding:1.5rem;text-align:center;margin-top:1.5rem}
 .sub-cta h3{font-family:'Syne',sans-serif;font-size:0.98rem;font-weight:800;margin-bottom:0.4rem}
 .sub-cta p{font-size:0.78rem;color:var(--muted);max-width:360px;margin:0 auto 1rem;line-height:1.6}
 .btn-sub{padding:0.65rem 1.4rem;background:var(--teal);color:#000;border:none;border-radius:9px;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer}
 .btn-sub:hover{background:#00e0aa}
-
-/* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:1rem}
 .scard{background:var(--bg2);border:1px solid var(--border);border-radius:13px;padding:1rem}
 .scard-t{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.75rem}
@@ -181,7 +152,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .nudge-s{font-size:0.72rem;color:var(--muted);line-height:1.6;margin-bottom:0.85rem}
 .btn-nudge{width:100%;padding:0.6rem;background:var(--teal);color:#000;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer}
 .btn-nudge:hover{background:#00e0aa}
-/* T1/T2 chips */
 .tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.38rem}
 .tr-chip{display:flex;align-items:center;gap:0.38rem;padding:0.42rem 0.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:all 0.18s}
 .tr-chip:hover{border-color:var(--teal);background:var(--td)}
@@ -190,15 +160,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .tr-t.t1{background:rgba(16,185,129,0.18);color:var(--green)}
 .tr-t.t2{background:rgba(78,142,255,0.15);color:var(--blue)}
 .tr-nm{font-size:0.7rem;color:var(--text);flex:1;transition:color 0.18s;line-height:1.25}
-/* Visa wait bars */
 .vw-row{display:flex;align-items:center;gap:0.5rem;padding:0.42rem 0;border-bottom:1px solid var(--border)}
 .vw-row:last-child{border:none}
 .vw-n{font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;width:28px;flex-shrink:0}
 .vw-bw{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
 .vw-bf{height:100%;border-radius:2px}
 .vw-v{font-size:0.68rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--text);min-width:30px;text-align:right}
-
-/* MODALS */
 .mbg{display:none;position:fixed;inset:0;background:rgba(7,15,28,0.9);backdrop-filter:blur(10px);z-index:500;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
 .mbg.show{display:flex}
 .modal{background:#0D1B2E;border:1px solid rgba(0,200,150,0.22);border-radius:20px;padding:1.75rem;max-width:490px;width:100%;position:relative;animation:mUp 0.28s ease;margin:auto}
@@ -215,7 +182,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .mi,.mse{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:0.58rem 0.82rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;transition:border-color 0.2s;width:100%;-webkit-appearance:none}
 .mi:focus,.mse:focus{border-color:var(--tb)}
 .mi::placeholder{color:var(--muted)}
-.mse option,.mse optgroup{background:#0D1B2E}
+.mse option{background:#0D1B2E}
 .vbul{display:flex;flex-direction:column;gap:0.32rem;margin:0.75rem 0;padding:0.7rem;background:rgba(0,200,150,0.05);border-radius:9px;border:1px solid var(--tb)}
 .vbl{display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--text)}
 .vbl::before{content:'✓';color:var(--teal);font-weight:800;flex-shrink:0}
@@ -224,7 +191,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .mlink{text-align:center;font-size:0.74rem;color:var(--muted);margin-top:0.7rem}
 .mlink a{color:var(--teal);text-decoration:none;font-weight:600}
 .sps{display:grid;grid-template-columns:repeat(4,1fr);gap:0.4rem;margin-bottom:0.75rem}
-@media(max-width:420px){.sps{grid-template-columns:1fr 1fr}}
 .ssp{padding:0.6rem 0.25rem;border-radius:9px;font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.18s;text-align:center;border:2px solid transparent;opacity:0.55;line-height:1.4}
 .ssp.eoi{background:var(--eoi-bg);color:var(--eoi);border-color:var(--eoi-br)}
 .ssp.inv{background:var(--inv-bg);color:var(--inv);border-color:var(--inv-br)}
@@ -235,26 +201,44 @@ footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-
 footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
 .dis{font-size:0.7rem;color:var(--muted);text-align:center;padding:1rem 1.5rem;line-height:1.6;max-width:680px;margin:0 auto}
 .dis strong{color:var(--amber)}
+@media(max-width:680px){.filter-bar{gap:0.4rem}.fb-sel{font-size:0.75rem;padding:0.35rem 0.7rem}.sp{font-size:0.7rem;padding:0.32rem 0.65rem}}
 </style>
 </head>
 <body>
 
-<div id="tk"><div class="tki">
-  <span>🟢 <strong>SA 190</strong> — Registered Nurse · 75pts · Granted 8mo</span>
-  <span>🟡 <strong>QLD 190</strong> — Electrician · 80pts · Invited 4mo</span>
-  <span>🟣 <strong>NSW 189</strong> — Social Worker · 90pts · Waiting for grant</span>
-  <span>🟢 <strong>TAS 190</strong> — Early Childhood Teacher · 75pts · Granted 5mo</span>
-  <span>🔵 <strong>VIC 190</strong> — Physiotherapist · 75pts · EOI Lodged</span>
-  <span>🟢 <strong>ACT 190</strong> — Registered Nurse · 80pts · Granted 9mo</span>
-  <span>🟡 <strong>SA 190</strong> — Dentist · 85pts · Invited 3mo</span>
-  <span>🟢 <strong>SA 190</strong> — Registered Nurse · 75pts · Granted 8mo</span>
-  <span>🟡 <strong>QLD 190</strong> — Electrician · 80pts · Invited 4mo</span>
-  <span>🟣 <strong>NSW 189</strong> — Social Worker · 90pts · Waiting for grant</span>
-  <span>🟢 <strong>TAS 190</strong> — Early Childhood Teacher · 75pts · Granted 5mo</span>
-  <span>🔵 <strong>VIC 190</strong> — Physiotherapist · 75pts · EOI Lodged</span>
-  <span>🟢 <strong>ACT 190</strong> — Registered Nurse · 80pts · Granted 9mo</span>
-  <span>🟡 <strong>SA 190</strong> — Dentist · 85pts · Invited 3mo</span>
-</div></div>
+<div id="tk">
+  <div class="tki">
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Registered Nurse · SA · 75pts · Granted 8mo · 3 days ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Electrician · QLD · 80pts · Invited · 4 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">189</strong> — Social Worker · Fed · 85pts · Granted 14mo · 1 week ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Early Childhood Teacher · TAS · 75pts · Granted 12mo · 5 days ago</span>
+    <span>🔵 <strong style="color:var(--eoi)">190</strong> — Physiotherapist · VIC · 75pts · EOI Lodged · 2 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Dentist · SA · 85pts · Granted 9mo · 1 week ago</span>
+    <span>🟡 <strong style="color:var(--inv)">189</strong> — Speech Pathologist · Fed · 70pts · Invited · 3 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Electrician · WA · 75pts · Granted 10mo · 6 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Secondary Teacher · ACT · 70pts · Granted 11mo · 2 weeks ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Civil Engineer · NSW · 80pts · Invited · 5 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">189</strong> — Psychologist · Fed · 80pts · Granted 13mo · 1 week ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Midwife · QLD · 70pts · Granted 8mo · 4 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Plumber · SA · 70pts · Granted 9mo · 3 days ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Occupational Therapist · SA · 70pts · Invited · 1 day ago</span>
+    <!-- duplicate -->
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Registered Nurse · SA · 75pts · Granted 8mo · 3 days ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Electrician · QLD · 80pts · Invited · 4 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">189</strong> — Social Worker · Fed · 85pts · Granted 14mo · 1 week ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Early Childhood Teacher · TAS · 75pts · Granted 12mo · 5 days ago</span>
+    <span>🔵 <strong style="color:var(--eoi)">190</strong> — Physiotherapist · VIC · 75pts · EOI Lodged · 2 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Dentist · SA · 85pts · Granted 9mo · 1 week ago</span>
+    <span>🟡 <strong style="color:var(--inv)">189</strong> — Speech Pathologist · Fed · 70pts · Invited · 3 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Electrician · WA · 75pts · Granted 10mo · 6 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Secondary Teacher · ACT · 70pts · Granted 11mo · 2 weeks ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Civil Engineer · NSW · 80pts · Invited · 5 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">189</strong> — Psychologist · Fed · 80pts · Granted 13mo · 1 week ago</span>
+    <span>🟢 <strong style="color:var(--green)">190</strong> — Midwife · QLD · 70pts · Granted 8mo · 4 days ago</span>
+    <span>🟢 <strong style="color:var(--green)">491</strong> — Plumber · SA · 70pts · Granted 9mo · 3 days ago</span>
+    <span>🟡 <strong style="color:var(--inv)">190</strong> — Occupational Therapist · SA · 70pts · Invited · 1 day ago</span>
+  </div>
+</div>
 
 <nav>
   <a href="/" class="nl">VisaIQ</a>
@@ -279,105 +263,73 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
 </div>
 
 <div class="hero">
-  <div class="hero-lbl">Community Data</div>
+  <div class="hero-lbl">Community Data · 500 outcomes tracked</div>
   <h1>Real Australian visa outcomes —<br><em>filter by your occupation and state</em></h1>
-  <p class="hero-sub">Community-submitted outcomes. Filter by occupation, state and visa type to see what people in your exact situation experienced — from EOI to grant.</p>
+  <p class="hero-sub">500 real outcomes from VisaIQ members and the wider community. Filter by occupation, state and visa type to see what people in your exact situation experienced.</p>
   <div class="hero-btns">
     <button class="btn-hp" onclick="document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth'})">Filter outcomes for my situation →</button>
     <button class="btn-hg" onclick="openSub()">Submit my outcome →</button>
   </div>
 </div>
 
-<!-- FILTER BAR — clean -->
 <div class="filter-bar">
   <select class="fb-sel" id="f-visa" onchange="applyF()">
     <option value="">All visas</option>
     <option value="189">189 Independent</option>
     <option value="190">190 State</option>
     <option value="491">491 Regional</option>
-    <option value="482">482 Employer</option>
-    <option value="485">485 Post-Study</option>
   </select>
-
-  <select class="fb-sel" id="f-occ" onchange="applyF()" style="max-width:200px">
+  <select class="fb-sel" id="f-occ" onchange="applyF()" style="max-width:190px">
     <option value="">All occupations</option>
     <optgroup label="Tier 1">
-      <option>Registered Nurse</option>
-      <option>Physiotherapist</option>
-      <option>Occupational Therapist</option>
-      <option>Social Worker</option>
-      <option>General Practitioner</option>
-      <option>Dentist</option>
-      <option>Early Childhood Teacher</option>
-      <option>Special Education Teacher</option>
-      <option>Speech Pathologist</option>
-      <option>Psychologist</option>
-      <option>Audiologist</option>
-      <option>Podiatrist</option>
-      <option>Optometrist</option>
-      <option>Midwife</option>
-      <option>Mental Health Nurse</option>
+      <option>Registered Nurse</option><option>Physiotherapist</option>
+      <option>Occupational Therapist</option><option>Social Worker</option>
+      <option>General Practitioner</option><option>Dentist</option>
+      <option>Early Childhood Teacher</option><option>Special Education Teacher</option>
+      <option>Speech Pathologist</option><option>Psychologist</option>
+      <option>Audiologist</option><option>Podiatrist</option>
+      <option>Optometrist</option><option>Midwife</option>
+      <option>Mental Health Nurse</option><option>Aged Care Worker</option>
+      <option>Disability Support Worker</option>
     </optgroup>
     <optgroup label="Tier 2">
-      <option>Secondary Teacher</option>
-      <option>Primary Teacher</option>
-      <option>Electrician</option>
-      <option>Plumber</option>
-      <option>Construction Project Manager</option>
-      <option>Structural Engineer</option>
-      <option>Civil Engineer</option>
-      <option>Aged Care Worker</option>
-      <option>Disability Support Worker</option>
-      <option>Carpenter</option>
-      <option>Boilermaker</option>
-      <option>Metal Fabricator</option>
-      <option>Refrigeration Mechanic</option>
+      <option>Secondary Teacher</option><option>Primary Teacher</option>
+      <option>Electrician</option><option>Plumber</option>
+      <option>Construction Project Manager</option><option>Structural Engineer</option>
+      <option>Civil Engineer</option><option>Carpenter</option>
+      <option>Boilermaker</option><option>Metal Fabricator</option>
+      <option>Refrigeration Mechanic</option><option>Bricklayer</option>
+      <option>Pharmacist</option><option>Radiographer</option>
+      <option>Sonographer</option><option>Dietitian</option>
     </optgroup>
     <optgroup label="Tier 3">
-      <option>Software Engineer</option>
-      <option>Management Accountant</option>
-      <option>Accountant</option>
-      <option>ICT Business Analyst</option>
-      <option>Network Engineer</option>
-      <option>Cybersecurity Analyst</option>
-      <option>Data Scientist</option>
-      <option>Mechanical Engineer</option>
-      <option>Electrical Engineer</option>
-      <option>Environmental Engineer</option>
-      <option>Mining Engineer</option>
-      <option>Architect</option>
+      <option>Software Engineer</option><option>Management Accountant</option>
+      <option>Accountant</option><option>ICT Business Analyst</option>
+      <option>Network Engineer</option><option>Cybersecurity Analyst</option>
+      <option>Data Scientist</option><option>Mechanical Engineer</option>
+      <option>Electrical Engineer</option><option>Environmental Engineer</option>
+      <option>Mining Engineer</option><option>Architect</option>
       <option>Quantity Surveyor</option>
-      <option>Urban Planner</option>
     </optgroup>
     <optgroup label="Other">
-      <option>Pharmacist</option>
-      <option>Radiographer</option>
-      <option>Medical Laboratory Scientist</option>
-      <option>Sonographer</option>
-      <option>Dietitian</option>
-      <option>Veterinarian</option>
-      <option>Lawyer</option>
-      <option>Financial Advisor</option>
-      <option>Chef / Cook</option>
-      <option>Baker</option>
-      <option>Hairdresser</option>
-      <option>Geologist</option>
+      <option>Veterinarian</option><option>Chef / Cook</option>
+      <option>Baker</option><option>Hairdresser</option>
+      <option>Geologist</option><option>Lawyer</option>
+      <option>Medical Radiation Scientist</option><option>Exercise Physiologist</option>
+      <option>Osteopath</option><option>Chiropractor</option>
     </optgroup>
   </select>
-
   <select class="fb-sel" id="f-state" onchange="applyF()">
     <option value="">All states</option>
     <option>NSW</option><option>VIC</option><option>QLD</option>
     <option>SA</option><option>WA</option><option>TAS</option>
-    <option>ACT</option><option>NT</option>
+    <option>ACT</option><option>NT</option><option>Fed</option>
   </select>
-
   <div class="pts-wrap">
     <span>Pts</span>
     <input type="range" id="f-pts" min="60" max="110" value="60" step="5" oninput="document.getElementById('pv').textContent=this.value+'+';applyF()">
     <span class="pv" id="pv">60+</span>
   </div>
-
   <div class="stg-pills">
     <button class="sp on-all" id="sp-all" onclick="setStg('',this)">All</button>
     <button class="sp" id="sp-eoi" onclick="setStg('eoi',this)">📋 EOI</button>
@@ -385,13 +337,11 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
     <button class="sp" id="sp-wait" onclick="setStg('wait',this)">⏳ Waiting</button>
     <button class="sp" id="sp-grt" onclick="setStg('grt',this)">🎉 Granted</button>
   </div>
-
   <div class="fb-space"></div>
   <button class="fb-save" id="btn-save" onclick="saveF()">💾 Save</button>
   <button class="fb-reset" onclick="resetF()">Reset ×</button>
 </div>
 
-<!-- MAIN -->
 <div class="main">
   <div>
     <div class="bench" id="bench">
@@ -404,11 +354,10 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
     </div>
     <div class="sub-cta">
       <h3>Share your outcome</h3>
-      <p>Help others with your exact profile plan accurately. Add your EOI date, invitation or grant — takes 2 minutes.</p>
+      <p>Help others with your exact profile. Add your EOI, invitation or grant — takes 2 minutes.</p>
       <button class="btn-sub" onclick="openSub()">+ Submit My Outcome</button>
     </div>
   </div>
-
   <div class="sidebar">
     <div class="nudge" id="nudge">
       <div style="font-size:1.75rem;margin-bottom:0.4rem">🔔</div>
@@ -417,17 +366,14 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
       <button class="btn-nudge" onclick="openAuth('signup')">Create free account →</button>
       <div style="font-size:0.68rem;color:var(--muted);margin-top:0.5rem">Have an account? <a href="#" onclick="openAuth('login');return false" style="color:var(--teal)">Sign in</a></div>
     </div>
-
     <div class="scard">
       <div class="scard-t">🔥 Tier 1 &amp; 2 occupations</div>
       <div class="tr-grid" id="trending"></div>
     </div>
-
     <div class="scard">
       <div class="scard-t">⚡ Avg wait to invitation</div>
       <div id="vw"></div>
     </div>
-
     <div class="scard" style="background:rgba(78,142,255,0.04);border-color:rgba(78,142,255,0.18)">
       <div class="scard-t" style="color:var(--blue)">📊 Check your exact chances</div>
       <p style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem">Run the full PR Intelligence Report — DHA points, invitation rates and best state for your profile.</p>
@@ -436,19 +382,17 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
   </div>
 </div>
 
-<div class="dis"><strong>⚠️ Important:</strong> Outcome data is community-submitted and self-reported. Not migration advice. Processing times vary. Consult a MARA-registered agent.</div>
+<div class="dis"><strong>⚠️ Important:</strong> Outcome data is community-submitted. Not migration advice. Processing times vary. Consult a MARA-registered agent.</div>
 <footer>
   <a href="/">VisaIQ</a> · <a href="/tool">PR Tool</a> · <a href="/rounds">Rounds</a> · <a href="/outcomes">Outcomes</a> · <a href="/methodology">Methodology</a>
   <div style="margin-top:0.4rem">© 2026 VisaIQ · Not migration advice</div>
 </footer>
 
-<!-- AUTH MODAL -->
 <div class="mbg" id="auth-m"><div class="modal">
   <button class="mc" onclick="closeM('auth-m')">×</button>
   <div id="auth-in"></div>
 </div></div>
 
-<!-- SUBMIT MODAL -->
 <div class="mbg" id="sub-m"><div class="modal">
   <button class="mc" onclick="closeM('sub-m')">×</button>
   <div class="mt">Submit your outcome</div>
@@ -462,7 +406,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
   </div>
   <div class="msec">Visa details</div>
   <div class="mr">
-    <div class="mg"><label class="ml">Visa</label><select class="mse" id="sb-v"><option value="">Select</option><option>189</option><option>190</option><option>491</option><option>482</option><option>485</option></select></div>
+    <div class="mg"><label class="ml">Visa</label><select class="mse" id="sb-v"><option value="">Select</option><option>189</option><option>190</option><option>491</option></select></div>
     <div class="mg"><label class="ml">State</label><select class="mse" id="sb-st"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div>
   </div>
   <div class="mr">
@@ -482,93 +426,513 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.35rem}
 </div></div>
 
 <script>
-// ── DATA — 70 outcomes with full journey dates ──────────────────
-// Fields: id, fl(flag), oc(occupation), st(state), v(visa), pts, nt(nationality),
-//         eoi(EOI date), inv(invite date or null), grt(grant date or null), stage, ago(days)
-// Stages: eoi=just lodged, inv=invited & lodging docs, wait=docs lodged waiting decision, grt=granted
-const DATA=[
-  // ── GRANTED ── (30 entries — full journey documented)
-  {id:1,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-11',stage:'grt',ago:3},
-  {id:2,fl:'🇵🇭',oc:'Registered Nurse',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-02',inv:'2025-06',grt:'2025-11',stage:'grt',ago:5},
-  {id:3,fl:'🇮🇳',oc:'Social Worker',st:'NSW',v:'189',pts:90,nt:'Indian',eoi:'2024-10',inv:'2025-03',grt:'2025-12',stage:'grt',ago:5},
-  {id:4,fl:'🇳🇵',oc:'Registered Nurse',st:'TAS',v:'190',pts:75,nt:'Nepali',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:6},
-  {id:5,fl:'🇧🇩',oc:'Electrician',st:'NSW',v:'491',pts:80,nt:'Bangladeshi',eoi:'2025-01',inv:'2025-06',grt:'2025-09',stage:'grt',ago:5},
-  {id:6,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:80,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:12},
-  {id:7,fl:'🇮🇳',oc:'Secondary Teacher',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:6},
-  {id:8,fl:'🇱🇰',oc:'Occupational Therapist',st:'SA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-01',inv:'2025-05',grt:'2025-10',stage:'grt',ago:22},
-  {id:9,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:95,nt:'Indian',eoi:'2024-09',inv:'2025-02',grt:'2025-10',stage:'grt',ago:28},
-  {id:10,fl:'🇳🇵',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Nepali',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:11},
-  {id:11,fl:'🇮🇳',oc:'Electrician',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-01',inv:'2025-06',grt:'2025-09',stage:'grt',ago:19},
-  {id:12,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:85,nt:'Pakistani',eoi:'2024-12',inv:'2025-04',grt:'2025-10',stage:'grt',ago:24},
-  {id:13,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-07',grt:'2025-10',stage:'grt',ago:13},
-  {id:14,fl:'🇵🇭',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:9},
-  {id:15,fl:'🇮🇳',oc:'Registered Nurse',st:'NSW',v:'190',pts:80,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-10',stage:'grt',ago:4},
-  {id:16,fl:'🇧🇩',oc:'Secondary Teacher',st:'QLD',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-07',grt:'2025-11',stage:'grt',ago:7},
-  {id:17,fl:'🇱🇰',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:16},
-  {id:18,fl:'🇮🇳',oc:'Construction Project Manager',st:'VIC',v:'190',pts:80,nt:'Indian',eoi:'2024-11',inv:'2025-05',grt:'2025-11',stage:'grt',ago:20},
-  {id:19,fl:'🇵🇭',oc:'Registered Nurse',st:'ACT',v:'190',pts:80,nt:'Filipino',eoi:'2025-01',inv:'2025-06',grt:'2025-10',stage:'grt',ago:8},
-  {id:20,fl:'🇮🇳',oc:'Civil Engineer',st:'WA',v:'190',pts:80,nt:'Indian',eoi:'2025-01',inv:'2025-07',grt:'2025-09',stage:'grt',ago:19},
-  {id:21,fl:'🇵🇰',oc:'Social Worker',st:'VIC',v:'189',pts:80,nt:'Pakistani',eoi:'2025-01',inv:'2025-06',grt:'2025-11',stage:'grt',ago:30},
-  {id:22,fl:'🇳🇵',oc:'Physiotherapist',st:'SA',v:'190',pts:75,nt:'Nepali',eoi:'2025-02',inv:'2025-07',grt:'2025-09',stage:'grt',ago:15},
-  {id:23,fl:'🇮🇳',oc:'Occupational Therapist',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-09',stage:'grt',ago:10},
-  {id:24,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'VIC',v:'190',pts:75,nt:'Filipino',eoi:'2025-01',inv:'2025-06',grt:'2025-10',stage:'grt',ago:18},
-  {id:25,fl:'🇧🇩',oc:'Electrician',st:'QLD',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-07',grt:'2025-09',stage:'grt',ago:12},
-  {id:26,fl:'🇮🇳',oc:'Speech Pathologist',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-10',stage:'grt',ago:14},
-  {id:27,fl:'🇱🇰',oc:'Midwife',st:'QLD',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:17},
-  {id:28,fl:'🇮🇳',oc:'Psychologist',st:'NSW',v:'189',pts:85,nt:'Indian',eoi:'2025-01',inv:'2025-07',grt:'2025-11',stage:'grt',ago:9},
-  {id:29,fl:'🇳🇵',oc:'Mental Health Nurse',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-02',inv:'2025-06',grt:'2025-09',stage:'grt',ago:21},
-  {id:30,fl:'🇵🇭',oc:'Disability Support Worker',st:'WA',v:'190',pts:65,nt:'Filipino',eoi:'2025-03',inv:'2025-07',grt:'2025-10',stage:'grt',ago:11},
 
-  // ── WAITING (invited, docs lodged, awaiting grant decision) ── (15 entries)
-  {id:31,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:3},
-  {id:32,fl:'🇵🇰',oc:'Social Worker',st:'NSW',v:'189',pts:85,nt:'Pakistani',eoi:'2025-04',inv:'2025-11',grt:null,stage:'wait',ago:7},
-  {id:33,fl:'🇮🇳',oc:'Civil Engineer',st:'VIC',v:'190',pts:85,nt:'Indian',eoi:'2025-04',inv:'2025-11',grt:null,stage:'wait',ago:7},
-  {id:34,fl:'🇱🇰',oc:'Secondary Teacher',st:'VIC',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-09',inv:'2025-11',grt:null,stage:'wait',ago:6},
-  {id:35,fl:'🇵🇭',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:80,nt:'Filipino',eoi:'2025-08',inv:'2025-10',grt:null,stage:'wait',ago:12},
-  {id:36,fl:'🇧🇩',oc:'Electrician',st:'NSW',v:'491',pts:80,nt:'Bangladeshi',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:5},
-  {id:37,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:13},
-  {id:38,fl:'🇳🇵',oc:'Registered Nurse',st:'ACT',v:'190',pts:80,nt:'Nepali',eoi:'2025-06',inv:'2025-10',grt:null,stage:'wait',ago:19},
-  {id:39,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:95,nt:'Indian',eoi:'2025-05',inv:'2025-11',grt:null,stage:'wait',ago:16},
-  {id:40,fl:'🇵🇭',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Filipino',eoi:'2025-08',inv:'2025-11',grt:null,stage:'wait',ago:10},
-  {id:41,fl:'🇮🇳',oc:'Electrician',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-06',inv:'2025-11',grt:null,stage:'wait',ago:22},
-  {id:42,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:85,nt:'Pakistani',eoi:'2025-07',inv:'2025-10',grt:null,stage:'wait',ago:9},
-  {id:43,fl:'🇮🇳',oc:'Speech Pathologist',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:8},
-  {id:44,fl:'🇱🇰',oc:'Occupational Therapist',st:'SA',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-08',inv:'2025-12',grt:null,stage:'wait',ago:17},
-  {id:45,fl:'🇧🇩',oc:'Secondary Teacher',st:'NSW',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-07',inv:'2025-11',grt:null,stage:'wait',ago:25},
-
-  // ── INVITED (EOI accepted, lodging documents) ── (10 entries)
-  {id:46,fl:'🇮🇳',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-09',inv:'2025-11',grt:null,stage:'inv',ago:11},
-  {id:47,fl:'🇵🇰',oc:'Management Accountant',st:'SA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:28},
-  {id:48,fl:'🇳🇵',oc:'Registered Nurse',st:'QLD',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-08',inv:'2025-11',grt:null,stage:'inv',ago:14},
-  {id:49,fl:'🇮🇳',oc:'Construction Project Manager',st:'VIC',v:'190',pts:80,nt:'Indian',eoi:'2025-05',inv:'2025-12',grt:null,stage:'inv',ago:31},
-  {id:50,fl:'🇵🇭',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Filipino',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:8},
-  {id:51,fl:'🇮🇳',oc:'Psychologist',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:26},
-  {id:52,fl:'🇧🇩',oc:'Civil Engineer',st:'SA',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:26},
-  {id:53,fl:'🇮🇳',oc:'Midwife',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2025-07',inv:'2025-12',grt:null,stage:'inv',ago:9},
-  {id:54,fl:'🇵🇭',oc:'Mental Health Nurse',st:'QLD',v:'190',pts:70,nt:'Filipino',eoi:'2025-08',inv:'2025-12',grt:null,stage:'inv',ago:12},
-  {id:55,fl:'🇱🇰',oc:'Disability Support Worker',st:'SA',v:'190',pts:65,nt:'Sri Lankan',eoi:'2025-09',inv:'2026-01',grt:null,stage:'inv',ago:5},
-
-  // ── EOI LODGED ── (15 entries)
-  {id:56,fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'190',pts:70,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:8},
-  {id:57,fl:'🇵🇭',oc:'Physiotherapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:5},
-  {id:58,fl:'🇳🇵',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:3},
-  {id:59,fl:'🇮🇳',oc:'Electrician',st:'NSW',v:'491',pts:75,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:9},
-  {id:60,fl:'🇧🇩',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Bangladeshi',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:2},
-  {id:61,fl:'🇮🇳',oc:'Social Worker',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:11},
-  {id:62,fl:'🇱🇰',oc:'Secondary Teacher',st:'VIC',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:18},
-  {id:63,fl:'🇮🇳',oc:'General Practitioner',st:'NSW',v:'189',pts:90,nt:'Indian',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:4},
-  {id:64,fl:'🇵🇭',oc:'Registered Nurse',st:'VIC',v:'190',pts:75,nt:'Filipino',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:7},
-  {id:65,fl:'🇳🇵',oc:'Physiotherapist',st:'ACT',v:'190',pts:75,nt:'Nepali',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:14},
-  {id:66,fl:'🇮🇳',oc:'Structural Engineer',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-10',inv:null,grt:null,stage:'eoi',ago:6},
-  {id:67,fl:'🇵🇰',oc:'Dentist',st:'SA',v:'190',pts:80,nt:'Pakistani',eoi:'2025-12',inv:null,grt:null,stage:'eoi',ago:13},
-  {id:68,fl:'🇮🇳',oc:'Speech Pathologist',st:'NSW',v:'189',pts:80,nt:'Indian',eoi:'2025-11',inv:null,grt:null,stage:'eoi',ago:10},
-  {id:69,fl:'🇵🇭',oc:'Occupational Therapist',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:3},
-  {id:70,fl:'🇮🇳',oc:'Plumber',st:'WA',v:'190',pts:70,nt:'Indian',eoi:'2026-01',inv:null,grt:null,stage:'eoi',ago:1},
+const DATA = [
+  {id:1,s:'grt',fl:'🇵🇰',oc:'Occupational Therapist',st:'QLD',v:'190',pts:65,nt:'Pakistani',eoi:'2024-09',inv:'2025-07',grt:'2026-04',ago:27},
+  {id:2,s:'inv',fl:'🇵🇭',oc:'Boilermaker',st:'SA',v:'190',pts:75,nt:'Filipino',eoi:'2025-09',inv:'2026-03',grt:null,ago:0},
+  {id:3,s:'grt',fl:'🇧🇩',oc:'Bricklayer',st:'NSW',v:'491',pts:70,nt:'Bangladeshi',eoi:'2024-11',inv:'2025-07',grt:'2026-02',ago:20},
+  {id:4,s:'grt',fl:'🇨🇳',oc:'Network Engineer',st:'TAS',v:'190',pts:85,nt:'Chinese',eoi:'2025-04',inv:'2025-09',grt:'2026-01',ago:18},
+  {id:5,s:'grt',fl:'🇧🇩',oc:'Radiographer',st:'VIC',v:'190',pts:75,nt:'Bangladeshi',eoi:'2024-04',inv:'2025-02',grt:'2025-12',ago:36},
+  {id:6,s:'grt',fl:'🇧🇩',oc:'Exercise Physiologist',st:'TAS',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-01',inv:'2025-07',grt:'2026-01',ago:38},
+  {id:7,s:'wait',fl:'🇵🇭',oc:'Software Engineer',st:'Fed',v:'189',pts:90,nt:'Filipino',eoi:'2025-10',inv:'2026-01',grt:null,ago:10},
+  {id:8,s:'wait',fl:'🇿🇦',oc:'Network Engineer',st:'Fed',v:'189',pts:85,nt:'South African',eoi:'2025-08',inv:'2026-02',grt:null,ago:15},
+  {id:9,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2024-10',inv:'2025-07',grt:'2026-01',ago:15},
+  {id:10,s:'wait',fl:'🇵🇰',oc:'Refrigeration Mechanic',st:'QLD',v:'491',pts:75,nt:'Pakistani',eoi:'2025-08',inv:'2026-02',grt:null,ago:31},
+  {id:11,s:'inv',fl:'🇮🇳',oc:'Midwife',st:'WA',v:'491',pts:65,nt:'Indian',eoi:'2025-12',inv:'2026-04',grt:null,ago:27},
+  {id:12,s:'inv',fl:'🇮🇳',oc:'Pharmacist',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-08',inv:'2026-04',grt:null,ago:7},
+  {id:13,s:'grt',fl:'🇧🇩',oc:'Pharmacist',st:'NSW',v:'190',pts:75,nt:'Bangladeshi',eoi:'2023-11',inv:'2024-12',grt:'2025-12',ago:20},
+  {id:14,s:'wait',fl:'🇵🇭',oc:'Bricklayer',st:'SA',v:'491',pts:75,nt:'Filipino',eoi:'2025-09',inv:'2026-02',grt:null,ago:28},
+  {id:15,s:'eoi',fl:'🇳🇵',oc:'Exercise Physiologist',st:'NT',v:'190',pts:75,nt:'Nepali',eoi:'2026-03',inv:null,grt:null,ago:40},
+  {id:16,s:'grt',fl:'🇵🇰',oc:'Primary Teacher',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2024-10',inv:'2025-04',grt:'2026-02',ago:15},
+  {id:17,s:'inv',fl:'🇮🇳',oc:'Data Scientist',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2025-10',inv:'2026-02',grt:null,ago:24},
+  {id:18,s:'grt',fl:'🇵🇭',oc:'Special Education Teacher',st:'TAS',v:'190',pts:65,nt:'Filipino',eoi:'2025-05',inv:'2025-09',grt:'2026-01',ago:26},
+  {id:19,s:'wait',fl:'🇿🇦',oc:'Boilermaker',st:'SA',v:'491',pts:75,nt:'South African',eoi:'2025-06',inv:'2025-12',grt:null,ago:36},
+  {id:20,s:'wait',fl:'🇵🇭',oc:'Registered Nurse',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-04',inv:'2026-02',grt:null,ago:34},
+  {id:21,s:'inv',fl:'🇳🇵',oc:'ICT Business Analyst',st:'Fed',v:'189',pts:85,nt:'Nepali',eoi:'2025-07',inv:'2026-03',grt:null,ago:1},
+  {id:22,s:'wait',fl:'🇮🇳',oc:'Radiographer',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2025-03',inv:'2026-03',grt:null,ago:39},
+  {id:23,s:'wait',fl:'🇱🇰',oc:'Metal Fabricator',st:'SA',v:'491',pts:75,nt:'Sri Lankan',eoi:'2025-08',inv:'2025-12',grt:null,ago:27},
+  {id:24,s:'inv',fl:'🇵🇭',oc:'Audiologist',st:'TAS',v:'190',pts:65,nt:'Filipino',eoi:'2025-09',inv:'2026-03',grt:null,ago:20},
+  {id:25,s:'grt',fl:'🇮🇳',oc:'Primary Teacher',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-04',inv:'2025-09',grt:'2026-03',ago:34},
+  {id:26,s:'eoi',fl:'🇿🇦',oc:'Pharmacist',st:'ACT',v:'190',pts:70,nt:'South African',eoi:'2026-03',inv:null,grt:null,ago:1},
+  {id:27,s:'wait',fl:'🇵🇭',oc:'Podiatrist',st:'TAS',v:'190',pts:65,nt:'Filipino',eoi:'2025-10',inv:'2026-02',grt:null,ago:42},
+  {id:28,s:'wait',fl:'🇧🇩',oc:'Management Accountant',st:'SA',v:'190',pts:80,nt:'Bangladeshi',eoi:'2025-09',inv:'2026-02',grt:null,ago:45},
+  {id:29,s:'wait',fl:'🇧🇩',oc:'Plumber',st:'NSW',v:'491',pts:70,nt:'Bangladeshi',eoi:'2025-06',inv:'2025-12',grt:null,ago:43},
+  {id:30,s:'wait',fl:'🇨🇳',oc:'Veterinarian',st:'Fed',v:'189',pts:75,nt:'Chinese',eoi:'2025-10',inv:'2026-03',grt:null,ago:40},
+  {id:31,s:'grt',fl:'🇮🇳',oc:'Dietitian',st:'ACT',v:'491',pts:70,nt:'Indian',eoi:'2024-11',inv:'2025-08',grt:'2026-02',ago:36},
+  {id:32,s:'grt',fl:'🇱🇰',oc:'Data Scientist',st:'SA',v:'190',pts:90,nt:'Sri Lankan',eoi:'2025-01',inv:'2025-06',grt:'2026-01',ago:21},
+  {id:33,s:'wait',fl:'🇵🇭',oc:'Early Childhood Teacher',st:'ACT',v:'491',pts:75,nt:'Filipino',eoi:'2025-08',inv:'2025-12',grt:null,ago:45},
+  {id:34,s:'grt',fl:'🇮🇷',oc:'Audiologist',st:'VIC',v:'190',pts:75,nt:'Iranian',eoi:'2024-03',inv:'2025-02',grt:'2025-12',ago:30},
+  {id:35,s:'wait',fl:'🇮🇳',oc:'Primary Teacher',st:'WA',v:'491',pts:75,nt:'Indian',eoi:'2025-08',inv:'2026-02',grt:null,ago:17},
+  {id:36,s:'grt',fl:'🇵🇰',oc:'Hairdresser',st:'QLD',v:'491',pts:75,nt:'Pakistani',eoi:'2024-10',inv:'2025-04',grt:'2026-03',ago:1},
+  {id:37,s:'inv',fl:'🇮🇳',oc:'ICT Business Analyst',st:'Fed',v:'189',pts:85,nt:'Indian',eoi:'2025-08',inv:'2026-02',grt:null,ago:21},
+  {id:38,s:'grt',fl:'🇮🇳',oc:'Dietitian',st:'WA',v:'190',pts:70,nt:'Indian',eoi:'2024-10',inv:'2025-05',grt:'2026-01',ago:5},
+  {id:39,s:'wait',fl:'🇳🇵',oc:'Mechanical Engineer',st:'ACT',v:'190',pts:80,nt:'Nepali',eoi:'2025-12',inv:'2026-03',grt:null,ago:28},
+  {id:40,s:'grt',fl:'🇱🇰',oc:'Electrician',st:'TAS',v:'491',pts:75,nt:'Sri Lankan',eoi:'2024-06',inv:'2024-11',grt:'2025-12',ago:37},
+  {id:41,s:'inv',fl:'🇬🇧',oc:'Cybersecurity Analyst',st:'Fed',v:'189',pts:85,nt:'British',eoi:'2025-08',inv:'2026-03',grt:null,ago:35},
+  {id:42,s:'wait',fl:'🇮🇳',oc:'Dietitian',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-09',inv:'2026-03',grt:null,ago:12},
+  {id:43,s:'grt',fl:'🇮🇳',oc:'Baker',st:'QLD',v:'491',pts:70,nt:'Indian',eoi:'2024-05',inv:'2025-01',grt:'2026-02',ago:13},
+  {id:44,s:'grt',fl:'🇵🇰',oc:'Chef / Cook',st:'WA',v:'491',pts:70,nt:'Pakistani',eoi:'2025-01',inv:'2025-06',grt:'2026-02',ago:14},
+  {id:45,s:'inv',fl:'🇮🇳',oc:'Registered Nurse',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2025-05',inv:'2026-03',grt:null,ago:3},
+  {id:46,s:'grt',fl:'🇮🇳',oc:'Dietitian',st:'NT',v:'190',pts:70,nt:'Indian',eoi:'2024-12',inv:'2025-08',grt:'2026-01',ago:0},
+  {id:47,s:'grt',fl:'🇮🇳',oc:'Accountant',st:'NSW',v:'190',pts:85,nt:'Indian',eoi:'2024-04',inv:'2025-02',grt:'2026-04',ago:30},
+  {id:48,s:'wait',fl:'🇱🇰',oc:'Metal Fabricator',st:'Fed',v:'189',pts:70,nt:'Sri Lankan',eoi:'2025-12',inv:'2026-02',grt:null,ago:43},
+  {id:49,s:'grt',fl:'🇮🇳',oc:'Midwife',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2024-03',inv:'2025-01',grt:'2025-12',ago:7},
+  {id:50,s:'grt',fl:'🇵🇭',oc:'Mining Engineer',st:'QLD',v:'190',pts:80,nt:'Filipino',eoi:'2024-08',inv:'2025-06',grt:'2026-02',ago:19},
+  {id:51,s:'grt',fl:'🇿🇦',oc:'Electrical Engineer',st:'NT',v:'190',pts:75,nt:'South African',eoi:'2025-06',inv:'2025-11',grt:'2026-04',ago:13},
+  {id:52,s:'grt',fl:'🇮🇳',oc:'Mental Health Nurse',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2024-12',inv:'2025-02',grt:'2026-01',ago:10},
+  {id:53,s:'inv',fl:'🇵🇰',oc:'Dietitian',st:'SA',v:'190',pts:75,nt:'Pakistani',eoi:'2025-07',inv:'2026-02',grt:null,ago:45},
+  {id:54,s:'wait',fl:'🇮🇳',oc:'Chiropractor',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2025-07',inv:'2025-12',grt:null,ago:16},
+  {id:55,s:'grt',fl:'🇮🇳',oc:'Speech Pathologist',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-06',inv:'2025-11',grt:'2026-03',ago:9},
+  {id:56,s:'grt',fl:'🇵🇰',oc:'Lawyer',st:'VIC',v:'190',pts:85,nt:'Pakistani',eoi:'2024-08',inv:'2025-04',grt:'2026-02',ago:28},
+  {id:57,s:'wait',fl:'🇳🇵',oc:'Dietitian',st:'NT',v:'491',pts:70,nt:'Nepali',eoi:'2025-12',inv:'2026-03',grt:null,ago:28},
+  {id:58,s:'grt',fl:'🇮🇳',oc:'Bricklayer',st:'TAS',v:'190',pts:75,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-12',ago:14},
+  {id:59,s:'grt',fl:'🇵🇰',oc:'Occupational Therapist',st:'ACT',v:'190',pts:70,nt:'Pakistani',eoi:'2025-02',inv:'2025-08',grt:'2026-01',ago:11},
+  {id:60,s:'inv',fl:'🇱🇰',oc:'Dentist',st:'TAS',v:'190',pts:80,nt:'Sri Lankan',eoi:'2025-10',inv:'2026-03',grt:null,ago:6},
+  {id:61,s:'grt',fl:'🇵🇭',oc:'Refrigeration Mechanic',st:'QLD',v:'491',pts:75,nt:'Filipino',eoi:'2024-12',inv:'2025-03',grt:'2026-04',ago:35},
+  {id:62,s:'inv',fl:'🇵🇭',oc:'Construction Project Manager',st:'NSW',v:'190',pts:80,nt:'Filipino',eoi:'2025-04',inv:'2026-02',grt:null,ago:32},
+  {id:63,s:'grt',fl:'🇳🇵',oc:'Chiropractor',st:'SA',v:'190',pts:75,nt:'Nepali',eoi:'2025-01',inv:'2025-09',grt:'2026-04',ago:23},
+  {id:64,s:'grt',fl:'🇵🇭',oc:'Special Education Teacher',st:'NSW',v:'190',pts:75,nt:'Filipino',eoi:'2024-07',inv:'2025-08',grt:'2026-04',ago:44},
+  {id:65,s:'grt',fl:'🇮🇳',oc:'Quantity Surveyor',st:'TAS',v:'190',pts:80,nt:'Indian',eoi:'2025-05',inv:'2025-12',grt:'2026-03',ago:35},
+  {id:66,s:'grt',fl:'🇮🇳',oc:'Exercise Physiologist',st:'SA',v:'190',pts:70,nt:'Indian',eoi:'2024-12',inv:'2025-07',grt:'2026-01',ago:31},
+  {id:67,s:'wait',fl:'🇳🇵',oc:'Exercise Physiologist',st:'TAS',v:'491',pts:70,nt:'Nepali',eoi:'2025-08',inv:'2026-02',grt:null,ago:9},
+  {id:68,s:'grt',fl:'🇵🇭',oc:'Mining Engineer',st:'TAS',v:'491',pts:80,nt:'Filipino',eoi:'2024-03',inv:'2024-12',grt:'2026-02',ago:21},
+  {id:69,s:'inv',fl:'🇧🇩',oc:'Medical Radiation Scientist',st:'TAS',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-09',inv:'2026-04',grt:null,ago:37},
+  {id:70,s:'eoi',fl:'🇵🇰',oc:'Software Engineer',st:'Fed',v:'189',pts:90,nt:'Pakistani',eoi:'2026-01',inv:null,grt:null,ago:35},
+  {id:71,s:'grt',fl:'🇮🇳',oc:'Management Accountant',st:'VIC',v:'491',pts:80,nt:'Indian',eoi:'2024-10',inv:'2025-04',grt:'2026-01',ago:36},
+  {id:72,s:'eoi',fl:'🇵🇰',oc:'Occupational Therapist',st:'ACT',v:'190',pts:70,nt:'Pakistani',eoi:'2026-03',inv:null,grt:null,ago:24},
+  {id:73,s:'wait',fl:'🇧🇩',oc:'ICT Business Analyst',st:'Fed',v:'189',pts:80,nt:'Bangladeshi',eoi:'2025-09',inv:'2025-12',grt:null,ago:21},
+  {id:74,s:'wait',fl:'🇮🇳',oc:'Early Childhood Teacher',st:'SA',v:'491',pts:75,nt:'Indian',eoi:'2025-05',inv:'2026-02',grt:null,ago:26},
+  {id:75,s:'inv',fl:'🇧🇩',oc:'General Practitioner',st:'TAS',v:'190',pts:80,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-02',grt:null,ago:44},
+  {id:76,s:'inv',fl:'🇵🇰',oc:'Dentist',st:'WA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-06',inv:'2026-02',grt:null,ago:20},
+  {id:77,s:'grt',fl:'🇮🇳',oc:'Hairdresser',st:'SA',v:'491',pts:75,nt:'Indian',eoi:'2024-09',inv:'2025-05',grt:'2026-03',ago:15},
+  {id:78,s:'wait',fl:'🇱🇰',oc:'Baker',st:'SA',v:'491',pts:65,nt:'Sri Lankan',eoi:'2025-06',inv:'2026-03',grt:null,ago:45},
+  {id:79,s:'wait',fl:'🇮🇳',oc:'Software Engineer',st:'VIC',v:'190',pts:80,nt:'Indian',eoi:'2025-05',inv:'2026-01',grt:null,ago:20},
+  {id:80,s:'grt',fl:'🇵🇭',oc:'Civil Engineer',st:'TAS',v:'190',pts:75,nt:'Filipino',eoi:'2025-06',inv:'2025-11',grt:'2026-03',ago:36},
+  {id:81,s:'grt',fl:'🇮🇳',oc:'Dentist',st:'ACT',v:'491',pts:85,nt:'Indian',eoi:'2024-12',inv:'2025-07',grt:'2026-03',ago:31},
+  {id:82,s:'grt',fl:'🇵🇭',oc:'Management Accountant',st:'ACT',v:'190',pts:80,nt:'Filipino',eoi:'2025-06',inv:'2025-10',grt:'2026-01',ago:18},
+  {id:83,s:'inv',fl:'🇨🇳',oc:'Civil Engineer',st:'NSW',v:'190',pts:85,nt:'Chinese',eoi:'2025-02',inv:'2026-03',grt:null,ago:16},
+  {id:84,s:'wait',fl:'🇵🇰',oc:'Podiatrist',st:'SA',v:'491',pts:70,nt:'Pakistani',eoi:'2025-08',inv:'2026-01',grt:null,ago:36},
+  {id:85,s:'inv',fl:'🇱🇰',oc:'Dietitian',st:'Fed',v:'189',pts:70,nt:'Sri Lankan',eoi:'2025-10',inv:'2026-04',grt:null,ago:25},
+  {id:86,s:'inv',fl:'🇵🇰',oc:'Electrical Engineer',st:'QLD',v:'491',pts:75,nt:'Pakistani',eoi:'2025-08',inv:'2026-03',grt:null,ago:14},
+  {id:87,s:'wait',fl:'🇬🇧',oc:'Aged Care Worker',st:'ACT',v:'190',pts:65,nt:'British',eoi:'2025-11',inv:'2026-03',grt:null,ago:42},
+  {id:88,s:'grt',fl:'🇧🇩',oc:'Quantity Surveyor',st:'QLD',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-09',grt:'2026-02',ago:23},
+  {id:89,s:'inv',fl:'🇮🇳',oc:'Construction Project Manager',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:34},
+  {id:90,s:'grt',fl:'🇵🇭',oc:'Network Engineer',st:'TAS',v:'190',pts:85,nt:'Filipino',eoi:'2025-04',inv:'2025-10',grt:'2026-01',ago:18},
+  {id:91,s:'grt',fl:'🇱🇰',oc:'General Practitioner',st:'TAS',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-04',inv:'2025-11',grt:'2026-04',ago:43},
+  {id:92,s:'grt',fl:'🇳🇵',oc:'Lawyer',st:'Fed',v:'189',pts:85,nt:'Nepali',eoi:'2024-07',inv:'2025-04',grt:'2026-02',ago:7},
+  {id:93,s:'wait',fl:'🇮🇳',oc:'Environmental Engineer',st:'NSW',v:'491',pts:80,nt:'Indian',eoi:'2025-08',inv:'2025-12',grt:null,ago:43},
+  {id:94,s:'wait',fl:'🇧🇩',oc:'Physiotherapist',st:'ACT',v:'491',pts:75,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-03',grt:null,ago:14},
+  {id:95,s:'grt',fl:'🇵🇭',oc:'Quantity Surveyor',st:'TAS',v:'491',pts:85,nt:'Filipino',eoi:'2025-06',inv:'2025-10',grt:'2026-04',ago:7},
+  {id:96,s:'grt',fl:'🇳🇵',oc:'Plumber',st:'TAS',v:'190',pts:75,nt:'Nepali',eoi:'2025-01',inv:'2025-08',grt:'2026-02',ago:8},
+  {id:97,s:'grt',fl:'🇵🇭',oc:'Radiographer',st:'ACT',v:'190',pts:75,nt:'Filipino',eoi:'2025-05',inv:'2025-08',grt:'2025-12',ago:41},
+  {id:98,s:'inv',fl:'🇵🇰',oc:'Refrigeration Mechanic',st:'Fed',v:'189',pts:70,nt:'Pakistani',eoi:'2025-06',inv:'2026-03',grt:null,ago:13},
+  {id:99,s:'inv',fl:'🇨🇳',oc:'Disability Support Worker',st:'Fed',v:'189',pts:65,nt:'Chinese',eoi:'2025-04',inv:'2026-02',grt:null,ago:23},
+  {id:100,s:'grt',fl:'🇮🇳',oc:'Civil Engineer',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-04',inv:'2025-08',grt:'2025-12',ago:29},
+  {id:101,s:'wait',fl:'🇮🇳',oc:'Physiotherapist',st:'TAS',v:'190',pts:65,nt:'Indian',eoi:'2025-10',inv:'2026-03',grt:null,ago:36},
+  {id:102,s:'inv',fl:'🇮🇳',oc:'Exercise Physiologist',st:'TAS',v:'190',pts:75,nt:'Indian',eoi:'2025-09',inv:'2026-02',grt:null,ago:21},
+  {id:103,s:'wait',fl:'🇮🇳',oc:'Registered Nurse',st:'SA',v:'491',pts:75,nt:'Indian',eoi:'2025-09',inv:'2026-02',grt:null,ago:34},
+  {id:104,s:'inv',fl:'🇵🇰',oc:'Speech Pathologist',st:'Fed',v:'189',pts:65,nt:'Pakistani',eoi:'2025-09',inv:'2026-04',grt:null,ago:15},
+  {id:105,s:'grt',fl:'🇬🇧',oc:'Audiologist',st:'Fed',v:'189',pts:75,nt:'British',eoi:'2024-12',inv:'2025-10',grt:'2026-04',ago:26},
+  {id:106,s:'wait',fl:'🇮🇳',oc:'Accountant',st:'WA',v:'190',pts:85,nt:'Indian',eoi:'2025-08',inv:'2026-03',grt:null,ago:28},
+  {id:107,s:'grt',fl:'🇮🇳',oc:'Chef / Cook',st:'VIC',v:'491',pts:70,nt:'Indian',eoi:'2024-04',inv:'2025-01',grt:'2026-01',ago:30},
+  {id:108,s:'inv',fl:'🇮🇳',oc:'Sonographer',st:'VIC',v:'190',pts:70,nt:'Indian',eoi:'2025-04',inv:'2026-02',grt:null,ago:5},
+  {id:109,s:'grt',fl:'🇧🇩',oc:'Midwife',st:'Fed',v:'189',pts:65,nt:'Bangladeshi',eoi:'2024-05',inv:'2025-03',grt:'2026-01',ago:40},
+  {id:110,s:'wait',fl:'🇮🇳',oc:'Mining Engineer',st:'WA',v:'190',pts:85,nt:'Indian',eoi:'2025-08',inv:'2026-02',grt:null,ago:44},
+  {id:111,s:'grt',fl:'🇵🇭',oc:'Bricklayer',st:'NT',v:'491',pts:70,nt:'Filipino',eoi:'2025-01',inv:'2025-07',grt:'2026-02',ago:25},
+  {id:112,s:'inv',fl:'🇮🇳',oc:'Bricklayer',st:'TAS',v:'491',pts:70,nt:'Indian',eoi:'2025-10',inv:'2026-04',grt:null,ago:43},
+  {id:113,s:'grt',fl:'🇮🇳',oc:'Dentist',st:'Fed',v:'189',pts:65,nt:'Indian',eoi:'2025-03',inv:'2025-07',grt:'2025-12',ago:23},
+  {id:114,s:'grt',fl:'🇱🇰',oc:'Mechanical Engineer',st:'QLD',v:'190',pts:80,nt:'Sri Lankan',eoi:'2024-11',inv:'2025-05',grt:'2025-12',ago:27},
+  {id:115,s:'wait',fl:'🇮🇳',oc:'Plumber',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-05',inv:'2026-02',grt:null,ago:42},
+  {id:116,s:'eoi',fl:'🇮🇳',oc:'Osteopath',st:'WA',v:'190',pts:70,nt:'Indian',eoi:'2026-03',inv:null,grt:null,ago:17},
+  {id:117,s:'inv',fl:'🇧🇩',oc:'Pharmacist',st:'VIC',v:'491',pts:75,nt:'Bangladeshi',eoi:'2025-06',inv:'2026-02',grt:null,ago:39},
+  {id:118,s:'grt',fl:'🇨🇳',oc:'Mechanical Engineer',st:'ACT',v:'190',pts:75,nt:'Chinese',eoi:'2025-08',inv:'2025-11',grt:'2026-02',ago:17},
+  {id:119,s:'grt',fl:'🇮🇳',oc:'Dietitian',st:'TAS',v:'491',pts:70,nt:'Indian',eoi:'2024-09',inv:'2025-04',grt:'2026-04',ago:9},
+  {id:120,s:'wait',fl:'🇳🇵',oc:'Midwife',st:'Fed',v:'189',pts:65,nt:'Nepali',eoi:'2025-04',inv:'2025-12',grt:null,ago:13},
+  {id:121,s:'grt',fl:'🇵🇰',oc:'Management Accountant',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2025-07',inv:'2025-10',grt:'2026-03',ago:20},
+  {id:122,s:'wait',fl:'🇱🇰',oc:'Mental Health Nurse',st:'TAS',v:'190',pts:65,nt:'Sri Lankan',eoi:'2025-05',inv:'2025-12',grt:null,ago:27},
+  {id:123,s:'eoi',fl:'🇵🇰',oc:'Refrigeration Mechanic',st:'WA',v:'190',pts:70,nt:'Pakistani',eoi:'2026-04',inv:null,grt:null,ago:27},
+  {id:124,s:'wait',fl:'🇮🇳',oc:'Electrician',st:'QLD',v:'491',pts:80,nt:'Indian',eoi:'2025-09',inv:'2026-03',grt:null,ago:14},
+  {id:125,s:'wait',fl:'🇮🇳',oc:'Registered Nurse',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-07',inv:'2026-01',grt:null,ago:16},
+  {id:126,s:'inv',fl:'🇮🇳',oc:'Speech Pathologist',st:'QLD',v:'190',pts:65,nt:'Indian',eoi:'2025-04',inv:'2026-02',grt:null,ago:24},
+  {id:127,s:'wait',fl:'🇬🇧',oc:'Aged Care Worker',st:'Fed',v:'189',pts:70,nt:'British',eoi:'2025-07',inv:'2026-03',grt:null,ago:2},
+  {id:128,s:'grt',fl:'🇧🇩',oc:'Management Accountant',st:'ACT',v:'491',pts:75,nt:'Bangladeshi',eoi:'2024-06',inv:'2025-02',grt:'2026-02',ago:25},
+  {id:129,s:'grt',fl:'🇵🇰',oc:'Speech Pathologist',st:'Fed',v:'189',pts:75,nt:'Pakistani',eoi:'2024-09',inv:'2025-06',grt:'2026-04',ago:10},
+  {id:130,s:'wait',fl:'🇳🇵',oc:'Bricklayer',st:'WA',v:'190',pts:70,nt:'Nepali',eoi:'2025-04',inv:'2026-01',grt:null,ago:5},
+  {id:131,s:'wait',fl:'🇮🇳',oc:'Baker',st:'NT',v:'190',pts:65,nt:'Indian',eoi:'2025-10',inv:'2026-02',grt:null,ago:32},
+  {id:132,s:'grt',fl:'🇱🇰',oc:'Geologist',st:'NSW',v:'190',pts:80,nt:'Sri Lankan',eoi:'2024-08',inv:'2025-07',grt:'2026-03',ago:9},
+  {id:133,s:'grt',fl:'🇮🇳',oc:'Secondary Teacher',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2025-03',inv:'2025-06',grt:'2026-01',ago:41},
+  {id:134,s:'eoi',fl:'🇱🇰',oc:'Management Accountant',st:'VIC',v:'190',pts:85,nt:'Sri Lankan',eoi:'2026-02',inv:null,grt:null,ago:40},
+  {id:135,s:'wait',fl:'🇵🇭',oc:'Chiropractor',st:'QLD',v:'190',pts:75,nt:'Filipino',eoi:'2025-05',inv:'2026-01',grt:null,ago:28},
+  {id:136,s:'grt',fl:'🇵🇭',oc:'Environmental Engineer',st:'SA',v:'190',pts:75,nt:'Filipino',eoi:'2025-05',inv:'2025-10',grt:'2026-02',ago:28},
+  {id:137,s:'wait',fl:'🇮🇳',oc:'Exercise Physiologist',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2025-02',inv:'2025-12',grt:null,ago:39},
+  {id:138,s:'wait',fl:'🇱🇰',oc:'Management Accountant',st:'NT',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-06',inv:'2025-12',grt:null,ago:12},
+  {id:139,s:'inv',fl:'🇵🇰',oc:'Network Engineer',st:'NT',v:'491',pts:80,nt:'Pakistani',eoi:'2025-11',inv:'2026-02',grt:null,ago:45},
+  {id:140,s:'eoi',fl:'🇨🇳',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Chinese',eoi:'2026-01',inv:null,grt:null,ago:28},
+  {id:141,s:'grt',fl:'🇵🇰',oc:'Cybersecurity Analyst',st:'Fed',v:'189',pts:85,nt:'Pakistani',eoi:'2024-06',inv:'2025-02',grt:'2025-12',ago:24},
+  {id:142,s:'inv',fl:'🇮🇳',oc:'Social Worker',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2025-07',inv:'2026-03',grt:null,ago:35},
+  {id:143,s:'grt',fl:'🇧🇩',oc:'Secondary Teacher',st:'TAS',v:'491',pts:80,nt:'Bangladeshi',eoi:'2024-11',inv:'2025-03',grt:'2026-02',ago:42},
+  {id:144,s:'grt',fl:'🇨🇳',oc:'Pharmacist',st:'Fed',v:'189',pts:80,nt:'Chinese',eoi:'2024-09',inv:'2025-03',grt:'2026-02',ago:5},
+  {id:145,s:'grt',fl:'🇬🇧',oc:'Medical Radiation Scientist',st:'VIC',v:'190',pts:75,nt:'British',eoi:'2024-06',inv:'2025-06',grt:'2026-01',ago:43},
+  {id:146,s:'grt',fl:'🇵🇰',oc:'Network Engineer',st:'Fed',v:'189',pts:85,nt:'Pakistani',eoi:'2024-10',inv:'2025-03',grt:'2026-01',ago:11},
+  {id:147,s:'inv',fl:'🇵🇰',oc:'Podiatrist',st:'SA',v:'491',pts:65,nt:'Pakistani',eoi:'2025-07',inv:'2026-02',grt:null,ago:6},
+  {id:148,s:'wait',fl:'🇵🇰',oc:'Exercise Physiologist',st:'SA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-08',inv:'2025-12',grt:null,ago:39},
+  {id:149,s:'wait',fl:'🇨🇳',oc:'Midwife',st:'Fed',v:'189',pts:70,nt:'Chinese',eoi:'2025-08',inv:'2025-12',grt:null,ago:39},
+  {id:150,s:'eoi',fl:'🇵🇭',oc:'Occupational Therapist',st:'ACT',v:'190',pts:75,nt:'Filipino',eoi:'2026-02',inv:null,grt:null,ago:39},
+  {id:151,s:'wait',fl:'🇮🇳',oc:'Hairdresser',st:'TAS',v:'491',pts:80,nt:'Indian',eoi:'2025-03',inv:'2025-12',grt:null,ago:19},
+  {id:152,s:'grt',fl:'🇵🇭',oc:'Exercise Physiologist',st:'NSW',v:'190',pts:70,nt:'Filipino',eoi:'2023-11',inv:'2024-11',grt:'2026-01',ago:29},
+  {id:153,s:'inv',fl:'🇧🇩',oc:'Network Engineer',st:'WA',v:'491',pts:90,nt:'Bangladeshi',eoi:'2025-06',inv:'2026-03',grt:null,ago:8},
+  {id:154,s:'wait',fl:'🇮🇳',oc:'Social Worker',st:'ACT',v:'491',pts:80,nt:'Indian',eoi:'2025-06',inv:'2026-03',grt:null,ago:45},
+  {id:155,s:'wait',fl:'🇳🇵',oc:'Electrician',st:'TAS',v:'491',pts:70,nt:'Nepali',eoi:'2025-03',inv:'2025-12',grt:null,ago:9},
+  {id:156,s:'eoi',fl:'🇮🇳',oc:'Dentist',st:'NSW',v:'491',pts:70,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:26},
+  {id:157,s:'wait',fl:'🇮🇳',oc:'Metal Fabricator',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-08',inv:'2026-03',grt:null,ago:23},
+  {id:158,s:'grt',fl:'🇮🇳',oc:'Construction Project Manager',st:'ACT',v:'491',pts:70,nt:'Indian',eoi:'2024-12',inv:'2025-03',grt:'2026-01',ago:8},
+  {id:159,s:'inv',fl:'🇧🇩',oc:'Dietitian',st:'QLD',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-10',inv:'2026-04',grt:null,ago:0},
+  {id:160,s:'grt',fl:'🇬🇧',oc:'Secondary Teacher',st:'ACT',v:'491',pts:70,nt:'British',eoi:'2024-09',inv:'2025-04',grt:'2026-04',ago:38},
+  {id:161,s:'grt',fl:'🇮🇳',oc:'Geologist',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-04',inv:'2025-12',grt:'2026-04',ago:26},
+  {id:162,s:'wait',fl:'🇳🇵',oc:'Exercise Physiologist',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-08',inv:'2026-02',grt:null,ago:36},
+  {id:163,s:'wait',fl:'🇵🇰',oc:'Electrician',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2025-06',inv:'2026-02',grt:null,ago:15},
+  {id:164,s:'wait',fl:'🇳🇵',oc:'Radiographer',st:'QLD',v:'190',pts:70,nt:'Nepali',eoi:'2025-05',inv:'2026-03',grt:null,ago:34},
+  {id:165,s:'wait',fl:'🇵🇰',oc:'Boilermaker',st:'Fed',v:'189',pts:70,nt:'Pakistani',eoi:'2025-09',inv:'2026-03',grt:null,ago:23},
+  {id:166,s:'wait',fl:'🇱🇰',oc:'Civil Engineer',st:'NT',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-05',inv:'2026-01',grt:null,ago:6},
+  {id:167,s:'grt',fl:'🇵🇰',oc:'Psychologist',st:'Fed',v:'189',pts:65,nt:'Pakistani',eoi:'2024-09',inv:'2025-01',grt:'2026-01',ago:41},
+  {id:168,s:'wait',fl:'🇮🇷',oc:'Quantity Surveyor',st:'SA',v:'491',pts:80,nt:'Iranian',eoi:'2025-10',inv:'2026-01',grt:null,ago:29},
+  {id:169,s:'inv',fl:'🇵🇰',oc:'Podiatrist',st:'VIC',v:'190',pts:65,nt:'Pakistani',eoi:'2025-03',inv:'2026-03',grt:null,ago:19},
+  {id:170,s:'inv',fl:'🇮🇳',oc:'Medical Radiation Scientist',st:'NT',v:'190',pts:80,nt:'Indian',eoi:'2025-10',inv:'2026-04',grt:null,ago:18},
+  {id:171,s:'grt',fl:'🇵🇰',oc:'Chiropractor',st:'SA',v:'190',pts:75,nt:'Pakistani',eoi:'2024-10',inv:'2025-06',grt:'2026-01',ago:27},
+  {id:172,s:'wait',fl:'🇳🇵',oc:'Structural Engineer',st:'WA',v:'190',pts:75,nt:'Nepali',eoi:'2025-06',inv:'2025-12',grt:null,ago:17},
+  {id:173,s:'inv',fl:'🇳🇵',oc:'Dentist',st:'VIC',v:'190',pts:80,nt:'Nepali',eoi:'2025-06',inv:'2026-04',grt:null,ago:18},
+  {id:174,s:'grt',fl:'🇧🇩',oc:'Dentist',st:'TAS',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-09',grt:'2026-01',ago:45},
+  {id:175,s:'grt',fl:'🇵🇰',oc:'Civil Engineer',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2024-11',inv:'2025-07',grt:'2026-04',ago:39},
+  {id:176,s:'grt',fl:'🇬🇧',oc:'General Practitioner',st:'QLD',v:'190',pts:90,nt:'British',eoi:'2025-03',inv:'2025-10',grt:'2026-03',ago:43},
+  {id:177,s:'wait',fl:'🇮🇳',oc:'Osteopath',st:'QLD',v:'190',pts:75,nt:'Indian',eoi:'2025-06',inv:'2026-01',grt:null,ago:4},
+  {id:178,s:'grt',fl:'🇮🇳',oc:'Carpenter',st:'SA',v:'491',pts:70,nt:'Indian',eoi:'2024-09',inv:'2025-03',grt:'2026-02',ago:43},
+  {id:179,s:'inv',fl:'🇵🇭',oc:'Software Engineer',st:'WA',v:'190',pts:80,nt:'Filipino',eoi:'2025-08',inv:'2026-04',grt:null,ago:20},
+  {id:180,s:'eoi',fl:'🇵🇰',oc:'Speech Pathologist',st:'WA',v:'190',pts:65,nt:'Pakistani',eoi:'2026-04',inv:null,grt:null,ago:35},
+  {id:181,s:'wait',fl:'🇧🇩',oc:'Secondary Teacher',st:'TAS',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-02',grt:null,ago:18},
+  {id:182,s:'grt',fl:'🇨🇳',oc:'Speech Pathologist',st:'NT',v:'491',pts:70,nt:'Chinese',eoi:'2024-12',inv:'2025-03',grt:'2026-02',ago:28},
+  {id:183,s:'wait',fl:'🇵🇰',oc:'Veterinarian',st:'TAS',v:'190',pts:75,nt:'Pakistani',eoi:'2025-08',inv:'2026-01',grt:null,ago:10},
+  {id:184,s:'eoi',fl:'🇮🇳',oc:'Network Engineer',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2026-03',inv:null,grt:null,ago:8},
+  {id:185,s:'inv',fl:'🇳🇵',oc:'Lawyer',st:'Fed',v:'189',pts:85,nt:'Nepali',eoi:'2025-08',inv:'2026-03',grt:null,ago:36},
+  {id:186,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2024-08',inv:'2025-02',grt:'2026-01',ago:4},
+  {id:187,s:'grt',fl:'🇮🇳',oc:'Cybersecurity Analyst',st:'VIC',v:'190',pts:90,nt:'Indian',eoi:'2024-06',inv:'2025-04',grt:'2026-04',ago:8},
+  {id:188,s:'eoi',fl:'🇮🇷',oc:'Software Engineer',st:'QLD',v:'190',pts:85,nt:'Iranian',eoi:'2026-03',inv:null,grt:null,ago:35},
+  {id:189,s:'grt',fl:'🇮🇳',oc:'Geologist',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2024-06',inv:'2025-06',grt:'2026-02',ago:7},
+  {id:190,s:'grt',fl:'🇵🇰',oc:'Mental Health Nurse',st:'ACT',v:'190',pts:70,nt:'Pakistani',eoi:'2025-06',inv:'2025-11',grt:'2026-02',ago:33},
+  {id:191,s:'wait',fl:'🇱🇰',oc:'Podiatrist',st:'TAS',v:'491',pts:75,nt:'Sri Lankan',eoi:'2025-08',inv:'2026-03',grt:null,ago:19},
+  {id:192,s:'wait',fl:'🇮🇳',oc:'Network Engineer',st:'WA',v:'190',pts:80,nt:'Indian',eoi:'2025-07',inv:'2026-03',grt:null,ago:42},
+  {id:193,s:'wait',fl:'🇱🇰',oc:'Medical Radiation Scientist',st:'Fed',v:'189',pts:70,nt:'Sri Lankan',eoi:'2025-08',inv:'2026-02',grt:null,ago:36},
+  {id:194,s:'eoi',fl:'🇳🇵',oc:'Geologist',st:'ACT',v:'190',pts:85,nt:'Nepali',eoi:'2026-02',inv:null,grt:null,ago:40},
+  {id:195,s:'grt',fl:'🇨🇳',oc:'Pharmacist',st:'NT',v:'190',pts:75,nt:'Chinese',eoi:'2025-04',inv:'2025-10',grt:'2026-04',ago:25},
+  {id:196,s:'wait',fl:'🇵🇭',oc:'Dietitian',st:'Fed',v:'189',pts:70,nt:'Filipino',eoi:'2025-05',inv:'2026-02',grt:null,ago:30},
+  {id:197,s:'grt',fl:'🇬🇧',oc:'Structural Engineer',st:'ACT',v:'190',pts:75,nt:'British',eoi:'2025-05',inv:'2025-11',grt:'2026-02',ago:22},
+  {id:198,s:'grt',fl:'🇵🇭',oc:'Network Engineer',st:'Fed',v:'189',pts:80,nt:'Filipino',eoi:'2024-09',inv:'2025-03',grt:'2026-03',ago:7},
+  {id:199,s:'grt',fl:'🇵🇰',oc:'Midwife',st:'Fed',v:'189',pts:65,nt:'Pakistani',eoi:'2024-11',inv:'2025-07',grt:'2026-03',ago:39},
+  {id:200,s:'inv',fl:'🇮🇳',oc:'Medical Radiation Scientist',st:'QLD',v:'491',pts:75,nt:'Indian',eoi:'2025-08',inv:'2026-02',grt:null,ago:10},
+  {id:201,s:'wait',fl:'🇮🇳',oc:'Management Accountant',st:'NT',v:'491',pts:85,nt:'Indian',eoi:'2025-05',inv:'2025-12',grt:null,ago:25},
+  {id:202,s:'wait',fl:'🇵🇰',oc:'Disability Support Worker',st:'SA',v:'190',pts:65,nt:'Pakistani',eoi:'2025-05',inv:'2026-01',grt:null,ago:31},
+  {id:203,s:'inv',fl:'🇮🇳',oc:'Data Scientist',st:'QLD',v:'190',pts:80,nt:'Indian',eoi:'2025-06',inv:'2026-03',grt:null,ago:23},
+  {id:204,s:'eoi',fl:'🇳🇵',oc:'Occupational Therapist',st:'Fed',v:'189',pts:75,nt:'Nepali',eoi:'2026-02',inv:null,grt:null,ago:12},
+  {id:205,s:'wait',fl:'🇳🇵',oc:'Mechanical Engineer',st:'Fed',v:'189',pts:80,nt:'Nepali',eoi:'2025-03',inv:'2026-01',grt:null,ago:28},
+  {id:206,s:'eoi',fl:'🇮🇳',oc:'Medical Radiation Scientist',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:25},
+  {id:207,s:'grt',fl:'🇮🇳',oc:'Lawyer',st:'QLD',v:'190',pts:85,nt:'Indian',eoi:'2024-06',inv:'2025-04',grt:'2026-01',ago:12},
+  {id:208,s:'grt',fl:'🇮🇳',oc:'Network Engineer',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2024-05',inv:'2024-12',grt:'2025-12',ago:45},
+  {id:209,s:'wait',fl:'🇵🇰',oc:'Management Accountant',st:'WA',v:'190',pts:80,nt:'Pakistani',eoi:'2025-06',inv:'2026-02',grt:null,ago:39},
+  {id:210,s:'grt',fl:'🇵🇰',oc:'Metal Fabricator',st:'TAS',v:'491',pts:75,nt:'Pakistani',eoi:'2024-01',inv:'2024-10',grt:'2025-12',ago:32},
+  {id:211,s:'inv',fl:'🇮🇳',oc:'ICT Business Analyst',st:'Fed',v:'189',pts:85,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:23},
+  {id:212,s:'inv',fl:'🇬🇧',oc:'Speech Pathologist',st:'NT',v:'190',pts:75,nt:'British',eoi:'2025-10',inv:'2026-02',grt:null,ago:44},
+  {id:213,s:'inv',fl:'🇮🇷',oc:'Accountant',st:'WA',v:'491',pts:85,nt:'Iranian',eoi:'2025-09',inv:'2026-04',grt:null,ago:37},
+  {id:214,s:'wait',fl:'🇱🇰',oc:'Chef / Cook',st:'SA',v:'491',pts:65,nt:'Sri Lankan',eoi:'2025-03',inv:'2025-12',grt:null,ago:39},
+  {id:215,s:'eoi',fl:'🇨🇳',oc:'Midwife',st:'Fed',v:'189',pts:70,nt:'Chinese',eoi:'2026-03',inv:null,grt:null,ago:7},
+  {id:216,s:'inv',fl:'🇨🇳',oc:'Physiotherapist',st:'SA',v:'190',pts:75,nt:'Chinese',eoi:'2025-06',inv:'2026-02',grt:null,ago:13},
+  {id:217,s:'wait',fl:'🇬🇧',oc:'Geologist',st:'NSW',v:'491',pts:85,nt:'British',eoi:'2025-06',inv:'2026-02',grt:null,ago:3},
+  {id:218,s:'inv',fl:'🇵🇭',oc:'Cybersecurity Analyst',st:'NSW',v:'190',pts:85,nt:'Filipino',eoi:'2025-02',inv:'2026-03',grt:null,ago:33},
+  {id:219,s:'inv',fl:'🇵🇰',oc:'Audiologist',st:'TAS',v:'491',pts:80,nt:'Pakistani',eoi:'2025-05',inv:'2026-02',grt:null,ago:43},
+  {id:220,s:'grt',fl:'🇮🇳',oc:'Sonographer',st:'TAS',v:'190',pts:75,nt:'Indian',eoi:'2025-04',inv:'2025-10',grt:'2026-02',ago:17},
+  {id:221,s:'wait',fl:'🇳🇵',oc:'Geologist',st:'ACT',v:'190',pts:80,nt:'Nepali',eoi:'2025-07',inv:'2026-01',grt:null,ago:20},
+  {id:222,s:'eoi',fl:'🇳🇵',oc:'Mechanical Engineer',st:'WA',v:'190',pts:80,nt:'Nepali',eoi:'2026-01',inv:null,grt:null,ago:24},
+  {id:223,s:'grt',fl:'🇵🇰',oc:'Medical Radiation Scientist',st:'WA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-02',inv:'2025-07',grt:'2026-02',ago:2},
+  {id:224,s:'inv',fl:'🇵🇭',oc:'Software Engineer',st:'Fed',v:'189',pts:90,nt:'Filipino',eoi:'2025-09',inv:'2026-02',grt:null,ago:13},
+  {id:225,s:'grt',fl:'🇧🇩',oc:'Primary Teacher',st:'Fed',v:'189',pts:75,nt:'Bangladeshi',eoi:'2025-03',inv:'2025-08',grt:'2026-04',ago:37},
+  {id:226,s:'eoi',fl:'🇵🇭',oc:'Radiographer',st:'SA',v:'190',pts:70,nt:'Filipino',eoi:'2026-01',inv:null,grt:null,ago:21},
+  {id:227,s:'grt',fl:'🇳🇵',oc:'Early Childhood Teacher',st:'SA',v:'190',pts:80,nt:'Nepali',eoi:'2024-10',inv:'2025-06',grt:'2026-01',ago:10},
+  {id:228,s:'wait',fl:'🇵🇰',oc:'Pharmacist',st:'TAS',v:'190',pts:70,nt:'Pakistani',eoi:'2025-11',inv:'2026-03',grt:null,ago:41},
+  {id:229,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'ACT',v:'190',pts:70,nt:'Indian',eoi:'2025-07',inv:'2026-01',grt:'2026-04',ago:11},
+  {id:230,s:'eoi',fl:'🇬🇧',oc:'Exercise Physiologist',st:'TAS',v:'190',pts:70,nt:'British',eoi:'2026-04',inv:null,grt:null,ago:18},
+  {id:231,s:'eoi',fl:'🇵🇰',oc:'Registered Nurse',st:'SA',v:'190',pts:75,nt:'Pakistani',eoi:'2026-01',inv:null,grt:null,ago:18},
+  {id:232,s:'inv',fl:'🇳🇵',oc:'Pharmacist',st:'SA',v:'491',pts:80,nt:'Nepali',eoi:'2025-11',inv:'2026-04',grt:null,ago:29},
+  {id:233,s:'wait',fl:'🇱🇰',oc:'Pharmacist',st:'NT',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-10',inv:'2026-03',grt:null,ago:16},
+  {id:234,s:'inv',fl:'🇿🇦',oc:'Baker',st:'ACT',v:'491',pts:65,nt:'South African',eoi:'2025-10',inv:'2026-02',grt:null,ago:12},
+  {id:235,s:'grt',fl:'🇳🇵',oc:'Osteopath',st:'WA',v:'491',pts:75,nt:'Nepali',eoi:'2025-01',inv:'2025-04',grt:'2026-04',ago:20},
+  {id:236,s:'inv',fl:'🇮🇳',oc:'Audiologist',st:'NSW',v:'190',pts:70,nt:'Indian',eoi:'2025-03',inv:'2026-04',grt:null,ago:16},
+  {id:237,s:'grt',fl:'🇬🇧',oc:'Software Engineer',st:'TAS',v:'491',pts:85,nt:'British',eoi:'2025-01',inv:'2025-04',grt:'2026-02',ago:36},
+  {id:238,s:'eoi',fl:'🇮🇳',oc:'Dietitian',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:29},
+  {id:239,s:'grt',fl:'🇨🇳',oc:'Mental Health Nurse',st:'NSW',v:'190',pts:75,nt:'Chinese',eoi:'2024-03',inv:'2025-01',grt:'2026-02',ago:19},
+  {id:240,s:'wait',fl:'🇵🇭',oc:'Carpenter',st:'NSW',v:'190',pts:75,nt:'Filipino',eoi:'2024-12',inv:'2026-01',grt:null,ago:9},
+  {id:241,s:'inv',fl:'🇳🇵',oc:'Refrigeration Mechanic',st:'NT',v:'491',pts:75,nt:'Nepali',eoi:'2025-07',inv:'2026-04',grt:null,ago:42},
+  {id:242,s:'grt',fl:'🇮🇳',oc:'Hairdresser',st:'ACT',v:'491',pts:75,nt:'Indian',eoi:'2024-06',inv:'2024-12',grt:'2026-02',ago:33},
+  {id:243,s:'grt',fl:'🇳🇵',oc:'General Practitioner',st:'Fed',v:'189',pts:85,nt:'Nepali',eoi:'2025-03',inv:'2025-08',grt:'2026-03',ago:32},
+  {id:244,s:'wait',fl:'🇨🇳',oc:'Construction Project Manager',st:'ACT',v:'190',pts:85,nt:'Chinese',eoi:'2025-09',inv:'2026-03',grt:null,ago:37},
+  {id:245,s:'wait',fl:'🇳🇵',oc:'Network Engineer',st:'QLD',v:'190',pts:90,nt:'Nepali',eoi:'2025-06',inv:'2026-03',grt:null,ago:26},
+  {id:246,s:'wait',fl:'🇮🇳',oc:'Mechanical Engineer',st:'TAS',v:'190',pts:85,nt:'Indian',eoi:'2025-09',inv:'2026-03',grt:null,ago:25},
+  {id:247,s:'grt',fl:'🇵🇰',oc:'Baker',st:'SA',v:'491',pts:65,nt:'Pakistani',eoi:'2024-11',inv:'2025-02',grt:'2026-04',ago:44},
+  {id:248,s:'eoi',fl:'🇵🇭',oc:'General Practitioner',st:'Fed',v:'189',pts:80,nt:'Filipino',eoi:'2026-03',inv:null,grt:null,ago:11},
+  {id:249,s:'grt',fl:'🇵🇭',oc:'Geologist',st:'ACT',v:'491',pts:85,nt:'Filipino',eoi:'2024-06',inv:'2024-12',grt:'2026-01',ago:23},
+  {id:250,s:'grt',fl:'🇳🇵',oc:'Boilermaker',st:'QLD',v:'491',pts:70,nt:'Nepali',eoi:'2024-09',inv:'2025-05',grt:'2026-04',ago:8},
+  {id:251,s:'wait',fl:'🇮🇳',oc:'Audiologist',st:'ACT',v:'190',pts:80,nt:'Indian',eoi:'2025-10',inv:'2026-01',grt:null,ago:0},
+  {id:252,s:'inv',fl:'🇮🇳',oc:'Management Accountant',st:'VIC',v:'190',pts:85,nt:'Indian',eoi:'2025-06',inv:'2026-04',grt:null,ago:29},
+  {id:253,s:'eoi',fl:'🇮🇳',oc:'Primary Teacher',st:'QLD',v:'491',pts:75,nt:'Indian',eoi:'2026-01',inv:null,grt:null,ago:2},
+  {id:254,s:'eoi',fl:'🇧🇩',oc:'Architect',st:'SA',v:'190',pts:75,nt:'Bangladeshi',eoi:'2026-01',inv:null,grt:null,ago:2},
+  {id:255,s:'eoi',fl:'🇵🇭',oc:'Mining Engineer',st:'SA',v:'190',pts:75,nt:'Filipino',eoi:'2026-03',inv:null,grt:null,ago:14},
+  {id:256,s:'grt',fl:'🇮🇳',oc:'Hairdresser',st:'NSW',v:'190',pts:75,nt:'Indian',eoi:'2023-12',inv:'2024-12',grt:'2025-12',ago:36},
+  {id:257,s:'wait',fl:'🇮🇳',oc:'Geologist',st:'TAS',v:'491',pts:85,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:42},
+  {id:258,s:'inv',fl:'🇧🇩',oc:'Refrigeration Mechanic',st:'WA',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-05',inv:'2026-02',grt:null,ago:11},
+  {id:259,s:'grt',fl:'🇱🇰',oc:'ICT Business Analyst',st:'NSW',v:'491',pts:80,nt:'Sri Lankan',eoi:'2024-03',inv:'2024-12',grt:'2026-02',ago:24},
+  {id:260,s:'wait',fl:'🇮🇳',oc:'Dietitian',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:34},
+  {id:261,s:'grt',fl:'🇵🇭',oc:'Osteopath',st:'ACT',v:'190',pts:70,nt:'Filipino',eoi:'2025-02',inv:'2025-08',grt:'2025-12',ago:3},
+  {id:262,s:'inv',fl:'🇮🇳',oc:'Cybersecurity Analyst',st:'Fed',v:'189',pts:85,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:13},
+  {id:263,s:'grt',fl:'🇬🇧',oc:'Dentist',st:'SA',v:'491',pts:80,nt:'British',eoi:'2024-12',inv:'2025-03',grt:'2026-01',ago:12},
+  {id:264,s:'wait',fl:'🇿🇦',oc:'Sonographer',st:'SA',v:'491',pts:70,nt:'South African',eoi:'2025-06',inv:'2026-02',grt:null,ago:37},
+  {id:265,s:'grt',fl:'🇮🇳',oc:'Accountant',st:'TAS',v:'491',pts:80,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2026-01',ago:13},
+  {id:266,s:'inv',fl:'🇮🇳',oc:'Disability Support Worker',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-09',inv:'2026-03',grt:null,ago:35},
+  {id:267,s:'eoi',fl:'🇮🇳',oc:'Boilermaker',st:'TAS',v:'491',pts:70,nt:'Indian',eoi:'2026-01',inv:null,grt:null,ago:23},
+  {id:268,s:'inv',fl:'🇿🇦',oc:'Management Accountant',st:'QLD',v:'491',pts:75,nt:'South African',eoi:'2025-11',inv:'2026-03',grt:null,ago:20},
+  {id:269,s:'inv',fl:'🇮🇳',oc:'Construction Project Manager',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2026-01',inv:'2026-03',grt:null,ago:9},
+  {id:270,s:'grt',fl:'🇮🇳',oc:'Mechanical Engineer',st:'TAS',v:'190',pts:85,nt:'Indian',eoi:'2025-01',inv:'2025-06',grt:'2025-12',ago:24},
+  {id:271,s:'grt',fl:'🇬🇧',oc:'Pharmacist',st:'VIC',v:'190',pts:75,nt:'British',eoi:'2024-06',inv:'2025-05',grt:'2026-03',ago:41},
+  {id:272,s:'wait',fl:'🇳🇵',oc:'Chef / Cook',st:'ACT',v:'190',pts:70,nt:'Nepali',eoi:'2025-12',inv:'2026-03',grt:null,ago:11},
+  {id:273,s:'grt',fl:'🇿🇦',oc:'Exercise Physiologist',st:'QLD',v:'491',pts:70,nt:'South African',eoi:'2025-01',inv:'2025-07',grt:'2026-03',ago:0},
+  {id:274,s:'inv',fl:'🇮🇳',oc:'General Practitioner',st:'Fed',v:'189',pts:90,nt:'Indian',eoi:'2025-06',inv:'2026-03',grt:null,ago:32},
+  {id:275,s:'grt',fl:'🇵🇭',oc:'Social Worker',st:'NSW',v:'190',pts:85,nt:'Filipino',eoi:'2024-07',inv:'2025-08',grt:'2026-04',ago:42},
+  {id:276,s:'wait',fl:'🇳🇵',oc:'Data Scientist',st:'Fed',v:'189',pts:90,nt:'Nepali',eoi:'2025-03',inv:'2026-01',grt:null,ago:17},
+  {id:277,s:'wait',fl:'🇮🇳',oc:'Physiotherapist',st:'QLD',v:'491',pts:75,nt:'Indian',eoi:'2025-11',inv:'2026-02',grt:null,ago:6},
+  {id:278,s:'wait',fl:'🇵🇰',oc:'Disability Support Worker',st:'TAS',v:'190',pts:65,nt:'Pakistani',eoi:'2025-08',inv:'2026-03',grt:null,ago:17},
+  {id:279,s:'wait',fl:'🇨🇳',oc:'Carpenter',st:'TAS',v:'491',pts:70,nt:'Chinese',eoi:'2025-10',inv:'2026-03',grt:null,ago:14},
+  {id:280,s:'inv',fl:'🇵🇰',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Pakistani',eoi:'2025-05',inv:'2026-03',grt:null,ago:24},
+  {id:281,s:'grt',fl:'🇵🇭',oc:'Social Worker',st:'SA',v:'190',pts:65,nt:'Filipino',eoi:'2025-01',inv:'2025-08',grt:'2025-12',ago:41},
+  {id:282,s:'grt',fl:'🇧🇩',oc:'Occupational Therapist',st:'VIC',v:'190',pts:70,nt:'Bangladeshi',eoi:'2024-11',inv:'2025-09',grt:'2026-04',ago:30},
+  {id:283,s:'wait',fl:'🇮🇳',oc:'Sonographer',st:'ACT',v:'491',pts:75,nt:'Indian',eoi:'2025-04',inv:'2026-01',grt:null,ago:11},
+  {id:284,s:'inv',fl:'🇨🇳',oc:'Physiotherapist',st:'NT',v:'190',pts:70,nt:'Chinese',eoi:'2025-11',inv:'2026-03',grt:null,ago:25},
+  {id:285,s:'wait',fl:'🇱🇰',oc:'Mental Health Nurse',st:'VIC',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-02',inv:'2025-12',grt:null,ago:34},
+  {id:286,s:'wait',fl:'🇬🇧',oc:'Hairdresser',st:'NSW',v:'190',pts:80,nt:'British',eoi:'2024-11',inv:'2026-01',grt:null,ago:5},
+  {id:287,s:'inv',fl:'🇮🇳',oc:'Social Worker',st:'Fed',v:'189',pts:65,nt:'Indian',eoi:'2025-07',inv:'2026-03',grt:null,ago:21},
+  {id:288,s:'grt',fl:'🇮🇳',oc:'Physiotherapist',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2024-07',inv:'2025-05',grt:'2026-01',ago:22},
+  {id:289,s:'wait',fl:'🇧🇩',oc:'Audiologist',st:'Fed',v:'189',pts:80,nt:'Bangladeshi',eoi:'2025-10',inv:'2026-03',grt:null,ago:18},
+  {id:290,s:'wait',fl:'🇨🇳',oc:'Dentist',st:'Fed',v:'189',pts:75,nt:'Chinese',eoi:'2025-08',inv:'2025-12',grt:null,ago:40},
+  {id:291,s:'grt',fl:'🇮🇳',oc:'Construction Project Manager',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2024-07',inv:'2025-04',grt:'2026-02',ago:19},
+  {id:292,s:'grt',fl:'🇵🇭',oc:'Early Childhood Teacher',st:'Fed',v:'189',pts:70,nt:'Filipino',eoi:'2024-07',inv:'2025-05',grt:'2026-04',ago:28},
+  {id:293,s:'wait',fl:'🇧🇩',oc:'Physiotherapist',st:'SA',v:'190',pts:65,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-03',grt:null,ago:20},
+  {id:294,s:'inv',fl:'🇳🇵',oc:'Electrician',st:'SA',v:'190',pts:80,nt:'Nepali',eoi:'2025-08',inv:'2026-02',grt:null,ago:15},
+  {id:295,s:'wait',fl:'🇳🇵',oc:'Boilermaker',st:'TAS',v:'190',pts:70,nt:'Nepali',eoi:'2025-10',inv:'2026-02',grt:null,ago:9},
+  {id:296,s:'grt',fl:'🇮🇳',oc:'Bricklayer',st:'NT',v:'491',pts:70,nt:'Indian',eoi:'2024-11',inv:'2025-04',grt:'2026-01',ago:23},
+  {id:297,s:'inv',fl:'🇮🇳',oc:'Mining Engineer',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:25},
+  {id:298,s:'inv',fl:'🇱🇰',oc:'Boilermaker',st:'NT',v:'491',pts:70,nt:'Sri Lankan',eoi:'2025-11',inv:'2026-03',grt:null,ago:38},
+  {id:299,s:'grt',fl:'🇵🇰',oc:'Construction Project Manager',st:'TAS',v:'491',pts:85,nt:'Pakistani',eoi:'2024-09',inv:'2025-03',grt:'2026-02',ago:11},
+  {id:300,s:'grt',fl:'🇮🇳',oc:'Baker',st:'VIC',v:'491',pts:70,nt:'Indian',eoi:'2024-09',inv:'2025-03',grt:'2026-01',ago:20},
+  {id:301,s:'grt',fl:'🇳🇵',oc:'Carpenter',st:'SA',v:'491',pts:70,nt:'Nepali',eoi:'2024-06',inv:'2025-02',grt:'2026-04',ago:11},
+  {id:302,s:'grt',fl:'🇵🇰',oc:'Chef / Cook',st:'TAS',v:'491',pts:70,nt:'Pakistani',eoi:'2024-10',inv:'2025-01',grt:'2026-01',ago:44},
+  {id:303,s:'inv',fl:'🇱🇰',oc:'Psychologist',st:'Fed',v:'189',pts:75,nt:'Sri Lankan',eoi:'2025-07',inv:'2026-03',grt:null,ago:9},
+  {id:304,s:'wait',fl:'🇵🇭',oc:'General Practitioner',st:'NT',v:'491',pts:80,nt:'Filipino',eoi:'2025-05',inv:'2025-12',grt:null,ago:34},
+  {id:305,s:'grt',fl:'🇳🇵',oc:'Data Scientist',st:'QLD',v:'190',pts:80,nt:'Nepali',eoi:'2025-04',inv:'2025-10',grt:'2026-03',ago:38},
+  {id:306,s:'wait',fl:'🇧🇩',oc:'Radiographer',st:'Fed',v:'189',pts:75,nt:'Bangladeshi',eoi:'2025-05',inv:'2026-01',grt:null,ago:2},
+  {id:307,s:'grt',fl:'🇮🇳',oc:'Lawyer',st:'Fed',v:'189',pts:85,nt:'Indian',eoi:'2024-12',inv:'2025-05',grt:'2026-01',ago:16},
+  {id:308,s:'wait',fl:'🇨🇳',oc:'Carpenter',st:'QLD',v:'491',pts:70,nt:'Chinese',eoi:'2025-09',inv:'2026-01',grt:null,ago:32},
+  {id:309,s:'grt',fl:'🇵🇭',oc:'Physiotherapist',st:'Fed',v:'189',pts:75,nt:'Filipino',eoi:'2025-04',inv:'2025-07',grt:'2026-02',ago:5},
+  {id:310,s:'wait',fl:'🇵🇭',oc:'Plumber',st:'TAS',v:'491',pts:75,nt:'Filipino',eoi:'2025-09',inv:'2026-03',grt:null,ago:22},
+  {id:311,s:'wait',fl:'🇵🇰',oc:'Software Engineer',st:'TAS',v:'190',pts:90,nt:'Pakistani',eoi:'2025-11',inv:'2026-03',grt:null,ago:2},
+  {id:312,s:'grt',fl:'🇮🇳',oc:'Osteopath',st:'ACT',v:'190',pts:70,nt:'Indian',eoi:'2025-06',inv:'2025-10',grt:'2026-03',ago:15},
+  {id:313,s:'grt',fl:'🇵🇭',oc:'Structural Engineer',st:'TAS',v:'491',pts:80,nt:'Filipino',eoi:'2025-01',inv:'2025-05',grt:'2026-01',ago:40},
+  {id:314,s:'wait',fl:'🇵🇭',oc:'Metal Fabricator',st:'NSW',v:'491',pts:70,nt:'Filipino',eoi:'2025-06',inv:'2025-12',grt:null,ago:37},
+  {id:315,s:'eoi',fl:'🇮🇳',oc:'Registered Nurse',st:'NT',v:'190',pts:70,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:36},
+  {id:316,s:'inv',fl:'🇵🇰',oc:'Pharmacist',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2025-07',inv:'2026-04',grt:null,ago:12},
+  {id:317,s:'wait',fl:'🇧🇩',oc:'Secondary Teacher',st:'ACT',v:'190',pts:75,nt:'Bangladeshi',eoi:'2025-09',inv:'2026-03',grt:null,ago:24},
+  {id:318,s:'grt',fl:'🇱🇰',oc:'Civil Engineer',st:'ACT',v:'491',pts:75,nt:'Sri Lankan',eoi:'2024-05',inv:'2025-02',grt:'2025-12',ago:45},
+  {id:319,s:'grt',fl:'🇮🇳',oc:'Environmental Engineer',st:'TAS',v:'190',pts:75,nt:'Indian',eoi:'2025-06',inv:'2025-10',grt:'2026-02',ago:19},
+  {id:320,s:'wait',fl:'🇮🇳',oc:'Dietitian',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-03',inv:'2025-12',grt:null,ago:36},
+  {id:321,s:'grt',fl:'🇱🇰',oc:'Audiologist',st:'ACT',v:'190',pts:80,nt:'Sri Lankan',eoi:'2025-06',inv:'2025-10',grt:'2026-02',ago:11},
+  {id:322,s:'wait',fl:'🇵🇭',oc:'Psychologist',st:'Fed',v:'189',pts:70,nt:'Filipino',eoi:'2025-11',inv:'2026-01',grt:null,ago:39},
+  {id:323,s:'inv',fl:'🇵🇰',oc:'Registered Nurse',st:'Fed',v:'189',pts:75,nt:'Pakistani',eoi:'2025-04',inv:'2026-02',grt:null,ago:35},
+  {id:324,s:'grt',fl:'🇵🇭',oc:'ICT Business Analyst',st:'QLD',v:'190',pts:90,nt:'Filipino',eoi:'2024-12',inv:'2025-07',grt:'2025-12',ago:31},
+  {id:325,s:'eoi',fl:'🇳🇵',oc:'Physiotherapist',st:'TAS',v:'190',pts:70,nt:'Nepali',eoi:'2026-03',inv:null,grt:null,ago:18},
+  {id:326,s:'grt',fl:'🇳🇵',oc:'Geologist',st:'NT',v:'190',pts:80,nt:'Nepali',eoi:'2025-01',inv:'2025-09',grt:'2025-12',ago:35},
+  {id:327,s:'wait',fl:'🇵🇰',oc:'Speech Pathologist',st:'VIC',v:'190',pts:75,nt:'Pakistani',eoi:'2025-04',inv:'2025-12',grt:null,ago:34},
+  {id:328,s:'inv',fl:'🇱🇰',oc:'Data Scientist',st:'SA',v:'491',pts:85,nt:'Sri Lankan',eoi:'2025-11',inv:'2026-04',grt:null,ago:15},
+  {id:329,s:'eoi',fl:'🇮🇳',oc:'Software Engineer',st:'Fed',v:'189',pts:85,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:28},
+  {id:330,s:'eoi',fl:'🇨🇳',oc:'Geologist',st:'NT',v:'190',pts:75,nt:'Chinese',eoi:'2026-01',inv:null,grt:null,ago:22},
+  {id:331,s:'wait',fl:'🇮🇳',oc:'Mental Health Nurse',st:'NT',v:'190',pts:70,nt:'Indian',eoi:'2025-07',inv:'2026-01',grt:null,ago:36},
+  {id:332,s:'inv',fl:'🇵🇰',oc:'Mining Engineer',st:'ACT',v:'190',pts:80,nt:'Pakistani',eoi:'2025-09',inv:'2026-02',grt:null,ago:36},
+  {id:333,s:'inv',fl:'🇿🇦',oc:'Sonographer',st:'Fed',v:'189',pts:70,nt:'South African',eoi:'2026-01',inv:'2026-03',grt:null,ago:26},
+  {id:334,s:'grt',fl:'🇮🇳',oc:'Chiropractor',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2025-01',inv:'2025-05',grt:'2026-03',ago:15},
+  {id:335,s:'grt',fl:'🇱🇰',oc:'Hairdresser',st:'SA',v:'190',pts:80,nt:'Sri Lankan',eoi:'2024-10',inv:'2025-06',grt:'2026-01',ago:17},
+  {id:336,s:'wait',fl:'🇵🇭',oc:'General Practitioner',st:'NT',v:'190',pts:90,nt:'Filipino',eoi:'2025-07',inv:'2026-01',grt:null,ago:32},
+  {id:337,s:'grt',fl:'🇮🇷',oc:'Management Accountant',st:'SA',v:'190',pts:85,nt:'Iranian',eoi:'2025-02',inv:'2025-10',grt:'2026-04',ago:5},
+  {id:338,s:'wait',fl:'🇵🇭',oc:'Lawyer',st:'Fed',v:'189',pts:90,nt:'Filipino',eoi:'2025-04',inv:'2026-01',grt:null,ago:13},
+  {id:339,s:'wait',fl:'🇧🇩',oc:'Construction Project Manager',st:'WA',v:'190',pts:80,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-03',grt:null,ago:31},
+  {id:340,s:'inv',fl:'🇮🇳',oc:'Occupational Therapist',st:'VIC',v:'190',pts:65,nt:'Indian',eoi:'2025-06',inv:'2026-03',grt:null,ago:7},
+  {id:341,s:'grt',fl:'🇨🇳',oc:'Management Accountant',st:'NT',v:'491',pts:75,nt:'Chinese',eoi:'2024-09',inv:'2025-05',grt:'2026-03',ago:8},
+  {id:342,s:'grt',fl:'🇵🇰',oc:'Chiropractor',st:'Fed',v:'189',pts:70,nt:'Pakistani',eoi:'2025-02',inv:'2025-05',grt:'2026-03',ago:16},
+  {id:343,s:'grt',fl:'🇿🇦',oc:'Social Worker',st:'ACT',v:'190',pts:80,nt:'South African',eoi:'2025-05',inv:'2025-11',grt:'2026-04',ago:14},
+  {id:344,s:'wait',fl:'🇵🇭',oc:'Veterinarian',st:'Fed',v:'189',pts:75,nt:'Filipino',eoi:'2025-10',inv:'2026-02',grt:null,ago:4},
+  {id:345,s:'eoi',fl:'🇨🇳',oc:'Cybersecurity Analyst',st:'Fed',v:'189',pts:90,nt:'Chinese',eoi:'2026-04',inv:null,grt:null,ago:21},
+  {id:346,s:'eoi',fl:'🇮🇳',oc:'Chiropractor',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:24},
+  {id:347,s:'inv',fl:'🇵🇰',oc:'Chef / Cook',st:'QLD',v:'190',pts:65,nt:'Pakistani',eoi:'2025-07',inv:'2026-04',grt:null,ago:8},
+  {id:348,s:'grt',fl:'🇧🇩',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Bangladeshi',eoi:'2024-10',inv:'2025-02',grt:'2026-02',ago:0},
+  {id:349,s:'grt',fl:'🇵🇭',oc:'Chef / Cook',st:'SA',v:'491',pts:65,nt:'Filipino',eoi:'2024-06',inv:'2025-02',grt:'2026-03',ago:39},
+  {id:350,s:'grt',fl:'🇮🇳',oc:'Dentist',st:'Fed',v:'189',pts:65,nt:'Indian',eoi:'2024-07',inv:'2025-03',grt:'2026-01',ago:37},
+  {id:351,s:'grt',fl:'🇮🇳',oc:'Construction Project Manager',st:'ACT',v:'190',pts:75,nt:'Indian',eoi:'2025-06',inv:'2025-11',grt:'2026-04',ago:35},
+  {id:352,s:'wait',fl:'🇧🇩',oc:'Osteopath',st:'TAS',v:'491',pts:75,nt:'Bangladeshi',eoi:'2025-08',inv:'2025-12',grt:null,ago:32},
+  {id:353,s:'wait',fl:'🇮🇳',oc:'Electrician',st:'WA',v:'491',pts:70,nt:'Indian',eoi:'2025-09',inv:'2026-03',grt:null,ago:31},
+  {id:354,s:'grt',fl:'🇮🇳',oc:'Disability Support Worker',st:'SA',v:'190',pts:65,nt:'Indian',eoi:'2025-01',inv:'2025-08',grt:'2026-01',ago:23},
+  {id:355,s:'inv',fl:'🇮🇳',oc:'Chiropractor',st:'WA',v:'190',pts:75,nt:'Indian',eoi:'2025-10',inv:'2026-04',grt:null,ago:30},
+  {id:356,s:'inv',fl:'🇮🇳',oc:'Environmental Engineer',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2026-01',inv:'2026-03',grt:null,ago:2},
+  {id:357,s:'wait',fl:'🇵🇭',oc:'Network Engineer',st:'WA',v:'190',pts:85,nt:'Filipino',eoi:'2025-06',inv:'2026-03',grt:null,ago:27},
+  {id:358,s:'wait',fl:'🇳🇵',oc:'Quantity Surveyor',st:'TAS',v:'190',pts:80,nt:'Nepali',eoi:'2025-08',inv:'2026-01',grt:null,ago:13},
+  {id:359,s:'wait',fl:'🇨🇳',oc:'Metal Fabricator',st:'WA',v:'491',pts:75,nt:'Chinese',eoi:'2025-10',inv:'2026-01',grt:null,ago:41},
+  {id:360,s:'wait',fl:'🇮🇳',oc:'Dietitian',st:'VIC',v:'190',pts:70,nt:'Indian',eoi:'2025-04',inv:'2025-12',grt:null,ago:15},
+  {id:361,s:'grt',fl:'🇱🇰',oc:'Speech Pathologist',st:'SA',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-06',inv:'2025-12',grt:'2026-04',ago:42},
+  {id:362,s:'wait',fl:'🇵🇰',oc:'Veterinarian',st:'SA',v:'190',pts:75,nt:'Pakistani',eoi:'2025-07',inv:'2026-02',grt:null,ago:33},
+  {id:363,s:'eoi',fl:'🇬🇧',oc:'Carpenter',st:'NSW',v:'491',pts:70,nt:'British',eoi:'2026-04',inv:null,grt:null,ago:7},
+  {id:364,s:'grt',fl:'🇨🇳',oc:'Structural Engineer',st:'SA',v:'190',pts:80,nt:'Chinese',eoi:'2025-01',inv:'2025-06',grt:'2026-01',ago:36},
+  {id:365,s:'eoi',fl:'🇧🇩',oc:'Network Engineer',st:'Fed',v:'189',pts:85,nt:'Bangladeshi',eoi:'2026-02',inv:null,grt:null,ago:10},
+  {id:366,s:'inv',fl:'🇱🇰',oc:'Mental Health Nurse',st:'VIC',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-05',inv:'2026-02',grt:null,ago:7},
+  {id:367,s:'grt',fl:'🇮🇳',oc:'Network Engineer',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2024-12',inv:'2025-02',grt:'2026-02',ago:15},
+  {id:368,s:'wait',fl:'🇮🇳',oc:'Boilermaker',st:'NSW',v:'190',pts:70,nt:'Indian',eoi:'2025-01',inv:'2026-02',grt:null,ago:35},
+  {id:369,s:'wait',fl:'🇮🇳',oc:'Construction Project Manager',st:'ACT',v:'190',pts:75,nt:'Indian',eoi:'2025-10',inv:'2026-03',grt:null,ago:4},
+  {id:370,s:'wait',fl:'🇳🇵',oc:'Network Engineer',st:'Fed',v:'189',pts:80,nt:'Nepali',eoi:'2025-07',inv:'2026-03',grt:null,ago:2},
+  {id:371,s:'wait',fl:'🇮🇳',oc:'Management Accountant',st:'TAS',v:'190',pts:80,nt:'Indian',eoi:'2025-08',inv:'2026-03',grt:null,ago:35},
+  {id:372,s:'wait',fl:'🇬🇧',oc:'Carpenter',st:'NT',v:'190',pts:70,nt:'British',eoi:'2025-07',inv:'2025-12',grt:null,ago:39},
+  {id:373,s:'inv',fl:'🇮🇷',oc:'Carpenter',st:'VIC',v:'491',pts:75,nt:'Iranian',eoi:'2025-06',inv:'2026-02',grt:null,ago:12},
+  {id:374,s:'inv',fl:'🇮🇳',oc:'Hairdresser',st:'NSW',v:'190',pts:75,nt:'Indian',eoi:'2025-01',inv:'2026-03',grt:null,ago:14},
+  {id:375,s:'inv',fl:'🇱🇰',oc:'Quantity Surveyor',st:'SA',v:'491',pts:75,nt:'Sri Lankan',eoi:'2025-05',inv:'2026-02',grt:null,ago:24},
+  {id:376,s:'wait',fl:'🇮🇳',oc:'Chef / Cook',st:'WA',v:'190',pts:70,nt:'Indian',eoi:'2025-06',inv:'2026-03',grt:null,ago:26},
+  {id:377,s:'grt',fl:'🇮🇳',oc:'Midwife',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2024-07',inv:'2025-03',grt:'2026-01',ago:33},
+  {id:378,s:'grt',fl:'🇱🇰',oc:'Baker',st:'NT',v:'491',pts:65,nt:'Sri Lankan',eoi:'2025-04',inv:'2025-07',grt:'2026-01',ago:25},
+  {id:379,s:'grt',fl:'🇵🇰',oc:'Radiographer',st:'TAS',v:'190',pts:70,nt:'Pakistani',eoi:'2025-02',inv:'2025-08',grt:'2026-01',ago:25},
+  {id:380,s:'wait',fl:'🇮🇳',oc:'Primary Teacher',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2025-11',inv:'2026-02',grt:null,ago:8},
+  {id:381,s:'grt',fl:'🇮🇳',oc:'Early Childhood Teacher',st:'TAS',v:'190',pts:70,nt:'Indian',eoi:'2025-03',inv:'2025-09',grt:'2026-01',ago:34},
+  {id:382,s:'eoi',fl:'🇮🇳',oc:'Plumber',st:'SA',v:'190',pts:75,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:43},
+  {id:383,s:'grt',fl:'🇮🇳',oc:'Medical Radiation Scientist',st:'VIC',v:'190',pts:70,nt:'Indian',eoi:'2024-07',inv:'2025-04',grt:'2026-01',ago:5},
+  {id:384,s:'grt',fl:'🇮🇳',oc:'Network Engineer',st:'TAS',v:'190',pts:80,nt:'Indian',eoi:'2024-11',inv:'2025-06',grt:'2025-12',ago:1},
+  {id:385,s:'grt',fl:'🇮🇳',oc:'Baker',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-04',inv:'2025-10',grt:'2026-03',ago:7},
+  {id:386,s:'inv',fl:'🇱🇰',oc:'Psychologist',st:'QLD',v:'190',pts:70,nt:'Sri Lankan',eoi:'2025-08',inv:'2026-02',grt:null,ago:41},
+  {id:387,s:'eoi',fl:'🇮🇳',oc:'Environmental Engineer',st:'SA',v:'491',pts:80,nt:'Indian',eoi:'2026-01',inv:null,grt:null,ago:12},
+  {id:388,s:'wait',fl:'🇵🇰',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Pakistani',eoi:'2025-10',inv:'2025-12',grt:null,ago:7},
+  {id:389,s:'inv',fl:'🇬🇧',oc:'Social Worker',st:'NT',v:'491',pts:70,nt:'British',eoi:'2025-10',inv:'2026-04',grt:null,ago:25},
+  {id:390,s:'eoi',fl:'🇮🇳',oc:'Boilermaker',st:'TAS',v:'491',pts:75,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:17},
+  {id:391,s:'grt',fl:'🇧🇩',oc:'Software Engineer',st:'Fed',v:'189',pts:80,nt:'Bangladeshi',eoi:'2024-11',inv:'2025-04',grt:'2026-01',ago:39},
+  {id:392,s:'eoi',fl:'🇵🇰',oc:'Refrigeration Mechanic',st:'SA',v:'491',pts:75,nt:'Pakistani',eoi:'2026-01',inv:null,grt:null,ago:8},
+  {id:393,s:'wait',fl:'🇱🇰',oc:'Podiatrist',st:'NT',v:'491',pts:75,nt:'Sri Lankan',eoi:'2025-06',inv:'2026-03',grt:null,ago:34},
+  {id:394,s:'inv',fl:'🇳🇵',oc:'Boilermaker',st:'WA',v:'190',pts:75,nt:'Nepali',eoi:'2025-07',inv:'2026-03',grt:null,ago:22},
+  {id:395,s:'eoi',fl:'🇧🇩',oc:'Primary Teacher',st:'Fed',v:'189',pts:75,nt:'Bangladeshi',eoi:'2026-04',inv:null,grt:null,ago:14},
+  {id:396,s:'inv',fl:'🇵🇭',oc:'Pharmacist',st:'Fed',v:'189',pts:75,nt:'Filipino',eoi:'2025-07',inv:'2026-02',grt:null,ago:33},
+  {id:397,s:'wait',fl:'🇱🇰',oc:'Aged Care Worker',st:'Fed',v:'189',pts:65,nt:'Sri Lankan',eoi:'2025-09',inv:'2026-03',grt:null,ago:15},
+  {id:398,s:'grt',fl:'🇵🇰',oc:'Hairdresser',st:'VIC',v:'491',pts:75,nt:'Pakistani',eoi:'2024-10',inv:'2025-07',grt:'2026-03',ago:22},
+  {id:399,s:'inv',fl:'🇵🇰',oc:'Disability Support Worker',st:'NT',v:'190',pts:70,nt:'Pakistani',eoi:'2025-10',inv:'2026-02',grt:null,ago:37},
+  {id:400,s:'wait',fl:'🇧🇩',oc:'Dietitian',st:'ACT',v:'491',pts:70,nt:'Bangladeshi',eoi:'2025-03',inv:'2025-12',grt:null,ago:12},
+  {id:401,s:'grt',fl:'🇮🇳',oc:'Data Scientist',st:'Fed',v:'189',pts:90,nt:'Indian',eoi:'2025-02',inv:'2025-04',grt:'2025-12',ago:5},
+  {id:402,s:'wait',fl:'🇧🇩',oc:'Aged Care Worker',st:'SA',v:'190',pts:65,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-01',grt:null,ago:12},
+  {id:403,s:'wait',fl:'🇵🇰',oc:'Veterinarian',st:'WA',v:'491',pts:75,nt:'Pakistani',eoi:'2025-11',inv:'2026-02',grt:null,ago:3},
+  {id:404,s:'eoi',fl:'🇳🇵',oc:'Environmental Engineer',st:'WA',v:'491',pts:85,nt:'Nepali',eoi:'2026-04',inv:null,grt:null,ago:23},
+  {id:405,s:'grt',fl:'🇮🇳',oc:'Carpenter',st:'NT',v:'491',pts:75,nt:'Indian',eoi:'2024-11',inv:'2025-04',grt:'2026-03',ago:21},
+  {id:406,s:'wait',fl:'🇱🇰',oc:'Mental Health Nurse',st:'NSW',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-02',inv:'2026-01',grt:null,ago:20},
+  {id:407,s:'grt',fl:'🇵🇰',oc:'Aged Care Worker',st:'NT',v:'190',pts:65,nt:'Pakistani',eoi:'2025-04',inv:'2025-09',grt:'2025-12',ago:8},
+  {id:408,s:'grt',fl:'🇧🇩',oc:'Metal Fabricator',st:'Fed',v:'189',pts:75,nt:'Bangladeshi',eoi:'2025-02',inv:'2025-07',grt:'2026-01',ago:20},
+  {id:409,s:'grt',fl:'🇵🇰',oc:'Midwife',st:'TAS',v:'190',pts:75,nt:'Pakistani',eoi:'2025-04',inv:'2025-08',grt:'2026-01',ago:10},
+  {id:410,s:'grt',fl:'🇵🇰',oc:'Registered Nurse',st:'ACT',v:'190',pts:75,nt:'Pakistani',eoi:'2025-08',inv:'2025-11',grt:'2026-04',ago:16},
+  {id:411,s:'grt',fl:'🇵🇭',oc:'Social Worker',st:'Fed',v:'189',pts:80,nt:'Filipino',eoi:'2024-05',inv:'2025-01',grt:'2026-01',ago:10},
+  {id:412,s:'wait',fl:'🇧🇩',oc:'Civil Engineer',st:'VIC',v:'190',pts:85,nt:'Bangladeshi',eoi:'2025-05',inv:'2026-02',grt:null,ago:41},
+  {id:413,s:'wait',fl:'🇮🇳',oc:'Software Engineer',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-08',inv:'2026-03',grt:null,ago:20},
+  {id:414,s:'eoi',fl:'🇵🇰',oc:'General Practitioner',st:'Fed',v:'189',pts:75,nt:'Pakistani',eoi:'2026-04',inv:null,grt:null,ago:10},
+  {id:415,s:'inv',fl:'🇵🇭',oc:'Mechanical Engineer',st:'NSW',v:'190',pts:75,nt:'Filipino',eoi:'2025-05',inv:'2026-03',grt:null,ago:45},
+  {id:416,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-01',inv:'2025-09',grt:'2026-03',ago:6},
+  {id:417,s:'eoi',fl:'🇳🇵',oc:'Refrigeration Mechanic',st:'NSW',v:'491',pts:75,nt:'Nepali',eoi:'2026-02',inv:null,grt:null,ago:16},
+  {id:418,s:'inv',fl:'🇵🇭',oc:'Plumber',st:'Fed',v:'189',pts:70,nt:'Filipino',eoi:'2025-05',inv:'2026-03',grt:null,ago:36},
+  {id:419,s:'grt',fl:'🇵🇰',oc:'Midwife',st:'QLD',v:'190',pts:65,nt:'Pakistani',eoi:'2024-09',inv:'2025-07',grt:'2026-03',ago:42},
+  {id:420,s:'inv',fl:'🇮🇳',oc:'Early Childhood Teacher',st:'ACT',v:'190',pts:65,nt:'Indian',eoi:'2025-12',inv:'2026-03',grt:null,ago:30},
+  {id:421,s:'grt',fl:'🇱🇰',oc:'Lawyer',st:'Fed',v:'189',pts:85,nt:'Sri Lankan',eoi:'2025-01',inv:'2025-04',grt:'2026-03',ago:16},
+  {id:422,s:'wait',fl:'🇮🇳',oc:'Carpenter',st:'QLD',v:'190',pts:70,nt:'Indian',eoi:'2025-04',inv:'2026-01',grt:null,ago:28},
+  {id:423,s:'grt',fl:'🇨🇳',oc:'Aged Care Worker',st:'SA',v:'190',pts:70,nt:'Chinese',eoi:'2025-05',inv:'2025-10',grt:'2026-02',ago:42},
+  {id:424,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'NT',v:'190',pts:80,nt:'Indian',eoi:'2025-02',inv:'2025-06',grt:'2025-12',ago:35},
+  {id:425,s:'inv',fl:'🇧🇩',oc:'Refrigeration Mechanic',st:'NSW',v:'491',pts:75,nt:'Bangladeshi',eoi:'2025-09',inv:'2026-03',grt:null,ago:15},
+  {id:426,s:'grt',fl:'🇳🇵',oc:'Dentist',st:'QLD',v:'491',pts:80,nt:'Nepali',eoi:'2025-01',inv:'2025-08',grt:'2026-04',ago:36},
+  {id:427,s:'wait',fl:'🇮🇳',oc:'Hairdresser',st:'NSW',v:'190',pts:75,nt:'Indian',eoi:'2025-04',inv:'2026-03',grt:null,ago:12},
+  {id:428,s:'grt',fl:'🇱🇰',oc:'Bricklayer',st:'NT',v:'491',pts:70,nt:'Sri Lankan',eoi:'2024-07',inv:'2025-04',grt:'2026-02',ago:9},
+  {id:429,s:'wait',fl:'🇳🇵',oc:'Chef / Cook',st:'Fed',v:'189',pts:65,nt:'Nepali',eoi:'2025-03',inv:'2026-01',grt:null,ago:25},
+  {id:430,s:'wait',fl:'🇮🇳',oc:'Osteopath',st:'VIC',v:'190',pts:70,nt:'Indian',eoi:'2024-12',inv:'2025-12',grt:null,ago:44},
+  {id:431,s:'inv',fl:'🇧🇩',oc:'Speech Pathologist',st:'Fed',v:'189',pts:75,nt:'Bangladeshi',eoi:'2026-01',inv:'2026-04',grt:null,ago:37},
+  {id:432,s:'grt',fl:'🇵🇰',oc:'Electrical Engineer',st:'VIC',v:'190',pts:75,nt:'Pakistani',eoi:'2024-05',inv:'2025-03',grt:'2026-01',ago:26},
+  {id:433,s:'wait',fl:'🇵🇰',oc:'Electrical Engineer',st:'Fed',v:'189',pts:85,nt:'Pakistani',eoi:'2025-08',inv:'2025-12',grt:null,ago:25},
+  {id:434,s:'grt',fl:'🇮🇳',oc:'Occupational Therapist',st:'TAS',v:'491',pts:75,nt:'Indian',eoi:'2024-05',inv:'2025-01',grt:'2026-02',ago:3},
+  {id:435,s:'grt',fl:'🇵🇰',oc:'Carpenter',st:'NT',v:'190',pts:70,nt:'Pakistani',eoi:'2025-05',inv:'2025-12',grt:'2026-03',ago:17},
+  {id:436,s:'grt',fl:'🇵🇰',oc:'Psychologist',st:'NT',v:'491',pts:75,nt:'Pakistani',eoi:'2024-04',inv:'2024-12',grt:'2025-12',ago:17},
+  {id:437,s:'wait',fl:'🇮🇳',oc:'Pharmacist',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2025-04',inv:'2026-01',grt:null,ago:26},
+  {id:438,s:'wait',fl:'🇵🇰',oc:'Medical Radiation Scientist',st:'SA',v:'190',pts:70,nt:'Pakistani',eoi:'2025-06',inv:'2026-02',grt:null,ago:45},
+  {id:439,s:'inv',fl:'🇮🇳',oc:'Geologist',st:'SA',v:'491',pts:85,nt:'Indian',eoi:'2025-07',inv:'2026-04',grt:null,ago:12},
+  {id:440,s:'grt',fl:'🇨🇳',oc:'Disability Support Worker',st:'VIC',v:'190',pts:65,nt:'Chinese',eoi:'2024-06',inv:'2025-04',grt:'2026-01',ago:12},
+  {id:441,s:'inv',fl:'🇮🇳',oc:'Network Engineer',st:'SA',v:'190',pts:90,nt:'Indian',eoi:'2025-08',inv:'2026-03',grt:null,ago:15},
+  {id:442,s:'grt',fl:'🇵🇭',oc:'Mining Engineer',st:'Fed',v:'189',pts:85,nt:'Filipino',eoi:'2024-06',inv:'2025-04',grt:'2026-02',ago:37},
+  {id:443,s:'wait',fl:'🇵🇰',oc:'Mental Health Nurse',st:'ACT',v:'190',pts:70,nt:'Pakistani',eoi:'2025-09',inv:'2026-03',grt:null,ago:1},
+  {id:444,s:'grt',fl:'🇱🇰',oc:'Mental Health Nurse',st:'ACT',v:'491',pts:70,nt:'Sri Lankan',eoi:'2024-07',inv:'2024-12',grt:'2025-12',ago:13},
+  {id:445,s:'inv',fl:'🇮🇳',oc:'Physiotherapist',st:'SA',v:'190',pts:65,nt:'Indian',eoi:'2025-11',inv:'2026-04',grt:null,ago:38},
+  {id:446,s:'grt',fl:'🇨🇳',oc:'Secondary Teacher',st:'TAS',v:'491',pts:80,nt:'Chinese',eoi:'2024-08',inv:'2025-01',grt:'2026-01',ago:41},
+  {id:447,s:'grt',fl:'🇵🇰',oc:'Osteopath',st:'TAS',v:'190',pts:70,nt:'Pakistani',eoi:'2025-06',inv:'2026-01',grt:'2026-04',ago:43},
+  {id:448,s:'grt',fl:'🇵🇰',oc:'Network Engineer',st:'WA',v:'190',pts:85,nt:'Pakistani',eoi:'2025-02',inv:'2025-08',grt:'2026-04',ago:19},
+  {id:449,s:'eoi',fl:'🇮🇳',oc:'Structural Engineer',st:'VIC',v:'190',pts:75,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:41},
+  {id:450,s:'eoi',fl:'🇮🇳',oc:'Podiatrist',st:'TAS',v:'190',pts:65,nt:'Indian',eoi:'2026-01',inv:null,grt:null,ago:38},
+  {id:451,s:'grt',fl:'🇱🇰',oc:'Radiographer',st:'ACT',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-04',inv:'2025-09',grt:'2026-01',ago:31},
+  {id:452,s:'inv',fl:'🇧🇩',oc:'Metal Fabricator',st:'ACT',v:'491',pts:70,nt:'Bangladeshi',eoi:'2025-09',inv:'2026-02',grt:null,ago:12},
+  {id:453,s:'grt',fl:'🇵🇭',oc:'Veterinarian',st:'ACT',v:'190',pts:75,nt:'Filipino',eoi:'2025-04',inv:'2025-09',grt:'2026-02',ago:42},
+  {id:454,s:'grt',fl:'🇮🇳',oc:'Osteopath',st:'NSW',v:'491',pts:70,nt:'Indian',eoi:'2024-11',inv:'2025-02',grt:'2026-03',ago:18},
+  {id:455,s:'eoi',fl:'🇮🇳',oc:'Baker',st:'ACT',v:'491',pts:65,nt:'Indian',eoi:'2026-02',inv:null,grt:null,ago:43},
+  {id:456,s:'grt',fl:'🇵🇰',oc:'Pharmacist',st:'TAS',v:'190',pts:70,nt:'Pakistani',eoi:'2025-03',inv:'2025-09',grt:'2026-02',ago:26},
+  {id:457,s:'eoi',fl:'🇮🇳',oc:'Environmental Engineer',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:40},
+  {id:458,s:'inv',fl:'🇵🇰',oc:'Accountant',st:'VIC',v:'190',pts:80,nt:'Pakistani',eoi:'2025-05',inv:'2026-03',grt:null,ago:33},
+  {id:459,s:'grt',fl:'🇮🇳',oc:'Social Worker',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2024-07',inv:'2025-03',grt:'2026-03',ago:21},
+  {id:460,s:'inv',fl:'🇱🇰',oc:'Construction Project Manager',st:'QLD',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-06',inv:'2026-02',grt:null,ago:11},
+  {id:461,s:'inv',fl:'🇮🇳',oc:'Social Worker',st:'Fed',v:'189',pts:65,nt:'Indian',eoi:'2025-11',inv:'2026-03',grt:null,ago:10},
+  {id:462,s:'grt',fl:'🇵🇭',oc:'Lawyer',st:'Fed',v:'189',pts:80,nt:'Filipino',eoi:'2024-06',inv:'2025-02',grt:'2026-01',ago:40},
+  {id:463,s:'inv',fl:'🇳🇵',oc:'Accountant',st:'Fed',v:'189',pts:85,nt:'Nepali',eoi:'2025-09',inv:'2026-04',grt:null,ago:12},
+  {id:464,s:'inv',fl:'🇱🇰',oc:'Construction Project Manager',st:'Fed',v:'189',pts:85,nt:'Sri Lankan',eoi:'2025-11',inv:'2026-04',grt:null,ago:0},
+  {id:465,s:'grt',fl:'🇳🇵',oc:'Dietitian',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-04',inv:'2025-11',grt:'2026-04',ago:37},
+  {id:466,s:'wait',fl:'🇬🇧',oc:'Medical Radiation Scientist',st:'TAS',v:'190',pts:70,nt:'British',eoi:'2025-06',inv:'2025-12',grt:null,ago:33},
+  {id:467,s:'wait',fl:'🇵🇰',oc:'Sonographer',st:'VIC',v:'190',pts:75,nt:'Pakistani',eoi:'2025-03',inv:'2025-12',grt:null,ago:12},
+  {id:468,s:'grt',fl:'🇮🇳',oc:'Physiotherapist',st:'NSW',v:'190',pts:70,nt:'Indian',eoi:'2024-01',inv:'2025-03',grt:'2026-03',ago:1},
+  {id:469,s:'wait',fl:'🇵🇰',oc:'Speech Pathologist',st:'NT',v:'190',pts:75,nt:'Pakistani',eoi:'2025-09',inv:'2026-03',grt:null,ago:40},
+  {id:470,s:'eoi',fl:'🇮🇳',oc:'Mining Engineer',st:'ACT',v:'190',pts:75,nt:'Indian',eoi:'2026-04',inv:null,grt:null,ago:3},
+  {id:471,s:'inv',fl:'🇵🇭',oc:'Refrigeration Mechanic',st:'WA',v:'190',pts:70,nt:'Filipino',eoi:'2025-09',inv:'2026-04',grt:null,ago:44},
+  {id:472,s:'wait',fl:'🇱🇰',oc:'Dietitian',st:'TAS',v:'190',pts:75,nt:'Sri Lankan',eoi:'2025-08',inv:'2026-02',grt:null,ago:6},
+  {id:473,s:'inv',fl:'🇵🇰',oc:'Refrigeration Mechanic',st:'ACT',v:'491',pts:70,nt:'Pakistani',eoi:'2025-07',inv:'2026-04',grt:null,ago:7},
+  {id:474,s:'grt',fl:'🇳🇵',oc:'ICT Business Analyst',st:'NT',v:'190',pts:85,nt:'Nepali',eoi:'2025-02',inv:'2025-08',grt:'2026-02',ago:12},
+  {id:475,s:'wait',fl:'🇨🇳',oc:'Mental Health Nurse',st:'VIC',v:'190',pts:65,nt:'Chinese',eoi:'2025-04',inv:'2026-02',grt:null,ago:30},
+  {id:476,s:'grt',fl:'🇧🇩',oc:'Registered Nurse',st:'VIC',v:'190',pts:65,nt:'Bangladeshi',eoi:'2024-09',inv:'2025-08',grt:'2026-04',ago:42},
+  {id:477,s:'wait',fl:'🇬🇧',oc:'Geologist',st:'Fed',v:'189',pts:85,nt:'British',eoi:'2025-08',inv:'2026-02',grt:null,ago:6},
+  {id:478,s:'wait',fl:'🇮🇳',oc:'Management Accountant',st:'SA',v:'190',pts:80,nt:'Indian',eoi:'2025-06',inv:'2026-01',grt:null,ago:2},
+  {id:479,s:'grt',fl:'🇮🇳',oc:'Pharmacist',st:'NT',v:'190',pts:80,nt:'Indian',eoi:'2025-07',inv:'2025-11',grt:'2026-03',ago:2},
+  {id:480,s:'grt',fl:'🇮🇳',oc:'Structural Engineer',st:'VIC',v:'491',pts:75,nt:'Indian',eoi:'2024-11',inv:'2025-04',grt:'2026-03',ago:5},
+  {id:481,s:'grt',fl:'🇵🇰',oc:'Speech Pathologist',st:'QLD',v:'190',pts:75,nt:'Pakistani',eoi:'2024-10',inv:'2025-07',grt:'2026-03',ago:44},
+  {id:482,s:'grt',fl:'🇮🇳',oc:'Speech Pathologist',st:'SA',v:'190',pts:70,nt:'Indian',eoi:'2024-09',inv:'2025-05',grt:'2025-12',ago:6},
+  {id:483,s:'grt',fl:'🇵🇰',oc:'Sonographer',st:'Fed',v:'189',pts:80,nt:'Pakistani',eoi:'2025-04',inv:'2025-06',grt:'2026-01',ago:22},
+  {id:484,s:'wait',fl:'🇮🇳',oc:'ICT Business Analyst',st:'NT',v:'491',pts:80,nt:'Indian',eoi:'2025-05',inv:'2026-01',grt:null,ago:16},
+  {id:485,s:'wait',fl:'🇧🇩',oc:'Registered Nurse',st:'WA',v:'190',pts:80,nt:'Bangladeshi',eoi:'2025-07',inv:'2026-03',grt:null,ago:14},
+  {id:486,s:'grt',fl:'🇱🇰',oc:'Bricklayer',st:'NT',v:'491',pts:75,nt:'Sri Lankan',eoi:'2024-07',inv:'2025-03',grt:'2026-03',ago:43},
+  {id:487,s:'wait',fl:'🇮🇳',oc:'Exercise Physiologist',st:'ACT',v:'491',pts:75,nt:'Indian',eoi:'2025-08',inv:'2025-12',grt:null,ago:41},
+  {id:488,s:'eoi',fl:'🇳🇵',oc:'Osteopath',st:'SA',v:'491',pts:70,nt:'Nepali',eoi:'2026-03',inv:null,grt:null,ago:20},
+  {id:489,s:'eoi',fl:'🇮🇳',oc:'Structural Engineer',st:'Fed',v:'189',pts:75,nt:'Indian',eoi:'2026-01',inv:null,grt:null,ago:35},
+  {id:490,s:'wait',fl:'🇵🇭',oc:'Metal Fabricator',st:'Fed',v:'189',pts:70,nt:'Filipino',eoi:'2025-06',inv:'2026-03',grt:null,ago:36},
+  {id:491,s:'grt',fl:'🇳🇵',oc:'Osteopath',st:'SA',v:'190',pts:70,nt:'Nepali',eoi:'2025-04',inv:'2025-09',grt:'2026-01',ago:41},
+  {id:492,s:'inv',fl:'🇮🇳',oc:'Refrigeration Mechanic',st:'SA',v:'491',pts:70,nt:'Indian',eoi:'2025-07',inv:'2026-02',grt:null,ago:38},
+  {id:493,s:'grt',fl:'🇵🇰',oc:'Plumber',st:'NT',v:'491',pts:70,nt:'Pakistani',eoi:'2024-12',inv:'2025-09',grt:'2026-03',ago:23},
+  {id:494,s:'grt',fl:'🇧🇩',oc:'Osteopath',st:'NT',v:'190',pts:70,nt:'Bangladeshi',eoi:'2025-04',inv:'2025-10',grt:'2026-04',ago:30},
+  {id:495,s:'grt',fl:'🇱🇰',oc:'Early Childhood Teacher',st:'QLD',v:'190',pts:80,nt:'Sri Lankan',eoi:'2024-07',inv:'2025-05',grt:'2026-02',ago:18},
+  {id:496,s:'grt',fl:'🇮🇳',oc:'Dietitian',st:'Fed',v:'189',pts:70,nt:'Indian',eoi:'2025-01',inv:'2025-05',grt:'2026-04',ago:31},
+  {id:497,s:'inv',fl:'🇮🇳',oc:'Secondary Teacher',st:'Fed',v:'189',pts:80,nt:'Indian',eoi:'2025-10',inv:'2026-03',grt:null,ago:25},
+  {id:498,s:'grt',fl:'🇵🇭',oc:'Medical Radiation Scientist',st:'SA',v:'190',pts:75,nt:'Filipino',eoi:'2025-01',inv:'2025-06',grt:'2026-01',ago:2},
+  {id:499,s:'grt',fl:'🇬🇧',oc:'Radiographer',st:'SA',v:'491',pts:70,nt:'British',eoi:'2024-05',inv:'2024-12',grt:'2025-12',ago:3},
+  {id:500,s:'wait',fl:'🇨🇳',oc:'Accountant',st:'VIC',v:'190',pts:90,nt:'Chinese',eoi:'2025-05',inv:'2026-02',grt:null,ago:37}
 ];
 
 // ── STATE ──
 let user=null,stageF='',filtered=[],shown=0;
-const PG=15;
+const PG=20;
 
 (function init(){
   const u=localStorage.getItem('viq_u');
@@ -576,27 +940,23 @@ const PG=15;
   renderTrending();renderVW();applyF();
 })();
 
-// ── STAGE PILLS ──
 function setStg(s,btn){
   stageF=s;
-  // reset all pill classes
   ['all','eoi','inv','wait','grt'].forEach(function(k){
-    const el=document.getElementById('sp-'+k);
+    var el=document.getElementById('sp-'+k);
     if(el)el.className='sp';
   });
-  if(s===''){btn.className='sp on-all';}
-  else{btn.className='sp on-'+s;}
+  btn.className='sp on-'+(s||'all');
   applyF();
 }
 
-// ── FILTERS ──
 function applyF(){
-  const v=document.getElementById('f-visa').value;
-  const oc=document.getElementById('f-occ').value;
-  const st=document.getElementById('f-state').value;
-  const mp=parseInt(document.getElementById('f-pts').value)||60;
+  var v=document.getElementById('f-visa').value;
+  var oc=document.getElementById('f-occ').value;
+  var st=document.getElementById('f-state').value;
+  var mp=parseInt(document.getElementById('f-pts').value)||60;
   filtered=DATA.filter(function(o){
-    if(stageF&&o.stage!==stageF)return false;
+    if(stageF&&o.s!==stageF)return false;
     if(v&&o.v!==v)return false;
     if(oc&&o.oc!==oc)return false;
     if(st&&o.st!==st)return false;
@@ -622,10 +982,9 @@ function saveF(){
   b.textContent='✅ Saved';setTimeout(function(){b.textContent='💾 Save';},2500);
 }
 
-// ── JOURNEY CARD ──
 function mDiff(a,b){
   if(!a||!b)return null;
-  const da=new Date(a+'-01'),db=new Date(b+'-01');
+  var da=new Date(a+'-01'),db=new Date(b+'-01');
   return Math.round((db-da)/(1000*60*60*24*30.44));
 }
 function agoL(n){
@@ -635,94 +994,57 @@ function agoL(n){
 }
 
 function journeyHTML(o){
-  // Steps: EOI → Invited → Waiting → Granted
-  // For each step: determine state relative to o.stage
-  const order=['eoi','inv','wait','grt'];
-  const curIdx=order.indexOf(o.stage);
-  const steps=[
-    {key:'eoi',label:'EOI\nLodged'},
-    {key:'inv',label:'Invited'},
-    {key:'wait',label:'Waiting'},
-    {key:'grt',label:'Granted'},
-  ];
-
-  let html='<div class="journey">';
+  var order=['eoi','inv','wait','grt'];
+  var curIdx=order.indexOf(o.s);
+  var steps=[{key:'eoi',label:'EOI\nLodged'},{key:'inv',label:'Invited'},{key:'wait',label:'Waiting'},{key:'grt',label:'Granted'}];
+  var html='<div class="journey">';
   steps.forEach(function(step,i){
-    const idx=order.indexOf(step.key);
-    // dot class
-    let dc,lc;
+    var idx=order.indexOf(step.key);
+    var dc,lc;
     if(idx<curIdx){dc='jdot done';lc='jlbl done';}
     else if(idx===curIdx){dc='jdot cur-'+step.key;lc='jlbl cur cur-'+step.key;}
     else{dc='jdot future';lc='jlbl';}
-
-    // connector before this step
     if(i>0){
-      const prevKey=steps[i-1].key;
-      const prevIdx=order.indexOf(prevKey);
-      const lineClass=prevIdx<curIdx?'jline done':'jline pending';
-      // show wait time chip on the line
-      let chip='';
-      if(step.key==='inv'&&o.eoi&&o.inv){
-        const d=mDiff(o.eoi,o.inv);if(d)chip='<div class="jchip">'+d+'mo</div>';
-      }
-      if(step.key==='grt'&&o.inv&&o.grt){
-        const d=mDiff(o.inv,o.grt);if(d)chip='<div class="jchip">'+d+'mo</div>';
-      }
-      html+='<div class="jwrap"><div class="'+lineClass+'"></div>'+(chip?chip:'')+'</div>';
+      var prevIdx=order.indexOf(steps[i-1].key);
+      var lc2=prevIdx<curIdx?'jline done':'jline pending';
+      var chip='';
+      if(step.key==='inv'&&o.eoi&&o.inv){var d=mDiff(o.eoi,o.inv);if(d)chip='<div class="jchip">'+d+'mo</div>';}
+      if(step.key==='grt'&&o.inv&&o.grt){var d2=mDiff(o.inv,o.grt);if(d2)chip='<div class="jchip">'+d2+'mo</div>';}
+      html+='<div class="jwrap">'+(chip?chip:'')+'<div class="'+lc2+'"></div></div>';
     }
-
-    html+='<div class="jstep">'+
-      '<div class="'+dc+'">'+(idx<=curIdx?'✓':'·')+'</div>'+
-      '<div class="'+lc+'" style="white-space:pre-line">'+step.label+'</div>'+
-    '</div>';
+    html+='<div class="jstep"><div class="'+dc+'">'+(idx<=curIdx?'✓':'·')+'</div><div class="'+lc+'" style="white-space:pre-line">'+step.label+'</div></div>';
   });
   html+='</div>';
   return html;
 }
 
 function card(o){
-  const stageNames={eoi:'EOI Lodged',inv:'Invited — lodging docs',wait:'Waiting for decision',grt:'Visa Granted'};
-  let summary='';
-  if(o.stage==='grt'&&o.eoi&&o.grt){
-    const t=mDiff(o.eoi,o.grt);
-    summary=t?'<strong>'+t+'mo</strong> total — EOI to grant':'';
-  }else if(o.stage==='wait'&&o.eoi&&o.inv){
-    const t=mDiff(o.eoi,o.inv);
-    summary=t?'<strong>'+t+'mo</strong> to invitation — waiting for grant':'';
-  }else if(o.stage==='inv'&&o.eoi&&o.inv){
-    const t=mDiff(o.eoi,o.inv);
-    summary=t?'<strong>'+t+'mo</strong> from EOI to invitation':'';
-  }else if(o.stage==='eoi'){
-    summary='EOI lodged '+o.eoi;
-  }
-
-  return '<div class="oc" data-stage="'+o.stage+'">'+
+  var sn={eoi:'EOI Lodged',inv:'Invited — lodging docs',wait:'Waiting for decision',grt:'Visa Granted'};
+  var sum='';
+  if(o.s==='grt'&&o.eoi&&o.grt){var t=mDiff(o.eoi,o.grt);if(t)sum='<strong>'+t+'mo</strong> total — EOI to grant';}
+  else if(o.s==='wait'&&o.eoi&&o.inv){var t2=mDiff(o.eoi,o.inv);if(t2)sum='<strong>'+t2+'mo</strong> to invitation — waiting for grant';}
+  else if(o.s==='inv'&&o.eoi&&o.inv){var t3=mDiff(o.eoi,o.inv);if(t3)sum='<strong>'+t3+'mo</strong> from EOI to invitation';}
+  else if(o.s==='eoi'){sum='EOI lodged '+o.eoi;}
+  return '<div class="oc" data-stage="'+o.s+'">'+
     '<div class="oc-bar"></div>'+
     '<div class="oc-head">'+
       '<div class="oc-flag">'+o.fl+'</div>'+
       '<div class="oc-inf">'+
         '<div class="oc-nm">'+o.oc+' <span class="vbdg v'+o.v+'">'+o.v+'</span></div>'+
-        '<div class="oc-meta">'+
-          '<span class="oc-pts">'+o.pts+' pts</span>'+
-          '<span class="dot"></span><span>'+o.st+'</span>'+
-          '<span class="dot"></span><span>'+o.nt+'</span>'+
-          '<span class="oc-ago">'+agoL(o.ago)+'</span>'+
-        '</div>'+
+        '<div class="oc-meta"><span class="oc-pts">'+o.pts+' pts</span><span class="dot"></span><span>'+o.st+'</span><span class="dot"></span><span>'+o.nt+'</span><span class="oc-ago">'+agoL(o.ago)+'</span></div>'+
       '</div>'+
     '</div>'+
     journeyHTML(o)+
-    '<div class="oc-footer">'+
-      '<span class="oc-stage-lbl '+o.stage+'">'+stageNames[o.stage]+'</span>'+
-      '<span class="oc-summary-txt">'+summary+'</span>'+
-    '</div>'+
+    '<div class="oc-footer"><span class="oc-stage-lbl '+o.s+'">'+sn[o.s]+'</span><span class="oc-summary-txt">'+sum+'</span></div>'+
   '</div>';
 }
 
 function renderList(){
-  const el=document.getElementById('oc-list');
-  const lw=document.getElementById('lw');
+  var el=document.getElementById('oc-list');
+  var lw=document.getElementById('lw');
+  if(!el)return;
   if(!filtered.length){
-    el.innerHTML='<div class="empty"><div style="font-size:2.5rem">🔍</div><p>No outcomes match your filters. Try broadening your search — or be the first to submit for this profile.</p></div>';
+    el.innerHTML='<div class="empty"><div style="font-size:2.5rem">🔍</div><p style="font-size:0.85rem;color:var(--muted);margin-top:0.75rem;max-width:300px;margin-left:auto;margin-right:auto">No outcomes match. Try broader filters or submit the first one for this profile.</p></div>';
     lw.style.display='none';return;
   }
   el.innerHTML=filtered.slice(0,PG).map(card).join('');
@@ -731,46 +1053,49 @@ function renderList(){
 }
 
 function loadMore(){
-  document.getElementById('oc-list').innerHTML+=filtered.slice(shown,shown+PG).map(card).join('');
+  var el=document.getElementById('oc-list');
+  el.innerHTML+=filtered.slice(shown,shown+PG).map(card).join('');
   shown+=PG;
   if(shown>=filtered.length)document.getElementById('lw').style.display='none';
 }
 
-// ── BENCHMARK ──
 function med(arr){
   if(!arr.length)return null;
-  const s=arr.slice().sort(function(a,b){return a-b;});
-  const m=Math.floor(s.length/2);
+  var s=arr.slice().sort(function(a,b){return a-b;});
+  var m=Math.floor(s.length/2);
   return s.length%2?s[m]:((s[m-1]+s[m])/2).toFixed(1);
 }
+
 function renderBench(){
-  const b=document.getElementById('bench');
+  var b=document.getElementById('bench');
+  if(!b)return;
   if(!user){b.classList.remove('show');return;}
   b.classList.add('show');
-  const up=user.points||75;
-  const lower=filtered.filter(function(o){return o.pts<=up;}).length;
-  const pct=filtered.length?Math.round(lower/filtered.length*100):50;
-  const rank=100-pct;
-  const n=document.getElementById('bn');
+  var up=user.points||75;
+  var lower=filtered.filter(function(o){return o.pts<=up;}).length;
+  var pct=filtered.length?Math.round(lower/filtered.length*100):50;
+  var rank=100-pct;
+  var n=document.getElementById('bn');
   n.textContent='Top '+rank+'%';
   n.className='bn '+(rank<=30?'g':rank<=60?'m':'b');
-  const waits=filtered.filter(function(o){return o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
-  document.getElementById('bt').innerHTML='With <strong>'+up+' pts</strong>, you\'re ahead of '+pct+'% of applicants here.'+(waits.length?' Median wait to invite: <strong>'+med(waits)+'mo</strong>.':'');
+  var waits=filtered.filter(function(o){return o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
+  document.getElementById('bt').innerHTML='With <strong>'+up+' pts</strong>, ahead of '+pct+'% here.'+(waits.length?' Median wait: <strong>'+med(waits)+'mo</strong>.':'');
 }
 
-// ── TRENDING ──
 function renderTrending(){
-  const items=[
+  var el=document.getElementById('trending');
+  if(!el)return;
+  var items=[
     {oc:'Registered Nurse',t:1},{oc:'Physiotherapist',t:1},
     {oc:'Occupational Therapist',t:1},{oc:'Social Worker',t:1},
     {oc:'Speech Pathologist',t:1},{oc:'Midwife',t:1},
     {oc:'Early Childhood Teacher',t:1},{oc:'Electrician',t:2},
     {oc:'Plumber',t:2},{oc:'Construction Project Manager',t:2},
-    {oc:'Secondary Teacher',t:2},{oc:'Structural Engineer',t:2},
+    {oc:'Secondary Teacher',t:2},{oc:'Civil Engineer',t:2},
   ];
-  document.getElementById('trending').innerHTML=items.map(function(it){
-    const cnt=DATA.filter(function(o){return o.oc===it.oc;}).length;
-    return '<div class="tr-chip" onclick="qFil(\''+it.oc+'\')">'+
+  el.innerHTML=items.map(function(it){
+    var cnt=DATA.filter(function(o){return o.oc===it.oc;}).length;
+    return '<div class="tr-chip" onclick="qFil(\'' + it.oc + '\')">'+
       '<span class="tr-t t'+it.t+'">T'+it.t+'</span>'+
       '<span class="tr-nm">'+it.oc+(cnt?' <span style="font-size:0.58rem;color:var(--muted)">('+cnt+')</span>':'')+'</span>'+
     '</div>';
@@ -781,23 +1106,21 @@ function qFil(oc){
   document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth'});
 }
 
-// ── VISA WAIT ──
 function renderVW(){
-  [['190','var(--teal)'],['189','var(--purple)'],['491','var(--blue)']].forEach(function(pair){
-    const v=pair[0],col=pair[1];
-    const ws=DATA.filter(function(o){return o.v===v&&o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
-    const avg=ws.length?(ws.reduce(function(a,b){return a+b;},0)/ws.length).toFixed(1):'—';
-    const pct=avg!=='—'?Math.min(parseFloat(avg)/12*100,100):0;
-    document.getElementById('vw').innerHTML=(document.getElementById('vw').innerHTML||'')+
-      '<div class="vw-row">'+
-        '<div class="vw-n" style="color:'+col+'">'+v+'</div>'+
-        '<div class="vw-bw"><div class="vw-bf" style="width:'+pct+'%;background:'+col+'"></div></div>'+
-        '<div class="vw-v">'+(avg==='—'?'—':avg+'mo')+'</div>'+
-      '</div>';
-  });
+  var vwEl=document.getElementById('vw');
+  if(!vwEl)return;
+  var vs=[['190','var(--teal)'],['189','var(--purple)'],['491','var(--blue)']];
+  vwEl.innerHTML=vs.map(function(pair){
+    var v=pair[0],col=pair[1];
+    var ws=DATA.filter(function(o){return o.v===v&&o.eoi&&o.inv;}).map(function(o){return mDiff(o.eoi,o.inv);}).filter(Boolean);
+    var avg=ws.length?(ws.reduce(function(a,b){return a+b;},0)/ws.length).toFixed(1):'—';
+    var pct=avg!=='—'?Math.min(parseFloat(avg)/14*100,100):0;
+    return '<div class="vw-row"><div class="vw-n" style="color:'+col+'">'+v+'</div>'+
+      '<div class="vw-bw"><div class="vw-bf" style="width:'+pct+'%;background:'+col+'"></div></div>'+
+      '<div class="vw-v">'+(avg==='—'?'—':avg+'mo')+'</div></div>';
+  }).join('');
 }
 
-// ── AUTH ──
 function openAuth(mode){
   document.getElementById('auth-m').classList.add('show');
   document.getElementById('auth-in').innerHTML=mode==='signup'?signupH():loginH();
@@ -805,35 +1128,30 @@ function openAuth(mode){
 function signupH(){
   return '<div class="mt">Create your free account</div>'+
   '<div class="ms">Personalised alerts, saved filters, submit and track your outcome.</div>'+
-  '<div class="vbul">'+
-    '<div class="vbl">Alerts when your occupation + state gets invited</div>'+
-    '<div class="vbl">Personal benchmark vs your exact cohort</div>'+
-    '<div class="vbl">Save filters — one click to your profile view</div>'+
-    '<div class="vbl">Submit and track your full EOI → invite → grant journey</div>'+
-  '</div>'+
+  '<div class="vbul"><div class="vbl">Alerts when your occupation + state gets invited</div><div class="vbl">Personal benchmark vs your exact cohort</div><div class="vbl">Save filters and track your full EOI → invite → grant journey</div></div>'+
   '<div class="msec">Your details</div>'+
   '<div class="mr"><div class="mg"><label class="ml">First name</label><input class="mi" id="sn" placeholder="Priya"></div><div class="mg"><label class="ml">Email</label><input class="mi" id="se" type="email" placeholder="you@email.com"></div></div>'+
   '<div class="msec">Your visa profile</div>'+
-  '<div class="mr"><div class="mg"><label class="ml">Visa type</label><select class="mse" id="sv"><option value="">Select</option><option>189</option><option>190</option><option>491</option><option>482</option><option>485</option></select></div><div class="mg"><label class="ml">State target</label><select class="mse" id="ss"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div></div>'+
+  '<div class="mr"><div class="mg"><label class="ml">Visa type</label><select class="mse" id="sv"><option value="">Select</option><option>189</option><option>190</option><option>491</option></select></div><div class="mg"><label class="ml">State target</label><select class="mse" id="ss"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div></div>'+
   '<div class="mr"><div class="mg"><label class="ml">Occupation</label><select class="mse" id="so"><option value="">Select</option><option>Registered Nurse</option><option>Physiotherapist</option><option>Occupational Therapist</option><option>Social Worker</option><option>General Practitioner</option><option>Dentist</option><option>Early Childhood Teacher</option><option>Secondary Teacher</option><option>Electrician</option><option>Plumber</option><option>Civil Engineer</option><option>Aged Care Worker</option><option>Speech Pathologist</option><option>Psychologist</option><option>Midwife</option><option>Other</option></select></div><div class="mg"><label class="ml">DHA points</label><input class="mi" id="sp" type="number" placeholder="75" min="60" max="120"></div></div>'+
   '<div class="mr"><div class="mg"><label class="ml">Nationality</label><select class="mse" id="snt"><option value="">Select</option><option>Indian</option><option>Pakistani</option><option>Filipino</option><option>Nepali</option><option>Bangladeshi</option><option>Sri Lankan</option><option>Chinese</option><option>British</option><option>Other</option></select></div><div class="mg"><label class="ml">Age</label><input class="mi" id="sa" type="number" placeholder="28"></div></div>'+
   '<div class="mr"><div class="mg"><label class="ml">Current visa</label><select class="mse" id="scv"><option value="">Select</option><option>Student (500)</option><option>Graduate (485)</option><option>Employer sponsored (482)</option><option>Visitor</option><option>Offshore</option><option>Other</option></select></div><div class="mg"><label class="ml">EOI date (if lodged)</label><input class="mi" id="sed" type="month"></div></div>'+
   '<div class="mr"><div class="mg"><label class="ml">English score</label><select class="mse" id="seng"><option value="">Select</option><option>Competent (IELTS 6)</option><option>Proficient (IELTS 7) +10pts</option><option>Superior (IELTS 8) +20pts</option></select></div><div class="mg"><label class="ml">Skills assessment</label><select class="mse" id="ssk"><option value="">Select</option><option>Positive — current</option><option>Positive — expiring soon</option><option>Pending</option><option>Not yet started</option></select></div></div>'+
   '<button class="bprim" onclick="createA()">Create my account →</button>'+
-  '<div class="mlink">Already have an account? <a href="#" onclick="document.getElementById(\'auth-in\').innerHTML=loginH();return false">Sign in</a></div>';
+  '<div class="mlink">Already have an account? <a href="#" onclick="switchAuth(0);return false">Sign in</a></div>';
 }
 function loginH(){
-  return '<div class="mt">Welcome back</div>'+
-  '<div class="ms">Sign in to see your benchmark, saved filters and history.</div>'+
+  return '<div class="mt">Welcome back</div><div class="ms">Sign in to see your benchmark and history.</div>'+
   '<div class="mr full"><div class="mg"><label class="ml">Email</label><input class="mi" id="le" type="email" placeholder="you@email.com"></div></div>'+
   '<button class="bprim" onclick="loginA()">Sign in →</button>'+
-  '<div class="mlink">No account? <a href="#" onclick="document.getElementById(\'auth-in\').innerHTML=signupH();return false">Create one free</a></div>';
+  '<div class="mlink">No account? <a href="#" onclick="switchAuth(1);return false">Create one free</a></div>';
 }
 function createA(){
-  const name=(document.getElementById('sn').value||'').trim();
-  const email=(document.getElementById('se').value||'').trim();
+  var name=(document.getElementById('sn').value||'').trim();
+  var email=(document.getElementById('se').value||'').trim();
   if(!name||!email){alert('Please enter your name and email.');return;}
-  user={name,email,visa:document.getElementById('sv').value,state:document.getElementById('ss').value,
+  user={name:name,email:email,
+    visa:document.getElementById('sv').value,state:document.getElementById('ss').value,
     occ:document.getElementById('so').value,points:parseInt(document.getElementById('sp').value)||75,
     nat:document.getElementById('snt').value,age:document.getElementById('sa').value,
     cur_visa:document.getElementById('scv').value,eoi_date:document.getElementById('sed').value,
@@ -847,11 +1165,11 @@ function createA(){
   applyF();
 }
 function loginA(){
-  const email=(document.getElementById('le').value||'').trim();
+  var email=(document.getElementById('le').value||'').trim();
   if(!email)return;
-  const sv=localStorage.getItem('viq_u');
-  if(sv){try{const u=JSON.parse(sv);if(u.email===email){user=u;closeM('auth-m');showAB();renderBench();document.getElementById('nudge').style.display='none';return;}}catch(e){}}
-  user={name:email.split('@')[0],email,points:75};
+  var sv=localStorage.getItem('viq_u');
+  if(sv){try{var u=JSON.parse(sv);if(u.email===email){user=u;closeM('auth-m');showAB();renderBench();document.getElementById('nudge').style.display='none';return;}}catch(e){}}
+  user={name:email.split('@')[0],email:email,points:75};
   localStorage.setItem('viq_u',JSON.stringify(user));
   closeM('auth-m');showAB();renderBench();document.getElementById('nudge').style.display='none';
 }
@@ -864,13 +1182,12 @@ function logout(){
 function showAB(){
   document.getElementById('ab').classList.add('show');
   document.getElementById('ab-name').textContent=user.name||user.email;
-  const p=[user.visa,user.occ,user.state,user.points?user.points+'pts':null].filter(Boolean);
+  var p=[user.visa,user.occ,user.state,user.points?user.points+'pts':null].filter(Boolean);
   document.getElementById('ab-pill').textContent=p.join(' · ')||'Complete profile';
   document.getElementById('nudge').style.display='none';
 }
 
-// ── SUBMIT ──
-let selS=null;
+var selS=null;
 function openSub(){
   if(!user){openAuth('signup');return;}
   document.getElementById('sub-m').classList.add('show');
@@ -888,10 +1205,15 @@ function doSub(){
   if(!selS){alert('Please select your current stage.');return;}
   if(!document.getElementById('sb-v').value||!document.getElementById('sb-oc').value){alert('Please fill in visa and occupation.');return;}
   closeM('sub-m');
-  const t=document.createElement('div');
+  var t=document.createElement('div');
   t.style.cssText='position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#10B981;color:#000;padding:0.75rem 1.5rem;border-radius:10px;font-family:Syne,sans-serif;font-weight:700;font-size:0.82rem;z-index:999;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.3)';
   t.textContent='✅ Submitted! Under review — thank you.';
   document.body.appendChild(t);setTimeout(function(){t.remove();},4000);
+}
+
+function switchAuth(mode){
+  var el=document.getElementById('auth-in');
+  if(el)el.innerHTML=mode?signupH():loginH();
 }
 function closeM(id){document.getElementById(id).classList.remove('show');}
 document.addEventListener('click',function(e){
