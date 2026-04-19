@@ -18,7 +18,6 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0e1018">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"VisaIQ","url":"https://www.visaiq.com.au","description":"Australia's free migration intelligence platform — real DHA data for temporary visa holders","potentialAction":{"@type":"SearchAction","target":"https://www.visaiq.com.au/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0M6ZNEG9R"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y0M6ZNEG9R');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,11 +37,10 @@
 html{scroll-behavior:smooth;font-size:14px}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ── KEYFRAMES ── */
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── NAV ── */
+/* NAV */
 nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:0.5px solid var(--b1);padding:0 36px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav-logo{font-family:var(--serif);font-size:21px;letter-spacing:-0.3px;text-decoration:none;flex-shrink:0}
 .nav-logo .v{color:var(--text)}.nav-logo .iq{color:var(--accent2);font-style:italic}
@@ -65,7 +63,7 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .mobile-menu .nav-outcomes{display:flex!important;align-items:center;gap:6px;color:var(--green)!important}
 .mobile-menu .nav-cta{display:block;text-align:center;margin-top:10px}
 
-/* ── TICKER ── */
+/* TICKER */
 .ticker{background:var(--bg2);border-bottom:0.5px solid var(--b1);padding:9px 0;overflow:hidden}
 .ticker-track{display:flex;gap:48px;width:max-content;animation:tick 32s linear infinite}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted);flex-shrink:0;white-space:nowrap}
@@ -76,9 +74,8 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .ticker-grant{color:var(--green);font-weight:600}
 .ticker-occ{color:var(--text2);font-weight:500}
 
-/* ── HERO ── */
+/* HERO */
 .hero{max-width:1080px;margin:0 auto;padding:64px 36px 48px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:start}
-/* Left */
 .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(74,127,255,0.07);border:0.5px solid rgba(74,127,255,0.20);border-radius:20px;padding:4px 12px;font-size:11px;color:var(--accent2);margin-bottom:22px}
 .hero-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--accent2);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
 .hero h1{font-family:var(--serif);font-size:50px;line-height:1.06;letter-spacing:-1.5px;color:var(--text);margin-bottom:16px}
@@ -87,7 +84,6 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .hero-stats{display:flex;gap:28px;padding-top:22px;border-top:0.5px solid var(--b1);flex-wrap:wrap}
 .stat-v{font-size:22px;font-weight:600;color:var(--text);letter-spacing:-0.5px;line-height:1.1}
 .stat-l{font-size:11px;color:var(--muted);margin-top:2px}
-/* Right */
 .hero-right-label{font-size:10.5px;color:var(--muted2);text-transform:uppercase;letter-spacing:0.9px;margin-bottom:12px}
 .sit-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .sit-card{background:var(--bg3);border:0.5px solid var(--b1);border-radius:11px;padding:17px 16px;cursor:pointer;position:relative;overflow:hidden;transition:all 0.16s;text-align:left;width:100%}
@@ -103,7 +99,7 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .sit-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
 .sit-tags{font-size:11px;color:var(--muted);line-height:1.5}
 
-/* ── RESULT PANEL ── */
+/* RESULT PANEL */
 #rpanel{display:none;max-width:1080px;margin:0 auto;padding:0 36px 48px}
 #rpanel.on{display:block;animation:fadeUp 0.2s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -124,23 +120,26 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .also-pill{font-size:11.5px;color:var(--muted);padding:4px 10px;border:0.5px solid var(--b1);border-radius:20px;cursor:pointer;transition:all 0.15s}
 .also-pill:hover{color:var(--text2);border-color:var(--b2);background:rgba(255,255,255,0.03)}
 
-/* ── OUTCOMES STRIP ── */
-.outcomes-strip{border-top:0.5px solid var(--b1);border-bottom:0.5px solid var(--b1);background:var(--bg2);padding:12px 36px;display:flex;align-items:center;gap:20px;overflow:hidden}
-.os-label{font-size:10.5px;color:var(--muted2);text-transform:uppercase;letter-spacing:0.8px;flex-shrink:0;white-space:nowrap}
-.os-items{display:flex;gap:28px;flex:1;overflow:hidden}
-.os-item{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);flex-shrink:0;white-space:nowrap}
-.os-tick{color:var(--green);font-weight:600;font-size:11px}
-.os-btn{font-size:12px;color:var(--accent2);padding:4px 10px;border:0.5px solid rgba(74,127,255,0.25);border-radius:5px;text-decoration:none;flex-shrink:0;white-space:nowrap;transition:background 0.15s}
-.os-btn:hover{background:rgba(74,127,255,0.08)}
+/* HOW IT WORKS — new section replacing outcomes strip */
+.how-wrap{max-width:1080px;margin:0 auto;padding:0 36px 52px}
+.how-header{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.how-h{font-family:var(--serif);font-size:26px;letter-spacing:-0.5px;color:var(--text)}
+.how-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.how-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.how-step{background:var(--bg2);border:0.5px solid var(--b1);border-radius:12px;padding:24px}
+.how-step-num{font-family:var(--serif);font-size:32px;color:var(--accent2);line-height:1;margin-bottom:14px;letter-spacing:-1px}
+.how-step-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:8px}
+.how-step-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:10px}
+.how-step-eg{font-size:11px;color:var(--accent2);padding:6px 10px;background:rgba(74,127,255,0.06);border:0.5px solid rgba(74,127,255,0.15);border-radius:6px;line-height:1.5}
 
-/* ── TRUST ── */
-.trust{max-width:1080px;margin:0 auto;padding:52px 36px 44px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+/* TRUST */
+.trust{max-width:1080px;margin:0 auto;padding:0 36px 44px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .trust-card{background:var(--bg2);border:0.5px solid var(--b1);border-radius:12px;padding:24px}
 .trust-num{font-family:var(--serif);font-size:34px;letter-spacing:-1px;color:var(--accent2);line-height:1.1;margin-bottom:10px}
 .trust-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px}
 .trust-desc{font-size:12px;color:var(--muted);line-height:1.6}
 
-/* ── EXPLORE ── */
+/* EXPLORE */
 .explore{max-width:1080px;margin:0 auto;padding:0 36px 52px}
 .explore-h{font-family:var(--serif);font-size:26px;letter-spacing:-0.5px;color:var(--text);margin-bottom:6px}
 .explore-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
@@ -155,7 +154,7 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .tool-title{font-size:12.5px;font-weight:500;color:var(--text);margin-bottom:3px}
 .tool-desc{font-size:11px;color:var(--muted);line-height:1.5}
 
-/* ── ALERT CAPTURE ── */
+/* ALERT */
 .alert-wrap{max-width:1080px;margin:0 auto;padding:0 36px 60px}
 .alert-box{background:var(--bg2);border:0.5px solid var(--b1);border-radius:14px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .alert-left h2{font-family:var(--serif);font-size:26px;letter-spacing:-0.5px;color:var(--text);margin-bottom:6px}
@@ -170,7 +169,7 @@ nav{height:56px;position:sticky;top:0;z-index:100;background:rgba(14,16,24,0.94)
 .alert-fine{font-size:11px;color:var(--muted2);margin-top:8px;text-align:right}
 #alert-confirm{display:none;font-size:13px;color:var(--green);font-weight:500}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:32px 36px}
 .footer-col h4{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-bottom:12px}
@@ -179,7 +178,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
 .footer-bar{border-top:0.5px solid var(--b1);padding:14px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .footer-bar span{font-size:11px;color:var(--muted2)}
 
-/* ── RESPONSIVE ── */
 @media(max-width:768px){
   nav{padding:0 20px}
   .nav-links,.nav-badge{display:none}
@@ -191,7 +189,9 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   #rpanel{padding:0 20px 32px}
   #rtools{grid-template-columns:1fr}
   .rtool.primary{grid-column:1}
-  .trust{grid-template-columns:1fr;padding:32px 20px 28px}
+  .how-wrap{padding:0 20px 36px}
+  .how-steps{grid-template-columns:1fr}
+  .trust{grid-template-columns:1fr;padding:0 20px 28px}
   .explore{padding:0 20px 36px}
   .tools-grid{grid-template-columns:1fr 1fr}
   .alert-wrap{padding:0 20px 40px}
@@ -201,9 +201,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   .alert-input{width:100%}
   .footer-grid{grid-template-columns:1fr 1fr;padding:24px 20px}
   .footer-bar{padding:12px 20px}
-  .outcomes-strip{padding:10px 20px}
-  .os-items .os-item:nth-child(n+3){display:none}
-  .explore-wrap{padding:0 20px}
   .hero-stats{gap:16px}
 }
 @media(max-width:480px){
@@ -214,7 +211,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <a href="/" class="nav-logo"><span class="v">Visa</span><span class="iq">IQ</span></a>
   <div class="nav-links">
@@ -244,10 +240,8 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   <a href="/tool" class="nav-cta" style="text-align:center;margin-top:8px">What's my situation? →</a>
 </div>
 
-<!-- ── TICKER ── -->
 <div class="ticker">
   <div class="ticker-track">
-    <!-- Set 1 -->
     <div class="ticker-item"><span class="ticker-dot green"></span><span class="ticker-grant">✓ granted</span><span class="ticker-occ">Registered Nurse</span>SA 190 · 75 pts · 3 days ago</div>
     <div class="ticker-item"><span class="ticker-dot blue"></span><strong style="color:var(--text2);font-weight:500">TAS 491 round</strong>Chefs invited · cutoff 65 pts · March 18</div>
     <div class="ticker-item"><span class="ticker-dot amber"></span>190 processing NSW · now averaging 11 months</div>
@@ -255,7 +249,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
     <div class="ticker-item"><span class="ticker-dot amber"></span>485 visa fee · $4,600 from 1 March 2026</div>
     <div class="ticker-item"><span class="ticker-dot green"></span><span class="ticker-grant">✓ granted</span><span class="ticker-occ">Electrician</span>QLD 190 · 65 pts · 1 week ago</div>
     <div class="ticker-item"><span class="ticker-dot blue"></span><strong style="color:var(--text2);font-weight:500">SA Talent stream</strong>reopened March 20 · limited places</div>
-    <!-- Set 2 (duplicate for seamless loop) -->
     <div class="ticker-item"><span class="ticker-dot green"></span><span class="ticker-grant">✓ granted</span><span class="ticker-occ">Registered Nurse</span>SA 190 · 75 pts · 3 days ago</div>
     <div class="ticker-item"><span class="ticker-dot blue"></span><strong style="color:var(--text2);font-weight:500">TAS 491 round</strong>Chefs invited · cutoff 65 pts · March 18</div>
     <div class="ticker-item"><span class="ticker-dot amber"></span>190 processing NSW · now averaging 11 months</div>
@@ -266,9 +259,7 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── HERO ── -->
 <div class="hero">
-  <!-- Left -->
   <div class="hero-left">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
@@ -284,7 +275,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
     </div>
   </div>
 
-  <!-- Right -->
   <div class="hero-right">
     <div class="hero-right-label">Select your situation to see your tools</div>
     <div class="sit-grid">
@@ -316,7 +306,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── RESULT PANEL ── -->
 <div id="rpanel">
   <div class="rpanel-inner">
     <div class="result-hl">
@@ -329,20 +318,32 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── OUTCOMES STRIP ── -->
-<div class="outcomes-strip">
-  <div class="os-label">Live outcomes</div>
-  <div class="os-items">
-    <div class="os-item"><span class="os-tick">✓</span>Reg. Nurse · SA 190 · 75 pts · 3 days ago</div>
-    <div class="os-item"><span class="os-tick">✓</span>Software Eng. · ACT 491 · 80 pts · 5 days ago</div>
-    <div class="os-item"><span class="os-tick">✓</span>Electrician · QLD 190 · 65 pts · 1 week ago</div>
-    <div class="os-item"><span class="os-tick">✓</span>Civil Eng. · WA 190 · 70 pts · 9 days ago</div>
-    <div class="os-item"><span class="os-tick">✓</span>Accountant · SA 491 · 75 pts · 12 days ago</div>
+<!-- HOW IT WORKS — replaces the outcomes strip -->
+<div class="how-wrap">
+  <div class="how-h">How VisaIQ works</div>
+  <div class="how-sub">Three steps — from your current visa situation to a clear, data-backed action plan.</div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <div class="how-step-title">Tell us your occupation, visa type and situation</div>
+      <div class="how-step-desc">We ask the same factors DHA uses — your ANZSCO occupation, English level, age, study history, and current visa. Takes 60 seconds. No account needed.</div>
+      <div class="how-step-eg">e.g. Registered Nurse · IELTS 7.5 · on 485 visa · age 28 · studied in Australia</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <div class="how-step-title">See your exact options from live DHA data</div>
+      <div class="how-step-desc">Your points score, which states are currently inviting your occupation, current cutoffs, processing times, and what moves the needle most — all from official DHA data updated within 48 hours.</div>
+      <div class="how-step-eg">e.g. SA 190 open at 65 pts · NSW cutoff 80 pts · 491 adds 15 pts · NAATI adds 5 pts</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <div class="how-step-title">Get alerted when your window opens or changes</div>
+      <div class="how-step-desc">When a new invitation round opens, a state changes its occupation list, or DHA shifts processing times — we publish plain-English analysis within 48 hours. No migration agent required.</div>
+      <div class="how-step-eg">e.g. NSW 190 new round — your occupation invited at 75 pts · SA Talent stream reopened</div>
+    </div>
   </div>
-  <a href="/outcomes" class="os-btn">See all outcomes →</a>
 </div>
 
-<!-- ── TRUST ── -->
 <div class="trust">
   <div class="trust-card">
     <div class="trust-num">DHA</div>
@@ -361,12 +362,10 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── EXPLORE ALL TOOLS ── -->
 <div class="explore">
   <div class="explore-h">Explore all 16 free tools</div>
   <div class="explore-sub">Dig deeper — each tool is built on live DHA data and updates within 48 hours of every policy change.</div>
   <div class="tools-grid">
-    <!-- Row 1 — PR -->
     <a href="/tool" class="tool-card" style="text-decoration:none">
       <div class="tool-tag tt-pr">PR</div>
       <div class="tool-title">PR Intelligence Report</div>
@@ -387,7 +386,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
       <div class="tool-title">State comparator</div>
       <div class="tool-desc">Which state will nominate you fastest at your current points score</div>
     </a>
-    <!-- Row 2 — Student -->
     <a href="/student-visa" class="tool-card" style="text-decoration:none">
       <div class="tool-tag tt-student">Student</div>
       <div class="tool-title">Student visa checker</div>
@@ -408,7 +406,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
       <div class="tool-title">Student to PR roadmap</div>
       <div class="tool-desc">Personalised pathway from 500 visa through 485 to permanent residency</div>
     </a>
-    <!-- Row 3 — Skilled -->
     <a href="/482-visa" class="tool-card" style="text-decoration:none">
       <div class="tool-tag tt-skilled">Skilled</div>
       <div class="tool-title">482 eligibility checker</div>
@@ -429,7 +426,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
       <div class="tool-title">EOI queue tracker</div>
       <div class="tool-desc">How many people are ahead of you and when to submit for best results</div>
     </a>
-    <!-- Row 4 — Partner + PR -->
     <a href="/partner-visa" class="tool-card" style="text-decoration:none">
       <div class="tool-tag tt-partner">Partner</div>
       <div class="tool-title">Partner visa timeline</div>
@@ -453,7 +449,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── ALERT CAPTURE ── -->
 <div class="alert-wrap">
   <div class="alert-box">
     <div class="alert-left">
@@ -461,7 +456,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
       <p>Round announcements, processing time shifts, policy updates — within 48 hours, specific to your occupation and state.</p>
     </div>
     <div class="alert-right">
-      <!-- BACKEND REQUIRED: Email capture — store email, send confirmation, trigger alert system for occupation/state preferences -->
       <div class="alert-form" id="alert-form">
         <input type="email" class="alert-input" id="alert-email" placeholder="your@email.com">
         <button class="alert-btn" onclick="submitAlert()">Activate alerts →</button>
@@ -472,7 +466,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
@@ -521,7 +514,6 @@ footer{background:var(--bg2);border-top:0.5px solid var(--b1)}
 </footer>
 
 <script>
-// ── MOBILE MENU ──
 function toggleMenu(){
   document.getElementById('mobile-menu').classList.toggle('open');
 }
@@ -532,7 +524,6 @@ document.addEventListener('click',function(e){
   }
 });
 
-// ── SITUATION PICKER ──
 const D={
   student:{
     hl:'Your student visa tools',
@@ -600,11 +591,9 @@ function pick(el,key){
   setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
 }
 
-// ── ALERT CAPTURE ──
 function submitAlert(){
   const email=document.getElementById('alert-email').value.trim();
   if(!email||!email.includes('@'))return;
-  // BACKEND REQUIRED: POST email to alert subscription endpoint
   document.getElementById('alert-form').style.display='none';
   document.getElementById('alert-confirm').style.display='block';
 }
