@@ -1,0 +1,113 @@
+
+<script>
+// ── VISAIQ TOOL PATCH — fixes 3 JS bugs ──────────────────────────────
+// This script must load AFTER tool.html's main script block.
+// It re-declares fetchAI correctly and wires br() to call the 
+// output builders that were unreachable due to brace nesting errors.
+
+// PATCH 1: Re-declare fetchAI with correct brace structure
+async function fetchAI(){
+  try {
+    const total=tot(),o=OD[S.occ]||OD.other;
+    const occEl=document.getElementById('occ');
+    const ol=occEl.value?(occEl.options[occEl.selectedIndex]||{}).text:'this occupation';
+    const prompt=`You are VisaIQ, Australia\'s migration data intelligence platform. Write exactly 3 sentences using only observed pattern language — "historical data shows", "profiles similar to yours observed", "in similar cases". Never say "you should" or "you need to" or give direct recommendations. Be specific with numbers. Be clear this is pattern data, not prediction.
+
+Profile: ${ol}, ${total} pts, ${S.state||'not specified'}, ${S.nat||'not specified'}, targeting ${S.visa}, regional preference: ${S.regional}. Nov 2025 189 cutoff: ${o.c189<900?o.c189:'N/A — STSOL'}. Demand: ${o.d}. Pro-rata: ${o.pr}.
+
+3 sentences only. No preamble. No asterisks.`;
+
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+    });
+    if(!res.ok) throw new Error('API error');
+    const data=await res.json();
+    const text=(data.content||[]).map(c=>c.text||'').join('');
+    if(text) document.getElementById('aitext').innerHTML=`<p style="font-size:0.85rem;color:var(--text);line-height:1.8">${text}</p>`;
+    else throw new Error('empty response');
+  } catch(e) {
+    const t2=tot(),o2=OD[S.occ]||OD.other;
+    const oEl=document.getElementById('occ');
+    const oL2=oEl.value?(oEl.options[oEl.selectedIndex]||{}).text:'this occupation';
+    document.getElementById('aitext').innerHTML=`<p style="font-size:0.85rem;color:var(--text);line-height:1.8">Historical data for ${oL2} shows that at ${t2} points, ${o2.c189<900&&t2<o2.c189?'profiles below the Nov 2025 189 cutoff of '+o2.c189+' pts achieved PR primarily through state nomination — SA, TAS and QLD being the most successful states for this occupation category.':'profiles at this score have secured invitations through both the 189 independent and 190 state-nominated pathways, with state nomination typically delivering faster outcomes at most points levels.'} The ${o2.d.toLowerCase()} demand classification means ${o2.d==='Critical'?'processing times are below average and priority consideration is frequently applied across state programs.':o2.d==='Oversupplied'?'competition is high and every additional point matters — profiles at or just above cutoff experience significantly longer wait times than those 10+ pts above.':'state nomination is often faster than the 189 independent queue for this occupation.'} Profiles similar to yours who achieved PR fastest typically ${t2<75?'invested 6–12 months on targeted improvements — primarily IELTS to 8+ and NAATI CCL where eligible — before submitting EOI to protect their Date of Effect':'submitted their EOI immediately after skills assessment and applied for state nomination in all eligible states simultaneously, not waiting for a 189 federal round.'}</p>`;
+  }
+}
+
+// PATCH 2: Override br() to wire up the output builders at the end
+const _origBr = br;
+function br() {
+  _origBr();
+  // These functions are defined in the second script block but were unreachable
+  // because they were (incorrectly) nested inside fetchAI's unclosed body.
+  // Now that fetchAI is fixed above, these should be reachable — but calling
+  // them explicitly here ensures they run regardless.
+  try {
+    const total = tot();
+    const o = OD[S.occ] || OD.other;
+    const occEl = document.getElementById('occ');
+    const ol = occEl.value ? (occEl.options[occEl.selectedIndex]||{}).text||'Your Occupation' : 'Your Occupation';
+    const visaT = (S.visa==='190'||S.visa==='491') ? '190' : '189';
+    const pr12v = prob(total, o, 12, visaT);
+    const pr18v = prob(total, o, 18, visaT);
+    if (typeof buildTimeWindow === 'function') buildTimeWindow(total, o, pr12v, pr18v);
+    if (typeof buildSimulator  === 'function') buildSimulator(total, o);
+    if (typeof buildActionCards=== 'function') buildActionCards(total, o, ol);
+  } catch(e) { console.error('Patch br() error:', e); }
+}
+
+// PATCH 3: Fix prob() visa type in updateSimulator
+// The original uses literal string 'vt' which makes prob() fall through to wrong branch.
+// Override updateSimulator with the corrected version.
+const _origUpdateSim = typeof updateSimulator === 'function' ? updateSimulator : null;
+function updateSimulator() {
+  if (!WIF_BASE_O) return;
+  var added = 0;
+  if (WIF_STATE.naati)            added += 5;
+  if (WIF_STATE.superior_english) added += 10;
+  if (WIF_STATE.regional)         added += 15;
+  if (WIF_STATE.partner)          added += 10;
+  if (WIF_STATE.prof_year)        added += 5;
+
+  var basePts   = WIF_BASE_TOTAL;
+  var afterPts  = basePts + added;
+  var wifVisa   = window.S && (S.visa==='190'||S.visa==='491') ? '190' : '189';
+  var basePr12  = prob(basePts,  WIF_BASE_O, 12, wifVisa);
+  var afterPr12 = prob(afterPts, WIF_BASE_O, 12, wifVisa);
+  var basePr18  = prob(basePts,  WIF_BASE_O, 18, wifVisa);
+  var afterPr18 = prob(afterPts, WIF_BASE_O, 18, wifVisa);
+
+  function timeEst(pts, o) {
+    var cut = o.c189===999 ? (o.c190||65) : (o.c189||75);
+    if(pts>=cut+15) return '3–8 months';
+    if(pts>=cut+5)  return '6–14 months';
+    if(pts>=cut)    return '8–18 months';
+    return 'Points needed first';
+  }
+
+  document.getElementById('wif-before-pts').textContent    = basePts + ' pts';
+  document.getElementById('wif-before-window').textContent =
+    timeEst(basePts,WIF_BASE_O) + ' · ' + (Math.max(2,basePr18-7))+'–'+(Math.min(97,basePr18+7))+'% in 18mo';
+
+  document.getElementById('wif-after-pts').textContent     = afterPts + ' pts';
+  document.getElementById('wif-after-window').textContent  =
+    timeEst(afterPts,WIF_BASE_O) + ' · ' + (Math.max(2,afterPr18-7))+'–'+(Math.min(97,afterPr18+7))+'% in 18mo';
+
+  var summaryEl = document.getElementById('wif-summary');
+  if (added > 0) {
+    summaryEl.style.display = 'block';
+    summaryEl.innerHTML =
+      'If you do all of the above your score goes from ' +
+      '<strong style="color:var(--text)">' + basePts + '</strong> to ' +
+      '<strong style="color:var(--teal)">' + afterPts + ' pts</strong> ' +
+      'and your 18-month invitation chance moves from ' +
+      '<strong style="color:var(--text)">' + (Math.max(2,basePr18-7))+'–'+(Math.min(97,basePr18+7))+'%</strong> to ' +
+      '<strong style="color:var(--teal)">' + (Math.max(2,afterPr18-7))+'–'+(Math.min(97,afterPr18+7))+'%</strong>.' +
+      (added>=20 ? ' <strong style="color:#10B981">Major improvement — act on at least one of these.</strong>' :
+       added>=10 ? ' Meaningful improvement — worth prioritising.' : '');
+  } else {
+    summaryEl.style.display = 'none';
+  }
+}
+</script>
