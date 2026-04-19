@@ -36,16 +36,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .ib{border-radius:10px;padding:0.85rem 1rem;font-size:0.8rem;line-height:1.6;margin:0.6rem 0}
 .ib-teal{background:var(--td);border:1px solid var(--tb)}
 .ib-amber{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);color:var(--amber)}
-/* SEARCH */
 .search-wrap{position:relative;margin-bottom:1rem}
 .search-input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:0.9rem 1rem 0.9rem 2.75rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s}
 .search-input:focus{border-color:var(--tb)}
 .search-icon{position:absolute;left:0.9rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem}
-/* CATEGORIES */
 .cat-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.25rem}
 .cat-btn{padding:0.4rem 0.8rem;background:transparent;border:1px solid var(--border);border-radius:20px;font-size:0.75rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
 .cat-btn.active{border-color:var(--teal);background:var(--td);color:var(--teal)}
-/* OCC GRID */
 .occ-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
 .occ-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem;cursor:pointer;transition:all 0.2s}
 .occ-card:hover{border-color:var(--tb);transform:translateY(-1px)}
@@ -66,7 +63,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .ot-stsol{background:var(--bd);color:var(--blue);border:1px solid rgba(78,142,255,0.3)}
 .ot-regional{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
 .ot-critical{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
-/* DETAIL PANEL */
 .detail-panel{display:none;background:var(--bg2);border:1px solid var(--tb);border-radius:14px;padding:1.5rem;margin-top:1rem;animation:fu 0.3s ease}
 .detail-panel.show{display:block}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -82,15 +78,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .dp-row:last-child{border-bottom:none}
 .dp-row-label{color:var(--muted)}
 .dp-row-val{font-weight:600;color:var(--text)}
-/* SCORE RING */
-.score-ring{position:relative;width:80px;height:80px;margin:0 auto 0.5rem}
-.score-ring svg{transform:rotate(-90deg)}
-.score-ring-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800}
 footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 @media(max-width:600px){.occ-grid{grid-template-columns:1fr}.dp-grid{grid-template-columns:1fr 1fr}.nls{display:none}}
 </style>
-  <!-- ── BRAND & SEO HEAD TAGS ── add to every page ── -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
@@ -101,28 +92,25 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="VisaIQ">
-  <!-- Open Graph — controls WhatsApp, LinkedIn, Facebook preview -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VisaIQ">
   <meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="VisaIQ — Australia's Migration Intelligence Platform">
-  <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@visaiq">
   <meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
-  <!-- ── END BRAND TAGS ── -->
   <meta property="og:url" content="https://www.visaiq.com.au/occupation-demand">
   <meta property="og:title" content="Australia Occupation Demand Score 2026 — 189 Tier by Occupation | VisaIQ">
   <meta name="twitter:title" content="Australia Occupation Demand Score 2026 — 189 Tier by Occupation | VisaIQ">
-  <meta property="og:description" content="Check your occupation">
-  <meta name="twitter:description" content="Check your occupation">
+  <meta property="og:description" content="Check your occupation's demand score for Australian PR 2026. Based on Jobs and Skills Australia shortage data, 189 tier, state nomination priority and salary benchmarks.">
+  <meta name="twitter:description" content="Check your occupation's demand score for Australian PR 2026. Based on Jobs and Skills Australia shortage data, 189 tier, state nomination priority and salary benchmarks.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":'Which occupations have the best PR chances in Australia 2026?',"acceptedAnswer":{"@type":"Answer","text":'Healthcare occupations (Registered Nurses, GPs, Physiotherapists) have the best PR chances in 2026 — classified as Tier 1 under the federal 189 system with the highest invitation rates at the lowest points scores. Education and social work occupations are Tier 2 with consistently good invitation rates. Engineering and trades are Tier 3 with standard allocations.'}},{"@type":"Question","name":'Are IT workers getting PR in Australia in 2026?',"acceptedAnswer":{"@type":"Answer","text":'IT occupations (Software Engineers, ICT Managers, Systems Analysts, Data Analysts) are classified as Tier 4 in the 2025-26 program year — the lowest invitation rate under the federal 189 system. Most IT professionals are advised to pursue state nomination (190 via VIC, NSW or ACT) or regional nomination (491) rather than waiting in the federal 189 pool.'}},{"@type":"Question","name":'Can accountants get PR in Australia in 2026?',"acceptedAnswer":{"@type":"Answer","text":'Accountants have not received 189 federal invitations in the 2025-26 program year to date. The recommended pathway for accountants is SA 190 state nomination (cutoff approximately 65 pts, monthly rounds) or QLD/491 regional nomination. Accountants should not wait in the federal 189 pool without a parallel state nomination strategy.'}},{"@type":"Question","name":'What is a skills assessment for Australian PR?',"acceptedAnswer":{"@type":"Answer","text":'A skills assessment is a mandatory assessment of your qualifications and work experience by the relevant assessing authority for your occupation. It is required before you can submit an EOI for skilled migration. Processing takes 3-12 months depending on the authority. Common authorities include ANMAC (nursing), Engineers Australia (engineering), VETASSESS (various), CPA/CAANZ (accounting), and ACS (IT).'}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which occupations have the best PR chances in Australia 2026?","acceptedAnswer":{"@type":"Answer","text":"Healthcare occupations (Registered Nurses, GPs, Physiotherapists) have the best PR chances in 2026 — classified as Tier 1 under the federal 189 system with the highest invitation rates at the lowest points scores. Education and social work occupations are Tier 2 with consistently good invitation rates. Engineering and trades are Tier 3 with standard allocations."}},{"@type":"Question","name":"Are IT workers getting PR in Australia in 2026?","acceptedAnswer":{"@type":"Answer","text":"IT occupations (Software Engineers, ICT Managers, Systems Analysts, Data Analysts) are classified as Tier 4 in the 2025-26 program year — the lowest invitation rate under the federal 189 system. Most IT professionals are advised to pursue state nomination (190 via VIC, NSW or ACT) or regional nomination (491) rather than waiting in the federal 189 pool."}},{"@type":"Question","name":"Can accountants get PR in Australia in 2026?","acceptedAnswer":{"@type":"Answer","text":"Accountants have not received 189 federal invitations in the 2025-26 program year to date. The recommended pathway for accountants is SA 190 state nomination (cutoff approximately 65 pts, monthly rounds) or QLD/491 regional nomination. Accountants should not wait in the federal 189 pool without a parallel state nomination strategy."}},{"@type":"Question","name":"What is a skills assessment for Australian PR?","acceptedAnswer":{"@type":"Answer","text":"A skills assessment is a mandatory assessment of your qualifications and work experience by the relevant assessing authority for your occupation. It is required before you can submit an EOI for skilled migration. Processing takes 3-12 months depending on the authority. Common authorities include ANMAC (nursing), Engineers Australia (engineering), VETASSESS (various), CPA/CAANZ (accounting), and ACS (IT)."}}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":'Home',"item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":'Occupation Demand',"item":"https://www.visaiq.com.au/occupation-demand"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":"Occupation Demand","item":"https://www.visaiq.com.au/occupation-demand"}]}
 </script>
 </head>
 <body>
@@ -143,7 +131,6 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
   <h1>Australian Occupation Demand Score 2026 — Is Your Occupation Tier 1, 2, 3 or 4</h1>
   <p>Every skilled occupation scored across shortage severity, PR pathway difficulty, salary and regional demand. Based on Jobs and Skills Australia 2025 OSL data and DHA invitation round results.</p>
 <div style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:0.85rem 1rem;margin:0.75rem 0;font-size:0.82rem;line-height:1.7"><strong style="color:#f87171">⚠️ IT dropped to Tier 4 in 2026</strong> — Software Engineers, ICT Managers, Systems Analysts, Data Analysts, Cybersecurity Specialists and Network Engineers are all classified as Tier 4 under the new 189 invitation system. This means 0.5× invitation multiplier — the fewest invitations of any tier. 189 federal invitation is very competitive for IT occupations. <strong style="color:var(--text)">190 state nomination or 491 regional is the recommended pathway for IT professionals.</strong></div>
-
 </div>
 
 <div class="wrap">
@@ -158,18 +145,17 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
     </div>
   </div>
 
-  <!-- SEARCH + FILTER -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input type="text" class="search-input" id="occ-search" placeholder="Search occupation e.g. nurse, accountant, engineer…" oninput="filterOccs()">
-  </di
+  </div>
 <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #f87171;border-radius:10px;padding:0.9rem 1.1rem;margin:0.75rem 0;font-size:0.82rem;line-height:1.7">
 <strong style="color:#f87171">⚠️ Accountants — 189 federal pathway update 2026</strong><br>
 Accountants have <strong style="color:#f87171">not received 189 federal invitations</strong> in the 2026 program year to date. The recommended pathway for accountants is:<br>
-&bull; <strong style="color:var(--text, #E8EDF5)">SA 190 state nomination</strong> — cutoff approximately 65 pts, runs monthly rounds<br>
-&bull; <strong style="color:var(--text, #E8EDF5)">QLD 190 or 491 regional nomination</strong> — accessible at 65-70 pts<br>
-<strong style="color:var(--text, #E8EDF5)">Do not wait in the 189 pool as an accountant without a state nomination strategy.</strong> The accountant EOI pool has over 15,240 applicants and Tier 4 status means federal invitations are extremely limited.
-</div>v>
+&bull; <strong style="color:var(--text)">SA 190 state nomination</strong> — cutoff approximately 65 pts, runs monthly rounds<br>
+&bull; <strong style="color:var(--text)">QLD 190 or 491 regional nomination</strong> — accessible at 65-70 pts<br>
+<strong style="color:var(--text)">Do not wait in the 189 pool as an accountant without a state nomination strategy.</strong> The accountant EOI pool has over 15,240 applicants and Tier 4 status means federal invitations are extremely limited.
+</div>
   <div class="cat-row">
     <button class="cat-btn active" onclick="setcat('all',this)">All</button>
     <button class="cat-btn" onclick="setcat('healthcare',this)">Healthcare</button>
@@ -181,10 +167,7 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
     <button class="cat-btn" onclick="setcat('hospitality',this)">Hospitality</button>
   </div>
 
-  <!-- OCC GRID -->
   <div class="occ-grid" id="occ-grid"></div>
-
-  <!-- DETAIL PANEL -->
   <div class="detail-panel" id="detail-panel"></div>
 
   <div class="ib ib-teal" style="margin-top:1.5rem">
@@ -247,7 +230,6 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
 
 <script>
 const OCCS = [
-  // HEALTHCARE
   {id:'gp',name:'General Practitioner',anzsco:'253111',cat:'healthcare',score:98,shortage:10,pr:10,state:9,salary:10,regional:9,
    tier:1,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
    salary_range:'$180,000–$280,000',median:'$230,000',
@@ -305,8 +287,6 @@ const OCCS = [
    assessment:'AHPRA (OT Board)',
    states_accepting:'All 8 states',pr_note:'189 Tier 1. 75 pts.',regional_note:'NDIS expansion driving huge OT demand nationally.',
    insight:'NDIS funding has created extraordinary demand for OTs. Tier 1 priority status with accessible cutoffs.',tags:['ot-mltssl','ot-critical']},
-
-  // ENGINEERING
   {id:'civil',name:'Civil Engineer',anzsco:'233211',cat:'engineering',score:78,shortage:8,pr:6,state:8,salary:8,regional:7,
    tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
    salary_range:'$85,000–$150,000',median:'$115,000',
@@ -346,8 +326,6 @@ const OCCS = [
    pr_note:'189 Tier 3. 85 pts. Highest paid common engineering occupation. Olympics infrastructure creating 2026+ demand.',
    regional_note:'Strong regional demand for infrastructure projects.',
    insight:'High salary and strong demand. 189 Tier 3 means achievable cutoffs. NSW and VIC highly competitive for state nomination — consider QLD or SA.',tags:['ot-mltssl']},
-
-  // ICT
   {id:'software',name:'Software Engineer / Developer',anzsco:'261313',cat:'ict',score:58,shortage:7,pr:3,state:5,salary:9,regional:5,
    tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage',
    salary_range:'$95,000–$170,000',median:'$130,000',
@@ -381,8 +359,6 @@ const OCCS = [
    regional_note:'Minimal regional demand.',
    insight:'Very difficult 189 path. Employer sponsorship (482 → 186) is the most realistic PR pathway for ICT managers. Build 2 years with one employer and transition via TRT stream.',
    tags:['ot-mltssl']},
-
-  // TRADES
   {id:'electrician',name:'Electrician (General)',anzsco:'341111',cat:'trades',score:88,shortage:9,pr:9,state:9,salary:8,regional:9,
    tier:3,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Critical',
    salary_range:'$80,000–$140,000',median:'$100,000',
@@ -406,10 +382,8 @@ const OCCS = [
    assessment:'TRA',states_accepting:'All 8 states',
    pr_note:'189 Tier 3. 65 pts. Housing construction crisis driving demand.',
    regional_note:'Housing shortage driving extreme demand in regional areas.',
-   insight:'Construction trades are the government\'s top priority. Carpenters at 65 pts have excellent invitation prospects under the 4-tier system.',
+   insight:"Construction trades are the government's top priority. Carpenters at 65 pts have excellent invitation prospects under the 4-tier system.",
    tags:['ot-mltssl','ot-critical']},
-
-  // EDUCATION
   {id:'teacher_secondary',name:'Secondary School Teacher',anzsco:'241411',cat:'education',score:82,shortage:9,pr:7,state:8,salary:6,regional:8,
    tier:2,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'National Shortage — persistent',
    salary_range:'$65,000–$105,000',median:'$82,000',
@@ -445,8 +419,6 @@ const OCCS = [
    regional_note:'Strong regional demand in child protection, family services.',
    insight:'Social workers received invitations in the November 2025 round at 80 pts. Tier 2 priority means steady invitation rates.',
    tags:['ot-mltssl']},
-
-  // ACCOUNTING
   {id:'accountant',name:'Accountant (General)',anzsco:'221111',cat:'accounting',score:35,shortage:2,pr:1,state:4,salary:6,regional:3,
    tier:4,list:'MLTSSL',lists:['MLTSSL','CSOL'],shortage_status:'NOT in national shortage — oversupplied',
    salary_range:'$60,000–$120,000',median:'$80,000',
@@ -470,8 +442,6 @@ const OCCS = [
    pr_note:'189 Tier 4. Not invited 2026. Consider SA 190 at 65 base points.',
    regional_note:'Very limited regional demand.',
    insight:'Similar to Accountant — SA nomination is the key. Get to Adelaide, build 12 months experience, apply for SA 190.',tags:['ot-mltssl']},
-
-  // HOSPITALITY
   {id:'chef',name:'Cook / Chef',anzsco:'351311',cat:'hospitality',score:62,shortage:8,pr:5,state:6,salary:4,regional:9,
    tier:null,list:'STSOL',lists:['STSOL','CSOL'],shortage_status:'National Shortage — regional critical',
    salary_range:'$52,000–$80,000',median:'$62,000',
