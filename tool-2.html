@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0M6ZNEG9R"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y0M6ZNEG9R');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your PR Score — Queue Position &amp; EOI Status [Free 2026]</title>
+<meta name="description" content="What's your real queue position? Are you above the cutoff? Should you lodge your EOI now? 3-minute tool using real DHA Nov 2025 round data. Free, no signup.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00C896">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisaIQ">
+<meta property="og:url" content="https://www.visaiq.com.au/tool">
+<meta property="og:title" content="Check Your PR Score — Queue Position &amp; EOI Status [Free 2026]">
+<meta property="og:description" content="What's your real queue position? Are you above the cutoff? Should you lodge your EOI now? 3-minute tool using real DHA Nov 2025 round data. Free, no signup.">
+<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Cabinet+Grotesk:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0F1923;--bg2:#172231;--bg3:#1C2A3A;
+  --teal:#00C896;--teal2:#00E8AF;
+  --td:rgba(0,200,150,0.10);--tb:rgba(0,200,150,0.22);
+  --gold:#E8B86D;--text:#F0F5FF;--muted:#7A93B4;--muted2:#9FB8D8;
+  --border:rgba(255,255,255,0.07);--green:#12E89A;
+  --amber:#E8B86D;--red:#EF4444;--blue:#4E8EFF;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 900px 700px at -5% -5%,rgba(0,200,150,0.05) 0%,transparent 55%),
+  radial-gradient(ellipse 600px 400px at 105% 20%,rgba(78,142,255,0.03) 0%,transparent 55%);}
+
+/* TICKER */
+.ticker{background:rgba(0,200,150,0.05);border-bottom:1px solid rgba(0,200,150,0.12);padding:0.5rem 0;overflow:hidden;position:sticky;top:0;z-index:101}
+.ticker-track{display:flex;white-space:nowrap;animation:scroll 55s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ti{display:inline-flex;align-items:center;gap:0.55rem;padding:0 2.5rem;font-size:0.72rem;color:var(--muted2);flex-shrink:0}
+.ti b{color:var(--text);font-weight:500}
+.tdot{width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;animation:blink 2s infinite}
+.tdot.g{background:var(--gold)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+
+/* NAV */
+nav{position:sticky;top:34px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 2rem;background:rgba(15,25,35,0.92);backdrop-filter:blur(28px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Cabinet Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:var(--teal);text-decoration:none;letter-spacing:-0.03em}
+.nav-links{display:flex;align-items:center;gap:0.25rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.84rem;font-weight:500;transition:color 0.2s;padding:0.45rem 0.75rem;border-radius:8px}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.nav-cta{background:var(--teal);color:#000;padding:0.55rem 1.25rem;border-radius:100px;font-family:'Cabinet Grotesk',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--teal2);transform:translateY(-1px)}
+@media(max-width:700px){.nav-links{display:none}}
+
+/* FORM STEP */
+.form-wrap{position:relative;z-index:1;padding:4rem 1.5rem 3rem;max-width:580px;margin:0 auto;text-align:center}
+.form-eyebrow{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);display:block;margin-bottom:0.75rem}
+.form-h{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.5rem}
+.form-h em{font-style:italic;color:var(--teal)}
+.form-sub{color:var(--muted);font-size:0.9rem;margin-bottom:2.5rem;line-height:1.65}
+.form-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:2rem;text-align:left}
+.form-card::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,150,0.18),transparent);margin:-2rem -2rem 1.75rem}
+.step-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.3rem}
+.step-q{font-family:'Cabinet Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:1.25rem;line-height:1.3}
+.pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem}
+.pill{padding:0.6rem 1.1rem;border:1px solid var(--border);border-radius:100px;font-size:0.84rem;cursor:pointer;transition:all 0.2s;color:var(--muted);background:transparent;font-family:'DM Sans',sans-serif}
+.pill:hover{border-color:rgba(255,255,255,0.2);color:var(--text)}
+.pill.sel{border-color:var(--tb);background:var(--td);color:var(--teal)}
+.fld{margin-bottom:1.25rem}
+.fld label{display:block;font-size:0.75rem;font-weight:600;color:var(--muted);margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.06em}
+select{width:100%;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.75rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A93B4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;transition:border-color 0.2s}
+select:focus{border-color:var(--tb)}
+select option{background:#172231}
+.progress{display:flex;gap:0.4rem;margin-bottom:1.5rem;align-items:center}
+.prog-step{flex:1;height:3px;border-radius:3px;background:var(--border);transition:background 0.3s}
+.prog-step.done{background:var(--teal)}
+.prog-step.active{background:var(--teal);opacity:0.5}
+.btn-next{width:100%;padding:1rem;background:var(--teal);color:#000;border:none;border-radius:12px;font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
+.btn-next:hover{background:var(--teal2);transform:translateY(-1px)}
+.btn-back{width:100%;padding:0.75rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:0.85rem;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
+.btn-back:hover{border-color:rgba(255,255,255,0.15);color:var(--text)}
+
+/* SCREENS */
+.screen{display:none}.screen.active{display:block;animation:fadeup 0.4s ease}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* REPORT */
+.report{display:none;position:relative;z-index:1}
+.report.active{display:block;animation:fadeup 0.5s ease}
+.report-wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 6rem}
+.report-hero{text-align:center;margin-bottom:3rem;padding:3rem 1.5rem;background:linear-gradient(135deg,rgba(0,200,150,0.06),rgba(23,34,49,0.6));border:1px solid var(--tb);border-radius:24px;position:relative;overflow:hidden}
+.report-hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(0,200,150,0.08),transparent 65%);pointer-events:none}
+.rh-tag{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);display:block;margin-bottom:0.5rem;position:relative;z-index:1}
+.rh-name{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.35rem;position:relative;z-index:1}
+.rh-name em{font-style:italic;color:var(--teal)}
+.rh-sub{font-size:0.82rem;color:var(--muted);position:relative;z-index:1}
+.rh-meta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1rem;position:relative;z-index:1}
+.rh-chip{font-size:0.7rem;padding:0.25rem 0.7rem;border-radius:100px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted2)}
+
+/* SECTION HEADERS */
+.sec-tag{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.6rem;display:block}
+.sec-h{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.sec-h em{font-style:italic;color:var(--teal)}
+
+/* CARD */
+.dc{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:1.5rem;position:relative;overflow:hidden;margin-bottom:1rem}
+.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,150,0.15),transparent)}
+hr.div{border:none;border-top:1px solid var(--border);margin:3rem 0}
+
+/* ── SECTION 1: PR SCORE ── */
+.score-layout{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start}
+@media(max-width:600px){.score-layout{grid-template-columns:1fr;text-align:center}}
+.gauge-wrap{position:relative;width:160px;height:160px;flex-shrink:0}
+@media(max-width:600px){.gauge-wrap{margin:0 auto}}
+.gauge-wrap svg{transform:rotate(-90deg)}
+.g-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.g-num{font-family:'Cabinet Grotesk',sans-serif;font-size:2.8rem;font-weight:800;line-height:1}
+.g-denom{font-size:0.62rem;color:var(--muted)}
+.g-verdict{font-family:'Cabinet Grotesk',sans-serif;font-size:0.8rem;font-weight:700;margin-top:0.25rem}
+.score-rows{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.score-row:last-child{border-bottom:none}
+.score-row-label{color:var(--muted)}
+.score-row-val{font-weight:700;font-family:'Cabinet Grotesk',sans-serif}
+
+/* ACTION CARD */
+.action-card{background:var(--td);border:1px solid var(--tb);border-radius:14px;padding:1.25rem;margin-top:1rem}
+.ac-tag{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.4rem}
+.ac-title{font-family:'Cabinet Grotesk',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;line-height:1.35}
+.ac-body{font-size:0.8rem;color:var(--muted2);line-height:1.7}
+
+/* ── SECTION 2: EOI QUESTION ── */
+.eoi-banner{border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:1rem}
+.eoi-green{background:rgba(18,232,154,0.07);border:1px solid rgba(18,232,154,0.2)}
+.eoi-amber{background:rgba(232,184,109,0.07);border:1px solid rgba(232,184,109,0.25)}
+.eoi-red{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)}
+.eoi-title{font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.4rem}
+.eoi-body{font-size:0.82rem;color:var(--muted2);line-height:1.7}
+.eoi-steps{display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem}
+.eoi-step{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.82rem;color:var(--muted2);line-height:1.6}
+.eoi-step-n{width:22px;height:22px;border-radius:50%;background:var(--td);border:1px solid var(--tb);color:var(--teal);font-family:'Cabinet Grotesk',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.1rem}
+.eoi-link{display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;padding:0.7rem 1.4rem;background:var(--teal);color:#000;border-radius:100px;font-family:'Cabinet Grotesk',sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.eoi-link:hover{background:var(--teal2);transform:translateY(-1px)}
+
+/* ── SECTION 3: QUEUE ── */
+.queue-track{height:10px;background:rgba(255,255,255,0.06);border-radius:100px;position:relative;margin:1rem 0 0.4rem}
+.queue-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--teal),var(--teal2));transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
+.queue-pin{position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:var(--teal2);border:3px solid var(--bg2);box-shadow:0 0 16px rgba(0,200,150,0.6);transition:left 1.2s cubic-bezier(0.4,0,0.2,1)}
+.queue-labels{display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted);margin-bottom:1rem}
+.queue-labels .you{color:var(--teal);font-weight:700}
+.queue-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem}
+@media(max-width:500px){.queue-stats{grid-template-columns:repeat(2,1fr)}}
+.qs{background:rgba(255,255,255,0.03);border-radius:10px;padding:0.75rem;text-align:center}
+.qs-v{font-family:'Cabinet Grotesk',sans-serif;font-size:1.15rem;font-weight:800;line-height:1}
+.qs-v.t{color:var(--teal)}.qs-v.g{color:var(--gold)}.qs-v.gr{color:var(--green)}
+.qs-l{font-size:0.6rem;color:var(--muted);margin-top:0.2rem;line-height:1.3}
+
+/* ── SECTION 4: COMPETITORS ── */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+@media(max-width:540px){.comp-grid{grid-template-columns:1fr}}
+.comp-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:14px;padding:1.1rem;transition:all 0.2s}
+.comp-card.you{border-color:var(--tb);background:var(--td)}
+.comp-card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-1px)}
+.comp-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+.comp-name{font-family:'Cabinet Grotesk',sans-serif;font-size:0.88rem;font-weight:700}
+.comp-badge{font-size:0.62rem;font-weight:700;padding:0.18rem 0.5rem;border-radius:100px}
+.cb-you{background:var(--td);color:var(--teal);border:1px solid var(--tb)}
+.cb-above{background:rgba(239,68,68,0.08);color:#f87171;border:1px solid rgba(239,68,68,0.2)}
+.cb-below{background:rgba(18,232,154,0.08);color:var(--green);border:1px solid rgba(18,232,154,0.2)}
+.comp-bars{display:flex;flex-direction:column;gap:0.35rem}
+.cb-row{display:flex;align-items:center;gap:0.5rem;font-size:0.72rem}
+.cb-lbl{width:50px;color:var(--muted);flex-shrink:0}
+.cb-track{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:100px;overflow:hidden}
+.cb-fill{height:100%;border-radius:100px}
+.cb-val{width:28px;text-align:right;color:var(--text);font-weight:600;font-family:'Cabinet Grotesk',sans-serif;font-size:0.75rem}
+
+/* ── SECTION 5: WHAT-IF SIMULATOR ── */
+.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:580px){.sim-grid{grid-template-columns:1fr}}
+.sim-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:14px;padding:1.1rem;cursor:pointer;transition:all 0.2s;user-select:none}
+.sim-card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-1px)}
+.sim-card.best{border-color:var(--tb);background:var(--td)}
+.sim-label{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem}
+.sim-pts{font-family:'Cabinet Grotesk',sans-serif;font-size:2.2rem;font-weight:800;line-height:1;margin-bottom:0.2rem}
+.sim-sub{font-size:0.72rem;color:var(--muted);line-height:1.5}
+.sim-delta{font-size:0.78rem;font-weight:700;margin-top:0.4rem}
+.sim-toggle{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.sim-tog-btn{padding:0.4rem 0.85rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.sim-tog-btn.on{border-color:var(--tb);background:var(--td);color:var(--teal)}
+.sim-result{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-top:1rem}
+.sr-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.sr-row:last-child{border-bottom:none}
+.sr-label{color:var(--muted)}
+.sr-val{font-family:'Cabinet Grotesk',sans-serif;font-weight:700}
+
+/* DISCLAIMER */
+.dis{background:rgba(232,184,109,0.05);border:1px solid rgba(232,184,109,0.15);border-radius:12px;padding:0.9rem 1.1rem;font-size:0.72rem;color:var(--muted);line-height:1.6;margin-top:2rem}
+.dis strong{color:var(--gold)}
+
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.75rem;color:var(--muted);position:relative;z-index:1}
+footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:0.05s}.rd2{transition-delay:0.1s}.rd3{transition-delay:0.15s}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ti"><span class="tdot"></span><b>Reg. Nurse · SA 190 · 75 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>VIC 190/491 round</b> — 17 Mar 2026 · Engineers &amp; nurses invited</span>
+    <span class="ti"><span class="tdot"></span><b>Civil Engineer · QLD · 85 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>189 Round 3 overdue</b> — expected any day · keep EOI current</span>
+    <span class="ti"><span class="tdot"></span><b>Electrician · 189 · 65 pts</b> — invited Feb 2026</span>
+    <span class="ti"><span class="tdot g"></span><b>SA 190</b> — most accessible state 2026 · monthly rounds</span>
+    <span class="ti"><span class="tdot"></span><b>Software Dev · VIC 190 · 90 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>485 visa fee</b> — AUD $4,600 from 1 March 2026</span>
+    <span class="ti"><span class="tdot"></span><b>Reg. Nurse · SA 190 · 75 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>VIC 190/491 round</b> — 17 Mar 2026 · Engineers &amp; nurses invited</span>
+    <span class="ti"><span class="tdot"></span><b>Civil Engineer · QLD · 85 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>189 Round 3 overdue</b> — expected any day · keep EOI current</span>
+    <span class="ti"><span class="tdot"></span><b>Electrician · 189 · 65 pts</b> — invited Feb 2026</span>
+    <span class="ti"><span class="tdot g"></span><b>SA 190</b> — most accessible state 2026 · monthly rounds</span>
+    <span class="ti"><span class="tdot"></span><b>Software Dev · VIC 190 · 90 pts</b> — granted this week</span>
+    <span class="ti"><span class="tdot g"></span><b>485 visa fee</b> — AUD $4,600 from 1 March 2026</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">VisaIQ</a>
+  <div class="nav-links">
+    <a href="/tool">PR Report</a>
+    <a href="/points-calculator">Points</a>
+    <a href="/student-pathway">Students</a>
+    <a href="/partner-visa">Partner</a>
+    <a href="/rounds">Rounds</a>
+  </div>
+  <a href="/" class="nav-cta">← Back to Home</a>
+</nav>
+
+<!-- FORM — 3 quick steps -->
+<div class="form-wrap" id="form-section">
+  <span class="form-eyebrow">PR Intelligence Report</span>
+  <h1 class="form-h">Know <em>exactly</em> where<br>you stand.</h1>
+  <p class="form-sub">3 questions. Real DHA data. Free.</p>
+
+  <div class="form-card">
+    <div class="progress">
+      <div class="prog-step active" id="p1"></div>
+      <div class="prog-step" id="p2"></div>
+      <div class="prog-step" id="p3"></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="screen active" id="s1">
+      <div class="step-label">Step 1 of 3</div>
+      <div class="step-q">What's your occupation?</div>
+      <div class="fld">
+        <select id="occ">
+          <option value="">Choose your occupation…</option>
+          <optgroup label="Healthcare — Tier 1">
+            <option value="general_practitioner">General Practitioner (GP)</option>
+            <option value="registered_nurse">Registered Nurse</option>
+            <option value="nurse_practitioner">Nurse Practitioner</option>
+            <option value="enrolled_nurse">Enrolled Nurse</option>
+            <option value="midwife">Midwife</option>
+            <option value="physiotherapist">Physiotherapist</option>
+            <option value="occupational_therapist">Occupational Therapist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="dentist">Dentist</option>
+            <option value="speech_pathologist">Speech Pathologist</option>
+            <option value="paramedic">Paramedic</option>
+            <option value="dietitian">Dietitian</option>
+            <option value="medical_specialist">Medical Specialist</option>
+            <option value="psychiatrist">Psychiatrist</option>
+            <option value="optometrist">Optometrist</option>
+            <option value="radiographer">Radiographer</option>
+            <option value="sonographer">Sonographer</option>
+            <option value="podiatrist">Podiatrist</option>
+            <option value="aged_care_worker">Aged / Disability Care Worker</option>
+            <option value="veterinarian">Veterinarian</option>
+          </optgroup>
+          <optgroup label="Education / Social — Tier 2">
+            <option value="early_childhood_teacher">Early Childhood Teacher</option>
+            <option value="primary_teacher">Primary School Teacher</option>
+            <option value="secondary_teacher">Secondary School Teacher</option>
+            <option value="secondary_teacher_maths">Secondary Teacher — STEM</option>
+            <option value="special_ed_teacher">Special Education Teacher</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="social_worker">Social Worker</option>
+            <option value="counsellor">Counsellor</option>
+          </optgroup>
+          <optgroup label="Engineering / Trades — Tier 3">
+            <option value="civil_engineer">Civil Engineer</option>
+            <option value="mechanical_engineer">Mechanical Engineer</option>
+            <option value="electrical_engineer">Electrical Engineer</option>
+            <option value="structural_engineer">Structural Engineer</option>
+            <option value="mining_engineer">Mining Engineer</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="carpenter">Carpenter / Joiner</option>
+            <option value="welder">Welder</option>
+            <option value="motor_mechanic">Motor Mechanic</option>
+            <option value="chef">Chef</option>
+          </optgroup>
+          <optgroup label="ICT / Accounting — Tier 4">
+            <option value="software_engineer">Software Engineer</option>
+            <option value="software_developer">Software Developer</option>
+            <option value="ict_manager">ICT Manager</option>
+            <option value="systems_analyst">Systems Analyst</option>
+            <option value="network_engineer">Network Engineer</option>
+            <option value="data_scientist">Data Scientist</option>
+            <option value="cybersecurity_analyst">Cybersecurity Analyst</option>
+            <option value="accountant">Accountant (General)</option>
+            <option value="management_accountant">Management Accountant</option>
+            <option value="external_auditor">External Auditor</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="architect">Architect</option>
+            <option value="surveyor">Surveyor</option>
+            <option value="environmental_scientist">Environmental Scientist</option>
+            <option value="other">Other Occupation</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="fld">
+        <label>Preferred visa pathway</label>
+        <div class="pills" id="visa-pills">
+          <button class="pill sel" data-val="189" onclick="selPill(this,'visa-pills')">189 Independent</button>
+          <button class="pill" data-val="190" onclick="selPill(this,'visa-pills')">190 State Nominated</button>
+          <button class="pill" data-val="491" onclick="selPill(this,'visa-pills')">491 Regional</button>
+        </div>
+      </div>
+      <button class="btn-next" onclick="toStep(2)">Continue →</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="screen" id="s2">
+      <div class="step-label">Step 2 of 3</div>
+      <div class="step-q">What's your DHA points score?</div>
+      <div class="fld">
+        <label>Age</label>
+        <div class="pills" id="age-pills">
+          <button class="pill" data-val="25" onclick="selPill(this,'age-pills')">18–24 (25pts)</button>
+          <button class="pill sel" data-val="30" onclick="selPill(this,'age-pills')">25–32 (30pts)</button>
+          <button class="pill" data-val="25" onclick="selPill(this,'age-pills')">33–39 (25pts)</button>
+          <button class="pill" data-val="15" onclick="selPill(this,'age-pills')">40–44 (15pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>English proficiency</label>
+        <div class="pills" id="eng-pills">
+          <button class="pill" data-val="0" onclick="selPill(this,'eng-pills')">Competent (0pts)</button>
+          <button class="pill sel" data-val="10" onclick="selPill(this,'eng-pills')">Proficient 7+ (10pts)</button>
+          <button class="pill" data-val="20" onclick="selPill(this,'eng-pills')">Superior 8+ (20pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Education level</label>
+        <div class="pills" id="edu-pills">
+          <button class="pill" data-val="10" onclick="selPill(this,'edu-pills')">Diploma (10pts)</button>
+          <button class="pill sel" data-val="15" onclick="selPill(this,'edu-pills')">Bachelor (15pts)</button>
+          <button class="pill" data-val="20" onclick="selPill(this,'edu-pills')">Masters / PhD (20pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Australian work experience</label>
+        <div class="pills" id="auswork-pills">
+          <button class="pill sel" data-val="0" onclick="selPill(this,'auswork-pills')">None (0pts)</button>
+          <button class="pill" data-val="5" onclick="selPill(this,'auswork-pills')">1–2 years (5pts)</button>
+          <button class="pill" data-val="10" onclick="selPill(this,'auswork-pills')">3–4 years (10pts)</button>
+          <button class="pill" data-val="15" onclick="selPill(this,'auswork-pills')">5–7 years (15pts)</button>
+          <button class="pill" data-val="20" onclick="selPill(this,'auswork-pills')">8+ years (20pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Overseas work experience</label>
+        <div class="pills" id="owork-pills">
+          <button class="pill sel" data-val="0" onclick="selPill(this,'owork-pills')">None (0pts)</button>
+          <button class="pill" data-val="5" onclick="selPill(this,'owork-pills')">3–4 years (5pts)</button>
+          <button class="pill" data-val="10" onclick="selPill(this,'owork-pills')">5–7 years (10pts)</button>
+          <button class="pill" data-val="15" onclick="selPill(this,'owork-pills')">8+ years (15pts)</button>
+        </div>
+      </div>
+      <button class="btn-next" onclick="toStep(3)">Continue →</button>
+      <button class="btn-back" onclick="toStep(1)">← Back</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="screen" id="s3">
+      <div class="step-label">Step 3 of 3</div>
+      <div class="step-q">A few more details</div>
+      <div class="fld">
+        <label>Nationality</label>
+        <select id="nat">
+          <option value="other">Select nationality…</option>
+          <option value="indian">🇮🇳 Indian</option>
+          <option value="pakistani">🇵🇰 Pakistani</option>
+          <option value="nepali">🇳🇵 Nepali</option>
+          <option value="filipino">🇵🇭 Filipino</option>
+          <option value="chinese">🇨🇳 Chinese</option>
+          <option value="sri_lankan">🇱🇰 Sri Lankan</option>
+          <option value="bangladeshi">🇧🇩 Bangladeshi</option>
+          <option value="vietnamese">🇻🇳 Vietnamese</option>
+          <option value="indonesian">🇮🇩 Indonesian</option>
+          <option value="british">🇬🇧 British</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="fld">
+        <label>NAATI CCL certification?</label>
+        <div class="pills" id="naati-pills">
+          <button class="pill sel" data-val="0" onclick="selPill(this,'naati-pills')">No (0pts)</button>
+          <button class="pill" data-val="5" onclick="selPill(this,'naati-pills')">Yes (+5pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>Australian study bonus?</label>
+        <div class="pills" id="study-pills">
+          <button class="pill sel" data-val="0" onclick="selPill(this,'study-pills')">No (0pts)</button>
+          <button class="pill" data-val="5" onclick="selPill(this,'study-pills')">Yes (+5pts)</button>
+        </div>
+      </div>
+      <div class="fld">
+        <label>State / preferred location</label>
+        <select id="state">
+          <option value="SA">South Australia — most accessible</option>
+          <option value="QLD">Queensland</option>
+          <option value="VIC">Victoria</option>
+          <option value="NSW">New South Wales</option>
+          <option value="WA">Western Australia</option>
+          <option value="TAS">Tasmania</option>
+          <option value="ACT">ACT — Canberra</option>
+          <option value="NT">Northern Territory</option>
+        </select>
+      </div>
+      <button class="btn-next" onclick="generateReport()">Generate My Report →</button>
+      <button class="btn-back" onclick="toStep(2)">← Back</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- REPORT -->
+<div class="report" id="report-section">
+  <div class="report-wrap">
+
+    <!-- REPORT HEADER -->
+    <div class="report-hero reveal">
+      <span class="rh-tag">PR Intelligence Report · April 2026</span>
+      <div class="rh-name" id="rh-name">Your <em>PR picture</em></div>
+      <div class="rh-sub" id="rh-sub">Based on real DHA 2026 round data</div>
+      <div class="rh-meta" id="rh-meta"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- SECTION 1: PR SCORE -->
+    <div class="reveal rd1">
+      <span class="sec-tag">Section 1 of 5</span>
+      <h2 class="sec-h">Your <em>PR score</em></h2>
+    </div>
+    <div class="dc reveal rd2">
+      <div class="score-layout">
+        <div class="gauge-wrap">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"/>
+            <circle cx="80" cy="80" r="66" fill="none" stroke="url(#tg)" stroke-width="10"
+              stroke-dasharray="415" stroke-dashoffset="415" stroke-linecap="round" id="gauge-arc"/>
+            <defs>
+              <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00C896"/><stop offset="100%" stop-color="#00E8AF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="g-center">
+            <div class="g-num" id="g-num" style="color:var(--teal)">—</div>
+            <div class="g-denom">/100</div>
+            <div class="g-verdict" id="g-verdict"></div>
+          </div>
+        </div>
+        <div>
+          <div class="score-rows" id="score-rows"></div>
+          <div class="action-card" id="action-card">
+            <div class="ac-tag">Your highest-impact action right now</div>
+            <div class="ac-title" id="ac-title"></div>
+            <div class="ac-body" id="ac-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- SECTION 2: EOI QUESTION -->
+    <div class="reveal rd1">
+      <span class="sec-tag">Section 2 of 5</span>
+      <h2 class="sec-h">Should you <em>lodge your EOI?</em></h2>
+    </div>
+    <div id="eoi-block" class="reveal rd2"></div>
+
+    <hr class="div">
+
+    <!-- SECTION 3: QUEUE POSITION -->
+    <div class="reveal rd1">
+      <span class="sec-tag">Section 3 of 5</span>
+      <h2 class="sec-h">Your <em>queue position</em></h2>
+    </div>
+    <div class="dc reveal rd2">
+      <div id="queue-sub" style="font-size:0.78rem;color:var(--muted);margin-bottom:0.5rem"></div>
+      <div class="queue-track">
+        <div class="queue-fill" id="qfill" style="width:0%"></div>
+        <div class="queue-pin" id="qpin" style="left:0%"></div>
+      </div>
+      <div class="queue-labels" id="qlabels"></div>
+      <div class="queue-stats" id="qstats"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- SECTION 4: COMPETITORS -->
+    <div class="reveal rd1">
+      <span class="sec-tag">Section 4 of 5</span>
+      <h2 class="sec-h">Who you're <em>competing against</em></h2>
+    </div>
+    <div class="reveal rd2">
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.65" id="comp-intro"></div>
+      <div class="comp-grid" id="comp-grid"></div>
+    </div>
+
+    <hr class="div">
+
+    <!-- SECTION 5: WHAT-IF SIMULATOR -->
+    <div class="reveal rd1">
+      <span class="sec-tag">Section 5 of 5</span>
+      <h2 class="sec-h">What-if <em>simulator</em></h2>
+    </div>
+    <div class="reveal rd2">
+      <div style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.65">See how each action changes your score and probability. Toggle what applies to you.</div>
+      <div class="sim-toggle" id="sim-toggles"></div>
+      <div class="sim-result" id="sim-result"></div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="dis reveal">
+      <strong>⚠️ Not migration advice.</strong> VisaIQ analysis is based on publicly available DHA data and historical round patterns. Visa outcomes depend on individual circumstances. Consult a MARA-registered migration agent for advice specific to your situation. Always verify current information at <a href="https://immi.homeaffairs.gov.au" target="_blank" style="color:var(--teal)">immi.homeaffairs.gov.au</a>
+    </div>
+
+    <!-- RE-RUN -->
+    <div style="text-align:center;margin-top:2rem" class="reveal">
+      <button onclick="resetReport()" style="padding:0.75rem 2rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:0.85rem;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='var(--text)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">← Start over</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div>© 2026 VisaIQ · <a href="/">visaiq.com.au</a> · Not migration advice · <a href="/methodology">Methodology</a></div>
+</footer>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────
+var S = {
+  occ:'registered_nurse', visa:'189', age:30, eng:10, edu:15,
+  auswork:0, owork:0, nat:'other', naati:0, study:0, state:'SA'
+};
+
+// ── OCCUPATION DATA ────────────────────────────────────────────────
+var OD = {
+  general_practitioner:{label:'General Practitioner',tier:1,cutoff189:75,cutoff190:65,pool:1200,assess:'AMC'},
+  registered_nurse:{label:'Registered Nurse',tier:1,cutoff189:75,cutoff190:65,pool:2100,assess:'AHPRA'},
+  nurse_practitioner:{label:'Nurse Practitioner',tier:1,cutoff189:75,cutoff190:65,pool:800,assess:'AHPRA'},
+  enrolled_nurse:{label:'Enrolled Nurse',tier:1,cutoff189:75,cutoff190:65,pool:950,assess:'AHPRA'},
+  midwife:{label:'Midwife',tier:1,cutoff189:75,cutoff190:65,pool:700,assess:'AHPRA'},
+  physiotherapist:{label:'Physiotherapist',tier:1,cutoff189:75,cutoff190:65,pool:1800,assess:'AHPRA'},
+  occupational_therapist:{label:'Occupational Therapist',tier:1,cutoff189:75,cutoff190:65,pool:900,assess:'AHPRA'},
+  pharmacist:{label:'Pharmacist',tier:1,cutoff189:75,cutoff190:65,pool:1100,assess:'AHPRA'},
+  dentist:{label:'Dentist',tier:1,cutoff189:80,cutoff190:70,pool:600,assess:'ADC'},
+  speech_pathologist:{label:'Speech Pathologist',tier:1,cutoff189:75,cutoff190:65,pool:800,assess:'SPA'},
+  paramedic:{label:'Paramedic',tier:1,cutoff189:75,cutoff190:65,pool:600,assess:'AHPRA'},
+  dietitian:{label:'Dietitian',tier:1,cutoff189:75,cutoff190:65,pool:700,assess:'DAA'},
+  medical_specialist:{label:'Medical Specialist',tier:1,cutoff189:70,cutoff190:65,pool:500,assess:'AMC'},
+  psychiatrist:{label:'Psychiatrist',tier:1,cutoff189:70,cutoff190:65,pool:300,assess:'AMC'},
+  optometrist:{label:'Optometrist',tier:1,cutoff189:75,cutoff190:65,pool:500,assess:'AHPRA'},
+  radiographer:{label:'Radiographer',tier:1,cutoff189:75,cutoff190:65,pool:600,assess:'AHPRA'},
+  sonographer:{label:'Sonographer',tier:1,cutoff189:75,cutoff190:65,pool:400,assess:'ASAR'},
+  podiatrist:{label:'Podiatrist',tier:1,cutoff189:75,cutoff190:65,pool:400,assess:'AHPRA'},
+  aged_care_worker:{label:'Aged Care Worker',tier:1,cutoff189:75,cutoff190:65,pool:1200,assess:'AHPRA'},
+  veterinarian:{label:'Veterinarian',tier:1,cutoff189:75,cutoff190:65,pool:500,assess:'AVA'},
+  early_childhood_teacher:{label:'Early Childhood Teacher',tier:2,cutoff189:80,cutoff190:65,pool:2200,assess:'AITSL'},
+  primary_teacher:{label:'Primary School Teacher',tier:2,cutoff189:85,cutoff190:65,pool:3100,assess:'AITSL'},
+  secondary_teacher:{label:'Secondary School Teacher',tier:2,cutoff189:85,cutoff190:65,pool:2900,assess:'AITSL'},
+  secondary_teacher_maths:{label:'Secondary Teacher (STEM)',tier:2,cutoff189:80,cutoff190:65,pool:1800,assess:'AITSL'},
+  special_ed_teacher:{label:'Special Education Teacher',tier:2,cutoff189:80,cutoff190:65,pool:1500,assess:'AITSL'},
+  psychologist:{label:'Psychologist',tier:2,cutoff189:80,cutoff190:65,pool:2100,assess:'AHPRA'},
+  social_worker:{label:'Social Worker',tier:2,cutoff189:80,cutoff190:65,pool:1900,assess:'AASW'},
+  counsellor:{label:'Counsellor',tier:2,cutoff189:80,cutoff190:65,pool:1600,assess:'VETASSESS'},
+  civil_engineer:{label:'Civil Engineer',tier:3,cutoff189:85,cutoff190:70,pool:4200,assess:'Engineers Australia'},
+  mechanical_engineer:{label:'Mechanical Engineer',tier:3,cutoff189:85,cutoff190:70,pool:3800,assess:'Engineers Australia'},
+  electrical_engineer:{label:'Electrical Engineer',tier:3,cutoff189:85,cutoff190:70,pool:3500,assess:'Engineers Australia'},
+  structural_engineer:{label:'Structural Engineer',tier:3,cutoff189:85,cutoff190:70,pool:2800,assess:'Engineers Australia'},
+  mining_engineer:{label:'Mining Engineer',tier:3,cutoff189:80,cutoff190:65,pool:1200,assess:'Engineers Australia'},
+  electrician:{label:'Electrician',tier:3,cutoff189:65,cutoff190:65,pool:3200,assess:'TRA'},
+  plumber:{label:'Plumber',tier:3,cutoff189:65,cutoff190:65,pool:2100,assess:'TRA'},
+  carpenter:{label:'Carpenter / Joiner',tier:3,cutoff189:65,cutoff190:65,pool:1900,assess:'TRA'},
+  welder:{label:'Welder',tier:3,cutoff189:65,cutoff190:65,pool:1400,assess:'TRA'},
+  motor_mechanic:{label:'Motor Mechanic',tier:3,cutoff189:65,cutoff190:65,pool:1800,assess:'TRA'},
+  chef:{label:'Chef',tier:3,cutoff189:65,cutoff190:65,pool:2800,assess:'TRA'},
+  software_engineer:{label:'Software Engineer',tier:4,cutoff189:90,cutoff190:85,pool:8200,assess:'ACS'},
+  software_developer:{label:'Software Developer',tier:4,cutoff189:90,cutoff190:85,pool:7400,assess:'ACS'},
+  ict_manager:{label:'ICT Manager',tier:4,cutoff189:90,cutoff190:85,pool:4100,assess:'ACS'},
+  systems_analyst:{label:'Systems Analyst',tier:4,cutoff189:90,cutoff190:85,pool:5200,assess:'ACS'},
+  network_engineer:{label:'Network Engineer',tier:4,cutoff189:90,cutoff190:85,pool:3800,assess:'ACS'},
+  data_scientist:{label:'Data Scientist',tier:4,cutoff189:90,cutoff190:85,pool:4600,assess:'ACS'},
+  cybersecurity_analyst:{label:'Cybersecurity Analyst',tier:4,cutoff189:90,cutoff190:85,pool:2900,assess:'ACS'},
+  accountant:{label:'Accountant',tier:4,cutoff189:null,cutoff190:65,pool:15240,assess:'CPA / CAANZ'},
+  management_accountant:{label:'Management Accountant',tier:4,cutoff189:null,cutoff190:65,pool:8400,assess:'CPA / CAANZ'},
+  external_auditor:{label:'External Auditor',tier:4,cutoff189:null,cutoff190:65,pool:5200,assess:'CPA / CAANZ'},
+  architect:{label:'Architect',tier:3,cutoff189:80,cutoff190:70,pool:2200,assess:'AACA'},
+  surveyor:{label:'Surveyor',tier:3,cutoff189:80,cutoff190:70,pool:1400,assess:'SSSI'},
+  environmental_scientist:{label:'Environmental Scientist',tier:3,cutoff189:80,cutoff190:70,pool:1800,assess:'VETASSESS'},
+  other:{label:'Other Occupation',tier:3,cutoff189:85,cutoff190:70,pool:3000,assess:'VETASSESS'}
+};
+
+// ── HELPERS ────────────────────────────────────────────────────────
+function getVal(id){return parseInt(document.getElementById(id).value)||0;}
+function getPill(groupId){var el=document.querySelector('#'+groupId+' .pill.sel');return el?parseInt(el.dataset.val)||0:0;}
+function selPill(btn,groupId){document.querySelectorAll('#'+groupId+' .pill').forEach(function(p){p.classList.remove('sel')});btn.classList.add('sel');}
+
+function totalPts(){
+  return (S.age||0)+(S.eng||0)+(S.edu||0)+(S.auswork||0)+(S.owork||0)+(S.naati||0)+(S.study||0);
+}
+
+function tierLabel(t){
+  if(t===1)return'Tier 1 — Critical shortage';
+  if(t===2)return'Tier 2 — High priority';
+  if(t===3)return'Tier 3 — Standard';
+  return'Tier 4 — Oversupplied';
+}
+function tierCol(t){
+  if(t===1)return'var(--green)';if(t===2)return'var(--teal)';if(t===3)return'var(--amber)';return'#f87171';
+}
+
+// ── STEP NAV ────────────────────────────────────────────────────────
+function toStep(n){
+  document.querySelectorAll('.screen').forEach(function(s,i){s.classList.toggle('active',i===n-1)});
+  ['p1','p2','p3'].forEach(function(id,i){
+    var el=document.getElementById(id);
+    el.classList.toggle('done',i<n-1);
+    el.classList.toggle('active',i===n-1);
+    el.style.background=i<n-1?'var(--teal)':i===n-1?'var(--teal)':'';
+    el.style.opacity=i===n-1?'0.6':i<n-1?'1':'0.25';
+  });
+}
+
+// ── GENERATE ────────────────────────────────────────────────────────
+function generateReport(){
+  // collect
+  S.occ = document.getElementById('occ').value || 'registered_nurse';
+  S.visa = getPillStr('visa-pills','189');
+  S.age = getPill('age-pills') || 30;
+  S.eng = getPill('eng-pills');
+  S.edu = getPill('edu-pills') || 15;
+  S.auswork = getPill('auswork-pills');
+  S.owork = getPill('owork-pills');
+  S.nat = document.getElementById('nat').value;
+  S.naati = getPill('naati-pills');
+  S.study = getPill('study-pills');
+  S.state = document.getElementById('state').value;
+
+  var total = totalPts();
+  var o = OD[S.occ] || OD.other;
+  var cut = S.visa==='189' ? (o.cutoff189||999) : o.cutoff190;
+  var gap = cut - total;
+  var tier = o.tier;
+
+  // hide form, show report
+  document.getElementById('form-section').style.display='none';
+  document.getElementById('report-section').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // report header
+  document.getElementById('rh-name').innerHTML = o.label+' — <em>'+total+' points</em>';
+  document.getElementById('rh-sub').textContent = 'Compared against '+o.pool.toLocaleString()+' profiles in the DHA pool · April 2026';
+  document.getElementById('rh-meta').innerHTML =
+    '<span class="rh-chip">'+S.state+'</span>'+
+    '<span class="rh-chip">'+S.visa+' visa</span>'+
+    '<span class="rh-chip">'+o.assess+'</span>'+
+    '<span class="rh-chip" style="color:'+tierCol(tier)+'">'+tierLabel(tier)+'</span>';
+
+  buildScore(total,o,cut,gap,tier);
+  buildEOI(total,o,cut,gap,tier);
+  buildQueue(total,o,cut,gap);
+  buildCompetitors(total,o,cut);
+  buildSimulator(total,o,cut);
+
+  // trigger reveals
+  setTimeout(function(){
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});},{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  },100);
+
+  // animate gauge
+  setTimeout(function(){animateGauge(total,o,cut,tier);},300);
+}
+
+function getPillStr(groupId,def){
+  var el=document.querySelector('#'+groupId+' .pill.sel');
+  return el?el.dataset.val:def;
+}
+
+// ── SECTION 1: SCORE ─────────────────────────────────────────────
+function animateGauge(total,o,cut,tier){
+  var score = Math.round(Math.min(97,Math.max(8,
+    50 + (tier===1?20:tier===2?12:tier===3?4:-6) +
+    (total-cut>=10?15:total-cut>=0?8:total-cut>=-10?-5:-15)
+  )));
+  var col = score>=70?'var(--green)':score>=50?'var(--amber)':'#f87171';
+  var verdict = score>=70?'Ready ✓':score>=50?'Close':'Not yet';
+  document.getElementById('g-num').textContent=score;
+  document.getElementById('g-num').style.color=col;
+  document.getElementById('g-verdict').textContent=verdict;
+  document.getElementById('g-verdict').style.color=col;
+  var arc=document.getElementById('gauge-arc');
+  arc.setAttribute('stroke',score>=70?'url(#tg)':score>=50?'var(--amber)':'#EF4444');
+  arc.style.transition='stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)';
+  arc.style.strokeDashoffset = 415-(415*(score/100));
+}
+
+function buildScore(total,o,cut,gap,tier){
+  var total_pts = total;
+  var rows = [
+    {l:'Your DHA points',v:total_pts+' pts',col:'var(--teal)'},
+    {l:'Cutoff (Nov 2025 round)',v:cut<900?cut+' pts':'N/A',col:gap<=0?'var(--green)':'#f87171'},
+    {l:'Gap to cutoff',v:gap<=0?'Above ✓':'+'+gap+' needed',col:gap<=0?'var(--green)':'var(--amber)'},
+    {l:'Occupation demand',v:tierLabel(tier),col:tierCol(tier)},
+    {l:'Skills assessor',v:(OD[S.occ]||OD.other).assess,col:'var(--text)'}
+  ];
+  document.getElementById('score-rows').innerHTML = rows.map(function(r){
+    return '<div class="score-row"><span class="score-row-label">'+r.l+'</span><span class="score-row-val" style="color:'+r.col+'">'+r.v+'</span></div>';
+  }).join('');
+
+  // action
+  var title,body;
+  var canNaati=['indian','pakistani','nepali','bangladeshi','sri_lankan','filipino','chinese'].includes(S.nat);
+  var isAccounting=['accountant','management_accountant','external_auditor'].includes(S.occ);
+  if(isAccounting&&S.visa==='189'){
+    title='Switch to SA 190 — accountants were not invited via 189 in 2026';
+    body='The 189 federal pool has 15,000+ accountant EOIs and zero invitations in 2026. SA 190 at 65 pts is your most realistic pathway. SA runs monthly rounds — apply as soon as possible.';
+  } else if(gap>0&&gap<=5&&canNaati){
+    title='NAATI CCL closes your '+gap+'-point gap — costs $800, takes 3 months';
+    body='You are '+gap+' pts below the cutoff. NAATI CCL adds exactly 5 pts. For your nationality this is available — register at naati.com.au. This is the single highest-return action available to you right now.';
+  } else if(gap<=0){
+    title='Lodge your EOI in SkillSelect now — every week costs queue seniority';
+    body='At '+total+' pts you are above the cutoff. Your Date of Effect (the date you reach this score) is your tiebreaker against applicants on the same points. Lodge immediately.';
+  } else if(tier===4){
+    title='Consider 190 state nomination — your occupation has high 189 competition';
+    body=tierLabel(tier)+'. '+o.label+' has '+o.pool.toLocaleString()+' active EOIs in the pool. SA 190 at '+o.cutoff190+' pts is a faster and more accessible pathway.';
+  } else {
+    title='Build to '+cut+' pts — you need '+(gap)+' more';
+    body='At '+total+' pts you need '+(gap)+' more to reach the Nov 2025 cutoff of '+cut+' pts. Priority actions: IELTS to 8+ (adds 10 pts), NAATI CCL if eligible (adds 5 pts), additional work experience (adds 5–20 pts).';
+  }
+  document.getElementById('ac-title').textContent=title;
+  document.getElementById('ac-body').textContent=body;
+}
+
+// ── SECTION 2: EOI ───────────────────────────────────────────────
+function buildEOI(total,o,cut,gap,tier){
+  var isAccounting=['accountant','management_accountant','external_auditor'].includes(S.occ);
+  var html='';
+  if(isAccounting&&S.visa==='189'){
+    html='<div class="eoi-banner eoi-red">'+
+      '<div class="eoi-title" style="color:#f87171">✗ Do not lodge a 189 EOI for accounting</div>'+
+      '<div class="eoi-body">Accountants have not received 189 invitations in either 2026 round. An active EOI uses your Date of Effect without improving your position. Your primary pathway is SA 190 state nomination.</div>'+
+      '<div class="eoi-steps">'+
+      '<div class="eoi-step"><div class="eoi-step-n">1</div><div>Register with SA state nomination portal — <a href="https://migration.sa.gov.au" target="_blank" style="color:var(--teal)">migration.sa.gov.au</a></div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">2</div><div>Ensure your CPA or CAANZ skills assessment is current</div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">3</div><div>Monitor SA rounds — they run monthly, often without prior warning</div></div>'+
+      '</div></div>';
+  } else if(gap<=0){
+    html='<div class="eoi-banner eoi-green">'+
+      '<div class="eoi-title" style="color:var(--green)">✓ Yes — lodge your EOI this week</div>'+
+      '<div class="eoi-body">At '+total+' pts you are above the Nov 2025 cutoff of '+cut+' pts for '+o.label+'. Your Date of Effect is the day you first reach this score — it is your tiebreaker against applicants on equal points. Every day you wait loses queue seniority.</div>'+
+      '<div class="eoi-steps">'+
+      '<div class="eoi-step"><div class="eoi-step-n">1</div><div>Confirm your skills assessment is current and valid</div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">2</div><div>Lodge EOI at SkillSelect — set points to exactly your DHA score</div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">3</div><div>Apply to SA and QLD state nomination simultaneously — no restriction on multiple states</div></div>'+
+      '</div>'+
+      '<a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="eoi-link">Lodge EOI at SkillSelect →</a>'+
+      '</div>';
+  } else if(gap<=10){
+    html='<div class="eoi-banner eoi-amber">'+
+      '<div class="eoi-title" style="color:var(--amber)">◐ Wait — you are '+gap+' pts below the cutoff</div>'+
+      '<div class="eoi-body">Lodging an EOI below the cutoff locks your Date of Effect without improving your invitation chance. Build to '+cut+' pts first, then lodge. You are close — one targeted action gets you there.</div>'+
+      '<div class="eoi-steps">'+
+      '<div class="eoi-step"><div class="eoi-step-n">1</div><div>NAATI CCL if eligible — adds 5 pts for $800 in 3 months</div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">2</div><div>IELTS/PTE upgrade to 8+ — adds 10 pts if currently at 7+</div></div>'+
+      '<div class="eoi-step"><div class="eoi-step-n">3</div><div>Once above cutoff, lodge EOI immediately — do not wait further</div></div>'+
+      '</div></div>';
+  } else {
+    html='<div class="eoi-banner eoi-red">'+
+      '<div class="eoi-title" style="color:#f87171">✗ Not yet — '+gap+' pts below cutoff</div>'+
+      '<div class="eoi-body">Do not lodge an EOI at your current score of '+total+' pts. The Nov 2025 cutoff for '+o.label+' is '+cut+' pts. Focus on building your score — priority actions are listed in Section 1.</div>'+
+      '</div>';
+  }
+  document.getElementById('eoi-block').innerHTML=html;
+}
+
+// ── SECTION 3: QUEUE ─────────────────────────────────────────────
+function buildQueue(total,o,cut,gap){
+  var pool=o.pool;
+  var pct=Math.max(5,Math.min(95,Math.round((total-cut+20)/(50)*100)));
+  var behind=Math.round(pool*(1-pct/100));
+  var ahead=pool-behind;
+  var percentile=Math.min(99,Math.max(1,Math.round(pct)));
+
+  document.getElementById('queue-sub').textContent=o.label+' · '+pool.toLocaleString()+' active EOIs in pool';
+
+  setTimeout(function(){
+    document.getElementById('qfill').style.width=pct+'%';
+    document.getElementById('qpin').style.left=pct+'%';
+  },400);
+
+  document.getElementById('qlabels').innerHTML=
+    '<span>'+behind.toLocaleString()+' behind you</span>'+
+    '<span class="you">YOU ('+total+' pts)</span>'+
+    '<span>'+ahead.toLocaleString()+' ahead</span>';
+
+  var cutTrend=o.tier===1?'↓ Falling':o.tier===2?'→ Stable':o.tier===4?'↑ Rising':'→ Stable';
+  var cutCol=o.tier===1?'var(--green)':o.tier===4?'#f87171':'var(--muted2)';
+  document.getElementById('qstats').innerHTML=
+    '<div class="qs"><div class="qs-v t">'+percentile+'th</div><div class="qs-l">Your percentile</div></div>'+
+    '<div class="qs"><div class="qs-v">'+behind.toLocaleString()+'</div><div class="qs-l">Behind you</div></div>'+
+    '<div class="qs"><div class="qs-v">'+pool.toLocaleString()+'</div><div class="qs-l">Total pool</div></div>'+
+    '<div class="qs"><div class="qs-v" style="color:'+cutCol+'">'+cutTrend+'</div><div class="qs-l">Cutoff trend</div></div>';
+}
+
+// ── SECTION 4: COMPETITORS ───────────────────────────────────────
+function buildCompetitors(total,o,cut){
+  var tier=o.tier;
+  document.getElementById('comp-intro').innerHTML=
+    'Your occupation pool has <strong style="color:var(--text)">'+o.pool.toLocaleString()+' active EOIs</strong>. '+
+    (tier===4?'This is a Tier 4 oversupplied occupation — competition is high and every additional point matters.':
+     tier===1?'As a Tier 1 critical shortage occupation, you receive the highest invitation priority — pool size is less of a barrier than for other tiers.':
+     'Here is how your profile compares to typical applicants in your pool.');
+
+  var competitors=[
+    {name:'You',pts:total,aus:S.auswork,eng:S.eng,you:true},
+    {name:'Above cutoff +10',pts:cut+10,aus:10,eng:20,you:false},
+    {name:'At cutoff',pts:cut,aus:5,eng:10,you:false},
+    {name:'Below cutoff -5',pts:Math.max(0,cut-5),aus:0,eng:10,you:false}
+  ];
+
+  var maxPts=Math.max.apply(null,competitors.map(function(c){return c.pts;}));
+  document.getElementById('comp-grid').innerHTML=competitors.map(function(c){
+    var isAbove=!c.you&&c.pts>total;
+    var isBelow=!c.you&&c.pts<total;
+    var badgeCls=c.you?'cb-you':isAbove?'cb-above':'cb-below';
+    var badgeLabel=c.you?'You':isAbove?'Ahead':'Behind';
+    var pctPts=Math.round(c.pts/maxPts*100);
+    var pctAus=Math.round(c.aus/20*100);
+    var pctEng=Math.round(c.eng/20*100);
+    return '<div class="comp-card'+(c.you?' you':'')+'">'+
+      '<div class="comp-top"><span class="comp-name">'+c.name+'</span><span class="comp-badge '+badgeCls+'">'+badgeLabel+'</span></div>'+
+      '<div class="comp-bars">'+
+        '<div class="cb-row"><span class="cb-lbl">Points</span><div class="cb-track"><div class="cb-fill" style="width:'+pctPts+'%;background:'+(c.you?'var(--teal)':'rgba(255,255,255,0.12)')+'"></div></div><span class="cb-val">'+c.pts+'</span></div>'+
+        '<div class="cb-row"><span class="cb-lbl">Aus exp</span><div class="cb-track"><div class="cb-fill" style="width:'+pctAus+'%;background:'+(c.you?'var(--teal)':'rgba(255,255,255,0.12)')+'"></div></div><span class="cb-val">'+c.aus+'</span></div>'+
+        '<div class="cb-row"><span class="cb-lbl">English</span><div class="cb-track"><div class="cb-fill" style="width:'+pctEng+'%;background:'+(c.you?'var(--teal)':'rgba(255,255,255,0.12)')+'"></div></div><span class="cb-val">'+c.eng+'</span></div>'+
+      '</div></div>';
+  }).join('');
+}
+
+// ── SECTION 5: SIMULATOR ─────────────────────────────────────────
+var simToggles={naati:false,ielts8:false,regional:false,auswork1:false,auswork3:false};
+
+function buildSimulator(total,o,cut){
+  var base=total;
+  var opts=[
+    {id:'naati',label:'NAATI CCL +5pts',delta:5,cost:'$800 · 3 months',active:S.naati>0},
+    {id:'ielts8',label:'IELTS 8+ Superior +10pts',delta:10,cost:'$420–$440 · test fee',active:S.eng>=20},
+    {id:'regional',label:'Regional nomination 491 +15pts',delta:15,cost:'Requires regional move',active:false},
+    {id:'auswork1',label:'1 more year Australian work +5pts',delta:5,cost:'Time-based',active:false},
+    {id:'auswork3',label:'3+ years Australian work +10pts',delta:10,cost:'Time-based',active:false}
+  ];
+
+  // mark already active
+  opts.forEach(function(op){simToggles[op.id]=op.active;});
+
+  document.getElementById('sim-toggles').innerHTML=opts.map(function(op){
+    return '<button class="sim-tog-btn'+(op.active?' on':'')+'" id="stog-'+op.id+'" onclick="toggleSim(\''+op.id+'\','+op.delta+')">'+op.label+'</button>';
+  }).join('');
+
+  updateSimResult(base,o,cut);
+}
+
+function toggleSim(id,delta){
+  simToggles[id]=!simToggles[id];
+  document.getElementById('stog-'+id).classList.toggle('on',simToggles[id]);
+  var base=totalPts();
+  var o=OD[S.occ]||OD.other;
+  var cut=S.visa==='189'?(o.cutoff189||999):o.cutoff190;
+  updateSimResult(base,o,cut);
+}
+
+function updateSimResult(base,o,cut){
+  var bonus=0;
+  if(simToggles.naati&&S.naati===0)bonus+=5;
+  if(simToggles.ielts8&&S.eng<20)bonus+=10;
+  if(simToggles.regional)bonus+=15;
+  if(simToggles.auswork1)bonus+=5;
+  if(simToggles.auswork3)bonus+=10;
+  var newTotal=base+bonus;
+  var newGap=cut-newTotal;
+  var col=newGap<=0?'var(--green)':newGap<=5?'var(--amber)':'#f87171';
+  var status=newGap<=0?'✓ Above cutoff — ready to lodge EOI':newGap<=5?'◐ '+newGap+' pts below cutoff — very close':'✗ '+newGap+' pts below cutoff';
+  document.getElementById('sim-result').innerHTML=
+    '<div class="sr-row"><span class="sr-label">Base points</span><span class="sr-val" style="color:var(--teal)">'+base+' pts</span></div>'+
+    '<div class="sr-row"><span class="sr-label">Bonus from selected actions</span><span class="sr-val" style="color:var(--amber)">+'+(bonus||0)+' pts</span></div>'+
+    '<div class="sr-row"><span class="sr-label">New total</span><span class="sr-val" style="color:var(--text);font-size:1.1rem">'+newTotal+' pts</span></div>'+
+    '<div class="sr-row"><span class="sr-label">Cutoff ('+S.visa+')</span><span class="sr-val">'+cut+' pts</span></div>'+
+    '<div class="sr-row"><span class="sr-label">Status</span><span class="sr-val" style="color:'+col+'">'+status+'</span></div>'+
+    (bonus>0?'<div style="margin-top:0.75rem;padding:0.75rem;background:var(--td);border:1px solid var(--tb);border-radius:10px;font-size:0.78rem;color:var(--muted2);line-height:1.6">With these actions your score improves by <strong style="color:var(--teal)">'+bonus+' pts</strong> to <strong style="color:var(--teal)">'+newTotal+' pts</strong> — '+(newGap<=0?'putting you above the cutoff and ready to lodge EOI.':'still '+newGap+' pts below cutoff.')+'</div>':'');
+}
+
+function resetReport(){
+  document.getElementById('form-section').style.display='block';
+  document.getElementById('report-section').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  toStep(1);
+}
+</script>
+</body>
+</html>
