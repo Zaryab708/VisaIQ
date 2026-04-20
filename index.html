@@ -62,7 +62,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* HERO */
 .hero{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 6rem;min-height:88vh;}
-.h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(3rem,7vw,5.8rem);font-weight:300;line-height:1.02;letter-spacing:-0.03em;margin-bottom:1.5rem;max-width:820px;animation:up 0.7s ease both;}
+.h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:300;line-height:1.08;letter-spacing:-0.03em;margin-bottom:1.5rem;max-width:820px;animation:up 0.7s ease both;}
 .h1 em{font-style:italic;color:var(--teal)}
 .h1-sub{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:0.62em;color:var(--muted2);margin-top:0.4rem;letter-spacing:-0.01em;}
 .selector{width:100%;max-width:540px;animation:up 0.7s 0.15s ease both;margin-bottom:1.25rem}
@@ -402,6 +402,55 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;display:grid;grid-
 
 <hr class="div" style="margin-top:5rem">
 
+<!-- INTELLIGENCE TOOLS -->
+<section class="section">
+  <div class="reveal">
+    <span class="sec-tag">Intelligence Tools</span>
+    <h2 class="sec-h">Everything you need<br>to make the <em>right call.</em></h2>
+    <p class="sec-sub">Free tools built on real DHA data. No guesswork. No generic advice.</p>
+  </div>
+  <div class="tools-grid reveal">
+    <a href="/tool" class="tool-card featured">
+      <div class="tc-top"><div class="tc-icon">🎯</div><div class="tc-badge">Most used</div></div>
+      <div class="tc-name">PR Intelligence Report</div>
+      <div class="tc-desc">Your queue position, cutoff status, probability, and the one action to take this week. Based on real DHA round data.</div>
+      <div class="tc-link">Run my report →</div>
+    </a>
+    <a href="/points-calculator" class="tool-card">
+      <div class="tc-top"><div class="tc-icon">🧮</div></div>
+      <div class="tc-name">Points Calculator</div>
+      <div class="tc-desc">Official DHA points test. Every category, every rule, every bonus point explained.</div>
+      <div class="tc-link">Calculate →</div>
+    </a>
+    <a href="/occupation-demand" class="tool-card">
+      <div class="tc-top"><div class="tc-icon">📊</div></div>
+      <div class="tc-name">Occupation Demand Score</div>
+      <div class="tc-desc">Every occupation scored across shortage severity, 189 tier, state nomination priority and salary.</div>
+      <div class="tc-link">Check my occupation →</div>
+    </a>
+    <a href="/state-comparator" class="tool-card">
+      <div class="tc-top"><div class="tc-icon">🗺️</div></div>
+      <div class="tc-name">State Comparator</div>
+      <div class="tc-desc">All 8 states side by side — cutoffs, processing times, which occupations each state is currently nominating.</div>
+      <div class="tc-link">Compare states →</div>
+    </a>
+    <a href="/rounds" class="tool-card">
+      <div class="tc-top"><div class="tc-icon">📡</div></div>
+      <div class="tc-name">Live Round Tracker</div>
+      <div class="tc-desc">Federal and state invitation round status updated within 48hrs. Know the moment a round runs for your state.</div>
+      <div class="tc-link">Check rounds →</div>
+    </a>
+    <a href="/482-to-186" class="tool-card">
+      <div class="tc-top"><div class="tc-icon">🔄</div></div>
+      <div class="tc-name">482 → 186 Calculator</div>
+      <div class="tc-desc">On a 482 visa? Calculate your pathway to the 186 permanent visa — TRT stream eligibility and timeline.</div>
+      <div class="tc-link">Check eligibility →</div>
+    </a>
+  </div>
+</section>
+
+<hr class="div">
+
 <!-- RECENT OUTCOMES -->
 <section class="section">
   <div class="reveal">
@@ -472,55 +521,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;display:grid;grid-
       <div class="how-t">You get your exact picture</div>
       <div class="how-d">Queue position. Cutoff trend. Probability range. The one action to take this week. Specific — never generic.</div>
     </div>
-  </div>
-</section>
-
-<hr class="div">
-
-<!-- INTELLIGENCE TOOLS -->
-<section class="section">
-  <div class="reveal">
-    <span class="sec-tag">Intelligence Tools</span>
-    <h2 class="sec-h">Everything you need<br>to make the <em>right call.</em></h2>
-    <p class="sec-sub">Free tools built on real DHA data. No guesswork. No generic advice.</p>
-  </div>
-  <div class="tools-grid reveal">
-    <a href="/tool" class="tool-card featured">
-      <div class="tc-top"><div class="tc-icon">🎯</div><div class="tc-badge">Most used</div></div>
-      <div class="tc-name">PR Intelligence Report</div>
-      <div class="tc-desc">Your queue position, cutoff status, probability, and the one action to take this week. Based on real DHA round data.</div>
-      <div class="tc-link">Run my report →</div>
-    </a>
-    <a href="/points-calculator" class="tool-card">
-      <div class="tc-top"><div class="tc-icon">🧮</div></div>
-      <div class="tc-name">Points Calculator</div>
-      <div class="tc-desc">Official DHA points test. Every category, every rule, every bonus point explained.</div>
-      <div class="tc-link">Calculate →</div>
-    </a>
-    <a href="/occupation-demand" class="tool-card">
-      <div class="tc-top"><div class="tc-icon">📊</div></div>
-      <div class="tc-name">Occupation Demand Score</div>
-      <div class="tc-desc">Every occupation scored across shortage severity, 189 tier, state nomination priority and salary.</div>
-      <div class="tc-link">Check my occupation →</div>
-    </a>
-    <a href="/state-comparator" class="tool-card">
-      <div class="tc-top"><div class="tc-icon">🗺️</div></div>
-      <div class="tc-name">State Comparator</div>
-      <div class="tc-desc">All 8 states side by side — cutoffs, processing times, which occupations each state is currently nominating.</div>
-      <div class="tc-link">Compare states →</div>
-    </a>
-    <a href="/rounds" class="tool-card">
-      <div class="tc-top"><div class="tc-icon">📡</div></div>
-      <div class="tc-name">Live Round Tracker</div>
-      <div class="tc-desc">Federal and state invitation round status updated within 48hrs. Know the moment a round runs for your state.</div>
-      <div class="tc-link">Check rounds →</div>
-    </a>
-    <a href="/482-to-186" class="tool-card">
-      <div class="tc-top"><div class="tc-icon">🔄</div></div>
-      <div class="tc-name">482 → 186 Calculator</div>
-      <div class="tc-desc">On a 482 visa? Calculate your pathway to the 186 permanent visa — TRT stream eligibility and timeline.</div>
-      <div class="tc-link">Check eligibility →</div>
-    </a>
   </div>
 </section>
 
