@@ -269,20 +269,6 @@ footer{background:var(--navy);padding:4rem 4% 2rem}
 .hi4{animation:hi 0.8s 0.55s ease both}
 .hi5{animation:hi 0.8s 0.7s ease both}
 </style>
-<script>
-let dest='/tool';
-function pick(btn,label,link){
-  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('cta-text').textContent=label;
-  dest=link;
-}
-function go(){window.location.href=dest;}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
 </head>
 <body>
 
@@ -320,7 +306,6 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     <a href="/outcomes">Outcomes</a>
   </div>
   <div class="nav-r">
-
     <a href="/tool" class="nav-cta">Check My Score →</a>
   </div>
 </nav>
@@ -414,7 +399,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
           <span class="sp-row-val">SA 190 — 65 pts min</span>
         </div>
       </div>
-      <button onclick="openModal()" class="sp-cta" style="width:100%;cursor:pointer;border:none">Get my full report →</button>
+      <button onclick="openModal()" class="sp-cta" style="width:100%;cursor:pointer;border:none;font-family:'Outfit',sans-serif">Get my full report →</button>
     </div>
   </div>
 </section>
@@ -717,34 +702,39 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   <p class="footer-dis">VisaIQ provides data-informed research based on publicly available DHA information. This is not migration advice. For advice specific to your circumstances consult a MARA-registered migration agent. Always verify current information at immi.homeaffairs.gov.au</p>
 </footer>
 
+<script>
+let dest='/tool';
+function pick(btn,label,link){
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cta-text').textContent=label;
+  dest=link;
+}
+function go(){window.location.href=dest;}
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
 <!-- EMAIL CAPTURE MODAL -->
-<div id="email-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:1rem">
-  <!-- Backdrop -->
+<div id="email-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;align-items:center;justify-content:center;padding:1rem;flex-direction:column">
   <div onclick="closeModal()" style="position:absolute;inset:0;background:rgba(11,28,46,0.85);backdrop-filter:blur(6px)"></div>
-  <!-- Modal card -->
   <div style="position:relative;z-index:1;background:#fff;border-radius:20px;padding:2.25rem;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:modalIn 0.3s ease">
-    <!-- Close -->
     <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;color:#6B7A8D;cursor:pointer;line-height:1">✕</button>
-
-    <!-- Icon -->
     <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem">🎯</div>
-
-    <!-- Heading -->
     <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#0B1C2E;line-height:1.15;margin-bottom:0.5rem">Your full PR report<br><em style="font-style:italic;color:#C8913A">is ready.</em></h2>
-    <p style="font-size:0.82rem;color:#6B7A8D;line-height:1.65;margin-bottom:1.5rem">Enter your email to get your complete intelligence report — queue position, EOI decision, what-if simulator and your occupation outlook. Free. Takes 10 seconds.</p>
-
-    <!-- What you get -->
+    <p style="font-size:0.82rem;color:#6B7A8D;line-height:1.65;margin-bottom:1.5rem">Enter your email to get your complete intelligence report — queue position, EOI decision, what-if simulator and occupation outlook. Free.</p>
     <div style="background:#F5F1EA;border-radius:10px;padding:0.85rem 1rem;margin-bottom:1.25rem">
       <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6B7A8D;margin-bottom:0.5rem">What's in your report</div>
       <div style="display:flex;flex-direction:column;gap:0.3rem">
         <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Your exact queue position and percentile</div>
         <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> EOI decision — lodge now or wait</div>
-        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> What-if simulator — see how each action changes your score</div>
-        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Notified when cutoffs change for your occupation</div>
+        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> What-if simulator for your top score improvements</div>
+        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Alerts when cutoffs change for your occupation</div>
       </div>
     </div>
-
-    <!-- Form -->
     <div id="modal-form">
       <input type="email" id="modal-email" placeholder="your@email.com"
         style="width:100%;padding:0.85rem 1rem;border:1.5px solid #E3DDCF;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:#0B1C2E;outline:none;margin-bottom:0.65rem;transition:border-color 0.2s;background:#fff"
@@ -757,14 +747,12 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
         onmouseout="this.style.background='#C8913A'">
         Get my full report →
       </button>
-      <p style="font-size:0.68rem;color:#6B7A8D;text-align:center;margin-top:0.65rem">No spam. Unsubscribe any time. We only email when something changes for your occupation.</p>
+      <p style="font-size:0.68rem;color:#6B7A8D;text-align:center;margin-top:0.65rem">No spam. Unsubscribe any time.</p>
     </div>
-
-    <!-- Success state -->
     <div id="modal-success" style="display:none;text-align:center;padding:1rem 0">
       <div style="font-size:2rem;margin-bottom:0.75rem">✅</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0B1C2E;margin-bottom:0.4rem">You're in.</div>
-      <div style="font-size:0.82rem;color:#6B7A8D;margin-bottom:1.25rem;line-height:1.6">Check your inbox — your full report is on its way. Taking you to the tool now.</div>
+      <div style="font-size:0.82rem;color:#6B7A8D;margin-bottom:1.25rem;line-height:1.6">Taking you to your full report now.</div>
       <div style="width:100%;background:#E3DDCF;border-radius:100px;height:4px;overflow:hidden">
         <div id="redirect-bar" style="width:0%;height:100%;background:#C8913A;border-radius:100px;transition:width 3s linear"></div>
       </div>
@@ -774,76 +762,54 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 <style>
 @keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-#email-modal.open{display:flex!important}
 </style>
-
 
 <script>
 function openModal(){
-  document.getElementById('email-modal').classList.add('open');
-  document.getElementById('email-modal').style.display='flex';
+  var m=document.getElementById('email-modal');
+  m.style.display='flex';
+  m.style.alignItems='center';
+  m.style.justifyContent='center';
+  // Reset form state
+  document.getElementById('modal-form').style.display='block';
+  document.getElementById('modal-success').style.display='none';
+  document.getElementById('modal-email').value='';
+  document.getElementById('modal-email').style.borderColor='#E3DDCF';
   setTimeout(function(){document.getElementById('modal-email').focus();},200);
 }
-
 function closeModal(){
-  document.getElementById('email-modal').classList.remove('open');
   document.getElementById('email-modal').style.display='none';
 }
-
 function submitModal(){
-  var email = document.getElementById('modal-email').value.trim();
-  if(!email || !email.includes('@')){
+  var email=document.getElementById('modal-email').value.trim();
+  if(!email||!email.includes('@')){
     document.getElementById('modal-email').style.borderColor='#EF4444';
     document.getElementById('modal-email').focus();
     return;
   }
-
-  // Store email
   try{
-    var leads = JSON.parse(localStorage.getItem('visaiq_leads')||'[]');
-    leads.push({email:email, source:'homepage_modal', ts:new Date().toISOString()});
-    localStorage.setItem('visaiq_leads', JSON.stringify(leads));
+    var leads=JSON.parse(localStorage.getItem('visaiq_leads')||'[]');
+    leads.push({email:email,source:'homepage_modal',ts:new Date().toISOString()});
+    localStorage.setItem('visaiq_leads',JSON.stringify(leads));
   }catch(e){}
-
-  // Send to API
   try{
-    fetch('/api/leads',{
+    fetch('https://connect.mailerlite.com/api/subscribers',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email:email, source:'homepage_modal', page:'index', ts:new Date().toISOString()})
+      headers:{
+        'Content-Type':'application/json',
+        'Accept':'application/json',
+        'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTMyNjcxN2U3Mzk1MTUwNDc5NThjZDlmZjIxYTU1ZDNiN2EwM2YzMDJjODYwNzMyZDMxM2YzZGFjZjdjZmUyNDYyNDZkZDFjYTZmNDVkYmYiLCJpYXQiOjE3Nzc3NjE2MzUuMTQ0MDAyLCJuYmYiOjE3Nzc3NjE2MzUuMTQ0MDA0LCJleHAiOjQ5MzM0MzUyMzUuMTM4MDE2LCJzdWIiOiIyMzMwODQzIiwic2NvcGVzIjpbXX0.LjdJOz-mvQ3lotIqYceD_Q2qkJwwrj8ac4wCfqzpgaGnph6yhxc5vps8eLJDEDU-QLtOKeRPiQMmQ4Bl3qS2JmFV-yOzu5b_nRFL4ktDew7haToblUULJBiviv7JeGY81FNKMnS8mzBL7Kgxa9ilJex24XD8FjCzUfRch9ZmK05yIBNu_XoAX090YkHKgJV7TCRFAywXlWvvujV7ma1oocZugBIGXK9nyT0mqNHzFktITw7btJDrR_yIG0rwYSGjHOKIhbeoDjCU5j6wFHm9Jyqe2NMVSL5BlSluIJ01MprgTOKCN_LK1dnIrqbdeAoB5I9X6Jm2NHcR4-dUD5mLeOnjPgGQdBd0hJS2lnicv1d79TfbBwNoD_jDdFOjAoY13r0V_9-pfItQ3enAS9Mjv3egvASAj_Lom9_buHpJ9uP4VmntpJqKK57L0_30NllxoNetAvWiHRaWYECie_hfCNUPfU2Tj0p5OWG2euWMLZgT7hfQ-rOYHGVZPtapA3tLGnMHHJDP6DuRnpRajiJ5dVh173X8POVz0WtBX7uouHP2v91sCqFfb_xSOHOm1rYXjwAhK1YCSfMDTiW0u5vJCtN0zWkQfciv2GwbgWeNdvuyC3cc33F28e9BbZ3LP71JEZy3Xw7JNxa7Ib0cTfoyv3QpN9kUSXGnp7w1itWTGSw'
+      },
+      body:JSON.stringify({email:email,groups:['186396468848887410'],fields:{source:'homepage_modal'}})
     }).catch(function(){});
   }catch(e){}
-
-  // Also send to Formspree as backup (replace YOUR_FORM_ID with actual ID)
-  try{
-    fetch('https://formspree.io/f/YOUR_FORM_ID',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({email:email, source:'homepage_modal'})
-    }).catch(function(){});
-  }catch(e){}
-
-  // Show success
   document.getElementById('modal-form').style.display='none';
   document.getElementById('modal-success').style.display='block';
-
-  // Animate redirect bar
-  setTimeout(function(){
-    document.getElementById('redirect-bar').style.width='100%';
-  },100);
-
-  // Redirect to tool after 3 seconds
-  setTimeout(function(){
-    window.location.href='/tool';
-  },3200);
+  setTimeout(function(){document.getElementById('redirect-bar').style.width='100%';},100);
+  setTimeout(function(){window.location.href='/tool';},3200);
 }
-
-// Close on escape key
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') closeModal();
-});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 </script>
-
 
 </body>
 </html>
