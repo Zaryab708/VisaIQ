@@ -30,10 +30,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#070F1C;--bg2:#0D1B2E;--bg3:#0A1525;--teal:#00C896;--td:rgba(0,200,150,0.12);--tb:rgba(0,200,150,0.3);--blue:#4E8EFF;--amber:#F59E0B;--red:#EF4444;--green:#10B981;--text:#E8EDF5;--muted:#7A8FA8;--border:rgba(255,255,255,0.07)}
+:root{
+  --bg:#0B1C2E;--bg2:#12263D;--bg3:#0F1F35;
+  --navy:#0B1C2E;--navy2:#12263D;
+  --gold:#C8913A;--gold2:#E0A94E;--gold3:rgba(200,145,58,0.15);--gold4:rgba(200,145,58,0.3);
+  --teal:#00C896;--teal2:#00E8AF;--td:rgba(0,200,150,0.10);--tb:rgba(0,200,150,0.25);
+  --amber:#F59E0B;--red:#EF4444;--green:#10B981;
+  --text:#F0F5FF;--muted:#7A93B4;--border:rgba(255,255,255,0.07)
+}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;min-height:100vh}
 nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid var(--border);position:sticky;top:36px;background:rgba(7,15,28,0.96);backdrop-filter:blur(16px);z-index:100}
 .nl{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--teal);text-decoration:none}
@@ -43,14 +50,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .ncta{background:var(--teal);color:#000!important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
 .hero{background:linear-gradient(160deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem}
 .hero-inner{max-width:860px;margin:0 auto}
-.eyebrow{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:0.5rem}
-h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem}
-h1 em{font-style:italic;color:var(--teal)}
+.eyebrow{font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.1;margin-bottom:0.5rem}
+h1 em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:0.88rem;color:var(--muted);max-width:560px;line-height:1.7}
 .wrap{max-width:860px;margin:0 auto;padding:2rem 1.5rem 6rem}
 .section{margin-bottom:2.75rem}
-.sec-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:0.35rem}
-.sec-title em{font-style:italic;color:var(--teal)}
+.sec-title{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:0.35rem}
+.sec-title em{font-style:italic;color:var(--gold)}
 .sec-desc{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:0.75rem}
 .field label{display:block;font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
@@ -108,7 +115,7 @@ tr.uo td:first-child{color:var(--teal);font-weight:700}
 .fa{font-size:0.82rem;color:var(--muted);line-height:1.7;margin-top:0.6rem;display:none}
 .fa.open{display:block}
 .fi.open .fic{transform:rotate(45deg)}
-.cb{background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.05));border:1px solid var(--tb);border-radius:14px;padding:1.75rem;text-align:center}
+.cb{background:linear-gradient(135deg,rgba(200,145,58,0.08),rgba(0,200,150,0.05));border:1px solid rgba(200,145,58,0.25);border-radius:14px;padding:1.75rem;text-align:center}
 .ct{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:0.35rem}
 .cs{font-size:0.82rem;color:var(--muted);line-height:1.6;max-width:480px;margin:0 auto 1.1rem}
 .bp{display:inline-block;padding:0.8rem 1.6rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;text-decoration:none;margin-right:0.5rem;margin-bottom:0.5rem}
@@ -126,16 +133,16 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </script>
 </head>
 <body>
-<nav>
-  <a href="/" class="nl">VisaIQ</a>
-  <div class="nls">
-    <a href="/tool">PR Report</a>
-    <a href="/points-calculator">Points</a>
-    <a href="/student-pathway">Students</a>
-    <a href="/partner-visa">Partner</a>
-    <a href="/rounds">Rounds</a>
-    <a href="/tool" class="ncta">Get My Score →</a>
+<nav style="display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:66px;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:36px;z-index:100">
+  <a href="/" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:500;color:#fff;text-decoration:none;letter-spacing:-0.02em">Visa<span style="color:var(--gold)">IQ</span></a>
+  <div style="display:flex;align-items:center;gap:0.25rem">
+    <a href="/tool" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;padding:0.4rem 0.8rem;border-radius:6px;transition:all 0.2s">PR Report</a>
+    <a href="/points-calculator" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;padding:0.4rem 0.8rem;border-radius:6px">Points</a>
+    <a href="/occupation-demand" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;padding:0.4rem 0.8rem;border-radius:6px">Occupations</a>
+    <a href="/state-comparator" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;padding:0.4rem 0.8rem;border-radius:6px">States</a>
+    <a href="/outcomes" style="color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;padding:0.4rem 0.8rem;border-radius:6px">Outcomes</a>
   </div>
+  <a href="/tool" style="background:var(--gold);color:var(--navy);padding:0.55rem 1.2rem;border-radius:6px;font-size:0.84rem;font-weight:700;text-decoration:none;font-family:'Outfit',sans-serif">Check My Score →</a>
 </nav>
 <div class="hero">
   <div class="hero-inner">
@@ -156,27 +163,68 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
     <div class="fgrid">
       <div class="field"><label>Occupation</label>
         <select id="qo">
-          <option value="">Select&hellip;</option>
-          <option value="registered_nurse">Registered Nurse</option>
-          <option value="general_practitioner">General Practitioner</option>
-          <option value="physiotherapist">Physiotherapist</option>
-          <option value="pharmacist">Pharmacist</option>
-          <option value="aged_care_worker">Aged Care Worker</option>
-          <option value="early_childhood_teacher">Early Childhood Teacher</option>
-          <option value="teacher_primary">Primary School Teacher</option>
-          <option value="teacher_secondary">Secondary School Teacher</option>
-          <option value="social_worker">Social Worker</option>
-          <option value="civil_engineer">Civil Engineer</option>
-          <option value="mechanical_engineer">Mechanical Engineer</option>
-          <option value="electrical_engineer">Electrical Engineer</option>
-          <option value="electrician">Electrician</option>
-          <option value="plumber">Plumber</option>
-          <option value="chef">Cook / Chef</option>
-          <option value="software_engineer">Software Engineer</option>
-          <option value="ict_manager">ICT Manager</option>
-          <option value="data_analyst">Data Analyst / ICT BA</option>
-          <option value="accountant">Accountant</option>
-          <option value="auditor">External Auditor</option>
+          <option value="">Select occupation…</option>
+          <optgroup label="🏥 Healthcare — Tier 1">
+            <option value="registered_nurse">Registered Nurse</option>
+            <option value="nurse_practitioner">Nurse Practitioner</option>
+            <option value="enrolled_nurse">Enrolled Nurse</option>
+            <option value="midwife">Midwife</option>
+            <option value="general_practitioner">General Practitioner</option>
+            <option value="medical_specialist">Medical Specialist</option>
+            <option value="psychiatrist">Psychiatrist</option>
+            <option value="physiotherapist">Physiotherapist</option>
+            <option value="occupational_therapist">Occupational Therapist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="dentist">Dentist</option>
+            <option value="speech_pathologist">Speech Pathologist</option>
+            <option value="radiographer">Radiographer</option>
+            <option value="sonographer">Sonographer</option>
+            <option value="paramedic">Paramedic</option>
+            <option value="dietitian">Dietitian</option>
+            <option value="podiatrist">Podiatrist</option>
+            <option value="optometrist">Optometrist</option>
+            <option value="aged_care_worker">Aged Care Worker</option>
+            <option value="veterinarian">Veterinarian</option>
+          </optgroup>
+          <optgroup label="📚 Education &amp; Social — Tier 2">
+            <option value="early_childhood_teacher">Early Childhood Teacher</option>
+            <option value="teacher_primary">Primary School Teacher</option>
+            <option value="teacher_secondary">Secondary School Teacher</option>
+            <option value="teacher_stem">STEM Teacher</option>
+            <option value="special_ed_teacher">Special Education Teacher</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="social_worker">Social Worker</option>
+            <option value="counsellor">Counsellor</option>
+          </optgroup>
+          <optgroup label="🏗️ Engineering &amp; Trades — Tier 3">
+            <option value="civil_engineer">Civil Engineer</option>
+            <option value="mechanical_engineer">Mechanical Engineer</option>
+            <option value="electrical_engineer">Electrical Engineer</option>
+            <option value="structural_engineer">Structural Engineer</option>
+            <option value="mining_engineer">Mining Engineer</option>
+            <option value="architect">Architect</option>
+            <option value="surveyor">Surveyor</option>
+            <option value="environmental_scientist">Environmental Scientist</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="welder">Welder</option>
+            <option value="motor_mechanic">Motor Mechanic</option>
+            <option value="chef">Cook / Chef</option>
+          </optgroup>
+          <optgroup label="💻 ICT &amp; Accounting — Tier 4">
+            <option value="software_engineer">Software Engineer</option>
+            <option value="software_developer">Software Developer</option>
+            <option value="ict_manager">ICT Manager</option>
+            <option value="systems_analyst">Systems Analyst</option>
+            <option value="network_engineer">Network Engineer</option>
+            <option value="data_analyst">Data Analyst / ICT BA</option>
+            <option value="data_scientist">Data Scientist</option>
+            <option value="cybersecurity">Cybersecurity Analyst</option>
+            <option value="accountant">Accountant</option>
+            <option value="management_accountant">Management Accountant</option>
+            <option value="auditor">External Auditor</option>
+          </optgroup>
         </select>
       </div>
       <div class="field"><label>Points score</label><input type="number" id="qp" placeholder="e.g. 75" min="65" max="130"></div>
@@ -189,15 +237,77 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
       </div>
     </div>
     <button class="btn-go" onclick="cq()">Show my queue position &rarr;</button>
-    <div id="qr">
-      <div class="qr-grid">
-        <div class="qc"><div class="qv" id="qa">&#8212;</div><div class="ql">Estimated EOIs ahead of you in your points band</div></div>
-        <div class="qc"><div class="qv" id="qpc">&#8212;</div><div class="ql">You are ahead of this percentage of your occupation pool</div></div>
-        <div class="qc"><div class="qv" id="qw">&#8212;</div><div class="ql">Estimated wait at current invitation rates</div></div>
-        <div class="qc"><div class="qv" id="qpl">&#8212;</div><div class="ql">Total EOIs in your occupation pool</div></div>
+    <div id="qr" style="margin-top:1.25rem">
+
+      <!-- VERDICT BANNER -->
+      <div id="verdict-banner" style="border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div id="verdict-icon" style="font-size:1.5rem;flex-shrink:0"></div>
+        <div>
+          <div id="verdict-title" style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:0.2rem"></div>
+          <div id="verdict-sub" style="font-size:0.78rem;opacity:0.8;line-height:1.5"></div>
+        </div>
       </div>
-      <div class="qm" id="qmv"></div>
-      <div class="dn">Based on DHA SkillSelect December 2025 quarterly report and community submitted outcomes. Pool sizes are estimates. Confidence: Moderate. <a href="/methodology" style="color:var(--teal)">Methodology &rarr;</a></div>
+
+      <!-- SCORE CARDS ROW -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;margin-bottom:1rem">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.9rem 1rem;text-align:center">
+          <div id="qa" style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--teal);line-height:1;margin-bottom:0.2rem">—</div>
+          <div style="font-size:0.62rem;color:var(--muted);line-height:1.4">Ahead of you</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.9rem 1rem;text-align:center">
+          <div id="qpc" style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.2rem">—</div>
+          <div style="font-size:0.62rem;color:var(--muted);line-height:1.4">Your percentile</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.9rem 1rem;text-align:center">
+          <div id="qw" style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.2rem">—</div>
+          <div style="font-size:0.62rem;color:var(--muted);line-height:1.4">Est. wait time</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.9rem 1rem;text-align:center">
+          <div id="qpl" style="font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.2rem">—</div>
+          <div style="font-size:0.62rem;color:var(--muted);line-height:1.4">Total in pool</div>
+        </div>
+      </div>
+
+      <!-- VISUAL QUEUE BAR -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+        <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>
+          Your position in the queue
+        </div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.05);border-radius:100px;margin-bottom:0.75rem;overflow:visible">
+          <div id="q-fill" style="height:100%;border-radius:100px;background:linear-gradient(90deg,var(--navy2),var(--teal));width:0%;transition:width 1.2s ease"></div>
+          <div id="q-pin" style="position:absolute;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:var(--teal);border:3px solid var(--bg);box-shadow:0 0 16px rgba(0,200,150,0.7);left:0%;transition:left 1.2s ease;z-index:2;display:flex;align-items:center;justify-content:center">
+            <div style="width:6px;height:6px;border-radius:50%;background:#000"></div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--muted)">
+          <span id="q-behind" style="display:flex;align-items:center;gap:0.3rem"><span style="color:rgba(255,255,255,0.3)">←</span> — behind you</span>
+          <span style="color:var(--teal);font-weight:700;font-size:0.72rem">YOU</span>
+          <span id="q-ahead" style="display:flex;align-items:center;gap:0.3rem">— ahead of you <span style="color:rgba(255,255,255,0.3)">→</span></span>
+        </div>
+      </div>
+
+      <!-- CUTOFF HISTORY CHART -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+        <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block"></span>
+          189 cutoff history — last 5 invitation rounds
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:8px;height:80px;margin-bottom:0.5rem;padding:0 4px" id="cutoff-bars"></div>
+        <div style="display:flex;gap:8px;font-size:0.6rem;color:var(--muted);padding:0 4px" id="cutoff-labels"></div>
+        <div id="cutoff-note" style="font-size:0.68rem;color:var(--muted);margin-top:0.65rem;font-style:italic"></div>
+      </div>
+
+      <!-- POOL TREND -->
+      <div class="qm" id="qmv" style="margin-bottom:0.75rem"></div>
+
+      <!-- ACTION RECOMMENDATION -->
+      <div id="action-box" style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.75rem">
+        <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.5rem">Recommended action</div>
+        <div id="action-text" style="font-size:0.85rem;color:var(--text);line-height:1.65"></div>
+      </div>
+
+      <div style="font-size:0.67rem;color:var(--muted);font-style:italic">Based on DHA SkillSelect December 2025 quarterly report and Nov 2025 / Mar 2026 invitation rounds. Pool sizes are estimates. <a href="/methodology" style="color:var(--teal)">Methodology →</a></div>
     </div>
   </div>
 </div>
@@ -250,26 +360,68 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
       <div class="field"><label>Your current points</label><input type="number" id="dp" placeholder="e.g. 78" min="45" max="130"></div>
       <div class="field"><label>Occupation</label>
         <select id="do2">
-          <option value="">Select&hellip;</option>
-          <option value="registered_nurse">Registered Nurse</option>
-          <option value="general_practitioner">General Practitioner</option>
-          <option value="physiotherapist">Physiotherapist</option>
-          <option value="pharmacist">Pharmacist</option>
-          <option value="aged_care_worker">Aged Care Worker</option>
-          <option value="early_childhood_teacher">Early Childhood Teacher</option>
-          <option value="teacher_primary">Primary School Teacher</option>
-          <option value="teacher_secondary">Secondary School Teacher</option>
-          <option value="social_worker">Social Worker</option>
-          <option value="civil_engineer">Civil Engineer</option>
-          <option value="mechanical_engineer">Mechanical Engineer</option>
-          <option value="electrical_engineer">Electrical Engineer</option>
-          <option value="electrician">Electrician</option>
-          <option value="plumber">Plumber</option>
-          <option value="software_engineer">Software Engineer</option>
-          <option value="ict_manager">ICT Manager</option>
-          <option value="data_analyst">Data Analyst / ICT BA</option>
-          <option value="accountant">Accountant</option>
-          <option value="auditor">External Auditor</option>
+          <option value="">Select occupation…</option>
+          <optgroup label="🏥 Healthcare — Tier 1">
+            <option value="registered_nurse">Registered Nurse</option>
+            <option value="nurse_practitioner">Nurse Practitioner</option>
+            <option value="enrolled_nurse">Enrolled Nurse</option>
+            <option value="midwife">Midwife</option>
+            <option value="general_practitioner">General Practitioner</option>
+            <option value="medical_specialist">Medical Specialist</option>
+            <option value="psychiatrist">Psychiatrist</option>
+            <option value="physiotherapist">Physiotherapist</option>
+            <option value="occupational_therapist">Occupational Therapist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="dentist">Dentist</option>
+            <option value="speech_pathologist">Speech Pathologist</option>
+            <option value="radiographer">Radiographer</option>
+            <option value="sonographer">Sonographer</option>
+            <option value="paramedic">Paramedic</option>
+            <option value="dietitian">Dietitian</option>
+            <option value="podiatrist">Podiatrist</option>
+            <option value="optometrist">Optometrist</option>
+            <option value="aged_care_worker">Aged Care Worker</option>
+            <option value="veterinarian">Veterinarian</option>
+          </optgroup>
+          <optgroup label="📚 Education &amp; Social — Tier 2">
+            <option value="early_childhood_teacher">Early Childhood Teacher</option>
+            <option value="teacher_primary">Primary School Teacher</option>
+            <option value="teacher_secondary">Secondary School Teacher</option>
+            <option value="teacher_stem">STEM Teacher</option>
+            <option value="special_ed_teacher">Special Education Teacher</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="social_worker">Social Worker</option>
+            <option value="counsellor">Counsellor</option>
+          </optgroup>
+          <optgroup label="🏗️ Engineering &amp; Trades — Tier 3">
+            <option value="civil_engineer">Civil Engineer</option>
+            <option value="mechanical_engineer">Mechanical Engineer</option>
+            <option value="electrical_engineer">Electrical Engineer</option>
+            <option value="structural_engineer">Structural Engineer</option>
+            <option value="mining_engineer">Mining Engineer</option>
+            <option value="architect">Architect</option>
+            <option value="surveyor">Surveyor</option>
+            <option value="environmental_scientist">Environmental Scientist</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="welder">Welder</option>
+            <option value="motor_mechanic">Motor Mechanic</option>
+            <option value="chef">Cook / Chef</option>
+          </optgroup>
+          <optgroup label="💻 ICT &amp; Accounting — Tier 4">
+            <option value="software_engineer">Software Engineer</option>
+            <option value="software_developer">Software Developer</option>
+            <option value="ict_manager">ICT Manager</option>
+            <option value="systems_analyst">Systems Analyst</option>
+            <option value="network_engineer">Network Engineer</option>
+            <option value="data_analyst">Data Analyst / ICT BA</option>
+            <option value="data_scientist">Data Scientist</option>
+            <option value="cybersecurity">Cybersecurity Analyst</option>
+            <option value="accountant">Accountant</option>
+            <option value="management_accountant">Management Accountant</option>
+            <option value="auditor">External Auditor</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -399,30 +551,119 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
     © 2026 VisaIQ · <a href="/" style="color:var(--teal)">visaiq.com.au</a> · Not migration advice · <a href="/methodology" style="color:var(--muted)">Methodology</a>
   </div>
 </footer>
-<script src="/ticker.js"></script>
 <script>
+var CUTOFFS={
+  registered_nurse:    [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
+  nurse_practitioner:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  enrolled_nurse:      [{r:"Mar 26",c:70},{r:"Nov 25",c:70},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  midwife:             [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
+  general_practitioner:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  medical_specialist:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
+  psychiatrist:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  physiotherapist:     [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
+  occupational_therapist:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  pharmacist:          [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  dentist:             [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  speech_pathologist:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70}],
+  radiographer:        [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
+  sonographer:         [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
+  paramedic:           [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
+  dietitian:           [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  podiatrist:          [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
+  optometrist:         [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  aged_care_worker:    [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  veterinarian:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  early_childhood_teacher:[{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
+  teacher_primary:     [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
+  teacher_secondary:   [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
+  teacher_stem:        [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
+  special_ed_teacher:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  psychologist:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  social_worker:       [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
+  counsellor:          [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
+  civil_engineer:      [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
+  mechanical_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
+  electrical_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
+  structural_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
+  mining_engineer:     [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  architect:           [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
+  surveyor:            [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  environmental_scientist:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
+  electrician:         [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  plumber:             [{r:"Mar 26",c:70},{r:"Nov 25",c:70},{r:"Jun 25",c:70},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  carpenter:           [{r:"Mar 26",c:70},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  welder:              [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  motor_mechanic:      [{r:"Mar 26",c:70},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  chef:                [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
+  software_engineer:   [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
+  software_developer:  [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
+  ict_manager:         [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
+  systems_analyst:     [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
+  network_engineer:    [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
+  data_analyst:        [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
+  data_scientist:      [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
+  cybersecurity:       [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
+  accountant:          [{r:"Mar 26",c:0},{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0}],
+  management_accountant:[{r:"Mar 26",c:0},{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0}],
+  auditor:             [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}]
+};
+
 var D=[
-  {id:"registered_nurse",    lb:"Registered Nurse",           tier:1,pool:2100, c:75, comp:75, wt:5,  tr:"shrinking"},
-  {id:"general_practitioner",lb:"General Practitioner",       tier:1,pool:820,  c:80, comp:80, wt:5,  tr:"shrinking"},
-  {id:"physiotherapist",     lb:"Physiotherapist",            tier:1,pool:1180, c:85, comp:82, wt:6,  tr:"shrinking"},
-  {id:"pharmacist",          lb:"Pharmacist",                 tier:1,pool:720,  c:80, comp:78, wt:6,  tr:"shrinking"},
-  {id:"aged_care_worker",    lb:"Aged Care Worker",           tier:1,pool:640,  c:65, comp:65, wt:4,  tr:"shrinking"},
-  {id:"early_childhood_teacher",lb:"Early Childhood Teacher", tier:2,pool:2240, c:85, comp:80, wt:11, tr:"stable"},
-  {id:"teacher_primary",     lb:"Primary School Teacher",     tier:2,pool:1820, c:85, comp:80, wt:13, tr:"stable"},
-  {id:"teacher_secondary",   lb:"Secondary School Teacher",   tier:2,pool:2080, c:75, comp:75, wt:13, tr:"stable"},
-  {id:"social_worker",       lb:"Social Worker",              tier:2,pool:2580, c:75, comp:78, wt:15, tr:"stable"},
-  {id:"civil_engineer",      lb:"Civil Engineer",             tier:3,pool:4520, c:85, comp:85, wt:16, tr:"stable"},
-  {id:"mechanical_engineer", lb:"Mechanical Engineer",        tier:3,pool:3140, c:85, comp:85, wt:17, tr:"stable"},
-  {id:"electrical_engineer", lb:"Electrical Engineer",        tier:3,pool:3080, c:85, comp:85, wt:15, tr:"stable"},
-  {id:"electrician",         lb:"Electrician",                tier:3,pool:1580, c:65, comp:65, wt:14, tr:"shrinking"},
-  {id:"plumber",             lb:"Plumber",                    tier:3,pool:1280, c:70, comp:70, wt:15, tr:"stable"},
-  {id:"chef",                lb:"Cook / Chef",                tier:0, pool:3580, c:0,  comp:65, wt:16, tr:"stable"},
-  {id:"software_engineer",   lb:"Software Engineer",          tier:4,pool:8240, c:90, comp:92, wt:21, tr:"growing"},
-  {id:"ict_manager",         lb:"ICT Manager",                tier:4,pool:4180, c:90, comp:90, wt:20, tr:"growing"},
-  {id:"data_analyst",        lb:"Data Analyst / ICT BA",      tier:4,pool:3240, c:90, comp:92, wt:21, tr:"growing"},
-  {id:"accountant",          lb:"Accountant",                 tier:4,pool:15240,c:0,  comp:65, wt:22, tr:"growing"},
-  {id:"auditor",             lb:"External Auditor",           tier:4,pool:2840, c:90, comp:90, wt:20, tr:"growing"}
+  {id:"registered_nurse",         lb:"Registered Nurse",           tier:1,pool:2100, c:75, comp:75, wt:5,  tr:"shrinking"},
+  {id:"nurse_practitioner",       lb:"Nurse Practitioner",         tier:1,pool:980,  c:80, comp:80, wt:5,  tr:"shrinking"},
+  {id:"enrolled_nurse",           lb:"Enrolled Nurse",             tier:1,pool:1420, c:70, comp:70, wt:6,  tr:"shrinking"},
+  {id:"midwife",                  lb:"Midwife",                    tier:1,pool:860,  c:75, comp:75, wt:5,  tr:"shrinking"},
+  {id:"general_practitioner",     lb:"General Practitioner",       tier:1,pool:820,  c:80, comp:80, wt:5,  tr:"shrinking"},
+  {id:"medical_specialist",       lb:"Medical Specialist",         tier:1,pool:540,  c:80, comp:80, wt:4,  tr:"shrinking"},
+  {id:"psychiatrist",             lb:"Psychiatrist",               tier:1,pool:320,  c:80, comp:80, wt:4,  tr:"shrinking"},
+  {id:"physiotherapist",          lb:"Physiotherapist",            tier:1,pool:1180, c:85, comp:82, wt:6,  tr:"shrinking"},
+  {id:"occupational_therapist",   lb:"Occupational Therapist",     tier:1,pool:960,  c:80, comp:78, wt:6,  tr:"shrinking"},
+  {id:"pharmacist",               lb:"Pharmacist",                 tier:1,pool:720,  c:80, comp:78, wt:6,  tr:"shrinking"},
+  {id:"dentist",                  lb:"Dentist",                    tier:1,pool:640,  c:80, comp:80, wt:5,  tr:"shrinking"},
+  {id:"speech_pathologist",       lb:"Speech Pathologist",         tier:1,pool:840,  c:80, comp:78, wt:6,  tr:"shrinking"},
+  {id:"radiographer",             lb:"Radiographer",               tier:1,pool:620,  c:80, comp:75, wt:5,  tr:"shrinking"},
+  {id:"sonographer",              lb:"Sonographer",                tier:1,pool:480,  c:80, comp:75, wt:5,  tr:"shrinking"},
+  {id:"paramedic",                lb:"Paramedic",                  tier:1,pool:740,  c:75, comp:72, wt:5,  tr:"shrinking"},
+  {id:"dietitian",                lb:"Dietitian",                  tier:1,pool:520,  c:80, comp:78, wt:6,  tr:"shrinking"},
+  {id:"podiatrist",               lb:"Podiatrist",                 tier:1,pool:380,  c:80, comp:75, wt:5,  tr:"shrinking"},
+  {id:"optometrist",              lb:"Optometrist",                tier:1,pool:420,  c:80, comp:78, wt:5,  tr:"shrinking"},
+  {id:"aged_care_worker",         lb:"Aged Care Worker",           tier:1,pool:640,  c:65, comp:65, wt:4,  tr:"shrinking"},
+  {id:"veterinarian",             lb:"Veterinarian",               tier:1,pool:580,  c:80, comp:78, wt:5,  tr:"shrinking"},
+  {id:"early_childhood_teacher",  lb:"Early Childhood Teacher",    tier:2,pool:2240, c:85, comp:80, wt:11, tr:"stable"},
+  {id:"teacher_primary",          lb:"Primary School Teacher",     tier:2,pool:1820, c:85, comp:80, wt:13, tr:"stable"},
+  {id:"teacher_secondary",        lb:"Secondary School Teacher",   tier:2,pool:2080, c:75, comp:75, wt:13, tr:"stable"},
+  {id:"teacher_stem",             lb:"STEM Teacher",               tier:2,pool:1240, c:75, comp:72, wt:10, tr:"shrinking"},
+  {id:"special_ed_teacher",       lb:"Special Education Teacher",  tier:2,pool:1080, c:80, comp:78, wt:11, tr:"stable"},
+  {id:"psychologist",             lb:"Psychologist",               tier:2,pool:1640, c:80, comp:80, wt:12, tr:"stable"},
+  {id:"social_worker",            lb:"Social Worker",              tier:2,pool:2580, c:75, comp:78, wt:15, tr:"stable"},
+  {id:"counsellor",               lb:"Counsellor",                 tier:2,pool:1840, c:75, comp:75, wt:13, tr:"stable"},
+  {id:"civil_engineer",           lb:"Civil Engineer",             tier:3,pool:4520, c:85, comp:85, wt:16, tr:"stable"},
+  {id:"mechanical_engineer",      lb:"Mechanical Engineer",        tier:3,pool:3140, c:85, comp:85, wt:17, tr:"stable"},
+  {id:"electrical_engineer",      lb:"Electrical Engineer",        tier:3,pool:3080, c:85, comp:85, wt:15, tr:"stable"},
+  {id:"structural_engineer",      lb:"Structural Engineer",        tier:3,pool:2840, c:85, comp:85, wt:15, tr:"stable"},
+  {id:"mining_engineer",          lb:"Mining Engineer",            tier:3,pool:1840, c:80, comp:80, wt:14, tr:"stable"},
+  {id:"architect",                lb:"Architect",                  tier:3,pool:2240, c:85, comp:82, wt:15, tr:"stable"},
+  {id:"surveyor",                 lb:"Surveyor",                   tier:3,pool:1640, c:80, comp:78, wt:13, tr:"stable"},
+  {id:"environmental_scientist",  lb:"Environmental Scientist",    tier:3,pool:1420, c:80, comp:78, wt:13, tr:"stable"},
+  {id:"electrician",              lb:"Electrician",                tier:3,pool:1580, c:65, comp:65, wt:14, tr:"shrinking"},
+  {id:"plumber",                  lb:"Plumber",                    tier:3,pool:1280, c:70, comp:70, wt:15, tr:"stable"},
+  {id:"carpenter",                lb:"Carpenter",                  tier:3,pool:1140, c:70, comp:68, wt:14, tr:"stable"},
+  {id:"welder",                   lb:"Welder",                     tier:3,pool:980,  c:65, comp:65, wt:13, tr:"stable"},
+  {id:"motor_mechanic",           lb:"Motor Mechanic",             tier:3,pool:1080, c:70, comp:68, wt:14, tr:"stable"},
+  {id:"chef",                     lb:"Cook / Chef",                tier:0, pool:3580, c:0,  comp:65, wt:16, tr:"stable"},
+  {id:"software_engineer",        lb:"Software Engineer",          tier:4,pool:8240, c:90, comp:92, wt:21, tr:"growing"},
+  {id:"software_developer",       lb:"Software Developer",         tier:4,pool:6840, c:90, comp:90, wt:20, tr:"growing"},
+  {id:"ict_manager",              lb:"ICT Manager",                tier:4,pool:4180, c:90, comp:90, wt:20, tr:"growing"},
+  {id:"systems_analyst",          lb:"Systems Analyst",            tier:4,pool:3840, c:90, comp:90, wt:20, tr:"growing"},
+  {id:"network_engineer",         lb:"Network Engineer",           tier:4,pool:2840, c:90, comp:88, wt:19, tr:"growing"},
+  {id:"data_analyst",             lb:"Data Analyst / ICT BA",      tier:4,pool:3240, c:90, comp:92, wt:21, tr:"growing"},
+  {id:"data_scientist",           lb:"Data Scientist",             tier:4,pool:2640, c:90, comp:92, wt:20, tr:"growing"},
+  {id:"cybersecurity",            lb:"Cybersecurity Analyst",      tier:4,pool:2140, c:90, comp:88, wt:19, tr:"growing"},
+  {id:"accountant",               lb:"Accountant",                 tier:4,pool:15240,c:0,  comp:65, wt:22, tr:"growing"},
+  {id:"management_accountant",    lb:"Management Accountant",      tier:4,pool:8640, c:0,  comp:65, wt:22, tr:"growing"},
+  {id:"auditor",                  lb:"External Auditor",           tier:4,pool:2840, c:90, comp:90, wt:20, tr:"growing"}
 ];
+
 var UO=null,SC=1,SD=1;
 function cq(){
   var oi=document.getElementById('qo').value,pts=parseInt(document.getElementById('qp').value)||0;
@@ -442,6 +683,113 @@ function cq(){
   else if(d.tr==='growing'){mv.className='qm mv-s';mv.innerHTML='<span>↓</span> Pool growing — more submissions than invitations currently';}
   else{mv.className='qm mv-s';mv.innerHTML='<span>→</span> Pool movement STABLE — invitations and submissions roughly balanced';}
   document.getElementById('qr').style.display='block';
+
+  // ── VERDICT BANNER ──
+  var banner = document.getElementById('verdict-banner');
+  var vIcon = document.getElementById('verdict-icon');
+  var vTitle = document.getElementById('verdict-title');
+  var vSub = document.getElementById('verdict-sub');
+  if(pts >= cut + 10){
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25)';
+    vIcon.textContent='✅';
+    vTitle.style.color='#10B981';
+    vTitle.textContent='Strong position — you should lodge your EOI now';
+    vSub.style.color='rgba(16,185,129,0.8)';
+    vSub.textContent='Your score is '+pts+' pts, which is '+(pts-cut)+' pts above the current cutoff. At your percentile you are well-positioned for the next invitation round.';
+  } else if(pts >= cut){
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25)';
+    vIcon.textContent='⚡';
+    vTitle.style.color='#C8913A';
+    vTitle.textContent='Competitive — lodge EOI but monitor the cutoff trend';
+    vSub.style.color='rgba(200,145,58,0.8)';
+    vSub.textContent='Your '+pts+' pts meets the current cutoff. Submit now to secure your Date of Effect, but watch for cutoff movement before the next round.';
+  } else if(d.c===0){
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)';
+    vIcon.textContent='⛔';
+    vTitle.style.color='#EF4444';
+    vTitle.textContent='Not invited federally — consider 190 or 491 pathways';
+    vSub.style.color='rgba(239,68,68,0.7)';
+    vSub.textContent='This occupation has not received federal 189 invitations in recent rounds regardless of points score. The 190 state nomination or 491 regional pathway is the realistic route to PR.';
+  } else {
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)';
+    vIcon.textContent='⚠️';
+    vTitle.style.color='#EF4444';
+    vTitle.textContent='Below cutoff — do not lodge yet';
+    vSub.style.color='rgba(239,68,68,0.7)';
+    vSub.textContent='Your '+pts+' pts is '+(cut-pts)+' pts below the current cutoff of '+cut+'. Submitting now risks a poor Date of Effect. Focus on boosting your score or exploring 190/491 pathways.';
+  }
+
+  // ── QUEUE BAR ──
+  var fillPct = Math.min(98, Math.max(2, parseInt(pct)));
+  setTimeout(function(){
+    document.getElementById('q-fill').style.width = fillPct+'%';
+    document.getElementById('q-pin').style.left = fillPct+'%';
+  },200);
+  var behind = d.pool - ahead;
+  document.getElementById('q-behind').innerHTML = '<span style="color:rgba(255,255,255,0.3)">←</span> '+behind.toLocaleString()+' behind you';
+  document.getElementById('q-ahead').innerHTML = ahead.toLocaleString()+' ahead of you <span style="color:rgba(255,255,255,0.3)">→</span>';
+
+  // ── CUTOFF CHART ──
+  var cutoffs = CUTOFFS[oi] || [];
+  var bars = document.getElementById('cutoff-bars');
+  var labs = document.getElementById('cutoff-labels');
+  var note = document.getElementById('cutoff-note');
+  bars.innerHTML=''; labs.innerHTML='';
+  var trend='stable';
+  if(cutoffs.length){
+    var vals=cutoffs.map(function(x){return x.c||0;});
+    var maxV=Math.max.apply(null,vals)||110;
+    var allZero=vals.every(function(v){return v===0;});
+    if(allZero){
+      note.textContent='This occupation has not received 189 federal invitations in recent rounds. 190 state nomination is the recommended pathway.';
+      bars.innerHTML='<div style="color:rgba(239,68,68,0.6);font-size:0.75rem;padding:1rem 0">No 189 invitations in last 5 rounds</div>';
+    } else {
+      var recent=cutoffs[0].c, older=cutoffs[cutoffs.length-1].c;
+      if(recent>older) trend='rising';
+      else if(recent<older) trend='falling';
+      note.textContent='Cutoff trend: '+(trend==='rising'?'↑ Rising — harder to get invited recently':trend==='falling'?'↓ Falling — may be getting easier':'→ Stable — consistent over last 5 rounds');
+      note.style.color=trend==='rising'?'#EF4444':trend==='falling'?'#10B981':'var(--muted)';
+
+      cutoffs.slice().reverse().forEach(function(item,i){
+        var h=item.c?Math.max(15,Math.round((item.c/(maxV+10))*100)):10;
+        var isYou=item.c&&pts>=item.c;
+        var col=item.c===0?'rgba(239,68,68,0.4)':isYou?'#00C896':'rgba(200,145,58,0.6)';
+        if(i===cutoffs.length-1) col=item.c===0?'rgba(239,68,68,0.4)':isYou?'#00E8AF':'#C8913A';
+        var bar=document.createElement('div');
+        bar.style.cssText='flex:1;border-radius:5px 5px 0 0;background:'+col+';height:'+h+'%;position:relative;min-height:12px;transition:height 1s ease '+( i*0.15)+'s;cursor:default';
+        var lbl=document.createElement('div');
+        lbl.style.cssText='position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:0.62rem;font-weight:700;color:#fff;white-space:nowrap';
+        lbl.textContent=item.c?item.c+'pts':'N/A';
+        bar.appendChild(lbl);
+        if(i===cutoffs.length-1){
+          var tag=document.createElement('div');
+          tag.style.cssText='position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:0.55rem;color:var(--gold);font-weight:700;white-space:nowrap';
+          tag.textContent='Latest';
+          bar.appendChild(tag);
+        }
+        bars.appendChild(bar);
+        var l=document.createElement('div');
+        l.style.cssText='flex:1;text-align:center;font-size:0.6rem;color:var(--muted);padding-top:4px';
+        l.textContent=item.r;
+        labs.appendChild(l);
+      });
+    }
+  }
+
+  // ── ACTION RECOMMENDATION ──
+  var actionText='';
+  if(d.c===0){
+    actionText='Your occupation (<b>'+d.lb+'</b>) has not received 189 federal invitations. Focus on <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> (SA or TAS are most accessible) or the <a href="/491-visa" style="color:var(--gold)">491 regional pathway</a> which adds 15 points and has shorter queues.';
+  } else if(pts>=cut+10){
+    actionText='Lodge your EOI immediately — your '+pts+' pts puts you well above the '+cut+' pt cutoff. Every week you wait risks a cutoff increase or pool growth. Your estimated wait at current rates is '+aw+' months from EOI submission.';
+  } else if(pts>=cut){
+    actionText='Lodge your EOI now to lock in your Date of Effect. Your score meets the current cutoff but the margin is thin. Check the <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> options in parallel — SA 190 may offer nomination at a lower base score for your occupation.';
+  } else {
+    var gap=cut-pts;
+    actionText='You need '+gap+' more points to reach the current cutoff of '+cut+'. Fastest boosters: NAATI CCL (+5 pts, ~3 months), Superior English (+10 pts over Proficient), or <a href="/491-visa" style="color:var(--gold)">491 regional pathway</a> (+15 pts, bypasses federal pool). Consider <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> which may have a lower cutoff than 189 federal.';
+  }
+  document.getElementById('action-text').innerHTML=actionText;
+
   rt();
 }
 function rt(){
