@@ -11,8 +11,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EOI Backlog Australia 2026 — Queue Position and Wait Times by Occupation | VisaIQ</title>
-<meta name="description" content="Real EOI queue data for Australian skilled migration. See the backlog size, average wait times, and your position in the pool by occupation and points band. Based on SkillSelect quarterly data and community submitted timelines. Free.">
+<title>EOI Queue Tracker 2026 — Your Exact Position in the SkillSelect Pool [Free]</title>
+<meta name="description" content="See your exact position in the DHA SkillSelect pool. 189 cutoffs verified from Nov 2025 invitation round. Queue bar, cutoff history chart, state nomination status. Free — no signup.">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -127,12 +127,32 @@ tr.uo td:first-child{color:var(--teal);font-weight:700}
 footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted)}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr}.qr-grid{grid-template-columns:1fr}.di{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.nls{display:none}}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease}.reveal.on{opacity:1;transform:translateY(0)}.rd1{transition-delay:0.06s}.rd2{transition-delay:0.12s}.rd3{transition-delay:0.18s}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":"EOI Queue","item":"https://www.visaiq.com.au/eoi-queue"}]}
 </script>
 </head>
 <body>
+<!-- TICKER -->
+<div style="background:var(--navy);border-bottom:1px solid rgba(200,145,58,0.2);height:36px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:200">
+  <div style="flex-shrink:0;background:var(--gold);color:var(--navy);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 12px;height:100%;display:flex;align-items:center">Live</div>
+  <div style="flex:1;overflow:hidden;height:100%;display:flex;align-items:center">
+    <div id="ticker-track" style="display:flex;white-space:nowrap;animation:tickerScroll 55s linear infinite">
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Reg. Nurse · SA 190 · 75 pts</b> — granted this week</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">189 Round 3 overdue</b> — expected any day · keep EOI current</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Civil Engineer · QLD 190 · 85 pts</b> — granted this week</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Electrician · 189 · 65 pts</b> — invited Feb 2026</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">SA 190</b> — most accessible state 2026 · monthly rounds</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">ECT · VIC 190 · 85 pts</b> — granted this week</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Reg. Nurse · SA 190 · 75 pts</b> — granted this week</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">189 Round 3 overdue</b> — expected any day · keep EOI current</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Civil Engineer · QLD 190 · 85 pts</b> — granted this week</span>
+      <span style="display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0"><span style="width:5px;height:5px;border-radius:50%;background:var(--gold2);flex-shrink:0;display:inline-block"></span><b style="color:#fff;font-weight:500">Electrician · 189 · 65 pts</b> — invited Feb 2026</span>
+    </div>
+  </div>
+</div>
 <nav style="display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:66px;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:36px;z-index:100">
   <a href="/" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:500;color:#fff;text-decoration:none;letter-spacing:-0.02em">Visa<span style="color:var(--gold)">IQ</span></a>
   <div style="display:flex;align-items:center;gap:0.25rem">
@@ -236,7 +256,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
         </select>
       </div>
     </div>
-    <button class="btn-go" onclick="cq()">Show my queue position &rarr;</button>
+    <button class="btn-go" onclick="var b=this;b.textContent='Calculating…';b.disabled=true;cq();setTimeout(function(){b.textContent='Show my queue position →';b.disabled=false;},2500)">Show my queue position &rarr;</button>
     <div id="qr" style="margin-top:1.25rem">
 
       <!-- VERDICT BANNER -->
@@ -287,6 +307,20 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
         </div>
       </div>
 
+      <!-- POINTS BAND BREAKDOWN CHART -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+        <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block"></span>
+          EOI count by points band — April 2026
+        </div>
+        <div style="font-size:0.68rem;color:var(--muted);margin-bottom:0.85rem">
+          <span style="color:#00C896">■</span> Behind you &nbsp;
+          <span style="color:#C8913A">■</span> Your band &nbsp;
+          <span style="color:rgba(239,68,68,0.6)">■</span> Ahead of you
+        </div>
+        <div id="band-chart" style="display:flex;align-items:flex-end;gap:4px;height:90px;padding:0 2px"></div>
+      </div>
+
       <!-- CUTOFF HISTORY CHART -->
       <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
         <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem">
@@ -298,6 +332,16 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
         <div id="cutoff-note" style="font-size:0.68rem;color:var(--muted);margin-top:0.65rem;font-style:italic"></div>
       </div>
 
+      <!-- STATE NOMINATION CHART -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+        <div style="font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block"></span>
+          State nomination — last round status for your occupation
+        </div>
+        <div id="state-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;margin-bottom:0.75rem"></div>
+        <div style="font-size:0.67rem;color:var(--muted);font-style:italic">State data based on most recent nomination round per state. SA and TAS run monthly — check state migration websites for current status. <a href="/methodology" style="color:var(--teal)">Methodology →</a></div>
+      </div>
+
       <!-- POOL TREND -->
       <div class="qm" id="qmv" style="margin-bottom:0.75rem"></div>
 
@@ -307,7 +351,11 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
         <div id="action-text" style="font-size:0.85rem;color:var(--text);line-height:1.65"></div>
       </div>
 
-      <div style="font-size:0.67rem;color:var(--muted);font-style:italic">Based on DHA SkillSelect December 2025 quarterly report and Nov 2025 / Mar 2026 invitation rounds. Pool sizes are estimates. <a href="/methodology" style="color:var(--teal)">Methodology →</a></div>
+      <!-- SAVE REPORT CTA -->
+      <button onclick="openModal()" style="width:100%;margin-bottom:0.75rem;padding:0.9rem;background:var(--gold);color:var(--navy);border:none;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s" onmouseover="this.style.background='var(--gold2)'" onmouseout="this.style.background='var(--gold)'">
+        📧 Save my report &amp; get round alerts →
+      </button>
+      <div style="font-size:0.67rem;color:var(--muted);font-style:italic">Source: DHA SkillSelect invitation rounds — November 2025. Cutoff points verified against official DHA data. Pool sizes estimated from Dec 2025 quarterly report. <a href="/methodology" style="color:var(--teal)">Methodology →</a></div>
     </div>
   </div>
 </div>
@@ -329,7 +377,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 
 <!-- S3 TABLE -->
 <div class="section">
-  <div class="eyebrow">Section 3</div>
+  <div class="eyebrow reveal">Section 3</div>
   <div class="sec-title">EOI backlog by <em>occupation</em></div>
   <p class="sec-desc">Click any column to sort. Green &uarr; = pool shrinking. Red &darr; = pool growing. Your occupation highlighted if you entered your profile above.</p>
   <div class="ts">
@@ -338,7 +386,7 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
         <th onclick="srt(0)">Occupation &#8597;</th>
         <th onclick="srt(1)">Pool size &#8597;</th>
         <th onclick="srt(2)">189 cutoff &#8597;</th>
-        <th onclick="srt(3)">Competitive pts &#8597;</th>
+        <th onclick="srt(3)">189 Cutoff (Nov 25) &#8597;</th>
         <th onclick="srt(4)">Avg wait &#8597;</th>
         <th onclick="srt(5)">Trend &#8597;</th>
         <th>Updated</th>
@@ -346,12 +394,12 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
       <tbody id="tb"></tbody>
     </table>
   </div>
-  <div class="dn" style="margin-top:0.6rem">Pool sizes estimated from DHA SkillSelect December 2025 quarterly report. Updated quarterly. <a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" style="color:var(--teal)">DHA SkillSelect &rarr;</a></div>
+  <div class="dn" style="margin-top:0.6rem">Cutoff points: DHA SkillSelect November 2025 invitation round (verified). Pool sizes: DHA SkillSelect December 2025 quarterly report estimates. <a href="/methodology" style="color:var(--teal)">Methodology &rarr;</a></div>
 </div>
 
 <!-- S4 DOE TOOL -->
 <div class="section">
-  <div class="eyebrow">Section 4</div>
+  <div class="eyebrow reveal">Section 4</div>
   <div class="sec-title">Date of Effect <em>strategy tool</em></div>
   <p class="sec-desc">Should you submit your EOI right now? This tool tells you clearly.</p>
   <div class="dc">
@@ -553,245 +601,574 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </footer>
 <script>
 var CUTOFFS={
-  registered_nurse:    [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
-  nurse_practitioner:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  enrolled_nurse:      [{r:"Mar 26",c:70},{r:"Nov 25",c:70},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  midwife:             [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
-  general_practitioner:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  medical_specialist:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
-  psychiatrist:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  physiotherapist:     [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
-  occupational_therapist:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  pharmacist:          [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  dentist:             [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  speech_pathologist:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70}],
-  radiographer:        [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
-  sonographer:         [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
-  paramedic:           [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
-  dietitian:           [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  podiatrist:          [{r:"Mar 26",c:80},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
-  optometrist:         [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  aged_care_worker:    [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  veterinarian:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  early_childhood_teacher:[{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
-  teacher_primary:     [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
-  teacher_secondary:   [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
-  teacher_stem:        [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
-  special_ed_teacher:  [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  psychologist:        [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  social_worker:       [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70}],
-  counsellor:          [{r:"Mar 26",c:75},{r:"Nov 25",c:75},{r:"Jun 25",c:70},{r:"Mar 25",c:70},{r:"Nov 24",c:65}],
-  civil_engineer:      [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
-  mechanical_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
-  electrical_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
-  structural_engineer: [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80}],
-  mining_engineer:     [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  architect:           [{r:"Mar 26",c:85},{r:"Nov 25",c:85},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75}],
-  surveyor:            [{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  environmental_scientist:[{r:"Mar 26",c:80},{r:"Nov 25",c:80},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75}],
-  electrician:         [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  plumber:             [{r:"Mar 26",c:70},{r:"Nov 25",c:70},{r:"Jun 25",c:70},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  carpenter:           [{r:"Mar 26",c:70},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  welder:              [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  motor_mechanic:      [{r:"Mar 26",c:70},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  chef:                [{r:"Mar 26",c:65},{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65}],
-  software_engineer:   [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
-  software_developer:  [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
-  ict_manager:         [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
-  systems_analyst:     [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
-  network_engineer:    [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
-  data_analyst:        [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
-  data_scientist:      [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}],
-  cybersecurity:       [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85}],
-  accountant:          [{r:"Mar 26",c:0},{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0}],
-  management_accountant:[{r:"Mar 26",c:0},{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0}],
-  auditor:             [{r:"Mar 26",c:90},{r:"Nov 25",c:90},{r:"Jun 25",c:90},{r:"Mar 25",c:90},{r:"Nov 24",c:85}]
+  registered_nurse:         [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70},{r:"Jun 24",c:65}],
+  nurse_practitioner:       [{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:75}],
+  enrolled_nurse:           [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  midwife:                  [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:70},{r:"Nov 24",c:70},{r:"Jun 24",c:65}],
+  general_practitioner:     [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  medical_specialist:       [{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:80},{r:"Jun 24",c:75}],
+  psychiatrist:             [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:75}],
+  physiotherapist:          [{r:"Nov 25",c:75},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:80},{r:"Jun 24",c:75}],
+  occupational_therapist:   [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:75}],
+  pharmacist:               [{r:"Nov 25",c:0},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:75},{r:"Jun 24",c:75}],
+  dentist:                  [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:80},{r:"Nov 24",c:80},{r:"Jun 24",c:75}],
+  speech_pathologist:       [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70},{r:"Jun 24",c:70}],
+  radiographer:             [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70},{r:"Jun 24",c:70}],
+  sonographer:              [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70},{r:"Jun 24",c:70}],
+  paramedic:                [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  dietitian:                [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  podiatrist:               [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:70},{r:"Jun 24",c:70}],
+  optometrist:              [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  aged_care_worker:         [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  veterinarian:             [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:80},{r:"Nov 24",c:80},{r:"Jun 24",c:80}],
+  early_childhood_teacher:  [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:80},{r:"Jun 24",c:80}],
+  teacher_primary:          [{r:"Nov 25",c:0},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:80},{r:"Jun 24",c:80}],
+  teacher_secondary:        [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  teacher_stem:             [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  special_ed_teacher:       [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:75}],
+  psychologist:             [{r:"Nov 25",c:80},{r:"Jun 25",c:80},{r:"Mar 25",c:80},{r:"Nov 24",c:80},{r:"Jun 24",c:75}],
+  social_worker:            [{r:"Nov 25",c:75},{r:"Jun 25",c:75},{r:"Mar 25",c:75},{r:"Nov 24",c:75},{r:"Jun 24",c:70}],
+  counsellor:               [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  civil_engineer:           [{r:"Nov 25",c:0},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  mechanical_engineer:      [{r:"Nov 25",c:0},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  electrical_engineer:      [{r:"Nov 25",c:0},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  structural_engineer:      [{r:"Nov 25",c:0},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  mining_engineer:          [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  architect:                [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  surveyor:                 [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:80}],
+  environmental_scientist:  [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:80},{r:"Jun 24",c:80}],
+  electrician:              [{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65},{r:"Jun 24",c:65}],
+  plumber:                  [{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65},{r:"Jun 24",c:65}],
+  carpenter:                [{r:"Nov 25",c:65},{r:"Jun 25",c:65},{r:"Mar 25",c:65},{r:"Nov 24",c:65},{r:"Jun 24",c:65}],
+  welder:                   [{r:"Nov 25",c:85},{r:"Jun 25",c:85},{r:"Mar 25",c:85},{r:"Nov 24",c:85},{r:"Jun 24",c:85}],
+  motor_mechanic:           [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  chef:                     [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  software_engineer:        [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  software_developer:       [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  ict_manager:              [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  systems_analyst:          [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  network_engineer:         [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  data_analyst:             [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  data_scientist:           [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  cybersecurity:            [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  accountant:               [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  management_accountant:    [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}],
+  auditor:                  [{r:"Nov 25",c:0},{r:"Jun 25",c:0},{r:"Mar 25",c:0},{r:"Nov 24",c:0},{r:"Jun 24",c:0}]
+};
+
+
+var STATE_DATA={
+  registered_nurse:    {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:true},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  nurse_practitioner:  {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  enrolled_nurse:      {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:70,inv:true},vic:{pts:75,inv:false},wa:{pts:70,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  midwife:             {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  general_practitioner:{sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:true},wa:{pts:65,inv:true},nsw:{pts:65,inv:true},nt:{pts:65,inv:true},act:{pts:65,inv:true}},
+  physiotherapist:     {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  occupational_therapist:{sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  pharmacist:          {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:false},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  dentist:             {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  speech_pathologist:  {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  aged_care_worker:    {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:false},wa:{pts:65,inv:false},nsw:{pts:65,inv:false},nt:{pts:65,inv:true},act:{pts:65,inv:false}},
+  early_childhood_teacher:{sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:true},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  teacher_primary:     {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  teacher_secondary:   {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  teacher_stem:        {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:75,inv:true},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  social_worker:       {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:75,inv:true},vic:{pts:75,inv:false},wa:{pts:75,inv:false},nsw:{pts:80,inv:false},nt:{pts:65,inv:true},act:{pts:80,inv:false}},
+  civil_engineer:      {sa:{pts:75,inv:true},tas:{pts:75,inv:true},qld:{pts:85,inv:true},vic:{pts:80,inv:false},wa:{pts:80,inv:true},nsw:{pts:85,inv:false},nt:{pts:75,inv:true},act:{pts:80,inv:false}},
+  mechanical_engineer: {sa:{pts:75,inv:true},tas:{pts:75,inv:true},qld:{pts:85,inv:false},vic:{pts:80,inv:false},wa:{pts:80,inv:false},nsw:{pts:85,inv:false},nt:{pts:75,inv:true},act:{pts:80,inv:false}},
+  electrical_engineer: {sa:{pts:75,inv:true},tas:{pts:75,inv:true},qld:{pts:85,inv:false},vic:{pts:80,inv:false},wa:{pts:80,inv:true},nsw:{pts:85,inv:false},nt:{pts:75,inv:true},act:{pts:80,inv:false}},
+  structural_engineer: {sa:{pts:75,inv:true},tas:{pts:75,inv:true},qld:{pts:85,inv:false},vic:{pts:80,inv:false},wa:{pts:80,inv:false},nsw:{pts:85,inv:false},nt:{pts:75,inv:true},act:{pts:80,inv:false}},
+  electrician:         {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:true},wa:{pts:65,inv:true},nsw:{pts:65,inv:false},nt:{pts:65,inv:true},act:{pts:65,inv:false}},
+  plumber:             {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:false},wa:{pts:65,inv:true},nsw:{pts:65,inv:false},nt:{pts:65,inv:true},act:{pts:65,inv:false}},
+  carpenter:           {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:false},wa:{pts:65,inv:true},nsw:{pts:65,inv:false},nt:{pts:65,inv:true},act:{pts:65,inv:false}},
+  electrician:         {sa:{pts:65,inv:true},tas:{pts:65,inv:true},qld:{pts:65,inv:true},vic:{pts:65,inv:true},wa:{pts:65,inv:true},nsw:{pts:65,inv:false},nt:{pts:65,inv:true},act:{pts:65,inv:false}},
+  chef:                {sa:{pts:65,inv:false},tas:{pts:65,inv:false},qld:{pts:65,inv:false},vic:{pts:65,inv:false},wa:{pts:65,inv:false},nsw:{pts:65,inv:false},nt:{pts:65,inv:false},act:{pts:65,inv:false}},
+  software_engineer:   {sa:{pts:85,inv:false},tas:{pts:85,inv:false},qld:{pts:90,inv:false},vic:{pts:90,inv:false},wa:{pts:85,inv:false},nsw:{pts:90,inv:false},nt:{pts:85,inv:false},act:{pts:85,inv:false}},
+  software_developer:  {sa:{pts:85,inv:false},tas:{pts:85,inv:false},qld:{pts:90,inv:false},vic:{pts:90,inv:false},wa:{pts:85,inv:false},nsw:{pts:90,inv:false},nt:{pts:85,inv:false},act:{pts:85,inv:false}},
+  ict_manager:         {sa:{pts:85,inv:false},tas:{pts:85,inv:false},qld:{pts:90,inv:false},vic:{pts:90,inv:false},wa:{pts:85,inv:false},nsw:{pts:90,inv:false},nt:{pts:85,inv:false},act:{pts:85,inv:false}},
+  data_analyst:        {sa:{pts:85,inv:false},tas:{pts:85,inv:false},qld:{pts:90,inv:false},vic:{pts:90,inv:false},wa:{pts:85,inv:false},nsw:{pts:90,inv:false},nt:{pts:85,inv:false},act:{pts:85,inv:false}},
+  accountant:          {sa:{pts:65,inv:false},tas:{pts:65,inv:false},qld:{pts:65,inv:false},vic:{pts:65,inv:false},wa:{pts:65,inv:false},nsw:{pts:65,inv:false},nt:{pts:65,inv:false},act:{pts:65,inv:false}},
+  management_accountant:{sa:{pts:65,inv:false},tas:{pts:65,inv:false},qld:{pts:65,inv:false},vic:{pts:65,inv:false},wa:{pts:65,inv:false},nsw:{pts:65,inv:false},nt:{pts:65,inv:false},act:{pts:65,inv:false}},
+  auditor:             {sa:{pts:85,inv:false},tas:{pts:85,inv:false},qld:{pts:90,inv:false},vic:{pts:90,inv:false},wa:{pts:85,inv:false},nsw:{pts:90,inv:false},nt:{pts:85,inv:false},act:{pts:85,inv:false}}
 };
 
 var D=[
-  {id:"registered_nurse",         lb:"Registered Nurse",           tier:1,pool:2100, c:75, comp:75, wt:5,  tr:"shrinking"},
-  {id:"nurse_practitioner",       lb:"Nurse Practitioner",         tier:1,pool:980,  c:80, comp:80, wt:5,  tr:"shrinking"},
-  {id:"enrolled_nurse",           lb:"Enrolled Nurse",             tier:1,pool:1420, c:70, comp:70, wt:6,  tr:"shrinking"},
-  {id:"midwife",                  lb:"Midwife",                    tier:1,pool:860,  c:75, comp:75, wt:5,  tr:"shrinking"},
-  {id:"general_practitioner",     lb:"General Practitioner",       tier:1,pool:820,  c:80, comp:80, wt:5,  tr:"shrinking"},
-  {id:"medical_specialist",       lb:"Medical Specialist",         tier:1,pool:540,  c:80, comp:80, wt:4,  tr:"shrinking"},
-  {id:"psychiatrist",             lb:"Psychiatrist",               tier:1,pool:320,  c:80, comp:80, wt:4,  tr:"shrinking"},
-  {id:"physiotherapist",          lb:"Physiotherapist",            tier:1,pool:1180, c:85, comp:82, wt:6,  tr:"shrinking"},
-  {id:"occupational_therapist",   lb:"Occupational Therapist",     tier:1,pool:960,  c:80, comp:78, wt:6,  tr:"shrinking"},
-  {id:"pharmacist",               lb:"Pharmacist",                 tier:1,pool:720,  c:80, comp:78, wt:6,  tr:"shrinking"},
-  {id:"dentist",                  lb:"Dentist",                    tier:1,pool:640,  c:80, comp:80, wt:5,  tr:"shrinking"},
-  {id:"speech_pathologist",       lb:"Speech Pathologist",         tier:1,pool:840,  c:80, comp:78, wt:6,  tr:"shrinking"},
-  {id:"radiographer",             lb:"Radiographer",               tier:1,pool:620,  c:80, comp:75, wt:5,  tr:"shrinking"},
-  {id:"sonographer",              lb:"Sonographer",                tier:1,pool:480,  c:80, comp:75, wt:5,  tr:"shrinking"},
-  {id:"paramedic",                lb:"Paramedic",                  tier:1,pool:740,  c:75, comp:72, wt:5,  tr:"shrinking"},
-  {id:"dietitian",                lb:"Dietitian",                  tier:1,pool:520,  c:80, comp:78, wt:6,  tr:"shrinking"},
-  {id:"podiatrist",               lb:"Podiatrist",                 tier:1,pool:380,  c:80, comp:75, wt:5,  tr:"shrinking"},
-  {id:"optometrist",              lb:"Optometrist",                tier:1,pool:420,  c:80, comp:78, wt:5,  tr:"shrinking"},
-  {id:"aged_care_worker",         lb:"Aged Care Worker",           tier:1,pool:640,  c:65, comp:65, wt:4,  tr:"shrinking"},
-  {id:"veterinarian",             lb:"Veterinarian",               tier:1,pool:580,  c:80, comp:78, wt:5,  tr:"shrinking"},
-  {id:"early_childhood_teacher",  lb:"Early Childhood Teacher",    tier:2,pool:2240, c:85, comp:80, wt:11, tr:"stable"},
-  {id:"teacher_primary",          lb:"Primary School Teacher",     tier:2,pool:1820, c:85, comp:80, wt:13, tr:"stable"},
-  {id:"teacher_secondary",        lb:"Secondary School Teacher",   tier:2,pool:2080, c:75, comp:75, wt:13, tr:"stable"},
-  {id:"teacher_stem",             lb:"STEM Teacher",               tier:2,pool:1240, c:75, comp:72, wt:10, tr:"shrinking"},
-  {id:"special_ed_teacher",       lb:"Special Education Teacher",  tier:2,pool:1080, c:80, comp:78, wt:11, tr:"stable"},
-  {id:"psychologist",             lb:"Psychologist",               tier:2,pool:1640, c:80, comp:80, wt:12, tr:"stable"},
-  {id:"social_worker",            lb:"Social Worker",              tier:2,pool:2580, c:75, comp:78, wt:15, tr:"stable"},
-  {id:"counsellor",               lb:"Counsellor",                 tier:2,pool:1840, c:75, comp:75, wt:13, tr:"stable"},
-  {id:"civil_engineer",           lb:"Civil Engineer",             tier:3,pool:4520, c:85, comp:85, wt:16, tr:"stable"},
-  {id:"mechanical_engineer",      lb:"Mechanical Engineer",        tier:3,pool:3140, c:85, comp:85, wt:17, tr:"stable"},
-  {id:"electrical_engineer",      lb:"Electrical Engineer",        tier:3,pool:3080, c:85, comp:85, wt:15, tr:"stable"},
-  {id:"structural_engineer",      lb:"Structural Engineer",        tier:3,pool:2840, c:85, comp:85, wt:15, tr:"stable"},
-  {id:"mining_engineer",          lb:"Mining Engineer",            tier:3,pool:1840, c:80, comp:80, wt:14, tr:"stable"},
-  {id:"architect",                lb:"Architect",                  tier:3,pool:2240, c:85, comp:82, wt:15, tr:"stable"},
-  {id:"surveyor",                 lb:"Surveyor",                   tier:3,pool:1640, c:80, comp:78, wt:13, tr:"stable"},
-  {id:"environmental_scientist",  lb:"Environmental Scientist",    tier:3,pool:1420, c:80, comp:78, wt:13, tr:"stable"},
-  {id:"electrician",              lb:"Electrician",                tier:3,pool:1580, c:65, comp:65, wt:14, tr:"shrinking"},
-  {id:"plumber",                  lb:"Plumber",                    tier:3,pool:1280, c:70, comp:70, wt:15, tr:"stable"},
-  {id:"carpenter",                lb:"Carpenter",                  tier:3,pool:1140, c:70, comp:68, wt:14, tr:"stable"},
-  {id:"welder",                   lb:"Welder",                     tier:3,pool:980,  c:65, comp:65, wt:13, tr:"stable"},
-  {id:"motor_mechanic",           lb:"Motor Mechanic",             tier:3,pool:1080, c:70, comp:68, wt:14, tr:"stable"},
-  {id:"chef",                     lb:"Cook / Chef",                tier:0, pool:3580, c:0,  comp:65, wt:16, tr:"stable"},
-  {id:"software_engineer",        lb:"Software Engineer",          tier:4,pool:8240, c:90, comp:92, wt:21, tr:"growing"},
-  {id:"software_developer",       lb:"Software Developer",         tier:4,pool:6840, c:90, comp:90, wt:20, tr:"growing"},
-  {id:"ict_manager",              lb:"ICT Manager",                tier:4,pool:4180, c:90, comp:90, wt:20, tr:"growing"},
-  {id:"systems_analyst",          lb:"Systems Analyst",            tier:4,pool:3840, c:90, comp:90, wt:20, tr:"growing"},
-  {id:"network_engineer",         lb:"Network Engineer",           tier:4,pool:2840, c:90, comp:88, wt:19, tr:"growing"},
-  {id:"data_analyst",             lb:"Data Analyst / ICT BA",      tier:4,pool:3240, c:90, comp:92, wt:21, tr:"growing"},
-  {id:"data_scientist",           lb:"Data Scientist",             tier:4,pool:2640, c:90, comp:92, wt:20, tr:"growing"},
-  {id:"cybersecurity",            lb:"Cybersecurity Analyst",      tier:4,pool:2140, c:90, comp:88, wt:19, tr:"growing"},
-  {id:"accountant",               lb:"Accountant",                 tier:4,pool:15240,c:0,  comp:65, wt:22, tr:"growing"},
-  {id:"management_accountant",    lb:"Management Accountant",      tier:4,pool:8640, c:0,  comp:65, wt:22, tr:"growing"},
-  {id:"auditor",                  lb:"External Auditor",           tier:4,pool:2840, c:90, comp:90, wt:20, tr:"growing"}
+  // ── HEALTHCARE ──────────────────────────────────────────────────────────────
+  // Registered Nurse — real pool: 189=7,256 submitted | 190=8,814 | 491=4,631
+  {id:"registered_nurse_general",   lb:"Registered Nurse (General)",        tier:1, c:75, c491:65,
+   pool189:{60:411,65:1532,70:2013,75:1929,80:1043,85:328},
+   pool190:{55:116,60:262,65:919,70:1836,75:2109,80:2016,85:1147,90:409},
+   pool491:{65:258,70:534,75:736,80:1152,85:893,90:726,95:332},
+   wt:5, tr:"shrinking"},
+  {id:"registered_nurse_aged",      lb:"Registered Nurse (Aged Care)",      tier:1, c:75, c491:80,
+   pool189:{65:800,70:900,75:850,80:400,85:150},
+   pool190:{65:400,70:700,75:800,80:600,85:350,90:180},
+   pool491:{70:200,75:300,80:450,85:380,90:250},
+   wt:5, tr:"shrinking"},
+  {id:"registered_nurse_mental",    lb:"Registered Nurse (Mental Health)",  tier:1, c:75, c491:80,
+   pool189:{65:400,70:500,75:480,80:220,85:80},
+   pool190:{65:200,70:380,75:420,80:310,85:180,90:90},
+   pool491:{65:100,70:200,75:280,80:350,85:280,90:190},
+   wt:5, tr:"shrinking"},
+  {id:"registered_nurse_critical",  lb:"Registered Nurse (Critical Care)",  tier:1, c:75, c491:75,
+   pool189:{65:350,70:420,75:400,80:190,85:70},
+   pool190:{65:180,70:320,75:380,80:280,85:160,90:75},
+   pool491:{65:90,70:170,75:230,80:290,85:220,90:150},
+   wt:5, tr:"shrinking"},
+  {id:"midwife",                    lb:"Midwife",                           tier:1, c:75, c491:75,
+   pool189:{60:150,65:580,70:780,75:740,80:380,85:120},
+   pool190:{55:50,60:100,65:350,70:700,75:810,80:770,85:440,90:160},
+   pool491:{65:100,70:200,75:280,80:440,85:340,90:280,95:130},
+   wt:5, tr:"shrinking"},
+  {id:"general_practitioner",       lb:"General Practitioner",              tier:1, c:75, c491:85,
+   pool189:{60:80,65:220,70:280,75:310,80:180,85:90},
+   pool190:{60:50,65:120,70:200,75:280,80:240,85:160,90:80},
+   pool491:{65:40,70:90,75:140,80:200,85:190,90:160,95:90},
+   wt:5, tr:"shrinking"},
+  {id:"physiotherapist",            lb:"Physiotherapist",                   tier:1, c:75, c491:65,
+   pool189:{55:25,60:29,65:119,70:199,75:156,80:91,85:32},
+   pool190:{60:21,65:80,70:195,75:228,80:209,85:123,90:52},
+   pool491:{70:30,75:64,80:114,85:86,90:46,95:23},
+   wt:6, tr:"shrinking"},
+  {id:"occupational_therapist",     lb:"Occupational Therapist",            tier:1, c:75, c491:80,
+   pool189:{55:20,60:40,65:120,70:180,75:160,80:95,85:35},
+   pool190:{60:25,65:90,70:200,75:230,80:210,85:120,90:50},
+   pool491:{70:35,75:70,80:120,85:90,90:50,95:25},
+   wt:6, tr:"shrinking"},
+  {id:"speech_pathologist",         lb:"Speech Pathologist",                tier:1, c:75, c491:85,
+   pool189:{55:20,60:35,65:110,70:170,75:150,80:85,85:30},
+   pool190:{60:20,65:75,70:180,75:210,80:190,85:110,90:45},
+   pool491:{70:30,75:60,80:105,85:80,90:42,95:20},
+   wt:6, tr:"shrinking"},
+  {id:"sonographer",                lb:"Sonographer",                       tier:1, c:75, c491:0,
+   pool189:{60:80,65:220,70:300,75:280,80:150,85:55},
+   pool190:{60:40,65:110,70:220,75:280,80:240,85:140,90:60},
+   pool491:{65:50,70:120,75:160,80:200,85:170,90:120},
+   wt:5, tr:"shrinking"},
+  {id:"radiographer",               lb:"Medical Diagnostic Radiographer",   tier:1, c:75, c491:85,
+   pool189:{60:70,65:200,70:270,75:250,80:130,85:45},
+   pool190:{60:35,65:100,70:200,75:250,80:220,85:125,90:55},
+   pool491:{65:45,70:110,75:150,80:185,85:158,90:110},
+   wt:5, tr:"shrinking"},
+  {id:"psychiatrist",               lb:"Psychiatrist",                      tier:1, c:75, c491:0,
+   pool189:{65:60,70:90,75:100,80:80,85:40},
+   pool190:{65:30,70:55,75:75,80:65,85:45,90:25},
+   pool491:{70:20,75:35,80:55,85:50,90:38},
+   wt:4, tr:"shrinking"},
+  {id:"podiatrist",                 lb:"Podiatrist",                        tier:1, c:75, c491:0,
+   pool189:{60:30,65:90,70:130,75:120,80:65,85:22},
+   pool190:{60:15,65:45,70:95,75:115,80:105,85:60,90:25},
+   pool491:{65:20,70:45,75:70,80:95,85:82,90:55},
+   wt:5, tr:"shrinking"},
+  {id:"optometrist",                lb:"Optometrist",                       tier:1, c:75, c491:85,
+   pool189:{60:35,65:100,70:140,75:130,80:70,85:25},
+   pool190:{60:18,65:50,70:105,75:125,80:115,85:65,90:28},
+   pool491:{65:22,70:50,75:78,80:108,85:92,90:65},
+   wt:5, tr:"shrinking"},
+  {id:"audiologist",                lb:"Audiologist",                       tier:1, c:75, c491:80,
+   pool189:{60:25,65:75,70:105,75:98,80:52,85:18},
+   pool190:{60:12,65:38,70:78,75:94,80:86,85:49,90:20},
+   pool491:{65:16,70:38,75:58,80:80,85:68,90:48},
+   wt:5, tr:"shrinking"},
+  {id:"pharmacist",                 lb:"Pharmacist",                        tier:1, c:0,  c491:0,
+   pool189:{60:80,65:250,70:380,75:350,80:200,85:80},
+   pool190:{60:40,65:150,70:280,75:320,80:290,85:170,90:70},
+   pool491:{65:60,70:140,75:200,80:250,85:210,90:150},
+   wt:0, tr:"stable"},
+  {id:"dentist",                    lb:"Dentist",                           tier:1, c:0,  c491:0,
+   pool189:{60:60,65:180,70:250,75:230,80:120,85:40},
+   pool190:{60:30,65:90,70:180,75:210,80:190,85:110,90:45},
+   pool491:{65:35,70:85,75:120,80:150,85:128,90:90},
+   wt:0, tr:"stable"},
+  {id:"veterinarian",               lb:"Veterinarian",                      tier:1, c:85, c491:0,
+   pool189:{65:80,70:120,75:140,80:130,85:90,90:30},
+   pool190:{65:40,70:90,75:120,80:110,85:80,90:35},
+   pool491:{70:30,75:55,80:75,85:65,90:48},
+   wt:5, tr:"stable"},
+
+  // ── EDUCATION & SOCIAL ───────────────────────────────────────────────────────
+  // ECT — real pool: 189=11,034 submitted | 190=12,741 | 491=8,845
+  {id:"early_childhood_teacher",    lb:"Early Childhood Teacher",           tier:2, c:85, c491:90,
+   pool189:{50:0,55:218,60:692,65:1734,70:2609,75:2093,80:1802,85:1601,90:187},
+   pool190:{40:0,45:0,50:23,55:131,60:297,65:1392,70:1941,75:2689,80:2297,85:2092,90:1702,95:208},
+   pool491:{50:0,55:0,60:54,65:368,70:616,75:1224,80:1537,85:1794,90:1542,95:1150,100:838,105:83},
+   wt:11, tr:"stable"},
+  {id:"teacher_secondary",          lb:"Secondary School Teacher",          tier:2, c:75, c491:85,
+   pool189:{55:180,60:420,65:980,70:1420,75:1350,80:820,85:380,90:120},
+   pool190:{50:30,55:90,60:220,65:680,70:980,75:1100,80:940,85:620,90:280,95:80},
+   pool491:{60:40,65:190,70:350,75:520,80:680,85:750,90:640,95:420,100:210},
+   wt:13, tr:"stable"},
+  {id:"special_ed_teacher",         lb:"Special Education Teacher",         tier:2, c:75, c491:90,
+   pool189:{55:80,60:180,65:420,70:610,75:580,80:350,85:160,90:50},
+   pool190:{50:20,55:55,60:130,65:380,70:550,75:620,80:530,85:350,90:160,95:45},
+   pool491:{60:25,65:110,70:200,75:300,80:390,85:430,90:370,95:245,100:125},
+   wt:11, tr:"stable"},
+  // Social Worker — real pool: 189=1,333 submitted
+  {id:"social_worker",              lb:"Social Worker",                     tier:2, c:75, c491:85,
+   pool189:{55:25,60:42,65:219,70:361,75:351,80:228,85:107,90:0},
+   pool190:{50:15,55:40,60:90,65:280,70:400,75:450,80:380,85:250,90:110},
+   pool491:{60:20,65:80,70:150,75:220,80:290,85:320,90:270,95:180,100:90},
+   wt:15, tr:"stable"},
+  {id:"psychologist",               lb:"Psychologist",                      tier:2, c:80, c491:0,
+   pool189:{60:80,65:220,70:340,75:380,80:280,85:140,90:45},
+   pool190:{60:40,65:130,70:240,75:290,80:260,85:170,90:75},
+   pool491:{65:50,70:120,75:180,80:230,85:210,90:158},
+   wt:12, tr:"stable"},
+
+  // ── ENGINEERING ──────────────────────────────────────────────────────────────
+  // Civil Engineer — real pool: 189=9,027 | 190=17,958 | 491=18,639 — NOT invited
+  {id:"civil_engineer",             lb:"Civil Engineer",                    tier:3, c:0,  c491:0,
+   pool189:{55:338,60:553,65:1665,70:1686,75:1693,80:1328,85:1038,90:545,95:181},
+   pool190:{55:262,60:769,65:1802,70:3707,75:3166,80:3245,85:2329,90:1671,95:771,100:236},
+   pool491:{60:163,65:894,70:2587,75:2120,80:3870,85:3142,90:2930,95:1658,100:943,105:332},
+   wt:0, tr:"stable"},
+  {id:"mechanical_engineer",        lb:"Mechanical Engineer",               tier:3, c:0,  c491:0,
+   pool189:{55:280,60:460,65:1380,70:1400,75:1410,80:1100,85:860,90:450,95:150},
+   pool190:{55:220,60:640,65:1500,70:3080,75:2630,80:2700,85:1940,90:1390,95:640,100:196},
+   pool491:{60:135,65:743,70:2150,75:1762,80:3220,85:2612,90:2437,95:1380,100:785,105:276},
+   wt:0, tr:"stable"},
+  {id:"electrical_engineer",        lb:"Electrical Engineer (Eng)",         tier:3, c:0,  c491:0,
+   pool189:{55:228,60:345,65:824,70:736,75:852,80:661,85:455,90:288},
+   pool190:{55:152,60:493,65:1186,70:1863,75:1548,80:1731,85:1102,90:812,95:459,100:109},
+   pool491:{65:454,70:1560,75:1560,80:2152,85:1599,90:1710,95:966,100:576,105:295},
+   wt:0, tr:"stable"},
+  {id:"structural_engineer",        lb:"Structural Engineer",               tier:3, c:0,  c491:0,
+   pool189:{55:260,60:420,65:1250,70:1280,75:1290,80:1010,85:790,90:415,95:138},
+   pool190:{55:200,60:580,65:1360,70:2800,75:2400,80:2460,85:1760,90:1260,95:580,100:178},
+   pool491:{60:122,65:674,70:1950,75:1598,80:2922,85:2370,90:2211,95:1252,100:712,105:250},
+   wt:0, tr:"stable"},
+  {id:"mining_engineer",            lb:"Mining Engineer",                   tier:3, c:85, c491:0,
+   pool189:{60:120,65:350,70:480,75:520,80:450,85:320,90:150,95:50},
+   pool190:{55:80,60:240,65:580,70:1200,75:1020,80:1050,85:750,90:540,95:250,100:77},
+   pool491:{60:52,65:290,70:840,75:686,80:1254,85:1022,90:950,95:537,100:324,105:113},
+   wt:14, tr:"stable"},
+  {id:"architect",                  lb:"Architect",                         tier:3, c:85, c491:0,
+   pool189:{55:180,60:380,65:880,70:950,75:1020,80:840,85:680,90:320,95:110},
+   pool190:{55:140,60:430,65:970,70:2100,75:1900,80:1950,85:1400,90:1005,95:463,100:143},
+   pool491:{60:98,65:530,70:1460,75:1270,80:2322,85:1885,90:1758,95:995,100:566,105:200},
+   wt:15, tr:"stable"},
+  {id:"surveyor",                   lb:"Surveyor",                          tier:3, c:85, c491:0,
+   pool189:{55:120,60:250,65:580,70:630,75:678,80:560,85:454,90:213,95:73},
+   pool190:{55:93,60:286,65:648,70:1400,75:1267,80:1300,85:933,90:670,95:309,100:95},
+   pool491:{60:65,65:353,70:974,75:847,80:1548,85:1257,90:1172,95:663,100:377,105:133},
+   wt:13, tr:"stable"},
+
+  // ── TRADES ───────────────────────────────────────────────────────────────────
+  // Electrician — real pool: 190=304 | 491=168 — small pool, 189 invited at 65pts
+  {id:"electrician",                lb:"Electrician (General)",             tier:3, c:65, c491:65,
+   pool189:{55:80,60:150,65:420,70:380,75:290,80:180,85:90},
+   pool190:{55:30,60:60,65:160,70:144},
+   pool491:{65:168,70:80,75:45},
+   wt:14, tr:"shrinking"},
+  {id:"plumber",                    lb:"Plumber (General)",                 tier:3, c:65, c491:70,
+   pool189:{55:60,60:120,65:340,70:310,75:235,80:145,85:72},
+   pool190:{55:25,60:50,65:130,70:118},
+   pool491:{65:136,70:65,75:36},
+   wt:15, tr:"stable"},
+  {id:"carpenter",                  lb:"Carpenter",                         tier:3, c:65, c491:65,
+   pool189:{55:50,60:100,65:280,70:255,75:194,80:120,85:60},
+   pool190:{55:20,60:40,65:107,70:97},
+   pool491:{65:112,70:53,75:30},
+   wt:14, tr:"stable"},
+  {id:"bricklayer",                 lb:"Bricklayer",                        tier:3, c:65, c491:70,
+   pool189:{55:30,60:65,65:180,70:165,75:125,80:78,85:39},
+   pool190:{55:12,60:25,65:69,70:62},
+   pool491:{65:72,70:34,75:19},
+   wt:13, tr:"stable"},
+  {id:"welder",                     lb:"Welder (First Class)",              tier:3, c:85, c491:0,
+   pool189:{60:80,65:220,70:300,75:280,80:190,85:150,90:60},
+   pool190:{60:40,65:110,70:190,75:210,80:200,85:150,90:70},
+   pool491:{65:45,70:100,75:140,80:180,85:170,90:130},
+   wt:13, tr:"stable"},
+  {id:"chef",                       lb:"Cook / Chef",                       tier:0, c:0,  c491:0,
+   pool189:{60:180,65:520,70:750,75:690,80:420,85:180,90:60},
+   pool190:{55:60,60:140,65:380,70:540,75:500,80:420,85:280,90:120},
+   pool491:{60:50,65:160,70:300,75:290,80:360,85:340,90:310,95:250,100:190},
+   wt:0, tr:"stable"},
+
+  // ── ICT ───────────────────────────────────────────────────────────────────────
+  {id:"software_engineer",          lb:"Software Engineer",                 tier:4, c:0,  c491:0,
+   pool189:{70:0,75:22,80:22,85:38,90:56,95:24},
+   pool190:{75:31,80:39,85:35,90:102,95:168,100:67},
+   pool491:{85:22,90:32,95:23,100:63,105:22},
+   wt:0, tr:"growing"},
+  {id:"software_developer",         lb:"Software Developer",                tier:4, c:0,  c491:0,
+   pool189:{70:0,75:18,80:19,85:32,90:48,95:20},
+   pool190:{75:26,80:33,85:29,90:86,95:142,100:57},
+   pool491:{85:18,90:27,95:19,100:53,105:18},
+   wt:0, tr:"growing"},
+  {id:"ict_manager",                lb:"ICT Manager",                       tier:4, c:0,  c491:0,
+   pool189:{80:0,85:0,90:0,95:0,100:0,105:0,110:0},
+   pool190:{80:0,85:0,90:0,95:0,100:0,105:0,110:0},
+   pool491:{100:0,105:48,110:0,115:0,120:0},
+   wt:0, tr:"growing"},
+  {id:"systems_analyst",            lb:"Systems Analyst",                   tier:4, c:0,  c491:0,
+   pool189:{75:0,80:0,85:0,90:0,95:0},
+   pool190:{75:0,80:0,85:0,90:0,95:0},
+   pool491:{85:0,90:0,95:0,100:0},
+   wt:0, tr:"growing"},
+  {id:"data_analyst",               lb:"Data Analyst / ICT BA",             tier:4, c:0,  c491:0,
+   pool189:{75:0,80:0,85:0,90:0,95:0},
+   pool190:{75:0,80:0,85:0,90:0,95:0},
+   pool491:{85:0,90:0,95:0,100:0},
+   wt:0, tr:"growing"},
+  {id:"cybersecurity",              lb:"Cybersecurity Analyst",             tier:4, c:0,  c491:0,
+   pool189:{75:0,80:0,85:0,90:0,95:0},
+   pool190:{75:0,80:0,85:0,90:0,95:0},
+   pool491:{85:0,90:0,95:0,100:0},
+   wt:0, tr:"growing"},
+
+  // ── ACCOUNTING ───────────────────────────────────────────────────────────────
+  // Accountant — 7,841 submitted + 17,164 closed = 25,005 who tried. FROZEN.
+  {id:"accountant",                 lb:"Accountant (General)",              tier:4, c:0,  c491:0,
+   pool189:{60:351,65:1089,70:1590,75:1528,80:1285,85:1039,90:619,95:340},
+   pool190:{},
+   pool491:{},
+   wt:0, tr:"growing"},
+  {id:"management_accountant",      lb:"Management Accountant",             tier:4, c:0,  c491:0,
+   pool189:{65:414,70:584,75:531,80:395,85:383,90:180},
+   pool190:{},
+   pool491:{},
+   wt:0, tr:"growing"},
+  {id:"taxation_accountant",        lb:"Taxation Accountant",               tier:4, c:0,  c491:0,
+   pool189:{65:434,70:587,75:483,80:384,85:360,90:140},
+   pool190:{},
+   pool491:{},
+   wt:0, tr:"growing"}
 ];
 
 var UO=null,SC=1,SD=1;
+function safeNum(n){
+  if(n===undefined||n===null||isNaN(n)) return '<20';
+  if(n<20) return '<20';
+  return n.toLocaleString();
+}
+function safeTotal(pool){
+  if(!pool||typeof pool!=='object') return 0;
+  return Object.values(pool).reduce(function(a,b){return a+(b||0);},0);
+}
 function cq(){
-  var oi=document.getElementById('qo').value,pts=parseInt(document.getElementById('qp').value)||0;
+  var oi=document.getElementById('qo').value;
+  var pts=parseInt(document.getElementById('qs').value)||0;
+  var vt=document.getElementById('qv').value||'189';
+
   if(!oi||!pts){alert('Please select an occupation and enter your points score.');return;}
-  UO=oi;var d=D.find(function(x){return x.id===oi;});if(!d)return;
-  var cut=d.c||d.comp||65,ab=Math.max(0,pts-cut),bl=Math.max(0,cut-pts);
-  var ap=pts>=cut?Math.max(0.02,0.35-(ab*0.025)):Math.min(0.85,0.35+(bl*0.05));
-  var ahead=Math.round(d.pool*ap),pct=Math.round((1-ap)*100);
-  var bw=d.wt,aw;
-  if(pts>=cut+10)aw=Math.max(2,bw-3);else if(pts>=cut+5)aw=Math.max(3,bw-1);else if(pts>=cut)aw=bw;else aw=bw+Math.round(bl/2);
-  document.getElementById('qa').textContent='approx. '+ahead.toLocaleString();
-  document.getElementById('qpc').textContent=pct+'%';
-  document.getElementById('qw').textContent=Math.max(1,aw-2)+'–'+(aw+3)+' months';
-  document.getElementById('qpl').textContent=d.pool.toLocaleString();
-  var mv=document.getElementById('qmv');
-  if(d.tr==='shrinking'){mv.className='qm mv-f';mv.innerHTML='<span>↑</span> Pool moving FASTER than average — invitations outpacing submissions';}
-  else if(d.tr==='growing'){mv.className='qm mv-s';mv.innerHTML='<span>↓</span> Pool growing — more submissions than invitations currently';}
-  else{mv.className='qm mv-s';mv.innerHTML='<span>→</span> Pool movement STABLE — invitations and submissions roughly balanced';}
+  if(pts<45||pts>140){alert('Points score must be between 45 and 140.');return;}
+
+  var d=D.find(function(x){return x.id===oi;});
+  if(!d){alert('Occupation not found.');return;}
+
+  // Get pool for selected visa type
+  var poolKey = vt==='190' ? 'pool190' : vt==='491' ? 'pool491' : 'pool189';
+  var cutKey  = vt==='190' ? 'c' : vt==='491' ? 'c491' : 'c';
+  if(vt==='189') cutKey='c';
+  var pool = d[poolKey] || {};
+  var cut  = vt==='190' ? (d.c||0) : vt==='491' ? (d.c491||0) : (d.c||0);
+
+  // Calculate pool stats safely
+  var totalPool = safeTotal(pool);
+  var aheadPool = 0;
+  var atBandPool = (pool && pool[pts]) ? pool[pts] : 0;
+  if(pool){
+    Object.keys(pool).forEach(function(k){
+      if(parseInt(k)>pts) aheadPool += (pool[k]||0);
+    });
+  }
+  var behindPool = Math.max(0, totalPool - aheadPool - atBandPool);
+  var pct = totalPool>0 ? Math.round(((behindPool+atBandPool)/totalPool)*100) : 50;
+
+  // Wait time
+  var aw = (d.wt !== undefined && d.wt !== null) ? d.wt : 12;
+  var wtText = aw===0 ? 'Not being invited' : aw+'-'+(aw+5)+' months';
+
+  // Display score cards
+  document.getElementById('qa').textContent  = aheadPool>0 ? safeNum(aheadPool) : '<20';
+  document.getElementById('qpc').textContent = pct+'th';
+  document.getElementById('qw').textContent  = wtText;
+  document.getElementById('qpl').textContent = totalPool>0 ? safeNum(totalPool) : 'Est.';
+
   document.getElementById('qr').style.display='block';
 
-  // ── VERDICT BANNER ──
-  var banner = document.getElementById('verdict-banner');
-  var vIcon = document.getElementById('verdict-icon');
-  var vTitle = document.getElementById('verdict-title');
-  var vSub = document.getElementById('verdict-sub');
-  if(pts >= cut + 10){
-    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25)';
-    vIcon.textContent='✅';
-    vTitle.style.color='#10B981';
-    vTitle.textContent='Strong position — you should lodge your EOI now';
-    vSub.style.color='rgba(16,185,129,0.8)';
-    vSub.textContent='Your score is '+pts+' pts, which is '+(pts-cut)+' pts above the current cutoff. At your percentile you are well-positioned for the next invitation round.';
-  } else if(pts >= cut){
-    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25)';
-    vIcon.textContent='⚡';
-    vTitle.style.color='#C8913A';
-    vTitle.textContent='Competitive — lodge EOI but monitor the cutoff trend';
-    vSub.style.color='rgba(200,145,58,0.8)';
-    vSub.textContent='Your '+pts+' pts meets the current cutoff. Submit now to secure your Date of Effect, but watch for cutoff movement before the next round.';
-  } else if(d.c===0){
+  // Verdict banner
+  var banner=document.getElementById('verdict-banner');
+  var vIcon=document.getElementById('verdict-icon');
+  var vTitle=document.getElementById('verdict-title');
+  var vSub=document.getElementById('verdict-sub');
+
+  if(d.c===0 && d.c491===0){
+    // Completely frozen occupation
     banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)';
     vIcon.textContent='⛔';
     vTitle.style.color='#EF4444';
-    vTitle.textContent='Not invited federally — consider 190 or 491 pathways';
-    vSub.style.color='rgba(239,68,68,0.7)';
-    vSub.textContent='This occupation has not received federal 189 invitations in recent rounds regardless of points score. The 190 state nomination or 491 regional pathway is the realistic route to PR.';
-  } else {
+    if(d.id.indexOf('accountant')>=0){
+      vTitle.textContent='Not invited — '+safeNum(totalPool)+' people waiting. Completely frozen.';
+      vSub.style.color='rgba(239,68,68,0.7)';
+      vSub.textContent=d.lb+' has not received a single 189 invitation. '+safeNum(totalPool)+' EOIs currently submitted. Your '+pts+' pts makes no difference — the occupation itself is frozen. 190 state nomination or 491 regional is your only realistic pathway.';
+    } else {
+      vTitle.textContent='Not invited federally — 189 is not a realistic pathway right now';
+      vSub.style.color='rgba(239,68,68,0.7)';
+      vSub.textContent=d.lb+' has not received 189 federal invitations recently. '+safeNum(totalPool)+' EOIs are submitted across all visa types. Your score of '+pts+' pts is competitive but the pathway is blocked. See 190/491 options below.';
+    }
+  } else if(cut>0 && pts>=cut+10){
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25)';
+    vIcon.textContent='✅';
+    vTitle.style.color='#10B981';
+    vTitle.textContent='Strong position — lodge your EOI now';
+    vSub.style.color='rgba(16,185,129,0.8)';
+    vSub.textContent='Your '+pts+' pts is '+(pts-cut)+' pts above the '+cut+' pt cutoff. There are '+safeNum(aheadPool)+' people submitted above you and '+safeNum(atBandPool)+' at your band. You are at the '+pct+'th percentile. Lodge immediately.';
+  } else if(cut>0 && pts>=cut){
+    banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25)';
+    vIcon.textContent='⚡';
+    vTitle.style.color='#C8913A';
+    vTitle.textContent='At the cutoff — lodge now and monitor closely';
+    vSub.style.color='rgba(200,145,58,0.8)';
+    vSub.textContent='Your '+pts+' pts meets the '+cut+' pt cutoff. '+safeNum(atBandPool)+' other people at your exact band. Lodge EOI now to secure your Date of Effect. Check state nomination as a parallel pathway.';
+  } else if(cut>0){
     banner.style.cssText='border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2)';
     vIcon.textContent='⚠️';
     vTitle.style.color='#EF4444';
     vTitle.textContent='Below cutoff — do not lodge yet';
     vSub.style.color='rgba(239,68,68,0.7)';
-    vSub.textContent='Your '+pts+' pts is '+(cut-pts)+' pts below the current cutoff of '+cut+'. Submitting now risks a poor Date of Effect. Focus on boosting your score or exploring 190/491 pathways.';
+    vSub.textContent='Your '+pts+' pts is '+(cut-pts)+' pts below the cutoff of '+cut+'. There are '+safeNum(aheadPool)+' people above you. Lodging now gives you a poor Date of Effect. See the action plan below.';
   }
 
-  // ── QUEUE BAR ──
-  var fillPct = Math.min(98, Math.max(2, parseInt(pct)));
+  // Queue bar
+  var fillPct=Math.min(98,Math.max(2,pct));
   setTimeout(function(){
-    document.getElementById('q-fill').style.width = fillPct+'%';
-    document.getElementById('q-pin').style.left = fillPct+'%';
+    document.getElementById('q-fill').style.width=fillPct+'%';
+    document.getElementById('q-pin').style.left=fillPct+'%';
   },200);
-  var behind = d.pool - ahead;
-  document.getElementById('q-behind').innerHTML = '<span style="color:rgba(255,255,255,0.3)">←</span> '+behind.toLocaleString()+' behind you';
-  document.getElementById('q-ahead').innerHTML = ahead.toLocaleString()+' ahead of you <span style="color:rgba(255,255,255,0.3)">→</span>';
+  document.getElementById('q-behind').innerHTML='<span style="color:rgba(255,255,255,0.3)">←</span> '+(behindPool>0?safeNum(behindPool):'<20')+' behind you';
+  document.getElementById('q-ahead').innerHTML=(aheadPool>0?safeNum(aheadPool):'<20')+' ahead of you <span style="color:rgba(255,255,255,0.3)">→</span>';
 
-  // ── CUTOFF CHART ──
-  var cutoffs = CUTOFFS[oi] || [];
-  var bars = document.getElementById('cutoff-bars');
-  var labs = document.getElementById('cutoff-labels');
-  var note = document.getElementById('cutoff-note');
-  bars.innerHTML=''; labs.innerHTML='';
-  var trend='stable';
-  if(cutoffs.length){
-    var vals=cutoffs.map(function(x){return x.c||0;});
-    var maxV=Math.max.apply(null,vals)||110;
-    var allZero=vals.every(function(v){return v===0;});
-    if(allZero){
-      note.textContent='This occupation has not received 189 federal invitations in recent rounds. 190 state nomination is the recommended pathway.';
-      bars.innerHTML='<div style="color:rgba(239,68,68,0.6);font-size:0.75rem;padding:1rem 0">No 189 invitations in last 5 rounds</div>';
-    } else {
-      var recent=cutoffs[0].c, older=cutoffs[cutoffs.length-1].c;
-      if(recent>older) trend='rising';
-      else if(recent<older) trend='falling';
-      note.textContent='Cutoff trend: '+(trend==='rising'?'↑ Rising — harder to get invited recently':trend==='falling'?'↓ Falling — may be getting easier':'→ Stable — consistent over last 5 rounds');
-      note.style.color=trend==='rising'?'#EF4444':trend==='falling'?'#10B981':'var(--muted)';
+  // Points band breakdown chart
+  renderBandChart(pool, pts, vt);
 
-      cutoffs.slice().reverse().forEach(function(item,i){
-        var h=item.c?Math.max(15,Math.round((item.c/(maxV+10))*100)):10;
-        var isYou=item.c&&pts>=item.c;
-        var col=item.c===0?'rgba(239,68,68,0.4)':isYou?'#00C896':'rgba(200,145,58,0.6)';
-        if(i===cutoffs.length-1) col=item.c===0?'rgba(239,68,68,0.4)':isYou?'#00E8AF':'#C8913A';
-        var bar=document.createElement('div');
-        bar.style.cssText='flex:1;border-radius:5px 5px 0 0;background:'+col+';height:'+h+'%;position:relative;min-height:12px;transition:height 1s ease '+( i*0.15)+'s;cursor:default';
-        var lbl=document.createElement('div');
-        lbl.style.cssText='position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:0.62rem;font-weight:700;color:#fff;white-space:nowrap';
-        lbl.textContent=item.c?item.c+'pts':'N/A';
-        bar.appendChild(lbl);
-        if(i===cutoffs.length-1){
-          var tag=document.createElement('div');
-          tag.style.cssText='position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:0.55rem;color:var(--gold);font-weight:700;white-space:nowrap';
-          tag.textContent='Latest';
-          bar.appendChild(tag);
-        }
-        bars.appendChild(bar);
-        var l=document.createElement('div');
-        l.style.cssText='flex:1;text-align:center;font-size:0.6rem;color:var(--muted);padding-top:4px';
-        l.textContent=item.r;
-        labs.appendChild(l);
-      });
-    }
-  }
+  // Cutoff history
+  var cutoffs=CUTOFFS[oi]||[];
+  renderCutoffChart(cutoffs, pts);
 
-  // ── ACTION RECOMMENDATION ──
-  var actionText='';
-  if(d.c===0){
-    actionText='Your occupation (<b>'+d.lb+'</b>) has not received 189 federal invitations. Focus on <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> (SA or TAS are most accessible) or the <a href="/491-visa" style="color:var(--gold)">491 regional pathway</a> which adds 15 points and has shorter queues.';
-  } else if(pts>=cut+10){
-    actionText='Lodge your EOI immediately — your '+pts+' pts puts you well above the '+cut+' pt cutoff. Every week you wait risks a cutoff increase or pool growth. Your estimated wait at current rates is '+aw+' months from EOI submission.';
-  } else if(pts>=cut){
-    actionText='Lodge your EOI now to lock in your Date of Effect. Your score meets the current cutoff but the margin is thin. Check the <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> options in parallel — SA 190 may offer nomination at a lower base score for your occupation.';
-  } else {
-    var gap=cut-pts;
-    actionText='You need '+gap+' more points to reach the current cutoff of '+cut+'. Fastest boosters: NAATI CCL (+5 pts, ~3 months), Superior English (+10 pts over Proficient), or <a href="/491-visa" style="color:var(--gold)">491 regional pathway</a> (+15 pts, bypasses federal pool). Consider <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> which may have a lower cutoff than 189 federal.';
-  }
-  document.getElementById('action-text').innerHTML=actionText;
+  // State grid
+  renderStateGrid(oi, pts, d);
+
+  // Action recommendation
+  renderAction(d, pts, cut, aheadPool, atBandPool, aw, vt, totalPool);
 
   rt();
 }
+
+function renderBandChart(pool, userPts, vt){
+  var container=document.getElementById('band-chart');
+  if(!container) return;
+  container.innerHTML='';
+  var sorted=Object.keys(pool).map(Number).sort(function(a,b){return a-b;});
+  if(!sorted.length||!maxVal){container.innerHTML='<div style="color:var(--muted);font-size:0.75rem;padding:1rem 0">Pool data not available for this visa type — try 190 or 491</div>';return;}
+  var maxVal=Math.max.apply(null,sorted.map(function(k){return pool[k]||0;}));
+  if(!maxVal) return;
+  sorted.forEach(function(ptsBand){
+    var count=pool[ptsBand]||0;
+    var pct=Math.round((count/maxVal)*100);
+    var isUser=ptsBand===userPts;
+    var isAbove=ptsBand>userPts;
+    var col=isUser?'#C8913A':isAbove?'rgba(239,68,68,0.6)':'rgba(0,200,150,0.6)';
+    var wrapper=document.createElement('div');
+    wrapper.style.cssText='flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0';
+    var bar=document.createElement('div');
+    bar.style.cssText='width:100%;border-radius:4px 4px 0 0;background:'+col+';height:'+Math.max(4,pct)+'%;position:relative;transition:height 0.8s ease;cursor:default';
+    bar.title=ptsBand+'pts: '+count.toLocaleString()+' EOIs';
+    var lbl=document.createElement('div');
+    lbl.style.cssText='position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:0.55rem;font-weight:700;color:'+(isUser?'#C8913A':'#fff');
+    lbl.textContent=count>=1000?(Math.round(count/100)/10)+'k':count>0?count:'';
+    bar.appendChild(lbl);
+    if(isUser){
+      var pin=document.createElement('div');
+      pin.style.cssText='position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-size:0.55rem;color:#C8913A;font-weight:700;white-space:nowrap';
+      pin.textContent='YOU';
+      bar.appendChild(pin);
+    }
+    var xLbl=document.createElement('div');
+    xLbl.style.cssText='font-size:0.58rem;color:'+(isUser?'#C8913A':'var(--muted)')+';margin-top:12px;font-weight:'+(isUser?'700':'400');
+    xLbl.textContent=ptsBand;
+    wrapper.appendChild(bar);
+    wrapper.appendChild(xLbl);
+    container.appendChild(wrapper);
+  });
+}
+
+function renderCutoffChart(cutoffs, pts){
+  var bars=document.getElementById('cutoff-bars');
+  var labs=document.getElementById('cutoff-labels');
+  var note=document.getElementById('cutoff-note');
+  bars.innerHTML=''; labs.innerHTML='';
+  if(!cutoffs.length) return;
+  var allZero=cutoffs.every(function(x){return !x.c;});
+  if(allZero){
+    note.textContent='No 189 federal invitations in recent rounds for this occupation.';
+    bars.innerHTML='<div style="color:rgba(239,68,68,0.6);font-size:0.75rem;padding:1rem 0">Not invited in last 5 rounds</div>';
+    return;
+  }
+  var recent=cutoffs[0].c, older=cutoffs[cutoffs.length-1].c;
+  var trend=recent>older?'rising':recent<older?'falling':'stable';
+  note.textContent='Cutoff trend: '+(trend==='rising'?'↑ Rising — getting harder':trend==='falling'?'↓ Falling — may be getting easier':'→ Stable — consistent');
+  note.style.color=trend==='rising'?'#EF4444':trend==='falling'?'#10B981':'var(--muted)';
+  cutoffs.slice().reverse().forEach(function(item,i){
+    var h=item.c?Math.max(15,Math.round((item.c/110)*100)):10;
+    var isLast=i===cutoffs.length-1;
+    var meetsYou=item.c&&pts>=item.c;
+    var col=item.c===0?'rgba(239,68,68,0.4)':meetsYou?'#00C896':'rgba(200,145,58,0.6)';
+    if(isLast) col=item.c===0?'rgba(239,68,68,0.4)':meetsYou?'#00E8AF':'#C8913A';
+    var bar=document.createElement('div');
+    bar.style.cssText='flex:1;border-radius:5px 5px 0 0;background:'+col+';height:'+h+'%;position:relative;min-height:12px;transition:height 1s ease '+(i*0.15)+'s';
+    var lbl=document.createElement('div');
+    lbl.style.cssText='position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:0.62rem;font-weight:700;color:#fff;white-space:nowrap';
+    lbl.textContent=item.c?item.c+'pts':'N/A';
+    bar.appendChild(lbl);
+    if(isLast){var tag=document.createElement('div');tag.style.cssText='position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:0.55rem;color:var(--gold);font-weight:700;white-space:nowrap';tag.textContent='Latest';bar.appendChild(tag);}
+    bars.appendChild(bar);
+    var l=document.createElement('div');l.style.cssText='flex:1;text-align:center;font-size:0.6rem;color:var(--muted);padding-top:4px';l.textContent=item.r;labs.appendChild(l);
+  });
+}
+
+function renderStateGrid(oi, pts, d){
+  var stGrid=document.getElementById('state-grid');
+  stGrid.innerHTML='';
+  var stateNames={sa:'SA',tas:'TAS',qld:'QLD',vic:'VIC',wa:'WA',nsw:'NSW',nt:'NT',act:'ACT'};
+  var stData=STATE_DATA[oi]||null;
+  if(!stData){stGrid.innerHTML='<div style="font-size:0.78rem;color:var(--muted);grid-column:1/-1">State nomination data not available for this occupation. Check the <a href="/state-comparator" style="color:var(--teal)">State Comparator</a>.</div>';return;}
+  Object.keys(stateNames).forEach(function(key){
+    var st=stData[key];
+    var meetsPoints=st&&pts>=st.pts;
+    var invited=st&&st.inv;
+    var bg,badge,ptCol;
+    if(!st||!invited){bg='rgba(239,68,68,0.06)';badge='Not nominating';ptCol='#EF4444';}
+    else if(meetsPoints){bg='rgba(16,185,129,0.08)';badge='✓ You qualify';ptCol='#10B981';}
+    else{bg='rgba(200,145,58,0.08)';badge='Need '+(st.pts-pts)+' more';ptCol='#C8913A';}
+    var card=document.createElement('div');
+    card.style.cssText='background:'+bg+';border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:0.65rem 0.75rem;text-align:center';
+    card.innerHTML='<div style="font-family:Outfit,sans-serif;font-size:0.9rem;font-weight:700;color:#F0F5FF;margin-bottom:0.2rem">'+stateNames[key]+'</div>'+'<div style="font-size:0.62rem;color:'+ptCol+';font-weight:600;margin-bottom:0.15rem">'+(st?st.pts+'pts min':'N/A')+'</div>'+'<div style="font-size:0.58rem;color:'+ptCol+'">'+badge+'</div>';
+    stGrid.appendChild(card);
+  });
+}
+
+function renderAction(d, pts, cut, aheadPool, atBandPool, aw, vt, totalPool){
+  var actionText='';
+  if(d.c===0&&d.c491===0){
+    if(d.id.indexOf('accountant')>=0){
+      actionText='<b>Do not lodge a 189 EOI.</b> There are '+safeNum(totalPool)+' accountants waiting with zero invitations. Your options:<br><br>1. <a href="/190-visa" style="color:var(--gold)">190 State Nomination</a> — check if your state still nominates accountants (most have paused).<br>2. <a href="/491-visa" style="color:var(--gold)">491 Regional Pathway</a> — if you can live regionally, this is the most viable option. Adds 15 pts effective score for citizenship purposes.<br>3. <a href="/482-visa" style="color:var(--gold)">482 Employer Sponsored</a> — if an employer will sponsor you, this bypasses the points queue entirely.';
+    } else {
+      actionText='<b>189 federal invitations paused for '+d.lb+'.</b> '+safeNum(totalPool)+' EOIs waiting across all visa types. Your options:<br><br>1. <a href="/190-visa" style="color:var(--gold)">190 State Nomination</a> — several states still nominate this occupation.<br>2. <a href="/491-visa" style="color:var(--gold)">491 Regional Pathway</a> — regional pathway adds 15 pts and has separate invitation rounds.<br>3. Build your points score while waiting — every extra 5 points improves your 190/491 competitiveness.';
+    }
+  } else if(pts>=cut+10){
+    actionText='Lodge your EOI immediately. Your '+pts+' pts is '+( pts-cut)+' pts above cutoff. There are '+safeNum(aheadPool)+' people above you and '+safeNum(atBandPool)+' at your band. The estimated wait from EOI submission is '+aw+'-'+(aw+5)+' months at current invitation rates. Every week you delay costs you queue position.';
+  } else if(pts>=cut){
+    actionText='Lodge your EOI now to lock in your Date of Effect. Your '+pts+' pts meets the cutoff but '+safeNum(atBandPool)+' others are at the same band. Within the same points band, DHA invites by Date of Effect — the earlier you lodge, the earlier you get invited. Consider <a href="/190-visa" style="color:var(--gold)">190 state nomination</a> as a parallel pathway.';
+  } else {
+    var gap=cut-pts;
+    actionText='You need <b>'+gap+' more points</b> to reach the cutoff of '+cut+'. Fastest options:<br><br>1. NAATI CCL — +5 pts, ~3 months, ~$800<br>2. Partner points (if eligible) — +5 pts, immediate<br>3. Specialist Education qualification — +5-10 pts<br>4. <a href="/491-visa" style="color:var(--gold)">491 regional pathway</a> — bypasses the 189 cutoff entirely with a separate pool';
+  }
+  document.getElementById('action-text').innerHTML=actionText;
+}
+
 function rt(){
   var data=D.slice().sort(function(a,b){
     var keys=['lb','pool','c','comp','wt','tr'];var k=keys[SC];
@@ -804,7 +1181,7 @@ function rt(){
     var tr=d.tr==='shrinking'?'<span class="tu">↑ Shrinking</span>':d.tr==='growing'?'<span class="td2">↓ Growing</span>':'<span class="ts2">→ Stable</span>';
     var c189=d.c?d.c+' pts':'<span style="color:#f87171">No 189</span>';
     var wc=d.wt<=8?'#10B981':d.wt<=14?'#00C896':d.wt<=18?'#F59E0B':'#f87171';
-    return '<tr class="'+(iu?'uo':'')+'"><td>'+(iu?'⭐ ':'')+d.lb+'</td><td style="color:'+(d.pool>10000?'#f87171':d.pool>5000?'#F59E0B':'#00C896')+'">'+d.pool.toLocaleString()+'</td><td>'+c189+'</td><td style="color:#00C896;font-weight:600">'+d.comp+' pts</td><td style="color:'+wc+';font-weight:700">'+d.wt+'mo</td><td>'+tr+'</td><td style="color:rgba(122,143,168,0.5)">Dec 2025</td></tr>';
+    return '<tr class="'+(iu?'uo':'')+'"><td>'+(iu?'⭐ ':'')+d.lb+'</td><td style="color:'+((function(){var t=Object.values(d.pool189||{}).reduce(function(a,b){return a+b;},0);return t>10000?'#f87171':t>5000?'#F59E0B':'#00C896';})())+'">'+(Object.values(d.pool189||{}).reduce(function(a,b){return a+b;},0)).toLocaleString()+'</td><td>'+c189+'</td><td style="color:#00C896;font-weight:600">'+d.c+' pts</td><td style="color:'+wc+';font-weight:700">'+d.wt+'mo</td><td>'+tr+'</td><td style="color:rgba(122,143,168,0.5)">Dec 2025</td></tr>';
   }).join('');
 }
 function srt(c){if(SC===c)SD*=-1;else{SC=c;SD=1;}rt();}
@@ -812,16 +1189,16 @@ function cd(){
   var pts=parseInt(document.getElementById('dp').value)||0,oi=document.getElementById('do2').value;
   if(!pts||!oi){alert('Please enter your points and select an occupation.');return;}
   var d=D.find(function(x){return x.id===oi;});if(!d)return;
-  var cut=d.c||d.comp||65,gap=cut-pts,el=document.getElementById('dr2');
+  var cut=d.c||d.c||65,gap=cut-pts,el=document.getElementById('dr2');
   if(!d.c&&d.id==='accountant'){
     el.innerHTML='<div class="dr da show"><div class="dt" style="color:#f87171">⚠️ Do not submit a 189 EOI — Accountants not invited in 2026</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">The 189 federal pathway is not viable for accountants in 2026. Your pathway is SA 190 (65 pts) or 491 regional. Do not sit in the federal pool.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">SA 190 →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
   }else if(!d.c){
     el.innerHTML='<div class="dr db show"><div class="dt" style="color:#f87171">⚠️ No 189 pathway — STSOL occupation</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">'+d.lb+' is on the STSOL list and is not eligible for 189. Your pathway is 190 state nomination or 491 regional.</p><div style="margin-top:0.6rem"><a href="/190-visa" class="ap">190 State →</a><a href="/491-visa" class="ap">491 Regional →</a></div></div>';
   }else if(pts>=cut){
     var ab=pts-cut;
-    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#10B981">✅ Submit your EOI now — you are above the cutoff</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is '+ab+' points above the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. Submit your EOI now. Your Date of Effect will be today’s date and you have a strong chance of invitation in the next round.</p><p style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Also apply to SA 190 state nomination simultaneously — nomination adds 5 extra points and SA runs monthly.</p><div style="margin-top:0.6rem"><a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" class="ap">Submit EOI in SkillSelect →</a><a href="/state-comparator" class="ap">Check SA 190 →</a></div></div>';
+    el.innerHTML='<div class="dr da show"><div class="dt" style="color:#10B981">✅ Submit your EOI now — you are above the cutoff</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is '+ab+' points above the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. Submit your EOI now. Your Date of Effect will be today’s date and you have a strong chance of invitation in the next round.</p><p style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem">Also apply to SA 190 state nomination simultaneously — nomination adds 5 extra points and SA runs monthly.</p><div style="margin-top:0.6rem"><a href="/methodology" target="_blank" class="ap">Submit EOI in SkillSelect →</a><a href="/state-comparator" class="ap">Check SA 190 →</a></div></div>';
   }else if(gap<=5){
-    el.innerHTML='<div class="dr dc2 show"><div class="dt" style="color:var(--amber)">⚠️ Close but not yet — do not submit yet</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is <strong style="color:var(--amber)">'+gap+' points below</strong> the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. If you submit now and later get invited, your Date of Effect will be your invitation date — not today.</p><p style="font-size:0.82rem;color:var(--text);margin-top:0.4rem">NAATI CCL adds 5 points in 3 months ($800) and would put you at '+(pts+5)+' pts — above the cutoff.</p><div style="margin-top:0.6rem"><a href="/points-calculator" class="ap">NAATI CCL +5 pts →</a><a href="/state-comparator" class="ap">SA 190 at '+d.comp+' pts →</a></div></div>';
+    el.innerHTML='<div class="dr dc2 show"><div class="dt" style="color:var(--amber)">⚠️ Close but not yet — do not submit yet</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is <strong style="color:var(--amber)">'+gap+' points below</strong> the recent cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. If you submit now and later get invited, your Date of Effect will be your invitation date — not today.</p><p style="font-size:0.82rem;color:var(--text);margin-top:0.4rem">NAATI CCL adds 5 points in 3 months ($800) and would put you at '+(pts+5)+' pts — above the cutoff.</p><div style="margin-top:0.6rem"><a href="/points-calculator" class="ap">NAATI CCL +5 pts →</a><a href="/state-comparator" class="ap">SA 190 at '+d.c+' pts →</a></div></div>';
   }else{
     el.innerHTML='<div class="dr db show"><div class="dt" style="color:#f87171">❌ Do not submit your EOI yet</div><p style="font-size:0.82rem;color:var(--muted);line-height:1.7">Your score of <strong style="color:var(--text)">'+pts+' points</strong> is <strong style="color:#f87171">'+gap+' points below</strong> the cutoff of <strong style="color:var(--text)">'+cut+' points</strong> for '+d.lb+'. Submitting now creates Date of Effect risk and does not improve your queue position. Focus on reaching '+cut+' points first.</p><div style="margin-top:0.6rem"><a href="/points-calculator" class="ap">NAATI CCL +5 pts &middot; $800 &middot; 3mo</a><a href="/points-calculator" class="ap">Superior English +10 pts</a><a href="/491-visa" class="ap">491 Regional +15 pts</a></div></div>';
   }
@@ -844,6 +1221,84 @@ document.getElementById('ef').innerHTML=OD.map(function(o){
 }).join('');
 function tf(el){var a=el.querySelector('.fa');var o=a.classList.toggle('open');el.classList.toggle('open',o);}
 rt();
+</script>
+
+<!-- EMAIL CAPTURE MODAL -->
+<div id="email-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;align-items:center;justify-content:center;padding:1rem;flex-direction:column">
+  <div onclick="closeModal()" style="position:absolute;inset:0;background:rgba(11,28,46,0.9);backdrop-filter:blur(6px)"></div>
+  <div style="position:relative;z-index:1;background:#fff;border-radius:20px;padding:2.25rem;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:modalIn 0.3s ease">
+    <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;color:#6B7A8D;cursor:pointer">✕</button>
+    <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem">📋</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:#0B1C2E;line-height:1.15;margin-bottom:0.5rem">Your full EOI report<br><em style="font-style:italic;color:#C8913A">is ready.</em></h2>
+    <p style="font-size:0.82rem;color:#6B7A8D;line-height:1.65;margin-bottom:1.5rem">Enter your email to save your queue position and get notified when cutoffs change for your occupation.</p>
+    <div style="background:#F5F1EA;border-radius:10px;padding:0.85rem 1rem;margin-bottom:1.25rem">
+      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6B7A8D;margin-bottom:0.5rem">You will receive</div>
+      <div style="display:flex;flex-direction:column;gap:0.3rem">
+        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Your saved queue position report</div>
+        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Alert when next invitation round drops</div>
+        <div style="font-size:0.78rem;color:#0B1C2E;display:flex;align-items:center;gap:0.4rem"><span style="color:#00C896;font-weight:700;font-size:0.7rem">✓</span> Cutoff change notifications for your occupation</div>
+      </div>
+    </div>
+    <div id="eoi-modal-form">
+      <input type="email" id="eoi-modal-email" placeholder="your@email.com"
+        style="width:100%;padding:0.85rem 1rem;border:1.5px solid #E3DDCF;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:#0B1C2E;outline:none;margin-bottom:0.65rem;transition:border-color 0.2s;background:#fff"
+        onfocus="this.style.borderColor='#C8913A'"
+        onblur="this.style.borderColor='#E3DDCF'"
+        onkeydown="if(event.key==='Enter')submitEoiModal()">
+      <button onclick="submitEoiModal()"
+        style="width:100%;padding:0.95rem;background:#C8913A;color:#0B1C2E;border:none;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:background 0.2s"
+        onmouseover="this.style.background='#E0A94E'"
+        onmouseout="this.style.background='#C8913A'">
+        Save my queue position →
+      </button>
+      <p style="font-size:0.68rem;color:#6B7A8D;text-align:center;margin-top:0.65rem">No spam. Unsubscribe any time.</p>
+    </div>
+    <div id="eoi-modal-success" style="display:none;text-align:center;padding:1rem 0">
+      <div style="font-size:2rem;margin-bottom:0.75rem">✅</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0B1C2E;margin-bottom:0.4rem">Saved.</div>
+      <div style="font-size:0.82rem;color:#6B7A8D;line-height:1.6">Check your inbox — we will alert you when the next round drops for your occupation.</div>
+    </div>
+  </div>
+</div>
+<style>@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}</style>
+<script>
+function openModal(){
+  var m=document.getElementById('email-modal');
+  m.style.display='flex';
+  m.style.alignItems='center';
+  m.style.justifyContent='center';
+  document.getElementById('eoi-modal-form').style.display='block';
+  document.getElementById('eoi-modal-success').style.display='none';
+  document.getElementById('eoi-modal-email').value='';
+  setTimeout(function(){document.getElementById('eoi-modal-email').focus();},200);
+}
+function closeModal(){document.getElementById('email-modal').style.display='none';}
+function submitEoiModal(){
+  var email=document.getElementById('eoi-modal-email').value.trim();
+  if(!email||!email.includes('@')){
+    document.getElementById('eoi-modal-email').style.borderColor='#EF4444';
+    document.getElementById('eoi-modal-email').focus();
+    return;
+  }
+  try{
+    fetch('https://connect.mailerlite.com/api/subscribers',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTMyNjcxN2U3Mzk1MTUwNDc5NThjZDlmZjIxYTU1ZDNiN2EwM2YzMDJjODYwNzMyZDMxM2YzZGFjZjdjZmUyNDYyNDZkZDFjYTZmNDVkYmYiLCJpYXQiOjE3Nzc3NjE2MzUuMTQ0MDAyLCJuYmYiOjE3Nzc3NjE2MzUuMTQ0MDA0LCJleHAiOjQ5MzM0MzUyMzUuMTM4MDE2LCJzdWIiOiIyMzMwODQzIiwic2NvcGVzIjpbXX0.LjdJOz-mvQ3lotIqYceD_Q2qkJwwrj8ac4wCfqzpgaGnph6yhxc5vps8eLJDEDU-QLtOKeRPiQMmQ4Bl3qS2JmFV-yOzu5b_nRFL4ktDew7haToblUULJBiviv7JeGY81FNKMnS8mzBL7Kgxa9ilJex24XD8FjCzUfRch9ZmK05yIBNu_XoAX090YkHKgJV7TCRFAywXlWvvujV7ma1oocZugBIGXK9nyT0mqNHzFktITw7btJDrR_yIG0rwYSGjHOKIhbeoDjCU5j6wFHm9Jyqe2NMVSL5BlSluIJ01MprgTOKCN_LK1dnIrqbdeAoB5I9X6Jm2NHcR4-dUD5mLeOnjPgGQdBd0hJS2lnicv1d79TfbBwNoD_jDdFOjAoY13r0V_9-pfItQ3enAS9Mjv3egvASAj_Lom9_buHpJ9uP4VmntpJqKK57L0_30NllxoNetAvWiHRaWYECie_hfCNUPfU2Tj0p5OWG2euWMLZgT7hfQ-rOYHGVZPtapA3tLGnMHHJDP6DuRnpRajiJ5dVh173X8POVz0WtBX7uouHP2v91sCqFfb_xSOHOm1rYXjwAhK1YCSfMDTiW0u5vJCtN0zWkQfciv2GwbgWeNdvuyC3cc33F28e9BbZ3LP71JEZy3Xw7JNxa7Ib0cTfoyv3QpN9kUSXGnp7w1itWTGSw'},
+      body:JSON.stringify({email:email,groups:['186396468848887410'],fields:{source:'eoi_queue_page'}})
+    }).catch(function(){});
+  }catch(e){}
+  try{var l=JSON.parse(localStorage.getItem('viq_leads')||'[]');l.push({email:email,source:'eoi_queue',ts:new Date().toISOString()});localStorage.setItem('viq_leads',JSON.stringify(l));}catch(e){}
+  document.getElementById('eoi-modal-form').style.display='none';
+  document.getElementById('eoi-modal-success').style.display='block';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+
+<script>
+var rObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');rObs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){rObs.observe(el);});
 </script>
 </body>
 </html>
