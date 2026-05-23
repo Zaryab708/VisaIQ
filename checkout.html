@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your PR Intelligence Report | VisaIQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1C2E;--navy2:#12263D;
+  --gold:#C8913A;--gold2:#E0A94E;
+  --teal:#0A8F67;--teal-light:#E6F7F1;
+  --cream:#F8F7F3;--border:#E2DFD6;
+  --text:#1A1A1A;--muted:#6B7280;--white:#fff;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+body{background:var(--cream);font-family:'Outfit',sans-serif;color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+nav{background:var(--navy);padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;color:#fff;text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-secure{font-size:11px;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:5px}
+.wrap{max-width:500px;margin:0 auto;padding:1.5rem 1rem 4rem}
+
+/* PROFILE CARD */
+.profile-card{background:var(--navy);border-radius:12px;padding:0.85rem 1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.profile-occ{font-size:13px;font-weight:600;color:#fff}
+.profile-pts{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.profile-tag{font-size:11px;font-weight:700;color:var(--gold2);background:rgba(200,145,58,0.15);border:1px solid rgba(200,145,58,0.3);border-radius:100px;padding:3px 10px}
+
+/* MAIN CARD */
+.main-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem;box-shadow:var(--shadow)}
+.mc-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.5rem}
+.mc-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:0.35rem}
+.mc-title em{font-style:italic;color:var(--gold)}
+.mc-sub{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1.5rem}
+
+/* FEATURES */
+.features{border-top:1px solid var(--border);padding-top:1.25rem;margin-bottom:1.5rem}
+.feat{display:flex;gap:8px;font-size:13px;color:var(--text);margin-bottom:9px;line-height:1.5;align-items:flex-start}
+.feat-tick{color:var(--teal);font-weight:700;flex-shrink:0;font-size:12px;margin-top:2px}
+.feat strong{font-weight:600;color:var(--navy)}
+
+/* PRICE */
+.price-row{text-align:center;margin-bottom:1.25rem;padding:1rem;background:var(--cream);border-radius:10px;border:1px solid var(--border)}
+.price-amount{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;color:var(--navy);line-height:1}
+.price-note{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* BUTTON */
+.pay-btn{display:block;width:100%;padding:1rem;background:var(--gold);color:var(--navy);border-radius:12px;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;text-align:center;text-decoration:none;transition:all 0.2s;margin-bottom:0.75rem;letter-spacing:-0.01em}
+.pay-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(200,145,58,0.3)}
+
+/* TRUST */
+.trust-row{display:flex;align-items:center;justify-content:center;gap:1rem;font-size:11px;color:var(--muted);flex-wrap:wrap}
+
+/* BACK */
+.back-link{text-align:center;margin-top:1rem;font-size:12px}
+.back-link a{color:var(--muted);text-decoration:none}
+.back-link a:hover{color:var(--navy)}
+
+@media(max-width:480px){
+  .wrap{padding:1rem 0.75rem 3rem}
+  .main-card{padding:1.25rem}
+  .mc-title{font-size:1.3rem}
+  .feat{font-size:12px}
+  .trust-row{gap:0.6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Visa<span>IQ</span></a>
+  <div class="nav-secure"><span>🔒</span> Secure checkout · Stripe</div>
+</nav>
+
+<div class="wrap">
+
+  <!-- PROFILE SUMMARY -->
+  <div class="profile-card" id="profile-card" style="display:none">
+    <div class="profile-inner">
+      <div class="profile-occ" id="profile-occ">Your occupation</div>
+      <div class="profile-pts" id="profile-pts">— pts</div>
+    </div>
+    <div class="profile-tag" id="profile-tag">Loading…</div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="main-card">
+    <div class="mc-eyebrow">PR Intelligence Report</div>
+    <div class="mc-title">Everything you need.<br><em>One payment.</em></div>
+    <div class="mc-sub">Personalised to your occupation and points. Real DHA April 2026 data. Instant access.</div>
+
+    <div class="features">
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Your exact queue position</strong> — pool breakdown by points band, your percentile in the SkillSelect pool</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>State nomination — all 8 states</strong> — current open/closed, whether you qualify now, onshore priority applied</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Points improvement simulator</strong> — drag sliders, see exactly how many applicants you bypass</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Cutoff history — 5 rounds</strong> — plotted with your score, is your margin safe or shrinking?</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Community outcomes</strong> — real timelines from people at your occupation and points</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Every pathway assessed</strong> — 189, 190, 491, 482, GTI — personalised yes/no</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>12-month action plan</strong> — week by week from today, one action this week</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Requirements checklist</strong> — skills assessment, English, police clearance — interactive tick-off</span></div>
+    </div>
+
+    <div class="price-row">
+      <div class="price-amount">A$79</div>
+      <div class="price-note">One-off · Instant access · Not migration advice</div>
+    </div>
+
+    <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" class="pay-btn" id="pay-btn">
+      Get my PR Report — A$79 →
+    </a>
+
+    <div class="trust-row">
+      <span>🔒 Stripe</span>
+      <span>✓ 256-bit SSL</span>
+      <span>🇦🇺 AUD</span>
+      <span>Instant access</span>
+    </div>
+  </div>
+
+  <div class="back-link"><a href="/report">← See what's in the report first</a></div>
+
+</div>
+
+</body>
+</html><script>
+// Show profile card if URL params exist
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var occ = p.get('occ');
+  var pts = p.get('pts');
+  var visa = p.get('visa') || '189';
+  if(occ && pts){
+    var name = occ.replace(/_/g,' ').replace(/\w/g,function(c){return c.toUpperCase();});
+    document.getElementById('profile-occ').textContent = name;
+    document.getElementById('profile-pts').textContent = pts + ' pts · ' + visa + ' pathway';
+    document.getElementById('profile-tag').textContent = 'Report personalised ✓';
+    document.getElementById('profile-card').style.display = 'flex';
+
+    // Add user params to Stripe link as client_reference_id
+    var btn = document.getElementById('pay-btn');
+    var ref = [occ, pts, visa].join('_');
+    var url = btn.href;
+    url += (url.indexOf('?') > -1 ? '&' : '?') + 'client_reference_id=' + encodeURIComponent(ref);
+    btn.href = url;
+  }
+})();
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your PR Intelligence Report | VisaIQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1C2E;--navy2:#12263D;
+  --gold:#C8913A;--gold2:#E0A94E;
+  --teal:#0A8F67;--teal-light:#E6F7F1;
+  --cream:#F8F7F3;--border:#E2DFD6;
+  --text:#1A1A1A;--muted:#6B7280;--white:#fff;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+body{background:var(--cream);font-family:'Outfit',sans-serif;color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+nav{background:var(--navy);padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;color:#fff;text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-secure{font-size:11px;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:5px}
+.wrap{max-width:500px;margin:0 auto;padding:1.5rem 1rem 4rem}
+
+/* PROFILE CARD */
+.profile-card{background:var(--navy);border-radius:12px;padding:0.85rem 1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between}
+.profile-occ{font-size:13px;font-weight:600;color:#fff}
+.profile-pts{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+.profile-tag{font-size:11px;font-weight:700;color:var(--gold2);background:rgba(200,145,58,0.15);border:1px solid rgba(200,145,58,0.3);border-radius:100px;padding:3px 10px}
+
+/* MAIN CARD */
+.main-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem;box-shadow:var(--shadow)}
+.mc-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.5rem}
+.mc-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:0.35rem}
+.mc-title em{font-style:italic;color:var(--gold)}
+.mc-sub{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1.5rem}
+
+/* FEATURES */
+.features{border-top:1px solid var(--border);padding-top:1.25rem;margin-bottom:1.5rem}
+.feat{display:flex;gap:8px;font-size:13px;color:var(--text);margin-bottom:9px;line-height:1.5;align-items:flex-start}
+.feat-tick{color:var(--teal);font-weight:700;flex-shrink:0;font-size:12px;margin-top:2px}
+.feat strong{font-weight:600;color:var(--navy)}
+
+/* PRICE */
+.price-row{text-align:center;margin-bottom:1.25rem;padding:1rem;background:var(--cream);border-radius:10px;border:1px solid var(--border)}
+.price-amount{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;color:var(--navy);line-height:1}
+.price-note{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* BUTTON */
+.pay-btn{display:block;width:100%;padding:1rem;background:var(--gold);color:var(--navy);border-radius:12px;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;text-align:center;text-decoration:none;transition:all 0.2s;margin-bottom:0.75rem;letter-spacing:-0.01em}
+.pay-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(200,145,58,0.3)}
+
+/* TRUST */
+.trust-row{display:flex;align-items:center;justify-content:center;gap:1rem;font-size:11px;color:var(--muted);flex-wrap:wrap}
+
+/* BACK */
+.back-link{text-align:center;margin-top:1rem;font-size:12px}
+.back-link a{color:var(--muted);text-decoration:none}
+.back-link a:hover{color:var(--navy)}
+
+@media(max-width:480px){
+  .wrap{padding:1rem 0.75rem 3rem}
+  .main-card{padding:1.25rem}
+  .mc-title{font-size:1.3rem}
+  .feat{font-size:12px}
+  .trust-row{gap:0.6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Visa<span>IQ</span></a>
+  <div class="nav-secure"><span>🔒</span> Secure checkout · Stripe</div>
+</nav>
+
+<div class="wrap">
+
+  <!-- PROFILE SUMMARY -->
+  <div class="profile-card" id="profile-card" style="display:none">
+    <div class="profile-inner">
+      <div class="profile-occ" id="profile-occ">Your occupation</div>
+      <div class="profile-pts" id="profile-pts">— pts</div>
+    </div>
+    <div class="profile-tag" id="profile-tag">Loading…</div>
+  </div>
+
+  <!-- WHAT YOU GET -->
+  <div class="main-card">
+    <div class="mc-eyebrow">PR Intelligence Report</div>
+    <div class="mc-title">Everything you need.<br><em>One payment.</em></div>
+    <div class="mc-sub">Personalised to your occupation and points. Real DHA April 2026 data. Instant access.</div>
+
+    <div class="features">
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Your exact queue position</strong> — pool breakdown by points band, your percentile in the SkillSelect pool</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>State nomination — all 8 states</strong> — current open/closed, whether you qualify now, onshore priority applied</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Points improvement simulator</strong> — drag sliders, see exactly how many applicants you bypass</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Cutoff history — 5 rounds</strong> — plotted with your score, is your margin safe or shrinking?</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Community outcomes</strong> — real timelines from people at your occupation and points</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Every pathway assessed</strong> — 189, 190, 491, 482, GTI — personalised yes/no</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>12-month action plan</strong> — week by week from today, one action this week</span></div>
+      <div class="feat"><span class="feat-tick">✓</span><span><strong>Requirements checklist</strong> — skills assessment, English, police clearance — interactive tick-off</span></div>
+    </div>
+
+    <div class="price-row">
+      <div class="price-amount">A$79</div>
+      <div class="price-note">One-off · Instant access · Not migration advice</div>
+    </div>
+
+    <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" class="pay-btn" id="pay-btn">
+      Get my PR Report — A$79 →
+    </a>
+
+    <div class="trust-row">
+      <span>🔒 Stripe</span>
+      <span>✓ 256-bit SSL</span>
+      <span>🇦🇺 AUD</span>
+      <span>Instant access</span>
+    </div>
+  </div>
+
+  <div class="back-link"><a href="/report">← See what's in the report first</a></div>
+
+</div>
+
+</body>
+</html>
