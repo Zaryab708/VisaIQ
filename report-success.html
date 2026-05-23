@@ -732,10 +732,10 @@ function updateTally(){
 
 // ── SELECTION ──
 function sel(btn, field, pts, label){
-  var parent = btn.closest('.q');
-  parent.querySelectorAll('.opt').forEach(function(b){b.classList.remove('sel');});
+  var optsParent = btn.closest('.opts') || btn.closest('.q');
+  if(optsParent) optsParent.querySelectorAll('.opt').forEach(function(b){b.classList.remove('sel');});
   btn.classList.add('sel');
-  answers[field] = label;
+  answers[field] = label; // e.g. answers.age = '25-32 years old'
   answers[field+'_pts'] = parseInt(pts)||0;
   updateTally();
   checkStep(currentStep);
@@ -754,7 +754,7 @@ function toggleBonus(el, field, pts, label){
 // ── STEP VALIDATION ──
 function checkStep(n){
   if(n===1){
-    var ok = document.getElementById('f-name').value.trim().length > 0 && answers.age_pts !== null && answers.location;
+    var ok = document.getElementById('f-name').value.trim().length > 0 && answers.age !== null && answers.location;
     document.getElementById('next-1').disabled = !ok;
   }
   if(n===2){document.getElementById('next-2').disabled = !answers.english;}
@@ -942,7 +942,6 @@ Respond ONLY as valid JSON (no markdown, no backticks):
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({prompt:prompt})
-  })
   })
   .then(function(r){return r.json();})
   .then(function(data){
