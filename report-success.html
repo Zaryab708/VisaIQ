@@ -302,9 +302,12 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
   nav,.action-bar,#wizard,#phase-loading{display:none!important}
   #phase-report{display:block!important;padding:0}
   body{background:#fff}
-  .rpt-sec,.rpt-hero,.verdict-block{break-inside:avoid;box-shadow:none}
+  .rpt-sec,.rpt-hero,.verdict-block,#next3-block{break-inside:avoid;box-shadow:none;border:1px solid #E2DFD6}
   .rpt-hero{background:#0B1C2E!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .sc-open,.sc-closed,.sc-warn,.t1-b,.t2-b,.t3-b,.t4-b{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  table{break-inside:avoid;font-size:11px}
+  .ap-item{break-inside:avoid}
+  #next3-block{background:#C8913A!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
@@ -530,6 +533,10 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
     <div class="rpt-eyebrow">PR Intelligence Report · VisaIQ · April 2026 DHA SkillSelect Data</div>
     <div class="rpt-name" id="r-name">Your Report</div>
     <div class="rpt-occ" id="r-occ"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.5rem">
+      <div style="font-size:10px;color:rgba(255,255,255,0.2);font-family:'Outfit',sans-serif" id="report-meta">Report generated: — · Data: DHA SkillSelect April 2026 · Profile ID: —</div>
+      <div style="font-size:10px;font-weight:700;color:var(--gold2);background:var(--gold3);border:1px solid var(--gold4);padding:3px 10px;border-radius:100px">9 sections · April 2026 data</div>
+    </div>
     <div class="rpt-stats">
       <div class="rstat"><div class="rstat-n c-white" id="r-pts">—</div><div class="rstat-l">DHA score</div></div>
       <div class="rstat"><div class="rstat-n c-red" id="r-ahead">—</div><div class="rstat-l">Ahead of you</div></div>
@@ -537,6 +544,12 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
       <div class="rstat"><div class="rstat-n c-gold" id="r-window">—</div><div class="rstat-l">Inv. window</div></div>
       <div class="rstat"><div class="rstat-n c-amber" id="r-prob">—</div><div class="rstat-l">6mo prob.</div></div>
     </div>
+  </div>
+
+  <!-- NEXT 3 ACTIONS — top of report -->
+  <div id="next3-block" style="background:var(--gold);border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:1rem">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--navy);opacity:0.6;margin-bottom:0.5rem">Your 3 actions this week — do these first</div>
+    <div id="next3-list" style="display:flex;flex-direction:column;gap:8px"></div>
   </div>
 
   <!-- Verdict -->
@@ -558,14 +571,14 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
 
   <!-- S1: Occupation Tier -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-navy">🏷️</div><div class="rpt-sec-title">Occupation Tier & Federal Demand Status</div><span class="sec-tag tag-dha">DHA Classification</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-navy">🏷️</div><div class="rpt-sec-title">Section 1 of 9 · Occupation Tier & Federal Demand Status</div><span class="sec-tag tag-dha">DHA Classification</span></div>
     <div id="tier-block"></div>
     <div class="ai-text" id="ai-tier"></div>
   </div>
 
   <!-- S2: Queue + Probability -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">📊</div><div class="rpt-sec-title">Your Queue Position & Invitation Probability</div><span class="sec-tag tag-dha">DHA Data</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">📊</div><div class="rpt-sec-title">Section 2 of 9 · Queue Position & Invitation Probability</div><span class="sec-tag tag-dha">DHA Data</span></div>
     <div style="display:grid;grid-template-columns:1fr 140px;gap:1.5rem;align-items:center">
       <div>
         <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Estimated competitor density band — April 2026 SkillSelect snapshot</div>
@@ -583,7 +596,7 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
 
   <!-- S3: Points simulator -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">🎯</div><div class="rpt-sec-title">Points Score & Improvement Simulator</div><span class="sec-tag tag-ai">Personalised</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">🎯</div><div class="rpt-sec-title">Section 3 of 9 · Points Score & Improvement Simulator</div><span class="sec-tag tag-ai">Personalised</span></div>
     <div id="sim-rows" style="margin-bottom:1rem"></div>
     <div style="background:var(--navy);border-radius:12px;padding:1rem;margin-bottom:0.85rem">
       <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--gold2);margin-bottom:0.65rem">🏆 Highest impact improvements — ranked</div>
@@ -594,14 +607,14 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
 
   <!-- S4: Cutoff history -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">📈</div><div class="rpt-sec-title">189 Federal Cutoff History — Last 5 Rounds</div><span class="sec-tag tag-dha">Trend Data</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">📈</div><div class="rpt-sec-title">Section 4 of 9 · 189 Federal Cutoff History</div><span class="sec-tag tag-dha">Trend Data</span></div>
     <div style="position:relative;height:140px;margin-bottom:0.85rem"><canvas id="cutoffChart"></canvas></div>
     <div class="ai-text" id="ai-cutoff"></div>
   </div>
 
   <!-- S5: State nomination — PREMIUM -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-navy">🏛️</div><div class="rpt-sec-title">State Nomination — 2025–26 Allocations, Usage & Your Eligibility</div><span class="sec-tag tag-live">Live Data</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-navy">🏛️</div><div class="rpt-sec-title">Section 5 of 9 · State Nomination — 2025–26 Allocations & Eligibility</div><span class="sec-tag tag-live">Live Data</span></div>
 
     <!-- Best state recommendation -->
     <div class="best-state" id="best-state-block"></div>
@@ -620,27 +633,27 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
 
   <!-- S6: Migration policy -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-purple">⚖️</div><div class="rpt-sec-title">Migration Policy Changes Affecting Your Application</div><span class="sec-tag tag-new">2026 Updates</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-purple">⚖️</div><div class="rpt-sec-title">Section 6 of 9 · Migration Policy Changes</div><span class="sec-tag tag-new">2026 Updates</span></div>
     <div id="policy-list"></div>
     <div class="ai-text" id="ai-policy"></div>
   </div>
 
   <!-- S7: Pathways -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">🗺️</div><div class="rpt-sec-title">All Visa Pathways Assessed for Your Profile</div><span class="sec-tag tag-ai">Personalised</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">🗺️</div><div class="rpt-sec-title">Section 7 of 9 · All Visa Pathways Assessed</div><span class="sec-tag tag-ai">Personalised</span></div>
     <div id="pathway-list"></div>
     <div class="ai-text" id="ai-pathways"></div>
   </div>
 
   <!-- S8: Action plan -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">📅</div><div class="rpt-sec-title">Your 12-Month Action Plan</div><span class="sec-tag tag-ai">Week by Week</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-gold">📅</div><div class="rpt-sec-title">Section 8 of 9 · Your 12-Month Action Plan</div><span class="sec-tag tag-ai">Week by Week</span></div>
     <div id="action-plan"></div>
   </div>
 
   <!-- S9: Checklist -->
   <div class="rpt-sec">
-    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">✅</div><div class="rpt-sec-title">Requirements Checklist</div><span class="sec-tag tag-ai">Interactive</span></div>
+    <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">✅</div><div class="rpt-sec-title">Section 9 of 9 · Requirements Checklist</div><span class="sec-tag tag-ai">Interactive</span></div>
     <div id="checklist"></div>
   </div>
 
@@ -968,6 +981,13 @@ function renderReport(totalPts,ai){
   var prob=ai.probability_6mo||65;
   var win=cutoff>0&&totalPts>=cutoff+15?'Oct–Dec 26':cutoff>0&&totalPts>=cutoff+10?'Nov–Feb 27':cutoff>0&&totalPts>=cutoff?'Jan–May 27':cutoff>0?'Below cutoff':occ.tier<=2?'Via 190/491':'Limited';
 
+  // Report meta
+  var now = new Date();
+  var dateStr = now.toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'});
+  var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; var profileId='VIQ-'; for(var i=0;i<6;i++) profileId+=chars[Math.floor(Math.random()*chars.length)];
+  var metaEl = document.getElementById('report-meta');
+  if(metaEl) metaEl.textContent = 'Generated: '+dateStr+' · Data: DHA SkillSelect April 2026 · Profile ID: '+profileId;
+
   // Header
   document.getElementById('r-name').textContent=answers.name+"'s PR Intelligence Report";
   document.getElementById('r-occ').textContent=occ.name+' · '+totalPts+' pts · '+answers.location+' · April 2026 DHA data';
@@ -980,9 +1000,9 @@ function renderReport(totalPts,ai){
   // Verdict
   var v=ai.verdict||{level:'moderate',title:'Your position assessed',sub:'See full analysis below.',action:'Review your report'};
   var vb=document.getElementById('verdict-block');
-  vb.className='verdict-block verdict-'+v.level;
-  document.getElementById('verdict-icon').textContent=v.level==='strong'?'✅':v.level==='moderate'?'⚠️':'🔴';
-  document.getElementById('verdict-label').textContent=v.level==='strong'?'Strong position — act now':v.level==='moderate'?'Competitive — strategic action needed':'At risk — immediate action required';
+  vb.className='verdict-block verdict-moderate'; // Always amber urgency — even strong positions need action
+  document.getElementById('verdict-icon').textContent=v.level==='strong'?'⚡':v.level==='moderate'?'⚠️':'🔴';
+  document.getElementById('verdict-label').textContent=v.level==='strong'?'Strong position — but act this week':v.level==='moderate'?'Competitive — strategic action needed':'At risk — immediate action required';
   document.getElementById('verdict-title').textContent=v.title||'';
   document.getElementById('verdict-sub').textContent=v.sub||'';
   document.getElementById('verdict-action').textContent='↓ '+( v.action||'See your full report');
@@ -998,6 +1018,12 @@ function renderReport(totalPts,ai){
   document.getElementById('q-you').textContent='↑ '+answers.name+' — '+totalPts+' pts';
   document.getElementById('q-aheadl').textContent='~'+(ahead<20?'<20':ahead.toLocaleString())+' est. ahead';
   document.getElementById('doe-warn').innerHTML='<strong>⚠️ Date of Effect matters:</strong> Within the same points band, DHA invites by the date your EOI was submitted. Approximately 15–25 new EOIs enter the pool for your occupation every week. Every day you delay costs you tiebreaker position against '+(ahead<20?'the small group':'the '+(ahead<20?'<20':ahead.toLocaleString()))+' applicants at your exact score.';
+  // Add methodology footnote to queue section
+  var methNote = document.createElement('div');
+  methNote.style.cssText = 'font-size:10px;color:var(--muted);background:var(--cream);border-radius:6px;padding:6px 10px;margin-top:0.85rem;line-height:1.6;border-left:2px solid var(--border)';
+  methNote.innerHTML = 'ⓘ <strong>Methodology note:</strong> Pool composition figures represent VisaIQ\'s modelled estimates derived from DHA SkillSelect round reports and historical invitation patterns. DHA does not publicly disclose point-band granularity. All figures are dynamic estimates — not quoted DHA statistics. Weekly intake estimates based on round-over-round pool growth analysis. <a href="/methodology" style="color:var(--gold);text-decoration:none">See methodology →</a>';
+  var queueAiEl2 = document.getElementById('ai-queue');
+  if(queueAiEl2) queueAiEl2.parentElement.insertBefore(methNote, queueAiEl2);
   document.getElementById('ai-queue').textContent=ai.queue_analysis||'';
 
   // Probability donut
@@ -1151,6 +1177,242 @@ function renderReport(totalPts,ai){
     d.onclick=function(){this.classList.toggle('done');};
     clEl.appendChild(d);
   });
+
+  // ── NEXT 3 ACTIONS (top gold box) ──
+  var next3El = document.getElementById('next3-list');
+  if(next3El && plan.length >= 3){
+    var top3 = plan.slice(0,3);
+    next3El.innerHTML = top3.map(function(item,i){
+      return '<div style="display:flex;align-items:flex-start;gap:10px">'+
+        '<div style="width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">'+(i+1)+'</div>'+
+        '<div><div style="font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:2px">'+item.action+'</div><div style="font-size:11px;color:rgba(11,28,46,0.55);line-height:1.4">'+item.why+'</div></div>'+
+      '</div>';
+    }).join('');
+  }
+
+  // ── INVITATION PROJECTION (add after queue section ai-text) ──
+  var queueSecEl = document.getElementById('ai-queue');
+  if(queueSecEl && cutoff > 0){
+    var projDiv = document.createElement('div');
+    // Calculate projected round dates
+    var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var baseDate = new Date(2026,3,1); // April 2026
+
+    function addMonths(d, m){ var nd=new Date(d); nd.setMonth(nd.getMonth()+m); return nd; }
+    function fmtDate(d){ return monthNames[d.getMonth()]+' '+d.getFullYear(); }
+
+    // Scenario A: cutoff stays same
+    var waitA = cutoff > 0 && totalPts >= cutoff ?
+      Math.max(1, Math.round((ahead||500) / 200)) : // 200 invitations per round estimate
+      null;
+    // Scenario B: cutoff rises 5pts
+    var waitB = cutoff > 0 && totalPts >= cutoff + 5 ?
+      Math.max(1, Math.round((ahead||500) / 150)) :
+      cutoff > 0 && totalPts >= cutoff ?
+      Math.max(2, Math.round((ahead||500) / 100) + 2) : null;
+
+    var scenA = waitA ? 'Round ' + waitA + ' (' + fmtDate(addMonths(baseDate, waitA)) + ')' : 'Below current cutoff';
+    var scenB_label = cutoff > 0 ? (cutoff + 5) + ' pts' : 'N/A';
+    var scenB = waitB ? 'Round ' + (waitB+2) + ' (' + fmtDate(addMonths(baseDate, waitB+2)) + ')' : 'Would not qualify';
+
+    projDiv.style.cssText = 'background:var(--navy);border-radius:12px;padding:1.1rem 1.25rem;margin-top:1rem';
+    projDiv.innerHTML =
+      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold2);margin-bottom:0.75rem">📅 Invitation projection — two scenarios</div>'+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">'+
+        '<div style="background:rgba(10,143,103,0.15);border:1px solid rgba(10,143,103,0.3);border-radius:10px;padding:0.85rem">'+
+          '<div style="font-size:10px;font-weight:700;color:#34D399;margin-bottom:4px">SCENARIO A — Cutoff holds at '+cutoff+' pts</div>'+
+          '<div style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:3px">'+scenA+'</div>'+
+          '<div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.4">If DHA maintains the current '+cutoff+' pt cutoff, '+answers.name+' is invited in approximately '+( waitA||'?')+' round'+(waitA===1?'':'s')+'</div>'+
+        '</div>'+
+        '<div style="background:rgba(200,145,58,0.1);border:1px solid rgba(200,145,58,0.25);border-radius:10px;padding:0.85rem">'+
+          '<div style="font-size:10px;font-weight:700;color:var(--gold2);margin-bottom:4px">SCENARIO B — Cutoff rises to '+scenB_label+'</div>'+
+          '<div style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:3px">'+scenB+'</div>'+
+          '<div style="font-size:11px;color:rgba(255,255,255,0.45);line-height:1.4">If cutoff rises 5 pts, wait extends by approximately 2 additional rounds</div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:0.65rem">Projection based on April 2026 pool snapshot and historical round pace. Not a guarantee — pool is dynamic.</div>';
+    queueSecEl.parentElement.appendChild(projDiv);
+  }
+
+  // ── ROI TABLE (add after impact list) ──
+  var impactEl = document.getElementById('impact-list');
+  if(impactEl){
+    var roiDiv = document.createElement('div');
+    roiDiv.style.cssText = 'margin-top:1rem;overflow-x:auto';
+
+    // Build ROI rows based on notMaxed2
+    var roiRows = [];
+    var baseAhead = ahead || 500;
+
+    if(answers.english_pts < 20){
+      var newAhead = Math.round(baseAhead * 0.28);
+      roiRows.push({action:'Superior English (IELTS 8.0+)', gain:20-answers.english_pts, cost:'A$400–600', time:'1–2 months', newPos:'#'+newAhead, roi:'Highest'});
+    }
+    if(!answers.naati){
+      var naatiAhead = Math.round(baseAhead * 0.52);
+      roiRows.push({action:'NAATI CCL community language', gain:5, cost:'A$800', time:'2–3 months', newPos:'#'+naatiAhead, roi:'Very high'});
+    }
+    if(answers.partner_pts < 10 && answers.partner_pts < 5){
+      var partAhead = Math.round(baseAhead * 0.52);
+      roiRows.push({action:'Partner skills assessment', gain:10, cost:'A$500–2,000', time:'3–6 months', newPos:'#'+partAhead, roi:'High'});
+    }
+    var saMin = STATE_190.SA.minPts[occ.tier]||65;
+    if(totalPts >= saMin){
+      roiRows.push({action:'SA 190 state nomination', gain:5, cost:'A$330 (visa fee)', time:'2–4 weeks', newPos:'Separate pipeline', roi:'High'});
+    }
+    if(!answers.prof_year && occ.cat === 'ICT'){
+      roiRows.push({action:'Professional Year (ICT)', gain:5, cost:'A$13,000', time:'12 months', newPos:'#'+Math.round(baseAhead*0.52), roi:'Low'});
+    }
+    if(answers.aus_exp_pts < 20){
+      roiRows.push({action:'Continue Australian experience', gain:20-answers.aus_exp_pts, cost:'Free (time)', time:'Ongoing', newPos:'#'+Math.round(baseAhead*0.35), roi:'Medium'});
+    }
+
+    var roiColors = {'Highest':'background:#DCFCE7;color:#166534','Very high':'background:#EDE9FE;color:#5B21B6','High':'background:#FEF3C7;color:#92400E','Medium':'background:#E0F2FE;color:#075985','Low':'background:#FEF2F2;color:#B91C1C'};
+
+    roiDiv.innerHTML =
+      '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.75rem">Cost-benefit ranking — specific to '+answers.name+'\'s profile</div>'+
+      '<table style="width:100%;border-collapse:collapse;font-size:12px">'+
+        '<thead><tr style="background:var(--navy);color:#fff">'+
+          '<th style="padding:8px 10px;text-align:left;border-radius:8px 0 0 0;font-weight:600;font-size:11px">Improvement</th>'+
+          '<th style="padding:8px 10px;text-align:center;font-weight:600;font-size:11px">Pts gained</th>'+
+          '<th style="padding:8px 10px;text-align:center;font-weight:600;font-size:11px">Cost</th>'+
+          '<th style="padding:8px 10px;text-align:center;font-weight:600;font-size:11px">Time</th>'+
+          '<th style="padding:8px 10px;text-align:center;font-weight:600;font-size:11px">New queue pos.</th>'+
+          '<th style="padding:8px 10px;text-align:center;border-radius:0 8px 0 0;font-weight:600;font-size:11px">ROI</th>'+
+        '</tr></thead>'+
+        '<tbody>'+
+        roiRows.map(function(r,i){
+          var bg = i%2===0?'var(--white)':'var(--cream)';
+          var roiStyle = roiColors[r.roi]||'';
+          return '<tr style="background:'+bg+'">'+
+            '<td style="padding:8px 10px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--border)">'+r.action+'</td>'+
+            '<td style="padding:8px 10px;text-align:center;font-weight:700;color:var(--teal);border-bottom:1px solid var(--border)">+'+r.gain+' pts</td>'+
+            '<td style="padding:8px 10px;text-align:center;color:var(--muted);border-bottom:1px solid var(--border)">'+r.cost+'</td>'+
+            '<td style="padding:8px 10px;text-align:center;color:var(--muted);border-bottom:1px solid var(--border)">'+r.time+'</td>'+
+            '<td style="padding:8px 10px;text-align:center;font-weight:600;color:var(--navy);border-bottom:1px solid var(--border)">'+r.newPos+'</td>'+
+            '<td style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border)"><span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;'+roiStyle+'">'+r.roi+'</span></td>'+
+          '</tr>';
+        }).join('')+
+        '</tbody>'+
+      '</table>';
+
+    var simRowsEl = document.getElementById('sim-rows');
+    if(simRowsEl) simRowsEl.parentElement.appendChild(roiDiv);
+  }
+
+  // ── STATE DEPLETION WARNING ──
+  var stateAiEl = document.getElementById('ai-state');
+  if(stateAiEl){
+    var saRemaining = STATE_190.SA.remaining;
+    var tasRemaining = STATE_190.TAS.remaining;
+    // SA depletes at ~50/week based on usage pace
+    var saWeeksLeft = Math.round(saRemaining / 50);
+    var tasWeeksLeft = Math.round(tasRemaining / 35);
+    var depDiv = document.createElement('div');
+    depDiv.style.cssText = 'background:var(--amber-bg);border:1px solid var(--amber-border);border-left:4px solid var(--amber);border-radius:10px;padding:0.85rem 1rem;margin-top:0.85rem;font-size:12px;color:var(--amber);line-height:1.7';
+    depDiv.innerHTML = '<strong style="color:#78350F">⏱ Depletion estimate:</strong> Based on current nomination pace, SA\'s remaining '+saRemaining+' places will exhaust in approximately <strong>'+saWeeksLeft+' weeks</strong>, TAS in approximately <strong>'+tasWeeksLeft+' weeks</strong> — before the June 30 program year end. The 2026-27 program resets on <strong>1 July 2026 with 35,500 places</strong> nationally, but initial cutoffs after a reset typically rise as backlogs clear. Acting now in the current program year secures the lower thresholds.';
+    stateAiEl.parentElement.appendChild(depDiv);
+  }
+
+  // ── COMPARABLE PROFILES ──
+  var checklistSec = document.getElementById('checklist');
+  if(checklistSec){
+    var compDiv = document.createElement('div');
+    compDiv.style.cssText = 'background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.06)';
+
+    var pct6mo = cutoff>0&&totalPts>=cutoff+10?73:cutoff>0&&totalPts>=cutoff?58:occ.tier<=2?62:38;
+    var medianWait = cutoff>0&&totalPts>=cutoff+10?3.2:cutoff>0&&totalPts>=cutoff?4.8:occ.tier<=2?5.5:null;
+    var sampleSize = Math.min(ahead||500, 489);
+
+    compDiv.innerHTML =
+      '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">'+
+        '<div style="width:36px;height:36px;border-radius:9px;background:var(--purple-bg);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">👥</div>'+
+        '<div style="font-size:1rem;font-weight:700;color:var(--navy)">Section 2b · Comparable Profiles — '+occ.name+'</div>'+
+        '<span style="margin-left:auto;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:3px 9px;border-radius:5px;background:var(--purple-bg);color:var(--purple)">Community Data</span>'+
+      '</div>'+
+      '<div style="font-size:0.84rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.7">'+
+        '<div style="font-size:10px;color:var(--muted);background:var(--cream);border-radius:6px;padding:6px 10px;margin-bottom:0.85rem;line-height:1.6;border-left:2px solid var(--border)">ⓘ <strong>Modelled outcome:</strong> Based on April 2026 round patterns applied to current pool composition. VisaIQ does not track individual outcomes — figures represent projected distribution if invitation pace holds.</div>Modelled for the '+sampleSize+' EOIs in the April 2026 '+occ.name+' pool at or near '+totalPts+' points — based on current invitation pace, this is the projected distribution of outcomes.'+
+      '</div>'+
+      '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem">'+
+        '<div style="background:var(--cream);border-radius:10px;padding:1rem;text-align:center;border:1px solid var(--border)">'+
+          '<div style="font-family:\'Playfair Display\',serif;font-size:1.6rem;color:var(--teal);line-height:1;margin-bottom:4px">'+(pct6mo)+'%</div>'+
+          '<div style="font-size:11px;color:var(--muted);line-height:1.4">projected invitation within 6 months (modelled)</div>'+
+        '</div>'+
+        '<div style="background:var(--cream);border-radius:10px;padding:1rem;text-align:center;border:1px solid var(--border)">'+
+          '<div style="font-family:\'Playfair Display\',serif;font-size:1.6rem;color:var(--navy);line-height:1;margin-bottom:4px">'+(medianWait?medianWait+'mo':'N/A')+'</div>'+
+          '<div style="font-size:11px;color:var(--muted);line-height:1.4">median wait time for invited applicants</div>'+
+        '</div>'+
+        '<div style="background:var(--cream);border-radius:10px;padding:1rem;text-align:center;border:1px solid var(--border)">'+
+          '<div style="font-family:\'Playfair Display\',serif;font-size:1.6rem;color:var(--gold);line-height:1;margin-bottom:4px">'+(occ.tier<=2?'SA/TAS':'QLD/SA')+'</div>'+
+          '<div style="font-size:11px;color:var(--muted);line-height:1.4">most common state nomination for similar profiles</div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="font-size:12px;color:var(--muted);line-height:1.7;background:var(--cream);border-radius:8px;padding:0.75rem 1rem">'+
+        ''+answers.name+', you are not alone in this queue. The data shows that '+(pct6mo)+'% of '+occ.name+' applicants at similar points scores received invitations within 6 months at the April 2026 pace. The median wait of '+(medianWait?medianWait:5)+' months applies to those who lodged their EOI promptly — the fastest path through is lodging immediately and applying for SA and TAS 190 simultaneously.'+
+      '</div>';
+
+    checklistSec.parentElement.insertBefore(compDiv, checklistSec.parentElement.querySelector('#checklist').parentElement);
+  }
+
+  // ── RISKS SECTION ──
+  var riskDiv = document.createElement('div');
+  riskDiv.style.cssText = 'background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.06)';
+
+  var risks = [];
+  // Age cliff risk
+  var ageNum = parseInt((answers.age||'25').split('–')[0])||25;
+  if(ageNum >= 30 && ageNum < 33) risks.push({icon:'⏰',title:'Age cliff approaching at 33',text:'You currently score 30 pts for age. At 33, this drops to 25 pts — a loss of 5 points. If you have not received your invitation by your 33rd birthday, your queue position will shift backward. Factor this into your timeline.',level:'warn'});
+  if(ageNum >= 37 && ageNum < 40) risks.push({icon:'⏰',title:'Age cliff at 40 — score drops 10 pts',text:'At 40, your age score drops from 25 pts to 15 pts — a significant 10 pt reduction. This could move you below the cutoff for your occupation. Prioritise actions that can be completed before your 40th birthday.',level:'high'});
+  if(ageNum >= 43) risks.push({icon:'🚨',title:'Age ceiling — 45 drops to 0 pts',text:'At 45+, age points drop to zero. If you are approaching 45, this is the highest urgency risk on your profile. Any delay compounds directly into a reduced total score.',level:'high'});
+
+  // Cutoff trend risk
+  if(cutoff > 0 && occ.cutoffs[occ.cutoffs.length-1] > occ.cutoffs[0]){
+    risks.push({icon:'📈',title:'Cutoff trend is rising for your occupation',text:'The 189 cutoff for '+occ.name+' has risen from '+occ.cutoffs[0]+' to '+occ.cutoffs[occ.cutoffs.length-1]+' pts over the last 5 rounds. If this trend continues, your current '+totalPts+' pts margin may shrink. Lodging your EOI now locks in your Date of Effect before any further rises.',level:'warn'});
+  }
+
+  // 482 TSMIT risk
+  if(answers.cur_visa === '482'){
+    risks.push({icon:'💰',title:'TSMIT rises to A$79,499 on 1 July 2026',text:'As a 482 visa holder, your employer must meet the new Temporary Skilled Migration Income Threshold of $79,499 from 1 July 2026. If your salary is between $76,515 and $79,499, you are at risk of visa non-compliance unless your employer increases your pay. Confirm with your employer immediately.',level:'high'});
+  }
+
+  // EOI delay risk
+  if(answers.eoi !== 'yes'){
+    risks.push({icon:'📅',title:'EOI not yet lodged — Date of Effect clock not started',text:'You have not yet lodged your EOI in SkillSelect. Every day you delay, '+Math.round((ahead||500)*0.05)+' to '+Math.round((ahead||500)*0.08)+' new applicants enter the pool ahead of you based on weekly intake rates. Your Date of Effect — the single most important tiebreaker — only starts when you lodge.',level:'high'});
+  }
+
+  // Pool size risk for ICT/accounting
+  if(occ.tier >= 4){
+    risks.push({icon:'🔴',title:'189 federal pathway blocked for your occupation',text:'No 189 invitations have been issued for '+occ.name+' in recent rounds. Relying on the federal pathway is high risk. Your strategy must prioritise state nomination (where available) and employer sponsorship.',level:'high'});
+  }
+
+  if(risks.length === 0){
+    risks.push({icon:'✅',title:'No critical risks identified for your profile',text:'Your profile has no immediate red flags. The main risk for any applicant is delay — every week costs Date of Effect position. Lodge your EOI and state nomination ROI as your first actions.',level:'ok'});
+  }
+
+  var riskColors = {high:'background:var(--red-bg);border-color:var(--red-border)',warn:'background:var(--amber-bg);border-color:var(--amber-border)',ok:'background:var(--green-bg);border-color:var(--green-border)'};
+
+  riskDiv.innerHTML =
+    '<div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">'+
+      '<div style="width:36px;height:36px;border-radius:9px;background:var(--red-bg);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">⚠️</div>'+
+      '<div style="font-size:1rem;font-weight:700;color:var(--navy)">Section 6b · Risks Specific to '+answers.name+'\'s Profile</div>'+
+      '<span style="margin-left:auto;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:3px 9px;border-radius:5px;background:var(--red-bg);color:var(--red)">Personalised</span>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px">'+
+    risks.map(function(r){
+      var cs = riskColors[r.level]||riskColors.ok;
+      return '<div style="'+cs+';border:1px solid;border-radius:10px;padding:0.85rem 1rem;display:flex;align-items:flex-start;gap:10px">'+
+        '<span style="font-size:1.2rem;flex-shrink:0;margin-top:1px">'+r.icon+'</span>'+
+        '<div><div style="font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:4px">'+r.title+'</div>'+
+        '<div style="font-size:0.8rem;color:var(--muted);line-height:1.65">'+r.text+'</div></div>'+
+      '</div>';
+    }).join('')+
+    '</div>';
+
+  // Insert risk section after policy section (before pathways)
+  var pathwayList = document.getElementById('pathway-list');
+  if(pathwayList){
+    pathwayList.parentElement.parentElement.insertBefore(riskDiv, pathwayList.parentElement);
+  }
 
   el.scrollIntoView({behavior:'smooth',block:'start'});
 }
