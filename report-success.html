@@ -568,7 +568,7 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
     <div class="rpt-sec-hd"><div class="rpt-sec-icon ic-teal">📊</div><div class="rpt-sec-title">Your Queue Position & Invitation Probability</div><span class="sec-tag tag-dha">DHA Data</span></div>
     <div style="display:grid;grid-template-columns:1fr 140px;gap:1.5rem;align-items:center">
       <div>
-        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Your position in the SkillSelect pool</div>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Estimated competitor density band — April 2026 SkillSelect snapshot</div>
         <div class="queue-track"><div class="queue-fill" id="q-fill" style="width:0%"></div><div class="queue-pin" id="q-pin" style="left:0%"></div></div>
         <div class="queue-labs"><span id="q-behind">—</span><span class="ql-you" id="q-you">↑ YOU</span><span id="q-aheadl">—</span></div>
         <div class="doe-warning" id="doe-warn"></div>
@@ -644,7 +644,42 @@ nav{background:var(--navy);padding:0 5%;height:64px;display:flex;align-items:cen
     <div id="checklist"></div>
   </div>
 
-  <div style="text-align:center;font-size:11px;color:var(--muted);line-height:1.9;padding:1.5rem 0 0;border-top:1px solid var(--border);margin-top:1rem">
+
+  <!-- SUBSCRIPTION LOOP -->
+  <div style="background:linear-gradient(135deg,#0B1C2E,#12263D);border:1px solid rgba(200,145,58,0.3);border-radius:18px;padding:1.75rem;margin-bottom:1rem;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(200,145,58,0.12),transparent 70%);pointer-events:none"></div>
+    <div style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.65rem">
+        <span style="font-size:1.1rem">📡</span>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(200,145,58,0.8)">Round Alert Service</div>
+        <span style="background:rgba(10,143,103,0.25);border:1px solid rgba(10,143,103,0.4);color:#34D399;font-size:9px;font-weight:700;padding:2px 8px;border-radius:100px;text-transform:uppercase">Coming soon</span>
+      </div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:#fff;margin-bottom:0.35rem;line-height:1.2">The pool changes every 7 days.<br><em style="color:#E0A94E;font-style:italic">Don't get caught off guard.</em></div>
+      <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:1.1rem">Every DHA invitation round changes your queue position. Cutoffs shift. States open and close. Get occupation-specific alerts within 24 hours of every round — so you always know where you stand without checking manually.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.1rem">
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 0.75rem;font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:700">✓</span>DHA round alerts within 24hrs</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 0.75rem;font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:700">✓</span>Cutoff change notifications</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 0.75rem;font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:700">✓</span>State nomination open/close alerts</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 0.75rem;font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px"><span style="color:#34D399;font-weight:700">✓</span>Monthly queue recalculation</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;color:#fff;line-height:1">A$19<span style="font-size:0.9rem;color:rgba(255,255,255,0.35)">/month</span></div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.3);margin-top:2px">Cancel anytime · No lock-in</div>
+        </div>
+        <div style="flex:1">
+          <div id="sub-form" style="display:flex;gap:8px;flex-wrap:wrap">
+            <input id="sub-email" type="email" placeholder="your@email.com" style="flex:1;min-width:160px;padding:0.65rem 0.9rem;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.84rem;color:#fff;outline:none">
+            <button onclick="subNotify()" style="padding:0.65rem 1.25rem;background:#C8913A;color:#0B1C2E;border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-size:0.84rem;font-weight:700;cursor:pointer;white-space:nowrap">Notify me when live →</button>
+          </div>
+          <div id="sub-ok" style="display:none;color:#34D399;font-size:0.84rem;font-weight:600;margin-top:0.5rem">✓ You're on the early access list — we'll notify you first when alerts launch.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div style="text-align:center;font-size:11px;color:var(--muted);line-height:1.9;padding:1.5rem 0 0;border-top:1px solid var(--border);margin-top:1rem">
     Based on DHA SkillSelect April 2026 data · State allocation data: 2025–26 program year · For strategic planning only · Not migration advice<br>
     Always verify current data at immi.homeaffairs.gov.au and state nomination portals · Consider a MARA-registered agent for final decisions
   </div>
@@ -959,9 +994,9 @@ function renderReport(totalPts,ai){
 
   // Queue
   setTimeout(function(){document.getElementById('q-fill').style.width=qPct+'%';document.getElementById('q-pin').style.left=qPct+'%';},400);
-  document.getElementById('q-behind').textContent=behind>0?behind.toLocaleString()+' behind you':'—';
+  document.getElementById('q-behind').textContent=behind>0?'~'+behind.toLocaleString()+' est. behind':'—';
   document.getElementById('q-you').textContent='↑ '+answers.name+' — '+totalPts+' pts';
-  document.getElementById('q-aheadl').textContent=(ahead<20?'<20':ahead.toLocaleString())+' ahead';
+  document.getElementById('q-aheadl').textContent='~'+(ahead<20?'<20':ahead.toLocaleString())+' est. ahead';
   document.getElementById('doe-warn').innerHTML='<strong>⚠️ Date of Effect matters:</strong> Within the same points band, DHA invites by the date your EOI was submitted. Approximately 15–25 new EOIs enter the pool for your occupation every week. Every day you delay costs you tiebreaker position against '+(ahead<20?'the small group':'the '+(ahead<20?'<20':ahead.toLocaleString()))+' applicants at your exact score.';
   document.getElementById('ai-queue').textContent=ai.queue_analysis||'';
 
@@ -1118,6 +1153,20 @@ function renderReport(totalPts,ai){
   });
 
   el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+
+function subNotify(){
+  var email=document.getElementById('sub-email').value.trim();
+  if(!email||!email.includes('@')) return;
+  // Save to Mailerlite via email-capture.js if available
+  if(typeof viqSubscribe==='function'){
+    document.getElementById('viq-email').value=email;
+    viqSubscribe();
+  }
+  document.getElementById('sub-form').style.display='none';
+  document.getElementById('sub-ok').style.display='block';
+  localStorage.setItem('viq_subscribed','1');
 }
 
 function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelectorAll('.btn-sec')[0];b.textContent='✓ Copied!';setTimeout(function(){b.textContent='🔗 Copy link';},2000);});}
