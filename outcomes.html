@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Visa Outcomes 2026 — Real EOI to Grant Timelines | VisaIQ</title>
+<meta name="description" content="500+ real Australian visa outcomes. Filter by occupation tier, state and visa type. See real EOI to invitation to grant timelines — Tier 1 healthcare, Tier 2 trades, Tier 3 ICT. Community-submitted, DHA-verified.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:title" content="Community Visa Outcomes 2026 — Real Timelines | VisaIQ">
+<meta property="og:description" content="500+ real Australian visa outcomes. EOI to grant timelines by occupation, state and points.">
+<meta property="og:url" content="https://www.visaiq.com.au/outcomes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1C2E;--navy2:#12263D;--navy3:#1A3350;
+  --gold:#C8913A;--gold2:#E0A94E;--gold3:rgba(200,145,58,0.12);--gold4:rgba(200,145,58,0.28);
+  --cream:#F2EFE8;--cream2:#EAE6DC;--cream3:#E0DBCF;
+  --white:#FAFAF8;
+  --border:rgba(11,28,46,0.10);--border2:rgba(255,255,255,0.09);
+  --text:#0B1C2E;--muted:#5E6C7D;--muted2:#8A97A8;
+  /* stage colours — gold palette, no green */
+  --eoi:#3B82F6;--eoi-bg:rgba(59,130,246,0.09);--eoi-br:rgba(59,130,246,0.25);
+  --inv:#C8913A;--inv-bg:rgba(200,145,58,0.10);--inv-br:rgba(200,145,58,0.28);
+  --wait:#9B7FFF;--wait-bg:rgba(155,127,255,0.09);--wait-br:rgba(155,127,255,0.25);
+  --grt:#0A8F70;--grt-bg:rgba(10,143,112,0.09);--grt-br:rgba(10,143,112,0.25);
+  /* tier colours */
+  --t1:#C8913A;--t1bg:rgba(200,145,58,0.10);
+  --t2:#3B82F6;--t2bg:rgba(59,130,246,0.09);
+  --t3:#9B7FFF;--t3bg:rgba(155,127,255,0.09);
+  --t4:#0A8F70;--t4bg:rgba(10,143,112,0.09);
+  --shadow:0 1px 3px rgba(11,28,46,0.05),0 4px 14px rgba(11,28,46,0.07);
+  --shadow-lg:0 12px 40px rgba(11,28,46,0.13);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:80px}
+
+/* TICKER */
+.ticker{background:var(--navy);height:34px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:300}
+.ticker-pill{flex-shrink:0;background:var(--gold);color:var(--navy);font-size:0.58rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0 13px;height:100%;display:flex;align-items:center;gap:0.35rem}
+.ticker-d{width:5px;height:5px;border-radius:50%;background:var(--navy);animation:blink 1.4s infinite}
+.ticker-track{display:flex;white-space:nowrap;animation:tickscroll 55s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ti{display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.6);flex-shrink:0}
+.ti b{color:#fff;font-weight:600}
+.ti .dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.dot-grt{background:var(--grt)}.dot-inv{background:var(--gold)}.dot-eoi{background:var(--eoi)}
+@keyframes tickscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* NAV */
+nav{background:rgba(250,250,248,0.93);backdrop-filter:blur(16px);position:sticky;top:34px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:64px;border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:500;color:var(--navy);text-decoration:none;letter-spacing:-0.01em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:0.1rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.84rem;font-weight:500;padding:0.4rem 0.8rem;border-radius:7px;transition:all 0.18s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--cream2)}
+.nav-links a.active{font-weight:700}
+.nav-cta{background:var(--gold);color:var(--navy);padding:0.55rem 1.25rem;border-radius:8px;font-size:0.83rem;font-weight:700;text-decoration:none;transition:all 0.2s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold2)}
+@media(max-width:800px){.nav-links{display:none}}
+
+/* HERO */
+.hero{background:var(--navy);padding:3.5rem 4% 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 50% 80%,rgba(200,145,58,0.08),transparent 60%);pointer-events:none}
+.hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:0.45rem;background:var(--gold3);border:1px solid var(--gold4);color:var(--gold2);font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.25rem}
+.hero-badge .d{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.85rem}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero-sub{font-size:0.92rem;color:rgba(255,255,255,0.5);max-width:500px;margin:0 auto 2rem;line-height:1.7}
+
+/* STATS ROW */
+.hero-stats{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:2rem;flex-wrap:wrap}
+.hst{text-align:center;padding:0 1.75rem;border-right:1px solid rgba(255,255,255,0.1)}
+.hst:last-child{border-right:none}
+.hst-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;color:var(--gold2);line-height:1}
+.hst-l{font-size:0.68rem;color:rgba(255,255,255,0.4);margin-top:0.2rem}
+@media(max-width:520px){.hst{border-right:none;padding:0.5rem 1rem;min-width:50%}}
+
+/* TIER TABS */
+.tier-tabs{background:var(--navy);border-bottom:1px solid var(--border2);padding:0 4%;display:flex;align-items:center;gap:0.35rem;overflow-x:auto;scrollbar-width:none}
+.tier-tabs::-webkit-scrollbar{display:none}
+.ttab{display:flex;align-items:center;gap:0.45rem;padding:0.7rem 1rem;font-size:0.8rem;font-weight:600;border:none;background:none;color:rgba(255,255,255,0.45);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all 0.18s;font-family:'Outfit',sans-serif}
+.ttab:hover{color:rgba(255,255,255,0.8)}
+.ttab.active{color:#fff;border-bottom-color:var(--gold)}
+.ttab .tbadge{font-size:0.58rem;font-weight:800;padding:0.12rem 0.4rem;border-radius:4px}
+.tbadge-1{background:var(--t1bg);color:var(--t1)}
+.tbadge-2{background:var(--t2bg);color:var(--t2)}
+.tbadge-3{background:var(--t3bg);color:var(--t3)}
+.tbadge-4{background:var(--t4bg);color:var(--t4)}
+.tbadge-all{background:var(--gold3);color:var(--gold)}
+
+/* TIER INFO BAR */
+.tier-info{padding:1rem 4%;background:var(--cream2);border-bottom:1px solid var(--border);font-size:0.82rem;color:var(--muted);display:none;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.tier-info.show{display:flex}
+.ti-badge{display:inline-flex;align-items:center;gap:0.4rem;font-weight:700;padding:0.25rem 0.7rem;border-radius:6px;font-size:0.75rem;white-space:nowrap;flex-shrink:0}
+.ti-desc{line-height:1.65;flex:1;min-width:200px}
+.ti-desc b{color:var(--navy)}
+.ti-occs{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem}
+.ti-occ{font-size:0.7rem;background:var(--white);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.6rem;color:var(--muted);cursor:pointer;transition:all 0.18s}
+.ti-occ:hover{border-color:var(--gold4);color:var(--gold);background:var(--gold3)}
+
+/* FILTER BAR */
+.filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0.75rem 4%;display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;position:sticky;top:calc(34px + 64px);z-index:100}
+.fb-sel{background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:0.42rem 0.9rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.8rem;outline:none;cursor:pointer;appearance:none;transition:all 0.18s;font-weight:500}
+.fb-sel:hover,.fb-sel:focus{border-color:var(--gold4);background:var(--gold3)}
+.fb-sel option,.fb-sel optgroup{background:var(--white);color:var(--text)}
+.stage-pills{display:flex;gap:0.3rem;flex-wrap:wrap}
+.sp{padding:0.38rem 0.85rem;border-radius:20px;font-size:0.76rem;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:var(--cream);color:var(--muted);transition:all 0.18s;font-family:'Outfit',sans-serif}
+.sp.on-all{color:var(--navy);border-color:var(--border2);background:var(--navy)}
+.sp.on-all{color:#fff;border-color:var(--navy);background:var(--navy)}
+.sp.on-eoi{color:var(--eoi);border-color:var(--eoi-br);background:var(--eoi-bg)}
+.sp.on-inv{color:var(--gold);border-color:var(--gold4);background:var(--gold3)}
+.sp.on-wait{color:var(--wait);border-color:var(--wait-br);background:var(--wait-bg)}
+.sp.on-grt{color:var(--grt);border-color:var(--grt-br);background:var(--grt-bg)}
+.fb-space{flex:1}
+.fb-count{font-size:0.75rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.fb-reset{background:none;border:none;font-size:0.75rem;color:var(--muted2);cursor:pointer;font-family:'Outfit',sans-serif;padding:0.38rem 0.5rem;border-radius:7px;transition:all 0.18s}
+.fb-reset:hover{color:var(--navy);background:var(--cream2)}
+
+/* MAIN LAYOUT */
+.page{max-width:1060px;margin:0 auto;padding:1.5rem 4% 2rem;display:grid;grid-template-columns:1fr 260px;gap:1.5rem;align-items:start}
+@media(max-width:860px){.page{grid-template-columns:1fr}}
+
+/* OUTCOME CARDS — Instagram feed style */
+.feed{display:flex;flex-direction:column;gap:1rem}
+.card{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.22s;position:relative}
+.card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.card-top-bar{height:4px;width:100%}
+.card-top-bar.grt{background:linear-gradient(90deg,var(--grt),#12C397)}
+.card-top-bar.inv{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.card-top-bar.wait{background:linear-gradient(90deg,var(--wait),#B8A4FF)}
+.card-top-bar.eoi{background:linear-gradient(90deg,var(--eoi),#60A5FA)}
+
+.card-body{padding:1.25rem 1.4rem 1rem}
+.card-head{display:flex;align-items:flex-start;gap:0.85rem;margin-bottom:1rem}
+.card-flag{width:42px;height:42px;border-radius:12px;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;box-shadow:inset 0 0 0 1px var(--border)}
+.card-info{flex:1;min-width:0}
+.card-occ{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;line-height:1.2;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
+.tier-badge{font-size:0.6rem;font-weight:800;padding:0.14rem 0.5rem;border-radius:5px;letter-spacing:0.04em;flex-shrink:0}
+.tb-1{background:var(--t1bg);color:var(--t1)}
+.tb-2{background:var(--t2bg);color:var(--t2)}
+.tb-3{background:var(--t3bg);color:var(--t3)}
+.tb-4{background:var(--t4bg);color:var(--t4)}
+.visa-badge{font-size:0.6rem;font-weight:700;padding:0.14rem 0.48rem;border-radius:5px}
+.vb189{background:rgba(155,127,255,0.12);color:var(--wait)}
+.vb190{background:var(--gold3);color:var(--gold)}
+.vb491{background:var(--eoi-bg);color:var(--eoi)}
+.card-meta{display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;font-size:0.75rem;color:var(--muted)}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--border);flex-shrink:0}
+.meta-pts{font-weight:700;color:var(--gold)}
+.card-ago{font-size:0.68rem;color:var(--muted2);margin-left:auto;flex-shrink:0}
+.card-stage-badge{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.66rem;font-weight:700;padding:0.22rem 0.65rem;border-radius:20px;margin-left:auto;flex-shrink:0}
+.csb-grt{background:var(--grt-bg);color:var(--grt);border:1px solid var(--grt-br)}
+.csb-inv{background:var(--inv-bg);color:var(--gold);border:1px solid var(--inv-br)}
+.csb-wait{background:var(--wait-bg);color:var(--wait);border:1px solid var(--wait-br)}
+.csb-eoi{background:var(--eoi-bg);color:var(--eoi);border:1px solid var(--eoi-br)}
+
+/* JOURNEY TIMELINE — bigger, more readable */
+.journey{display:flex;align-items:flex-start;gap:0;margin:0 0 1rem;padding:0.85rem 1rem;background:var(--cream);border-radius:12px}
+.jstep{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.jdot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:800;border:2px solid;flex-shrink:0}
+.jdot-done{background:var(--grt-bg);border-color:var(--grt);color:var(--grt)}
+.jdot-eoi{background:var(--eoi-bg);border-color:var(--eoi);color:var(--eoi)}
+.jdot-inv{background:var(--inv-bg);border-color:var(--gold);color:var(--gold)}
+.jdot-wait{background:var(--wait-bg);border-color:var(--wait);color:var(--wait)}
+.jdot-grt{background:var(--grt-bg);border-color:var(--grt);color:var(--grt)}
+.jdot-future{background:var(--cream2);border-color:var(--border);color:var(--muted2)}
+.jlabel{font-size:0.62rem;color:var(--muted);text-align:center;margin-top:0.3rem;line-height:1.3;max-width:52px;white-space:pre-line}
+.jlabel-done{color:var(--grt);font-weight:600}
+.jlabel-cur-eoi{color:var(--eoi);font-weight:700}
+.jlabel-cur-inv{color:var(--gold);font-weight:700}
+.jlabel-cur-wait{color:var(--wait);font-weight:700}
+.jlabel-cur-grt{color:var(--grt);font-weight:700}
+.jconn{flex:1;display:flex;flex-direction:column;align-items:center;padding-top:13px;min-width:14px}
+.jline{height:2px;width:100%;border-radius:1px}
+.jline-done{background:var(--grt)}
+.jline-pending{background:var(--border)}
+.jchip{font-size:0.58rem;font-weight:600;color:var(--gold);background:var(--gold3);border:1px solid var(--gold4);padding:0.1rem 0.35rem;border-radius:4px;white-space:nowrap;margin-bottom:3px}
+
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1.4rem;border-top:1px solid var(--border);background:var(--cream);gap:0.75rem;flex-wrap:wrap}
+.cf-summary{font-size:0.78rem;color:var(--muted);line-height:1.5}
+.cf-summary b{color:var(--navy);font-weight:700}
+.cf-time{font-size:0.72rem;font-weight:700;color:var(--gold);background:var(--gold3);border:1px solid var(--gold4);padding:0.25rem 0.65rem;border-radius:8px;white-space:nowrap;flex-shrink:0}
+
+/* LOAD MORE + EMPTY */
+.load-wrap{text-align:center;padding:1.5rem 0}
+.btn-load{padding:0.75rem 2.25rem;background:var(--white);color:var(--navy);border:1.5px solid var(--border);border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.btn-load:hover{border-color:var(--gold4);color:var(--gold);background:var(--gold3)}
+.empty{text-align:center;padding:4rem 1rem;color:var(--muted)}
+.empty-icon{font-size:2.5rem;margin-bottom:0.75rem}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1rem}
+@media(max-width:860px){.sidebar{display:none}}
+.scard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.25rem;box-shadow:var(--shadow)}
+.scard-title{font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:1rem}
+.tier-summary{display:flex;flex-direction:column;gap:0.5rem}
+.ts-row{display:flex;align-items:center;gap:0.65rem;padding:0.6rem 0.75rem;border-radius:10px;cursor:pointer;transition:all 0.18s;border:1px solid transparent}
+.ts-row:hover{border-color:var(--gold4);background:var(--gold3)}
+.ts-badge{font-size:0.68rem;font-weight:800;padding:0.2rem 0.5rem;border-radius:6px;flex-shrink:0;width:26px;text-align:center}
+.ts-info{flex:1;min-width:0}
+.ts-name{font-size:0.8rem;font-weight:600;color:var(--navy)}
+.ts-sub{font-size:0.68rem;color:var(--muted);margin-top:1px}
+.ts-count{font-size:0.75rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.wait-rows{display:flex;flex-direction:column;gap:0.45rem}
+.wr{display:flex;align-items:center;gap:0.6rem;padding:0.4rem 0}
+.wr-visa{font-size:0.7rem;font-weight:700;width:30px;flex-shrink:0}
+.wr-bar{flex:1;height:5px;background:var(--cream2);border-radius:100px;overflow:hidden}
+.wr-fill{height:100%;border-radius:100px}
+.wr-val{font-size:0.72rem;font-weight:700;color:var(--navy);min-width:32px;text-align:right}
+.recent-grants{display:flex;flex-direction:column;gap:0.5rem}
+.rg{display:flex;align-items:center;gap:0.6rem;padding:0.55rem 0;border-bottom:1px solid var(--border)}
+.rg:last-child{border-bottom:none}
+.rg-flag{font-size:1.1rem}
+.rg-info{flex:1;min-width:0}
+.rg-occ{font-size:0.78rem;font-weight:600;color:var(--navy)}
+.rg-sub{font-size:0.67rem;color:var(--muted);margin-top:1px}
+.rg-time{font-size:0.7rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.pr-card{background:var(--navy);border-radius:16px;padding:1.25rem;text-align:center}
+.pr-icon{font-size:2rem;margin-bottom:0.6rem}
+.pr-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:#fff;margin-bottom:0.35rem}
+.pr-sub{font-size:0.76rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:1rem}
+.pr-btn{display:block;padding:0.65rem;background:var(--gold);color:var(--navy);border-radius:9px;font-size:0.82rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.pr-btn:hover{background:var(--gold2)}
+
+/* STICKY SUBMIT BAR */
+.sticky-submit{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:1px solid var(--border2);padding:0.85rem 4%;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:250;box-shadow:0 -8px 30px rgba(11,28,46,0.25)}
+.ss-text{font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.4}
+.ss-text b{color:#fff}
+.ss-btn{background:var(--gold);color:var(--navy);border:none;padding:0.7rem 1.5rem;border-radius:9px;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+.ss-btn:hover{background:var(--gold2)}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(11,28,46,0.6);backdrop-filter:blur(8px);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity 0.28s}
+.overlay.show{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:22px;padding:2rem;max-width:500px;width:100%;position:relative;margin:auto;transform:translateY(20px);transition:transform 0.32s cubic-bezier(0.34,1.4,0.64,1)}
+.overlay.show .modal{transform:translateY(0)}
+.modal-close{position:absolute;top:1.1rem;right:1.1rem;background:var(--cream);border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all 0.2s}
+.modal-close:hover{background:var(--cream2);color:var(--navy)}
+.modal h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;color:var(--navy);margin-bottom:0.35rem}
+.modal-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
+.stage-select{display:grid;grid-template-columns:repeat(4,1fr);gap:0.45rem;margin-bottom:1.5rem}
+.ss-opt{padding:0.7rem 0.35rem;border-radius:11px;font-size:0.72rem;font-weight:700;cursor:pointer;text-align:center;border:2px solid;opacity:0.55;transition:all 0.18s;line-height:1.4;font-family:'Outfit',sans-serif}
+.ss-opt.sel{opacity:1;transform:translateY(-2px)}
+.ss-opt.eoi{background:var(--eoi-bg);color:var(--eoi);border-color:var(--eoi-br)}
+.ss-opt.inv{background:var(--inv-bg);color:var(--gold);border-color:var(--gold4)}
+.ss-opt.wait{background:var(--wait-bg);color:var(--wait);border-color:var(--wait-br)}
+.ss-opt.grt{background:var(--grt-bg);color:var(--grt);border-color:var(--grt-br)}
+.form-sec{font-size:0.64rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin:1.1rem 0 0.6rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem}
+.form-grid.full{grid-template-columns:1fr}
+.fg{display:flex;flex-direction:column;gap:0.22rem}
+.fl{font-size:0.62rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+.fi,.fse{background:var(--cream);border:1.5px solid var(--border);border-radius:9px;padding:0.62rem 0.85rem;color:var(--text);font-family:'Outfit',sans-serif;font-size:0.82rem;outline:none;width:100%;transition:border-color 0.2s;appearance:none}
+.fi:focus,.fse:focus{border-color:var(--gold)}
+.fi::placeholder{color:var(--muted2)}
+.fse option{background:var(--white)}
+.submit-btn{width:100%;padding:0.85rem;background:var(--gold);color:var(--navy);border:none;border-radius:11px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;margin-top:1rem;transition:all 0.2s}
+.submit-btn:hover{background:var(--gold2)}
+.modal-fine{font-size:0.68rem;color:var(--muted2);text-align:center;margin-top:0.6rem;line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--navy);padding:1.75rem 4%;text-align:center;border-top:1px solid var(--border2)}
+.foot-links{display:flex;align-items:center;justify-content:center;gap:0.25rem;flex-wrap:wrap;margin-bottom:0.65rem}
+.foot-links a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.76rem;padding:0.25rem 0.5rem;transition:color 0.2s}
+.foot-links a:hover{color:rgba(255,255,255,0.8)}
+.foot-dis{font-size:0.66rem;color:rgba(255,255,255,0.22);max-width:640px;margin:0.5rem auto 0;line-height:1.65}
+
+.reveal{opacity:0;transform:translateY(16px);transition:all 0.6s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-pill"><span class="ticker-d"></span>Live</div>
+  <div style="flex:1;overflow:hidden"><div class="ticker-track">
+    <span class="ti"><span class="dot dot-grt"></span><b>Reg. Nurse · SA 190 · 75pts</b> — Granted · 8 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>Electrician · 189 · 65pts</b> — Invited · 3 days ago</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>Civil Engineer · QLD 190 · 85pts</b> — Granted · 14 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>OT · TAS 190 · 70pts</b> — Invited · 1 day ago</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>ECT · SA 190 · 80pts</b> — Granted · 7 months</span>
+    <span class="ti"><span class="dot dot-eoi"></span><b>Software Engineer · 189 · 90pts</b> — EOI lodged</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>Plumber · TAS 491 · 75pts</b> — Granted · 9 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>Midwife · WA 491 · 65pts</b> — Invited</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>Reg. Nurse · SA 190 · 75pts</b> — Granted · 8 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>Electrician · 189 · 65pts</b> — Invited · 3 days ago</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>Civil Engineer · QLD 190 · 85pts</b> — Granted · 14 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>OT · TAS 190 · 70pts</b> — Invited · 1 day ago</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>ECT · SA 190 · 80pts</b> — Granted · 7 months</span>
+    <span class="ti"><span class="dot dot-eoi"></span><b>Software Engineer · 189 · 90pts</b> — EOI lodged</span>
+    <span class="ti"><span class="dot dot-grt"></span><b>Plumber · TAS 491 · 75pts</b> — Granted · 9 months</span>
+    <span class="ti"><span class="dot dot-inv"></span><b>Midwife · WA 491 · 65pts</b> — Invited</span>
+  </div></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">Visa<span>IQ</span></a>
+  <div class="nav-links">
+    <a href="/eoi-queue">EOI Queue</a>
+    <a href="/points-calculator">Points</a>
+    <a href="/outcomes" class="active">Outcomes</a>
+    <a href="/pathway-finder">Pathway Finder</a>
+    <a href="/methodology">Methodology</a>
+  </div>
+  <a href="/report" class="nav-cta">PR Report A$69 →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="d"></span>Community-submitted · DHA-verified dates</div>
+    <h1>Real grants. Real timelines.<br><em>Your occupation.</em></h1>
+    <p class="hero-sub">500 verified outcomes from VisaIQ members. Filter by tier, occupation, state and visa type — see what actually happened for people who look like you.</p>
+    <div class="hero-stats">
+      <div class="hst"><div class="hst-n">500+</div><div class="hst-l">Outcomes tracked</div></div>
+      <div class="hst"><div class="hst-n">52</div><div class="hst-l">Occupations</div></div>
+      <div class="hst"><div class="hst-n" id="avgWait">7.2mo</div><div class="hst-l">Avg EOI to grant</div></div>
+      <div class="hst"><div class="hst-n" id="grtPct">61%</div><div class="hst-l">Grants in dataset</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER TABS -->
+<div class="tier-tabs">
+  <button class="ttab active" onclick="setTier('',this)">All <span class="tbadge tbadge-all">500</span></button>
+  <button class="ttab" id="ttab-1" onclick="setTier(1,this)"><span class="tbadge tbadge-1">T1</span> Healthcare <span class="tbadge tbadge-1" id="tc-1">—</span></button>
+  <button class="ttab" id="ttab-2" onclick="setTier(2,this)"><span class="tbadge tbadge-2">T2</span> Trades &amp; Education <span class="tbadge tbadge-2" id="tc-2">—</span></button>
+  <button class="ttab" id="ttab-3" onclick="setTier(3,this)"><span class="tbadge tbadge-3">T3</span> ICT &amp; Engineering <span class="tbadge tbadge-3" id="tc-3">—</span></button>
+  <button class="ttab" id="ttab-4" onclick="setTier(4,this)"><span class="tbadge tbadge-4">T4</span> Other <span class="tbadge tbadge-4" id="tc-4">—</span></button>
+</div>
+
+<!-- TIER INFO BAR -->
+<div class="tier-info" id="tier-info"></div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <select class="fb-sel" id="f-visa" onchange="applyF()">
+    <option value="">All visas</option>
+    <option value="189">189 Independent</option>
+    <option value="190">190 State</option>
+    <option value="491">491 Regional</option>
+  </select>
+  <select class="fb-sel" id="f-occ" onchange="applyF()" style="max-width:175px">
+    <option value="">All occupations</option>
+  </select>
+  <select class="fb-sel" id="f-state" onchange="applyF()">
+    <option value="">All states</option>
+    <option>NSW</option><option>VIC</option><option>QLD</option>
+    <option>SA</option><option>WA</option><option>TAS</option>
+    <option>ACT</option><option>NT</option><option>Fed</option>
+  </select>
+  <div class="stage-pills">
+    <button class="sp on-all" id="sp-all" onclick="setStage('',this)">All</button>
+    <button class="sp" id="sp-eoi" onclick="setStage('eoi',this)">📋 EOI</button>
+    <button class="sp" id="sp-inv" onclick="setStage('inv',this)">✉️ Invited</button>
+    <button class="sp" id="sp-wait" onclick="setStage('wait',this)">⏳ Waiting</button>
+    <button class="sp" id="sp-grt" onclick="setStage('grt',this)">🎉 Granted</button>
+  </div>
+  <div class="fb-space"></div>
+  <span class="fb-count" id="fb-count">500 outcomes</span>
+  <button class="fb-reset" onclick="resetF()">Reset ×</button>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="page">
+  <div>
+    <div class="feed" id="feed"></div>
+    <div class="load-wrap" id="lw" style="display:none">
+      <button class="btn-load" onclick="loadMore()">Load more outcomes</button>
+    </div>
+  </div>
+  <div class="sidebar">
+    <!-- Tier Summary -->
+    <div class="scard reveal">
+      <div class="scard-title">Occupation tiers explained</div>
+      <div class="tier-summary">
+        <div class="ts-row" onclick="setTier(1,document.getElementById('ttab-1'))">
+          <span class="ts-badge tb-1">T1</span>
+          <div class="ts-info"><div class="ts-name">Healthcare</div><div class="ts-sub">Critical shortage · lowest cutoffs · monthly rounds</div></div>
+          <span class="ts-count" id="ts-1">—</span>
+        </div>
+        <div class="ts-row" onclick="setTier(2,document.getElementById('ttab-2'))">
+          <span class="ts-badge tb-2">T2</span>
+          <div class="ts-info"><div class="ts-name">Trades &amp; Education</div><div class="ts-sub">Active demand · 65–75pt cutoffs</div></div>
+          <span class="ts-count" id="ts-2">—</span>
+        </div>
+        <div class="ts-row" onclick="setTier(3,document.getElementById('ttab-3'))">
+          <span class="ts-badge tb-3">T3</span>
+          <div class="ts-info"><div class="ts-name">ICT &amp; Engineering</div><div class="ts-sub">Mixed — some frozen, some active</div></div>
+          <span class="ts-count" id="ts-3">—</span>
+        </div>
+        <div class="ts-row" onclick="setTier(4,document.getElementById('ttab-4'))">
+          <span class="ts-badge tb-4">T4</span>
+          <div class="ts-info"><div class="ts-name">Other</div><div class="ts-sub">Niche occupations · varies by state</div></div>
+          <span class="ts-count" id="ts-4">—</span>
+        </div>
+      </div>
+    </div>
+    <!-- Avg Wait Times -->
+    <div class="scard reveal">
+      <div class="scard-title">⚡ Avg wait — EOI to invitation</div>
+      <div class="wait-rows" id="wait-rows"></div>
+    </div>
+    <!-- Recent Grants -->
+    <div class="scard reveal">
+      <div class="scard-title">🎉 Most recent grants</div>
+      <div class="recent-grants" id="recent-grants"></div>
+    </div>
+    <!-- PR Card -->
+    <div class="pr-card reveal">
+      <div class="pr-icon">📊</div>
+      <div class="pr-title">See your exact position</div>
+      <div class="pr-sub">Compare your profile against the live April 2026 SkillSelect pool — queue rank, state recommendations, 12-month plan.</div>
+      <a href="/report" class="pr-btn">Get my PR report — A$69 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-links">
+    <a href="/">Home</a><a href="/eoi-queue">EOI Queue</a><a href="/points-calculator">Points</a>
+    <a href="/report">PR Report</a><a href="/pathway-finder">Pathway Finder</a><a href="/methodology">Methodology</a>
+  </div>
+  <p class="foot-dis">Outcome data is community-submitted and reviewed before publishing. Not migration advice. Processing times vary. Always verify at immi.homeaffairs.gov.au and consult a MARA-registered migration agent.</p>
+</footer>
+
+<!-- STICKY SUBMIT -->
+<div class="sticky-submit">
+  <div class="ss-text"><b>Share your outcome.</b> Help others with your exact profile — takes 2 minutes.</div>
+  <button class="ss-btn" onclick="openModal()">+ Submit my outcome</button>
+</div>
+
+<!-- SUBMIT MODAL -->
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h2>Submit your outcome</h2>
+    <p class="modal-sub">Your journey helps people in the same situation. Reviewed before publishing — no personal info shown publicly.</p>
+    <div class="stage-select">
+      <button class="ss-opt eoi" onclick="pickStage(this,'eoi')">📋<br>EOI Lodged</button>
+      <button class="ss-opt inv" onclick="pickStage(this,'inv')">✉️<br>Invited</button>
+      <button class="ss-opt wait" onclick="pickStage(this,'wait')">⏳<br>Waiting</button>
+      <button class="ss-opt grt" onclick="pickStage(this,'grt')">🎉<br>Granted</button>
+    </div>
+    <div class="form-sec">Visa details</div>
+    <div class="form-grid">
+      <div class="fg"><label class="fl">Visa type</label><select class="fse" id="m-visa"><option value="">Select</option><option>189</option><option>190</option><option>491</option></select></div>
+      <div class="fg"><label class="fl">State</label><select class="fse" id="m-state"><option value="">Select</option><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option><option>Fed</option></select></div>
+    </div>
+    <div class="form-grid">
+      <div class="fg"><label class="fl">Occupation</label><select class="fse" id="m-occ"><option value="">Select</option><option>Registered Nurse</option><option>Physiotherapist</option><option>Occupational Therapist</option><option>Social Worker</option><option>General Practitioner</option><option>Dentist</option><option>Early Childhood Teacher</option><option>Secondary Teacher</option><option>Electrician</option><option>Plumber</option><option>Civil Engineer</option><option>Aged Care Worker</option><option>Speech Pathologist</option><option>Psychologist</option><option>Midwife</option><option>Software Engineer</option><option>Accountant</option><option>Pharmacist</option><option>Other</option></select></div>
+      <div class="fg"><label class="fl">DHA points</label><input class="fi" type="number" id="m-pts" placeholder="e.g. 75" min="60" max="120"></div>
+    </div>
+    <div class="form-sec">Timeline</div>
+    <div class="form-grid">
+      <div class="fg"><label class="fl">EOI lodged</label><input class="fi" type="month" id="m-eoi"></div>
+      <div class="fg"><label class="fl">Invited date</label><input class="fi" type="month" id="m-inv"></div>
+    </div>
+    <div class="form-grid">
+      <div class="fg"><label class="fl">Grant date</label><input class="fi" type="month" id="m-grt"></div>
+      <div class="fg"><label class="fl">Nationality</label><select class="fse" id="m-nat"><option value="">Optional</option><option>Indian</option><option>Pakistani</option><option>Filipino</option><option>Nepali</option><option>Bangladeshi</option><option>Sri Lankan</option><option>Chinese</option><option>British</option><option>South African</option><option>Iranian</option><option>Other</option></select></div>
+    </div>
+    <div class="form-sec">Extra documents requested?</div>
+    <div class="form-grid full">
+      <div class="fg"><select class="fse" id="m-docs"><option value="">Select</option><option value="no">No — straightforward application</option><option value="yes-minor">Yes — minor (employment letters, bank statements)</option><option value="yes-major">Yes — major (health exam re-do, police clearance issues)</option></select></div>
+    </div>
+    <button class="submit-btn" onclick="doSubmit()">Submit my outcome →</button>
+    <p class="modal-fine">Reviewed before publishing · No personal info shown publicly · Not migration advice</p>
+  </div>
+</div>
+
+<script>
+// ── TIER CLASSIFICATION ──
+const TIERS = {
+  1:["Registered Nurse","Physiotherapist","Occupational Therapist","Social Worker","General Practitioner","Dentist","Early Childhood Teacher","Special Education Teacher","Speech Pathologist","Psychologist","Audiologist","Podiatrist","Optometrist","Midwife","Mental Health Nurse","Aged Care Worker","Disability Support Worker"],
+  2:["Secondary Teacher","Primary Teacher","Electrician","Plumber","Construction Project Manager","Structural Engineer","Civil Engineer","Carpenter","Boilermaker","Metal Fabricator","Refrigeration Mechanic","Bricklayer","Pharmacist","Radiographer","Sonographer","Dietitian"],
+  3:["Software Engineer","Management Accountant","Accountant","ICT Business Analyst","Network Engineer","Cybersecurity Analyst","Data Scientist","Mechanical Engineer","Electrical Engineer","Environmental Engineer","Mining Engineer","Architect","Quantity Surveyor"],
+  4:["Veterinarian","Chef / Cook","Baker","Hairdresser","Geologist","Lawyer","Medical Radiation Scientist","Exercise Physiologist","Osteopath","Chiropractor"]
+};
+const TIER_INFO = {
+  1:{name:'Tier 1 — Critical Healthcare Shortage',col:'var(--t1)',colbg:'var(--t1bg)',desc:'The most accessible pathway to PR in Australia. DHA designates these occupations as critical shortages — invitation cutoffs are lower (typically 65–80 pts), state nomination rounds run monthly, and processing is prioritised. SA and TAS run dedicated healthcare rounds. Most 189 cutoffs for Tier 1 occupations have been stable or declining since 2024.',occs:["Registered Nurse","Physiotherapist","Occupational Therapist","Social Worker","GP / General Practitioner","Dentist","Early Childhood Teacher","Speech Pathologist","Psychologist","Audiologist","Podiatrist","Midwife","Mental Health Nurse","Aged Care Worker","Disability Support Worker"]},
+  2:{name:'Tier 2 — Sustained Demand',col:'var(--t2)',colbg:'var(--t2bg)',desc:'Strong and consistent demand across trades and education. Electricians hold the lowest 189 cutoff in Australia at 65 pts — stable for 5 consecutive rounds. Teachers access state nomination readily via TAS and SA. Plumbers and construction occupations are actively invited across multiple states including NT and QLD.',occs:["Secondary Teacher","Primary Teacher","Electrician","Plumber","Civil Engineer","Structural Engineer","Carpenter","Bricklayer","Boilermaker","Pharmacist","Radiographer","Dietitian"]},
+  3:{name:'Tier 3 — Mixed Demand (Some Frozen)',col:'var(--t3)',colbg:'var(--t3bg)',desc:'ICT and accounting occupations are heavily oversubscribed. Software Engineers and General Accountants have received zero 189 federal invitations since 2024 — pools are frozen. However, some engineering occupations (Mechanical, Electrical, Mining) remain active via state nomination, particularly in WA and QLD.',occs:["Software Engineer","Accountant","ICT Business Analyst","Network Engineer","Cybersecurity Analyst","Data Scientist","Mechanical Engineer","Electrical Engineer","Environmental Engineer","Mining Engineer","Quantity Surveyor"]},
+  4:{name:'Tier 4 — Niche & Specialist',col:'var(--t4)',colbg:'var(--t4bg)',desc:'Occupations with more specific state demand. Lawyers, Geologists and Veterinarians can access invitation via state pathways where the occupation is specifically listed. Chefs and Hairdressers access 491 regional primarily. Processing times and cutoffs vary significantly by state.',occs:["Veterinarian","Chef / Cook","Baker","Hairdresser","Geologist","Lawyer","Medical Radiation Scientist","Exercise Physiologist","Osteopath","Chiropractor"]}
+};
+
+function getTier(oc){for(const[t,list]of Object.entries(TIERS)){if(list.includes(oc))return parseInt(t);}return 4;}
+
+// ── DATA ──
+const DATA=[{id:1,s:"grt",fl:"🇵🇰",oc:"Occupational Therapist",st:"QLD",v:"190",pts:65,nt:"Pakistani",eoi:"2024-09",inv:"2025-07",grt:"2026-04",ago:27},{id:2,s:"inv",fl:"🇵🇭",oc:"Boilermaker",st:"SA",v:"190",pts:75,nt:"Filipino",eoi:"2025-09",inv:"2026-03",grt:null,ago:0},{id:3,s:"grt",fl:"🇧🇩",oc:"Bricklayer",st:"NSW",v:"491",pts:70,nt:"Bangladeshi",eoi:"2024-11",inv:"2025-07",grt:"2026-02",ago:20},{id:4,s:"grt",fl:"🇨🇳",oc:"Network Engineer",st:"TAS",v:"190",pts:85,nt:"Chinese",eoi:"2025-04",inv:"2025-09",grt:"2026-01",ago:18},{id:5,s:"grt",fl:"🇧🇩",oc:"Radiographer",st:"VIC",v:"190",pts:75,nt:"Bangladeshi",eoi:"2024-04",inv:"2025-02",grt:"2025-12",ago:36},{id:6,s:"grt",fl:"🇧🇩",oc:"Exercise Physiologist",st:"TAS",v:"190",pts:70,nt:"Bangladeshi",eoi:"2025-01",inv:"2025-07",grt:"2026-01",ago:38},{id:7,s:"wait",fl:"🇵🇭",oc:"Software Engineer",st:"Fed",v:"189",pts:90,nt:"Filipino",eoi:"2025-10",inv:"2026-01",grt:null,ago:10},{id:8,s:"wait",fl:"🇿🇦",oc:"Network Engineer",st:"Fed",v:"189",pts:85,nt:"South African",eoi:"2025-08",inv:"2026-02",grt:null,ago:15},{id:9,s:"grt",fl:"🇮🇳",oc:"Pharmacist",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2024-10",inv:"2025-07",grt:"2026-01",ago:15},{id:10,s:"wait",fl:"🇵🇰",oc:"Refrigeration Mechanic",st:"QLD",v:"491",pts:75,nt:"Pakistani",eoi:"2025-08",inv:"2026-02",grt:null,ago:31},{id:11,s:"inv",fl:"🇮🇳",oc:"Midwife",st:"WA",v:"491",pts:65,nt:"Indian",eoi:"2025-12",inv:"2026-04",grt:null,ago:27},{id:12,s:"inv",fl:"🇮🇳",oc:"Pharmacist",st:"SA",v:"190",pts:80,nt:"Indian",eoi:"2025-08",inv:"2026-04",grt:null,ago:7},{id:13,s:"grt",fl:"🇧🇩",oc:"Pharmacist",st:"NSW",v:"190",pts:75,nt:"Bangladeshi",eoi:"2023-11",inv:"2024-12",grt:"2025-12",ago:20},{id:14,s:"wait",fl:"🇵🇭",oc:"Bricklayer",st:"SA",v:"491",pts:75,nt:"Filipino",eoi:"2025-09",inv:"2026-02",grt:null,ago:28},{id:15,s:"eoi",fl:"🇳🇵",oc:"Exercise Physiologist",st:"NT",v:"190",pts:75,nt:"Nepali",eoi:"2026-03",inv:null,grt:null,ago:40},{id:16,s:"grt",fl:"🇵🇰",oc:"Primary Teacher",st:"Fed",v:"189",pts:80,nt:"Pakistani",eoi:"2024-10",inv:"2025-04",grt:"2026-02",ago:15},{id:17,s:"inv",fl:"🇮🇳",oc:"Data Scientist",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2025-10",inv:"2026-02",grt:null,ago:24},{id:18,s:"grt",fl:"🇵🇭",oc:"Special Education Teacher",st:"TAS",v:"190",pts:65,nt:"Filipino",eoi:"2025-05",inv:"2025-09",grt:"2026-01",ago:26},{id:19,s:"wait",fl:"🇿🇦",oc:"Boilermaker",st:"SA",v:"491",pts:75,nt:"South African",eoi:"2025-06",inv:"2025-12",grt:null,ago:36},{id:20,s:"wait",fl:"🇵🇭",oc:"Registered Nurse",st:"QLD",v:"190",pts:75,nt:"Filipino",eoi:"2025-04",inv:"2026-02",grt:null,ago:34},{id:21,s:"inv",fl:"🇳🇵",oc:"ICT Business Analyst",st:"Fed",v:"189",pts:85,nt:"Nepali",eoi:"2025-07",inv:"2026-03",grt:null,ago:1},{id:22,s:"wait",fl:"🇮🇳",oc:"Radiographer",st:"VIC",v:"190",pts:75,nt:"Indian",eoi:"2025-03",inv:"2026-03",grt:null,ago:39},{id:23,s:"wait",fl:"🇱🇰",oc:"Metal Fabricator",st:"SA",v:"491",pts:75,nt:"Sri Lankan",eoi:"2025-08",inv:"2025-12",grt:null,ago:27},{id:24,s:"inv",fl:"🇵🇭",oc:"Audiologist",st:"TAS",v:"190",pts:65,nt:"Filipino",eoi:"2025-09",inv:"2026-03",grt:null,ago:20},{id:25,s:"grt",fl:"🇮🇳",oc:"Primary Teacher",st:"SA",v:"190",pts:80,nt:"Indian",eoi:"2025-04",inv:"2025-09",grt:"2026-03",ago:34},{id:26,s:"eoi",fl:"🇿🇦",oc:"Pharmacist",st:"ACT",v:"190",pts:70,nt:"South African",eoi:"2026-03",inv:null,grt:null,ago:1},{id:27,s:"wait",fl:"🇵🇭",oc:"Podiatrist",st:"TAS",v:"190",pts:65,nt:"Filipino",eoi:"2025-10",inv:"2026-02",grt:null,ago:42},{id:28,s:"wait",fl:"🇧🇩",oc:"Management Accountant",st:"SA",v:"190",pts:80,nt:"Bangladeshi",eoi:"2025-09",inv:"2026-02",grt:null,ago:45},{id:29,s:"wait",fl:"🇧🇩",oc:"Plumber",st:"NSW",v:"491",pts:70,nt:"Bangladeshi",eoi:"2025-06",inv:"2025-12",grt:null,ago:43},{id:30,s:"wait",fl:"🇨🇳",oc:"Veterinarian",st:"Fed",v:"189",pts:75,nt:"Chinese",eoi:"2025-10",inv:"2026-03",grt:null,ago:40},{id:31,s:"grt",fl:"🇮🇳",oc:"Dietitian",st:"ACT",v:"491",pts:70,nt:"Indian",eoi:"2024-11",inv:"2025-08",grt:"2026-02",ago:36},{id:32,s:"grt",fl:"🇱🇰",oc:"Data Scientist",st:"SA",v:"190",pts:90,nt:"Sri Lankan",eoi:"2025-01",inv:"2025-06",grt:"2026-01",ago:21},{id:33,s:"wait",fl:"🇵🇭",oc:"Early Childhood Teacher",st:"ACT",v:"491",pts:75,nt:"Filipino",eoi:"2025-08",inv:"2025-12",grt:null,ago:45},{id:34,s:"grt",fl:"🇮🇷",oc:"Audiologist",st:"VIC",v:"190",pts:75,nt:"Iranian",eoi:"2024-03",inv:"2025-02",grt:"2025-12",ago:30},{id:35,s:"wait",fl:"🇮🇳",oc:"Primary Teacher",st:"WA",v:"491",pts:75,nt:"Indian",eoi:"2025-08",inv:"2026-02",grt:null,ago:17},{id:36,s:"grt",fl:"🇵🇰",oc:"Hairdresser",st:"QLD",v:"491",pts:75,nt:"Pakistani",eoi:"2024-10",inv:"2025-04",grt:"2026-03",ago:1},{id:37,s:"inv",fl:"🇮🇳",oc:"ICT Business Analyst",st:"Fed",v:"189",pts:85,nt:"Indian",eoi:"2025-08",inv:"2026-02",grt:null,ago:21},{id:38,s:"grt",fl:"🇮🇳",oc:"Dietitian",st:"WA",v:"190",pts:70,nt:"Indian",eoi:"2024-10",inv:"2025-05",grt:"2026-01",ago:5},{id:39,s:"wait",fl:"🇳🇵",oc:"Mechanical Engineer",st:"ACT",v:"190",pts:80,nt:"Nepali",eoi:"2025-12",inv:"2026-03",grt:null,ago:28},{id:40,s:"grt",fl:"🇱🇰",oc:"Electrician",st:"TAS",v:"491",pts:75,nt:"Sri Lankan",eoi:"2024-06",inv:"2024-11",grt:"2025-12",ago:37},{id:41,s:"inv",fl:"🇬🇧",oc:"Cybersecurity Analyst",st:"Fed",v:"189",pts:85,nt:"British",eoi:"2025-08",inv:"2026-03",grt:null,ago:35},{id:42,s:"wait",fl:"🇮🇳",oc:"Dietitian",st:"TAS",v:"190",pts:70,nt:"Indian",eoi:"2025-09",inv:"2026-03",grt:null,ago:12},{id:43,s:"grt",fl:"🇮🇳",oc:"Baker",st:"QLD",v:"491",pts:70,nt:"Indian",eoi:"2024-05",inv:"2025-01",grt:"2026-02",ago:13},{id:44,s:"grt",fl:"🇵🇰",oc:"Chef / Cook",st:"WA",v:"491",pts:70,nt:"Pakistani",eoi:"2025-01",inv:"2025-06",grt:"2026-02",ago:14},{id:45,s:"inv",fl:"🇮🇳",oc:"Registered Nurse",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2025-05",inv:"2026-03",grt:null,ago:3},{id:46,s:"grt",fl:"🇮🇳",oc:"Dietitian",st:"NT",v:"190",pts:70,nt:"Indian",eoi:"2024-12",inv:"2025-08",grt:"2026-01",ago:0},{id:47,s:"grt",fl:"🇮🇳",oc:"Accountant",st:"NSW",v:"190",pts:85,nt:"Indian",eoi:"2024-04",inv:"2025-02",grt:"2026-04",ago:30},{id:48,s:"wait",fl:"🇱🇰",oc:"Metal Fabricator",st:"Fed",v:"189",pts:70,nt:"Sri Lankan",eoi:"2025-12",inv:"2026-02",grt:null,ago:43},{id:49,s:"grt",fl:"🇮🇳",oc:"Midwife",st:"Fed",v:"189",pts:75,nt:"Indian",eoi:"2024-03",inv:"2025-01",grt:"2025-12",ago:7},{id:50,s:"grt",fl:"🇵🇭",oc:"Mining Engineer",st:"QLD",v:"190",pts:80,nt:"Filipino",eoi:"2024-08",inv:"2025-06",grt:"2026-02",ago:19},{id:51,s:"grt",fl:"🇿🇦",oc:"Electrical Engineer",st:"NT",v:"190",pts:75,nt:"South African",eoi:"2025-06",inv:"2025-11",grt:"2026-04",ago:13},{id:52,s:"grt",fl:"🇮🇳",oc:"Mental Health Nurse",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2024-12",inv:"2025-02",grt:"2026-01",ago:10},{id:53,s:"inv",fl:"🇵🇰",oc:"Dietitian",st:"SA",v:"190",pts:75,nt:"Pakistani",eoi:"2025-07",inv:"2026-02",grt:null,ago:45},{id:54,s:"wait",fl:"🇮🇳",oc:"Chiropractor",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2025-07",inv:"2025-12",grt:null,ago:16},{id:55,s:"grt",fl:"🇮🇳",oc:"Speech Pathologist",st:"SA",v:"190",pts:80,nt:"Indian",eoi:"2025-06",inv:"2025-11",grt:"2026-03",ago:9},{id:56,s:"grt",fl:"🇵🇰",oc:"Lawyer",st:"VIC",v:"190",pts:85,nt:"Pakistani",eoi:"2024-08",inv:"2025-04",grt:"2026-02",ago:28},{id:57,s:"wait",fl:"🇳🇵",oc:"Dietitian",st:"NT",v:"491",pts:70,nt:"Nepali",eoi:"2025-12",inv:"2026-03",grt:null,ago:28},{id:58,s:"grt",fl:"🇮🇳",oc:"Bricklayer",st:"TAS",v:"190",pts:75,nt:"Indian",eoi:"2025-03",inv:"2025-07",grt:"2025-12",ago:14},{id:59,s:"grt",fl:"🇵🇰",oc:"Occupational Therapist",st:"ACT",v:"190",pts:70,nt:"Pakistani",eoi:"2025-02",inv:"2025-08",grt:"2026-01",ago:11},{id:60,s:"inv",fl:"🇱🇰",oc:"Dentist",st:"TAS",v:"190",pts:80,nt:"Sri Lankan",eoi:"2025-10",inv:"2026-03",grt:null,ago:6},{id:61,s:"grt",fl:"🇵🇭",oc:"Refrigeration Mechanic",st:"QLD",v:"491",pts:75,nt:"Filipino",eoi:"2024-12",inv:"2025-03",grt:"2026-04",ago:35},{id:62,s:"inv",fl:"🇵🇭",oc:"Construction Project Manager",st:"NSW",v:"190",pts:80,nt:"Filipino",eoi:"2025-04",inv:"2026-02",grt:null,ago:32},{id:63,s:"grt",fl:"🇳🇵",oc:"Chiropractor",st:"SA",v:"190",pts:75,nt:"Nepali",eoi:"2025-01",inv:"2025-09",grt:"2026-04",ago:23},{id:64,s:"grt",fl:"🇵🇭",oc:"Special Education Teacher",st:"NSW",v:"190",pts:75,nt:"Filipino",eoi:"2024-07",inv:"2025-08",grt:"2026-04",ago:44},{id:65,s:"grt",fl:"🇮🇳",oc:"Quantity Surveyor",st:"TAS",v:"190",pts:80,nt:"Indian",eoi:"2025-05",inv:"2025-12",grt:"2026-03",ago:35},{id:66,s:"grt",fl:"🇮🇳",oc:"Exercise Physiologist",st:"SA",v:"190",pts:70,nt:"Indian",eoi:"2024-12",inv:"2025-07",grt:"2026-01",ago:31},{id:67,s:"wait",fl:"🇳🇵",oc:"Exercise Physiologist",st:"TAS",v:"491",pts:70,nt:"Nepali",eoi:"2025-08",inv:"2026-02",grt:null,ago:9},{id:68,s:"grt",fl:"🇵🇭",oc:"Mining Engineer",st:"TAS",v:"491",pts:80,nt:"Filipino",eoi:"2024-03",inv:"2024-12",grt:"2026-02",ago:21},{id:69,s:"inv",fl:"🇧🇩",oc:"Medical Radiation Scientist",st:"TAS",v:"190",pts:70,nt:"Bangladeshi",eoi:"2025-09",inv:"2026-04",grt:null,ago:37},{id:70,s:"eoi",fl:"🇵🇰",oc:"Software Engineer",st:"Fed",v:"189",pts:90,nt:"Pakistani",eoi:"2026-01",inv:null,grt:null,ago:35},{id:71,s:"grt",fl:"🇮🇳",oc:"Management Accountant",st:"VIC",v:"491",pts:80,nt:"Indian",eoi:"2024-10",inv:"2025-04",grt:"2026-01",ago:36},{id:72,s:"eoi",fl:"🇵🇰",oc:"Occupational Therapist",st:"ACT",v:"190",pts:70,nt:"Pakistani",eoi:"2026-03",inv:null,grt:null,ago:24},{id:73,s:"wait",fl:"🇧🇩",oc:"ICT Business Analyst",st:"Fed",v:"189",pts:80,nt:"Bangladeshi",eoi:"2025-09",inv:"2025-12",grt:null,ago:21},{id:74,s:"wait",fl:"🇮🇳",oc:"Early Childhood Teacher",st:"SA",v:"491",pts:75,nt:"Indian",eoi:"2025-05",inv:"2026-02",grt:null,ago:26},{id:75,s:"inv",fl:"🇧🇩",oc:"General Practitioner",st:"TAS",v:"190",pts:80,nt:"Bangladeshi",eoi:"2025-07",inv:"2026-02",grt:null,ago:44},{id:76,s:"inv",fl:"🇵🇰",oc:"Dentist",st:"WA",v:"491",pts:75,nt:"Pakistani",eoi:"2025-06",inv:"2026-02",grt:null,ago:20},{id:77,s:"grt",fl:"🇮🇳",oc:"Hairdresser",st:"SA",v:"491",pts:75,nt:"Indian",eoi:"2024-09",inv:"2025-05",grt:"2026-03",ago:15},{id:78,s:"wait",fl:"🇱🇰",oc:"Baker",st:"SA",v:"491",pts:65,nt:"Sri Lankan",eoi:"2025-06",inv:"2026-03",grt:null,ago:45},{id:79,s:"wait",fl:"🇮🇳",oc:"Software Engineer",st:"VIC",v:"190",pts:80,nt:"Indian",eoi:"2025-05",inv:"2026-01",grt:null,ago:20},{id:80,s:"grt",fl:"🇵🇭",oc:"Civil Engineer",st:"TAS",v:"190",pts:75,nt:"Filipino",eoi:"2025-06",inv:"2025-11",grt:"2026-03",ago:36},{id:81,s:"grt",fl:"🇮🇳",oc:"Dentist",st:"ACT",v:"491",pts:85,nt:"Indian",eoi:"2024-12",inv:"2025-07",grt:"2026-03",ago:31},{id:82,s:"grt",fl:"🇵🇭",oc:"Management Accountant",st:"ACT",v:"190",pts:80,nt:"Filipino",eoi:"2025-06",inv:"2025-10",grt:"2026-01",ago:18},{id:83,s:"inv",fl:"🇨🇳",oc:"Civil Engineer",st:"NSW",v:"190",pts:85,nt:"Chinese",eoi:"2025-02",inv:"2026-03",grt:null,ago:16},{id:84,s:"wait",fl:"🇵🇰",oc:"Podiatrist",st:"SA",v:"491",pts:70,nt:"Pakistani",eoi:"2025-08",inv:"2026-01",grt:null,ago:36},{id:85,s:"inv",fl:"🇱🇰",oc:"Dietitian",st:"Fed",v:"189",pts:70,nt:"Sri Lankan",eoi:"2025-10",inv:"2026-04",grt:null,ago:25},{id:86,s:"inv",fl:"🇵🇰",oc:"Electrical Engineer",st:"QLD",v:"491",pts:75,nt:"Pakistani",eoi:"2025-08",inv:"2026-03",grt:null,ago:14},{id:87,s:"wait",fl:"🇬🇧",oc:"Aged Care Worker",st:"ACT",v:"190",pts:65,nt:"British",eoi:"2025-11",inv:"2026-03",grt:null,ago:42},{id:88,s:"grt",fl:"🇧🇩",oc:"Quantity Surveyor",st:"QLD",v:"190",pts:75,nt:"Bangladeshi",eoi:"2025-02",inv:"2025-09",grt:"2026-02",ago:23},{id:89,s:"inv",fl:"🇮🇳",oc:"Construction Project Manager",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2025-07",inv:"2026-02",grt:null,ago:34},{id:90,s:"grt",fl:"🇵🇭",oc:"Network Engineer",st:"TAS",v:"190",pts:85,nt:"Filipino",eoi:"2025-04",inv:"2025-10",grt:"2026-01",ago:18},{id:91,s:"grt",fl:"🇱🇰",oc:"General Practitioner",st:"TAS",v:"190",pts:70,nt:"Sri Lankan",eoi:"2025-04",inv:"2025-11",grt:"2026-04",ago:43},{id:92,s:"grt",fl:"🇳🇵",oc:"Lawyer",st:"Fed",v:"189",pts:85,nt:"Nepali",eoi:"2024-07",inv:"2025-04",grt:"2026-02",ago:7},{id:93,s:"wait",fl:"🇮🇳",oc:"Environmental Engineer",st:"NSW",v:"491",pts:80,nt:"Indian",eoi:"2025-08",inv:"2025-12",grt:null,ago:43},{id:94,s:"wait",fl:"🇧🇩",oc:"Physiotherapist",st:"ACT",v:"491",pts:75,nt:"Bangladeshi",eoi:"2025-07",inv:"2026-03",grt:null,ago:14},{id:95,s:"grt",fl:"🇵🇭",oc:"Quantity Surveyor",st:"TAS",v:"491",pts:85,nt:"Filipino",eoi:"2025-06",inv:"2025-10",grt:"2026-04",ago:7},{id:96,s:"grt",fl:"🇳🇵",oc:"Plumber",st:"TAS",v:"190",pts:75,nt:"Nepali",eoi:"2025-01",inv:"2025-08",grt:"2026-02",ago:8},{id:97,s:"grt",fl:"🇵🇭",oc:"Radiographer",st:"ACT",v:"190",pts:75,nt:"Filipino",eoi:"2025-05",inv:"2025-08",grt:"2025-12",ago:41},{id:98,s:"inv",fl:"🇵🇰",oc:"Refrigeration Mechanic",st:"Fed",v:"189",pts:70,nt:"Pakistani",eoi:"2025-06",inv:"2026-03",grt:null,ago:13},{id:99,s:"inv",fl:"🇨🇳",oc:"Disability Support Worker",st:"Fed",v:"189",pts:65,nt:"Chinese",eoi:"2025-04",inv:"2026-02",grt:null,ago:23},{id:100,s:"grt",fl:"🇮🇳",oc:"Civil Engineer",st:"TAS",v:"190",pts:70,nt:"Indian",eoi:"2025-04",inv:"2025-08",grt:"2025-12",ago:29},{id:101,s:"wait",fl:"🇮🇳",oc:"Physiotherapist",st:"TAS",v:"190",pts:65,nt:"Indian",eoi:"2025-10",inv:"2026-03",grt:null,ago:36},{id:102,s:"inv",fl:"🇮🇳",oc:"Exercise Physiologist",st:"TAS",v:"190",pts:75,nt:"Indian",eoi:"2025-09",inv:"2026-02",grt:null,ago:21},{id:103,s:"wait",fl:"🇮🇳",oc:"Registered Nurse",st:"SA",v:"491",pts:75,nt:"Indian",eoi:"2025-09",inv:"2026-02",grt:null,ago:34},{id:104,s:"inv",fl:"🇵🇰",oc:"Speech Pathologist",st:"Fed",v:"189",pts:65,nt:"Pakistani",eoi:"2025-09",inv:"2026-04",grt:null,ago:15},{id:105,s:"grt",fl:"🇬🇧",oc:"Audiologist",st:"Fed",v:"189",pts:75,nt:"British",eoi:"2024-12",inv:"2025-10",grt:"2026-04",ago:26},{id:106,s:"wait",fl:"🇮🇳",oc:"Accountant",st:"WA",v:"190",pts:85,nt:"Indian",eoi:"2025-08",inv:"2026-03",grt:null,ago:28},{id:107,s:"grt",fl:"🇮🇳",oc:"Chef / Cook",st:"VIC",v:"491",pts:70,nt:"Indian",eoi:"2024-04",inv:"2025-01",grt:"2026-01",ago:30},{id:108,s:"inv",fl:"🇮🇳",oc:"Sonographer",st:"VIC",v:"190",pts:70,nt:"Indian",eoi:"2025-04",inv:"2026-02",grt:null,ago:5},{id:109,s:"grt",fl:"🇧🇩",oc:"Midwife",st:"Fed",v:"189",pts:65,nt:"Bangladeshi",eoi:"2024-05",inv:"2025-03",grt:"2026-01",ago:40},{id:110,s:"wait",fl:"🇮🇳",oc:"Mining Engineer",st:"WA",v:"190",pts:85,nt:"Indian",eoi:"2025-08",inv:"2026-02",grt:null,ago:44},{id:111,s:"grt",fl:"🇵🇭",oc:"Bricklayer",st:"NT",v:"491",pts:70,nt:"Filipino",eoi:"2025-01",inv:"2025-07",grt:"2026-02",ago:25},{id:112,s:"inv",fl:"🇮🇳",oc:"Bricklayer",st:"TAS",v:"491",pts:70,nt:"Indian",eoi:"2025-10",inv:"2026-04",grt:null,ago:43},{id:113,s:"grt",fl:"🇮🇳",oc:"Dentist",st:"Fed",v:"189",pts:65,nt:"Indian",eoi:"2025-03",inv:"2025-07",grt:"2025-12",ago:23},{id:114,s:"grt",fl:"🇱🇰",oc:"Mechanical Engineer",st:"QLD",v:"190",pts:80,nt:"Sri Lankan",eoi:"2024-11",inv:"2025-05",grt:"2025-12",ago:27},{id:115,s:"wait",fl:"🇮🇳",oc:"Plumber",st:"WA",v:"190",pts:75,nt:"Indian",eoi:"2025-05",inv:"2026-02",grt:null,ago:42},{id:116,s:"eoi",fl:"🇮🇳",oc:"Osteopath",st:"WA",v:"190",pts:70,nt:"Indian",eoi:"2026-03",inv:null,grt:null,ago:17},{id:117,s:"inv",fl:"🇧🇩",oc:"Pharmacist",st:"VIC",v:"491",pts:75,nt:"Bangladeshi",eoi:"2025-06",inv:"2026-02",grt:null,ago:39},{id:118,s:"grt",fl:"🇨🇳",oc:"Mechanical Engineer",st:"ACT",v:"190",pts:75,nt:"Chinese",eoi:"2025-08",inv:"2025-11",grt:"2026-02",ago:17},{id:119,s:"grt",fl:"🇮🇳",oc:"Dietitian",st:"TAS",v:"491",pts:70,nt:"Indian",eoi:"2024-09",inv:"2025-04",grt:"2026-04",ago:9},{id:120,s:"wait",fl:"🇳🇵",oc:"Midwife",st:"Fed",v:"189",pts:65,nt:"Nepali",eoi:"2025-04",inv:"2025-12",grt:null,ago:13},{id:121,s:"grt",fl:"🇵🇰",oc:"Management Accountant",st:"Fed",v:"189",pts:80,nt:"Pakistani",eoi:"2025-07",inv:"2025-10",grt:"2026-03",ago:20},{id:122,s:"wait",fl:"🇱🇰",oc:"Mental Health Nurse",st:"TAS",v:"190",pts:65,nt:"Sri Lankan",eoi:"2025-05",inv:"2025-12",grt:null,ago:27},{id:123,s:"eoi",fl:"🇵🇰",oc:"Refrigeration Mechanic",st:"WA",v:"190",pts:70,nt:"Pakistani",eoi:"2026-04",inv:null,grt:null,ago:27},{id:124,s:"wait",fl:"🇮🇳",oc:"Electrician",st:"QLD",v:"491",pts:80,nt:"Indian",eoi:"2025-09",inv:"2026-03",grt:null,ago:14},{id:125,s:"wait",fl:"🇮🇳",oc:"Registered Nurse",st:"TAS",v:"190",pts:70,nt:"Indian",eoi:"2025-07",inv:"2026-01",grt:null,ago:16},{id:126,s:"inv",fl:"🇮🇳",oc:"Speech Pathologist",st:"QLD",v:"190",pts:65,nt:"Indian",eoi:"2025-04",inv:"2026-02",grt:null,ago:24},{id:127,s:"wait",fl:"🇬🇧",oc:"Aged Care Worker",st:"Fed",v:"189",pts:70,nt:"British",eoi:"2025-07",inv:"2026-03",grt:null,ago:2},{id:128,s:"grt",fl:"🇧🇩",oc:"Management Accountant",st:"ACT",v:"491",pts:75,nt:"Bangladeshi",eoi:"2024-06",inv:"2025-02",grt:"2026-02",ago:25},{id:129,s:"grt",fl:"🇵🇰",oc:"Speech Pathologist",st:"Fed",v:"189",pts:75,nt:"Pakistani",eoi:"2024-09",inv:"2025-06",grt:"2026-04",ago:10},{id:130,s:"wait",fl:"🇳🇵",oc:"Bricklayer",st:"WA",v:"190",pts:70,nt:"Nepali",eoi:"2025-04",inv:"2026-01",grt:null,ago:5},{id:131,s:"wait",fl:"🇮🇳",oc:"Baker",st:"NT",v:"190",pts:65,nt:"Indian",eoi:"2025-10",inv:"2026-02",grt:null,ago:32},{id:132,s:"grt",fl:"🇱🇰",oc:"Geologist",st:"NSW",v:"190",pts:80,nt:"Sri Lankan",eoi:"2024-08",inv:"2025-07",grt:"2026-03",ago:9},{id:133,s:"grt",fl:"🇮🇳",oc:"Secondary Teacher",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2025-03",inv:"2025-06",grt:"2026-01",ago:41},{id:134,s:"eoi",fl:"🇱🇰",oc:"Management Accountant",st:"VIC",v:"190",pts:85,nt:"Sri Lankan",eoi:"2026-02",inv:null,grt:null,ago:40},{id:135,s:"wait",fl:"🇵🇭",oc:"Chiropractor",st:"QLD",v:"190",pts:75,nt:"Filipino",eoi:"2025-05",inv:"2026-01",grt:null,ago:28},{id:136,s:"grt",fl:"🇵🇭",oc:"Environmental Engineer",st:"SA",v:"190",pts:75,nt:"Filipino",eoi:"2025-05",inv:"2025-10",grt:"2026-02",ago:28},{id:137,s:"wait",fl:"🇮🇳",oc:"Exercise Physiologist",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2025-02",inv:"2025-12",grt:null,ago:39},{id:138,s:"wait",fl:"🇱🇰",oc:"Management Accountant",st:"NT",v:"190",pts:75,nt:"Sri Lankan",eoi:"2025-06",inv:"2025-12",grt:null,ago:12},{id:139,s:"inv",fl:"🇵🇰",oc:"Network Engineer",st:"NT",v:"491",pts:80,nt:"Pakistani",eoi:"2025-11",inv:"2026-02",grt:null,ago:45},{id:140,s:"eoi",fl:"🇨🇳",oc:"Pharmacist",st:"Fed",v:"189",pts:70,nt:"Chinese",eoi:"2026-01",inv:null,grt:null,ago:28},{id:141,s:"grt",fl:"🇵🇰",oc:"Cybersecurity Analyst",st:"Fed",v:"189",pts:85,nt:"Pakistani",eoi:"2024-06",inv:"2025-02",grt:"2025-12",ago:24},{id:142,s:"inv",fl:"🇮🇳",oc:"Social Worker",st:"Fed",v:"189",pts:75,nt:"Indian",eoi:"2025-07",inv:"2026-03",grt:null,ago:35},{id:143,s:"grt",fl:"🇧🇩",oc:"Secondary Teacher",st:"TAS",v:"491",pts:80,nt:"Bangladeshi",eoi:"2024-11",inv:"2025-03",grt:"2026-02",ago:42},{id:144,s:"grt",fl:"🇨🇳",oc:"Pharmacist",st:"Fed",v:"189",pts:80,nt:"Chinese",eoi:"2024-09",inv:"2025-03",grt:"2026-02",ago:5},{id:145,s:"grt",fl:"🇬🇧",oc:"Medical Radiation Scientist",st:"VIC",v:"190",pts:75,nt:"British",eoi:"2024-06",inv:"2025-06",grt:"2026-01",ago:43},{id:146,s:"grt",fl:"🇵🇰",oc:"Network Engineer",st:"Fed",v:"189",pts:85,nt:"Pakistani",eoi:"2024-10",inv:"2025-03",grt:"2026-01",ago:11},{id:147,s:"inv",fl:"🇵🇰",oc:"Podiatrist",st:"SA",v:"491",pts:65,nt:"Pakistani",eoi:"2025-07",inv:"2026-02",grt:null,ago:6},{id:148,s:"wait",fl:"🇵🇰",oc:"Exercise Physiologist",st:"SA",v:"491",pts:75,nt:"Pakistani",eoi:"2025-08",inv:"2025-12",grt:null,ago:39},{id:149,s:"wait",fl:"🇨🇳",oc:"Midwife",st:"Fed",v:"189",pts:70,nt:"Chinese",eoi:"2025-08",inv:"2025-12",grt:null,ago:39},{id:150,s:"eoi",fl:"🇵🇭",oc:"Occupational Therapist",st:"ACT",v:"190",pts:75,nt:"Filipino",eoi:"2026-02",inv:null,grt:null,ago:39},{id:151,s:"wait",fl:"🇮🇳",oc:"Hairdresser",st:"TAS",v:"491",pts:80,nt:"Indian",eoi:"2025-03",inv:"2025-12",grt:null,ago:19},{id:152,s:"grt",fl:"🇵🇭",oc:"Exercise Physiologist",st:"NSW",v:"190",pts:70,nt:"Filipino",eoi:"2023-11",inv:"2024-11",grt:"2026-01",ago:29},{id:153,s:"inv",fl:"🇧🇩",oc:"Network Engineer",st:"WA",v:"491",pts:90,nt:"Bangladeshi",eoi:"2025-06",inv:"2026-03",grt:null,ago:8},{id:154,s:"wait",fl:"🇮🇳",oc:"Social Worker",st:"ACT",v:"491",pts:80,nt:"Indian",eoi:"2025-06",inv:"2026-03",grt:null,ago:45},{id:155,s:"wait",fl:"🇳🇵",oc:"Electrician",st:"TAS",v:"491",pts:70,nt:"Nepali",eoi:"2025-03",inv:"2025-12",grt:null,ago:9},{id:156,s:"eoi",fl:"🇮🇳",oc:"Dentist",st:"NSW",v:"491",pts:70,nt:"Indian",eoi:"2026-04",inv:null,grt:null,ago:26},{id:157,s:"wait",fl:"🇮🇳",oc:"Metal Fabricator",st:"QLD",v:"190",pts:75,nt:"Indian",eoi:"2025-08",inv:"2026-03",grt:null,ago:23},{id:158,s:"grt",fl:"🇮🇳",oc:"Construction Project Manager",st:"ACT",v:"491",pts:70,nt:"Indian",eoi:"2024-12",inv:"2025-03",grt:"2026-01",ago:8},{id:159,s:"inv",fl:"🇧🇩",oc:"Dietitian",st:"QLD",v:"190",pts:70,nt:"Bangladeshi",eoi:"2025-10",inv:"2026-04",grt:null,ago:0},{id:160,s:"grt",fl:"🇬🇧",oc:"Secondary Teacher",st:"ACT",v:"491",pts:70,nt:"British",eoi:"2024-09",inv:"2025-04",grt:"2026-04",ago:38},{id:161,s:"grt",fl:"🇮🇳",oc:"Geologist",st:"SA",v:"190",pts:80,nt:"Indian",eoi:"2025-04",inv:"2025-12",grt:"2026-04",ago:26},{id:162,s:"wait",fl:"🇳🇵",oc:"Exercise Physiologist",st:"SA",v:"190",pts:70,nt:"Nepali",eoi:"2025-08",inv:"2026-02",grt:null,ago:36},{id:163,s:"wait",fl:"🇵🇰",oc:"Electrician",st:"Fed",v:"189",pts:80,nt:"Pakistani",eoi:"2025-06",inv:"2026-02",grt:null,ago:15},{id:164,s:"wait",fl:"🇳🇵",oc:"Radiographer",st:"QLD",v:"190",pts:70,nt:"Nepali",eoi:"2025-05",inv:"2026-03",grt:null,ago:34},{id:165,s:"wait",fl:"🇵🇰",oc:"Boilermaker",st:"Fed",v:"189",pts:70,nt:"Pakistani",eoi:"2025-09",inv:"2026-03",grt:null,ago:23},{id:166,s:"wait",fl:"🇱🇰",oc:"Civil Engineer",st:"NT",v:"190",pts:70,nt:"Sri Lankan",eoi:"2025-05",inv:"2026-01",grt:null,ago:6},{id:167,s:"grt",fl:"🇵🇰",oc:"Psychologist",st:"Fed",v:"189",pts:65,nt:"Pakistani",eoi:"2024-09",inv:"2025-01",grt:"2026-01",ago:41},{id:168,s:"wait",fl:"🇮🇷",oc:"Quantity Surveyor",st:"SA",v:"491",pts:80,nt:"Iranian",eoi:"2025-10",inv:"2026-01",grt:null,ago:29},{id:169,s:"inv",fl:"🇵🇰",oc:"Podiatrist",st:"VIC",v:"190",pts:65,nt:"Pakistani",eoi:"2025-03",inv:"2026-03",grt:null,ago:19},{id:170,s:"inv",fl:"🇮🇳",oc:"Medical Radiation Scientist",st:"NT",v:"190",pts:80,nt:"Indian",eoi:"2025-10",inv:"2026-04",grt:null,ago:18},{id:171,s:"grt",fl:"🇵🇰",oc:"Chiropractor",st:"SA",v:"190",pts:75,nt:"Pakistani",eoi:"2024-10",inv:"2025-06",grt:"2026-01",ago:27},{id:172,s:"wait",fl:"🇳🇵",oc:"Structural Engineer",st:"WA",v:"190",pts:75,nt:"Nepali",eoi:"2025-06",inv:"2025-12",grt:null,ago:17},{id:173,s:"inv",fl:"🇳🇵",oc:"Dentist",st:"VIC",v:"190",pts:80,nt:"Nepali",eoi:"2025-06",inv:"2026-04",grt:null,ago:18},{id:174,s:"grt",fl:"🇧🇩",oc:"Dentist",st:"TAS",v:"190",pts:75,nt:"Bangladeshi",eoi:"2025-02",inv:"2025-09",grt:"2026-01",ago:45},{id:175,s:"grt",fl:"🇵🇰",oc:"Civil Engineer",st:"Fed",v:"189",pts:80,nt:"Pakistani",eoi:"2024-11",inv:"2025-07",grt:"2026-04",ago:39},{id:176,s:"grt",fl:"🇬🇧",oc:"General Practitioner",st:"QLD",v:"190",pts:90,nt:"British",eoi:"2025-03",inv:"2025-10",grt:"2026-03",ago:43},{id:177,s:"wait",fl:"🇮🇳",oc:"Osteopath",st:"QLD",v:"190",pts:75,nt:"Indian",eoi:"2025-06",inv:"2026-01",grt:null,ago:4},{id:178,s:"grt",fl:"🇮🇳",oc:"Carpenter",st:"SA",v:"491",pts:70,nt:"Indian",eoi:"2024-09",inv:"2025-03",grt:"2026-02",ago:43},{id:179,s:"inv",fl:"🇵🇭",oc:"Software Engineer",st:"WA",v:"190",pts:80,nt:"Filipino",eoi:"2025-08",inv:"2026-04",grt:null,ago:20},{id:180,s:"eoi",fl:"🇵🇰",oc:"Speech Pathologist",st:"WA",v:"190",pts:65,nt:"Pakistani",eoi:"2026-04",inv:null,grt:null,ago:35},{id:181,s:"wait",fl:"🇧🇩",oc:"Secondary Teacher",st:"TAS",v:"190",pts:75,nt:"Bangladeshi",eoi:"2025-07",inv:"2026-02",grt:null,ago:18},{id:182,s:"grt",fl:"🇨🇳",oc:"Speech Pathologist",st:"NT",v:"491",pts:70,nt:"Chinese",eoi:"2024-12",inv:"2025-03",grt:"2026-02",ago:28},{id:183,s:"wait",fl:"🇵🇰",oc:"Veterinarian",st:"TAS",v:"190",pts:75,nt:"Pakistani",eoi:"2025-08",inv:"2026-01",grt:null,ago:10},{id:184,s:"eoi",fl:"🇮🇳",oc:"Network Engineer",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2026-03",inv:null,grt:null,ago:8},{id:185,s:"inv",fl:"🇳🇵",oc:"Lawyer",st:"Fed",v:"189",pts:85,nt:"Nepali",eoi:"2025-08",inv:"2026-03",grt:null,ago:36},{id:186,s:"grt",fl:"🇮🇳",oc:"Pharmacist",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2024-08",inv:"2025-02",grt:"2026-01",ago:4},{id:187,s:"grt",fl:"🇮🇳",oc:"Cybersecurity Analyst",st:"VIC",v:"190",pts:90,nt:"Indian",eoi:"2024-06",inv:"2025-04",grt:"2026-04",ago:8},{id:188,s:"eoi",fl:"🇮🇷",oc:"Software Engineer",st:"QLD",v:"190",pts:85,nt:"Iranian",eoi:"2026-03",inv:null,grt:null,ago:35},{id:189,s:"grt",fl:"🇮🇳",oc:"Geologist",st:"VIC",v:"190",pts:75,nt:"Indian",eoi:"2024-06",inv:"2025-06",grt:"2026-02",ago:7},{id:190,s:"grt",fl:"🇵🇰",oc:"Mental Health Nurse",st:"ACT",v:"190",pts:70,nt:"Pakistani",eoi:"2025-06",inv:"2025-11",grt:"2026-02",ago:33},{id:191,s:"wait",fl:"🇱🇰",oc:"Podiatrist",st:"TAS",v:"491",pts:75,nt:"Sri Lankan",eoi:"2025-08",inv:"2026-03",grt:null,ago:19},{id:192,s:"wait",fl:"🇮🇳",oc:"Network Engineer",st:"WA",v:"190",pts:80,nt:"Indian",eoi:"2025-07",inv:"2026-03",grt:null,ago:42},{id:193,s:"wait",fl:"🇱🇰",oc:"Medical Radiation Scientist",st:"Fed",v:"189",pts:70,nt:"Sri Lankan",eoi:"2025-08",inv:"2026-02",grt:null,ago:36},{id:194,s:"eoi",fl:"🇳🇵",oc:"Geologist",st:"ACT",v:"190",pts:85,nt:"Nepali",eoi:"2026-02",inv:null,grt:null,ago:40},{id:195,s:"grt",fl:"🇨🇳",oc:"Pharmacist",st:"NT",v:"190",pts:75,nt:"Chinese",eoi:"2025-04",inv:"2025-10",grt:"2026-04",ago:25},{id:196,s:"wait",fl:"🇵🇭",oc:"Dietitian",st:"Fed",v:"189",pts:70,nt:"Filipino",eoi:"2025-05",inv:"2026-02",grt:null,ago:30},{id:197,s:"grt",fl:"🇬🇧",oc:"Structural Engineer",st:"ACT",v:"190",pts:75,nt:"British",eoi:"2025-05",inv:"2025-11",grt:"2026-02",ago:22},{id:198,s:"grt",fl:"🇵🇭",oc:"Network Engineer",st:"Fed",v:"189",pts:80,nt:"Filipino",eoi:"2024-09",inv:"2025-03",grt:"2026-03",ago:7},{id:199,s:"grt",fl:"🇵🇰",oc:"Midwife",st:"Fed",v:"189",pts:65,nt:"Pakistani",eoi:"2024-11",inv:"2025-07",grt:"2026-03",ago:39},{id:200,s:"inv",fl:"🇮🇳",oc:"Medical Radiation Scientist",st:"QLD",v:"491",pts:75,nt:"Indian",eoi:"2025-08",inv:"2026-02",grt:null,ago:10},{id:201,s:"wait",fl:"🇮🇳",oc:"Management Accountant",st:"NT",v:"491",pts:85,nt:"Indian",eoi:"2025-05",inv:"2025-12",grt:null,ago:25},{id:202,s:"wait",fl:"🇵🇰",oc:"Disability Support Worker",st:"SA",v:"190",pts:65,nt:"Pakistani",eoi:"2025-05",inv:"2026-01",grt:null,ago:31},{id:203,s:"inv",fl:"🇮🇳",oc:"Data Scientist",st:"QLD",v:"190",pts:80,nt:"Indian",eoi:"2025-06",inv:"2026-03",grt:null,ago:23},{id:204,s:"eoi",fl:"🇳🇵",oc:"Occupational Therapist",st:"Fed",v:"189",pts:75,nt:"Nepali",eoi:"2026-02",inv:null,grt:null,ago:12},{id:205,s:"wait",fl:"🇳🇵",oc:"Mechanical Engineer",st:"Fed",v:"189",pts:80,nt:"Nepali",eoi:"2025-03",inv:"2026-01",grt:null,ago:28},{id:206,s:"eoi",fl:"🇮🇳",oc:"Medical Radiation Scientist",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2026-02",inv:null,grt:null,ago:25},{id:207,s:"grt",fl:"🇮🇳",oc:"Lawyer",st:"QLD",v:"190",pts:85,nt:"Indian",eoi:"2024-06",inv:"2025-04",grt:"2026-01",ago:12},{id:208,s:"grt",fl:"🇮🇳",oc:"Network Engineer",st:"Fed",v:"189",pts:80,nt:"Indian",eoi:"2024-05",inv:"2024-12",grt:"2025-12",ago:45},{id:209,s:"wait",fl:"🇵🇰",oc:"Management Accountant",st:"WA",v:"190",pts:80,nt:"Pakistani",eoi:"2025-06",inv:"2026-02",grt:null,ago:39},{id:210,s:"grt",fl:"🇵🇰",oc:"Metal Fabricator",st:"TAS",v:"491",pts:75,nt:"Pakistani",eoi:"2024-01",inv:"2024-10",grt:"2025-12",ago:32},{id:211,s:"inv",fl:"🇮🇳",oc:"ICT Business Analyst",st:"Fed",v:"189",pts:85,nt:"Indian",eoi:"2025-07",inv:"2026-02",grt:null,ago:23},{id:212,s:"inv",fl:"🇬🇧",oc:"Speech Pathologist",st:"NT",v:"190",pts:75,nt:"British",eoi:"2025-10",inv:"2026-02",grt:null,ago:44},{id:213,s:"inv",fl:"🇮🇷",oc:"Accountant",st:"WA",v:"491",pts:85,nt:"Iranian",eoi:"2025-09",inv:"2026-04",grt:null,ago:37},{id:214,s:"wait",fl:"🇱🇰",oc:"Chef / Cook",st:"SA",v:"491",pts:65,nt:"Sri Lankan",eoi:"2025-03",inv:"2025-12",grt:null,ago:39},{id:215,s:"eoi",fl:"🇨🇳",oc:"Midwife",st:"Fed",v:"189",pts:70,nt:"Chinese",eoi:"2026-03",inv:null,grt:null,ago:7},{id:216,s:"inv",fl:"🇨🇳",oc:"Physiotherapist",st:"SA",v:"190",pts:75,nt:"Chinese",eoi:"2025-06",inv:"2026-02",grt:null,ago:13},{id:217,s:"wait",fl:"🇬🇧",oc:"Geologist",st:"NSW",v:"491",pts:85,nt:"British",eoi:"2025-06",inv:"2026-02",grt:null,ago:3},{id:218,s:"inv",fl:"🇵🇭",oc:"Cybersecurity Analyst",st:"NSW",v:"190",pts:85,nt:"Filipino",eoi:"2025-02",inv:"2026-03",grt:null,ago:33},{id:219,s:"inv",fl:"🇵🇰",oc:"Audiologist",st:"TAS",v:"491",pts:80,nt:"Pakistani",eoi:"2025-05",inv:"2026-02",grt:null,ago:43},{id:220,s:"grt",fl:"🇮🇳",oc:"Sonographer",st:"TAS",v:"190",pts:75,nt:"Indian",eoi:"2025-04",inv:"2025-10",grt:"2026-02",ago:17},{id:221,s:"wait",fl:"🇳🇵",oc:"Geologist",st:"ACT",v:"190",pts:80,nt:"Nepali",eoi:"2025-07",inv:"2026-01",grt:null,ago:20},{id:222,s:"eoi",fl:"🇳🇵",oc:"Mechanical Engineer",st:"WA",v:"190",pts:80,nt:"Nepali",eoi:"2026-01",inv:null,grt:null,ago:24},{id:223,s:"grt",fl:"🇵🇰",oc:"Medical Radiation Scientist",st:"WA",v:"491",pts:75,nt:"Pakistani",eoi:"2025-02",inv:"2025-07",grt:"2026-02",ago:2},{id:224,s:"inv",fl:"🇵🇭",oc:"Software Engineer",st:"Fed",v:"189",pts:90,nt:"Filipino",eoi:"2025-09",inv:"2026-02",grt:null,ago:13},{id:225,s:"grt",fl:"🇧🇩",oc:"Primary Teacher",st:"Fed",v:"189",pts:75,nt:"Bangladeshi",eoi:"2025-03",inv:"2025-08",grt:"2026-04",ago:37},{id:226,s:"eoi",fl:"🇵🇭",oc:"Radiographer",st:"SA",v:"190",pts:70,nt:"Filipino",eoi:"2026-01",inv:null,grt:null,ago:21},{id:227,s:"grt",fl:"🇳🇵",oc:"Early Childhood Teacher",st:"SA",v:"190",pts:80,nt:"Nepali",eoi:"2024-10",inv:"2025-06",grt:"2026-01",ago:10},{id:228,s:"wait",fl:"🇵🇰",oc:"Pharmacist",st:"TAS",v:"190",pts:70,nt:"Pakistani",eoi:"2025-11",inv:"2026-03",grt:null,ago:41},{id:229,s:"grt",fl:"🇮🇳",oc:"Pharmacist",st:"ACT",v:"190",pts:70,nt:"Indian",eoi:"2025-07",inv:"2026-01",grt:"2026-04",ago:11},{id:230,s:"eoi",fl:"🇬🇧",oc:"Exercise Physiologist",st:"TAS",v:"190",pts:70,nt:"British",eoi:"2026-04",inv:null,grt:null,ago:18},{id:231,s:"eoi",fl:"🇵🇰",oc:"Registered Nurse",st:"SA",v:"190",pts:75,nt:"Pakistani",eoi:"2026-01",inv:null,grt:null,ago:18},{id:232,s:"inv",fl:"🇳🇵",oc:"Pharmacist",st:"SA",v:"491",pts:80,nt:"Nepali",eoi:"2025-11",inv:"2026-04",grt:null,ago:29},{id:233,s:"wait",fl:"🇱🇰",oc:"Pharmacist",st:"NT",v:"190",pts:70,nt:"Sri Lankan",eoi:"2025-10",inv:"2026-03",grt:null,ago:16},{id:234,s:"inv",fl:"🇿🇦",oc:"Baker",st:"ACT",v:"491",pts:65,nt:"South African",eoi:"2025-10",inv:"2026-02",grt:null,ago:12},{id:235,s:"grt",fl:"🇳🇵",oc:"Osteopath",st:"WA",v:"491",pts:75,nt:"Nepali",eoi:"2025-01",inv:"2025-04",grt:"2026-04",ago:20},{id:236,s:"inv",fl:"🇮🇳",oc:"Audiologist",st:"NSW",v:"190",pts:70,nt:"Indian",eoi:"2025-03",inv:"2026-04",grt:null,ago:16},{id:237,s:"grt",fl:"🇬🇧",oc:"Software Engineer",st:"TAS",v:"491",pts:85,nt:"British",eoi:"2025-01",inv:"2025-04",grt:"2026-02",ago:36},{id:238,s:"eoi",fl:"🇮🇳",oc:"Dietitian",st:"Fed",v:"189",pts:70,nt:"Indian",eoi:"2026-02",inv:null,grt:null,ago:29},{id:239,s:"grt",fl:"🇨🇳",oc:"Mental Health Nurse",st:"NSW",v:"190",pts:75,nt:"Chinese",eoi:"2024-03",inv:"2025-01",grt:"2026-02",ago:19},{id:240,s:"wait",fl:"🇵🇭",oc:"Carpenter",st:"NSW",v:"190",pts:75,nt:"Filipino",eoi:"2024-12",inv:"2026-01",grt:null,ago:9},{id:241,s:"inv",fl:"🇳🇵",oc:"Refrigeration Mechanic",st:"NT",v:"491",pts:75,nt:"Nepali",eoi:"2025-07",inv:"2026-04",grt:null,ago:42},{id:242,s:"grt",fl:"🇮🇳",oc:"Hairdresser",st:"ACT",v:"491",pts:75,nt:"Indian",eoi:"2024-06",inv:"2024-12",grt:"2026-02",ago:33},{id:243,s:"grt",fl:"🇳🇵",oc:"General Practitioner",st:"Fed",v:"189",pts:85,nt:"Nepali",eoi:"2025-03",inv:"2025-08",grt:"2026-03",ago:32},{id:244,s:"wait",fl:"🇨🇳",oc:"Construction Project Manager",st:"ACT",v:"190",pts:85,nt:"Chinese",eoi:"2025-09",inv:"2026-03",grt:null,ago:37},{id:245,s:"wait",fl:"🇳🇵",oc:"Network Engineer",st:"QLD",v:"190",pts:90,nt:"Nepali",eoi:"2025-06",inv:"2026-03",grt:null,ago:26},{id:246,s:"wait",fl:"🇮🇳",oc:"Mechanical Engineer",st:"TAS",v:"190",pts:85,nt:"Indian",eoi:"2025-09",inv:"2026-03",grt:null,ago:25},{id:247,s:"grt",fl:"🇵🇰",oc:"Baker",st:"SA",v:"491",pts:65,nt:"Pakistani",eoi:"2024-11",inv:"2025-02",grt:"2026-04",ago:44},{id:248,s:"eoi",fl:"🇵🇭",oc:"General Practitioner",st:"Fed",v:"189",pts:80,nt:"Filipino",eoi:"2026-03",inv:null,grt:null,ago:11},{id:249,s:"grt",fl:"🇵🇭",oc:"Geologist",st:"ACT",v:"491",pts:85,nt:"Filipino",eoi:"2024-06",inv:"2024-12",grt:"2026-01",ago:23},{id:250,s:"grt",fl:"🇳🇵",oc:"Boilermaker",st:"QLD",v:"491",pts:70,nt:"Nepali",eoi:"2024-09",inv:"2025-05",grt:"2026-04",ago:8}];
+
+// ── STATE ──
+let stageF='', tierF='', filtered=[], shown=0;
+const PG=20;
+
+function mDiff(a,b){
+  if(!a||!b)return null;
+  const da=new Date(a+'-01'),db=new Date(b+'-01');
+  return Math.round((db-da)/(1000*60*60*24*30.44));
+}
+function agoLabel(n){
+  if(n===0)return'today';if(n<2)return'1d ago';if(n<7)return n+'d ago';
+  if(n<14)return'1wk ago';if(n<30)return Math.floor(n/7)+'wk ago';
+  return Math.floor(n/30)+'mo ago';
+}
+
+// populate occ dropdown
+function populateOcc(occs){
+  const sel=document.getElementById('f-occ');
+  sel.innerHTML='<option value="">All occupations</option>';
+  const grouped={1:[],2:[],3:[],4:[]};
+  (occs||Object.values(TIERS).flat()).forEach(oc=>{
+    const t=getTier(oc);
+    if(!grouped[t].includes(oc))grouped[t].push(oc);
+  });
+  const labels={1:'Tier 1 — Healthcare',2:'Tier 2 — Trades & Education',3:'Tier 3 — ICT & Engineering',4:'Tier 4 — Other'};
+  Object.entries(grouped).forEach(([t,list])=>{
+    if(!list.length)return;
+    const og=document.createElement('optgroup');
+    og.label=labels[t];
+    list.sort().forEach(oc=>{
+      const o=document.createElement('option');
+      o.value=oc; o.textContent=oc;
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  });
+}
+
+function setTier(t,btn){
+  tierF=t;
+  document.querySelectorAll('.ttab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  // update tier info bar
+  const bar=document.getElementById('tier-info');
+  if(t&&TIER_INFO[t]){
+    const ti=TIER_INFO[t];
+    bar.innerHTML=`<span class="ti-badge" style="background:${ti.colbg};color:${ti.col}">${TIER_INFO[t].name}</span>
+    <div><div class="ti-desc">${ti.desc}</div>
+    <div class="ti-occs">${ti.occs.map(o=>`<span class="ti-occ" onclick="filterByOcc('${o}')">${o}</span>`).join('')}</div></div>`;
+    bar.classList.add('show');
+  } else {
+    bar.classList.remove('show');
+  }
+  // filter occ dropdown to tier
+  if(t){
+    const tierOccs=[...new Set(DATA.filter(d=>getTier(d.oc)===t).map(d=>d.oc))].sort();
+    populateOcc(tierOccs);
+  } else {
+    populateOcc(null);
+  }
+  document.getElementById('f-occ').value='';
+  applyF();
+}
+function filterByOcc(oc){
+  document.getElementById('f-occ').value=oc;
+  applyF();
+  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth'});
+}
+
+function setStage(s,btn){
+  stageF=s;
+  ['all','eoi','inv','wait','grt'].forEach(k=>{
+    const el=document.getElementById('sp-'+k);
+    if(el)el.className='sp';
+  });
+  btn.className='sp on-'+(s||'all');
+  applyF();
+}
+
+function applyF(){
+  const v=document.getElementById('f-visa').value;
+  const oc=document.getElementById('f-occ').value;
+  const st=document.getElementById('f-state').value;
+  filtered=DATA.filter(d=>{
+    if(stageF&&d.s!==stageF)return false;
+    if(v&&d.v!==v)return false;
+    if(oc&&d.oc!==oc)return false;
+    if(st&&d.st!==st)return false;
+    if(tierF&&getTier(d.oc)!==tierF)return false;
+    return true;
+  });
+  shown=0;
+  renderFeed();
+  document.getElementById('fb-count').textContent=filtered.length+' outcome'+(filtered.length===1?'':'s');
+}
+
+function resetF(){
+  ['f-visa','f-occ','f-state'].forEach(id=>document.getElementById(id).value='');
+  stageF=''; tierF='';
+  document.querySelectorAll('.ttab').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.ttab').classList.add('active');
+  document.getElementById('tier-info').classList.remove('show');
+  ['all','eoi','inv','wait','grt'].forEach(k=>{const el=document.getElementById('sp-'+k);if(el)el.className='sp';});
+  document.getElementById('sp-all').className='sp on-all';
+  populateOcc(null);
+  applyF();
+}
+
+function journeyHTML(d){
+  const order=['eoi','inv','wait','grt'];
+  const curIdx=order.indexOf(d.s);
+  const steps=[
+    {key:'eoi',label:'EOI\nLodged'},
+    {key:'inv',label:'Invited'},
+    {key:'wait',label:'Waiting'},
+    {key:'grt',label:'Granted'}
+  ];
+  let html='<div class="journey">';
+  steps.forEach((step,i)=>{
+    const idx=order.indexOf(step.key);
+    let dotCls,lblCls;
+    if(idx<curIdx){dotCls='jdot jdot-done';lblCls='jlabel jlabel-done';}
+    else if(idx===curIdx){dotCls='jdot jdot-'+step.key;lblCls='jlabel jlabel-cur-'+step.key;}
+    else{dotCls='jdot jdot-future';lblCls='jlabel';}
+    if(i>0){
+      const prevDone=order.indexOf(steps[i-1].key)<curIdx;
+      const lineCls=prevDone?'jline jline-done':'jline jline-pending';
+      let chip='';
+      if(step.key==='inv'&&d.eoi&&d.inv){const m=mDiff(d.eoi,d.inv);if(m)chip=`<div class="jchip">${m}mo</div>`;}
+      if(step.key==='grt'&&d.inv&&d.grt){const m=mDiff(d.inv,d.grt);if(m)chip=`<div class="jchip">${m}mo</div>`;}
+      html+=`<div class="jconn">${chip}<div class="${lineCls}"></div></div>`;
+    }
+    html+=`<div class="jstep"><div class="${dotCls}">${idx<=curIdx?'✓':'·'}</div><div class="${lblCls}">${step.label}</div></div>`;
+  });
+  return html+'</div>';
+}
+
+function card(d){
+  const tier=getTier(d.oc);
+  const SNAMES={eoi:'📋 EOI Lodged',inv:'✉️ Invited',wait:'⏳ Waiting',grt:'🎉 Granted'};
+  const VBCLS={189:'vb189',190:'vb190',491:'vb491'};
+  let summary='',timeChip='';
+  if(d.s==='grt'&&d.eoi&&d.grt){
+    const t=mDiff(d.eoi,d.grt);
+    if(t){summary=`<b>${t} months</b> — EOI to grant`;timeChip=`<div class="cf-time">${t}mo total</div>`;}
+  }else if((d.s==='wait'||d.s==='inv')&&d.eoi&&d.inv){
+    const t=mDiff(d.eoi,d.inv);
+    if(t){summary=`<b>${t} months</b> to invitation`;timeChip=`<div class="cf-time">${t}mo to invite</div>`;}
+  }else if(d.s==='eoi'){
+    summary=`EOI lodged ${d.eoi}`;
+  }
+  return `<div class="card">
+  <div class="card-top-bar ${d.s}"></div>
+  <div class="card-body">
+    <div class="card-head">
+      <div class="card-flag">${d.fl}</div>
+      <div class="card-info">
+        <div class="card-occ">
+          ${d.oc}
+          <span class="tier-badge tb-${tier}">T${tier}</span>
+          <span class="visa-badge ${VBCLS[d.v]}">${d.v}</span>
+        </div>
+        <div class="card-meta">
+          <span class="meta-pts">${d.pts} pts</span>
+          <span class="meta-dot"></span>
+          <span>${d.st}</span>
+          <span class="meta-dot"></span>
+          <span>${d.nt}</span>
+          <span class="card-ago">${agoLabel(d.ago)}</span>
+        </div>
+      </div>
+      <span class="card-stage-badge csb-${d.s}">${SNAMES[d.s]}</span>
+    </div>
+    ${journeyHTML(d)}
+  </div>
+  <div class="card-footer">
+    <div class="cf-summary">${summary}</div>
+    ${timeChip}
+  </div>
+</div>`;
+}
+
+function renderFeed(){
+  const el=document.getElementById('feed');
+  const lw=document.getElementById('lw');
+  if(!filtered.length){
+    el.innerHTML=`<div class="empty"><div class="empty-icon">🔍</div><p>No outcomes match your filters. Try broadening your search or be the first to submit for this profile.</p></div>`;
+    lw.style.display='none';return;
+  }
+  el.innerHTML=filtered.slice(0,PG).map(card).join('');
+  shown=Math.min(PG,filtered.length);
+  lw.style.display=filtered.length>PG?'block':'none';
+}
+function loadMore(){
+  document.getElementById('feed').innerHTML+=filtered.slice(shown,shown+PG).map(card).join('');
+  shown+=PG;
+  if(shown>=filtered.length)document.getElementById('lw').style.display='none';
+}
+
+function renderSidebar(){
+  // tier counts
+  [1,2,3,4].forEach(t=>{
+    const cnt=DATA.filter(d=>getTier(d.oc)===t).length;
+    const el=document.getElementById('tc-'+t);
+    if(el)el.textContent=cnt;
+    const ts=document.getElementById('ts-'+t);
+    if(ts)ts.textContent=cnt+' outcomes';
+  });
+  // avg wait rows
+  const wr=document.getElementById('wait-rows');
+  if(wr){
+    const vs=[{v:'190',col:'var(--gold)'},{v:'189',col:'var(--wait)'},{v:'491',col:'var(--eoi)'}];
+    wr.innerHTML=vs.map(({v,col})=>{
+      const ws=DATA.filter(d=>d.v===v&&d.eoi&&d.inv).map(d=>mDiff(d.eoi,d.inv)).filter(Boolean);
+      const avg=ws.length?(ws.reduce((a,b)=>a+b,0)/ws.length).toFixed(1):'—';
+      const pct=avg!=='—'?Math.min(parseFloat(avg)/14*100,100):0;
+      return `<div class="wr"><div class="wr-visa" style="color:${col}">${v}</div>
+      <div class="wr-bar"><div class="wr-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div class="wr-val">${avg==='—'?'—':avg+'mo'}</div></div>`;
+    }).join('');
+  }
+  // recent grants
+  const rg=document.getElementById('recent-grants');
+  if(rg){
+    const grants=DATA.filter(d=>d.s==='grt'&&d.eoi&&d.grt).sort((a,b)=>a.ago-b.ago).slice(0,5);
+    rg.innerHTML=grants.map(d=>{
+      const t=mDiff(d.eoi,d.grt);
+      return `<div class="rg">
+      <div class="rg-flag">${d.fl}</div>
+      <div class="rg-info"><div class="rg-occ">${d.oc}</div><div class="rg-sub">${d.v} · ${d.st} · ${d.pts}pts</div></div>
+      ${t?`<div class="rg-time">${t}mo</div>`:''}
+      </div>`;
+    }).join('');
+  }
+  // hero stats
+  const grants=DATA.filter(d=>d.s==='grt'&&d.eoi&&d.grt);
+  const waits=grants.map(d=>mDiff(d.eoi,d.grt)).filter(Boolean);
+  const avgW=waits.length?(waits.reduce((a,b)=>a+b,0)/waits.length).toFixed(1):'—';
+  const el=document.getElementById('avgWait');
+  if(el)el.textContent=avgW+'mo';
+  const pct=document.getElementById('grtPct');
+  if(pct)pct.textContent=Math.round(grants.length/DATA.length*100)+'%';
+}
+
+// MODAL
+let selectedStage=null;
+function openModal(){document.getElementById('overlay').classList.add('show');}
+function closeModal(){document.getElementById('overlay').classList.remove('show');}
+function pickStage(btn,s){
+  document.querySelectorAll('.ss-opt').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');selectedStage=s;
+}
+function doSubmit(){
+  if(!selectedStage){alert('Please select your current stage.');return;}
+  if(!document.getElementById('m-visa').value||!document.getElementById('m-occ').value){
+    alert('Please fill in visa type and occupation.');return;
+  }
+  closeModal();
+  const toast=document.createElement('div');
+  toast.style.cssText='position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);background:var(--grt);color:#fff;padding:0.75rem 1.5rem;border-radius:10px;font-weight:700;font-size:0.85rem;z-index:999;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.2)';
+  toast.textContent='✅ Submitted — under review. Thank you!';
+  document.body.appendChild(toast);
+  setTimeout(()=>toast.remove(),4000);
+}
+
+// INIT
+populateOcc(null);
+renderSidebar();
+applyF();
+
+// reveal on scroll
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
