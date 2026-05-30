@@ -3,282 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EOI Backlog Tracker 2026 — SkillSelect Queue Position & Australian PR Points Calculator | VisaIQ</title>
-<meta name="description" content="Track your SkillSelect EOI backlog position across 52 occupations. Calculate Australian PR points, check 189 cutoffs, compare all 8 states for 190 nomination. Real DHA April 2026 data. No agent needed.">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#0B1C2E">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="VisaIQ">
-<meta property="og:url" content="https://www.visaiq.com.au/">
-<meta property="og:title" content="EOI Backlog Tracker 2026 — SkillSelect Queue Position & Australian PR Points Calculator | VisaIQ">
-<meta property="og:description" content="Track your SkillSelect EOI backlog position across 52 occupations. Calculate Australian PR points, check 189 cutoffs, compare all 8 states for 190 nomination. Real DHA April 2026 data.">
-<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"VisaIQ","url":"https://www.visaiq.com.au","description":"Australia's migration intelligence platform. Free visa tools covering skilled PR, student visa, partner visa and employer sponsored pathways. Real DHA 2026 data.","potentialAction":{"@type":"SearchAction","target":"https://www.visaiq.com.au/tool?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I check my EOI backlog position in SkillSelect?","acceptedAnswer":{"@type":"Answer","text":"Log into your ImmiAccount and view your Expression of Interest status. VisaIQ's EOI Backlog Tracker shows how many EOIs sit above yours across 52 occupations using DHA April 2026 SkillSelect pool data."}},{"@type":"Question","name":"What is the current 189 points cutoff for Registered Nurses in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 189 federal points cutoff for Registered Nurses (General) held at 75 points across all four invitation rounds from June 2024 to April 2026. SA 190 also invites at 65 points minimum."}},{"@type":"Question","name":"Which state is easiest for 190 nomination in 2026?","acceptedAnswer":{"@type":"Answer","text":"South Australia (SA) is consistently the most accessible state for 190 nomination in 2026. SA runs monthly invitation rounds, accepts applicants at 65 points minimum for Tier 1 occupations, and allows onshore processing."}},{"@type":"Question","name":"How many points do I need for Australian PR in 2026?","acceptedAnswer":{"@type":"Answer","text":"The minimum to submit an EOI is 65 points, but invitation cutoffs vary by occupation. Electricians were invited at 65 points via 189 federal in April 2026. Registered Nurses require 75 points. Early Childhood Teachers require 85 points."}},{"@type":"Question","name":"How long is the SkillSelect EOI backlog wait?","acceptedAnswer":{"@type":"Answer","text":"Wait time depends on your occupation, points score, and visa stream. Frozen occupations like Software Engineers have not received 189 invitations in over 12 months. Active occupations like Nurses and Electricians above the cutoff are typically invited within 1-3 rounds."}},{"@type":"Question","name":"How is the 482 TSMIT threshold changing in July 2026?","acceptedAnswer":{"@type":"Answer","text":"The TSMIT rises from $76,515 to $79,499 on 1 July 2026. All 482 employer sponsored applicants must meet or exceed this threshold. Check your eligibility before the 30 June 2026 deadline."}}]}
-</script>
+<title>VisaIQ — Australian Migration Intelligence | Find Your Visa Pathway</title>
+<meta name="description" content="Australia's migration intelligence platform. Pick your pathway, see your real SkillSelect position, calculate costs. 8 free tools, real DHA April 2026 data. No agent needed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  --amber2:#E8B86D;
   --navy:#0B1C2E;--navy2:#12263D;--navy3:#1A3350;
-  --gold:#C8913A;--gold2:#E0A94E;
-  --gold3:rgba(200,145,58,0.15);--gold4:rgba(200,145,58,0.3);
-  --cream:#F5F1EA;--cream2:#EDE8DF;--cream3:#E3DDCF;
-  --teal:#00C896;--teal2:#00E8AF;
-  --td:rgba(0,200,150,0.10);--tb:rgba(0,200,150,0.22);
-  --text:#0B1C2E;--muted:#6B7A8D;--muted2:#8A97A8;
-  --white:#FFFFFF;--border:rgba(11,28,46,0.08);--border2:rgba(255,255,255,0.08);
-  --green:#1E9B5C;--amber:#E8B86D;
+  --gold:#B8811F;--gold2:#D4982E;--goldlight:#E8B84B;--golddark:#96670F;
+  --gold3:rgba(184,129,31,0.10);--gold4:rgba(184,129,31,0.25);
+  --cream:#EDE8DF;--cream2:#E4DDCF;--cream3:#D9D0BF;
+  --teal:#0A8F70;--teal2:#0DB38C;--tealbg:rgba(10,143,112,0.09);
+  --text:#0B1C2E;--muted:#4E5D6E;--muted2:#7A8899;
+  --white:#FAFAF8;--offwhite:#F5F2EC;--border:rgba(11,28,46,0.11);--border2:rgba(255,255,255,0.10);
+  --green:#1A8C52;--amber:#C8891A;
+  --slate:#ECEAE4;
+  --shadow:0 1px 3px rgba(11,28,46,0.05),0 6px 20px rgba(11,28,46,0.07);
+  --shadow-lg:0 20px 60px rgba(11,28,46,0.13);
 }
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.ticker{background:var(--navy);border-bottom:1px solid rgba(200,145,58,0.2);height:36px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:200}
-.live-pill{flex-shrink:0;background:var(--gold);color:var(--navy);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0 12px;height:100%;display:flex;align-items:center}
-.ticker-inner{flex:1;overflow:hidden;height:100%;display:flex;align-items:center}
-.ticker-track{display:flex;white-space:nowrap;animation:scroll 60s linear infinite}
+
+/* TICKER — slim, warm */
+.ticker{background:var(--navy);height:34px;overflow:hidden;display:flex;align-items:center;position:sticky;top:0;z-index:300}
+.ticker-pill{flex-shrink:0;background:var(--gold);color:var(--navy);font-size:0.58rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0 13px;height:100%;display:flex;align-items:center;gap:0.35rem}
+.ticker-pill .d{width:5px;height:5px;border-radius:50%;background:var(--navy);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+.ticker-track{display:flex;white-space:nowrap;animation:slide 50s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
-.ti{display:inline-flex;align-items:center;gap:0.5rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0}
-.ti b{color:var(--white);font-weight:500}
-.tdot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.tdot.g{background:var(--gold2)}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-nav{background:var(--navy);position:sticky;top:36px;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:66px;border-bottom:1px solid var(--border2)}
-.logo{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:500;color:var(--white);letter-spacing:-0.02em;text-decoration:none}
+.tk{display:inline-flex;align-items:center;gap:0.45rem;padding:0 1.8rem;font-size:0.72rem;color:rgba(255,255,255,0.6)}
+.tk b{color:#fff;font-weight:600}
+.tk .dot{width:5px;height:5px;border-radius:50%;background:var(--gold2)}
+.tk .dot.t{background:var(--teal2)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* NAV — white, crisp */
+nav{background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);position:sticky;top:34px;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;border-bottom:1px solid var(--border)}
+.logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--navy);letter-spacing:-0.02em;text-decoration:none}
 .logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:0.15rem}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.84rem;font-weight:400;padding:0.45rem 0.8rem;border-radius:6px;transition:all 0.2s}
-.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.06)}
-.nav-r{display:flex;align-items:center;gap:0.75rem}
-.nav-cta{background:var(--gold);color:var(--navy);padding:0.55rem 1.35rem;border-radius:6px;font-size:0.84rem;font-weight:600;text-decoration:none;transition:all 0.2s;white-space:nowrap}
-.nav-cta:hover{background:var(--gold2);transform:translateY(-1px)}
-@media(max-width:860px){.nav-links{display:none}}
-.hero{background:var(--navy);min-height:88vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;padding:0 4%;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 600px at -10% 60%,rgba(200,145,58,0.07),transparent 60%),radial-gradient(ellipse 600px 500px at 110% 40%,rgba(200,145,58,0.05),transparent 60%);pointer-events:none}
-.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);pointer-events:none}
-.hero-left{padding:4rem 1rem 4rem 0;position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold3);border:1px solid var(--gold4);color:var(--gold2);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.75rem}
-.htd{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:400;line-height:1.06;color:var(--white);letter-spacing:-0.02em;margin-bottom:1rem}
+.nav-links{display:flex;align-items:center;gap:0.1rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;padding:0.45rem 0.85rem;border-radius:7px;transition:all 0.18s}
+.nav-links a:hover{color:var(--navy);background:var(--slate)}
+.nav-right{display:flex;align-items:center;gap:0.75rem}
+.nav-ghost{color:var(--muted);font-size:0.82rem;font-weight:500;text-decoration:none;padding:0.5rem 0.9rem;border-radius:7px;transition:all 0.18s;white-space:nowrap}
+.nav-ghost:hover{color:var(--navy);background:var(--slate)}
+.nav-cta{background:var(--gold);color:var(--white);padding:0.6rem 1.3rem;border-radius:8px;font-size:0.84rem;font-weight:700;text-decoration:none;transition:all 0.2s;white-space:nowrap;display:inline-flex;align-items:center;gap:0.4rem;box-shadow:0 2px 8px rgba(184,129,31,0.25)}
+.nav-cta:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 6px 18px rgba(184,129,31,0.35)}
+.nav-cta .price{background:rgba(255,255,255,0.22);padding:0.1rem 0.45rem;border-radius:5px;font-size:0.76rem;font-weight:700}
+@media(max-width:920px){.nav-links{display:none}.nav-ghost{display:none}}
+
+/* HERO */
+.hero{padding:4.5rem 5% 1rem;position:relative;overflow:hidden;background:var(--white)}
+.hero::before{content:'';position:absolute;top:-200px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(184,129,31,0.07),transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-250px;left:-150px;width:550px;height:550px;background:radial-gradient(circle,rgba(10,143,112,0.06),transparent 60%);pointer-events:none}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--navy);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.45rem 1rem;border-radius:100px;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+.hero-badge .d{width:7px;height:7px;border-radius:50%;background:var(--teal2);animation:pulse 2s infinite}
+/* AUTHORITY STRIP */
+.auth-strip{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:2rem}
+.auth-pill{display:inline-flex;align-items:center;gap:0.45rem;background:var(--slate);border:1px solid var(--border);color:var(--navy);font-size:0.72rem;font-weight:600;padding:0.45rem 1rem;white-space:nowrap}
+.auth-pill:first-child{border-radius:10px 0 0 10px}
+.auth-pill:last-child{border-radius:0 10px 10px 0}
+.auth-pill + .auth-pill{border-left:none}
+.auth-pill .ai{background:linear-gradient(135deg,var(--gold),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+.auth-pill .ico{font-size:0.85rem}
+@media(max-width:600px){.auth-strip{gap:0.4rem}.auth-pill{border-radius:8px!important;border-left:1px solid var(--border)!important}}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:500;line-height:1.04;letter-spacing:-0.025em;color:var(--navy);margin-bottom:1.1rem}
 .hero h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2rem;max-width:430px}
-.selector{width:100%;max-width:480px;margin-bottom:1.5rem}
-.sel-label{font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.75rem;display:block}
-.sel-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:0.35rem;background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:14px;padding:0.4rem;margin-bottom:0.65rem}
-.stab{display:flex;flex-direction:column;align-items:center;gap:0.25rem;padding:0.75rem 0.3rem;border-radius:9px;border:1px solid transparent;background:transparent;color:rgba(255,255,255,0.45);cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif}
-.stab:hover{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.75)}
-.stab.active{background:var(--gold3);border-color:var(--gold4);color:var(--gold2)}
-.stab-icon{font-size:1.1rem;line-height:1}
-.stab-name{font-size:0.68rem;font-weight:500;line-height:1.2;text-align:center}
-.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.95rem 1.5rem;background:var(--gold);color:var(--navy);border:none;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;letter-spacing:-0.01em}
-.cta-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(200,145,58,0.3)}
-.hero-micro{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:1rem}
-.hmc{display:flex;align-items:center;gap:0.3rem}
-.hmc::before{content:'✓';color:var(--gold);font-size:0.65rem;font-weight:700}
-.hero-right{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:3rem 0}
-.score-panel{background:var(--white);border-radius:16px;padding:1.6rem;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(0,0,0,0.35),0 0 0 1px rgba(255,255,255,0.05)}
-.sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
-.sp-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);display:flex;align-items:center;gap:0.4rem}
-.sp-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
-.sp-live{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--gold3);color:var(--gold);border:1px solid var(--gold4);padding:0.15rem 0.5rem;border-radius:100px}
-.sp-score{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.2rem}
-.sp-num{font-family:'Outfit',sans-serif;font-size:4.5rem;font-weight:400;color:var(--navy);line-height:1}
-.sp-max{font-size:1rem;color:var(--muted)}
-.sp-sublabel{font-size:0.75rem;color:var(--muted);margin-bottom:1rem}
-.sp-bar-wrap{background:var(--cream2);border-radius:4px;height:5px;margin-bottom:1.1rem;overflow:hidden;position:relative}
-.sp-bar{height:5px;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));width:77%}
-.sp-cutoff-marker{position:absolute;left:68%;top:-3px;width:2px;height:11px;background:var(--navy);border-radius:2px}
-.sp-rows{display:flex;flex-direction:column;gap:0}
-.sp-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px solid var(--border);font-size:0.78rem}
-.sp-row:last-child{border-bottom:none}
-.sp-row-label{color:var(--muted)}
-.sp-row-val{font-weight:600;color:var(--text)}
-.sp-row-val.good{color:var(--gold)}
-.sp-row-val.warn{color:var(--amber)}
-.sp-cta{display:block;text-align:center;background:var(--navy);color:var(--white);padding:0.85rem;border-radius:8px;font-size:0.88rem;font-weight:600;text-decoration:none;margin-top:1.1rem;transition:background 0.2s;border:none;font-family:'Outfit',sans-serif;width:100%;cursor:pointer}
-.sp-cta:hover{background:var(--navy2)}
-.hero-stats{display:flex;gap:2.5rem;padding-top:1.75rem;border-top:1px solid var(--border2);margin-top:0.5rem}
-.hstat-n{font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:400;color:var(--white);line-height:1}
-.hstat-n span{color:var(--gold)}
-.hstat-l{font-size:0.68rem;color:rgba(255,255,255,0.35);margin-top:0.15rem}
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto;padding:3rem 4% 0;gap:0}
-  .hero-left{padding:2rem 0 1.5rem}
-  .hero-right{padding:0 0 0;justify-content:flex-start}
-  .score-panel{max-width:100%;border-radius:16px 16px 0 0}
-  .hero-sub{max-width:100%}
-  .selector{max-width:100%}
-  .hero-stats{gap:1.5rem}
-}
-.trust-bar{background:var(--navy);border-bottom:1px solid rgba(200,145,58,0.15);padding:0.75rem 4%;display:flex;align-items:center;gap:2.5rem;overflow-x:auto}
-.trust-item{display:flex;align-items:center;gap:0.45rem;white-space:nowrap;flex-shrink:0}
-.trust-check{color:var(--gold);font-size:0.75rem;font-weight:700}
-.trust-text{font-size:0.75rem;color:rgba(255,255,255,0.45);font-weight:500}
-.trust-divider{width:1px;height:14px;background:rgba(255,255,255,0.1);flex-shrink:0}
-.section{padding:5rem 4%;background:var(--cream)}
-.sec-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem;display:block}
-.sec-h{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.1;color:var(--navy);margin-bottom:0.65rem;letter-spacing:-0.02em}
+.hero-sub{font-size:clamp(1rem,2vw,1.18rem);color:var(--muted);max-width:560px;margin:0 auto 2.5rem;line-height:1.65}
+
+/* PATHWAY CARDS — the hero interaction */
+.pathways{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:0 auto 1.5rem}
+@media(max-width:900px){.pathways{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.pathways{grid-template-columns:1fr}}
+.pw{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.75rem 1.5rem;text-decoration:none;text-align:left;transition:all 0.28s cubic-bezier(0.34,1.4,0.64,1);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:230px;box-shadow:var(--shadow)}
+.pw::after{content:'';position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(180deg,transparent,var(--accent-soft));transition:height 0.28s;pointer-events:none}
+.pw:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.pw:hover::after{height:100%}
+.pw-icon{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.1rem;background:var(--accent-soft);position:relative;z-index:1}
+.pw-name{font-size:1.12rem;font-weight:700;color:var(--navy);margin-bottom:0.35rem;position:relative;z-index:1}
+.pw-desc{font-size:0.82rem;color:var(--muted);line-height:1.55;flex:1;position:relative;z-index:1}
+.pw-go{font-size:0.8rem;font-weight:700;color:var(--accent);margin-top:1rem;display:flex;align-items:center;gap:0.4rem;position:relative;z-index:1;transition:gap 0.2s}
+.pw:hover .pw-go{gap:0.7rem}
+.pw.skilled{--accent:#B8811F;--accent-soft:rgba(184,129,31,0.08)}
+.pw.student{--accent:#0A8F70;--accent-soft:rgba(10,143,112,0.08)}
+.pw.partner{--accent:#9B3E6E;--accent-soft:rgba(155,62,110,0.08)}
+.pw.employer{--accent:#2D5FA0;--accent-soft:rgba(45,95,160,0.08)}
+.hero-micro{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:0.78rem;color:var(--muted2);margin-top:0.5rem}
+.hero-micro span{display:flex;align-items:center;gap:0.35rem}
+.hero-micro span::before{content:'✓';color:var(--teal);font-weight:700}
+
+/* STAT BAND — standalone full-width */
+.statband-wrap{background:var(--navy);border-top:3px solid;border-image:linear-gradient(90deg,var(--gold),var(--teal2),var(--gold)) 1}
+.statband-inner{max-width:1080px;margin:0 auto;padding:2rem 5%;display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:0}
+@media(max-width:680px){.statband-inner{grid-template-columns:1fr 1fr;gap:1.5rem;padding:2rem 5%}.sb-div{display:none}}
+.sb{text-align:center;padding:0.5rem 1.5rem}
+.sb-n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:500;color:var(--gold2);line-height:1}
+.sb-l{font-size:0.71rem;color:rgba(255,255,255,0.48);margin-top:0.35rem;letter-spacing:0.02em}
+.sb-div{width:1px;height:40px;background:rgba(255,255,255,0.1)}
+
+/* SECTIONS */
+.sec{padding:5rem 5%}
+.sec.slate{background:var(--slate)}
+.sec-inner{max-width:1080px;margin:0 auto}
+.sec-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-align:center;display:block;margin-bottom:0.7rem}
+.sec-h{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:500;line-height:1.12;letter-spacing:-0.02em;color:var(--navy);text-align:center;margin-bottom:0.7rem}
 .sec-h em{font-style:italic;color:var(--gold)}
-.sec-sub{font-size:0.9rem;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:2.5rem}
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-@media(max-width:860px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.tools-grid{grid-template-columns:1fr}}
-.tool-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.6rem;text-decoration:none;display:flex;flex-direction:column;gap:0.35rem;transition:all 0.25s;position:relative;overflow:hidden}
-.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background 0.25s}
-.tool-card:hover{border-color:var(--gold4);transform:translateY(-3px);box-shadow:0 12px 40px rgba(11,28,46,0.08)}
-.tool-card:hover::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
-.tool-card.featured{background:var(--navy);border-color:var(--navy)}
-.tool-card.featured::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
-.tool-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem}
-.tool-icon{font-size:1.4rem;line-height:1}
-.tool-badge{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--gold);color:var(--navy);padding:0.18rem 0.55rem;border-radius:100px}
-.tool-badge.new{background:var(--gold);color:var(--navy)}
-.tool-name{font-size:0.95rem;font-weight:600;color:var(--navy)}
-.tool-card.featured .tool-name{color:var(--white)}
-.tool-desc{font-size:0.8rem;color:var(--muted);line-height:1.65;flex:1}
-.tool-card.featured .tool-desc{color:rgba(255,255,255,0.5)}
-.tool-link{font-size:0.78rem;font-weight:600;color:var(--gold);margin-top:0.6rem;display:flex;align-items:center;gap:0.3rem}
-.how-section{background:var(--navy)}
-.how-section .sec-h{color:var(--white)}
-.how-section .sec-sub{color:rgba(255,255,255,0.45)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden}
-@media(max-width:768px){.steps{grid-template-columns:1fr 1fr}}
-.step{background:var(--navy2);padding:2rem 1.6rem;transition:background 0.2s}
-.step:hover{background:var(--navy3)}
-.step-num{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:400;color:rgba(255,255,255,0.05);line-height:1;margin-bottom:1rem}
-.step-title{font-size:0.92rem;font-weight:600;color:var(--white);margin-bottom:0.4rem}
-.step-desc{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.65}
-.guides-section{background:var(--white)}
-.guides-list{border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.guide-row{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.15s;gap:1rem}
-.guide-row:last-child{border-bottom:none}
-.guide-row:hover{background:var(--cream)}
-.guide-visa{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);min-width:45px}
-.guide-title{font-size:0.86rem;font-weight:500;color:var(--navy);flex:1}
-.guide-arrow{color:var(--muted);transition:transform 0.2s}
-.guide-row:hover .guide-arrow{transform:translateX(3px);color:var(--gold)}
-.stats-section{background:var(--navy)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden}
-@media(max-width:580px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
-.sg{background:var(--navy2);padding:2rem 1.25rem;text-align:center}
-.sg-n{font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:400;color:var(--gold);line-height:1;letter-spacing:-0.02em}
-.sg-l{font-size:0.68rem;color:rgba(255,255,255,0.3);margin-top:0.35rem}
-.proof-section{background:var(--cream2)}
+.sec-sub{font-size:0.95rem;color:var(--muted);text-align:center;max-width:520px;margin:0 auto 3rem;line-height:1.65}
+
+/* TOOLS — colour-pop on hover */
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:900px){.tools{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.tools{grid-template-columns:1fr}}
+.tool{background:var(--white);border:1px solid var(--border);border-radius:15px;padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;transition:all 0.25s cubic-bezier(0.34,1.4,0.64,1);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.tool::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--tool-accent,var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.tool:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--tool-accent,var(--gold4));background:var(--tool-bg,var(--white))}
+.tool:hover::before{transform:scaleX(1)}
+.tool-icon{font-size:1.45rem;margin-bottom:0.85rem;display:inline-block;transition:transform 0.3s cubic-bezier(0.34,1.6,0.64,1)}
+.tool:hover .tool-icon{transform:scale(1.2) rotate(-5deg)}
+.tool-badge{position:absolute;top:1.1rem;right:1.1rem;font-size:0.56rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;background:var(--gold3);color:var(--golddark);padding:0.18rem 0.5rem;border-radius:100px}
+.tool-badge.hot{background:var(--tealbg);color:var(--teal)}
+.tool-name{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;transition:color 0.2s}
+.tool:hover .tool-name{color:var(--tool-accent,var(--gold))}
+.tool-desc{font-size:0.79rem;color:var(--muted);line-height:1.55;flex:1}
+.tool-go{font-size:0.76rem;font-weight:700;color:var(--tool-accent,var(--gold));margin-top:0.85rem;display:flex;align-items:center;gap:0.35rem;transition:gap 0.2s}
+.tool:hover .tool-go{gap:0.7rem}
+.tool.t-eoi{--tool-accent:#B8811F;--tool-bg:rgba(184,129,31,0.03)}
+.tool.t-pts{--tool-accent:#0A8F70;--tool-bg:rgba(10,143,112,0.03)}
+.tool.t-state{--tool-accent:#2D5FA0;--tool-bg:rgba(45,95,160,0.03)}
+.tool.t-occ{--tool-accent:#7B3FA0;--tool-bg:rgba(123,63,160,0.03)}
+.tool.t-student{--tool-accent:#0A8F70;--tool-bg:rgba(10,143,112,0.03)}
+.tool.t-partner{--tool-accent:#9B3E6E;--tool-bg:rgba(155,62,110,0.03)}
+.tool.t-482{--tool-accent:#2D5FA0;--tool-bg:rgba(45,95,160,0.03)}
+.tool.t-outcomes{--tool-accent:#1A8C52;--tool-bg:rgba(26,140,82,0.03)}
+
+/* FEATURE BAND (dark, for contrast/depth) */
+.feature{background:var(--navy);padding:5rem 5%;position:relative;overflow:hidden}
+.feature::before{content:'';position:absolute;top:-150px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,145,58,0.1),transparent 60%);pointer-events:none}
+.feature-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:840px){.feature-inner{grid-template-columns:1fr;gap:2.5rem}}
+.feature-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;display:block}
+.feature h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:500;line-height:1.12;color:var(--white);letter-spacing:-0.02em;margin-bottom:1rem}
+.feature h2 em{font-style:italic;color:var(--gold)}
+.feature p{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:1.75rem}
+.feature-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--navy);padding:0.95rem 1.9rem;border-radius:10px;font-size:0.92rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.feature-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,145,58,0.3)}
+/* mini dashboard mock */
+.mock{background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:18px;padding:1.5rem;box-shadow:0 30px 70px rgba(0,0,0,0.35)}
+.mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.mock-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:0.4rem}
+.mock-label .d{width:6px;height:6px;border-radius:50%;background:var(--teal2);animation:pulse 2s infinite}
+.mock-live{font-size:0.58rem;font-weight:700;text-transform:uppercase;background:var(--gold3);color:var(--gold2);border:1px solid var(--gold4);padding:0.15rem 0.5rem;border-radius:100px}
+.mock-score{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.75rem}
+.mock-num{font-family:'Fraunces',serif;font-size:3.5rem;font-weight:500;color:#fff;line-height:1}
+.mock-max{font-size:0.9rem;color:rgba(255,255,255,0.4)}
+.mock-track{height:8px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden;position:relative;margin-bottom:1.25rem}
+.mock-fill{height:100%;width:77%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:100px}
+.mock-rows{display:flex;flex-direction:column;gap:0}
+.mock-row{display:flex;justify-content:space-between;padding:0.55rem 0;border-bottom:1px solid var(--border2);font-size:0.78rem}
+.mock-row:last-child{border-bottom:none}
+.mock-row .k{color:rgba(255,255,255,0.5)}
+.mock-row .v{font-weight:600;color:#fff}
+.mock-row .v.g{color:var(--teal2)}
+
+/* PROOF */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-@media(max-width:800px){.proof-grid{grid-template-columns:1fr}}
-.proof-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.6rem;transition:all 0.25s}
-.proof-card:hover{border-color:var(--gold4);transform:translateY(-2px);box-shadow:0 12px 35px rgba(11,28,46,0.07)}
-.proof-text{font-size:0.85rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem;font-style:italic}
-.proof-meta{display:flex;align-items:center;gap:0.65rem}
-.proof-av{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600;flex-shrink:0}
-.proof-name{font-size:0.82rem;font-weight:600;color:var(--navy)}
-.proof-visa{font-size:0.7rem;color:var(--gold);margin-top:0.1rem}
-.intel-section{background:#0F1923;padding:5rem 4%;border-top:1px solid rgba(200,145,58,0.15)}
-.intel-section .sec-h{color:#F0F5FF}
-.intel-section .sec-sub{color:#7A93B4}
-.intel-dash{background:rgba(23,34,49,0.95);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:1.5rem;display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:0.85rem;box-shadow:0 40px 80px rgba(0,0,0,0.4)}
-@media(max-width:700px){.intel-dash{grid-template-columns:1fr}}
-.dc{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.2rem;position:relative;overflow:hidden}
-.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,145,58,0.15),transparent)}
-.dc-label{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7A93B4;display:flex;align-items:center;gap:0.4rem;margin-bottom:1rem}
-.dc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.gc{display:flex;flex-direction:column;align-items:center}
-.g-svg{width:120px;height:120px}
-.g-info{text-align:center;margin-top:0.4rem}
-.g-verdict{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:700;color:var(--gold)}
-.g-note{font-size:0.67rem;color:#7A93B4;line-height:1.5;margin-top:0.2rem}
-.q-sub{font-size:0.67rem;color:#7A93B4;margin-bottom:0.65rem}
-.q-track{height:8px;background:rgba(255,255,255,0.05);border-radius:100px;position:relative;margin-bottom:0.4rem}
-.q-fill{height:100%;width:72%;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
-.q-pin{position:absolute;left:72%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--gold2);border:3px solid rgba(23,34,49,0.95);box-shadow:0 0 12px rgba(0,200,150,0.5)}
-.q-row{display:flex;justify-content:space-between;font-size:0.61rem;color:#7A93B4;margin-bottom:0.75rem}
-.q-row .you{color:var(--gold);font-weight:600}
-.q-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem}
-.qs{background:rgba(255,255,255,0.03);border-radius:8px;padding:0.5rem 0.6rem}
-.qs-v{font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;line-height:1;color:#F0F5FF}
-.qs-v.t{color:var(--gold)}.qs-v.g{color:var(--amber)}
-.qs-l{font-size:0.57rem;color:#7A93B4;margin-top:0.15rem}
-.av{font-family:'Outfit',sans-serif;font-style:italic;font-size:1.05rem;color:var(--gold2);margin-bottom:0.75rem;line-height:1.3}
-.ag{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.7rem}
-.agc{background:rgba(255,255,255,0.03);border-radius:8px;padding:0.5rem 0.6rem}
-.agc-l{font-size:0.57rem;color:#7A93B4;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.2rem}
-.agc-v{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:#F0F5FF}
-.agc-v.t{color:var(--gold)}.agc-v.g{color:var(--amber)}
-.a-note{background:var(--gold3);border:1px solid var(--gold4);border-radius:9px;padding:0.6rem 0.75rem;font-size:0.68rem;color:#9FB8D8;line-height:1.6}
-.intel-cta{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.75rem;background:var(--gold);color:var(--navy);padding:0.9rem 2rem;border-radius:8px;font-size:0.92rem;font-weight:700;text-decoration:none;transition:all 0.2s}
-.intel-cta:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(200,145,58,0.3)}
-.faq-section{background:var(--cream);padding:5rem 4%}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.5rem}
-@media(max-width:768px){.faq-grid{grid-template-columns:1fr}}
-.faq-item{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.6rem;transition:all 0.25s}
-.faq-item:hover{border-color:var(--gold4);box-shadow:0 8px 28px rgba(11,28,46,0.06)}
-.faq-q{font-size:0.92rem;font-weight:600;color:var(--navy);margin-bottom:0.65rem;line-height:1.4}
-.faq-a{font-size:0.82rem;color:var(--muted);line-height:1.75}
-.faq-a a{color:var(--gold);text-decoration:none;font-weight:600}
-.faq-a a:hover{text-decoration:underline}
-.cta-band{background:var(--gold);padding:4.5rem 4%;display:flex;align-items:center;justify-content:space-between;gap:2rem;position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 65%);pointer-events:none}
-.cta-band h2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--navy);margin-bottom:0.4rem;letter-spacing:-0.02em}
-.cta-band h2 em{font-style:italic}
-.cta-band p{font-size:0.9rem;color:rgba(11,28,46,0.6)}
-.btn-navy{background:var(--navy);color:var(--white);padding:0.95rem 2rem;border-radius:8px;font-size:0.92rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;flex-shrink:0}
-.btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
-@media(max-width:768px){.cta-band{flex-direction:column;text-align:center}}
-footer{background:var(--navy);padding:4rem 4% 2rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
-.footer-brand .logo{display:block;margin-bottom:0.75rem}
-.footer-tagline{font-size:0.76rem;color:rgba(255,255,255,0.3);line-height:1.7;max-width:230px}
-.footer-col h4{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:1rem}
-.footer-col a{display:block;font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;margin-bottom:0.55rem;transition:color 0.2s}
-.footer-col a:hover{color:rgba(255,255,255,0.8)}
-.footer-bottom{border-top:1px solid var(--border2);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:0.7rem;color:rgba(255,255,255,0.2);flex-wrap:wrap;gap:0.5rem}
-.footer-dis{font-size:0.66rem;color:rgba(255,255,255,0.18);margin-top:1rem;line-height:1.65;max-width:780px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
-.reveal.on{opacity:1;transform:translateY(0)}
-.rd1{transition-delay:0.06s}.rd2{transition-delay:0.12s}.rd3{transition-delay:0.18s}
-@keyframes hi{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.hi1{animation:hi 0.8s 0.1s ease both}
-.hi2{animation:hi 0.8s 0.25s ease both}
-.hi3{animation:hi 0.8s 0.4s ease both}
-.hi4{animation:hi 0.8s 0.55s ease both}
-.hi5{animation:hi 0.8s 0.7s ease both}
+@media(max-width:820px){.proof-grid{grid-template-columns:1fr}}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.6rem;box-shadow:var(--shadow);transition:all 0.22s}
+.pc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.pc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.85rem}
+.pc-tag{font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold)}
+.pc-granted{font-size:0.6rem;font-weight:800;text-transform:uppercase;background:rgba(30,155,92,0.1);color:var(--green);border:1px solid rgba(30,155,92,0.25);padding:0.18rem 0.55rem;border-radius:100px}
+.pc-text{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.1rem;font-style:italic}
+.pc-meta{display:flex;align-items:center;gap:0.65rem}
+.pc-av{width:38px;height:38px;border-radius:11px;background:var(--gold3);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.pc-name{font-size:0.82rem;font-weight:700;color:var(--navy)}
+.pc-sub{font-size:0.7rem;color:var(--gold);margin-top:0.1rem}
+
+/* CONVERSION BAND */
+.convert{padding:5rem 5%}
+.convert-card{max-width:1000px;margin:0 auto;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:24px;padding:3.5rem;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.convert-card::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,255,255,0.18),transparent 65%);pointer-events:none}
+.convert-card h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:500;color:var(--navy);line-height:1.1;margin-bottom:0.75rem;letter-spacing:-0.02em;position:relative}
+.convert-card h2 em{font-style:italic}
+.convert-card p{font-size:1rem;color:rgba(11,28,46,0.7);max-width:440px;margin:0 auto 2rem;position:relative}
+.convert-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--navy);color:var(--white);padding:1.1rem 2.4rem;border-radius:12px;font-size:1.02rem;font-weight:700;text-decoration:none;transition:all 0.2s;position:relative}
+.convert-btn:hover{background:var(--navy2);transform:translateY(-2px);box-shadow:0 14px 34px rgba(11,28,46,0.3)}
+.convert-sub{font-size:0.78rem;color:rgba(11,28,46,0.55);margin-top:1rem;position:relative}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)}
+.foot-grid{max-width:1080px;margin:0 auto 2.5rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
+@media(max-width:768px){.foot-grid{grid-template-columns:1fr 1fr}}
+.foot-logo{font-family:'Fraunces',serif;font-size:1.3rem;color:#fff;text-decoration:none;display:block;margin-bottom:0.6rem}
+.foot-logo span{color:var(--gold)}
+.foot-tag{font-size:0.76rem;color:rgba(255,255,255,0.4);line-height:1.6;max-width:230px}
+.foot-col h4{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:0.9rem}
+.foot-col a{display:block;font-size:0.78rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:0.5rem;transition:color 0.18s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:1080px;margin:0 auto;border-top:1px solid var(--border2);padding-top:1.5rem;font-size:0.7rem;color:rgba(255,255,255,0.3)}
+.foot-dis{font-size:0.66rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;line-height:1.6;max-width:760px}
+
+.fade{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1)}
+.fade.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.05s}.d2{transition-delay:0.1s}.d3{transition-delay:0.15s}.d4{transition-delay:0.2s}
+
+/* EMAIL CAPTURE POPUP */
+.popup-overlay{position:fixed;inset:0;background:rgba(11,28,46,0.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.35s ease;backdrop-filter:blur(4px)}
+.popup-overlay.show{opacity:1;pointer-events:all}
+.popup{background:var(--white);border-radius:22px;padding:2.5rem 2rem;max-width:440px;width:100%;position:relative;box-shadow:0 40px 100px rgba(11,28,46,0.3);transform:translateY(24px) scale(0.97);transition:transform 0.4s cubic-bezier(0.34,1.4,0.64,1);overflow:hidden}
+.popup-overlay.show .popup{transform:translateY(0) scale(1)}
+.popup::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.popup-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:var(--muted2);font-size:1.25rem;line-height:1;padding:0.25rem;border-radius:6px;transition:all 0.2s}
+.popup-close:hover{color:var(--navy);background:var(--slate)}
+.popup-icon{font-size:2.25rem;margin-bottom:0.75rem}
+.popup h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:var(--navy);line-height:1.15;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.popup h3 em{font-style:italic;color:var(--gold)}
+.popup-sub{font-size:0.87rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem}
+.popup-perks{display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.5rem}
+.popup-perk{display:flex;align-items:center;gap:0.6rem;font-size:0.84rem;color:var(--text)}
+.popup-perk::before{content:'✓';color:var(--teal);font-weight:700;font-size:0.8rem;flex-shrink:0}
+.popup-form{display:flex;gap:0.6rem}
+@media(max-width:400px){.popup-form{flex-direction:column}}
+.popup-input{flex:1;padding:0.85rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.9rem;color:var(--navy);background:var(--offwhite);transition:border-color 0.2s}
+.popup-input:focus{outline:none;border-color:var(--gold)}
+.popup-btn{background:var(--navy);color:var(--white);border:none;padding:0.85rem 1.4rem;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.popup-btn:hover{background:var(--navy2)}
+.popup-fine{font-size:0.7rem;color:var(--muted2);text-align:center;margin-top:0.8rem;line-height:1.5}
+.popup-success{text-align:center;padding:1rem 0}
+.popup-success-icon{font-size:3rem;margin-bottom:0.75rem}
+.popup-success h4{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--navy);margin-bottom:0.4rem}
+.popup-success p{font-size:0.84rem;color:var(--muted)}
+
+
+/* INTEL PREVIEW SECTION */
+.intel{background:#0F1923;padding:5rem 5%;border-top:1px solid rgba(200,145,58,0.15)}
+.intel-inner{max-width:1080px;margin:0 auto}
+.intel-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.65rem}
+.intel-h{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:500;line-height:1.12;color:#F0F5FF;letter-spacing:-0.02em;margin-bottom:0.85rem}
+.intel-h em{font-style:italic;color:var(--gold2)}
+.intel-p{font-size:0.95rem;color:#7A93B4;line-height:1.7;margin-bottom:1.75rem;max-width:480px}
+.intel-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--navy);padding:0.9rem 2rem;border-radius:10px;font-size:0.92rem;font-weight:700;text-decoration:none;transition:all 0.22s}
+.intel-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,145,58,0.3)}
+
+/* INTEL DASHBOARD */
+.intel-dash{background:rgba(23,34,49,0.95);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:1.5rem;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:0.85rem;margin-top:2.5rem;box-shadow:0 40px 80px rgba(0,0,0,0.4)}
+@media(max-width:720px){.intel-dash{grid-template-columns:1fr;gap:0.7rem}}
+.id-panel{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.2rem;position:relative;overflow:hidden}
+.id-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,145,58,0.15),transparent)}
+.id-label{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7A93B4;display:flex;align-items:center;gap:0.4rem;margin-bottom:1rem}
+.id-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+/* panel 1 */
+.id-score-wrap{display:flex;flex-direction:column;align-items:center}
+.id-svg{width:120px;height:120px}
+.id-score-info{text-align:center;margin-top:0.5rem}
+.id-verdict{font-size:0.88rem;font-weight:700;color:var(--gold2)}
+.id-verdict-sub{font-size:0.66rem;color:#7A93B4;line-height:1.55;margin-top:0.2rem}
+/* panel 2 */
+.id-pool-sub{font-size:0.66rem;color:#7A93B4;margin-bottom:0.65rem}
+.id-bar-wrap{height:8px;background:rgba(255,255,255,0.05);border-radius:100px;position:relative;margin-bottom:0.45rem;overflow:visible}
+.id-bar-fill{height:100%;width:72%;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.id-bar-pin{position:absolute;left:72%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--gold2);border:3px solid rgba(23,34,49,0.95);box-shadow:0 0 12px rgba(200,145,58,0.4)}
+.id-bar-labs{display:flex;justify-content:space-between;font-size:0.6rem;color:#7A93B4;margin-bottom:0.85rem}
+.id-you{color:var(--gold2);font-weight:700}
+.id-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.45rem}
+.id-stat{background:rgba(255,255,255,0.03);border-radius:8px;padding:0.5rem 0.6rem}
+.id-stat-n{font-size:0.95rem;font-weight:700;color:#F0F5FF;line-height:1}
+.id-stat-l{font-size:0.56rem;color:#7A93B4;margin-top:0.15rem}
+/* panel 3 */
+.id-assess-verdict{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--gold2);margin-bottom:0.75rem;line-height:1.3}
+.id-assess-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.75rem}
+.id-ag{background:rgba(255,255,255,0.03);border-radius:8px;padding:0.5rem 0.6rem}
+.id-ag-l{font-size:0.56rem;color:#7A93B4;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.2rem}
+.id-ag-v{font-size:1rem;font-weight:700;color:#F0F5FF}
+.id-note{background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.2);border-radius:9px;padding:0.6rem 0.75rem;font-size:0.68rem;color:#9FB8D8;line-height:1.65}
+
 </style>
 </head>
 <body>
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="live-pill">Live</div>
-  <div class="ticker-inner">
-    <div class="ticker-track">
-      <span class="ti"><span class="tdot"></span><b>Reg. Nurse · SA 190 · 75 pts</b> — granted May 2026</span>
-      <span class="ti"><span class="tdot g"></span><b>189 federal round</b> — invitation round active · check your EOI status</span>
-      <span class="ti"><span class="tdot"></span><b>Civil Engineer · QLD 190 · 85 pts</b> — granted May 2026</span>
-      <span class="ti"><span class="tdot g"></span><b>Student visa fee</b> — $2,000 from 1 Jul 2025 · calculator updated</span>
-      <span class="ti"><span class="tdot"></span><b>Electrician · 189 · 65 pts</b> — invited Apr 2026 · lowest cutoff in AU</span>
-      <span class="ti"><span class="tdot g"></span><b>SA 190</b> — most accessible state 2026 · monthly rounds · open now</span>
-      <span class="ti"><span class="tdot"></span><b>482 TSMIT threshold</b> — rises to $79,499 on 1 Jul 2026 · check eligibility</span>
-      <span class="ti"><span class="tdot g"></span><b>ECT · VIC 190 · 85 pts</b> — granted May 2026</span>
-      <span class="ti"><span class="tdot"></span><b>Reg. Nurse · SA 190 · 75 pts</b> — granted May 2026</span>
-      <span class="ti"><span class="tdot g"></span><b>189 federal round</b> — invitation round active · check your EOI status</span>
-      <span class="ti"><span class="tdot"></span><b>Civil Engineer · QLD 190 · 85 pts</b> — granted May 2026</span>
-      <span class="ti"><span class="tdot g"></span><b>Student visa fee</b> — $2,000 from 1 Jul 2025 · calculator updated</span>
-      <span class="ti"><span class="tdot"></span><b>Electrician · 189 · 65 pts</b> — invited Apr 2026 · lowest cutoff in AU</span>
-      <span class="ti"><span class="tdot g"></span><b>SA 190</b> — most accessible state 2026 · monthly rounds · open now</span>
-      <span class="ti"><span class="tdot"></span><b>482 TSMIT threshold</b> — rises to $79,499 on 1 Jul 2026 · check eligibility</span>
-      <span class="ti"><span class="tdot g"></span><b>ECT · VIC 190 · 85 pts</b> — granted May 2026</span>
-    </div>
+  <div class="ticker-pill"><span class="d"></span>Live</div>
+  <div class="ticker-track">
+    <span class="tk"><span class="dot t"></span><b>Reg. Nurse · SA 190 · 75 pts</b> granted May 2026</span>
+    <span class="tk"><span class="dot"></span><b>189 federal round</b> active now · check your status</span>
+    <span class="tk"><span class="dot t"></span><b>Electrician · 189 · 65 pts</b> lowest cutoff in AU</span>
+    <span class="tk"><span class="dot"></span><b>482 TSMIT</b> rises to $79,499 on 1 Jul 2026</span>
+    <span class="tk"><span class="dot t"></span><b>SA 190</b> most accessible state · monthly rounds</span>
+    <span class="tk"><span class="dot t"></span><b>Reg. Nurse · SA 190 · 75 pts</b> granted May 2026</span>
+    <span class="tk"><span class="dot"></span><b>189 federal round</b> active now · check your status</span>
+    <span class="tk"><span class="dot t"></span><b>Electrician · 189 · 65 pts</b> lowest cutoff in AU</span>
+    <span class="tk"><span class="dot"></span><b>482 TSMIT</b> rises to $79,499 on 1 Jul 2026</span>
+    <span class="tk"><span class="dot t"></span><b>SA 190</b> most accessible state · monthly rounds</span>
   </div>
 </div>
 
@@ -288,484 +308,384 @@ footer{background:var(--navy);padding:4rem 4% 2rem}
   <div class="nav-links">
     <a href="/eoi-queue">EOI Queue</a>
     <a href="/points-calculator">Points</a>
+    <a href="/pathway-finder">Pathway Finder</a>
     <a href="/student-visa">Student</a>
     <a href="/partner-visa">Partner</a>
-    <a href="/occupation-demand">Occupations</a>
     <a href="/outcomes">Outcomes</a>
   </div>
-  <div class="nav-r">
-    <a href="/report" class="nav-cta">Get PR Report — A$69 →</a>
+  <div class="nav-right">
+    <a href="#tools" class="nav-ghost">Free tools</a>
+    <a href="/report" class="nav-cta">PR Report <span class="price">A$69</span></a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag hi1">
-      <span class="htd"></span>
-      Australia's Migration Intelligence Platform
+  <div class="hero-inner">
+    <h1 class="fade in">Australian migration,<br><em>finally made clear.</em></h1>
+    <p class="hero-sub fade in d2">Pick your pathway. We'll show you exactly where you stand, what it costs, and the one move to make next — powered by real government data and AI analysis.</p>
+
+    <!-- PATHWAY CARDS -->
+    <div class="pathways">
+      <a href="/eoi-queue" class="pw skilled fade in d1">
+        <div class="pw-icon">🎯</div>
+        <div class="pw-name">Skilled PR</div>
+        <div class="pw-desc">Check your live SkillSelect position, points and the fastest state for your occupation.</div>
+        <div class="pw-go">Find my position →</div>
+      </a>
+      <a href="/student-visa" class="pw student fade in d2">
+        <div class="pw-icon">🎓</div>
+        <div class="pw-name">Student Visa</div>
+        <div class="pw-desc">Subclass 500 exact costs, the $2,000 fee, work rights and the PR pathway after study.</div>
+        <div class="pw-go">Calculate my costs →</div>
+      </a>
+      <a href="/partner-visa" class="pw partner fade in d3">
+        <div class="pw-icon">💑</div>
+        <div class="pw-name">Partner Visa</div>
+        <div class="pw-desc">820/801 full cost breakdown, processing timelines and onshore vs offshore.</div>
+        <div class="pw-go">Check the cost →</div>
+      </a>
+      <a href="/482-visa" class="pw employer fade in d4">
+        <div class="pw-icon">🏢</div>
+        <div class="pw-name">482 Employer</div>
+        <div class="pw-desc">Salary eligibility, the rising TSMIT threshold and your route to 186 PR.</div>
+        <div class="pw-go">Check eligibility →</div>
+      </a>
     </div>
 
-    <!-- H1: leads with winning query "EOI Backlog Tracker", PR Points Calculator as supporting H1 line -->
-    <h1 class="hi2">SkillSelect EOI Backlog Tracker<br><em>&amp; PR Points Calculator</em></h1>
-    <p class="hero-sub hi3">See exactly where you sit in the SkillSelect EOI queue — how many applicants are ahead, whether you're above the cutoff, and what to do next. Real DHA April 2026 data across 52 occupations. No agent. Free.</p>
-
-    <!-- 4 TAB SELECTOR — all button labels are contextual, no generic text -->
-    <div class="selector hi4">
-      <span class="sel-label">What are you looking for?</span>
-      <div class="sel-tabs">
-        <button class="stab active" onclick="pick(this,'Check my EOI queue position →','/eoi-queue')">
-          <span class="stab-icon">🎯</span>
-          <span class="stab-name">Skilled PR</span>
-        </button>
-        <button class="stab" onclick="pick(this,'Calculate my student visa fees →','/student-visa')">
-          <span class="stab-icon">🎓</span>
-          <span class="stab-name">Student Visa</span>
-        </button>
-        <button class="stab" onclick="pick(this,'Calculate my partner visa cost →','/partner-visa')">
-          <span class="stab-icon">💑</span>
-          <span class="stab-name">Partner Visa</span>
-        </button>
-        <button class="stab" onclick="pick(this,'Check my 482 salary eligibility →','/482-visa')">
-          <span class="stab-icon">🏢</span>
-          <span class="stab-name">482 Employer</span>
-        </button>
-      </div>
-      <button class="cta-btn" id="cta-btn" onclick="go()">
-        <span id="cta-text">Check my EOI queue position →</span>
-      </button>
-    </div>
-
-    <div class="hero-micro hi5">
-      <span class="hmc">Free</span>
-      <span class="hmc">3 minutes</span>
-      <span class="hmc">No signup</span>
-      <span class="hmc">Real DHA data</span>
-    </div>
-
-    <div class="hero-stats hi5">
-      <div><div class="hstat-n">3M<span>+</span></div><div class="hstat-l">Temp visa holders in AU</div></div>
-      <div><div class="hstat-n">500<span>+</span></div><div class="hstat-l">Users checking monthly</div></div>
-      <div><div class="hstat-n">52</div><div class="hstat-l">Occupations tracked live</div></div>
-    </div>
-  </div>
-
-  <!-- SCORE PANEL -->
-  <div class="hero-right hi3">
-    <div class="score-panel">
-      <div class="sp-top">
-        <div class="sp-label"><span class="sp-dot"></span>Sample PR report</div>
-        <span class="sp-live">Apr 2026 data</span>
-      </div>
-      <div class="sp-score">
-        <div class="sp-num">85</div>
-        <div class="sp-max">/110 pts</div>
-      </div>
-      <div class="sp-sublabel">Registered Nurse · SA 190 pathway</div>
-      <div class="sp-bar-wrap">
-        <div class="sp-bar"></div>
-        <div class="sp-cutoff-marker" title="Cutoff: 75pts"></div>
-      </div>
-      <div class="sp-rows">
-        <div class="sp-row">
-          <span class="sp-row-label">Cutoff (Apr 2026)</span>
-          <span class="sp-row-val good">75 pts — Above cutoff ✓</span>
-        </div>
-        <div class="sp-row">
-          <span class="sp-row-label">Queue position</span>
-          <span class="sp-row-val good">Top 10% of pool</span>
-        </div>
-        <div class="sp-row">
-          <span class="sp-row-label">EOI decision</span>
-          <span class="sp-row-val good">Lodge now — strong position ✓</span>
-        </div>
-        <div class="sp-row">
-          <span class="sp-row-label">Applicants ahead of you</span>
-          <span class="sp-row-val warn">~489 at 90 pts+</span>
-        </div>
-        <div class="sp-row">
-          <span class="sp-row-label">Best state nomination</span>
-          <span class="sp-row-val">SA 190 — 65 pts minimum</span>
-        </div>
-      </div>
-      <a href="/report" class="sp-cta">See full PR report — A$69 →</a>
+    <div class="hero-micro fade in d3">
+      <span>100% free</span>
+      <span>No signup</span>
+      <span>Under 3 minutes</span>
+      <span>Not sure? <a href="/pathway-finder" style="color:var(--gold);font-weight:600;text-decoration:none;margin-left:0.2rem">Take the 60-sec quiz →</a></span>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text">Free — no signup required</span></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text">Real DHA April 2026 SkillSelect data — 52 occupations</span></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text">Updated within 48hrs of each invitation round</span></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text">500+ applicants checked their EOI position this month</span></div>
-  <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-check">✓</span><span class="trust-text">Not migration advice — verify at immi.homeaffairs.gov.au</span></div>
+<!-- STAT BAND — standalone below hero -->
+<div class="statband-wrap">
+  <div class="statband-inner">
+    <div class="sb"><div class="sb-n">3M+</div><div class="sb-l">Temp visa holders in AU</div></div>
+    <div class="sb-div"></div>
+    <div class="sb"><div class="sb-n">52</div><div class="sb-l">Occupations tracked live</div></div>
+    <div class="sb-div"></div>
+    <div class="sb"><div class="sb-n">8</div><div class="sb-l">States &amp; territories</div></div>
+    <div class="sb-div"></div>
+    <div class="sb"><div class="sb-n">48h</div><div class="sb-l">Max update lag per round</div></div>
+  </div>
 </div>
 
-<!-- FREE TOOLS — H2 anchors the EOI/points/SkillSelect cluster -->
-<section class="section">
-  <span class="sec-label reveal">Free tools</span>
-  <h2 class="sec-h reveal">EOI backlog tracker. Points calculator.<br><em>Everything in one place.</em></h2>
-  <p class="sec-sub reveal">The SkillSelect analysis migration agents charge $400/hr to run — yours free, in under 3 minutes. Real DHA 2026 data across 52 occupations.</p>
-  <div class="tools-grid">
-    <a href="/report" class="tool-card featured reveal rd1">
-      <div class="tool-top"><div class="tool-icon">🎯</div><span class="tool-badge">Most used</span></div>
-      <div class="tool-name">PR Intelligence Report</div>
-      <p class="tool-desc">Your EOI queue position, cutoff status, 189 vs 190 comparison, and the single action that moves your case forward this week. Based on real DHA April 2026 SkillSelect data.</p>
-      <div class="tool-link">Check my PR score →</div>
-    </a>
-    <a href="/eoi-queue" class="tool-card reveal rd2">
-      <div class="tool-top"><div class="tool-icon">📋</div><span class="tool-badge" style="background:rgba(0,200,150,0.15);color:var(--gold);border:1px solid rgba(0,200,150,0.3)">52 occupations</span></div>
-      <div class="tool-name">EOI Queue &amp; Backlog Tracker</div>
-      <p class="tool-desc">Real SkillSelect EOI backlog data for 52 occupations. See exactly how many applications sit above and below your points score. April 2026 DHA data — 189 + 190 combined pool.</p>
-      <div class="tool-link">Track my EOI position →</div>
-    </a>
-    <a href="/points-calculator" class="tool-card reveal rd3">
-      <div class="tool-top"><div class="tool-icon">🧮</div></div>
-      <div class="tool-name">Australian PR Points Calculator</div>
-      <p class="tool-desc">Official DHA points test — every category, every rule, every bonus point. Calculate your SkillSelect score and compare it against current 189 and 190 cutoffs instantly.</p>
-      <div class="tool-link">Calculate my PR points →</div>
-    </a>
-    <a href="/student-visa" class="tool-card reveal rd1">
-      <div class="tool-top"><div class="tool-icon">🎓</div><span class="tool-badge new">Updated</span></div>
-      <div class="tool-name">Student Visa Fee Calculator</div>
-      <p class="tool-desc">Subclass 500 exact cost breakdown — nationality, course, dependants, English test. Includes $2,000 fee from Jul 2025 and $4,600 graduate visa.</p>
-      <div class="tool-link">Calculate my student visa fees →</div>
-    </a>
-    <a href="/partner-visa" class="tool-card reveal rd2">
-      <div class="tool-top"><div class="tool-icon">💑</div></div>
-      <div class="tool-name">Partner Visa Cost Calculator</div>
-      <p class="tool-desc">820/801 combined fee breakdown — $9,905 total. Processing time estimates, onshore vs offshore comparison, bridging visa status.</p>
-      <div class="tool-link">Calculate my partner visa cost →</div>
-    </a>
-    <a href="/482-visa" class="tool-card reveal rd3">
-      <div class="tool-top"><div class="tool-icon">🏢</div><span class="tool-badge new">Jul 2026</span></div>
-      <div class="tool-name">482 Salary &amp; Eligibility Checker</div>
-      <p class="tool-desc">TSMIT threshold $76,515 now — rising to $79,499 on 1 Jul 2026. Check your salary eligibility, stream, age for 186 PR, and lodge before 30 Jun deadline.</p>
-      <div class="tool-link">Check my 482 salary eligibility →</div>
-    </a>
-    <a href="/state-comparator" class="tool-card reveal rd1">
-      <div class="tool-top"><div class="tool-icon">🗺️</div></div>
-      <div class="tool-name">State Nomination Comparator</div>
-      <p class="tool-desc">All 8 states side by side — 190 cutoffs, processing times, remaining places, which occupations each state is currently nominating in 2026.</p>
-      <div class="tool-link">Compare state nominations →</div>
-    </a>
-    <a href="/occupation-demand" class="tool-card reveal rd2">
-      <div class="tool-top"><div class="tool-icon">📊</div></div>
-      <div class="tool-name">Occupation Demand Score</div>
-      <p class="tool-desc">Every occupation scored across shortage severity, 189 tier, state nomination priority and salary benchmarks. Find which pathway suits your ANZSCO code.</p>
-      <div class="tool-link">Check my occupation demand →</div>
-    </a>
-    <a href="/outcomes" class="tool-card reveal rd3">
-      <div class="tool-top"><div class="tool-icon">✅</div></div>
-      <div class="tool-name">Community Outcomes</div>
-      <p class="tool-desc">Real grants from real people — same occupation, similar points, same visa type. See what worked for profiles like yours before you lodge.</p>
-      <div class="tool-link">See real grant outcomes →</div>
-    </a>
+<!-- TOOLS -->
+<section class="sec slate" id="tools">
+  <div class="sec-inner">
+    <span class="sec-eyebrow fade">The toolbox</span>
+    <h2 class="sec-h fade">8 free tools. <em>One per question.</em></h2>
+    <p class="sec-sub fade">Everything a migration agent charges $400/hr to run — yours, free, in minutes.</p>
+    <div class="tools">
+      <a href="/eoi-queue" class="tool t-eoi fade d1">
+        <span class="tool-badge hot">52 occupations</span>
+        <div class="tool-icon">📋</div>
+        <div class="tool-name">EOI Queue Tracker</div>
+        <div class="tool-desc">See exactly how many EOIs sit above and below yours. 189 + 190 combined.</div>
+        <div class="tool-go">Check my queue →</div>
+      </a>
+      <a href="/points-calculator" class="tool t-pts fade d2">
+        <div class="tool-icon">🧮</div>
+        <div class="tool-name">Points Calculator</div>
+        <div class="tool-desc">Official DHA points test. Every category, every bonus point. Live cutoffs.</div>
+        <div class="tool-go">Calculate points →</div>
+      </a>
+      <a href="/state-comparator" class="tool t-state fade d3">
+        <div class="tool-icon">🗺️</div>
+        <div class="tool-name">State Comparator</div>
+        <div class="tool-desc">All 8 states side by side — cutoffs, timelines, who's nominating now.</div>
+        <div class="tool-go">Compare states →</div>
+      </a>
+      <a href="/occupation-demand" class="tool t-occ fade d4">
+        <div class="tool-icon">📊</div>
+        <div class="tool-name">Occupation Demand</div>
+        <div class="tool-desc">Every occupation scored on shortage, tier, state priority and salary.</div>
+        <div class="tool-go">Check occupation →</div>
+      </a>
+      <a href="/student-visa" class="tool t-student fade d1">
+        <span class="tool-badge">Updated</span>
+        <div class="tool-icon">🎓</div>
+        <div class="tool-name">Student Visa Fees</div>
+        <div class="tool-desc">Subclass 500 exact cost — nationality, course, dependants, $2,000 fee.</div>
+        <div class="tool-go">Calculate fees →</div>
+      </a>
+      <a href="/partner-visa" class="tool t-partner fade d2">
+        <div class="tool-icon">💑</div>
+        <div class="tool-name">Partner Visa Cost</div>
+        <div class="tool-desc">820/801 combined — $9,905 total. Processing, onshore vs offshore.</div>
+        <div class="tool-go">Check cost →</div>
+      </a>
+      <a href="/482-visa" class="tool t-482 fade d3">
+        <span class="tool-badge hot">Jul 2026</span>
+        <div class="tool-icon">🏢</div>
+        <div class="tool-name">482 Salary Checker</div>
+        <div class="tool-desc">TSMIT $76,515 rising to $79,499. Eligibility, stream, 186 PR route.</div>
+        <div class="tool-go">Check eligibility →</div>
+      </a>
+      <a href="/outcomes" class="tool t-outcomes fade d4">
+        <div class="tool-icon">✅</div>
+        <div class="tool-name">Community Outcomes</div>
+        <div class="tool-desc">Real grants from real people — same occupation, same points, same visa.</div>
+        <div class="tool-go">See outcomes →</div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- PR INTELLIGENCE PREVIEW -->
-<div class="intel-section">
-  <span class="sec-label reveal" style="color:var(--gold)">PR Intelligence Report</span>
-  <h2 class="sec-h reveal">EOI queue position. Cutoff status.<br><em style="color:var(--gold)">Exactly what to do next.</em></h2>
-  <p class="sec-sub reveal">This is what your personalised report looks like. Real numbers from the April 2026 SkillSelect pool. Your exact queue position. Occupation-specific action plan.</p>
-  <div class="intel-dash reveal">
-    <div class="dc">
-      <div class="dc-label"><span class="dc-dot"></span>Your PR score</div>
-      <div class="gc">
-        <svg class="g-svg" viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="9"/>
-          <circle cx="60" cy="60" r="50" fill="none" stroke="url(#tg2)" stroke-width="9"
-            stroke-dasharray="314" stroke-dashoffset="80" stroke-linecap="round"
-            transform="rotate(-90 60 60)"/>
-          <defs>
-            <linearGradient id="tg2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#C8913A"/><stop offset="100%" stop-color="#E0A94E"/>
-            </linearGradient>
-          </defs>
-          <text x="60" y="53" text-anchor="middle" fill="#F0F5FF" font-family="'Outfit',sans-serif" font-size="26" font-weight="700">85</text>
-          <text x="60" y="66" text-anchor="middle" fill="#7A93B4" font-size="9">points</text>
-          <text x="60" y="80" text-anchor="middle" fill="#C8913A" font-size="10" font-weight="700">Ready ✓</text>
-        </svg>
-        <div class="g-info">
-          <div class="g-verdict">You're competitive</div>
-          <div class="g-note">Need <b style="color:var(--amber)">75 pts</b> · You have <b style="color:var(--gold)">85 pts</b><br>Above Apr 2026 cutoff</div>
+<!-- INTEL PREVIEW — the conversion section -->
+<section class="intel">
+  <div class="intel-inner">
+    <div class="fade">
+      <span class="intel-eyebrow">PR Intelligence Report · A$69</span>
+      <h2 class="intel-h">Queue position. Cutoff status.<br><em>Exactly what to do next.</em></h2>
+      <p class="intel-p">This is what your report looks like. Real numbers from the April 2026 SkillSelect pool. Real queue position. Real action — personalised to your occupation and score.</p>
+      <a href="/report" class="intel-btn">See the full report preview →</a>
+    </div>
+
+    <!-- DASHBOARD — 3-panel replica matching original -->
+    <div class="intel-dash fade d2">
+
+      <!-- Panel 1: Score circle -->
+      <div class="id-panel">
+        <div class="id-label"><span class="id-dot"></span>Your PR score</div>
+        <div class="id-score-wrap">
+          <svg viewBox="0 0 120 120" class="id-svg">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="9"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#ig)" stroke-width="9"
+              stroke-dasharray="314" stroke-dashoffset="80" stroke-linecap="round"
+              transform="rotate(-90 60 60)"/>
+            <defs>
+              <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#C8913A"/>
+                <stop offset="100%" stop-color="#E0A94E"/>
+              </linearGradient>
+            </defs>
+            <text x="60" y="53" text-anchor="middle" fill="#F0F5FF" font-family="Outfit,sans-serif" font-size="26" font-weight="700">85</text>
+            <text x="60" y="67" text-anchor="middle" fill="#7A93B4" font-size="9">points</text>
+            <text x="60" y="81" text-anchor="middle" fill="#C8913A" font-size="10" font-weight="700">Ready ✓</text>
+          </svg>
+          <div class="id-score-info">
+            <div class="id-verdict">You're competitive</div>
+            <div class="id-verdict-sub">Need <b style="color:var(--amber2)">75 pts</b> · You have <b style="color:var(--gold2)">85 pts</b><br>Above Apr 2026 cutoff</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="dc">
-      <div class="dc-label"><span class="dc-dot"></span>189 + 190 SkillSelect EOI backlog</div>
-      <div class="q-sub">Registered Nurse · 5,020 total in pool — Apr 2026</div>
-      <div class="q-track"><div class="q-fill"></div><div class="q-pin"></div></div>
-      <div class="q-row"><span>4,531 behind you</span><span class="you">YOU (85 pts)</span><span>489 ahead</span></div>
-      <div class="q-stats">
-        <div class="qs"><div class="qs-v t">90th</div><div class="qs-l">Your percentile</div></div>
-        <div class="qs"><div class="qs-v">70</div><div class="qs-l">Median points in pool</div></div>
-        <div class="qs"><div class="qs-v t">5,020</div><div class="qs-l">Total EOIs in queue</div></div>
-        <div class="qs"><div class="qs-v g">↑ Active</div><div class="qs-l">Round status</div></div>
+
+      <!-- Panel 2: Queue bar -->
+      <div class="id-panel">
+        <div class="id-label"><span class="id-dot"></span>189 + 190 SkillSelect pool</div>
+        <div class="id-pool-sub">Registered Nurse · 5,020 total — Apr 2026</div>
+        <div class="id-bar-wrap">
+          <div class="id-bar-fill"></div>
+          <div class="id-bar-pin"></div>
+        </div>
+        <div class="id-bar-labs">
+          <span>4,531 behind you</span>
+          <span class="id-you">YOU (85 pts)</span>
+          <span>489 ahead</span>
+        </div>
+        <div class="id-stats">
+          <div class="id-stat"><div class="id-stat-n" style="color:var(--gold2)">90th</div><div class="id-stat-l">Your percentile</div></div>
+          <div class="id-stat"><div class="id-stat-n">70</div><div class="id-stat-l">Median points</div></div>
+          <div class="id-stat"><div class="id-stat-n" style="color:var(--gold2)">5,020</div><div class="id-stat-l">Total in queue</div></div>
+          <div class="id-stat"><div class="id-stat-n" style="color:var(--amber2)">↑ Active</div><div class="id-stat-l">Round status</div></div>
+        </div>
       </div>
-    </div>
-    <div class="dc">
-      <div class="dc-label"><span class="dc-dot"></span>EOI assessment</div>
-      <div class="av">Lodge your EOI now.</div>
-      <div class="ag">
-        <div class="agc"><div class="agc-l">Your points</div><div class="agc-v t">85</div></div>
-        <div class="agc"><div class="agc-l">Cutoff Apr 26</div><div class="agc-v">75</div></div>
-        <div class="agc"><div class="agc-l">Points gap</div><div class="agc-v t">+10 above</div></div>
-        <div class="agc"><div class="agc-l">Applicants ahead</div><div class="agc-v g">489</div></div>
+
+      <!-- Panel 3: EOI assessment -->
+      <div class="id-panel">
+        <div class="id-label"><span class="id-dot"></span>Your EOI assessment</div>
+        <div class="id-assess-verdict">Lodge your EOI now.</div>
+        <div class="id-assess-grid">
+          <div class="id-ag"><div class="id-ag-l">Your points</div><div class="id-ag-v" style="color:var(--gold2)">85</div></div>
+          <div class="id-ag"><div class="id-ag-l">Cutoff Apr 26</div><div class="id-ag-v">75</div></div>
+          <div class="id-ag"><div class="id-ag-l">Gap to close</div><div class="id-ag-v" style="color:var(--gold2)">0 pts</div></div>
+          <div class="id-ag"><div class="id-ag-l">People ahead</div><div class="id-ag-v" style="color:var(--amber2)">489</div></div>
+        </div>
+        <div class="id-note">You're above cutoff with only 489 ahead. Lodge your EOI today — nurse cutoffs have held at 75 pts for 4 consecutive rounds.</div>
       </div>
-      <div class="a-note">You're above cutoff with only 489 people ahead. Lodge your EOI today — the 189 nurse cutoff has held at 75 pts for 4 consecutive rounds.</div>
-    </div>
-  </div>
-  <a href="/report" class="intel-cta reveal">See what's inside the PR Report →</a>
-</div>
 
-<!-- HOW IT WORKS -->
-<section class="section how-section">
-  <span class="sec-label reveal">How it works</span>
-  <h2 class="sec-h reveal">From SkillSelect confusion<br>to clarity in three minutes.</h2>
-  <p class="sec-sub reveal">No jargon. No upsells. No generic advice. Your exact EOI queue position and what to do next.</p>
-  <div class="steps reveal">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title">Select your visa pathway</div>
-      <p class="step-desc">Skilled PR (189/190/491), student, partner or employer sponsored. One selection routes you to the right tool for your situation.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title">Enter your occupation and points</div>
-      <p class="step-desc">ANZSCO code, points score, nationality, preferred state. Takes 2 minutes. Uses official DHA SkillSelect criteria — nothing estimated.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title">See your EOI queue position</div>
-      <p class="step-desc">Your exact position in the SkillSelect backlog. How many EOIs sit above and below yours. Current cutoff and round status for your occupation.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-title">Take one clear action</div>
-      <p class="step-desc">Lodge your EOI now, boost your points first, or switch states? Your report tells you the single highest-value move for your profile.</p>
-    </div>
-  </div>
-</section>
-
-<!-- VISA GUIDES -->
-<section class="section guides-section">
-  <span class="sec-label reveal">Visa guides</span>
-  <h2 class="sec-h reveal">Plain English.<br><em>No gatekeeping.</em></h2>
-  <p class="sec-sub reveal">Complete guides for every major Australian visa pathway — written for people making real decisions, not lawyers.</p>
-  <div class="guides-list reveal">
-    <a href="/189-visa" class="guide-row">
-      <span class="guide-visa">189</span>
-      <span class="guide-title">Skilled Independent — cutoffs by occupation, Apr 2026 SkillSelect EOI backlog data</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/190-visa" class="guide-row">
-      <span class="guide-visa">190</span>
-      <span class="guide-title">State Nomination — which state is easiest? SA vs QLD vs TAS 2026 comparison</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/student-visa" class="guide-row">
-      <span class="guide-visa">500</span>
-      <span class="guide-title">Student Visa — $2,000 fee, genuine student requirement, work rights 2026</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/partner-visa" class="guide-row">
-      <span class="guide-visa">820</span>
-      <span class="guide-title">Partner Visa — $9,905 total fee, processing timeline, onshore vs offshore</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/482-visa" class="guide-row">
-      <span class="guide-visa">482</span>
-      <span class="guide-title">Employer Sponsored — TSMIT $76,515 rising to $79,499 Jul 2026, 186 transition rules</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/485-visa" class="guide-row">
-      <span class="guide-visa">485</span>
-      <span class="guide-title">Graduate Visa — $4,600 fee from Mar 2026, duration by degree, PR pathway</span>
-      <span class="guide-arrow">→</span>
-    </a>
-    <a href="/491-visa" class="guide-row">
-      <span class="guide-visa">491</span>
-      <span class="guide-title">Regional Skilled — the +15 point pathway most applicants overlook</span>
-      <span class="guide-arrow">→</span>
-    </a>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="section stats-section">
-  <div class="stats-grid reveal">
-    <div class="sg"><div class="sg-n">3M+</div><div class="sg-l">People on temp visas in Australia</div></div>
-    <div class="sg"><div class="sg-n">52</div><div class="sg-l">Occupations with live SkillSelect EOI backlog data</div></div>
-    <div class="sg"><div class="sg-n">8</div><div class="sg-l">States &amp; territories tracked live</div></div>
-    <div class="sg"><div class="sg-n">48h</div><div class="sg-l">Max update lag after each DHA invitation round</div></div>
+    </div><!-- /intel-dash -->
   </div>
 </section>
 
 <!-- PROOF -->
-<section class="section proof-section">
-  <span class="sec-label reveal">What the SkillSelect data shows</span>
-  <h2 class="sec-h reveal">Real grants.<br><em>Real occupations.</em></h2>
-  <p class="sec-sub reveal">Based on verified DHA invitation round data and community submissions. Submit your own outcome.</p>
-  <div class="proof-grid">
-    <div class="proof-card reveal rd1">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem">
-        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold)">SA 190 · Apr 2026</span>
-        <span style="font-size:0.65rem;font-weight:700;background:rgba(30,155,92,0.1);color:var(--gold);border:1px solid rgba(30,155,92,0.2);padding:0.15rem 0.5rem;border-radius:100px">Granted</span>
+<section class="sec" style="background:var(--white)">
+  <div class="sec-inner">
+    <span class="sec-eyebrow fade">What the data shows</span>
+    <h2 class="sec-h fade">Real grants. <em>Real occupations.</em></h2>
+    <p class="sec-sub fade">Based on verified DHA invitation round data and community submissions.</p>
+    <div class="proof-grid">
+      <div class="pc fade d1">
+        <div class="pc-top"><span class="pc-tag">SA 190 · Apr 2026</span><span class="pc-granted">Granted</span></div>
+        <p class="pc-text">"Registered Nurses invited at 75 pts via SA 190. SA runs monthly rounds consistently — most reliable state for healthcare workers."</p>
+        <div class="pc-meta"><div class="pc-av">🏥</div><div><div class="pc-name">Registered Nurse</div><div class="pc-sub">75 pts · SA 190 · 5–8 months</div></div></div>
       </div>
-      <p class="proof-text">"Registered Nurses invited at 75 pts via SA 190. SA has run monthly rounds consistently through 2026 — most reliable state for healthcare workers."</p>
-      <div class="proof-meta">
-        <div class="proof-av" style="background:rgba(0,200,150,0.12);color:var(--gold);border:1px solid rgba(0,200,150,0.2)">🏥</div>
-        <div>
-          <div class="proof-name">Registered Nurse</div>
-          <div class="proof-visa">75 pts · SA 190 · Processing 5–8 months</div>
-        </div>
+      <div class="pc fade d2">
+        <div class="pc-top"><span class="pc-tag">QLD 190 · Mar 2026</span><span class="pc-granted">Granted</span></div>
+        <p class="pc-text">"Civil Engineers invited at 85 pts via QLD 190. QLD accepts offshore applicants — one of few states you can apply from outside Australia."</p>
+        <div class="pc-meta"><div class="pc-av">🏗️</div><div><div class="pc-name">Civil Engineer</div><div class="pc-sub">85 pts · QLD 190 · Offshore</div></div></div>
       </div>
-    </div>
-    <div class="proof-card reveal rd2">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem">
-        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold)">QLD 190 · Mar 2026</span>
-        <span style="font-size:0.65rem;font-weight:700;background:rgba(30,155,92,0.1);color:var(--gold);border:1px solid rgba(30,155,92,0.2);padding:0.15rem 0.5rem;border-radius:100px">Granted</span>
+      <div class="pc fade d3">
+        <div class="pc-top"><span class="pc-tag">189 Federal · Apr 2026</span><span class="pc-granted">Granted</span></div>
+        <p class="pc-text">"Electricians invited at 65 pts via 189 federal — the lowest cutoff of any occupation in Australia. Trades stay the most accessible PR route in 2026."</p>
+        <div class="pc-meta"><div class="pc-av">⚡</div><div><div class="pc-name">Electrician</div><div class="pc-sub">65 pts · 189 · Lowest in AU</div></div></div>
       </div>
-      <p class="proof-text">"Civil Engineers invited at 85 pts via QLD 190. QLD accepts offshore applicants — one of the few states you can apply from outside Australia."</p>
-      <div class="proof-meta">
-        <div class="proof-av" style="background:rgba(0,200,150,0.12);color:var(--gold);border:1px solid rgba(0,200,150,0.2)">🏗️</div>
-        <div>
-          <div class="proof-name">Civil Engineer</div>
-          <div class="proof-visa">85 pts · QLD 190 · Offshore applicant</div>
-        </div>
-      </div>
-    </div>
-    <div class="proof-card reveal rd3">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem">
-        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold)">189 Federal · Apr 2026</span>
-        <span style="font-size:0.65rem;font-weight:700;background:rgba(30,155,92,0.1);color:var(--gold);border:1px solid rgba(30,155,92,0.2);padding:0.15rem 0.5rem;border-radius:100px">Granted</span>
-      </div>
-      <p class="proof-text">"Electricians invited at 65 pts via 189 federal — the lowest cutoff of any occupation in Australia. Trades remain the most accessible pathway to PR in 2026."</p>
-      <div class="proof-meta">
-        <div class="proof-av" style="background:rgba(0,200,150,0.12);color:var(--gold);border:1px solid rgba(0,200,150,0.2)">⚡</div>
-        <div>
-          <div class="proof-name">Electrician</div>
-          <div class="proof-visa">65 pts · 189 Federal · Lowest cutoff in AU</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:var(--white);border:1px solid var(--border);border-radius:10px;font-size:0.78rem;color:var(--muted);line-height:1.6" class="reveal">
-    <strong style="color:var(--navy)">Data source:</strong> DHA SkillSelect April 2026 — 189 Points-Tested Stream + 190 State Nominated, submitted EOIs. 52 occupations tracked.
-    <a href="/outcomes" style="color:var(--gold);font-weight:600">Submit your own outcome →</a>
-  </div>
-</section>
-
-<!-- FAQ — homepage-relevant queries only: EOI backlog, SkillSelect, skilled PR cutoffs, TSMIT -->
-<section class="faq-section">
-  <span class="sec-label reveal">Common questions</span>
-  <h2 class="sec-h reveal">EOI backlog. SkillSelect cutoffs.<br><em>Answered with real data.</em></h2>
-  <p class="sec-sub reveal">The questions that come up in every Facebook group and Telegram chat — answered using actual April 2026 DHA SkillSelect data, not rumours.</p>
-  <div class="faq-grid reveal">
-    <div class="faq-item">
-      <div class="faq-q">How do I check my position in the SkillSelect EOI backlog?</div>
-      <div class="faq-a">Log into ImmiAccount to see your EOI status. To understand how many applicants sit above you in the queue, use the <a href="/eoi-queue">VisaIQ EOI Backlog Tracker</a> — it shows pool size and points distribution for 52 occupations using April 2026 DHA data, so you can estimate your percentile without waiting for an invitation round.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What is the current 189 points cutoff for Registered Nurses in 2026?</div>
-      <div class="faq-a">The 189 federal cutoff for Registered Nurses (General) held at 75 points across four consecutive rounds from June 2024 to April 2026. SA 190 invites nurses at a 65-point minimum — the most accessible pathway for healthcare workers in 2026. <a href="/eoi-queue">Check the live tracker →</a></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How many points do I need for Australian skilled PR in 2026?</div>
-      <div class="faq-a">The minimum to submit an EOI is 65 points, but invitation cutoffs vary significantly by occupation. Electricians were invited at 65 points via 189 in April 2026. Nurses require 75 points. Early Childhood Teachers require 85 points. <a href="/points-calculator">Calculate your score →</a></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Which state is easiest for 190 nomination in 2026?</div>
-      <div class="faq-a">South Australia (SA) is consistently the most accessible 190 pathway in 2026. SA runs monthly rounds, accepts applicants at 65 points minimum for Tier 1 occupations, and allows onshore processing. Tasmania also runs monthly rounds with 65-point minimums. <a href="/state-comparator">Compare all 8 states →</a></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How long is the SkillSelect EOI wait for my occupation?</div>
-      <div class="faq-a">Wait time depends entirely on your occupation, points score, and visa stream. Frozen occupations (Software Engineers, Accountants) have not received 189 invitations in over 12 months. Active occupations (Nurses, Electricians) above the cutoff are typically invited within 1–3 rounds. <a href="/eoi-queue">Check your occupation's backlog →</a></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How is the 482 TSMIT salary threshold changing in July 2026?</div>
-      <div class="faq-a">The Temporary Skilled Migration Income Threshold (TSMIT) rises from $76,515 to $79,499 on 1 July 2026. All 482 employer sponsored applicants must meet this threshold. <a href="/482-visa">Check your 482 salary eligibility before 30 June →</a></div>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<div class="cta-band reveal">
-  <div>
-    <h2>Know your EOI position<br>before you pay <em>anyone.</em></h2>
-    <p>Free tools. Real DHA April 2026 SkillSelect data. 52 occupations. 3 minutes.</p>
+<!-- CONVERSION -->
+<section class="convert">
+  <div class="convert-card fade">
+    <h2>Know where you stand<br>before you pay <em>anyone.</em></h2>
+    <p>Start with a free pathway check. Unlock the full AI report when you're ready. Real DHA April 2026 data across 52 occupations.</p>
+    <a href="/report" class="convert-btn">See the PR Report — A$69 →</a>
+    <div class="convert-sub">Instant access · One-off payment · vs A$300–500 agent consultation</div>
   </div>
-  <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" class="btn-navy">Get My PR Intelligence Report — A$69 →</a>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="/" class="logo">Visa<span>IQ</span></a>
-      <p class="footer-tagline">Australia's migration intelligence platform. Real DHA data. Plain English. No gatekeeping.</p>
+  <div class="foot-grid">
+    <div>
+      <a href="/" class="foot-logo">Visa<span>IQ</span></a>
+      <p class="foot-tag">Australia's migration intelligence platform. Real DHA data. Plain English. No gatekeeping.</p>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Tools</h4>
-      <a href="/report">PR Intelligence Report</a>
+      <a href="/report">PR Report</a>
       <a href="/eoi-queue">EOI Queue Tracker</a>
       <a href="/points-calculator">Points Calculator</a>
       <a href="/student-visa">Student Visa Fees</a>
       <a href="/partner-visa">Partner Visa Cost</a>
       <a href="/482-visa">482 Salary Checker</a>
-      <a href="/state-comparator">State Comparator</a>
-      <a href="/occupation-demand">Occupation Demand</a>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Visa Guides</h4>
       <a href="/189-visa">189 Skilled Independent</a>
       <a href="/190-visa">190 State Nomination</a>
       <a href="/491-visa">491 Regional</a>
-      <a href="/482-visa">482 Employer Sponsored</a>
-      <a href="/partner-visa">Partner Visa 820/801</a>
-      <a href="/student-visa">Student Visa 500</a>
-      <a href="/485-visa">485 Graduate Visa</a>
-      <a href="/genuine-student-requirement">Genuine Student Req.</a>
+      <a href="/485-visa">485 Graduate</a>
+      <a href="/pathway-finder">Pathway Finder</a>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Intelligence</h4>
       <a href="/rounds">Invitation Rounds</a>
       <a href="/outcomes">Community Outcomes</a>
       <a href="/policy-updates">Policy Updates</a>
       <a href="/methodology">Methodology</a>
-      <a href="/submit">Submit Your Outcome</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 VisaIQ · visaiq.com.au · Not migration advice</span>
-    <span><a href="/methodology" style="color:rgba(255,255,255,0.2);text-decoration:none">Methodology</a> · <a href="/privacy" style="color:rgba(255,255,255,0.2);text-decoration:none">Privacy</a> · <a href="/terms" style="color:rgba(255,255,255,0.2);text-decoration:none">Terms</a></span>
+  <div class="foot-bottom">
+    © 2026 VisaIQ · visaiq.com.au · Not migration advice
+    <p class="foot-dis">VisaIQ provides data-informed research based on publicly available DHA information. This is not migration advice. For advice specific to your circumstances consult a MARA-registered migration agent. Always verify current information at immi.homeaffairs.gov.au</p>
   </div>
-  <p class="footer-dis">VisaIQ provides data-informed research based on publicly available DHA information. This is not migration advice. For advice specific to your circumstances consult a MARA-registered migration agent. Always verify current information at immi.homeaffairs.gov.au</p>
 </footer>
 
 <script>
-let dest='/eoi-queue';
-function pick(btn,label,link){
-  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('cta-text').textContent=label;
-  dest=link;
-}
-function go(){window.location.href=dest;}
-
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
+},{threshold:0.12});
+document.querySelectorAll('.fade:not(.in)').forEach(el=>obs.observe(el));
 </script>
 
-<script src="/email-capture.js"></script>
+
+<!-- EMAIL CAPTURE POPUP -->
+<div class="popup-overlay" id="emailPopup" role="dialog" aria-modal="true" aria-label="Get policy updates">
+  <div class="popup">
+    <button class="popup-close" id="popupClose" aria-label="Close">✕</button>
+    <div id="popupForm">
+      <div class="popup-icon">📬</div>
+      <h3>Stay ahead of<br><em>every round.</em></h3>
+      <p class="popup-sub">VisaIQ sends you DHA policy changes, new round data and cutoff shifts the moment they happen. No noise — just what matters for your visa.</p>
+      <div class="popup-perks">
+        <div class="popup-perk">Policy updates — when DHA changes rules that affect your visa</div>
+        <div class="popup-perk">New invitation round data — within 48h of each DHA release</div>
+        <div class="popup-perk">Cutoff shift alerts — when your occupation's threshold changes</div>
+        <div class="popup-perk">No spam, ever. Unsubscribe in one click.</div>
+      </div>
+      <div class="popup-form">
+        <input type="email" class="popup-input" id="popupEmail" placeholder="your@email.com" autocomplete="email">
+        <button class="popup-btn" id="popupSubmit">Subscribe</button>
+      </div>
+      <div class="popup-fine">Free · No spam · Unsubscribe anytime · visaiq.com.au</div>
+    </div>
+    <div id="popupSuccess" class="popup-success" style="display:none">
+      <div class="popup-success-icon">✅</div>
+      <h4>You're in.</h4>
+      <p>We'll send you the next DHA update the moment it drops. Check your inbox for a confirmation.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// POPUP LOGIC
+(function(){
+  var overlay = document.getElementById('emailPopup');
+  var closeBtn = document.getElementById('popupClose');
+  var submitBtn = document.getElementById('popupSubmit');
+  var emailInput = document.getElementById('popupEmail');
+  var form = document.getElementById('popupForm');
+  var success = document.getElementById('popupSuccess');
+  var shown = false;
+  var dismissed = sessionStorage.getItem('viq_popup_dismissed');
+
+  function show(){
+    if(shown || dismissed) return;
+    shown = true;
+    overlay.classList.add('show');
+  }
+  function hide(){
+    overlay.classList.remove('show');
+    sessionStorage.setItem('viq_popup_dismissed','1');
+  }
+
+  // Trigger 1: 30s timer
+  setTimeout(show, 30000);
+
+  // Trigger 2: exit intent (desktop only)
+  document.addEventListener('mouseleave', function(e){
+    if(e.clientY < 20) show();
+  });
+
+  // Trigger 3: scroll 60% down
+  window.addEventListener('scroll', function(){
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if(pct > 0.60) show();
+  }, {passive:true});
+
+  // Close
+  closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) hide(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+
+  // Submit
+  submitBtn.addEventListener('click', function(){
+    var email = emailInput.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      emailInput.style.borderColor='var(--amber)';
+      emailInput.focus();
+      return;
+    }
+    emailInput.style.borderColor='';
+    // Hook into existing email-capture.js if available
+    if(window.VisaIQEmailCapture && typeof window.VisaIQEmailCapture.subscribe === 'function'){
+      window.VisaIQEmailCapture.subscribe(email, {source:'popup-homepage'});
+    }
+    form.style.display='none';
+    success.style.display='block';
+    setTimeout(hide, 3500);
+  });
+
+  emailInput.addEventListener('keydown', function(e){ if(e.key==='Enter') submitBtn.click(); });
+})();
+</script>
+
 </body>
 </html>
