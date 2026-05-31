@@ -1,4 +1,4 @@
-<meta name="description" content="Calculate your exact DHA points score — age, English, education, work experience, NAATI CCL. See your score vs the Nov 2025 invitation cutoff for your occupation. Free."><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -27,34 +27,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .nls a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
 .nls a:hover{color:var(--teal)}
 .ncta{background:var(--teal);color:#000 !important;padding:0.5rem 1.1rem;border-radius:8px;font-weight:700;font-size:0.82rem;font-family:'Syne',sans-serif}
-
-/* HERO */
 .hero{background:linear-gradient(135deg,var(--bg2),var(--bg3));border-bottom:1px solid var(--border);padding:2.5rem 1.5rem 2rem;text-align:center}
 .hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1;margin-bottom:0.6rem}
 .hero h1 em{font-style:italic;color:var(--teal)}
 .hero p{color:var(--muted);font-size:0.9rem;max-width:480px;margin:0 auto;line-height:1.7}
 .source-tag{display:inline-flex;align-items:center;gap:0.4rem;background:var(--td);border:1px solid var(--tb);border-radius:20px;padding:0.3rem 0.8rem;font-size:0.72rem;color:var(--teal);font-weight:600;margin-top:0.75rem}
-
-/* MAIN LAYOUT */
 .main{max-width:960px;margin:0 auto;padding:1.5rem 1.5rem 5rem;display:grid;grid-template-columns:1fr 340px;gap:1.25rem;align-items:start}
-
-/* STICKY SCORE */
 .score-panel{position:sticky;top:80px}
 .score-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
 .score-top{background:linear-gradient(135deg,rgba(0,200,150,0.15),rgba(78,142,255,0.08));padding:1.5rem;text-align:center;border-bottom:1px solid var(--border)}
 .score-label{font-size:0.68rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem}
 .score-num{font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;line-height:1;color:var(--text);transition:all 0.3s}
 .score-max{font-size:0.78rem;color:var(--muted);margin-top:0.2rem}
-
-/* SCORE GAUGE */
 .gauge-wrap{padding:1.25rem 1.25rem 0}
 .gauge-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem}
 .gauge-title{font-size:0.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em}
 .gauge-pct{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--teal)}
 .gauge-track{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-bottom:1rem}
 .gauge-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),#00e0aa);transition:width 0.5s ease}
-
-/* CUTOFF ROWS */
 .cutoffs{padding:0 1.25rem 1.25rem}
 .cutoff-title{font-size:0.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem}
 .cutoff-row{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem}
@@ -67,8 +57,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .crs-above{background:rgba(16,185,129,0.1);color:var(--green);border:1px solid rgba(16,185,129,0.2)}
 .crs-close{background:rgba(245,158,11,0.08);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
 .crs-below{background:rgba(239,68,68,0.07);color:var(--red);border:1px solid rgba(239,68,68,0.15)}
-
-/* BREAKDOWN */
 .breakdown{padding:0 1.25rem 1.25rem}
 .breakdown-title{font-size:0.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem}
 .bk-row{display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.78rem}
@@ -77,8 +65,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .bk-pts{font-family:'Syne',sans-serif;font-weight:700;color:var(--teal)}
 .bk-pts.zero{color:var(--muted)}
 .bk-pts.cap{color:var(--amber)}
-
-/* FORM SECTIONS */
 .calc-form{}
 .csec{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:0.75rem;transition:border-color 0.2s}
 .csec:focus-within{border-color:rgba(255,255,255,0.12)}
@@ -87,16 +73,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .sec-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700}
 .sec-pts{margin-left:auto;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:800;color:var(--teal);background:var(--td);border:1px solid var(--tb);border-radius:8px;padding:0.2rem 0.6rem;transition:all 0.3s}
 .sec-pts.zero{color:var(--muted);background:transparent;border-color:var(--border)}
-
-/* PILLS */
 .pills{display:flex;flex-direction:column;gap:0.4rem}
 .pill{padding:0.65rem 1rem;background:transparent;border:1px solid var(--border);border-radius:10px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;color:var(--muted);font-family:'DM Sans',sans-serif;text-align:left;width:100%}
 .pill:hover{border-color:rgba(255,255,255,0.15);color:var(--text)}
 .pill.sel{border-color:var(--teal);background:var(--td);color:var(--text)}
 .pill.sel .pts-badge{background:var(--teal);color:#000}
 .pts-badge{float:right;font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;background:rgba(255,255,255,0.06);color:var(--muted);padding:0.1rem 0.45rem;border-radius:5px;margin-left:0.5rem}
-
-/* BONUS ROW */
 .bonus-row{display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0.75rem;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.2s;margin-bottom:0.4rem}
 .bonus-row:hover{border-color:rgba(255,255,255,0.12)}
 .bonus-row.sel{border-color:var(--teal);background:var(--td)}
@@ -105,19 +87,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 .bonus-text{flex:1;font-size:0.8rem;color:var(--muted)}
 .bonus-row.sel .bonus-text{color:var(--text)}
 .bonus-pts{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:800;color:var(--teal)}
-
-/* INFO */
 .info-note{background:rgba(78,142,255,0.07);border:1px solid rgba(78,142,255,0.18);border-radius:8px;padding:0.65rem 0.85rem;font-size:0.75rem;color:var(--muted);margin-top:0.5rem;line-height:1.6}
 .info-note strong{color:var(--blue)}
 .cap-warn{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:0.65rem 0.85rem;font-size:0.75rem;color:var(--amber);margin-top:0.5rem;display:none}
-
-/* OCCUPATION SELECT */
 select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8FA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
 select:focus{border-color:var(--tb)}
 select option{background:#0D1B2E}
 label{display:block;font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;font-weight:500}
-
-/* RESULT PANEL (shown after full score) */
 .result-panel{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-top:0.75rem;display:none}
 .result-panel.show{display:block;animation:fu 0.4s ease}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -127,19 +103,14 @@ label{display:block;font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;fo
 .ai-pts{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;color:var(--teal);background:var(--td);border:1px solid var(--tb);border-radius:6px;padding:0.1rem 0.4rem;flex-shrink:0;margin-top:0.1rem}
 .ai-body h4{font-size:0.82rem;font-weight:600;margin-bottom:0.1rem}
 .ai-body p{font-size:0.75rem;color:var(--muted);line-height:1.5}
-
-/* CTA */
 .cta-box{background:linear-gradient(135deg,var(--td),rgba(78,142,255,0.08));border:1px solid var(--tb);border-radius:14px;padding:1.5rem;text-align:center;margin-top:0.75rem}
 .cta-box h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:800;margin-bottom:0.4rem}
 .cta-box p{font-size:0.8rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
 .cta-btn{display:inline-block;padding:0.75rem 1.5rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none}
-
 footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:0.78rem;color:var(--muted);margin-top:2rem}
 footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
-
 @media(max-width:700px){.main{grid-template-columns:1fr}.score-panel{position:static;order:-1}}
 </style>
-  <!-- ── BRAND & SEO HEAD TAGS ── add to every page ── -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
@@ -150,25 +121,22 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="VisaIQ">
-  <!-- Open Graph — controls WhatsApp, LinkedIn, Facebook preview -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VisaIQ">
   <meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="VisaIQ — Australia's Migration Intelligence Platform">
-  <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@visaiq">
   <meta name="twitter:image" content="https://www.visaiq.com.au/og-image.jpg">
-  <!-- ── END BRAND TAGS ── -->
   <meta property="og:url" content="https://www.visaiq.com.au/points-calculator">
   <meta property="og:title" content="Australia PR Points Calculator 2026 — Official DHA Points Test | VisaIQ">
   <meta name="twitter:title" content="Australia PR Points Calculator 2026 — Official DHA Points Test | VisaIQ">
   <meta property="og:description" content="Calculate your Australian PR points instantly. Official DHA Schedule 6D criteria, real 2026 cutoffs by occupation, 189 tier system explained. Free, no signup, takes 60 seconds.">
   <meta name="twitter:description" content="Calculate your Australian PR points instantly. Official DHA Schedule 6D criteria, real 2026 cutoffs by occupation, 189 tier system explained. Free, no signup, takes 60 seconds.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Australian PR points test?","acceptedAnswer":{"@type":"Answer","text": "The Australian PR points test uses DHA Schedule 6D to assess skilled migrants. Points are awarded for age (maximum 30 pts at 25-32), English (maximum 20 pts for superior), education (maximum 20 pts), work experience (maximum 20 pts), and other factors including NAATI, state nomination and regional study. The minimum score to submit an EOI is 65 points."}},{"@type":"Question","name":"How many points do I need for Australian PR in 2026?","acceptedAnswer":{"@type":"Answer","text": "You need a minimum of 65 points to submit an Expression of Interest (EOI) for the skilled migration program. However, actually receiving an invitation requires significantly more points. As of 2026, cutoffs range from 65 pts (trades/healthcare via 189) to 95+ pts (ICT and accounting). State nomination (190) adds 5 bonus points; regional nomination (491) adds 15 bonus points."}},{"@type":"Question","name":"What is the fastest way to increase my PR points?","acceptedAnswer":{"@type":"Answer","text": "The highest-impact single action is improving English from Proficient (IELTS 7.0, 10 pts) to Superior (IELTS 8.0+, 20 pts) — a gain of 10 points. The second highest is NAATI CCL for qualifying languages ($800, 3 months, +5 pts). For profiles under 80 points, the 491 regional pathway adds 15 points — the largest single bonus available."}},{"@type":"Question","name":"What is the difference between 189, 190 and 491 visas?","acceptedAnswer":{"@type":"Answer","text": "The 189 Independent visa requires no sponsor — you apply directly with your points score. The 190 State Nominated visa requires state nomination and adds 5 bonus points but has state-specific requirements. The 491 Regional visa requires regional nomination and adds 15 bonus points but requires 3 years living and working in regional Australia before applying for the 191 permanent visa."}},{"@type":"Question","name":"Does my occupation affect my PR points?","acceptedAnswer":{"@type":"Answer","text": "Your occupation does not directly add points, but it determines which visas you can apply for. Occupations on the MLTSSL are eligible for 189, 190, and 491. Occupations on the STSOL are only eligible for 190 and 491. Under the 2025-26 program, IT and accounting occupations are classified as Tier 4 — receiving the fewest federal 189 invitations."}},{"@type":"Question","name":"How long does Australian PR take after submitting an EOI?","acceptedAnswer":{"@type":"Answer","text": "Timeline depends heavily on your occupation and points score. Tier 1 healthcare occupations (nurses, GPs) at adequate points can be invited within 3-8 months. Tier 4 IT and accounting occupations may wait 18-24 months or longer for a federal 189 invitation. State nomination (190) often processes faster than federal 189 for the same occupation."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Australian PR points test?","acceptedAnswer":{"@type":"Answer","text":"The Australian PR points test uses DHA Schedule 6D to assess skilled migrants. Points are awarded for age (maximum 30 pts at 25-32), English (maximum 20 pts for superior), education (maximum 20 pts), work experience (maximum 20 pts), and other factors including NAATI, state nomination and regional study. The minimum score to submit an EOI is 65 points."}},{"@type":"Question","name":"How many points do I need for Australian PR in 2026?","acceptedAnswer":{"@type":"Answer","text":"You need a minimum of 65 points to submit an Expression of Interest (EOI) for the skilled migration program. However, actually receiving an invitation requires significantly more points. As of 2026, cutoffs range from 65 pts (trades/healthcare via 189) to 95+ pts (ICT and accounting). State nomination (190) adds 5 bonus points; regional nomination (491) adds 15 bonus points."}},{"@type":"Question","name":"What is the fastest way to increase my PR points?","acceptedAnswer":{"@type":"Answer","text":"The highest-impact single action is improving English from Proficient (IELTS 7.0, 10 pts) to Superior (IELTS 8.0+, 20 pts) — a gain of 10 points. The second highest is NAATI CCL for qualifying languages ($800, 3 months, +5 pts). For profiles under 80 points, the 491 regional pathway adds 15 points — the largest single bonus available."}},{"@type":"Question","name":"What is the difference between 189, 190 and 491 visas?","acceptedAnswer":{"@type":"Answer","text":"The 189 Independent visa requires no sponsor — you apply directly with your points score. The 190 State Nominated visa requires state nomination and adds 5 bonus points but has state-specific requirements. The 491 Regional visa requires regional nomination and adds 15 bonus points but requires 3 years living and working in regional Australia before applying for the 191 permanent visa."}},{"@type":"Question","name":"Does my occupation affect my PR points?","acceptedAnswer":{"@type":"Answer","text":"Your occupation does not directly add points, but it determines which visas you can apply for. Occupations on the MLTSSL are eligible for 189, 190, and 491. Occupations on the STSOL are only eligible for 190 and 491. Under the 2025-26 program, IT and accounting occupations are classified as Tier 4 — receiving the fewest federal 189 invitations."}},{"@type":"Question","name":"How long does Australian PR take after submitting an EOI?","acceptedAnswer":{"@type":"Answer","text":"Timeline depends heavily on your occupation and points score. Tier 1 healthcare occupations (nurses, GPs) at adequate points can be invited within 3-8 months. Tier 4 IT and accounting occupations may wait 18-24 months or longer for a federal 189 invitation. State nomination (190) often processes faster than federal 189 for the same occupation."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.visaiq.com.au/"},{"@type":"ListItem","position":2,"name":"Points Calculator","item":"https://www.visaiq.com.au/points-calculator"}]}
@@ -196,16 +164,9 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
 </div>
 
 <div class="main">
-
-  <!-- LEFT — FORM -->
   <div class="calc-form">
-
-    <!-- OCCUPATION -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">0</div>
-        <div class="sec-title">Your occupation</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">0</div><div class="sec-title">Your occupation</div></div>
       <label>Select to see real cutoffs for your occupation</label>
       <select id="occ" onchange="updateCutoffs()">
         <option value="">Select occupation…</option>
@@ -255,23 +216,18 @@ footer a{color:var(--teal);text-decoration:none;margin:0 0.4rem}
           <span id="occ-tier-badge"></span>
           <span id="occ-189-note" style="color:var(--muted)"></span>
         </div>
-<div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #f87171;border-radius:10px;padding:0.9rem 1.1rem;margin:0.75rem 0;font-size:0.82rem;line-height:1.7">
-<strong style="color:#f87171">⚠️ Accountants — 189 federal pathway update 2026</strong><br>
-Accountants have <strong style="color:#f87171">not received 189 federal invitations</strong> in the 2026 program year to date. The recommended pathway for accountants is:<br>
-&bull; <strong style="color:var(--text, #E8EDF5)">SA 190 state nomination</strong> — cutoff approximately 65 pts, runs monthly rounds<br>
-&bull; <strong style="color:var(--text, #E8EDF5)">QLD 190 or 491 regional nomination</strong> — accessible at 65-70 pts<br>
-<strong style="color:var(--text, #E8EDF5)">Do not wait in the 189 pool as an accountant without a state nomination strategy.</strong> The accountant EOI pool has over 15,240 applicants and Tier 4 status means federal invitations are extremely limited.
-</div>
+        <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #f87171;border-radius:10px;padding:0.9rem 1.1rem;margin:0.75rem 0;font-size:0.82rem;line-height:1.7">
+          <strong style="color:#f87171">⚠️ Accountants — 189 federal pathway update 2026</strong><br>
+          Accountants have <strong style="color:#f87171">not received 189 federal invitations</strong> in the 2026 program year to date. The recommended pathway for accountants is:<br>
+          &bull; <strong style="color:var(--text, #E8EDF5)">SA 190 state nomination</strong> — cutoff approximately 65 pts, runs monthly rounds<br>
+          &bull; <strong style="color:var(--text, #E8EDF5)">QLD 190 or 491 regional nomination</strong> — accessible at 65-70 pts<br>
+          <strong style="color:var(--text, #E8EDF5)">Do not wait in the 189 pool as an accountant without a state nomination strategy.</strong>
+        </div>
       </div>
     </div>
 
-    <!-- AGE -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">1</div>
-        <div class="sec-title">Age</div>
-        <div class="sec-pts zero" id="sp-age">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">1</div><div class="sec-title">Age</div><div class="sec-pts zero" id="sp-age">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="25" onclick="sel(this,'age')">18–24 years<span class="pts-badge">25 pts</span></button>
         <button class="pill" data-v="30" onclick="sel(this,'age')">25–32 years<span class="pts-badge">30 pts</span></button>
@@ -281,31 +237,18 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
       </div>
     </div>
 
-    <!-- ENGLISH -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">2</div>
-        <div class="sec-title">English level</div>
-        <div class="sec-pts zero" id="sp-eng">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">2</div><div class="sec-title">English level</div><div class="sec-pts zero" id="sp-eng">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="20" onclick="sel(this,'eng')">Superior English — IELTS 8.0+ all bands<span class="pts-badge">20 pts</span></button>
         <button class="pill" data-v="10" onclick="sel(this,'eng')">Proficient English — IELTS 7.0+ all bands<span class="pts-badge">10 pts</span></button>
         <button class="pill" data-v="0"  onclick="sel(this,'eng')">Competent English — IELTS 6.0+ all bands<span class="pts-badge">0 pts</span></button>
       </div>
-      <div class="info-note">
-        <strong>PTE equivalents:</strong> Superior = PTE 79+ all bands · Proficient = PTE 65+ · Competent = PTE 50+<br>
-        <strong>Common mistake:</strong> All four bands must meet the threshold individually — an average of 8.0 does not qualify for Superior if any single band is below 8.0.
-      </div>
+      <div class="info-note"><strong>PTE equivalents:</strong> Superior = PTE 79+ all bands · Proficient = PTE 65+ · Competent = PTE 50+<br><strong>Common mistake:</strong> All four bands must meet the threshold individually.</div>
     </div>
 
-    <!-- EDUCATION -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">3</div>
-        <div class="sec-title">Education</div>
-        <div class="sec-pts zero" id="sp-edu">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">3</div><div class="sec-title">Education</div><div class="sec-pts zero" id="sp-edu">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="20" onclick="sel(this,'edu')">Doctorate / PhD<span class="pts-badge">20 pts</span></button>
         <button class="pill" data-v="15" onclick="sel(this,'edu')">Masters degree<span class="pts-badge">15 pts</span></button>
@@ -313,16 +256,11 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
         <button class="pill" data-v="10" onclick="sel(this,'edu')">Diploma / Trade qualification<span class="pts-badge">10 pts</span></button>
         <button class="pill" data-v="0"  onclick="sel(this,'edu')">No formal qualification<span class="pts-badge">0 pts</span></button>
       </div>
-      <div class="info-note"><strong>Common mistake:</strong> Masters = 15 pts — same as Bachelor under DHA Schedule 6D. Many unofficial calculators incorrectly show Masters as 20 pts.</div>
+      <div class="info-note"><strong>Common mistake:</strong> Masters = 15 pts — same as Bachelor under DHA Schedule 6D.</div>
     </div>
 
-    <!-- OVERSEAS WORK -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">4</div>
-        <div class="sec-title">Overseas work experience</div>
-        <div class="sec-pts zero" id="sp-ow">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">4</div><div class="sec-title">Overseas work experience</div><div class="sec-pts zero" id="sp-ow">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="0"  onclick="sel(this,'ow');checkCap()">Under 3 years<span class="pts-badge">0 pts</span></button>
         <button class="pill" data-v="5"  onclick="sel(this,'ow');checkCap()">3–4 years<span class="pts-badge">5 pts</span></button>
@@ -332,13 +270,8 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
       <div class="info-note">Must be in your nominated occupation, at least 20 hrs/week paid work, within the last 10 years. Overseas + Australian work combined is <strong>capped at 20 pts total</strong>.</div>
     </div>
 
-    <!-- AUSTRALIAN WORK -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">5</div>
-        <div class="sec-title">Australian work experience</div>
-        <div class="sec-pts zero" id="sp-aw">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">5</div><div class="sec-title">Australian work experience</div><div class="sec-pts zero" id="sp-aw">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="0"  onclick="sel(this,'aw');checkCap()">Under 1 year<span class="pts-badge">0 pts</span></button>
         <button class="pill" data-v="5"  onclick="sel(this,'aw');checkCap()">1–2 years<span class="pts-badge">5 pts</span></button>
@@ -349,111 +282,58 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
       <div class="cap-warn" id="cap-warn">⚠️ Your overseas + Australian work experience exceeds the 20-point combined cap. Your work experience score has been capped at 20 pts as per DHA rules.</div>
     </div>
 
-    <!-- PARTNER -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">6</div>
-        <div class="sec-title">Partner status</div>
-        <div class="sec-pts zero" id="sp-pt">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">6</div><div class="sec-title">Partner status</div><div class="sec-pts zero" id="sp-pt">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="10" onclick="sel(this,'pt')">Skilled partner — holds skills assessment + competent English<span class="pts-badge">10 pts</span></button>
         <button class="pill" data-v="10" onclick="sel(this,'pt')">Single / partner is Australian citizen or PR<span class="pts-badge">10 pts</span></button>
         <button class="pill" data-v="0"  onclick="sel(this,'pt')">Partner without skills assessment<span class="pts-badge">0 pts</span></button>
       </div>
-      <div class="info-note"><strong>Single applicants score 10 pts</strong> — same as a skilled partner. This surprises many people. It is correct under Schedule 6D.</div>
+      <div class="info-note"><strong>Single applicants score 10 pts</strong> — same as a skilled partner. It is correct under Schedule 6D.</div>
     </div>
 
-    <!-- BONUSES -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">7</div>
-        <div class="sec-title">Bonus points</div>
-        <div class="sec-pts zero" id="sp-bn">0 pts</div>
-      </div>
-      <div class="bonus-row" id="bn-naati" onclick="toggleBonus('naati')">
-        <div class="bonus-check" id="bc-naati"></div>
-        <div class="bonus-text"><strong>NAATI CCL</strong> — Credentialed Community Language (Urdu, Hindi, Nepali, Tagalog etc). Must hold current NAATI CCL certification.</div>
-        <div class="bonus-pts">+5 pts</div>
-      </div>
-      <div class="bonus-row" id="bn-ausstudy" onclick="toggleBonus('ausstudy')">
-        <div class="bonus-check" id="bc-ausstudy"></div>
-        <div class="bonus-text"><strong>Australian study</strong> — At least 2 academic years study in Australia leading to a qualification required for your occupation (Bachelor or higher).</div>
-        <div class="bonus-pts">+5 pts</div>
-      </div>
-      <div class="bonus-row" id="bn-regstudy" onclick="toggleBonus('regstudy')">
-        <div class="bonus-check" id="bc-regstudy"></div>
-        <div class="bonus-text"><strong>Regional study</strong> — At least 2 academic years study in a regional Australian institution (cannot be combined with Australian study bonus for same degree).</div>
-        <div class="bonus-pts">+5 pts</div>
-      </div>
-      <div class="bonus-row" id="bn-profyear" onclick="toggleBonus('profyear')">
-        <div class="bonus-check" id="bc-profyear"></div>
-        <div class="bonus-text"><strong>Professional Year</strong> — Completed a DHA-approved Professional Year programme in Australia (available for Accountants, Engineers, ICT).</div>
-        <div class="bonus-pts">+5 pts</div>
-      </div>
-      <div class="bonus-row" id="bn-stem" onclick="toggleBonus('stem')">
-        <div class="bonus-check" id="bc-stem"></div>
-        <div class="bonus-text"><strong>Specialist education (STEM)</strong> — Masters by research OR PhD from an Australian institution with at least 2 years in Science, IT, or Engineering.</div>
-        <div class="bonus-pts">+5 pts</div>
-      </div>
-      <div class="info-note" style="margin-top:0.75rem"><strong>Australian study + Regional study:</strong> Cannot claim both for the same degree. If your degree was in regional Australia, claim regional study (+5 pts) — not both.</div>
+      <div class="sec-header"><div class="sec-num">7</div><div class="sec-title">Bonus points</div><div class="sec-pts zero" id="sp-bn">0 pts</div></div>
+      <div class="bonus-row" id="bn-naati" onclick="toggleBonus('naati')"><div class="bonus-check" id="bc-naati"></div><div class="bonus-text"><strong>NAATI CCL</strong> — Credentialed Community Language (Urdu, Hindi, Nepali, Tagalog etc).</div><div class="bonus-pts">+5 pts</div></div>
+      <div class="bonus-row" id="bn-ausstudy" onclick="toggleBonus('ausstudy')"><div class="bonus-check" id="bc-ausstudy"></div><div class="bonus-text"><strong>Australian study</strong> — At least 2 academic years study in Australia in an eligible qualification.</div><div class="bonus-pts">+5 pts</div></div>
+      <div class="bonus-row" id="bn-regstudy" onclick="toggleBonus('regstudy')"><div class="bonus-check" id="bc-regstudy"></div><div class="bonus-text"><strong>Regional study</strong> — At least 2 academic years study in a regional Australian institution.</div><div class="bonus-pts">+5 pts</div></div>
+      <div class="bonus-row" id="bn-profyear" onclick="toggleBonus('profyear')"><div class="bonus-check" id="bc-profyear"></div><div class="bonus-text"><strong>Professional Year</strong> — Completed a DHA-approved Professional Year programme in Australia.</div><div class="bonus-pts">+5 pts</div></div>
+      <div class="bonus-row" id="bn-stem" onclick="toggleBonus('stem')"><div class="bonus-check" id="bc-stem"></div><div class="bonus-text"><strong>Specialist education (STEM)</strong> — Masters by research OR PhD from an Australian institution in Science, IT, or Engineering.</div><div class="bonus-pts">+5 pts</div></div>
+      <div class="info-note" style="margin-top:0.75rem"><strong>Australian study + Regional study:</strong> Cannot claim both for the same degree.</div>
     </div>
 
-    <!-- NOMINATION -->
     <div class="csec">
-      <div class="sec-header">
-        <div class="sec-num">8</div>
-        <div class="sec-title">State or regional nomination</div>
-        <div class="sec-pts zero" id="sp-nom">0 pts</div>
-      </div>
+      <div class="sec-header"><div class="sec-num">8</div><div class="sec-title">State or regional nomination</div><div class="sec-pts zero" id="sp-nom">0 pts</div></div>
       <div class="pills">
         <button class="pill" data-v="0"   onclick="sel(this,'nom')">No nomination — applying 189 Independent<span class="pts-badge">+0 pts</span></button>
         <button class="pill" data-v="5"   onclick="sel(this,'nom')">State nominated — 190 visa<span class="pts-badge">+5 pts</span></button>
         <button class="pill" data-v="15"  onclick="sel(this,'nom')">Regional nominated — 491 visa<span class="pts-badge">+15 pts</span></button>
       </div>
-      <div class="info-note">190 and 491 nominations are <strong>mutually exclusive</strong> — you can only hold one nomination at a time. Points are added to your base score for comparison against cutoffs.</div>
+      <div class="info-note">190 and 491 nominations are <strong>mutually exclusive</strong> — you can only hold one at a time.</div>
     </div>
 
-    <!-- ACTION SUGGESTIONS -->
     <div class="result-panel" id="result-panel">
       <div class="rp-title">How to improve your score</div>
       <div id="actions-list"></div>
       <a href="/tool" style="display:block;text-align:center;margin-top:1rem;padding:0.75rem;background:var(--teal);color:#000;border-radius:10px;font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;text-decoration:none">Get Full PR Intelligence Report →</a>
     </div>
+  </div>
 
-  </div><!-- end form -->
-
-  <!-- RIGHT — SCORE PANEL -->
   <div class="score-panel">
     <div class="score-card">
-
-      <!-- SCORE -->
       <div class="score-top">
         <div class="score-label">Your DHA points score</div>
         <div class="score-num" id="total-score">0</div>
         <div class="score-max">out of 80+ possible (no official maximum)</div>
       </div>
-
-      <!-- PROGRESS -->
       <div class="gauge-wrap">
-        <div class="gauge-row">
-          <div class="gauge-title">Progress to 65 pt minimum</div>
-          <div class="gauge-pct" id="gauge-pct">0%</div>
-        </div>
-        <div class="gauge-track">
-          <div class="gauge-fill" id="gauge-fill" style="width:0%"></div>
-        </div>
+        <div class="gauge-row"><div class="gauge-title">Progress to 65 pt minimum</div><div class="gauge-pct" id="gauge-pct">0%</div></div>
+        <div class="gauge-track"><div class="gauge-fill" id="gauge-fill" style="width:0%"></div></div>
       </div>
-
-      <!-- CUTOFFS -->
       <div class="cutoffs">
         <div class="cutoff-title">Your score vs real cutoffs</div>
-        <div id="cutoff-rows">
-          <div style="font-size:0.78rem;color:var(--muted);padding:0.5rem 0">Select your occupation above to see real cutoffs</div>
-        </div>
+        <div id="cutoff-rows"><div style="font-size:0.78rem;color:var(--muted);padding:0.5rem 0">Select your occupation above to see real cutoffs</div></div>
       </div>
-
-      <!-- BREAKDOWN -->
       <div class="breakdown">
         <div class="breakdown-title">Score breakdown</div>
         <div class="bk-row"><span class="bk-cat">Age</span><span class="bk-pts zero" id="bk-age">—</span></div>
@@ -464,327 +344,65 @@ Accountants have <strong style="color:#f87171">not received 189 federal invitati
         <div class="bk-row"><span class="bk-cat">Partner</span><span class="bk-pts zero" id="bk-pt">—</span></div>
         <div class="bk-row"><span class="bk-cat">Bonus points</span><span class="bk-pts zero" id="bk-bn">—</span></div>
         <div class="bk-row"><span class="bk-cat">Nomination</span><span class="bk-pts zero" id="bk-nom">—</span></div>
-        <div class="bk-row" style="border-top:2px solid var(--border);margin-top:0.25rem;padding-top:0.5rem">
-          <span class="bk-cat" style="font-weight:700;color:var(--text)">Total</span>
-          <span class="bk-pts" id="bk-total" style="font-size:1rem">0 pts</span>
-        </div>
+        <div class="bk-row" style="border-top:2px solid var(--border);margin-top:0.25rem;padding-top:0.5rem"><span class="bk-cat" style="font-weight:700;color:var(--text)">Total</span><span class="bk-pts" id="bk-total" style="font-size:1rem">0 pts</span></div>
       </div>
-
     </div>
-
-    <!-- DEEP REPORT CTA -->
     <div class="cta-box" style="margin-top:0.75rem">
       <h3>Want the full picture?</h3>
       <p>The PR Intelligence Report shows your EOI queue position, all 8 states, your 12-month action roadmap and a downloadable scorecard.</p>
       <a href="/tool" class="cta-btn">Get Full Report — Free →</a>
     </div>
-
-  </div><!-- end score panel -->
-
-</div><!-- end main -->
+  </div>
+</div>
 
 <div style="font-size:0.72rem;color:var(--muted);text-align:right;padding:0 1.5rem;max-width:880px;margin:0.5rem auto 0">Last updated: April 2026</div>
 <footer>
   <div style="max-width:880px;margin:0 auto;padding:2rem 1.5rem 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;border-bottom:1px solid var(--border);margin-bottom:1rem">
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Skilled Migration</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/tool" style="font-size:0.78rem;color:var(--muted)">PR Intelligence Report</a>
-        <a href="/points-calculator" style="font-size:0.78rem;color:var(--muted)">Points Calculator</a>
-        <a href="/eoi-queue" style="font-size:0.78rem;color:var(--muted)">EOI Queue Tracker</a>
-        <a href="/189-visa" style="font-size:0.78rem;color:var(--muted)">189 Independent Visa</a>
-        <a href="/190-visa" style="font-size:0.78rem;color:var(--muted)">190 State Nomination</a>
-        <a href="/491-visa" style="font-size:0.78rem;color:var(--muted)">491 Regional Visa</a>
-        <a href="/state-comparator" style="font-size:0.78rem;color:var(--muted)">State Comparator</a>
-        <a href="/occupation-demand" style="font-size:0.78rem;color:var(--muted)">Occupation Demand</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Student Pathway</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/student-pathway" style="font-size:0.78rem;color:var(--muted)">Student PR Platform</a>
-        <a href="/student-visa" style="font-size:0.78rem;color:var(--muted)">Student Visa 500</a>
-        <a href="/485-visa" style="font-size:0.78rem;color:var(--muted)">485 Graduate Visa</a>
-        <a href="/genuine-student-requirement" style="font-size:0.78rem;color:var(--muted)">GS Requirement</a>
-        <a href="/best-degrees-pr" style="font-size:0.78rem;color:var(--muted)">Best Degrees for PR</a>
-        <a href="/regional-study-bonus" style="font-size:0.78rem;color:var(--muted)">Regional Study Bonus</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Employer &amp; Partner</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/482-visa" style="font-size:0.78rem;color:var(--muted)">482 Visa Guide</a>
-        <a href="/482-to-186" style="font-size:0.78rem;color:var(--muted)">482 to 186 Calculator</a>
-        <a href="/partner-visa" style="font-size:0.78rem;color:var(--muted)">Partner Visa 820/801</a>
-        <a href="/partner-visa-while-on-student-visa" style="font-size:0.78rem;color:var(--muted)">Partner on Student Visa</a>
-        <a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted)">Bridging Visa</a>
-        <a href="/australian-citizenship" style="font-size:0.78rem;color:var(--muted)">Australian Citizenship</a>
-      </div>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Intelligence</div>
-      <div style="display:flex;flex-direction:column;gap:0.3rem">
-        <a href="/rounds" style="font-size:0.78rem;color:var(--muted)">Invitation Rounds</a>
-        <a href="/outcomes" style="font-size:0.78rem;color:var(--muted)">Community Outcomes</a>
-        <a href="/policy-updates" style="font-size:0.78rem;color:var(--muted)">Policy Updates</a>
-        <a href="/submit" style="font-size:0.78rem;color:var(--muted)">Submit Your Outcome</a>
-        <a href="/methodology" style="font-size:0.78rem;color:var(--muted)">Methodology</a>
-      </div>
-    </div>
+    <div><div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Skilled Migration</div><div style="display:flex;flex-direction:column;gap:0.3rem"><a href="/tool" style="font-size:0.78rem;color:var(--muted)">PR Intelligence Report</a><a href="/points-calculator" style="font-size:0.78rem;color:var(--muted)">Points Calculator</a><a href="/eoi-queue" style="font-size:0.78rem;color:var(--muted)">EOI Queue Tracker</a><a href="/189-visa" style="font-size:0.78rem;color:var(--muted)">189 Independent Visa</a><a href="/190-visa" style="font-size:0.78rem;color:var(--muted)">190 State Nomination</a><a href="/491-visa" style="font-size:0.78rem;color:var(--muted)">491 Regional Visa</a></div></div>
+    <div><div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Student Pathway</div><div style="display:flex;flex-direction:column;gap:0.3rem"><a href="/student-pathway" style="font-size:0.78rem;color:var(--muted)">Student PR Platform</a><a href="/student-visa" style="font-size:0.78rem;color:var(--muted)">Student Visa 500</a><a href="/485-visa" style="font-size:0.78rem;color:var(--muted)">485 Graduate Visa</a></div></div>
+    <div><div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Employer &amp; Partner</div><div style="display:flex;flex-direction:column;gap:0.3rem"><a href="/482-visa" style="font-size:0.78rem;color:var(--muted)">482 Visa Guide</a><a href="/partner-visa" style="font-size:0.78rem;color:var(--muted)">Partner Visa 820/801</a><a href="/bridging-visa" style="font-size:0.78rem;color:var(--muted)">Bridging Visa</a></div></div>
+    <div><div style="font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:0.65rem">Intelligence</div><div style="display:flex;flex-direction:column;gap:0.3rem"><a href="/rounds" style="font-size:0.78rem;color:var(--muted)">Invitation Rounds</a><a href="/outcomes" style="font-size:0.78rem;color:var(--muted)">Community Outcomes</a><a href="/methodology" style="font-size:0.78rem;color:var(--muted)">Methodology</a></div></div>
   </div>
-  <div style="text-align:center;padding:1rem 1.5rem;font-size:0.72rem;color:var(--muted)">
-    © 2026 VisaIQ · <a href="/" style="color:var(--teal)">visaiq.com.au</a> · Not migration advice · <a href="/methodology" style="color:var(--muted)">Methodology</a>
-  </div>
+  <div style="text-align:center;padding:1rem 1.5rem;font-size:0.72rem;color:var(--muted)">© 2026 VisaIQ · <a href="/" style="color:var(--teal)">visaiq.com.au</a> · Not migration advice · <a href="/methodology" style="color:var(--muted)">Methodology</a></div>
 </footer>
 
 <script>
-// ── STATE ─────────────────────────────────────────────────
 const S = {age:null,eng:null,edu:null,ow:0,aw:0,pt:null,bn:{naati:0,ausstudy:0,regstudy:0,profyear:0,stem:0},nom:0};
-
-// Occupation cutoff data (Nov 2025 DHA invitation round)
 const OCC_DATA = {
-  nurse:       {tier:1,label:'Tier 1 — Healthcare (Highest Priority)',c189:75,c190:65,c491:65,note:'Priority occupation. Invited at lower cutoffs under the 4-tier system.'},
-  gp:          {tier:1,label:'Tier 1 — Healthcare',c189:75,c190:65,c491:65,note:'Priority occupation. Direct grant possible in some states.'},
-  specialist:  {tier:1,label:'Tier 1 — Healthcare',c189:80,c190:65,c491:65,note:''},
-  allied:      {tier:1,label:'Tier 1 — Healthcare',c189:75,c190:65,c491:65,note:''},
-  dentist:     {tier:1,label:'Tier 1 — Healthcare',c189:80,c190:65,c491:65,note:''},
-  teacher:     {tier:2,label:'Tier 2 — Education',c189:85,c190:65,c491:65,note:'ACT and TAS prioritise teachers. Strong state nomination options.'},
+  nurse:{tier:1,label:'Tier 1 — Healthcare (Highest Priority)',c189:75,c190:65,c491:65,note:'Priority occupation. Invited at lower cutoffs under the 4-tier system.'},
+  gp:{tier:1,label:'Tier 1 — Healthcare',c189:75,c190:65,c491:65,note:'Priority occupation. Direct grant possible in some states.'},
+  specialist:{tier:1,label:'Tier 1 — Healthcare',c189:80,c190:65,c491:65,note:''},
+  allied:{tier:1,label:'Tier 1 — Healthcare',c189:75,c190:65,c491:65,note:''},
+  dentist:{tier:1,label:'Tier 1 — Healthcare',c189:80,c190:65,c491:65,note:''},
+  teacher:{tier:2,label:'Tier 2 — Education',c189:85,c190:65,c491:65,note:'ACT and TAS prioritise teachers. Strong state nomination options.'},
   earlychildhood:{tier:2,label:'Tier 2 — Education',c189:85,c190:65,c491:65,note:''},
   psychologist:{tier:2,label:'Tier 2 — Education / Health',c189:80,c190:65,c491:65,note:''},
   socialworker:{tier:2,label:'Tier 2 — Community Services',c189:80,c190:65,c491:65,note:'ACT and WA prioritise social workers.'},
-  civil:       {tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:'QLD and WA actively seeking civil engineers.'},
-  mechanical:  {tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:''},
-  chemical:    {tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:''},
-  pm:          {tier:3,label:'Tier 3 — Engineering / Business',c189:85,c190:70,c491:65,note:'Verify ANZSCO code — project manager roles vary.'},
-  architect:   {tier:3,label:'Tier 3 — Architecture',c189:85,c190:70,c491:65,note:''},
-  electrician: {tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:'Invited at 65 pts in Nov 2025 round. TRA assessment required.'},
-  plumber:     {tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:'Less competitive than other trades.'},
-  carpenter:   {tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:''},
-  software:    {tier:4,label:'Tier 4 — Technology (Fewest Invitations)',c189:90,c190:85,c491:70,note:'Large EOI pool. ACT and VIC active for 190. Regional (491) significantly easier.'},
-  ict:         {tier:4,label:'Tier 4 — ICT',c189:95,c190:85,c491:70,note:'Very large EOI pool. 190 and 491 strongly recommended over 189.'},
-  data:        {tier:4,label:'Tier 4 — Technology',c189:90,c190:85,c491:70,note:''},
-  cyber:       {tier:4,label:'Tier 4 — Technology',c189:90,c190:85,c491:70,note:''},
-  accountant:  {tier:4,label:'Tier 4 — Accounting (Fewest Invitations)',c189:95,c190:65,c491:65,note:'15,000+ accountants in EOI pool. 189 is extremely competitive. SA and QLD 190 most accessible.'},
-  auditor:     {tier:4,label:'Tier 4 — Accounting',c189:95,c190:65,c491:65,note:''},
-  finance:     {tier:4,label:'Tier 4 — Finance',c189:90,c190:65,c491:65,note:''},
-  chef:        {tier:null,label:'STSOL only — no 189 pathway',c189:null,c190:65,c491:65,note:'Chef/Cook is on STSOL not MLTSSL. No 189 independent pathway. 190 or 491 only, or 482 employer sponsorship.'},
-  other:       {tier:3,label:'Tier 3 — General (estimate)',c189:85,c190:70,c491:65,note:'Select your specific occupation for accurate cutoffs.'},
+  civil:{tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:'QLD and WA actively seeking civil engineers.'},
+  mechanical:{tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:''},
+  chemical:{tier:3,label:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:''},
+  pm:{tier:3,label:'Tier 3 — Engineering / Business',c189:85,c190:70,c491:65,note:'Verify ANZSCO code — project manager roles vary.'},
+  architect:{tier:3,label:'Tier 3 — Architecture',c189:85,c190:70,c491:65,note:''},
+  electrician:{tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:'Invited at 65 pts in Nov 2025 round. TRA assessment required.'},
+  plumber:{tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:''},
+  carpenter:{tier:3,label:'Tier 3 — Trades',c189:65,c190:65,c491:65,note:''},
+  software:{tier:4,label:'Tier 4 — Technology (Fewest Invitations)',c189:90,c190:85,c491:70,note:'Large EOI pool. ACT and VIC active for 190. Regional (491) significantly easier.'},
+  ict:{tier:4,label:'Tier 4 — ICT',c189:95,c190:85,c491:70,note:'Very large EOI pool. 190 and 491 strongly recommended over 189.'},
+  data:{tier:4,label:'Tier 4 — Technology',c189:90,c190:85,c491:70,note:''},
+  cyber:{tier:4,label:'Tier 4 — Technology',c189:90,c190:85,c491:70,note:''},
+  accountant:{tier:4,label:'Tier 4 — Accounting (Fewest Invitations)',c189:95,c190:65,c491:65,note:'15,000+ accountants in EOI pool. SA and QLD 190 most accessible.'},
+  auditor:{tier:4,label:'Tier 4 — Accounting',c189:95,c190:65,c491:65,note:''},
+  finance:{tier:4,label:'Tier 4 — Finance',c189:90,c190:65,c491:65,note:''},
+  chef:{tier:null,label:'STSOL only — no 189 pathway',c189:null,c190:65,c491:65,note:'Chef/Cook is on STSOL not MLTSSL. No 189 independent pathway.'},
+  other:{tier:3,label:'Tier 3 — General (estimate)',c189:85,c190:70,c491:65,note:'Select your specific occupation for accurate cutoffs.'},
 };
-
-// ── SELECTION ─────────────────────────────────────────────
-function sel(el, key) {
-  const val = parseInt(el.dataset.v);
-  // deselect siblings
-  el.parentElement.querySelectorAll('.pill').forEach(p => p.classList.remove('sel'));
-  el.classList.add('sel');
-  S[key] = val;
-  update();
-}
-
-function toggleBonus(key) {
-  S.bn[key] = S.bn[key] ? 0 : 5;
-  const row = document.getElementById('bn-' + key);
-  const check = document.getElementById('bc-' + key);
-  if (S.bn[key]) {
-    row.classList.add('sel');
-    check.textContent = '✓';
-  } else {
-    row.classList.remove('sel');
-    check.textContent = '';
-  }
-  // regstudy + ausstudy exclusion note
-  if (key === 'regstudy' && S.bn.regstudy && S.bn.ausstudy) {
-    S.bn.ausstudy = 0;
-    document.getElementById('bn-ausstudy').classList.remove('sel');
-    document.getElementById('bc-ausstudy').textContent = '';
-  }
-  if (key === 'ausstudy' && S.bn.ausstudy && S.bn.regstudy) {
-    S.bn.regstudy = 0;
-    document.getElementById('bn-regstudy').classList.remove('sel');
-    document.getElementById('bc-regstudy').textContent = '';
-  }
-  update();
-}
-
-function checkCap() {
-  const raw = (S.ow || 0) + (S.aw || 0);
-  document.getElementById('cap-warn').style.display = raw > 20 ? 'block' : 'none';
-  update();
-}
-
-// ── SCORE CALCULATION ─────────────────────────────────────
-function calc() {
-  const age = S.age || 0;
-  const eng = S.eng !== null ? S.eng : 0;
-  const edu = S.edu !== null ? S.edu : 0;
-  const owRaw = S.ow || 0;
-  const awRaw = S.aw || 0;
-  const workRaw = owRaw + awRaw;
-  const work = Math.min(workRaw, 20);
-  const owCapped = workRaw > 20 ? Math.max(0, 20 - awRaw) : owRaw;
-  const awCapped = workRaw > 20 ? Math.min(awRaw, 20) : awRaw;
-  const pt = S.pt !== null ? S.pt : 0;
-  const bn = Object.values(S.bn).reduce((a,b) => a+b, 0);
-  const nom = S.nom || 0;
-  const total = age + eng + edu + work + pt + bn + nom;
-  return {age, eng, edu, ow:owCapped, aw:awCapped, workCapped:workRaw>20, pt, bn, nom, total};
-}
-
-// ── UPDATE UI ─────────────────────────────────────────────
-function update() {
-  const r = calc();
-
-  // Total score
-  document.getElementById('total-score').textContent = r.total;
-  document.getElementById('bk-total').textContent = r.total + ' pts';
-
-  // Gauge
-  const pct = Math.min(100, Math.round((r.total / 65) * 100));
-  document.getElementById('gauge-fill').style.width = pct + '%';
-  document.getElementById('gauge-pct').textContent = pct + '%';
-
-  // Section pts
-  const upd = (id, v, capped) => {
-    const el = document.getElementById(id);
-    el.textContent = v > 0 ? '+' + v + ' pts' : (v === 0 && S[id.replace('sp-','').replace('sp-','')] !== null ? '0 pts' : '0 pts');
-    el.className = 'sec-pts' + (v === 0 ? ' zero' : '') + (capped ? ' cap' : '');
-  };
-  document.getElementById('sp-age').textContent = r.age ? '+' + r.age + ' pts' : '0 pts';
-  document.getElementById('sp-age').className = 'sec-pts' + (r.age ? '' : ' zero');
-  document.getElementById('sp-eng').textContent = r.eng ? '+' + r.eng + ' pts' : '0 pts';
-  document.getElementById('sp-eng').className = 'sec-pts' + (r.eng ? '' : ' zero');
-  document.getElementById('sp-edu').textContent = r.edu ? '+' + r.edu + ' pts' : '0 pts';
-  document.getElementById('sp-edu').className = 'sec-pts' + (r.edu ? '' : ' zero');
-  document.getElementById('sp-ow').textContent = r.ow ? '+' + r.ow + ' pts' : '0 pts';
-  document.getElementById('sp-ow').className = 'sec-pts' + (r.workCapped ? ' cap' : r.ow ? '' : ' zero');
-  document.getElementById('sp-aw').textContent = r.aw ? '+' + r.aw + ' pts' : '0 pts';
-  document.getElementById('sp-aw').className = 'sec-pts' + (r.aw ? '' : ' zero');
-  document.getElementById('sp-pt').textContent = r.pt ? '+' + r.pt + ' pts' : '0 pts';
-  document.getElementById('sp-pt').className = 'sec-pts' + (r.pt ? '' : ' zero');
-  document.getElementById('sp-bn').textContent = r.bn ? '+' + r.bn + ' pts' : '0 pts';
-  document.getElementById('sp-bn').className = 'sec-pts' + (r.bn ? '' : ' zero');
-  document.getElementById('sp-nom').textContent = r.nom ? '+' + r.nom + ' pts' : '+0 pts';
-  document.getElementById('sp-nom').className = 'sec-pts' + (r.nom ? '' : ' zero');
-
-  // Breakdown
-  const bkSet = (id, v) => {
-    const el = document.getElementById(id);
-    el.textContent = v !== null && v !== undefined ? (v > 0 ? '+' + v : v) + ' pts' : '—';
-    el.className = 'bk-pts' + (v === 0 ? ' zero' : '') + (id === 'bk-ow' && r.workCapped ? ' cap' : '');
-  };
-  bkSet('bk-age', S.age);
-  bkSet('bk-eng', S.eng);
-  bkSet('bk-edu', S.edu);
-  bkSet('bk-ow', r.ow);
-  bkSet('bk-aw', r.aw);
-  bkSet('bk-pt', S.pt);
-  bkSet('bk-bn', r.bn || null);
-  bkSet('bk-nom', r.nom || null);
-
-  // Cutoff comparison
-  updateCutoffs();
-
-  // Action suggestions (show after 4+ sections answered)
-  const answered = [S.age, S.eng, S.edu, S.ow !== undefined ? S.ow : null, S.pt].filter(v => v !== null).length;
-  if (answered >= 4) showActions(r);
-}
-
-// ── CUTOFFS ───────────────────────────────────────────────
-function updateCutoffs() {
-  const occ = document.getElementById('occ').value;
-  const score = calc().total;
-  const wrap = document.getElementById('cutoff-rows');
-  const tierDisplay = document.getElementById('occ-tier-display');
-
-  if (!occ || !OCC_DATA[occ]) {
-    wrap.innerHTML = '<div style="font-size:0.78rem;color:var(--muted);padding:0.5rem 0">Select your occupation to see real cutoffs</div>';
-    tierDisplay.style.display = 'none';
-    return;
-  }
-
-  const d = OCC_DATA[occ];
-  tierDisplay.style.display = 'block';
-
-  const tierColors = {1:'var(--green)',2:'var(--teal)',3:'var(--blue)',4:'var(--amber)',null:'var(--red)'};
-  const tc = tierColors[d.tier] || 'var(--muted)';
-  document.getElementById('occ-tier-badge').innerHTML = `<span style="font-weight:700;color:${tc}">${d.label}</span>`;
-  document.getElementById('occ-189-note').textContent = d.note;
-
-  const rows = [];
-  const visas = [
-    {label:'189', cutoff: d.c189, color:'var(--teal)'},
-    {label:'190', cutoff: d.c190, color:'var(--blue)'},
-    {label:'491', cutoff: d.c491, color:'var(--purple)'},
-  ];
-
-  // Calculate base score without nomination
-  const baseScore = score - (S.nom || 0);
-
-  visas.forEach(v => {
-    if (!v.cutoff) {
-      rows.push(`<div class="cutoff-row">
-        <span class="cr-visa" style="color:var(--muted)">${v.label}</span>
-        <div class="cr-bar-wrap"><div class="cr-bar" style="background:rgba(239,68,68,0.3);width:100%"></div></div>
-        <span class="cr-pts" style="color:var(--red)">No pathway</span>
-        <span class="cr-status crs-below">N/A</span>
-      </div>`);
-      return;
-    }
-
-    const scoreForVisa = v.label === '190' ? baseScore + 5 : v.label === '491' ? baseScore + 15 : baseScore;
-    const barPct = Math.min(100, Math.round((v.cutoff / 100) * 100));
-    const scorePct = Math.min(100, Math.round((scoreForVisa / 100) * 100));
-    const diff = scoreForVisa - v.cutoff;
-    let status, statusClass;
-    if (diff >= 10) { status = '+' + diff + ' above'; statusClass = 'crs-above'; }
-    else if (diff >= 0) { status = '+' + diff + ' above'; statusClass = 'crs-above'; }
-    else if (diff >= -10) { status = diff + ' pts'; statusClass = 'crs-close'; }
-    else { status = diff + ' pts'; statusClass = 'crs-below'; }
-
-    rows.push(`<div class="cutoff-row">
-      <span class="cr-visa" style="color:${v.color}">${v.label}</span>
-      <div class="cr-bar-wrap">
-        <div class="cr-bar" style="background:${v.color};opacity:0.25;width:${barPct}%"></div>
-        <div class="cr-marker" style="left:${scorePct}%"></div>
-      </div>
-      <span class="cr-pts" style="color:${v.color}">${v.cutoff} pts</span>
-      <span class="cr-status ${statusClass}">${status}</span>
-    </div>`);
-  });
-
-  wrap.innerHTML = `<div style="font-size:0.65rem;color:var(--muted);margin-bottom:0.5rem">Cutoffs from Nov 2025 DHA invitation round · Bar = cutoff · Line = your score</div>` + rows.join('');
-}
-
-// ── ACTION SUGGESTIONS ────────────────────────────────────
-function showActions(r) {
-  const panel = document.getElementById('result-panel');
-  const list = document.getElementById('actions-list');
-  panel.classList.add('show');
-
-  const actions = [];
-
-  if ((S.eng || 0) < 20) {
-    actions.push({pts:'+10 pts', title:'Improve English to Superior (IELTS 8.0+)', desc:'Moving from Proficient to Superior English adds 10 pts — the biggest single boost available. Sits in an IELTS band that can be retaken multiple times.'});
-  }
-  if (!S.bn.naati) {
-    actions.push({pts:'+5 pts', title:'Get NAATI CCL certification', desc:'NAATI CCL costs ~$800 and takes 6–8 weeks to prepare. Available in Urdu, Hindi, Nepali, Tagalog, Mandarin and more. Best value +5 pts available.'});
-  }
-  if (!S.bn.ausstudy && !S.bn.regstudy) {
-    actions.push({pts:'+5 pts', title:'Australian study bonus', desc:'If you studied in Australia for 2+ academic years in an eligible qualification, you may already qualify. Verify your eligibility.'});
-  }
-  if ((S.nom || 0) === 0) {
-    actions.push({pts:'+5 to +15 pts', title:'Apply for state or regional nomination', desc:'190 nomination = +5 pts. 491 regional nomination = +15 pts. Regional is the single biggest points boost for most applicants under 80 points.'});
-  }
-  if (!S.bn.profyear && ['accountant','auditor','software','ict','civil','mechanical'].includes(document.getElementById('occ').value)) {
-    actions.push({pts:'+5 pts', title:'Professional Year programme', desc:'Available for Accountants, Engineers and ICT professionals. DHA-approved programme completed in Australia adds 5 pts.'});
-  }
-
-  list.innerHTML = actions.slice(0,4).map(a => `
-    <div class="action-item">
-      <span class="ai-pts">${a.pts}</span>
-      <div class="ai-body"><h4>${a.title}</h4><p>${a.desc}</p></div>
-    </div>`).join('');
-}
+function sel(el,key){const val=parseInt(el.dataset.v);el.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));el.classList.add('sel');S[key]=val;update();}
+function toggleBonus(key){S.bn[key]=S.bn[key]?0:5;const row=document.getElementById('bn-'+key);const check=document.getElementById('bc-'+key);if(S.bn[key]){row.classList.add('sel');check.textContent='✓';}else{row.classList.remove('sel');check.textContent='';}if(key==='regstudy'&&S.bn.regstudy&&S.bn.ausstudy){S.bn.ausstudy=0;document.getElementById('bn-ausstudy').classList.remove('sel');document.getElementById('bc-ausstudy').textContent='';}if(key==='ausstudy'&&S.bn.ausstudy&&S.bn.regstudy){S.bn.regstudy=0;document.getElementById('bn-regstudy').classList.remove('sel');document.getElementById('bc-regstudy').textContent='';}update();}
+function checkCap(){const raw=(S.ow||0)+(S.aw||0);document.getElementById('cap-warn').style.display=raw>20?'block':'none';update();}
+function calc(){const age=S.age||0;const eng=S.eng!==null?S.eng:0;const edu=S.edu!==null?S.edu:0;const owRaw=S.ow||0;const awRaw=S.aw||0;const workRaw=owRaw+awRaw;const work=Math.min(workRaw,20);const owCapped=workRaw>20?Math.max(0,20-awRaw):owRaw;const awCapped=workRaw>20?Math.min(awRaw,20):awRaw;const pt=S.pt!==null?S.pt:0;const bn=Object.values(S.bn).reduce((a,b)=>a+b,0);const nom=S.nom||0;const total=age+eng+edu+work+pt+bn+nom;return{age,eng,edu,ow:owCapped,aw:awCapped,workCapped:workRaw>20,pt,bn,nom,total};}
+function update(){const r=calc();document.getElementById('total-score').textContent=r.total;document.getElementById('bk-total').textContent=r.total+' pts';const pct=Math.min(100,Math.round((r.total/65)*100));document.getElementById('gauge-fill').style.width=pct+'%';document.getElementById('gauge-pct').textContent=pct+'%';document.getElementById('sp-age').textContent=r.age?'+'+r.age+' pts':'0 pts';document.getElementById('sp-age').className='sec-pts'+(r.age?'':' zero');document.getElementById('sp-eng').textContent=r.eng?'+'+r.eng+' pts':'0 pts';document.getElementById('sp-eng').className='sec-pts'+(r.eng?'':' zero');document.getElementById('sp-edu').textContent=r.edu?'+'+r.edu+' pts':'0 pts';document.getElementById('sp-edu').className='sec-pts'+(r.edu?'':' zero');document.getElementById('sp-ow').textContent=r.ow?'+'+r.ow+' pts':'0 pts';document.getElementById('sp-ow').className='sec-pts'+(r.workCapped?' cap':r.ow?'':' zero');document.getElementById('sp-aw').textContent=r.aw?'+'+r.aw+' pts':'0 pts';document.getElementById('sp-aw').className='sec-pts'+(r.aw?'':' zero');document.getElementById('sp-pt').textContent=r.pt?'+'+r.pt+' pts':'0 pts';document.getElementById('sp-pt').className='sec-pts'+(r.pt?'':' zero');document.getElementById('sp-bn').textContent=r.bn?'+'+r.bn+' pts':'0 pts';document.getElementById('sp-bn').className='sec-pts'+(r.bn?'':' zero');document.getElementById('sp-nom').textContent=r.nom?'+'+r.nom+' pts':'+0 pts';document.getElementById('sp-nom').className='sec-pts'+(r.nom?'':' zero');const bkSet=(id,v)=>{const el=document.getElementById(id);el.textContent=v!==null&&v!==undefined?(v>0?'+'+v:v)+' pts':'—';el.className='bk-pts'+(v===0?' zero':'')+(id==='bk-ow'&&r.workCapped?' cap':'');};bkSet('bk-age',S.age);bkSet('bk-eng',S.eng);bkSet('bk-edu',S.edu);bkSet('bk-ow',r.ow);bkSet('bk-aw',r.aw);bkSet('bk-pt',S.pt);bkSet('bk-bn',r.bn||null);bkSet('bk-nom',r.nom||null);updateCutoffs();const answered=[S.age,S.eng,S.edu,S.ow!==undefined?S.ow:null,S.pt].filter(v=>v!==null).length;if(answered>=4)showActions(r);}
+function updateCutoffs(){const occ=document.getElementById('occ').value;const score=calc().total;const wrap=document.getElementById('cutoff-rows');const tierDisplay=document.getElementById('occ-tier-display');if(!occ||!OCC_DATA[occ]){wrap.innerHTML='<div style="font-size:0.78rem;color:var(--muted);padding:0.5rem 0">Select your occupation to see real cutoffs</div>';tierDisplay.style.display='none';return;}const d=OCC_DATA[occ];tierDisplay.style.display='block';const tierColors={1:'var(--green)',2:'var(--teal)',3:'var(--blue)',4:'var(--amber)',null:'var(--red)'};const tc=tierColors[d.tier]||'var(--muted)';document.getElementById('occ-tier-badge').innerHTML=`<span style="font-weight:700;color:${tc}">${d.label}</span>`;document.getElementById('occ-189-note').textContent=d.note;const rows=[];const visas=[{label:'189',cutoff:d.c189,color:'var(--teal)'},{label:'190',cutoff:d.c190,color:'var(--blue)'},{label:'491',cutoff:d.c491,color:'var(--purple)'}];const baseScore=score-(S.nom||0);visas.forEach(v=>{if(!v.cutoff){rows.push(`<div class="cutoff-row"><span class="cr-visa" style="color:var(--muted)">${v.label}</span><div class="cr-bar-wrap"><div class="cr-bar" style="background:rgba(239,68,68,0.3);width:100%"></div></div><span class="cr-pts" style="color:var(--red)">No pathway</span><span class="cr-status crs-below">N/A</span></div>`);return;}const scoreForVisa=v.label==='190'?baseScore+5:v.label==='491'?baseScore+15:baseScore;const barPct=Math.min(100,Math.round((v.cutoff/100)*100));const scorePct=Math.min(100,Math.round((scoreForVisa/100)*100));const diff=scoreForVisa-v.cutoff;let status,statusClass;if(diff>=0){status='+'+diff+' above';statusClass='crs-above';}else if(diff>=-10){status=diff+' pts';statusClass='crs-close';}else{status=diff+' pts';statusClass='crs-below';}rows.push(`<div class="cutoff-row"><span class="cr-visa" style="color:${v.color}">${v.label}</span><div class="cr-bar-wrap"><div class="cr-bar" style="background:${v.color};opacity:0.25;width:${barPct}%"></div><div class="cr-marker" style="left:${scorePct}%"></div></div><span class="cr-pts" style="color:${v.color}">${v.cutoff} pts</span><span class="cr-status ${statusClass}">${status}</span></div>`);});wrap.innerHTML=`<div style="font-size:0.65rem;color:var(--muted);margin-bottom:0.5rem">Cutoffs from Nov 2025 DHA invitation round · Bar = cutoff · Line = your score</div>`+rows.join('');}
+function showActions(r){const panel=document.getElementById('result-panel');const list=document.getElementById('actions-list');panel.classList.add('show');const actions=[];if((S.eng||0)<20){actions.push({pts:'+10 pts',title:'Improve English to Superior (IELTS 8.0+)',desc:'Moving from Proficient to Superior English adds 10 pts — the biggest single boost available.'});}if(!S.bn.naati){actions.push({pts:'+5 pts',title:'Get NAATI CCL certification',desc:'NAATI CCL costs ~$800 and takes 6–8 weeks to prepare. Available in Urdu, Hindi, Nepali, Tagalog, Mandarin and more.'});}if(!S.bn.ausstudy&&!S.bn.regstudy){actions.push({pts:'+5 pts',title:'Australian study bonus',desc:'If you studied in Australia for 2+ academic years in an eligible qualification, you may already qualify.'});}if((S.nom||0)===0){actions.push({pts:'+5 to +15 pts',title:'Apply for state or regional nomination',desc:'190 nomination = +5 pts. 491 regional nomination = +15 pts. Regional is the single biggest points boost for most applicants under 80 points.'});}list.innerHTML=actions.slice(0,4).map(a=>`<div class="action-item"><span class="ai-pts">${a.pts}</span><div class="ai-body"><h4>${a.title}</h4><p>${a.desc}</p></div></div>`).join('');}
 </script>
 <script src="/ticker.js"></script>
 </body>
