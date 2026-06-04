@@ -1,0 +1,25 @@
+# VisaIQ — Australian Skilled Migration Intelligence
+
+VisaIQ (visaiq.com.au) provides data-driven tools and reports for skilled migrants applying for Australian permanent residency through the SkillSelect points-based system.
+
+## Core Tools (Free)
+
+- **EOI Queue Position** (visaiq.com.au/eoi-queue): Real DHA SkillSelect data showing exact queue position by occupation and points band. April 2026 data. 52 occupations tracked.
+- **Points Calculator** (visaiq.com.au/points-calculator): Calculate your exact points score under the Australian skilled migration points test.
+- **Invitation Rounds** (visaiq.com.au/rounds): Historical and current invitation round data for 189/190/491 visas.
+- **State Comparator** (visaiq.com.au/state-comparator): Compare state nomination requirements across all 8 Australian states and territories.
+
+## Paid Product
+
+- **PR Intelligence Report** (A$69, visaiq.com.au/tool): Personalised report covering EOI percentile within points band, all 8 states compared at user's occupation and score, points simulator, 12-month week-by-week action plan, all 5 visa pathways ranked by probability, invitation round projections. Not migration advice.
+
+## Key Data Points (April 2026)
+
+- Registered Nurse (General): 189 cutoff 75 pts, pool size ~9,350, SA 190 threshold 65 pts
+- Electrician: 189 cutoff 65 pts (lowest in Australia), pool size ~130, SA 190 active
+- Software Engineer: No 189 invitations in 2025-26, pool 21,000+, 491 regional recommended
+- Accountant (General): No 189 invitations in 2025-26, pool 10,000+, SA 190 limited
+- Early Childhood Teacher: 189 cutoff 85 pts, pool 10,000+, all states active
+
+## Methodology
+Data sourced from DHA (Department of Home Affairs) SkillSelect quarterly releases. Pool sizes represent EOIs lodged and active at time of publication. Not migration advice. See visaiq.com.au/methodology.
