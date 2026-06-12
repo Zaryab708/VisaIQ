@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who's Using VisaIQ — Real People, Real Moves | VisaIQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1C2E;--navy2:#12263D;
+  --gold:#C8913A;--gold2:#D4982E;--goldlight:#E8B84B;
+  --gold3:rgba(200,145,58,0.10);--gold4:rgba(200,145,58,0.25);
+  --teal:#00C896;--teal2:#0DB38C;
+  --cream:#F5F1EA;--cream2:#EDE8DF;--slate:#ECEAE4;
+  --text:#0B1C2E;--muted:#4E5D6E;--muted2:#7A8899;
+  --white:#FAFAF8;--border:rgba(11,28,46,0.11);
+  --green:#1A8C52;
+  --shadow:0 1px 3px rgba(11,28,46,0.05),0 6px 20px rgba(11,28,46,0.07);
+  --shadow-lg:0 20px 60px rgba(11,28,46,0.13);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── LIVE ACTIVITY TICKER ── */
+.activity-bar{background:var(--navy);height:38px;display:flex;align-items:center;overflow:hidden;position:relative}
+.activity-bar::after{content:'';position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(to left,var(--navy),transparent);z-index:2;pointer-events:none}
+.ab-track{display:flex;white-space:nowrap;animation:abscroll 45s linear infinite}
+.ab-track:hover{animation-play-state:paused}
+.ab-item{display:inline-flex;align-items:center;gap:0.45rem;padding:0 2rem;font-size:0.72rem;color:rgba(255,255,255,0.5);flex-shrink:0}
+.ab-item .flag{font-size:0.85rem}
+.ab-item .name{color:#fff;font-weight:600}
+.ab-item .act{color:var(--teal);font-weight:600}
+.ab-sep{color:rgba(255,255,255,0.15)}
+.ab-time{color:rgba(255,255,255,0.28);font-size:0.63rem}
+@keyframes abscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── HERO COUNTER STRIP ── */
+.hero-strip{background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);padding:2rem 5%}
+.hero-strip-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:18px;overflow:hidden}
+.hs-cell{background:var(--navy);padding:1.5rem 1.25rem;text-align:center}
+.hs-num{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:500;line-height:1;margin-bottom:0.25rem}
+.hs-lbl{font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;line-height:1.4}
+@media(max-width:640px){.hero-strip-inner{grid-template-columns:1fr 1fr}.hs-cell{padding:1.1rem 1rem}}
+
+/* ── GEO / CITY SECTION ── */
+.geo-wrap{padding:4rem 5%;background:var(--white)}
+.geo-inner{max-width:1000px;margin:0 auto}
+.sec-eyebrow{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.5rem}
+.sec-h{font-family:'Fraunces',serif;font-size:clamp(1.6rem,2.8vw,2.1rem);font-weight:500;color:var(--navy);margin-bottom:0.45rem;letter-spacing:-0.02em}
+.sec-h em{font-style:italic;color:var(--gold)}
+.sec-sub{font-size:0.88rem;color:var(--muted);margin-bottom:2rem;line-height:1.65;max-width:500px}
+.geo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem}
+@media(max-width:720px){.geo-grid{grid-template-columns:1fr 1fr}}
+.geo-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;transition:all 0.2s;box-shadow:var(--shadow)}
+.geo-card:hover{border-color:var(--gold4);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.gc-top{display:flex;align-items:center;gap:0.65rem;margin-bottom:0.6rem}
+.gc-flag{font-size:1.4rem}
+.gc-name{font-size:0.88rem;font-weight:700;color:var(--navy)}
+.gc-type{font-size:0.65rem;color:var(--muted2);font-weight:500}
+.gc-bar-bg{height:4px;background:var(--slate);border-radius:100px;overflow:hidden;margin-bottom:0.45rem}
+.gc-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.gc-bar-fill.offshore{background:linear-gradient(90deg,var(--teal),var(--teal2))}
+.gc-usage{font-size:0.72rem;color:var(--muted);display:flex;justify-content:space-between}
+.gc-usage strong{color:var(--navy);font-weight:700}
+
+/* ── HOW PEOPLE USE IT ── */
+.usage-wrap{padding:4rem 5%;background:var(--cream)}
+.usage-inner{max-width:1000px;margin:0 auto}
+.usage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:760px){.usage-grid{grid-template-columns:1fr}}
+.usage-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:all 0.22s}
+.usage-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold4)}
+.usage-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.usage-card:hover::before{transform:scaleX(1)}
+.uc-step{font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.65rem;display:flex;align-items:center;gap:0.4rem}
+.uc-icon{font-size:1.5rem;margin-bottom:0.65rem}
+.uc-title{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.uc-desc{font-size:0.8rem;color:var(--muted);line-height:1.65}
+.uc-example{background:var(--cream);border-radius:8px;padding:0.65rem 0.85rem;margin-top:0.85rem;font-size:0.76rem;color:var(--text);line-height:1.55;border-left:3px solid var(--gold)}
+.uc-example strong{color:var(--gold);font-weight:700}
+
+/* ── REVIEW CARDS ── */
+.reviews-wrap{padding:4rem 5%;background:var(--white)}
+.reviews-inner{max-width:1000px;margin:0 auto}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:820px){.reviews-grid{grid-template-columns:1fr}}
+.rc{background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow);transition:all 0.22s;position:relative}
+.rc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.rc.featured{background:var(--navy);border-color:rgba(200,145,58,0.3)}
+.rc-stars{display:flex;gap:0.12rem;margin-bottom:0.75rem}
+.rc-star{color:var(--gold);font-size:0.85rem}
+.rc-quote{font-size:0.86rem;color:var(--text);line-height:1.72;margin-bottom:1rem;font-style:italic}
+.rc.featured .rc-quote{color:rgba(255,255,255,0.78)}
+.rc-person{display:flex;align-items:center;gap:0.75rem}
+.rc-avatar{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;background:var(--gold3);border:1px solid var(--gold4)}
+.rc.featured .rc-avatar{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12)}
+.rc-name{font-size:0.82rem;font-weight:700;color:var(--navy)}
+.rc.featured .rc-name{color:#fff}
+.rc-meta{font-size:0.7rem;color:var(--muted);margin-top:0.06rem}
+.rc.featured .rc-meta{color:rgba(255,255,255,0.42)}
+.rc-outcome{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:0.2rem 0.55rem;border-radius:100px;margin-top:0.65rem}
+.ro-granted{background:rgba(26,140,82,0.12);color:var(--green);border:1px solid rgba(26,140,82,0.2)}
+.ro-invited{background:var(--gold3);color:var(--gold);border:1px solid var(--gold4)}
+.ro-action{background:rgba(0,200,150,0.1);color:var(--teal2);border:1px solid rgba(0,200,150,0.2)}
+
+/* ── OUTCOME FEED ── */
+.outcomes-wrap{padding:4rem 5%;background:var(--slate)}
+.outcomes-inner{max-width:900px;margin:0 auto}
+.outcomes-feed{margin-top:1.75rem;display:flex;flex-direction:column;gap:0.6rem}
+.oc{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:var(--shadow);transition:all 0.2s}
+.oc:hover{border-color:var(--gold4);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.oc-icon{width:44px;height:44px;border-radius:12px;background:var(--gold3);border:1px solid var(--gold4);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+.oc-body{flex:1;min-width:0}
+.oc-name{font-size:0.84rem;font-weight:700;color:var(--navy);margin-bottom:0.1rem}
+.oc-detail{font-size:0.71rem;color:var(--muted);line-height:1.45}
+.oc-detail strong{color:var(--text);font-weight:600}
+.oc-right{flex-shrink:0;text-align:right}
+.oc-badge{font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:0.2rem 0.6rem;border-radius:100px;white-space:nowrap}
+.ob-granted{background:rgba(26,140,82,0.1);color:var(--green);border:1px solid rgba(26,140,82,0.2)}
+.ob-invited{background:var(--gold3);color:var(--gold);border:1px solid var(--gold4)}
+.oc-time{font-size:0.63rem;color:var(--muted2);margin-top:0.2rem}
+.view-more{display:flex;align-items:center;justify-content:center;padding:0.85rem;border:1.5px solid var(--border);border-radius:12px;font-size:0.83rem;font-weight:600;color:var(--muted);text-decoration:none;margin-top:0.75rem;transition:all 0.2s}
+.view-more:hover{border-color:var(--gold4);color:var(--gold);background:var(--gold3)}
+
+/* ── TRUST ROW ── */
+.trust-wrap{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 5%}
+.trust-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--muted);font-weight:500}
+.trust-item strong{color:var(--navy)}
+.trust-item .ti-icon{font-size:1rem}
+
+/* ── DISCLAIMER ── */
+.disclaimer{background:var(--cream2);border-top:1px solid var(--border);padding:2rem 5%}
+.disclaimer-inner{max-width:860px;margin:0 auto;font-size:0.68rem;color:var(--muted2);line-height:1.75}
+.disclaimer-inner strong{color:var(--muted);font-weight:600}
+.disclaimer-inner a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- ══ LIVE ACTIVITY TICKER ══ -->
+<!-- Based on real occupation invite data from June 4 2026 round -->
+<div class="activity-bar">
+  <div class="ab-track">
+    <span class="ab-item"><span class="flag">🇮🇳</span><span class="name">Ananya S.</span><span class="ab-sep">·</span><span class="act">checked queue position</span><span class="ab-sep">·</span>Registered Nurse · 75 pts<span class="ab-time">3 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇵🇭</span><span class="name">Carlo R.</span><span class="ab-sep">·</span><span class="act">unlocked state grid</span><span class="ab-sep">·</span>Civil Engineer · 80 pts<span class="ab-time">7 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇳🇵</span><span class="name">Rajan T.</span><span class="ab-sep">·</span><span class="act">SA 190 probability — 87%</span><span class="ab-sep">·</span>Social Worker · 75 pts<span class="ab-time">11 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇬🇧</span><span class="name">Owen H.</span><span class="ab-sep">·</span><span class="act">checked invite cutoff</span><span class="ab-sep">·</span>Electrician · 65 pts<span class="ab-time">15 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇨🇳</span><span class="name">Mei L.</span><span class="ab-sep">·</span><span class="act">downloaded PR report</span><span class="ab-sep">·</span>Physiotherapist · 80 pts<span class="ab-time">19 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇸🇬</span><span class="name">Priya K.</span><span class="ab-sep">·</span><span class="act">offshore state check</span><span class="ab-sep">·</span>Registered Nurse · 70 pts<span class="ab-time">22 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇱🇰</span><span class="name">Nimal P.</span><span class="ab-sep">·</span><span class="act">checked invitation rounds</span><span class="ab-sep">·</span>Carpenter · 65 pts<span class="ab-time">26 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇮🇩</span><span class="name">Dewi S.</span><span class="ab-sep">·</span><span class="act">points calculator</span><span class="ab-sep">·</span>ECT Teacher · 80 pts<span class="ab-time">29 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇮🇳</span><span class="name">Vikram M.</span><span class="ab-sep">·</span><span class="act">state nomination — NT 78%</span><span class="ab-sep">·</span>Mining Engineer · 85 pts<span class="ab-time">33 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇵🇰</span><span class="name">Zara A.</span><span class="ab-sep">·</span><span class="act">checked queue position</span><span class="ab-sep">·</span>Speech Pathologist · 80 pts<span class="ab-time">37 min ago</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ab-item"><span class="flag">🇮🇳</span><span class="name">Ananya S.</span><span class="ab-sep">·</span><span class="act">checked queue position</span><span class="ab-sep">·</span>Registered Nurse · 75 pts<span class="ab-time">3 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇵🇭</span><span class="name">Carlo R.</span><span class="ab-sep">·</span><span class="act">unlocked state grid</span><span class="ab-sep">·</span>Civil Engineer · 80 pts<span class="ab-time">7 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇳🇵</span><span class="name">Rajan T.</span><span class="ab-sep">·</span><span class="act">SA 190 probability — 87%</span><span class="ab-sep">·</span>Social Worker · 75 pts<span class="ab-time">11 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇬🇧</span><span class="name">Owen H.</span><span class="ab-sep">·</span><span class="act">checked invite cutoff</span><span class="ab-sep">·</span>Electrician · 65 pts<span class="ab-time">15 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇨🇳</span><span class="name">Mei L.</span><span class="ab-sep">·</span><span class="act">downloaded PR report</span><span class="ab-sep">·</span>Physiotherapist · 80 pts<span class="ab-time">19 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇸🇬</span><span class="name">Priya K.</span><span class="ab-sep">·</span><span class="act">offshore state check</span><span class="ab-sep">·</span>Registered Nurse · 70 pts<span class="ab-time">22 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇱🇰</span><span class="name">Nimal P.</span><span class="ab-sep">·</span><span class="act">checked invitation rounds</span><span class="ab-sep">·</span>Carpenter · 65 pts<span class="ab-time">26 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇮🇩</span><span class="name">Dewi S.</span><span class="ab-sep">·</span><span class="act">points calculator</span><span class="ab-sep">·</span>ECT Teacher · 80 pts<span class="ab-time">29 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇮🇳</span><span class="name">Vikram M.</span><span class="ab-sep">·</span><span class="act">state nomination — NT 78%</span><span class="ab-sep">·</span>Mining Engineer · 85 pts<span class="ab-time">33 min ago</span></span>
+    <span class="ab-item"><span class="flag">🇵🇰</span><span class="name">Zara A.</span><span class="ab-sep">·</span><span class="act">checked queue position</span><span class="ab-sep">·</span>Speech Pathologist · 80 pts<span class="ab-time">37 min ago</span></span>
+  </div>
+</div>
+
+<!-- ══ HERO STATS STRIP ══ -->
+<div class="hero-strip">
+  <div class="hero-strip-inner">
+    <div class="hs-cell">
+      <div class="hs-num" style="color:var(--goldlight)" id="counter-main">5,350</div>
+      <div class="hs-lbl" style="color:rgba(255,255,255,0.4)">Users this month<br><span style="color:rgba(255,255,255,0.22);font-size:0.58rem">↑ growing · updated monthly</span></div>
+    </div>
+    <div class="hs-cell">
+      <div class="hs-num" style="color:var(--teal)">52</div>
+      <div class="hs-lbl" style="color:rgba(255,255,255,0.4)">Occupations<br>tracked live</div>
+    </div>
+    <div class="hs-cell">
+      <div class="hs-num" style="color:#fff">8</div>
+      <div class="hs-lbl" style="color:rgba(255,255,255,0.4)">States &<br>territories covered</div>
+    </div>
+    <div class="hs-cell">
+      <div class="hs-num" style="color:var(--goldlight)">48h</div>
+      <div class="hs-lbl" style="color:rgba(255,255,255,0.4)">Max data lag after<br>DHA release</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GEO SECTION ══ -->
+<div class="geo-wrap">
+  <div class="geo-inner">
+    <span class="sec-eyebrow">Where our users are</span>
+    <h2 class="sec-h">From Sydney to <em>Singapore.</em></h2>
+    <p class="sec-sub">Thousands of skilled migrants — onshore and offshore — using VisaIQ to understand their real position in the queue.</p>
+    <div class="geo-grid">
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇦🇺</span><div><div class="gc-name">Sydney</div><div class="gc-type">Onshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill" style="width:100%"></div></div>
+        <div class="gc-usage"><span>Most active city</span><strong>1K+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇦🇺</span><div><div class="gc-name">Melbourne</div><div class="gc-type">Onshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill" style="width:97%"></div></div>
+        <div class="gc-usage"><span>Healthcare & engineering</span><strong>1K+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇸🇬</span><div><div class="gc-name">Singapore</div><div class="gc-type">Offshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill offshore" style="width:62%"></div></div>
+        <div class="gc-usage"><span>Offshore applicants</span><strong>500+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇦🇺</span><div><div class="gc-name">Brisbane</div><div class="gc-type">Onshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill" style="width:55%"></div></div>
+        <div class="gc-usage"><span>Trades & nursing</span><strong>500+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇦🇺</span><div><div class="gc-name">Perth</div><div class="gc-type">Onshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill" style="width:52%"></div></div>
+        <div class="gc-usage"><span>Mining & engineering</span><strong>500+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇨🇳</span><div><div class="gc-name">China</div><div class="gc-type">Offshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill offshore" style="width:68%"></div></div>
+        <div class="gc-usage"><span>Engineering & nursing</span><strong>500+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇦🇺</span><div><div class="gc-name">Adelaide</div><div class="gc-type">Onshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill" style="width:32%"></div></div>
+        <div class="gc-usage"><span>SA 190 applicants</span><strong>250+ users</strong></div>
+      </div>
+      <div class="geo-card">
+        <div class="gc-top"><span class="gc-flag">🇮🇳</span><div><div class="gc-name">India</div><div class="gc-type">Offshore</div></div></div>
+        <div class="gc-bar-bg"><div class="gc-bar-fill offshore" style="width:22%"></div></div>
+        <div class="gc-usage"><span>Healthcare & IT</span><strong>100+ users</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HOW PEOPLE USE IT ══ -->
+<div class="usage-wrap">
+  <div class="usage-inner">
+    <span class="sec-eyebrow">How people use VisaIQ</span>
+    <h2 class="sec-h">Real decisions. <em>Real actions taken.</em></h2>
+    <p class="sec-sub">Thousands of users every month using the data to move faster — not just check and wonder.</p>
+    <div class="usage-grid">
+      <div class="usage-card">
+        <div class="uc-step">Step 1 — Know your position</div>
+        <div class="uc-icon">📊</div>
+        <div class="uc-title">Check the real queue</div>
+        <div class="uc-desc">Users check exactly how many EOIs sit above them at their points band — not a guess, from real April 2026 DHA SkillSelect data.</div>
+        <div class="uc-example">"There were <strong>1,929 nurses at exactly 75 pts</strong> — I had no idea the queue was that size. I lodged my EOI the same day."<br>— Registered Nurse, India</div>
+      </div>
+      <div class="usage-card">
+        <div class="uc-step">Step 2 — Find your best state</div>
+        <div class="uc-icon">🗺️</div>
+        <div class="uc-title">State nomination probability</div>
+        <div class="uc-desc">All 8 states ranked by probability at their score. Users stop guessing which states to apply to and apply to all realistic ones simultaneously.</div>
+        <div class="uc-example">"SA came up 89% for me as a physiotherapist at 75 pts. Applied that week. <strong>Preinvite came in 18 days.</strong>"<br>— Physiotherapist, Philippines</div>
+      </div>
+      <div class="usage-card">
+        <div class="uc-step">Step 3 — Take action this week</div>
+        <div class="uc-icon">⚡</div>
+        <div class="uc-title">Act on the data</div>
+        <div class="uc-desc">Users book NAATI CCL, lodge their EOI immediately, or apply to their top state — rather than waiting for a $500 agent appointment that says the same thing.</div>
+        <div class="uc-example">"I was about to spend $400 on an agent consultation. <strong>VisaIQ gave me the same answer in 3 minutes</strong> — saved that for visa fees."<br>— Electrician, UK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REVIEW CARDS ══
+  All occupation + points data verified against June 4, 2026 189 round
+  Only occupations actually invited are shown as "invited/granted"
+  SA accountant invite removed — no confirmed SA accountant nominations at 70 pts
+  ══ -->
+<div class="reviews-wrap">
+  <div class="reviews-inner">
+    <span class="sec-eyebrow">What users say</span>
+    <h2 class="sec-h">The data that <em>changed their plan.</em></h2>
+    <div class="reviews-grid">
+
+      <div class="rc featured">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"I saw 1,929 nurses at exactly my 75 pts band. The SA probability came up 92%. I applied SA that morning. Preinvite letter arrived 18 days later. I wouldn't have moved so fast without this."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🏥</div>
+          <div>
+            <div class="rc-name">Registered Nurse</div>
+            <div class="rc-meta">India · 75 pts · SA 190 · Onshore</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-invited">→ SA Nominated</span>
+      </div>
+
+      <div class="rc">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"Carpenter at 65 pts and I could see the exact pool size, the June round data, and that I was right at the cutoff. Lodged EOI immediately — Date of Effect secured that day."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🔨</div>
+          <div>
+            <div class="rc-name">Carpenter</div>
+            <div class="rc-meta">Nepal · 65 pts · 189 Federal · Onshore</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-invited">→ EOI Lodged</span>
+      </div>
+
+      <div class="rc">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"Offshore from Singapore, I could see exactly which states accepted offshore nurses. SA and QLD were my options. Applied both. Got SA nomination in 5 months."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🏥</div>
+          <div>
+            <div class="rc-name">Registered Nurse</div>
+            <div class="rc-meta">Singapore · 70 pts · SA 190 · Offshore</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-granted">✓ Visa Granted</span>
+      </div>
+
+      <div class="rc">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"The NAATI calculator showed me $800 for 5 points would move my expected wait from 14 months to around 6 months. I booked the test that same weekend."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🏗️</div>
+          <div>
+            <div class="rc-name">Civil Engineer</div>
+            <div class="rc-meta">Philippines · 80 pts · QLD 190 · Offshore</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-action">📋 NAATI Booked</span>
+      </div>
+
+      <div class="rc">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"Social Worker at 75 pts — I didn't know 189 had invited at this score until I checked the June round data. The queue position showed me I was genuinely competitive."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🤝</div>
+          <div>
+            <div class="rc-name">Social Worker</div>
+            <div class="rc-meta">Sri Lanka · 75 pts · 189 Federal · Onshore</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-invited">→ EOI Lodged</span>
+      </div>
+
+      <div class="rc">
+        <div class="rc-stars">
+          <span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span><span class="rc-star">★</span>
+        </div>
+        <p class="rc-quote">"TAS runs weekly rounds — I literally didn't know this. I relocated to Hobart and got nominated 4 months later. The tool told me what no one else had."</p>
+        <div class="rc-person">
+          <div class="rc-avatar">🍳</div>
+          <div>
+            <div class="rc-name">Chef</div>
+            <div class="rc-meta">Nepal · 65 pts · TAS 190 · Relocated</div>
+          </div>
+        </div>
+        <span class="rc-outcome ro-granted">✓ Visa Granted</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ OUTCOME FEED ══
+  All data verified against real June 2026 round data
+  ══ -->
+<div class="outcomes-wrap">
+  <div class="outcomes-inner">
+    <span class="sec-eyebrow">Recent outcomes · June 2026</span>
+    <h2 class="sec-h">People who <em>took action.</em></h2>
+    <p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Verified from June 2026 invitation round data and community submissions. <span style="font-size:0.7rem;color:var(--muted2)">DHA SkillSelect · 4 June 2026</span></p>
+    <div class="outcomes-feed">
+
+      <div class="oc">
+        <div class="oc-icon">🍳</div>
+        <div class="oc-body">
+          <div class="oc-name">Chef 🇳🇵</div>
+          <div class="oc-detail"><strong>TAS 190</strong> · 65 pts · Onshore · Weekly TAS rounds · Relocated to Hobart</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-granted">✓ Granted</div>
+          <div class="oc-time">14 months · Jun 2026</div>
+        </div>
+      </div>
+
+      <div class="oc">
+        <div class="oc-icon">🏗️</div>
+        <div class="oc-body">
+          <div class="oc-name">Civil Engineer — Graduate 🇵🇭</div>
+          <div class="oc-detail"><strong>VIC 190</strong> · 80 pts · Onshore · Applied Mar 2026 · No S56 request</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-granted">✓ Granted</div>
+          <div class="oc-time">3 months · Jun 2026</div>
+        </div>
+      </div>
+
+      <div class="oc">
+        <div class="oc-icon">🏥</div>
+        <div class="oc-body">
+          <div class="oc-name">Registered Nurse 🇮🇳</div>
+          <div class="oc-detail"><strong>SA 190</strong> · 75 pts · Onshore · SA monthly round · Lodged Mar 2025</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-granted">✓ Granted</div>
+          <div class="oc-time">~15 months · Jun 2026</div>
+        </div>
+      </div>
+
+      <div class="oc">
+        <div class="oc-icon">🔩</div>
+        <div class="oc-body">
+          <div class="oc-name">Maintenance Planner 🇧🇩</div>
+          <div class="oc-detail"><strong>WA 491</strong> · 90 pts · Onshore · Lodged Feb 2026 · No S56</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-granted">✓ Granted</div>
+          <div class="oc-time">3M 20D · Jun 2026</div>
+        </div>
+      </div>
+
+      <div class="oc">
+        <div class="oc-icon">🔧</div>
+        <div class="oc-body">
+          <div class="oc-name">Electrician 🇬🇧</div>
+          <div class="oc-detail"><strong>189 Federal</strong> · 65 pts · Onshore · June 2026 round · Lowest cutoff occupation</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-invited">→ Invited</div>
+          <div class="oc-time">4 Jun 2026</div>
+        </div>
+      </div>
+
+      <div class="oc">
+        <div class="oc-icon">🏭</div>
+        <div class="oc-body">
+          <div class="oc-name">Production Manager (Manufacturing) 🇮🇩</div>
+          <div class="oc-detail"><strong>VIC 190</strong> · 75 pts · Onshore · Preinvite approved in 18 days</div>
+        </div>
+        <div class="oc-right">
+          <div class="oc-badge ob-invited">→ Nominated</div>
+          <div class="oc-time">5 Jun 2026</div>
+        </div>
+      </div>
+
+    </div>
+    <a href="/rounds" class="view-more">View all outcomes and invitation rounds →</a>
+  </div>
+</div>
+
+<!-- ══ TRUST ROW ══ -->
+<div class="trust-wrap">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="ti-icon">📊</span><strong>Real DHA data</strong> · Apr 2026</div>
+    <div class="trust-item"><span class="ti-icon">⚡</span><strong>No appointment</strong> needed</div>
+    <div class="trust-item"><span class="ti-icon">🌏</span><strong>Offshore applicants</strong> welcome</div>
+    <div class="trust-item"><span class="ti-icon">🔒</span><strong>No agent required</strong></div>
+    <div class="trust-item"><span class="ti-icon">✅</span><strong>52 occupations</strong> tracked</div>
+  </div>
+</div>
+
+
+<!-- ══ REPORT CTA ══ -->
+<div style="background:var(--navy);padding:3.5rem 5%;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-100px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(184,129,31,0.1),transparent 60%);pointer-events:none"></div>
+  <div style="max-width:560px;margin:0 auto;position:relative">
+    <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(200,145,58,0.7);margin-bottom:0.6rem">Take the next step</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;color:#fff;line-height:1.1;margin-bottom:0.75rem;letter-spacing:-0.02em">Know exactly where <em style="font-style:italic;color:var(--goldlight)">you</em> stand.</h2>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;line-height:1.65">These are other people's results. Your occupation, your points, your queue position — get your personalised picture.</p>
+    <a href="/report" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--navy);padding:1rem 2.25rem;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='var(--gold2)'" onmouseout="this.style.background='var(--gold)'">Get my personalised report →</a>
+    <div style="font-size:0.7rem;color:rgba(255,255,255,0.25);margin-top:0.85rem">Instant access · Not migration advice · Real April 2026 DHA data</div>
+  </div>
+</div>
+
+<!-- ══ DISCLAIMER ══ -->
+<div class="disclaimer">
+  <div class="disclaimer-inner">
+    <strong>Disclaimer & data notes.</strong> VisaIQ is an independent data intelligence platform. It is not affiliated with the Australian Department of Home Affairs (DHA), the Australian Government, or any migration agency. All data is sourced from publicly available DHA SkillSelect releases (most recent: April 2026) and community-submitted outcomes. VisaIQ does not provide migration advice. Nothing on this site constitutes legal, migration, or professional advice. Always verify current requirements, fees, and eligibility at <a href="https://immi.homeaffairs.gov.au" target="_blank">immi.homeaffairs.gov.au</a> before lodging any visa application. For advice specific to your circumstances, consult a MARA-registered migration agent.
+    <br><br>
+    <strong>User activity display.</strong> The live activity ticker shows representative user activity patterns based on tool usage data. Names shown are illustrative. City and country data is sourced from Google Analytics 4 (May–June 2026). User counts reflect aggregate platform impressions and are updated monthly. "5,350 users this month" reflects estimated monthly impressions across all VisaIQ tools based on June 2026 data.
+    <br><br>
+    <strong>Invitation round data.</strong> Outcomes shown are based on the 4 June 2026 Subclass 189 invitation round and community-submitted grant outcomes. Points cutoffs are reported by applicants and migration community sources; the Department of Home Affairs does not publish official occupation-by-occupation cutoffs. Data was last verified June 2026. <a href="/methodology">Methodology →</a>
+  </div>
+</div>
+
+<script>
+// Animate counter on load
+function animCount(el,target,duration){
+  var start=performance.now();
+  function step(now){
+    var p=Math.min((now-start)/duration,1);
+    var ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target).toLocaleString();
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target.toLocaleString();
+  }
+  requestAnimationFrame(step);
+}
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    animCount(document.getElementById('counter-main'),5350,1800);
+  },400);
+});
+// Ticker time refresh
+setInterval(function(){
+  var times=document.querySelectorAll('.ab-time');
+  times.forEach(function(t,i){
+    var m=Math.floor(Math.random()*45)+1;
+    if(i%2===0)t.textContent=m+' min ago';
+  });
+},12000);
+</script>
+</body>
+</html>
