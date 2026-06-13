@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0M6ZNEG9R"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y0M6ZNEG9R');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which State Will Nominate Me? 2026 — State Nomination Probability | VisaIQ</title>
+<meta name="description" content="Instant state nomination probability for all 8 states. Based on real Jun 2026 189 data, SA March 2026 (406 invitations) and WA March 2026 (420 invitations). Free.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:title" content="Which State Will Nominate Me? — VisaIQ">
+<meta property="og:description" content="Ranked probability for all 8 states. SA, TAS, QLD, WA, VIC, NSW, ACT, NT. Real Jun 2026 data.">
+<meta property="og:image" content="https://www.visaiq.com.au/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1C2E;--navy2:#12263D;
+  --gold:#C8913A;--gold2:#D4982E;--goldlight:#E8B84B;
+  --gd:rgba(200,145,58,0.10);--gb:rgba(200,145,58,0.28);
+  --cream:#F5F1EA;--cream2:#EDE8DF;--slate:#ECEAE4;
+  --white:#FAFAF8;
+  --text:#0B1C2E;--muted:#4E5D6E;--muted2:#7A8899;
+  --border:rgba(11,28,46,0.10);--border2:rgba(11,28,46,0.18);
+  --red:#C0392B;--green:#1A8C52;
+  --shadow:0 1px 3px rgba(11,28,46,0.05),0 6px 20px rgba(11,28,46,0.07);
+  --shadow-lg:0 20px 60px rgba(11,28,46,0.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:'Outfit',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{background:rgba(250,250,248,0.97);backdrop-filter:blur(16px);position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:66px;border-bottom:1px solid var(--border)}
+.logo{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:-0.02em}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:0.1rem}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.4rem 0.75rem;border-radius:7px;transition:all 0.15s}
+.navlinks a:hover,.navlinks a.active{color:var(--navy);background:var(--slate)}
+.nav-btn{background:var(--gold);color:#fff;padding:0.48rem 1.1rem;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:background 0.15s}
+.nav-btn:hover{background:var(--gold2)}
+@media(max-width:720px){.navlinks{display:none}}
+
+/* HERO — navy like index */
+.hero{background:var(--navy);padding:4rem 5% 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-180px;right:-80px;width:450px;height:450px;background:radial-gradient(circle,rgba(200,145,58,0.10),transparent 60%);pointer-events:none}
+.hero-inner{max-width:580px;margin:0 auto;position:relative;z-index:1}
+.hero-kicker{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,145,58,0.12);border:1px solid rgba(200,145,58,0.28);color:var(--goldlight);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.9rem;border-radius:100px;margin-bottom:1.1rem}
+.kd{width:5px;height:5px;border-radius:50%;background:var(--goldlight);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4.2vw,2.85rem);font-weight:500;line-height:1.07;letter-spacing:-0.025em;color:#fff;margin-bottom:0.9rem}
+.hero h1 em{font-style:italic;color:var(--goldlight)}
+.hero-sub{font-size:0.88rem;color:rgba(255,255,255,0.50);line-height:1.7;margin-bottom:1.5rem}
+.data-strip{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.ds{text-align:center}
+.ds-v{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:500;color:var(--goldlight);line-height:1}
+.ds-l{font-size:0.62rem;color:rgba(255,255,255,0.38);margin-top:0.15rem;text-transform:uppercase;letter-spacing:0.06em}
+
+/* FORM */
+.form-wrap{background:var(--white);border-bottom:1px solid var(--border)}
+.form-inner{max-width:700px;margin:0 auto;padding:2.5rem 5%}
+.form-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:var(--navy);margin-bottom:1.25rem;letter-spacing:-0.01em}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+@media(max-width:580px){.form-grid{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:0.35rem}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:0.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em}
+.fg select,.fg input{padding:0.65rem 0.85rem;border:1.5px solid var(--border2);border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.88rem;color:var(--text);background:var(--white);transition:border-color 0.15s;appearance:none;-webkit-appearance:none}
+.fg select:focus,.fg input:focus{outline:none;border-color:var(--gold)}
+.btn-calc{grid-column:1/-1;padding:0.9rem;background:var(--navy);color:#fff;border:none;border-radius:11px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;cursor:pointer;transition:background 0.18s;margin-top:0.25rem}
+.btn-calc:hover{background:var(--navy2)}
+.data-note{grid-column:1/-1;font-size:0.68rem;color:var(--muted2);line-height:1.6;text-align:center;margin-top:0.25rem}
+.data-note a{color:var(--gold);text-decoration:none}
+
+/* RESULTS */
+.results-wrap{max-width:700px;margin:0 auto;padding:2.5rem 5%}
+.results-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.5rem}
+.rh-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;color:var(--navy)}
+.rh-title em{font-style:italic;color:var(--gold)}
+.rh-meta{font-size:0.68rem;color:var(--muted2)}
+
+/* STATE CARD */
+.state-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;margin-bottom:0.65rem;overflow:hidden;transition:box-shadow 0.18s,transform 0.18s}
+.state-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.state-card.locked{position:relative;filter:none}
+.sc-inner{display:flex;align-items:center;gap:1rem;padding:1rem 1.1rem}
+.sc-rank{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:var(--muted2);width:24px;flex-shrink:0;text-align:center}
+.sc-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+.sc-name{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.15rem}
+.sc-badges{display:flex;gap:0.35rem;flex-wrap:wrap;margin-top:0.2rem}
+.sc-badge{font-size:0.58rem;font-weight:700;padding:0.15rem 0.55rem;border-radius:100px;white-space:nowrap}
+.badge-q{background:rgba(200,145,58,0.10);border:1px solid rgba(200,145,58,0.25);color:var(--gold2)}
+.badge-off{background:rgba(26,140,82,0.08);border:1px solid rgba(26,140,82,0.2);color:var(--green)}
+.badge-cut{background:rgba(245,158,11,0.10);border:1px solid rgba(245,158,11,0.25);color:#B45309}
+.badge-not{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);color:var(--red)}
+.sc-prob{flex-shrink:0;text-align:right;margin-left:auto}
+.sc-pct{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:500;line-height:1}
+.sc-lbl{font-size:0.55rem;color:var(--muted2);text-transform:uppercase;letter-spacing:0.07em}
+.sc-bar-wrap{height:3px;background:var(--slate);margin:0 1.1rem 0.85rem}
+.sc-bar{height:100%;border-radius:2px;transition:width 0.8s cubic-bezier(0.16,1,0.3,1)}
+.sc-detail{padding:0 1.1rem 0.85rem;font-size:0.75rem;color:var(--muted);line-height:1.65}
+.sc-detail strong{color:var(--text);font-weight:600}
+.sc-info{display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.45rem}
+.si{display:flex;flex-direction:column;gap:0.05rem}
+.si-label{font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted2)}
+.si-val{font-size:0.77rem;font-weight:600;color:var(--text)}
+
+/* EMAIL GATE */
+.gate{background:var(--cream2);border:1.5px solid var(--gb);border-radius:16px;padding:1.6rem;text-align:center;margin:0.65rem 0}
+.gate-title{font-family:'Fraunces',serif;font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:0.3rem}
+.gate-title em{font-style:italic;color:var(--gold)}
+.gate-sub{font-size:0.8rem;color:var(--muted);margin-bottom:1.1rem;line-height:1.6}
+.gate-form{display:flex;gap:0.5rem;max-width:380px;margin:0 auto}
+.gate-form input{flex:1;padding:0.7rem 0.9rem;border:1.5px solid var(--border2);border-radius:9px;font-family:'Outfit',sans-serif;font-size:0.85rem;color:var(--text);background:var(--white)}
+.gate-form input:focus{outline:none;border-color:var(--gold)}
+.gate-btn{padding:0.7rem 1.3rem;background:var(--gold);color:#fff;border:none;border-radius:9px;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;cursor:pointer;white-space:nowrap;transition:background 0.15s}
+.gate-btn:hover{background:var(--gold2)}
+.gate-fine{font-size:0.62rem;color:var(--muted2);margin-top:0.6rem}
+.locked-overlay{position:relative}
+.locked-overlay::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,241,234,0) 0%,rgba(245,241,234,0.85) 40%,rgba(245,241,234,0.98) 100%);border-radius:16px;pointer-events:none}
+@media(max-width:480px){.gate-form{flex-direction:column}}
+
+/* LAST ROUNDS BOX */
+.rounds-box{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:1rem}
+.rb-title{font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.65rem;display:flex;align-items:center;gap:0.4rem}
+.rb-title::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.round-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.3rem 0;border-bottom:1px solid var(--border);font-size:0.77rem}
+.round-row:last-child{border-bottom:none}
+.rr-occ{color:var(--text);font-weight:600}
+.rr-detail{color:var(--muted);font-size:0.7rem}
+.rr-pts{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold2);font-weight:500}
+
+/* REPORT CTA */
+.report-cta{background:var(--navy);border-radius:18px;padding:1.75rem;text-align:center;margin-top:1.5rem}
+.rc-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:#fff;margin-bottom:0.3rem}
+.rc-title em{font-style:italic;color:var(--goldlight)}
+.rc-sub{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:1.1rem;line-height:1.65}
+.rc-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.85rem;background:var(--gold);color:#fff;border-radius:10px;font-size:0.9rem;font-weight:800;text-decoration:none;transition:background 0.18s}
+.rc-btn:hover{background:var(--gold2)}
+.rc-fine{font-size:0.62rem;color:rgba(255,255,255,0.28);margin-top:0.6rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 5%;max-width:700px;margin:0 auto}
+.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;margin-bottom:0.75rem}
+.foot-links a{font-size:0.73rem;color:var(--muted);text-decoration:none}
+.foot-links a:hover{color:var(--navy)}
+.foot-bottom{font-size:0.65rem;color:var(--muted2);line-height:1.7}
+
+.fade{opacity:0;transform:translateY(14px);transition:all 0.55s cubic-bezier(0.16,1,0.3,1)}
+.fade.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Visa<span>IQ</span></a>
+  <div class="navlinks">
+    <a href="/eoi-queue">EOI Queue</a>
+    <a href="/rounds">Rounds</a>
+    <a href="/points-calculator">Points</a>
+    <a href="/state-comparator" class="active">States</a>
+  </div>
+  <a href="/report" class="nav-btn">Get Report — A$69</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker"><span class="kd"></span>Jun 2026 · 189 Federal · SA 406 invitations · WA 420 invitations</div>
+    <h1>Which state will<br><em>nominate you?</em></h1>
+    <p class="hero-sub">Enter your occupation, points and location. Get ranked probability for all 8 states — based on real June 2026 round data.</p>
+    <div class="data-strip">
+      <div class="ds"><div class="ds-v">65</div><div class="ds-l">Lowest pts invited (SA/WA trades)</div></div>
+      <div class="ds"><div class="ds-v">406</div><div class="ds-l">SA invitations Mar 2026</div></div>
+      <div class="ds"><div class="ds-v">8</div><div class="ds-l">States ranked for you</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="form-wrap">
+  <div class="form-inner">
+    <div class="form-title">Your details</div>
+    <div class="form-grid">
+      <div class="fg full">
+        <label>Occupation</label>
+        <select id="f-occ">
+          <option value="">— Select your occupation —</option>
+          <optgroup label="Tier 1 — Healthcare">
+            <option value="reg_nurse">Registered Nurse (General / NEC)</option>
+            <option value="rn_aged">Registered Nurse (Aged Care)</option>
+            <option value="rn_mental">Registered Nurse (Mental Health)</option>
+            <option value="midwife">Midwife</option>
+            <option value="gp">General Practitioner</option>
+            <option value="specialist">Medical Specialist / Surgeon</option>
+            <option value="physio">Physiotherapist</option>
+            <option value="ot">Occupational Therapist</option>
+            <option value="speech">Speech Pathologist</option>
+            <option value="pharmacist">Pharmacist</option>
+            <option value="psychologist">Psychologist</option>
+            <option value="dentist">Dentist</option>
+            <option value="social_worker">Social Worker</option>
+          </optgroup>
+          <optgroup label="Tier 2 — Education">
+            <option value="ece_teacher">Early Childhood Teacher (ECT)</option>
+            <option value="primary_teacher">Primary School Teacher</option>
+            <option value="secondary_teacher">Secondary School Teacher</option>
+            <option value="special_ed">Special Education Teacher</option>
+          </optgroup>
+          <optgroup label="Tier 3 — Engineering">
+            <option value="civil_eng">Civil Engineer</option>
+            <option value="mech_eng">Mechanical Engineer</option>
+            <option value="struct_eng">Structural Engineer</option>
+            <option value="elec_eng">Electrical Engineer</option>
+            <option value="mining_eng">Mining Engineer</option>
+            <option value="chem_eng">Chemical Engineer</option>
+          </optgroup>
+          <optgroup label="Tier 3 — Trades">
+            <option value="electrician">Electrician</option>
+            <option value="carpenter">Carpenter</option>
+            <option value="plumber">Plumber</option>
+            <option value="bricklayer">Bricklayer</option>
+            <option value="welder">Welder (First Class)</option>
+            <option value="mechanic">Motor Mechanic</option>
+          </optgroup>
+          <optgroup label="ICT">
+            <option value="software_eng">Software Engineer / Developer</option>
+            <option value="ict_ba">ICT Business Analyst</option>
+            <option value="sys_analyst">Systems Analyst</option>
+            <option value="cybersec">Cybersecurity Analyst</option>
+            <option value="ict_pm">ICT Project Manager</option>
+          </optgroup>
+          <optgroup label="Accounting / Finance">
+            <option value="accountant">Accountant (General)</option>
+            <option value="mgmt_accountant">Management Accountant</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="chef">Cook / Chef</option>
+            <option value="architect">Architect</option>
+            <option value="construction_mgr">Construction Project Manager</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Your Points Score</label>
+        <input type="number" id="f-pts" min="60" max="130" placeholder="e.g. 80" />
+      </div>
+      <div class="fg">
+        <label>Location</label>
+        <select id="f-loc">
+          <option value="onshore_other">Onshore Australia (other state)</option>
+          <option value="onshore_sa">Onshore — in South Australia</option>
+          <option value="onshore_tas">Onshore — in Tasmania</option>
+          <option value="onshore_qld">Onshore — in Queensland</option>
+          <option value="onshore_wa">Onshore — in Western Australia</option>
+          <option value="onshore_vic">Onshore — in Victoria</option>
+          <option value="onshore_nsw">Onshore — in New South Wales</option>
+          <option value="onshore_act">Onshore — in ACT / Canberra</option>
+          <option value="onshore_nt">Onshore — in Northern Territory</option>
+          <option value="offshore">Offshore (outside Australia)</option>
+        </select>
+      </div>
+      <button class="btn-calc" onclick="runCalc()">Show my state probabilities →</button>
+      <div class="data-note">Based on real 2026 invitation rounds · <a href="/rounds">View full rounds data</a> · Not migration advice</div>
+    </div>
+  </div>
+</div>
+
+<div class="results-wrap" id="results-wrap" style="display:none">
+
+  <div class="results-header fade">
+    <div class="rh-title">Results for <em id="rh-occ">—</em></div>
+    <div class="rh-meta" id="rh-meta">Jun 2026 · DHA data</div>
+  </div>
+
+  <!-- Top 3 visible freely -->
+  <div id="top3"></div>
+
+  <!-- Locked section — states 4-8 -->
+  <div id="locked-section">
+    <div class="locked-overlay" id="locked-blur">
+      <div id="locked-cards"></div>
+    </div>
+    <div class="gate fade" id="email-gate">
+      <div class="gate-title">See all 8 states — <em>free</em></div>
+      <div class="gate-sub">Unlock your full probability grid for every state. We'll also send you a heads-up when new rounds open for your occupation.</div>
+      <div class="gate-form">
+        <input type="email" id="gate-email" placeholder="your@email.com" />
+        <button class="gate-btn" onclick="submitGate()">Unlock all states →</button>
+      </div>
+      <div class="gate-fine">Free · No spam · Unsubscribe any time</div>
+    </div>
+  </div>
+
+  <!-- After unlock — shows remaining states -->
+  <div id="unlocked-section" style="display:none">
+    <div id="remaining-cards"></div>
+  </div>
+
+  <!-- Real round data for occupation -->
+  <div id="rounds-box"></div>
+
+  <!-- Report CTA -->
+  <div class="report-cta fade">
+    <div class="rc-title">Want your complete PR picture — <em>not just states?</em></div>
+    <div class="rc-sub">Queue position · Points simulator · 12-month plan · All 8 states. Built from the same Jun 2026 DHA data.</div>
+    <a href="/report" class="rc-btn" onclick="gtag('event','state_to_report',{event_category:'conversion',value:69})">Get my full PR report — A$69 →</a>
+    <div class="rc-fine">Instant · One-off · Not migration advice</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-links">
+    <a href="/eoi-queue">EOI Queue</a>
+    <a href="/rounds">Invitation Rounds</a>
+    <a href="/points-calculator">Points Calculator</a>
+    <a href="/report">PR Report</a>
+    <a href="/methodology">Methodology</a>
+  </div>
+  <div class="foot-bottom">© 2026 VisaIQ · visaiq.com.au · Not migration advice · Data: DHA SkillSelect Jun 2026 · Migration SA · Migration WA · Last verified: June 2026<br>Always verify at immi.homeaffairs.gov.au · Consult a MARA-registered agent for advice specific to your circumstances.</div>
+</footer>
+
+<script>
+var ML_TOKEN='eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTMyNjcxN2U3Mzk1MTUwNDc5NThjZDlmZjIxYTU1ZDNiN2EwM2YzMDJjODYwNzMyZDMxM2YzZGFjZjdjZmUyNDYyNDZkZDFjYTZmNDVkYmYiLCJpYXQiOjE3Nzc3NjE2MzUuMTQ0MDAyLCJuYmYiOjE3Nzc3NjE2MzUuMTQ0MDA0LCJleHAiOjQ5MzM0MzUyMzUuMTM4MDE2LCJzdWIiOiIyMzMwODQzIiwic2NvcGVzIjpbXX0.LjdJOz-mvQ3lotIqYceD_Q2qkJwwrj8ac4wCfqzpgaGnph6yhxc5vps8eLJDEDU-QLtOKeRPiQMmQ4Bl3qS2JmFV-yOzu5b_nRFL4ktDew7haToblUULJBiviv7JeGY81FNKMnS8mzBL7Kgxa9ilJex24XD8FjCzUfRch9ZmK05yIBNu_XoAX090YkHKgJV7TCRFAywXlWvvujV7ma1oocZugBIGXK9nyT0mqNHzFktITw7btJDrR_yIG0rwYSGjHOKIhbeoDjCU5j6wFHm9Jyqe2NMVSL5BlSluIJ01MprgTOKCN_LK1dnIrqbdeAoB5I9X6Jm2NHcR4-dUD5mLeOnjPgGQdBd0hJS2lnicv1d79TfbBwNoD_jDdFOjAoY13r0V_9-pfItQ3enAS9Mjv3egvASAj_Lom9_buHpJ9uP4VmntpJqKK57L0_30NllxoNetAvWiHRaWYECie_hfCNUPfU2Tj0p5OWG2euWMLZgT7hfQ-rOYHGVZPtapA3tLGnMHHJDP6DuRnpRajiJ5dVh173X8POVz0WtBX7uouHP2v91sCqFfb_xSOHOm1rYXjwAhK1YCSfMDTiW0u5vJCtN0zWkQfciv2GwbgWeNdvuyC3cc33F28e9BbZ3LP71JEZy3Xw7JNxa7Ib0cTfoyv3QpN9kUSXGnp7w1itWTGSw';
+var ML_GROUP='186396468848887410';
+var gateUnlocked=false;
+var lastResults=[];
+
+/* ── OCCUPATION DATA ─────────────────────────────────────────── */
+/* min = typical cutoff seen in real rounds. Source: actual invitation data. */
+var OCC={
+  /* TIER 1 HEALTHCARE */
+  reg_nurse:{lb:"Registered Nurse (General/NEC)",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA invites RN every monthly round · 65 pts · offshore eligible · 97 health invitations Mar 2026"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS weekly rounds · fastest state · must reside in TAS 6-9 months first"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD healthcare priority · 75 pts offshore invited · priority processing (10-day grant seen)"},
+    wa:{in:true,min:75,offshore:false,notes:"WA 190 · 75-80 pts onshore · 5 Mar non-trades round · strong healthcare demand"},
+    vic:{in:true,min:85,offshore:true,notes:"VIC 190 · 85+5 pts onshore confirmed Jan 2026 · 80 pts offshore in select rounds"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW · RN NEC invited 80-85 pts offshore · 95 pts onshore · nurses are priority sector"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix · healthcare priority sector · 80+ pts · Canberra Matrix score matters"},
+    nt:{in:true,min:65,offshore:true,notes:"NT remote health critical shortage · 65 pts · offshore eligible · 2yr NT commitment"}},
+  rn_aged:{lb:"Registered Nurse (Aged Care)",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · aged care priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · aged care shortage"},
+    wa:{in:true,min:75,offshore:false,notes:"WA 190 · aged care shortage · 5 Mar round"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active · pre-invite received May 2026 for RN aged care"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW active · aged care priority · 85 pts offshore Apr 2025"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix · critical sector"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  rn_mental:{lb:"Registered Nurse (Mental Health)",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · mental health priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active"},
+    wa:{in:true,min:75,offshore:false,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC mental health priority · 189 granted mental health nurse Nov 2025"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW active · mental health demand"},
+    act:{in:true,min:80,offshore:false,notes:"ACT active"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  midwife:{lb:"Midwife",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · maternity shortage"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active"},
+    wa:{in:true,min:70,offshore:false,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active · 189 granted midwife Nov 2025 at 75 pts"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW active · 189 invited midwife 75-80 pts"},
+    act:{in:true,min:75,offshore:false,notes:"ACT active"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  gp:{lb:"General Practitioner",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"GPs highest priority in SA · invited every round · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"GP shortage critical in TAS"},
+    qld:{in:true,min:65,offshore:true,notes:"QLD GP shortage · 10-day processing reported · offshore eligible"},
+    wa:{in:true,min:65,offshore:false,notes:"WA GP shortage · 5 Mar round · outer metro"},
+    vic:{in:true,min:65,offshore:true,notes:"VIC GP demand · 65 pts"},
+    nsw:{in:true,min:65,offshore:true,notes:"NSW GP shortage · 65 pts · critical"},
+    act:{in:true,min:65,offshore:false,notes:"ACT GP shortage · Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical remote GP shortage · offshore eligible"}},
+  specialist:{lb:"Medical Specialist / Surgeon",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"All specialist groups active"},
+    tas:{in:true,min:65,offshore:false,notes:"Active"},
+    qld:{in:true,min:65,offshore:true,notes:"Specialists all active"},
+    wa:{in:true,min:65,offshore:false,notes:"Active"},
+    vic:{in:true,min:65,offshore:true,notes:"All states invite specialists freely"},
+    nsw:{in:true,min:65,offshore:true,notes:"Active"},
+    act:{in:true,min:65,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"Critical shortage"}},
+  physio:{lb:"Physiotherapist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA allied health · broad acceptance · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · NDIS demand"},
+    wa:{in:true,min:75,offshore:false,notes:"WA · Mar 2026 non-trades round"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active · allied health"},
+    nsw:{in:false,offshore:false,notes:"NSW · physiotherapist not currently on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · allied health"},
+    nt:{in:true,min:65,offshore:true,notes:"NT shortage"}},
+  ot:{lb:"Occupational Therapist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · allied health"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · NDIS demand"},
+    wa:{in:true,min:75,offshore:false,notes:"WA · Mar 2026 non-trades round"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active"},
+    nsw:{in:false,offshore:false,notes:"NSW · OT not currently on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · allied health"},
+    nt:{in:true,min:65,offshore:true,notes:"NT shortage"}},
+  speech:{lb:"Speech Pathologist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · NDIS priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active"},
+    wa:{in:true,min:75,offshore:false,notes:"WA Mar 2026 non-trades round · 75 pts"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active"},
+    nsw:{in:false,offshore:false,notes:"Not currently on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT shortage"}},
+  pharmacist:{lb:"Pharmacist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active"},
+    wa:{in:false,offshore:false,notes:"Not currently on WA list"},
+    vic:{in:true,min:65,offshore:true,notes:"VIC · hospital pharmacist 65-85 pts Feb 2025"},
+    nsw:{in:false,offshore:false,notes:"Not currently on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT shortage"}},
+  psychologist:{lb:"Psychologist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · mental health priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD priority processing seen"},
+    wa:{in:true,min:75,offshore:false,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW active · mental health demand"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  dentist:{lb:"Dentist",tier:1,
+    sa:{in:true,min:65,offshore:true,notes:"SA active"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD active"},
+    wa:{in:false,offshore:false,notes:"Not on WA list"},
+    vic:{in:true,min:70,offshore:true,notes:"VIC active"},
+    nsw:{in:false,offshore:false,notes:"Not currently on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT shortage"}},
+  social_worker:{lb:"Social Worker",tier:2,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · community services · Mar 2026 invited · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · 75 pts"},
+    wa:{in:true,min:75,offshore:false,notes:"WA · Mar 2026 non-trades round · social services demand"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC · social workers on priority list · 80 pts"},
+    nsw:{in:true,min:80,offshore:false,notes:"NSW · care economy priority · onshore preferred"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · social services priority"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage · offshore eligible"}},
+  /* TIER 2 EDUCATION */
+  ece_teacher:{lb:"Early Childhood Teacher (ECT)",tier:2,
+    sa:{in:true,min:65,offshore:true,notes:"SA invites ECT every round · 65 pts · offshore eligible · national priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS weekly rounds · ECT priority · must live in TAS"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · 75 pts · ECT on priority list · offshore eligible"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active · ECT on WASMOL · 70 pts · offshore eligible"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC rolling assessment · ECT explicitly on priority list · 80-85 pts typical · VIC 190 granted ECT offshore 90 pts"},
+    nsw:{in:true,min:80,offshore:false,notes:"NSW ECT priority sector · 80-90 pts typical · onshore preferred · invited at 90 pts onshore"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · ECT critical sector · 75+ pts"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage · 65 pts · offshore eligible"}},
+  primary_teacher:{lb:"Primary School Teacher",tier:2,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · 65 pts · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS weekly rounds"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · offshore eligible"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active · 70 pts"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC rolling · primary on priority list · 65+5 pts VIC 190 granted 6 months Sep 2024"},
+    nsw:{in:true,min:80,offshore:false,notes:"NSW active · priority sector"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · education priority"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  secondary_teacher:{lb:"Secondary School Teacher",tier:2,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · STEM teachers priority"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS weekly rounds"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active · STEM especially · offshore eligible"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active · STEM priority"},
+    vic:{in:true,min:75,offshore:true,notes:"VIC rolling · 189 granted secondary teacher Nov 2025 · 190 VIC offshore secondary teacher processing"},
+    nsw:{in:true,min:75,offshore:false,notes:"NSW priority · 189 granted secondary teacher Nov 2025 at 75 pts"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · education priority"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  special_ed:{lb:"Special Education Teacher",tier:2,
+    sa:{in:true,min:65,offshore:true,notes:"SA active"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:75,offshore:true,notes:"QLD active"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active"},
+    nsw:{in:true,min:80,offshore:false,notes:"NSW active"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT critical shortage"}},
+  /* TIER 3 ENGINEERING */
+  civil_eng:{lb:"Civil Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active · 70 pts · offshore eligible · Mar 2026 53 engineering invitations"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD Olympics infrastructure · high demand · offshore eligible"},
+    wa:{in:true,min:90,offshore:false,notes:"WA 190 · 90 pts onshore · 80 pts via 491 offshore · WorldExpo infrastructure"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC Big Build · 80 pts · graduate civil eng VIC 190 granted in 3 months Jun 2026"},
+    nsw:{in:true,min:85,offshore:true,notes:"NSW transport infra · 85 pts · offshore invited Oct 2025"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix · infrastructure"},
+    nt:{in:true,min:65,offshore:true,notes:"NT infrastructure shortage"}},
+  mech_eng:{lb:"Mechanical Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active · 70 pts · offshore eligible"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD active · resources"},
+    wa:{in:true,min:90,offshore:false,notes:"WA 190 · 90 pts · 5 Mar resources sector"},
+    vic:{in:true,min:85,offshore:true,notes:"VIC active · 189 granted mech eng Nov/Aug 2025"},
+    nsw:{in:true,min:90,offshore:true,notes:"NSW · 90-95 pts offshore · 491 NSW granted mech eng Jun 2026"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active · 491 NT mech eng invited"}},
+  struct_eng:{lb:"Structural Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active · 70 pts"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD Olympics build"},
+    wa:{in:true,min:90,offshore:false,notes:"WA 190 · 90 pts · 5 Mar construction"},
+    vic:{in:true,min:85,offshore:true,notes:"VIC Big Build · structural priority"},
+    nsw:{in:true,min:90,offshore:true,notes:"NSW transport infrastructure"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  elec_eng:{lb:"Electrical Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active · 70 pts"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD Olympics infrastructure"},
+    wa:{in:true,min:90,offshore:false,notes:"WA 190 · 90 pts · resources sector"},
+    vic:{in:true,min:95,offshore:true,notes:"VIC · electrical eng granted 95 pts Mar 2026 · 1Y 2M 25D processing"},
+    nsw:{in:true,min:90,offshore:true,notes:"NSW active"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  mining_eng:{lb:"Mining Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD resources sector"},
+    wa:{in:true,min:80,offshore:true,notes:"WA mining · offshore eligible · resources demand"},
+    vic:{in:false,offshore:false,notes:"Not on VIC list"},
+    nsw:{in:false,offshore:false,notes:"Not on NSW list"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:true,min:65,offshore:true,notes:"NT resources sector"}},
+  chem_eng:{lb:"Chemical Engineer",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD resources"},
+    wa:{in:true,min:80,offshore:true,notes:"WA resources"},
+    vic:{in:false,offshore:false,notes:"Not on VIC list"},
+    nsw:{in:false,offshore:false,notes:"Not on NSW list"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:false,offshore:false,notes:"Not on NT list"}},
+  /* TIER 3 TRADES */
+  electrician:{lb:"Electrician",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA 190 · 65 pts · Mar 2026 invited · offshore eligible · construction"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active · trades priority"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD 190 · Olympics build · offshore eligible"},
+    wa:{in:true,min:65,offshore:true,notes:"WA 190 · WASMOL Sch.2 · 65 pts · offshore eligible · 3 Mar trades round · contract waived"},
+    vic:{in:true,min:85,offshore:false,notes:"VIC active · renewables + housing · higher threshold"},
+    nsw:{in:true,min:75,offshore:false,notes:"NSW Fitter 75 pts onshore · electrician construction priority"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · trades"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  carpenter:{lb:"Carpenter",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA 190 · 65 pts · Mar 2026 invited · housing construction"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD housing supply · offshore eligible"},
+    wa:{in:true,min:65,offshore:true,notes:"WA 190 · WASMOL Sch.2 · 65 pts · 3 Mar trades round · offshore · contract waived"},
+    vic:{in:true,min:80,offshore:false,notes:"VIC housing construction"},
+    nsw:{in:true,min:70,offshore:false,notes:"NSW · carpentry 190 · onshore construction priority"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  plumber:{lb:"Plumber",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA 190 · 65 pts · Mar 2026 · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD housing supply · offshore eligible"},
+    wa:{in:true,min:65,offshore:true,notes:"WA 190 · WASMOL Sch.2 · 65 pts · 3 Mar trades round · offshore eligible"},
+    vic:{in:true,min:80,offshore:false,notes:"VIC active"},
+    nsw:{in:true,min:65,offshore:false,notes:"NSW · 189 Plumber 65 pts Jun 2026 invited"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  bricklayer:{lb:"Bricklayer",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA 190 · 65 pts · Mar 2026 · offshore eligible"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD housing supply"},
+    wa:{in:true,min:65,offshore:true,notes:"WA 190 · 3 Mar trades round · 65 pts · offshore · housing supply priority"},
+    vic:{in:true,min:80,offshore:false,notes:"VIC housing construction"},
+    nsw:{in:false,offshore:false,notes:"Not currently on NSW list"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  welder:{lb:"Welder (First Class)",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA 190 · offshore · S56 received Feb 2026 processing"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD active · resources/manufacturing"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active · precision trades"},
+    vic:{in:true,min:95,offshore:false,notes:"VIC 491 · 95 pts · Welder onshore"},
+    nsw:{in:false,offshore:false,notes:"Not currently on NSW 190 list"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  mechanic:{lb:"Motor Mechanic (General)",tier:3,
+    sa:{in:true,min:65,offshore:true,notes:"SA active"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS · Mechanic TAS 190 granted Nov 2024 · 15 months"},
+    qld:{in:true,min:70,offshore:true,notes:"QLD active"},
+    wa:{in:true,min:70,offshore:true,notes:"WA active · auto industry"},
+    vic:{in:true,min:95,offshore:false,notes:"VIC 491 · 95 pts · Motor Mechanic onshore Feb 2025"},
+    nsw:{in:true,min:85,offshore:false,notes:"NSW 190 · 85 pts · Motor Mechanic offshore Apr 2025"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  /* ICT */
+  software_eng:{lb:"Software Engineer / Developer",tier:4,freeze189:true,
+    sa:{in:true,min:75,offshore:true,notes:"SA 491 · mostly via 491 regional · Mar 2026 42 ICT invites · 75 pts"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS · Software Developer TAS 190 granted Jan 2026 · grad pathway"},
+    qld:{in:false,offshore:false,notes:"Not currently on QLD 190 list"},
+    wa:{in:false,offshore:false,notes:"Not on WA 190/491 list in 2026"},
+    vic:{in:true,min:90,offshore:true,notes:"VIC 190 · 90+5 pts offshore Feb 2025 · Software Apps Programmer"},
+    nsw:{in:true,min:90,offshore:true,notes:"NSW 190 · 90 pts onshore · Mar 2026 round · 189 FROZEN"},
+    act:{in:true,min:90,offshore:false,notes:"ACT Matrix · ICT valued in government · 95 pts for 190"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active · lower competition"}},
+  ict_ba:{lb:"ICT Business Analyst",tier:4,freeze189:true,
+    sa:{in:true,min:75,offshore:false,notes:"SA 190 · onshore · Mar 2026 ICT stream · SA 190 ICT BA granted in 3M Mar 2026"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:false,offshore:false,notes:"Not on QLD list"},
+    wa:{in:true,min:95,offshore:false,notes:"WA 190 · 95 pts · ICT BA granted Jun 2026 · 14M processing"},
+    vic:{in:true,min:90,offshore:false,notes:"VIC active · 90 pts"},
+    nsw:{in:true,min:90,offshore:false,notes:"NSW · 90 pts offshore · 189 FROZEN"},
+    act:{in:true,min:90,offshore:false,notes:"ACT Matrix · ICT valued · 85-90 pts"},
+    nt:{in:true,min:65,offshore:false,notes:"NT · ICT BA granted Nov 2024 · 190 NT onshore"}},
+  sys_analyst:{lb:"Systems Analyst",tier:4,freeze189:true,
+    sa:{in:true,min:75,offshore:false,notes:"SA 190 via ICT stream · 75 pts"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:false,offshore:false,notes:"Not on QLD list"},
+    wa:{in:false,offshore:false,notes:"Not on WA list"},
+    vic:{in:true,min:90,offshore:false,notes:"VIC active"},
+    nsw:{in:false,offshore:false,notes:"Not on NSW list · 189 FROZEN"},
+    act:{in:true,min:90,offshore:false,notes:"ACT Matrix · ICT"},
+    nt:{in:true,min:65,offshore:false,notes:"NT active"}},
+  cybersec:{lb:"Cybersecurity Analyst",tier:4,freeze189:true,
+    sa:{in:true,min:75,offshore:false,notes:"SA active · ICT stream"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:true,min:90,offshore:false,notes:"QLD 190 · ICT security specialist · 90 pts"},
+    wa:{in:false,offshore:false,notes:"Not on WA list"},
+    vic:{in:true,min:70,offshore:true,notes:"VIC 190 · ICT Security Specialist 70 pts offshore Feb 2025"},
+    nsw:{in:true,min:95,offshore:false,notes:"NSW · cybersecurity priority · 95 pts · digital economy"},
+    act:{in:true,min:90,offshore:false,notes:"ACT Matrix · cybersecurity valued in government"},
+    nt:{in:true,min:65,offshore:false,notes:"NT active"}},
+  ict_pm:{lb:"ICT Project Manager",tier:4,freeze189:true,
+    sa:{in:true,min:75,offshore:false,notes:"SA active · ICT stream"},
+    tas:{in:false,offshore:false,notes:"Not on TAS list"},
+    qld:{in:false,offshore:false,notes:"Not on QLD list"},
+    wa:{in:false,offshore:false,notes:"Not on WA list · 189 FROZEN"},
+    vic:{in:true,min:90,offshore:false,notes:"VIC active"},
+    nsw:{in:false,offshore:false,notes:"Not on NSW list · 189 FROZEN"},
+    act:{in:true,min:90,offshore:false,notes:"ACT Matrix · IT project management"},
+    nt:{in:true,min:65,offshore:false,notes:"NT · ICT PM granted Nov 2024 onshore 190"}},
+  /* ACCOUNTING */
+  accountant:{lb:"Accountant (General)",tier:4,freeze189:true,
+    sa:{in:true,min:65,offshore:true,notes:"SA almost ONLY state inviting accountants · 65 pts · offshore eligible · Mar 2026 22 business invitations"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS residential pathway · accountant TAS 190 granted Mar 2026 15 months"},
+    qld:{in:false,offshore:false,notes:"Accountants not on QLD 190 list in 2026"},
+    wa:{in:false,offshore:false,notes:"Accountants not on WA list"},
+    vic:{in:false,offshore:false,notes:"Accountants not on VIC list"},
+    nsw:{in:false,offshore:false,notes:"Accountants not on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · finance roles occasionally · 189 FROZEN"},
+    nt:{in:true,min:65,offshore:true,notes:"NT accepts accountants · lower competition"}},
+  mgmt_accountant:{lb:"Management Accountant",tier:4,freeze189:true,
+    sa:{in:true,min:65,offshore:true,notes:"SA active · management accountant Mar 2026 90 pts VIC invite reported"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS residential pathway"},
+    qld:{in:false,offshore:false,notes:"Not on QLD list"},
+    wa:{in:false,offshore:false,notes:"Not on WA list"},
+    vic:{in:true,min:90,offshore:false,notes:"VIC · Management Accountant 90 pts Mar 2026 reported"},
+    nsw:{in:false,offshore:false,notes:"Not on NSW list"},
+    act:{in:true,min:75,offshore:false,notes:"ACT Matrix · finance occasionally"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  /* OTHER */
+  chef:{lb:"Cook / Chef",tier:0,
+    sa:{in:true,min:65,offshore:false,notes:"SA 190 · Chef 65 pts · STSOL · Apr 2026 invited · SA 190 Chef granted May 2026 7M"},
+    tas:{in:true,min:65,offshore:false,notes:"TAS 190 · Chef 65 pts · TAS 190 Chef granted Feb/Jun 2026 · 8-14M processing"},
+    qld:{in:false,offshore:false,notes:"Chef not on QLD 190 list"},
+    wa:{in:true,min:75,offshore:false,notes:"WA 190 · Chef 75 pts onshore · Feb 2026 round"},
+    vic:{in:true,min:90,offshore:false,notes:"VIC 491 · Chef 90 pts onshore · Granted Feb 2026 5M"},
+    nsw:{in:false,offshore:false,notes:"Chef not on NSW 190 list"},
+    act:{in:false,offshore:false,notes:"Not on ACT list"},
+    nt:{in:true,min:65,offshore:false,notes:"NT 190 · Chef 80 pts onshore · hospitality shortage"}},
+  architect:{lb:"Architect",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:true,notes:"QLD Olympics infra"},
+    wa:{in:true,min:80,offshore:false,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC active"},
+    nsw:{in:true,min:85,offshore:true,notes:"NSW · Architect 85 pts 189 Jun 2026"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}},
+  construction_mgr:{lb:"Construction Project Manager",tier:3,
+    sa:{in:true,min:70,offshore:true,notes:"SA active"},
+    tas:{in:true,min:70,offshore:false,notes:"TAS active"},
+    qld:{in:true,min:80,offshore:false,notes:"QLD Olympics infra · CPM 65 pts onshore Mar 2026"},
+    wa:{in:true,min:75,offshore:false,notes:"WA active"},
+    vic:{in:true,min:80,offshore:true,notes:"VIC Big Build · CPM 80 pts offshore 189 Jun 2026"},
+    nsw:{in:true,min:80,offshore:true,notes:"NSW · CPM 80 pts offshore 189 Jun 2026"},
+    act:{in:true,min:80,offshore:false,notes:"ACT Matrix"},
+    nt:{in:true,min:65,offshore:true,notes:"NT active"}}
+};
+
+/* Real rounds data by occupation — shown after results */
+var ROUNDS={
+  reg_nurse:[
+    {date:"4 Jun 2026",visa:"189",pts:80,loc:"Onshore",detail:"189 Federal · RN NEC · 80 pts · DOE 2 Feb 2026"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · 97 health invitations · 65 pts minimum · offshore eligible"},
+    {date:"5 Mar 2026",visa:"WA 190",pts:80,loc:"Onshore",detail:"WA 190 · 5 Mar non-trades round · healthcare priority"},
+    {date:"5 Mar 2026",visa:"WA 491",pts:70,loc:"Both",detail:"WA 491 · 5 Mar · offshore eligible"},
+    {date:"Mar 2026",visa:"QLD 190",pts:75,loc:"Offshore",detail:"QLD 190 · offshore invited · 75 pts"},
+  ],
+  ece_teacher:[
+    {date:"4 Jun 2026",visa:"189",pts:85,loc:"Onshore",detail:"189 Federal · ECT · 85 pts · national priority"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · 36 education invitations · 65 pts · offshore eligible"},
+    {date:"5 Mar 2026",visa:"SA 491",pts:65,loc:"Both",detail:"SA 491 · regional pathway · ECT"},
+    {date:"Jun 2026",visa:"VIC 190",pts:90,loc:"Offshore",detail:"VIC 190 granted ECT offshore · 90 pts · 1Y 5D processing"},
+    {date:"Mar 2026",visa:"WA 190",pts:70,loc:"Both",detail:"WA 190 · ECT on WASMOL · 70 pts"},
+  ],
+  electrician:[
+    {date:"4 Jun 2026",visa:"189",pts:65,loc:"Onshore",detail:"189 Federal · Electrician · 65 pts · trades priority"},
+    {date:"3 Mar 2026",visa:"WA 190",pts:65,loc:"Both",detail:"WA 190 · WASMOL Sch.2 · 65 pts · offshore eligible · contract waived"},
+    {date:"3 Mar 2026",visa:"WA 491",pts:65,loc:"Both",detail:"WA 491 · 3 Mar trades round"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · 23 construction invitations · 65 pts · offshore eligible"},
+    {date:"Jun 2026",visa:"QLD 190",pts:70,loc:"Both",detail:"QLD 190 · Olympics build · offshore eligible"},
+  ],
+  carpenter:[
+    {date:"4 Jun 2026",visa:"189",pts:65,loc:"Onshore",detail:"189 Federal · Carpenter · 65 pts"},
+    {date:"3 Mar 2026",visa:"WA 190",pts:65,loc:"Both",detail:"WA 190 · 3 Mar trades round · 65 pts · offshore · contract waived"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · housing construction · 65 pts · offshore eligible"},
+    {date:"Jun 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · May/Jun 2026 construction continues"},
+  ],
+  plumber:[
+    {date:"4 Jun 2026",visa:"189",pts:65,loc:"Onshore",detail:"189 Federal · Plumber · 65 pts"},
+    {date:"3 Mar 2026",visa:"WA 190",pts:65,loc:"Both",detail:"WA 190 · 3 Mar · 65 pts · offshore eligible"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · trades · offshore eligible"},
+  ],
+  civil_eng:[
+    {date:"4 Jun 2026",visa:"189",pts:85,loc:"Both",detail:"189 Federal · Civil Eng · 85 pts"},
+    {date:"5 Mar 2026",visa:"WA 190",pts:90,loc:"Onshore",detail:"WA 190 · 90 pts · WorldExpo infrastructure"},
+    {date:"5 Mar 2026",visa:"WA 491",pts:80,loc:"Both",detail:"WA 491 · 80 pts · offshore"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:70,loc:"Both",detail:"SA 190 · 53 engineering invitations · 70 pts · offshore"},
+    {date:"Jun 2026",visa:"VIC 190",pts:80,loc:"Onshore",detail:"VIC 190 · graduate civil eng · 80 pts · granted in 3 months"},
+  ],
+  gp:[
+    {date:"4 Jun 2026",visa:"189",pts:65,loc:"Both",detail:"189 Federal · GP · 65 pts · every round"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · GP highest priority · 65 pts · offshore eligible"},
+    {date:"5 Mar 2026",visa:"WA 190",pts:65,loc:"Onshore",detail:"WA 190 · GP shortage · 5 Mar round"},
+    {date:"6 May 2026",visa:"ACT 190",pts:90,loc:"Onshore",detail:"ACT Matrix · GP critical sector · 90 pts"},
+  ],
+  accountant:[
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · 22 business/marketing invitations · SA almost only state for accountants"},
+    {date:"Apr 2026",visa:"SA 190",pts:65,loc:"Onshore",detail:"SA 190 · monthly accountant invitation continues"},
+    {date:"Mar 2026",visa:"TAS 190",pts:0,loc:"Onshore",detail:"TAS 190 residential pathway · accountant granted Mar 2026 · 15 months"},
+  ],
+  software_eng:[
+    {date:"4 Jun 2026",visa:"189",pts:0,loc:"Frozen",detail:"189 FROZEN · 4th consecutive round zero ICT invitations · use 491 regional"},
+    {date:"5 Mar 2026",visa:"SA 491",pts:75,loc:"Both",detail:"SA 491 · 42 ICT invitations mostly via 491 regional · 75 pts"},
+    {date:"Mar 2026",visa:"TAS 190",pts:0,loc:"Onshore",detail:"TAS 190 Software Developer granted Jan 2026 · graduate pathway"},
+  ],
+  secondary_teacher:[
+    {date:"4 Jun 2026",visa:"189",pts:75,loc:"Onshore",detail:"189 Federal · Secondary Teacher · 75 pts · granted Nov 2025"},
+    {date:"5 Mar 2026",visa:"SA 190",pts:65,loc:"Both",detail:"SA 190 · 36 education invitations · secondary included"},
+    {date:"Mar 2026",visa:"WA 190",pts:70,loc:"Both",detail:"WA 190 · STEM priority · 70 pts"},
+  ],
+};
+
+/* State configs */
+var STATES=[
+  {id:'sa',name:'South Australia',shortname:'SA',processing:'5-8 months',rounds:'Monthly',offshore:true,places:'~320 left'},
+  {id:'tas',name:'Tasmania',shortname:'TAS',processing:'4-7 months',rounds:'Weekly',offshore:false,places:'~180 left'},
+  {id:'qld',name:'Queensland',shortname:'QLD',processing:'6-10 months',rounds:'Every 4-6 wks',offshore:true,places:'~400 left'},
+  {id:'wa',name:'Western Australia',shortname:'WA',processing:'8-12 months',rounds:'Every 6-8 wks',offshore:true,places:'~200 left'},
+  {id:'vic',name:'Victoria',shortname:'VIC',processing:'10-14 months',rounds:'Rolling',offshore:true,places:'~600 left'},
+  {id:'nsw',name:'New South Wales',shortname:'NSW',processing:'10-16 months',rounds:'Every 6-8 wks',offshore:false,places:'~200 left'},
+  {id:'act',name:'ACT / Canberra',shortname:'ACT',processing:'5-9 months',rounds:'Every 6-10 wks',offshore:false,places:'~312 left'},
+  {id:'nt',name:'Northern Territory',shortname:'NT',processing:'5-9 months',rounds:'Rolling',offshore:true,places:'Open'}
+];
+
+var currentResults=[];
+
+function runCalc(){
+  var oi=document.getElementById('f-occ').value;
+  var pts=parseInt(document.getElementById('f-pts').value)||0;
+  var loc=document.getElementById('f-loc').value;
+  if(!oi||pts<60){alert('Please select your occupation and enter your points (minimum 60).');return;}
+  var btn=document.querySelector('.btn-calc');
+  btn.textContent='Calculating...';btn.disabled=true;
+  setTimeout(function(){compute(oi,pts,loc);btn.textContent='Show my state probabilities →';btn.disabled=false;},600);
+}
+
+function compute(oi,pts,loc){
+  var occ=OCC[oi];if(!occ)return;
+  var isOffshore=loc==='offshore';
+  var userState=loc.startsWith('onshore_')&&loc!=='onshore_other'?loc.replace('onshore_',''):'';
+  var tier=occ.tier||0;
+  var isPriority=(tier===1||tier===2);
+
+  var results=STATES.map(function(st){
+    var sd=occ[st.id];
+    if(!sd||!sd.in){
+      return{state:st,prob:0,eligible:false,badge:'not',notes:sd?sd.notes:'Not on list',offshore:false};
+    }
+    var min=sd.min||65;
+    var diff=pts-min;
+    var h={sa:1.0,tas:1.0,nt:1.0,qld:0.85,wa:0.85,act:0.80,vic:isPriority?0.85:0.70,nsw:isPriority?0.72:0.60}[st.id]||1.0;
+    var base;
+    if(diff<0){base=Math.max(3,20-(Math.abs(diff)*5));}
+    else if(diff===0){base=Math.round(52*h);}
+    else if(diff<=5){base=Math.round(65*h);}
+    else if(diff<=10){base=Math.round(76*h);}
+    else if(diff<=15){base=Math.round(85*h);}
+    else if(diff<=20){base=Math.round(90*h);}
+    else{base=Math.round(95*h);}
+
+    /* offshore penalty */
+    if(isOffshore&&!sd.offshore){base=Math.max(3,base-45);}
+    else if(isOffshore&&sd.offshore){base=Math.min(base+3,96);}
+
+    /* same state bonus */
+    if(userState===st.id){base=Math.min(base+12,96);}
+
+    /* TAS residency — offshore can't use TAS */
+    if(st.id==='tas'&&isOffshore){base=Math.max(3,base-40);}
+
+    var prob=Math.min(96,Math.max(2,base));
+    var badge=diff<0?'cut':diff<=0?'cut':'q';
+    if(!sd.in)badge='not';
+    if(isOffshore&&!sd.offshore)badge='not';
+
+    return{state:st,prob:prob,eligible:diff>=0&&(sd.offshore||!isOffshore),badge:badge,notes:sd.notes,offshore:sd.offshore,min:min};
+  });
+
+  results.sort(function(a,b){return b.prob-a.prob;});
+  currentResults=results;
+
+  render(results,oi,pts,loc);
+}
+
+function dotColor(prob){
+  if(prob>=75)return'#1A8C52';
+  if(prob>=50)return'#C8913A';
+  if(prob>=30)return'#E8971A';
+  return'#C0392B';
+}
+function barColor(prob){
+  if(prob>=75)return'linear-gradient(90deg,#1A8C52,#22AA63)';
+  if(prob>=50)return'linear-gradient(90deg,#C8913A,#E0A94E)';
+  if(prob>=30)return'linear-gradient(90deg,#E8971A,#F5B83A)';
+  return'linear-gradient(90deg,#C0392B,#E04444)';
+}
+
+function buildCard(r,rank){
+  var st=r.state;
+  var badge='';
+  if(!r.eligible||r.prob<10){badge='<span class="sc-badge badge-not">Not on list</span>';}
+  else if(r.badge==='cut'){badge='<span class="sc-badge badge-cut">Below cutoff</span>';}
+  else{
+    badge='<span class="sc-badge badge-q">Qualifies</span>';
+    if(r.offshore){badge+='<span class="sc-badge badge-off">Offshore ✓</span>';}
+  }
+  return '<div class="state-card">'
+    +'<div class="sc-inner">'
+      +'<div class="sc-rank">'+rank+'</div>'
+      +'<div class="sc-dot" style="background:'+dotColor(r.prob)+'"></div>'
+      +'<div style="flex:1;min-width:0">'
+        +'<div class="sc-name">'+st.name+'</div>'
+        +'<div class="sc-badges">'+badge+'</div>'
+      +'</div>'
+      +'<div class="sc-prob">'
+        +'<div class="sc-pct" style="color:'+dotColor(r.prob)+'">'+r.prob+'%</div>'
+        +'<div class="sc-lbl">probability</div>'
+      +'</div>'
+    +'</div>'
+    +'<div class="sc-bar-wrap"><div class="sc-bar" style="width:'+r.prob+'%;background:'+barColor(r.prob)+'"></div></div>'
+    +'<div class="sc-detail">'
+      +r.notes
+      +'<div class="sc-info" style="margin-top:0.5rem">'
+        +'<div class="si"><div class="si-label">Processing</div><div class="si-val">'+st.processing+'</div></div>'
+        +'<div class="si"><div class="si-label">Rounds</div><div class="si-val">'+st.rounds+'</div></div>'
+        +'<div class="si"><div class="si-label">Places</div><div class="si-val">'+st.places+'</div></div>'
+      +'</div>'
+    +'</div>'
+  +'</div>';
+}
+
+function render(results,oi,pts,loc){
+  var occ=OCC[oi];
+  document.getElementById('rh-occ').textContent=occ.lb;
+  document.getElementById('rh-meta').textContent=pts+' pts · Jun 2026 DHA data';
+  if(occ.freeze189){
+    document.getElementById('rh-meta').textContent+=' · 189 FROZEN for this occupation';
+  }
+
+  /* top 3 */
+  var t3='';
+  for(var i=0;i<3;i++){if(results[i])t3+=buildCard(results[i],i+1);}
+  document.getElementById('top3').innerHTML=t3;
+
+  /* locked 4-8 (blurred) */
+  var lc='';
+  for(var i=3;i<8;i++){if(results[i])lc+=buildCard(results[i],i+1);}
+  document.getElementById('locked-cards').innerHTML=lc;
+  document.getElementById('remaining-cards').innerHTML=lc;
+
+  /* show/hide gate */
+  if(gateUnlocked){
+    document.getElementById('locked-section').style.display='none';
+    document.getElementById('unlocked-section').style.display='block';
+  } else {
+    document.getElementById('locked-section').style.display='block';
+    document.getElementById('unlocked-section').style.display='none';
+    document.getElementById('email-gate').style.display='block';
+  }
+
+  /* rounds box */
+  var rdata=ROUNDS[oi];
+  if(rdata&&rdata.length){
+    var rb='<div class="rounds-box fade in">'
+      +'<div class="rb-title">Real invitation data for '+occ.lb+'</div>';
+    rdata.forEach(function(r){
+      rb+='<div class="round-row">'
+        +'<div><div class="rr-occ">'+r.date+' · '+r.visa+'</div><div class="rr-detail">'+r.detail+'</div></div>'
+        +'<div class="rr-pts">'+(r.pts>0?r.pts+'pts':r.loc==='Frozen'?'⛔':'—')+'</div>'
+        +'</div>';
+    });
+    rb+='</div>';
+    document.getElementById('rounds-box').innerHTML=rb;
+  } else {
+    document.getElementById('rounds-box').innerHTML='';
+  }
+
+  document.getElementById('results-wrap').style.display='block';
+  document.getElementById('results-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+
+  /* fade in */
+  setTimeout(function(){
+    document.querySelectorAll('#results-wrap .fade').forEach(function(el){el.classList.add('in');});
+  },100);
+}
+
+function submitGate(){
+  var email=document.getElementById('gate-email').value.trim();
+  if(!email||!/\S+@\S+\.\S+/.test(email)){
+    alert('Please enter a valid email address.');return;
+  }
+  var btn=document.querySelector('.gate-btn');
+  btn.textContent='Unlocking...';btn.disabled=true;
+  gtag('event','gate_submit',{event_category:'conversion',event_label:email});
+
+  /* Mailerlite subscribe */
+  fetch('https://connect.mailerlite.com/api/subscribers',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_TOKEN},
+    body:JSON.stringify({email:email,groups:[ML_GROUP]})
+  }).then(function(){
+    gateUnlocked=true;
+    document.getElementById('locked-section').style.display='none';
+    document.getElementById('unlocked-section').style.display='block';
+    document.getElementById('unlocked-section').scrollIntoView({behavior:'smooth'});
+  }).catch(function(){
+    /* unlock anyway even if API fails */
+    gateUnlocked=true;
+    document.getElementById('locked-section').style.display='none';
+    document.getElementById('unlocked-section').style.display='block';
+    document.getElementById('unlocked-section').scrollIntoView({behavior:'smooth'});
+  });
+}
+
+/* Fade observer */
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.fade').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
