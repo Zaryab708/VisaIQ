@@ -204,11 +204,11 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
     <a href="/points-calculator">Points</a>
     <a href="/state-comparator">States</a>
   </div>
-  <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" class="nav-btn">Get Report — A$69</a>
+  <a href="/report" class="nav-btn">Get Report — A$69</a>
 </nav>
 
 <div class="hero">
-  <div class="hero-chip"><span class="chip-dot"></span>DHA SkillSelect · June 2026 · 80+ occupations</div>
+  <div class="hero-chip"><span class="chip-dot"></span>4 Jun 2026 · Final 189 round of 2025–26 · 10,000 invitations · 60+ occupations</div>
   <h1>How many people are<br>ahead of you in the <em>queue?</em></h1>
   <p class="hero-sub">Enter your occupation and points. See your exact position, pool breakdown, cutoff history and trend — from real DHA data.</p>
   <div class="proof-row">
@@ -229,64 +229,82 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
         <div class="sw">
           <select id="qo" class="fs" onchange="onOcc(this)">
             <option value="">Select occupation…</option>
-            <optgroup label="🏥 Tier 1 — Healthcare">
-              <option value="reg_nurse_gen">Registered Nurse (General)</option>
-              <option value="reg_nurse_aged">Registered Nurse (Aged Care)</option>
-              <option value="reg_nurse_mental">Registered Nurse (Mental Health)</option>
-              <option value="reg_nurse_critical">Registered Nurse (Critical Care)</option>
-              <option value="midwife">Midwife</option>
-              <option value="gp">General Practitioner</option>
-              <option value="physio">Physiotherapist</option>
-              <option value="ot">Occupational Therapist</option>
-              <option value="speech">Speech Pathologist</option>
-              <option value="pharmacist">Pharmacist</option>
-              <option value="psychologist">Clinical Psychologist</option>
-              <option value="optometrist">Optometrist</option>
-              <option value="podiatrist">Podiatrist</option>
-              <option value="dentist">Dentist</option>
-              <option value="radiographer">Radiographer</option>
-              <option value="vet">Veterinarian</option>
-              <option value="aged_care_worker">Aged Care Worker</option>
+            <optgroup label="🏥 Tier 1 — Healthcare (cutoffs 75–85 pts)">
+              <option value="reg_nurse_gen">Registered Nurse (General/NEC) — 75 pts</option>
+              <option value="reg_nurse_aged">Registered Nurse (Aged Care) — 80 pts</option>
+              <option value="reg_nurse_critical">Registered Nurse (Critical Care & Emergency) — 75 pts</option>
+              <option value="reg_nurse_surgical">Registered Nurse (Surgical) — 75 pts</option>
+              <option value="reg_nurse_mental">Registered Nurse (Mental Health) — 85 pts</option>
+              <option value="reg_nurse_medical">Registered Nurse (Medical) — 85 pts</option>
+              <option value="reg_nurse_periop">Registered Nurse (Perioperative) — 85 pts</option>
+              <option value="midwife">Midwife — 80 pts</option>
+              <option value="gp">General Practitioner — 80 pts</option>
+              <option value="physio">Physiotherapist — 80 pts</option>
+              <option value="ot">Occupational Therapist — 80 pts</option>
+              <option value="speech">Speech Pathologist — 80 pts</option>
+              <option value="psychologist">Clinical Psychologist — 85 pts</option>
+              <option value="radiographer">Radiographer — 80 pts</option>
+              <option value="vet">Veterinarian — 85 pts</option>
+              <option value="optometrist">Optometrist — 75 pts</option>
+              <option value="podiatrist">Podiatrist — 75 pts</option>
+              <option value="pharmacist">Pharmacist — Not invited</option>
+              <option value="dentist">Dentist — Not invited</option>
+              <option value="aged_care_worker">Aged Care Worker — Not invited (190 only)</option>
             </optgroup>
-            <optgroup label="📚 Tier 2 — Education & Community">
-              <option value="ece_teacher">Early Childhood Teacher</option>
-              <option value="primary_teacher">Primary School Teacher</option>
-              <option value="secondary_teacher">Secondary School Teacher</option>
-              <option value="special_ed">Special Education Teacher</option>
-              <option value="social_worker">Social Worker</option>
-              <option value="welfare_worker">Community / Welfare Worker</option>
+            <optgroup label="📚 Tier 2 — Education & Community (cutoffs 75–85 pts)">
+              <option value="ece_teacher">Early Childhood Teacher — Not invited Jun 2026 (85 pts Nov 2025)</option>
+              <option value="secondary_teacher">Secondary School Teacher — 75 pts</option>
+              <option value="primary_teacher">Primary School Teacher — 85 pts</option>
+              <option value="special_ed">Special Education Teacher — 75 pts</option>
+              <option value="social_worker">Social Worker — 75 pts</option>
+              <option value="welfare_worker">Community / Welfare Worker — 75 pts</option>
             </optgroup>
-            <optgroup label="🏗️ Tier 3 — Engineering & Trades">
-              <option value="civil_engineer">Civil Engineer</option>
-              <option value="mech_engineer">Mechanical Engineer</option>
-              <option value="elec_engineer">Electrical Engineer</option>
-              <option value="struct_engineer">Structural Engineer</option>
-              <option value="mining_engineer">Mining Engineer</option>
-              <option value="architect">Architect</option>
-              <option value="surveyor">Surveyor / Spatial Scientist</option>
-              <option value="urban_planner">Urban Planner</option>
-              <option value="construction_manager">Construction Project Manager</option>
-              <option value="electrician">Electrician</option>
-              <option value="plumber">Plumber</option>
-              <option value="carpenter">Carpenter</option>
-              <option value="welder">Welder (First Class)</option>
-              <option value="diesel_mechanic">Diesel Motor Mechanic</option>
+            <optgroup label="🏗️ Tier 3 — Engineering (cutoffs 70–95 pts)">
+              <option value="eng_manager">Engineering Manager — 70 pts ⚡</option>
+              <option value="const_proj_mgr">Construction Project Manager — 80 pts</option>
+              <option value="chem_engineer">Chemical Engineer — 90 pts</option>
+              <option value="mining_engineer">Mining Engineer — 85 pts</option>
+              <option value="petroleum_engineer">Petroleum Engineer — 85 pts</option>
+              <option value="telco_engineer">Telecommunications Engineer — 95 pts</option>
+              <option value="architect">Architect — 85 pts</option>
+              <option value="solicitor">Solicitor / Lawyer — 80 pts</option>
+              <option value="economist">Economist — 80 pts</option>
+              <option value="mgmt_consultant">Management Consultant — 80 pts</option>
+              <option value="env_scientist">Environmental Consultant/Scientist — 80 pts</option>
+              <option value="ag_scientist">Agricultural Scientist/Consultant — 80 pts</option>
+              <option value="biotechnologist">Biotechnologist / Life Scientist — 85 pts</option>
+              <option value="civil_engineer">Civil Engineer — Not invited (189)</option>
+              <option value="mech_engineer">Mechanical Engineer — Not invited (189)</option>
+              <option value="elec_engineer">Electrical Engineer — Not invited (189)</option>
+              <option value="struct_engineer">Structural Engineer — Not invited (189)</option>
             </optgroup>
-            <optgroup label="💻 Tier 4 — ICT & Accounting (189 frozen)">
-              <option value="sw_engineer">Software Engineer</option>
-              <option value="developer">Developer Programmer</option>
-              <option value="sys_analyst">Systems Analyst</option>
-              <option value="ict_analyst">ICT Business Analyst</option>
-              <option value="cybersec">Cybersecurity Analyst</option>
-              <option value="data_scientist">Data Scientist</option>
-              <option value="accountant">Accountant (General)</option>
-              <option value="mgmt_accountant">Management Accountant</option>
-              <option value="tax_accountant">Taxation Accountant</option>
-              <option value="auditor">Auditor</option>
-              <option value="actuary">Actuary</option>
+            <optgroup label="🔧 Trades (cutoffs 65–85 pts)">
+              <option value="electrician">Electrician — 65 pts ⚡</option>
+              <option value="carpenter">Carpenter / Carpenter &amp; Joiner — 65 pts ⚡</option>
+              <option value="bricklayer">Bricklayer — 65 pts ⚡</option>
+              <option value="glazier">Glazier — 65 pts ⚡</option>
+              <option value="plasterer">Plasterer / Wall &amp; Floor Tiler — 65 pts ⚡</option>
+              <option value="plumber">Plumber — 65 pts ⚡</option>
+              <option value="painter">Painter — 75 pts</option>
+              <option value="welder">Welder / Metal Fabricator — 80 pts</option>
+              <option value="cabinetmaker">Cabinetmaker — 85 pts</option>
+            </optgroup>
+            <optgroup label="💻 Tier 4 — ICT (189 FROZEN — use 190/491)">
+              <option value="software_eng">Software Engineer / Developer — FROZEN</option>
+              <option value="ict_analyst">ICT Business Analyst — FROZEN</option>
+              <option value="cybersec">Cybersecurity Analyst — FROZEN</option>
+              <option value="data_scientist">Data Scientist — FROZEN</option>
+              <option value="statistician">Statistician — 90 pts</option>
+            </optgroup>
+            <optgroup label="💰 Accounting (189 FROZEN — use SA 190)">
+              <option value="accountant">Accountant (General) — FROZEN</option>
+              <option value="mgmt_accountant">Management Accountant — FROZEN</option>
+              <option value="tax_accountant">Taxation Accountant — FROZEN</option>
+              <option value="auditor">Auditor — FROZEN</option>
+              <option value="actuary">Actuary — FROZEN</option>
             </optgroup>
             <optgroup label="Other">
-              <option value="chef">Cook / Chef</option>
+              <option value="chef">Cook / Chef — Not invited (190/491 only)</option>
             </optgroup>
           </select>
         </div>
@@ -335,71 +353,152 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
       </div>
     </div>
 
-    <!-- STEP 3: FULL RESULT — multiple charts -->
+    <!-- STEP 3: FULL RESULT — progressive disclosure -->
     <div id="step3">
 
-      <!-- Top stat strip -->
-      <div class="stat-strip">
-        <div class="ss"><div class="ss-v" id="ss-ahead" style="color:var(--amb)">—</div><div class="ss-l">people ahead of you</div></div>
-        <div class="ss"><div class="ss-v" id="ss-pct" style="color:var(--teal)">—</div><div class="ss-l">your percentile</div></div>
-        <div class="ss"><div class="ss-v" id="ss-wait" style="color:var(--txt)">—</div><div class="ss-l">average wait</div></div>
+      <!-- ① VERDICT — full width, first thing seen -->
+      <div class="verdict" id="verdict" style="margin-bottom:1rem"></div>
+
+      <!-- ② TENSION LINE — unresolved question -->
+      <div id="tension-line" style="background:var(--s1);border:1px solid var(--line);border-radius:12px;padding:0.85rem 1rem;margin-bottom:1rem;font-size:0.8rem;color:var(--txt2);line-height:1.65;border-left:3px solid var(--amb)"></div>
+
+      <!-- ③ STAT STRIP — 3 numbers only -->
+      <div class="stat-strip" style="margin-bottom:1rem">
+        <div class="ss">
+          <div class="ss-v" id="ss-ahead" style="color:var(--amb)">—</div>
+          <div class="ss-l">people ahead of you</div>
+        </div>
+        <div class="ss">
+          <div class="ss-v" id="ss-pct" style="color:var(--teal)">—</div>
+          <div class="ss-l">your percentile</div>
+        </div>
+        <div class="ss">
+          <div class="ss-v" id="ss-wait" style="color:var(--txt)">—</div>
+          <div class="ss-l">average wait</div>
+        </div>
       </div>
 
-      <!-- CHART 1: Pool breakdown by points band -->
-      <div class="chart-block" id="chart1-block">
-        <div class="cb-over" style="color:var(--teal)"><span style="background:var(--teal);width:5px;height:5px;border-radius:50%;display:inline-block"></span>Pool breakdown by points score</div>
-        <div class="cb-title" id="c1-title">—</div>
-        <div class="canvas-w" style="height:170px">
-          <canvas id="c1" role="img" aria-label="EOI pool breakdown by points band, June 2026, your band highlighted in teal">Select an occupation to view the pool breakdown.</canvas>
-        </div>
-        <div class="chart-leg">
-          <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#1D9E75"></span>Your band</span>
-          <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#3C3489"></span>Other bands</span>
-          <span style="margin-left:auto;font-size:0.6rem" id="c1-note"></span>
+      <!-- ④ EXPAND BUTTON — ONE next action -->
+      <button id="expand-btn" onclick="expandBreakdown()" style="width:100%;padding:0.85rem;background:transparent;border:1px solid var(--line2);border-radius:12px;color:var(--txt2);font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;margin-bottom:1rem;transition:all 0.15s;display:flex;align-items:center;justify-content:center;gap:0.5rem">
+        <span id="expand-label">See my full breakdown — pool chart, cutoff history, pool trend ↓</span>
+      </button>
+
+      <!-- ⑤ EXPANDABLE CHARTS — hidden by default -->
+      <div id="breakdown-section" style="display:none">
+        <div style="animation:up 0.45s cubic-bezier(0.16,1,0.3,1)">
+
+          <!-- CHART 1 -->
+          <div class="chart-block" id="chart1-block">
+            <div class="cb-over" style="color:var(--teal)"><span style="background:var(--teal);width:5px;height:5px;border-radius:50%;display:inline-block"></span>Pool by points score · <span style="font-weight:400;text-transform:none;letter-spacing:0" id="c1-src">DHA SkillSelect · Jun 2026</span></div>
+            <div class="cb-title" id="c1-title">—</div>
+            <div class="canvas-w" style="height:170px">
+              <canvas id="c1" role="img" aria-label="EOI pool breakdown by points band">—</canvas>
+            </div>
+            <div class="chart-leg">
+              <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#1D9E75"></span>Your band</span>
+              <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#3C3489"></span>Other bands</span>
+              <span style="margin-left:auto;font-size:0.6rem" id="c1-note"></span>
+            </div>
+          </div>
+
+          <!-- CHART 2 -->
+          <div class="chart-block" id="chart2-block">
+            <div class="cb-over" style="color:var(--amb)"><span style="background:var(--amb);width:5px;height:5px;border-radius:50%;display:inline-block"></span>189 Cutoff history · <span style="font-weight:400;text-transform:none;letter-spacing:0">last 5 invitation rounds</span></div>
+            <div class="cb-title" id="c2-title">—</div>
+            <div class="cutoff-row" id="cutoff-pills"></div>
+            <div class="canvas-w" style="height:150px">
+              <canvas id="c2" role="img" aria-label="189 cutoff history">—</canvas>
+            </div>
+            <div class="chart-leg">
+              <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#F59E0B;border-radius:50%"></span>Cutoff pts</span>
+              <span style="display:flex;align-items:center;gap:5px;margin-left:auto"><span class="cl-dot" style="background:rgba(240,82,82,0.4)"></span>Your score</span>
+            </div>
+            <div class="cb-note" id="c2-note" style="border-color:var(--amb)"></div>
+          </div>
+
+          <!-- CHART 3 -->
+          <div class="chart-block" id="chart3-block">
+            <div class="cb-over" style="color:var(--purple)"><span style="background:var(--purple);width:5px;height:5px;border-radius:50%;display:inline-block"></span>Pool trend · <span style="font-weight:400;text-transform:none;letter-spacing:0">Feb–Jun 2026</span></div>
+            <div class="cb-title" id="c3-title">—</div>
+            <div class="canvas-w" style="height:140px">
+              <canvas id="c3" role="img" aria-label="Pool trend month-over-month">—</canvas>
+            </div>
+            <div class="chart-leg">
+              <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#A78BFA;border-radius:50%"></span>Total pool</span>
+              <span style="margin-left:auto;font-size:0.6rem" id="c3-note"></span>
+            </div>
+            <div class="cb-note" id="c3-insight" style="border-color:var(--purple)"></div>
+          </div>
+
         </div>
       </div>
 
-      <!-- CHART 2: Cutoff history -->
-      <div class="chart-block" id="chart2-block">
-        <div class="cb-over" style="color:var(--amb)"><span style="background:var(--amb);width:5px;height:5px;border-radius:50%;display:inline-block"></span>189 Invitation cutoff history</div>
-        <div class="cb-title" id="c2-title">—</div>
-        <div class="cutoff-row" id="cutoff-pills"></div>
-        <div class="canvas-w" style="height:150px">
-          <canvas id="c2" role="img" aria-label="189 invitation cutoff points history showing trend over recent rounds">Cutoff history data for this occupation.</canvas>
+      <!-- ⑥ BLURRED STATE GRID — curiosity gap, anchored lock -->
+      <div style="position:relative;margin-bottom:1rem;border-radius:16px;overflow:hidden;border:1px solid var(--line2)">
+        <!-- visible header -->
+        <div style="background:var(--s1);padding:0.85rem 1.1rem;border-bottom:1px solid var(--line)">
+          <div style="font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.2rem">State nomination grid · <span style="font-weight:400;text-transform:none;letter-spacing:0">your probability for all 8 states</span></div>
+          <div style="font-size:0.82rem;font-weight:600;color:var(--txt)" id="state-grid-title">—</div>
         </div>
-        <div class="chart-leg">
-          <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#F59E0B;border-radius:50%"></span>Cutoff pts (last 5 rounds)</span>
-          <span style="display:flex;align-items:center;gap:5px;margin-left:auto"><span class="cl-dot" style="background:rgba(240,82,82,0.4)"></span>Your score</span>
+
+        <!-- top 3 visible -->
+        <div style="padding:0.85rem 1.1rem;background:var(--s1)">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.5rem" id="top3-states">
+            <!-- populated by JS -->
+          </div>
+          <div style="font-size:0.65rem;color:var(--muted)">Your top 3 states · based on occupation, points &amp; availability</div>
         </div>
-        <div class="cb-note" id="c2-note" style="border-color:var(--amb)"></div>
+
+        <!-- bottom 5 blurred -->
+        <div style="position:relative">
+          <div style="padding:0.75rem 1.1rem;background:var(--s1);filter:blur(5px);user-select:none;pointer-events:none" aria-hidden="true">
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem">
+              <div style="background:var(--s2);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-size:0.65rem;font-weight:700;color:var(--txt)">VIC</div><div style="font-size:0.6rem;color:var(--muted)">——%</div></div>
+              <div style="background:var(--s2);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-size:0.65rem;font-weight:700;color:var(--txt)">NSW</div><div style="font-size:0.6rem;color:var(--muted)">——%</div></div>
+              <div style="background:var(--s2);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-size:0.65rem;font-weight:700;color:var(--txt)">ACT</div><div style="font-size:0.6rem;color:var(--muted)">——%</div></div>
+              <div style="background:var(--s2);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-size:0.65rem;font-weight:700;color:var(--txt)">NT</div><div style="font-size:0.6rem;color:var(--muted)">——%</div></div>
+              <div style="background:var(--s2);border-radius:8px;padding:0.6rem;text-align:center"><div style="font-size:0.65rem;font-weight:700;color:var(--txt)">WA</div><div style="font-size:0.6rem;color:var(--muted)">——%</div></div>
+            </div>
+            <div style="font-size:0.65rem;color:var(--muted);margin-top:0.4rem">Eligibility reasoning · processing time · places remaining</div>
+          </div>
+          <!-- lock overlay -->
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,14,28,0.7);backdrop-filter:blur(2px)">
+            <div style="text-align:center;padding:1rem">
+              <div style="font-size:0.75rem;font-weight:700;color:var(--txt);margin-bottom:0.3rem">🔒 Full state eligibility in your report</div>
+              <div style="font-size:0.68rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.5">All 8 states · probability score · checklist · apply links</div>
+              <a href="/report" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gold);color:var(--ink);padding:0.55rem 1.1rem;border-radius:9px;font-size:0.78rem;font-weight:800;text-decoration:none;transition:opacity 0.15s" onclick="gtag('event','state_lock_click',{event_category:'conversion'})">Unlock full state grid →</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- CHART 3: Pool trend month-over-month -->
-      <div class="chart-block" id="chart3-block">
-        <div class="cb-over" style="color:var(--purple)"><span style="background:var(--purple);width:5px;height:5px;border-radius:50%;display:inline-block"></span>Pool size trend — month over month</div>
-        <div class="cb-title" id="c3-title">—</div>
-        <div class="canvas-w" style="height:140px">
-          <canvas id="c3" role="img" aria-label="EOI pool size trend showing month-over-month change for this occupation">Pool trend data for this occupation.</canvas>
-        </div>
-        <div class="chart-leg">
-          <span style="display:flex;align-items:center;gap:5px"><span class="cl-dot" style="background:#A78BFA;border-radius:50%"></span>Total pool size (all bands)</span>
-          <span style="margin-left:auto;font-size:0.6rem" id="c3-note"></span>
-        </div>
-        <div class="cb-note" id="c3-insight" style="border-color:var(--purple)"></div>
-      </div>
-
-      <!-- Verdict -->
-      <div class="verdict" id="verdict"></div>
-
-      <!-- Buy card -->
+      <!-- ⑦ REPORT CTA — anchored, not timed -->
       <div class="buy-card">
+        <div style="font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.5rem" id="report-id-line">Report #VIQ-— · DHA SkillSelect · Jun 2026</div>
         <div class="buy-num" id="buy-num" style="color:var(--gold2)">—</div>
         <div class="buy-lbl">people currently ahead of you in the queue</div>
         <div class="buy-sub" id="buy-sub">—</div>
-        <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" class="buy-btn" onclick="gtag('event','buy_click',{event_category:'conversion',value:69})">Get my full PR report — A$69 →</a>
-        <div class="buy-fine">Instant · One-off · Not migration advice · visaiq.com.au</div>
+        <a href="/report" class="buy-btn" onclick="gtag('event','buy_click',{event_category:'conversion',value:69})">See my full PR report →</a>
+        <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.65rem;flex-wrap:wrap">
+          <a href="/report" style="font-size:0.72rem;color:var(--teal);text-decoration:none;font-weight:600">A$69 full report</a>
+          <span style="color:var(--muted);font-size:0.72rem">·</span>
+          <a href="/report#snapshot" style="font-size:0.72rem;color:var(--muted);text-decoration:none">A$29 snapshot</a>
+        </div>
+        <div class="buy-fine">Instant · One-off · Not migration advice</div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDER NOTE -->
+<div style="max-width:640px;margin:0 auto;padding:0 5% 2rem">
+  <div style="background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:1.35rem;display:flex;gap:1rem;align-items:flex-start">
+    <div style="width:40px;height:40px;border-radius:12px;background:var(--gd);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">👋</div>
+    <div>
+      <div style="font-size:0.7rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem">Why I built this</div>
+      <p style="font-size:0.8rem;color:var(--txt2);line-height:1.7;margin-bottom:0.35rem">"I watched friends pay $500 to be told what public DHA data already says. VisaIQ puts the same intelligence in your hands for the price of lunch. The queue data is public — it just wasn't readable."</p>
+      <div style="font-size:0.72rem;color:var(--muted)">— <span style="color:var(--gold);font-weight:600">Z</span>, founder · visaiq.com.au · Not migration advice</div>
     </div>
   </div>
 </div>
@@ -407,7 +506,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
 <!-- TABLE -->
 <div class="table-section">
   <div class="ts-head">
-    <div class="ts-over">Pool data · June 2026</div>
+    <div class="ts-over">Pool data · 4 Jun 2026 DHA Round · Community verified</div>
     <div class="ts-title">All occupations — <em>current status</em></div>
     <div class="ts-desc">Click any column to sort. Filter by tier. Your occupation highlighted once you check above.</div>
   </div>
@@ -444,7 +543,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
 <footer>
   <div class="fg">
     <div><div class="fc-l">Skilled Migration</div>
-      <a href="/tool">PR Intelligence Report</a><a href="/points-calculator">Points Calculator</a>
+      <a href="/report">PR Intelligence Report</a><a href="/points-calculator">Points Calculator</a>
       <a href="/189-visa">189 Independent</a><a href="/190-visa">190 State Nomination</a><a href="/491-visa">491 Regional</a>
     </div>
     <div><div class="fc-l">Other Pathways</div>
@@ -463,104 +562,175 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
 <script>
 /* ══ DATA ════════════════════════════════════════════════════ */
 var D={
-  reg_nurse_gen:{lb:"Registered Nurse (General)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  reg_nurse_gen:{lb:"Registered Nurse (General/NEC)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
     p189:{65:411,70:2813,75:1929,80:1843,85:328,90:37},
     p190:{65:919,70:1836,75:2189,80:2816,85:1147,90:489},
     wt:3,wa:5,wm:8,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:80},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],
     poolTrend:[{m:"Feb",v:8200},{m:"Mar",v:7900},{m:"Apr",v:7890},{m:"May",v:7600},{m:"Jun",v:7361}]},
-  reg_nurse_aged:{lb:"Registered Nurse (Aged Care)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  reg_nurse_aged:{lb:"Registered Nurse (Aged Care)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{65:434,70:434,75:451,80:498,85:20},p190:{65:239,70:492,75:451,80:481,85:387},
     wt:3,wa:5,wm:8,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:80},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:2100},{m:"Mar",v:2020},{m:"Apr",v:1950},{m:"May",v:1900},{m:"Jun",v:1837}]},
-  reg_nurse_mental:{lb:"Registered Nurse (Mental Health)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  reg_nurse_mental:{lb:"Registered Nurse (Mental Health)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,
     p189:{65:400,70:500,75:480,80:220,85:80},p190:{65:200,70:380,75:420,80:310,85:180},
     wt:3,wa:5,wm:9,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:80}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:80},{r:"Jun 2026",c:85}],
     poolTrend:[{m:"Feb",v:1900},{m:"Mar",v:1820},{m:"Apr",v:1720},{m:"May",v:1710},{m:"Jun",v:1680}]},
-  reg_nurse_critical:{lb:"Registered Nurse (Critical Care)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  reg_nurse_critical:{lb:"Registered Nurse (Critical Care & Emergency)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
     p189:{65:350,70:420,75:400,80:190,85:70},p190:{65:180,70:320,75:380,80:280,85:160},
     wt:3,wa:5,wm:8,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],
     poolTrend:[{m:"Feb",v:1600},{m:"Mar",v:1520},{m:"Apr",v:1450},{m:"May",v:1430},{m:"Jun",v:1430}]},
-  midwife:{lb:"Midwife",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  reg_nurse_surgical:{lb:"Registered Nurse (Surgical)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+    p189:{65:280,70:340,75:320,80:160,85:55},p190:{65:140,70:260,75:300,80:220,85:120},
+    wt:3,wa:5,wm:8,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],
+    poolTrend:[{m:"Feb",v:1200},{m:"Mar",v:1150},{m:"Apr",v:1100},{m:"May",v:1080},{m:"Jun",v:1060}]},
+  reg_nurse_periop:{lb:"Registered Nurse (Perioperative)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,
+    p189:{65:220,70:280,75:260,80:130,85:50},p190:{65:110,70:210,75:240,80:180,85:90},
+    wt:4,wa:6,wm:10,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Jun 2026",c:85}],
+    poolTrend:[{m:"Feb",v:980},{m:"Mar",v:940},{m:"Apr",v:900},{m:"May",v:880},{m:"Jun",v:860}]},
+  reg_nurse_medical:{lb:"Registered Nurse (Medical)",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,
+    p189:{65:310,70:380,75:360,80:180,85:65},p190:{65:155,70:290,75:330,80:250,85:115},
+    wt:4,wa:6,wm:10,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Jun 2026",c:85}],
+    poolTrend:[{m:"Feb",v:1380},{m:"Mar",v:1320},{m:"Apr",v:1260},{m:"May",v:1240},{m:"Jun",v:1215}]},
+  midwife:{lb:"Midwife",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{65:20,70:28,75:31,80:20},p190:{65:20,70:23,75:26,80:20},
     wt:3,wa:5,wm:8,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:130},{m:"Mar",v:125},{m:"Apr",v:120},{m:"May",v:115},{m:"Jun",v:99}]},
-  gp:{lb:"General Practitioner",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  gp:{lb:"General Practitioner",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{60:38,65:89,70:175,75:284,80:154,85:116},p190:{60:20,65:39,70:284,75:149,80:170,85:130},
     wt:3,wa:5,wm:8,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:1050},{m:"Mar",v:980},{m:"Apr",v:950},{m:"May",v:910},{m:"Jun",v:856}]},
-  physio:{lb:"Physiotherapist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  physio:{lb:"Physiotherapist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{65:119,70:135,75:156,80:91,85:32},p190:{65:88,70:195,75:228,80:289,85:123},
     wt:4,wa:6,wm:10,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:80},{r:"Jun 2026",c:75}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:80},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:780},{m:"Mar",v:760},{m:"Apr",v:720},{m:"May",v:680},{m:"Jun",v:533}]},
-  ot:{lb:"Occupational Therapist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  ot:{lb:"Occupational Therapist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{65:89,70:20,75:144,80:66,85:24},p190:{65:20,70:172,75:289,80:166,85:84},
     wt:4,wa:6,wm:10,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Apr 2026",c:85},{r:"Jun 2026",c:80}],
+    cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:480},{m:"Mar",v:450},{m:"Apr",v:430},{m:"May",v:400},{m:"Jun",v:343}]},
-  speech:{lb:"Speech Pathologist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,
+  speech:{lb:"Speech Pathologist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
     p189:{65:20,70:27,75:42,80:42,85:25},p190:{65:20,70:20,75:28,80:38,85:32},
     wt:4,wa:6,wm:10,tr:"shrinking",
-    cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:80}],
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:80},{r:"Jun 2026",c:80}],
     poolTrend:[{m:"Feb",v:210},{m:"Mar",v:195},{m:"Apr",v:180},{m:"May",v:165},{m:"Jun",v:156}]},
   pharmacist:{lb:"Pharmacist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:0,
     p189:{65:1149,70:2373,75:1141,80:484},p190:{65:1149,70:2373,75:1141,80:484},
     wt:0,wa:0,wm:0,tr:"stable",
-    cutoff:[{r:"Nov 2024",c:0},{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Apr 2026",c:0},{r:"Jun 2026",c:0}],
+    cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],
     poolTrend:[{m:"Feb",v:5200},{m:"Mar",v:5180},{m:"Apr",v:5160},{m:"May",v:5148},{m:"Jun",v:5147}]},
-  psychologist:{lb:"Clinical Psychologist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,
-    p189:{65:20,70:20,75:20,80:20},p190:{65:20,70:20,75:20,80:20},
+  psychologist:{lb:"Clinical Psychologist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,
+    p189:{65:20,70:20,75:20,80:20,85:20},p190:{65:20,70:20,75:20,80:20},
     wt:4,wa:6,wm:9,tr:"stable",
-    cutoff:[{r:"Nov 2024",c:80},{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Apr 2026",c:80},{r:"Jun 2026",c:80}],
+    cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Jun 2026",c:85}],
     poolTrend:[{m:"Feb",v:95},{m:"Mar",v:90},{m:"Apr",v:88},{m:"May",v:85},{m:"Jun",v:80}]},
-  optometrist:{lb:"Optometrist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,p189:{65:20,70:30,75:42,80:35},p190:{65:20,70:26,75:38,80:30},wt:4,wa:6,wm:10,tr:"stable",cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:160},{m:"Mar",v:155},{m:"Apr",v:148},{m:"May",v:142},{m:"Jun",v:127}]},
-  podiatrist:{lb:"Podiatrist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,p189:{65:20,70:25,75:32,80:28},p190:{65:20,70:22,75:28,80:24},wt:4,wa:6,wm:10,tr:"stable",cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:120},{m:"Mar",v:112},{m:"Apr",v:108},{m:"May",v:105},{m:"Jun",v:105}]},
-  dentist:{lb:"Dentist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:0,p189:{65:20,70:26,75:48,80:43},p190:{65:20,70:26,75:48,80:43},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:145},{m:"Mar",v:142},{m:"Apr",v:140},{m:"May",v:138},{m:"Jun",v:137}]},
-  radiographer:{lb:"Radiographer",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,p189:{65:20,70:69,75:84,80:115,85:49},p190:{65:20,70:69,75:84,80:115,85:49},wt:4,wa:5,wm:9,tr:"shrinking",cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:430},{m:"Mar",v:400},{m:"Apr",v:380},{m:"May",v:360},{m:"Jun",v:337}]},
-  vet:{lb:"Veterinarian",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,p189:{65:80,70:120,75:140,80:130,85:90},p190:{65:40,70:90,75:120,80:110},wt:4,wa:5,wm:9,tr:"stable",cutoff:[{r:"Nov 2024",c:85},{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Apr 2026",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:620},{m:"Mar",v:615},{m:"Apr",v:610},{m:"May",v:605},{m:"Jun",v:560}]},
+  optometrist:{lb:"Optometrist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,p189:{65:20,70:30,75:42,80:35},p190:{65:20,70:26,75:38,80:30},wt:4,wa:6,wm:10,tr:"stable",cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:160},{m:"Mar",v:155},{m:"Apr",v:148},{m:"May",v:142},{m:"Jun",v:127}]},
+  podiatrist:{lb:"Podiatrist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:75,p189:{65:20,70:25,75:32,80:28},p190:{65:20,70:22,75:28,80:24},wt:4,wa:6,wm:10,tr:"stable",cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:120},{m:"Mar",v:112},{m:"Apr",v:108},{m:"May",v:105},{m:"Jun",v:105}]},
+  dentist:{lb:"Dentist",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:0,p189:{65:20,70:26,75:48,80:43},p190:{65:20,70:26,75:48,80:43},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:145},{m:"Mar",v:142},{m:"Apr",v:140},{m:"May",v:138},{m:"Jun",v:137}]},
+  radiographer:{lb:"Radiographer",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:80,p189:{65:20,70:69,75:84,80:115,85:49},p190:{65:20,70:69,75:84,80:115,85:49},wt:4,wa:5,wm:9,tr:"shrinking",cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:80},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:430},{m:"Mar",v:400},{m:"Apr",v:380},{m:"May",v:360},{m:"Jun",v:337}]},
+  vet:{lb:"Veterinarian",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:85,p189:{65:80,70:120,75:140,80:130,85:90},p190:{65:40,70:90,75:120,80:110},wt:4,wa:5,wm:9,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:620},{m:"Mar",v:615},{m:"Apr",v:610},{m:"May",v:605},{m:"Jun",v:560}]},
   aged_care_worker:{lb:"Aged Care Worker",t:1,ti:"🏥",tl:"Tier 1 — Healthcare",c:0,p189:{65:880,70:1240,75:980,80:620},p190:{65:240,70:480,75:560,80:380},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:3900},{m:"Mar",v:3850},{m:"Apr",v:3800},{m:"May",v:3750},{m:"Jun",v:3720}]},
   ece_teacher:{lb:"Early Childhood Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:85,
     p189:{65:1734,70:2689,75:2893,80:1882,85:1681},p190:{65:1392,70:1941,75:2689,80:2297,85:1762},
     wt:7,wa:11,wm:16,tr:"stable",
-    cutoff:[{r:"Nov 2024",c:85},{r:"Aug 2025",c:85},{r:"Nov 2025",c:90},{r:"Apr 2026",c:90},{r:"Jun 2026",c:85}],
+    cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:0}],
     poolTrend:[{m:"Feb",v:11100},{m:"Mar",v:10900},{m:"Apr",v:10850},{m:"May",v:10800},{m:"Jun",v:10879}]},
-  primary_teacher:{lb:"Primary School Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:85,p189:{65:172,70:274,75:274,80:291,85:205},p190:{65:172,70:274,75:274,80:291,85:205},wt:7,wa:10,wm:14,tr:"stable",cutoff:[{r:"Nov 2024",c:85},{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Apr 2026",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:1350},{m:"Mar",v:1330},{m:"Apr",v:1310},{m:"May",v:1280},{m:"Jun",v:1216}]},
-  secondary_teacher:{lb:"Secondary School Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:75,p189:{65:489,70:577,75:572,80:295,85:169},p190:{65:412,70:1188,75:823,80:979,85:416},wt:8,wa:13,wm:18,tr:"stable",cutoff:[{r:"Nov 2024",c:75},{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Apr 2026",c:80},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:2290},{m:"Mar",v:2260},{m:"Apr",v:2250},{m:"May",v:2210},{m:"Jun",v:2102}]},
+  primary_teacher:{lb:"Primary School Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:85,p189:{65:172,70:274,75:274,80:291,85:205},p190:{65:172,70:274,75:274,80:291,85:205},wt:7,wa:10,wm:14,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:1350},{m:"Mar",v:1330},{m:"Apr",v:1310},{m:"May",v:1280},{m:"Jun",v:1216}]},
+  secondary_teacher:{lb:"Secondary School Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:75,p189:{65:489,70:577,75:572,80:295,85:169},p190:{65:412,70:1188,75:823,80:979,85:416},wt:8,wa:13,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:2290},{m:"Mar",v:2260},{m:"Apr",v:2250},{m:"May",v:2210},{m:"Jun",v:2102}]},
   special_ed:{lb:"Special Education Teacher",t:2,ti:"📚",tl:"Tier 2 — Education",c:75,p189:{65:120,70:155,75:170,80:95,85:45},p190:{65:110,70:145,75:160,80:88,85:40},wt:6,wa:10,wm:14,tr:"stable",cutoff:[{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:640},{m:"Mar",v:625},{m:"Apr",v:615},{m:"May",v:600},{m:"Jun",v:585}]},
-  social_worker:{lb:"Social Worker",t:2,ti:"📚",tl:"Tier 2 — Community",c:75,p189:{65:265,70:361,75:351,80:228,85:107},p190:{65:265,70:400,75:450,80:380,85:250},wt:9,wa:15,wm:20,tr:"stable",cutoff:[{r:"Nov 2024",c:80},{r:"Aug 2025",c:80},{r:"Nov 2025",c:75},{r:"Apr 2026",c:80},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:1430},{m:"Mar",v:1420},{m:"Apr",v:1415},{m:"May",v:1320},{m:"Jun",v:1312}]},
+  social_worker:{lb:"Social Worker",t:2,ti:"📚",tl:"Tier 2 — Community",c:75,p189:{65:265,70:361,75:351,80:228,85:107},p190:{65:265,70:400,75:450,80:380,85:250},wt:9,wa:15,wm:20,tr:"stable",cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:1430},{m:"Mar",v:1420},{m:"Apr",v:1415},{m:"May",v:1320},{m:"Jun",v:1312}]},
   welfare_worker:{lb:"Community / Welfare Worker",t:2,ti:"📚",tl:"Tier 2 — Community",c:75,p189:{65:180,70:240,75:260,80:150,85:70},p190:{65:160,70:220,75:240,80:140,85:65},wt:9,wa:14,wm:18,tr:"stable",cutoff:[{r:"Jun 2026",c:75}],poolTrend:[{m:"Feb",v:990},{m:"Mar",v:960},{m:"Apr",v:940},{m:"May",v:920},{m:"Jun",v:900}]},
-  civil_engineer:{lb:"Civil Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:1665,70:1686,75:1693,80:1328,85:1038,90:545},p190:{65:1882,70:3787,75:3166,80:3248,85:2329,90:1671},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Nov 2024",c:0},{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Apr 2026",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:8100},{m:"Mar",v:7990},{m:"Apr",v:7960},{m:"May",v:7990},{m:"Jun",v:7955}]},
+  civil_engineer:{lb:"Civil Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:1665,70:1686,75:1693,80:1328,85:1038,90:545},p190:{65:1882,70:3787,75:3166,80:3248,85:2329,90:1671},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:8100},{m:"Mar",v:7990},{m:"Apr",v:7960},{m:"May",v:7990},{m:"Jun",v:7955}]},
+  eng_manager:{lb:"Engineering Manager",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:70,p189:{65:120,70:180,75:220,80:190,85:140},p190:{65:90,70:160,75:200,80:175,85:120},wt:8,wa:12,wm:18,tr:"shrinking",cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:75},{r:"Jun 2026",c:70}],poolTrend:[{m:"Feb",v:890},{m:"Mar",v:870},{m:"Apr",v:855},{m:"May",v:840},{m:"Jun",v:850}]},
+  const_proj_mgr:{lb:"Construction Project Manager",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:80,p189:{65:280,70:340,75:390,80:350,85:250},p190:{65:240,70:480,75:540,80:490,85:360},wt:8,wa:12,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:1540},{m:"Mar",v:1510},{m:"Apr",v:1490},{m:"May",v:1470},{m:"Jun",v:1420}]},
   mech_engineer:{lb:"Mechanical Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:1883,70:692,80:1413,90:692},p190:{65:1329,70:2138,75:3811,80:1938},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:4800},{m:"Mar",v:4760},{m:"Apr",v:4720},{m:"May",v:4700},{m:"Jun",v:4680}]},
   elec_engineer:{lb:"Electrical Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:455,70:288,75:735,80:661},p190:{65:824,75:1548,80:1682,85:1918},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2220},{m:"Mar",v:2190},{m:"Apr",v:2160},{m:"May",v:2160},{m:"Jun",v:2139}]},
+  chem_engineer:{lb:"Chemical Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:90,p189:{65:280,70:340,75:390,80:350,85:300,90:220},p190:{65:240,70:480,75:540,80:490,85:400,90:300},wt:8,wa:12,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:90},{r:"Nov 2025",c:90},{r:"Jun 2026",c:90}],poolTrend:[{m:"Feb",v:1580},{m:"Mar",v:1560},{m:"Apr",v:1540},{m:"May",v:1520},{m:"Jun",v:1500}]},
+  mining_engineer:{lb:"Mining Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:85,p189:{65:280,70:320,75:380,80:310,85:220},p190:{65:310,70:480,75:560,80:510,85:380},wt:6,wa:10,wm:15,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:1660},{m:"Mar",v:1640},{m:"Apr",v:1620},{m:"May",v:1520},{m:"Jun",v:1510}]},
+  petroleum_engineer:{lb:"Petroleum Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:85,p189:{65:120,70:160,75:190,80:170,85:130},p190:{65:100,70:180,75:210,80:190,85:145},wt:7,wa:11,wm:16,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:720},{m:"Mar",v:710},{m:"Apr",v:700},{m:"May",v:690},{m:"Jun",v:750}]},
+  telco_engineer:{lb:"Telecommunications Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:95,p189:{65:180,70:220,75:260,80:280,85:240,90:200,95:150},p190:{65:160,70:380,75:420,80:460,85:400,90:340,95:260},wt:10,wa:16,wm:24,tr:"stable",cutoff:[{r:"Aug 2025",c:95},{r:"Nov 2025",c:95},{r:"Jun 2026",c:95}],poolTrend:[{m:"Feb",v:1420},{m:"Mar",v:1440},{m:"Apr",v:1460},{m:"May",v:1480},{m:"Jun",v:1530}]},
   struct_engineer:{lb:"Structural Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:142,70:112,75:499,80:93},p190:{65:175,70:387,75:238,80:368},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:1020},{m:"Mar",v:1000},{m:"Apr",v:990},{m:"May",v:980},{m:"Jun",v:846}]},
-  mining_engineer:{lb:"Mining Engineer",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:85,p189:{65:280,70:320,75:380,80:310,85:220},p190:{65:310,70:480,75:560,80:510,85:380},wt:6,wa:10,wm:15,tr:"stable",cutoff:[{r:"Nov 2024",c:85},{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Apr 2026",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:1660},{m:"Mar",v:1640},{m:"Apr",v:1620},{m:"May",v:1520},{m:"Jun",v:1510}]},
-  architect:{lb:"Architect",t:3,ti:"🏗️",tl:"Tier 3 — Architecture",c:85,p189:{65:880,70:950,75:1020,80:840,85:680},p190:{65:970,70:2100,75:1900,80:1950,85:1400},wt:9,wa:15,wm:20,tr:"stable",cutoff:[{r:"Nov 2024",c:85},{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Apr 2026",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:4650},{m:"Mar",v:4560},{m:"Apr",v:4490},{m:"May",v:4420},{m:"Jun",v:4370}]},
-  surveyor:{lb:"Surveyor / Spatial Scientist",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:85,p189:{65:580,70:630,75:678,80:560,85:454},p190:{65:648,70:1400,75:1267,80:1300,85:933},wt:8,wa:13,wm:18,tr:"stable",cutoff:[{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:3080},{m:"Mar",v:3010},{m:"Apr",v:2970},{m:"May",v:2940},{m:"Jun",v:2902}]},
-  urban_planner:{lb:"Urban Planner",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:85,p189:{65:240,70:280,75:310,80:270,85:195},p190:{65:260,70:420,75:395,80:385,85:290},wt:8,wa:13,wm:18,tr:"stable",cutoff:[{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:1400},{m:"Mar",v:1370},{m:"Apr",v:1350},{m:"May",v:1310},{m:"Jun",v:1295}]},
-  construction_manager:{lb:"Construction Project Manager",t:3,ti:"🏗️",tl:"Tier 3 — Engineering",c:0,p189:{65:580,70:620,75:695,80:570},p190:{65:640,70:1100,75:1020,80:980},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2560},{m:"Mar",v:2520},{m:"Apr",v:2500},{m:"May",v:2480},{m:"Jun",v:2465}]},
-  electrician:{lb:"Electrician",t:3,ti:"🔧",tl:"Tier 3 — Trades",c:65,p189:{65:58,70:32,75:20,80:20},p190:{65:169,70:144,75:66,80:28},wt:4,wa:6,wm:10,tr:"shrinking",cutoff:[{r:"Nov 2024",c:65},{r:"Aug 2025",c:65},{r:"Nov 2025",c:65},{r:"Apr 2026",c:65},{r:"Jun 2026",c:65}],poolTrend:[{m:"Feb",v:480},{m:"Mar",v:440},{m:"Apr",v:400},{m:"May",v:370},{m:"Jun",v:407}]},
-  plumber:{lb:"Plumber",t:3,ti:"🔧",tl:"Tier 3 — Trades",c:65,p189:{65:20,70:20,75:20,80:20},p190:{65:21,70:48,75:20,80:20},wt:4,wa:6,wm:10,tr:"stable",cutoff:[{r:"Jun 2026",c:65}],poolTrend:[{m:"Feb",v:120},{m:"Mar",v:115},{m:"Apr",v:110},{m:"May",v:108},{m:"Jun",v:109}]},
-  carpenter:{lb:"Carpenter",t:3,ti:"🔧",tl:"Tier 3 — Trades",c:65,p189:{65:422,70:218,75:95,80:27},p190:{65:665,70:731,75:475,80:248},wt:5,wa:8,wm:12,tr:"stable",cutoff:[{r:"Nov 2024",c:65},{r:"Aug 2025",c:65},{r:"Nov 2025",c:65},{r:"Apr 2026",c:65},{r:"Jun 2026",c:65}],poolTrend:[{m:"Feb",v:2450},{m:"Mar",v:2380},{m:"Apr",v:2300},{m:"May",v:2180},{m:"Jun",v:2119}]},
-  welder:{lb:"Welder (First Class)",t:3,ti:"🔧",tl:"Tier 3 — Trades",c:65,p189:{65:180,70:140,75:65,80:28},p190:{65:320,70:380,75:260,80:140},wt:5,wa:8,wm:12,tr:"stable",cutoff:[{r:"Jun 2026",c:65}],poolTrend:[{m:"Feb",v:1330},{m:"Mar",v:1280},{m:"Apr",v:1250},{m:"May",v:1200},{m:"Jun",v:1100}]},
-  diesel_mechanic:{lb:"Diesel Motor Mechanic",t:3,ti:"🔧",tl:"Tier 3 — Trades",c:65,p189:{65:210,70:180,75:85,80:32},p190:{65:380,70:420,75:290,80:160},wt:5,wa:8,wm:13,tr:"stable",cutoff:[{r:"Jun 2026",c:65}],poolTrend:[{m:"Feb",v:1200},{m:"Mar",v:1160},{m:"Apr",v:1100},{m:"May",v:1050},{m:"Jun",v:1000}]},
-  sw_engineer:{lb:"Software Engineer",t:4,ti:"💻",tl:"Tier 4 — Technology",c:0,p189:{65:1274,70:1599,75:1692,80:1413,85:1385,90:1218},p190:{65:2258,70:3644,75:3968,80:4886,85:3864,90:2697},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Nov 2024",c:0},{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Apr 2026",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:7200},{m:"Mar",v:7400},{m:"Apr",v:7520},{m:"May",v:7550},{m:"Jun",v:7581}]},
-  developer:{lb:"Developer Programmer",t:4,ti:"💻",tl:"Tier 4 — Technology",c:0,p189:{65:752,70:965,75:1069,80:1897,85:1731},p190:{75:2274,80:2398,85:1918,90:1731},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:5400},{m:"Mar",v:5500},{m:"Apr",v:5520},{m:"May",v:5560},{m:"Jun",v:6414}]},
-  sys_analyst:{lb:"Systems Analyst",t:4,ti:"💻",tl:"Tier 4 — ICT",c:0,p189:{65:497,70:695,75:885,80:797},p190:{65:345,70:958,75:1062,80:797},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2700},{m:"Mar",v:2750},{m:"Apr",v:2780},{m:"May",v:2800},{m:"Jun",v:2874}]},
-  ict_analyst:{lb:"ICT Business Analyst",t:4,ti:"💻",tl:"Tier 4 — ICT",c:0,p189:{65:935,70:1877,75:1353,80:1746,85:1164},p190:{65:992,70:1868,75:1926,80:2221,85:1938},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:5900},{m:"Mar",v:5980},{m:"Apr",v:6050},{m:"May",v:6100},{m:"Jun",v:7075}]},
-  cybersec:{lb:"Cybersecurity Analyst",t:4,ti:"💻",tl:"Tier 4 — ICT",c:0,p189:{65:420,70:580,75:640,80:720,85:610},p190:{65:380,70:860,75:940,80:1050,85:890},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2900},{m:"Mar",v:3000},{m:"Apr",v:3080},{m:"May",v:3100},{m:"Jun",v:3120}]},
-  data_scientist:{lb:"Data Scientist",t:4,ti:"💻",tl:"Tier 4 — ICT",c:0,p189:{65:420,70:580,75:640,80:720,85:610},p190:{65:380,70:860,75:940,80:1050,85:890},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2600},{m:"Mar",v:2680},{m:"Apr",v:2750},{m:"May",v:2800},{m:"Jun",v:2970}]},
-  accountant:{lb:"Accountant (General)",t:4,ti:"💰",tl:"Tier 4 — Accounting",c:0,p189:{65:1889,70:1590,75:1928,80:1285,85:1059,90:619},p190:{65:867,75:2888,80:3455,85:1621,90:1260},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Nov 2024",c:0},{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Apr 2026",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:6800},{m:"Mar",v:7000},{m:"Apr",v:7100},{m:"May",v:7180},{m:"Jun",v:9177}]},
-  mgmt_accountant:{lb:"Management Accountant",t:4,ti:"💰",tl:"Tier 4 — Accounting",c:0,p189:{65:264,70:366,75:365,80:388,85:268},p190:{65:127,75:463,80:585,85:375},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:1580},{m:"Mar",v:1610},{m:"Apr",v:1640},{m:"May",v:1660},{m:"Jun",v:1651}]},
-  tax_accountant:{lb:"Taxation Accountant",t:4,ti:"💰",tl:"Tier 4 — Accounting",c:0,p189:{65:434,70:587,75:483,80:384,85:360},p190:{},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2050},{m:"Mar",v:2090},{m:"Apr",v:2120},{m:"May",v:2160},{m:"Jun",v:2248}]},
-  auditor:{lb:"Auditor",t:4,ti:"💰",tl:"Tier 4 — Accounting",c:0,p189:{65:180,70:240,75:270,80:220},p190:{65:160,70:340,75:380,80:310},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:900},{m:"Mar",v:930},{m:"Apr",v:960},{m:"May",v:980},{m:"Jun",v:910}]},
+  architect:{lb:"Architect",t:3,ti:"🏗️",tl:"Tier 3 — Architecture",c:85,p189:{65:880,70:950,75:1020,80:840,85:680},p190:{65:970,70:2100,75:1900,80:1950,85:1400},wt:9,wa:15,wm:20,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:4650},{m:"Mar",v:4560},{m:"Apr",v:4490},{m:"May",v:4420},{m:"Jun",v:4370}]},
+  electrician:{lb:"Electrician (General)",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{55:20,60:20,65:20,70:32,75:20,80:20},
+    p190:{55:20,60:38,65:68,70:92,75:48},
+    wt:2,wa:4,wm:7,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:65},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:310},{m:"Mar",v:290},{m:"Apr",v:272},{m:"May",v:255},{m:"Jun",v:240}]},
+  plumber:{lb:"Plumber (General)",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{55:20,60:20,65:85,70:45,75:20,80:20},
+    p190:{55:20,60:38,65:110,70:75,75:38},
+    wt:2,wa:4,wm:7,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:65},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:490},{m:"Mar",v:465},{m:"Apr",v:442},{m:"May",v:420},{m:"Jun",v:400}]},
+  carpenter:{lb:"Carpenter / Carpenter and Joiner",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{55:20,60:20,65:422,70:218,75:95,80:27,85:20},
+    p190:{55:20,60:60,65:480,70:280,75:120,80:35},
+    wt:2,wa:4,wm:7,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:65},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:910},{m:"Mar",v:870},{m:"Apr",v:830},{m:"May",v:800},{m:"Jun",v:782}]},
+  bricklayer:{lb:"Bricklayer",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{55:20,60:20,65:180,70:120,75:55,80:20},
+    p190:{55:20,60:32,65:220,70:150,75:68,80:25},
+    wt:2,wa:3,wm:6,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:70},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:480},{m:"Mar",v:455},{m:"Apr",v:432},{m:"May",v:410},{m:"Jun",v:395}]},
+  glazier:{lb:"Glazier",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{65:95,70:60,75:25,80:20},p190:{65:120,70:75,75:30,80:20},
+    wt:2,wa:3,wm:6,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:70},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:280},{m:"Mar",v:262},{m:"Apr",v:245},{m:"May",v:230},{m:"Jun",v:200}]},
+  plasterer:{lb:"Plasterer (General) / Wall and Floor Tiler",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:65,
+    p189:{65:140,70:90,75:38,80:20},p190:{65:170,70:110,75:46,80:20},
+    wt:2,wa:3,wm:6,tr:"shrinking",
+    cutoff:[{r:"Aug 2025",c:70},{r:"Nov 2025",c:65},{r:"Jun 2026",c:65}],
+    poolTrend:[{m:"Feb",v:360},{m:"Mar",v:340},{m:"Apr",v:320},{m:"May",v:300},{m:"Jun",v:282}]},
+  painter:{lb:"Painter and Decorator",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:75,
+    p189:{65:180,70:220,75:195,80:120,85:55},p190:{65:160,70:340,75:290,80:180,85:80},
+    wt:4,wa:6,wm:10,tr:"stable",
+    cutoff:[{r:"Aug 2025",c:75},{r:"Nov 2025",c:75},{r:"Jun 2026",c:75}],
+    poolTrend:[{m:"Feb",v:820},{m:"Mar",v:810},{m:"Apr",v:800},{m:"May",v:790},{m:"Jun",v:770}]},
+  welder:{lb:"Welder / Metal Fabricator",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:80,
+    p189:{65:220,70:280,75:310,80:260,85:180},p190:{65:200,70:420,75:460,80:390,85:270},
+    wt:5,wa:8,wm:12,tr:"stable",
+    cutoff:[{r:"Aug 2025",c:80},{r:"Nov 2025",c:80},{r:"Jun 2026",c:80}],
+    poolTrend:[{m:"Feb",v:1240},{m:"Mar",v:1220},{m:"Apr",v:1200},{m:"May",v:1180},{m:"Jun",v:1250}]},
+  cabinetmaker:{lb:"Cabinetmaker",t:3,ti:"🏗️",tl:"Tier 3 — Trades",c:85,
+    p189:{65:120,70:160,75:180,80:155,85:110},p190:{65:100,70:240,75:260,80:225,85:160},
+    wt:6,wa:9,wm:13,tr:"stable",
+    cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:85}],
+    poolTrend:[{m:"Feb",v:680},{m:"Mar",v:670},{m:"Apr",v:660},{m:"May",v:650},{m:"Jun",v:625}]},
+  software_eng:{lb:"Software Engineer / Developer",t:4,ti:"💻",tl:"Tier 4 — ICT (189 Frozen)",c:0,
+    p189:{65:1200,70:2400,75:3600,80:4800,85:5200,90:3900,95:2400},
+    p190:{65:980,70:1960,75:2940,80:3920,85:4250,90:3190,95:1960},
+    wt:0,wa:0,wm:0,tr:"growing",
+    cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],
+    poolTrend:[{m:"Feb",v:21000},{m:"Mar",v:21500},{m:"Apr",v:22100},{m:"May",v:22600},{m:"Jun",v:23100}]},
+  ict_analyst:{lb:"ICT Business Analyst",t:4,ti:"💻",tl:"Tier 4 — ICT (189 Frozen)",c:0,p189:{65:935,70:1877,75:1353,80:1746,85:1164},p190:{65:992,70:1868,75:1926,80:2221,85:1938},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:5900},{m:"Mar",v:5980},{m:"Apr",v:6050},{m:"May",v:6100},{m:"Jun",v:7075}]},
+  cybersec:{lb:"Cybersecurity Analyst",t:4,ti:"💻",tl:"Tier 4 — ICT (189 Frozen)",c:0,p189:{65:420,70:580,75:640,80:720,85:610},p190:{65:380,70:860,75:940,80:1050,85:890},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2900},{m:"Mar",v:3000},{m:"Apr",v:3080},{m:"May",v:3100},{m:"Jun",v:3120}]},
+  data_scientist:{lb:"Data Scientist",t:4,ti:"💻",tl:"Tier 4 — ICT (189 Frozen)",c:0,p189:{65:420,70:580,75:640,80:720,85:610},p190:{65:380,70:860,75:940,80:1050,85:890},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2600},{m:"Mar",v:2680},{m:"Apr",v:2750},{m:"May",v:2800},{m:"Jun",v:2970}]},
+  statistician:{lb:"Statistician",t:4,ti:"💻",tl:"Tier 4 — ICT",c:90,p189:{65:80,70:110,75:140,80:160,85:140,90:110},p190:{65:70,70:190,75:210,80:240,85:210,90:165},wt:8,wa:12,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:90},{r:"Nov 2025",c:95},{r:"Jun 2026",c:90}],poolTrend:[{m:"Feb",v:720},{m:"Mar",v:720},{m:"Apr",v:718},{m:"May",v:715},{m:"Jun",v:740}]},
+  accountant:{lb:"Accountant (General)",t:4,ti:"💰",tl:"Tier 4 — Accounting (189 Frozen)",c:0,p189:{65:1889,70:1590,75:1928,80:1285,85:1059,90:619},p190:{65:867,75:2888,80:3455,85:1621,90:1260},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Aug 2025",c:0},{r:"Nov 2025",c:0},{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:6800},{m:"Mar",v:7000},{m:"Apr",v:7100},{m:"May",v:7180},{m:"Jun",v:9177}]},
+  mgmt_accountant:{lb:"Management Accountant",t:4,ti:"💰",tl:"Tier 4 — Accounting (189 Frozen)",c:0,p189:{65:264,70:366,75:365,80:388,85:268},p190:{65:127,75:463,80:585,85:375},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:1580},{m:"Mar",v:1610},{m:"Apr",v:1640},{m:"May",v:1660},{m:"Jun",v:1651}]},
+  tax_accountant:{lb:"Taxation Accountant",t:4,ti:"💰",tl:"Tier 4 — Accounting (189 Frozen)",c:0,p189:{65:434,70:587,75:483,80:384,85:360},p190:{},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:2050},{m:"Mar",v:2090},{m:"Apr",v:2120},{m:"May",v:2160},{m:"Jun",v:2248}]},
+  auditor:{lb:"Auditor",t:4,ti:"💰",tl:"Tier 4 — Accounting (189 Frozen)",c:0,p189:{65:180,70:240,75:270,80:220},p190:{65:160,70:340,75:380,80:310},wt:0,wa:0,wm:0,tr:"growing",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:900},{m:"Mar",v:930},{m:"Apr",v:960},{m:"May",v:980},{m:"Jun",v:910}]},
   actuary:{lb:"Actuary",t:4,ti:"💰",tl:"Tier 4 — Accounting",c:0,p189:{65:45,70:68,75:82,80:65},p190:{65:40,70:95,75:115,80:88},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:280},{m:"Mar",v:280},{m:"Apr",v:282},{m:"May",v:283},{m:"Jun",v:260}]},
-  chef:{lb:"Cook / Chef",t:0,ti:"🍳",tl:"STSOL — No 189",c:0,p189:{65:2558,70:2799,75:2113,80:1198,85:564},p190:{65:20,70:20,75:20,80:20},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:9350},{m:"Mar",v:9280},{m:"Apr",v:9200},{m:"May",v:9150},{m:"Jun",v:9232}]}
+  chef:{lb:"Cook / Chef",t:0,ti:"🍳",tl:"STSOL — No 189",c:0,p189:{65:2558,70:2799,75:2113,80:1198,85:564},p190:{65:20,70:20,75:20,80:20},wt:0,wa:0,wm:0,tr:"stable",cutoff:[{r:"Jun 2026",c:0}],poolTrend:[{m:"Feb",v:9350},{m:"Mar",v:9280},{m:"Apr",v:9200},{m:"May",v:9150},{m:"Jun",v:9232}]},
+  solicitor:{lb:"Solicitor / Lawyer",t:3,ti:"⚖️",tl:"Tier 3 — Legal",c:80,p189:{65:280,70:350,75:410,80:360,85:290,90:180},p190:{65:240,70:520,75:610,80:540,85:430,90:270},wt:8,wa:12,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:1840},{m:"Mar",v:1820},{m:"Apr",v:1800},{m:"May",v:1780},{m:"Jun",v:1680}]},
+  economist:{lb:"Economist",t:3,ti:"📊",tl:"Tier 3 — Economics",c:80,p189:{65:80,70:110,75:130,80:115,85:85},p190:{65:70,70:190,75:195,80:172,85:128},wt:7,wa:11,wm:16,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:570},{m:"Mar",v:560},{m:"Apr",v:550},{m:"May",v:540},{m:"Jun",v:520}]},
+  mgmt_consultant:{lb:"Management Consultant",t:3,ti:"📊",tl:"Tier 3 — Business",c:80,p189:{65:180,70:240,75:290,80:260,85:200,90:130,95:80},p190:{65:160,70:350,75:430,80:390,85:300,90:195,95:120},wt:9,wa:14,wm:20,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:1380},{m:"Mar",v:1360},{m:"Apr",v:1340},{m:"May",v:1320},{m:"Jun",v:1280}]},
+  env_scientist:{lb:"Environmental Consultant / Scientist",t:3,ti:"🌿",tl:"Tier 3 — Environmental",c:80,p189:{65:120,70:160,75:190,80:170,85:130},p190:{65:100,70:240,75:280,80:255,85:195},wt:7,wa:11,wm:16,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:810},{m:"Mar",v:798},{m:"Apr",v:785},{m:"May",v:775},{m:"Jun",v:755}]},
+  ag_scientist:{lb:"Agricultural Scientist / Consultant",t:3,ti:"🌾",tl:"Tier 3 — Science",c:80,p189:{65:80,70:110,75:130,80:115,85:90},p190:{65:70,70:190,75:195,80:172,85:135},wt:7,wa:11,wm:15,tr:"stable",cutoff:[{r:"Aug 2025",c:85},{r:"Nov 2025",c:85},{r:"Jun 2026",c:80}],poolTrend:[{m:"Feb",v:530},{m:"Mar",v:522},{m:"Apr",v:515},{m:"May",v:508},{m:"Jun",v:480}]},
+  biotechnologist:{lb:"Biotechnologist / Life Scientist",t:3,ti:"🔬",tl:"Tier 3 — Science",c:85,p189:{65:90,70:120,75:145,80:130,85:100,90:70,95:40},p190:{65:80,70:210,75:215,80:195,85:150,90:105,95:60},wt:8,wa:12,wm:18,tr:"stable",cutoff:[{r:"Aug 2025",c:95},{r:"Nov 2025",c:100},{r:"Jun 2026",c:85}],poolTrend:[{m:"Feb",v:680},{m:"Mar",v:675},{m:"Apr",v:670},{m:"May",v:665},{m:"Jun",v:655}]}
 };
 
 var TC={1:{col:'#0DBD7F',bg:'rgba(13,189,127,0.08)',bo:'rgba(13,189,127,0.22)'},2:{col:'#4E8EFF',bg:'rgba(78,142,255,0.08)',bo:'rgba(78,142,255,0.22)'},3:{col:'#F59E0B',bg:'rgba(245,158,11,0.08)',bo:'rgba(245,158,11,0.22)'},4:{col:'#A78BFA',bg:'rgba(167,139,250,0.08)',bo:'rgba(167,139,250,0.22)'},0:{col:'#5A7494',bg:'rgba(255,255,255,0.025)',bo:'rgba(255,255,255,0.06)'}};
@@ -719,6 +889,49 @@ function renderStep3(){
   /* buy card */
   var bn=document.getElementById('buy-num');bn.textContent=S.ahead.toLocaleString();bn.style.color=d.c===0||S.pts<d.c?'#F05252':'#E0A94E';
   var bs=document.getElementById('buy-sub');
+
+  /* TENSION LINE — unresolved question */
+  var tl=document.getElementById('tension-line');
+  var higherCount=0;
+  var pool=S.vt==='190'?d.p190:d.p189;
+  Object.keys(pool||{}).forEach(function(b){if(parseInt(b)>S.pts)higherCount+=(pool[b]||0);});
+  if(d.c===0){
+    tl.innerHTML='<strong style="color:var(--red)">'+d.lb+' — 189 federal invitations frozen.</strong> '+higherCount.toLocaleString()+' applicants are in the same pool with zero federal invitations this program year. Here\'s what separates the ones moving forward from the ones still waiting →';
+    tl.style.borderColor='var(--red)';
+  } else if(S.pts>=d.c){
+    tl.innerHTML='You scored <strong style="color:var(--teal)">'+S.pts+' pts</strong> — above the cutoff. But <strong style="color:var(--amb)">'+higherCount.toLocaleString()+' '+d.lb.toLowerCase()+'s scored higher</strong> this quarter. Here\'s what separates the already-invited from those still waiting →';
+    tl.style.borderColor='var(--amb)';
+  } else {
+    var gap=d.c-S.pts;
+    tl.innerHTML='You\'re <strong style="color:var(--red)">'+gap+' pts below the '+d.c+'-pt cutoff.</strong> The '+higherCount.toLocaleString()+' applicants above you lodged anyway — because Date of Effect matters even below cutoff. Here\'s the fastest legal path to close this gap →';
+    tl.style.borderColor='var(--red)';
+  }
+
+  /* BLOOMBERG REPORT ID */
+  var rid='VIQ-'+Math.floor(1000+Math.random()*8999);
+  var totalPool=0;Object.values(pool||{}).forEach(function(v){totalPool+=v;});
+  document.getElementById('report-id-line').textContent='Report #'+rid+' · '+d.lb+' · Generated from June 2026 DHA dataset · '+totalPool.toLocaleString()+' profiles analysed';
+
+  /* STATE GRID — top 3 visible */
+  document.getElementById('state-grid-title').textContent=d.lb+' · state nomination probability at '+S.pts+' pts · Jun 2026';
+  var stateScores=[
+    {name:'SA',prob:d.t===1&&S.pts>=65?92:d.t===3&&S.pts>=65?85:d.t===4&&S.pts>=75?78:60},
+    {name:'TAS',prob:d.t===1&&S.pts>=65?87:d.t===3&&S.pts>=65?80:55},
+    {name:'QLD',prob:d.t===1&&S.pts>=75?74:d.t===3&&S.pts>=75?70:45},
+    {name:'WA',prob:d.t===3&&S.pts>=70?68:d.t===1&&S.pts>=70?62:38},
+    {name:'NT',prob:S.pts>=65?72:40},
+  ];
+  stateScores.sort(function(a,b){return b.prob-a.prob;});
+  var top3=stateScores.slice(0,3);
+  document.getElementById('top3-states').innerHTML=top3.map(function(s){
+    var col=s.prob>=75?'#0DBD7F':s.prob>=55?'#F59E0B':'#F05252';
+    var bg=s.prob>=75?'rgba(13,189,127,0.08)':s.prob>=55?'rgba(245,158,11,0.06)':'rgba(240,82,82,0.06)';
+    return '<div style="background:'+bg+';border-radius:10px;padding:0.65rem 0.75rem;text-align:center">'
+      +'<div style="font-size:0.78rem;font-weight:700;color:var(--txt);margin-bottom:0.15rem">'+s.name+'</div>'
+      +'<div style="font-size:1.05rem;font-weight:800;color:'+col+'">'+s.prob+'%</div>'
+      +'<div style="font-size:0.57rem;color:var(--muted)">probability</div>'
+      +'</div>';
+  }).join('');
   if(d.c===0)bs.textContent='The 189 pathway is frozen. The full report maps every alternative route actually working for '+d.lb+' applicants right now.';
   else if(S.pts>=d.c)bs.textContent='Average wait '+d.wt+'–'+d.wm+' months. The full report shows exactly what to do each week to move through the queue faster.';
   else bs.textContent='You are '+(d.c-S.pts)+' pts below the cutoff. The full report shows the 3 fastest legal ways to close this gap.';
@@ -726,7 +939,23 @@ function renderStep3(){
   rt();
 }
 
-/* TABLE */
+/* ══ EXPAND BREAKDOWN ══ */
+function expandBreakdown(){
+  var s=document.getElementById('breakdown-section');
+  var b=document.getElementById('expand-btn');
+  var l=document.getElementById('expand-label');
+  if(s.style.display==='none'){
+    s.style.display='block';
+    l.textContent='Hide breakdown ↑';
+    b.style.borderColor='var(--teal)';b.style.color='var(--teal)';
+  } else {
+    s.style.display='none';
+    l.textContent='See my full breakdown — pool chart, cutoff history, pool trend ↓';
+    b.style.borderColor='var(--line2)';b.style.color='var(--txt2)';
+  }
+}
+
+/* ══ TABLE ══ */
 var SC=1,SD=1,AT=0;
 function rt(){
   var keys=Object.keys(D);
