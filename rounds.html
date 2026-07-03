@@ -69,26 +69,26 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* backgrounds — dark navy for long reading, warm undertone */
-  --ink:#0A1520;--ink2:#0F1E2E;--ink3:#152030;
-  --s1:rgba(255,255,255,0.03);--s2:rgba(255,255,255,0.055);
+  /* backgrounds — cream, warm undertone */
+  --ink:#F5F1EA;--ink2:#FAFAF8;--ink3:#FFFFFF;
+  --s1:rgba(11,28,46,0.02);--s2:rgba(11,28,46,0.045);
   /* GOLD — primary accent, all states */
-  --gold:#C8913A;--gold2:#E0A94E;--gold3:#F2C06A;
-  --gd:rgba(200,145,58,0.12);--gb:rgba(200,145,58,0.28);
-  --gd2:rgba(200,145,58,0.06);
+  --gold:#B8811F;--gold2:#D4982E;--gold3:#96670F;
+  --gd:rgba(184,129,31,0.10);--gb:rgba(184,129,31,0.26);
+  --gd2:rgba(184,129,31,0.05);
   /* WARM AMBER — alerts, waiting */
-  --amb:#E8971A;--amd:rgba(232,151,26,0.10);--amb2:rgba(232,151,26,0.24);
-  /* DEEP GOLD — error/frozen states (replaces red) */
-  --red:#C07020;--rd:rgba(192,112,32,0.10);--rb:rgba(192,112,32,0.26);
-  /* LIGHT CREAM GOLD — granted/success (replaces green) */
-  --grn:#D4A84B;--grd:rgba(212,168,75,0.12);--grb:rgba(212,168,75,0.28);
+  --amb:#C8891A;--amd:rgba(200,137,26,0.10);--amb2:rgba(200,137,26,0.24);
+  /* DEEP GOLD — error/frozen states */
+  --red:#C0392B;--rd:rgba(192,57,43,0.08);--rb:rgba(192,57,43,0.22);
+  /* GREEN — granted/success */
+  --grn:#1A8C52;--grd:rgba(26,140,82,0.09);--grb:rgba(26,140,82,0.24);
   /* BLUE — offshore badge only */
-  --blue:#7BA8D4;--blued:rgba(123,168,212,0.10);--blueb:rgba(123,168,212,0.24);
+  --blue:#2D5FA0;--blued:rgba(45,95,160,0.08);--blueb:rgba(45,95,160,0.22);
   /* PURPLE — waiting/lodged */
-  --purple:#C4A882;--purpled:rgba(196,168,130,0.10);--purpleb:rgba(196,168,130,0.24);
+  --purple:#7C5CBF;--purpled:rgba(124,92,191,0.08);--purpleb:rgba(124,92,191,0.22);
   /* TEXT */
-  --txt:#F0E8D8;--txt2:#C8B898;--muted:#786858;
-  --line:rgba(200,145,58,0.08);--line2:rgba(200,145,58,0.15);
+  --txt:#0B1C2E;--txt2:#3A4A5C;--muted:#7A8899;
+  --line:rgba(11,28,46,0.08);--line2:rgba(11,28,46,0.14);
 }
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--txt);font-family:'Outfit',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:80px}
@@ -102,8 +102,8 @@ body{background:var(--ink);color:var(--txt);font-family:'Outfit',sans-serif;line
 .ticker-flow::after{content:'';position:absolute;right:0;top:0;bottom:0;width:60px;background:linear-gradient(to left,var(--ink),transparent);z-index:1;pointer-events:none}
 .ticker-track{display:flex;white-space:nowrap;animation:slide 60s linear infinite}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ti{display:inline-flex;align-items:center;gap:0.45rem;padding:0 2.4rem;font-size:0.71rem;color:rgba(255,255,255,0.4);flex-shrink:0}
-.ti b{color:rgba(255,255,255,0.82);font-weight:500}
+.ti{display:inline-flex;align-items:center;gap:0.45rem;padding:0 2.4rem;font-size:0.71rem;color:rgba(11,28,46,0.45);flex-shrink:0}
+.ti b{color:rgba(11,28,46,0.85);font-weight:500}
 .tdot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .tdot.g{background:var(--gold2)}
 
@@ -151,7 +151,7 @@ body{background:var(--ink);color:var(--txt);font-family:'Outfit',sans-serif;line
 .search-input:focus{border-color:var(--tb)}
 .search-input::placeholder{color:var(--muted)}
 .sort-select{background:var(--s1);border:1px solid var(--line2);border-radius:10px;padding:0.65rem 1rem;color:var(--txt);font-family:'Outfit',sans-serif;font-size:0.82rem;outline:none;-webkit-appearance:none;cursor:pointer}
-.sort-select option{background:#0F1E32;color:var(--txt)}
+.sort-select option{background:#FFFFFF;color:var(--txt)}
 
 /* FILTER PILLS */
 .filter-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem}
@@ -295,7 +295,7 @@ body{background:var(--ink);color:var(--txt);font-family:'Outfit',sans-serif;line
 .sc-days-num{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;line-height:1;text-align:right}
 .sc-days-lbl{font-size:0.54rem;color:var(--muted);text-align:right}
 .sc-last{font-size:0.7rem;color:var(--muted);margin-bottom:0.55rem;line-height:1.5}
-.conf-bar-bg{height:5px;background:rgba(255,255,255,0.06);border-radius:100px;overflow:hidden;margin-bottom:0.4rem}
+.conf-bar-bg{height:5px;background:rgba(11,28,46,0.06);border-radius:100px;overflow:hidden;margin-bottom:0.4rem}
 .conf-bar-fill{height:100%;border-radius:100px;transition:width 1s ease}
 .conf-low{background:var(--grd);border-color:var(--grb);color:var(--grn)}
 .conf-medium{background:var(--amd);border-color:var(--amb2);color:var(--amb)}
@@ -1140,7 +1140,6 @@ var INV_DATA=[
 {visa:'189',date:'13 Nov 2025',tier:'ict',anzsco:'261313',occ:'Software Engineer (189)',pts:0,loc:'ALL',detail:'3rd consecutive round excluded · ICT frozen',status:'not-invited',round:'Nov 2025'},
 {visa:'189',date:'21 Aug 2025',tier:'ict',anzsco:'261313',occ:'ICT / Accounting (all 189)',pts:0,loc:'ALL',detail:'2nd consecutive round excluded',status:'not-invited',round:'Aug 2025'},
 {visa:'189',date:'14 Nov 2024',tier:'ict',anzsco:'261313',occ:'Software Engineer / Accountant (189)',pts:0,loc:'ALL',detail:'First round excluding ICT — freeze begins',status:'not-invited',round:'Nov 2024'},
-];
 
 // ── ADDITIONAL SA ROUNDS — 2024 HISTORICAL ──────────────────────────────
 {visa:'190',state:'SA',date:'Aug 2025',tier:'tier1',anzsco:'254499',occ:'Registered Nurse',pts:65,loc:'BOTH',detail:'SA 190 · Aug 2025 · monthly · healthcare',status:'invited',round:'Aug 2025',avgWait:'7–12 months'},
@@ -1309,6 +1308,7 @@ var INV_DATA=[
 {visa:'189',date:'10 Aug 2023',tier:'tier3',anzsco:'341111',occ:'Electrician',pts:65,loc:'ON',detail:'Aug 2023',status:'invited',round:'Aug 2023',avgWait:'8–12 months'},
 {visa:'189',date:'10 Aug 2023',tier:'tier1',anzsco:'254111',occ:'Midwife',pts:70,loc:'ON',detail:'Aug 2023 · lower threshold era',status:'invited',round:'Aug 2023',avgWait:'9–14 months'},
 ];
+/* ══════════════════════════════════════
    Sources: Community submissions, SmartVisaGuide, Migration forums
    Avg processing: 189 = 8–12M · 190 = 9–16M · 491 = 10–15M
 ══════════════════════════════════════ */

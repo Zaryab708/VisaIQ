@@ -177,6 +177,28 @@ body{background:var(--ink);color:var(--txt);font-family:'Outfit',sans-serif;line
 
 /* chart cards */
 .chart-block{background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:1.25rem;margin-bottom:0.85rem}
+.natstat{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;max-width:640px;margin:0.5rem auto 0;padding:1rem 1.25rem;background:var(--ink2);border:1px solid var(--line);border-radius:16px}
+.ns-item{text-align:center;position:relative}
+.ns-item:not(:last-child)::after{content:'';position:absolute;right:-0.375rem;top:15%;height:70%;width:1px;background:var(--line)}
+.ns-val{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold);line-height:1.1}
+.ns-lbl{font-size:0.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.15rem;font-weight:600}
+@media(max-width:560px){.natstat{grid-template-columns:repeat(2,1fr);gap:0.5rem}.ns-item:nth-child(2)::after{display:none}.ns-val{font-size:1.15rem}}
+.wb-table{display:flex;flex-direction:column;gap:0}
+.wb-preview{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:0.9rem 1.1rem}
+.wbp-head{font-size:0.63rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);margin-bottom:0.5rem}
+.wbp-head span{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0}
+.wb-row{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid var(--line)}
+.wb-row:last-child{border-bottom:none}
+.wb-row.you{background:var(--gd);border-radius:10px;padding-left:0.6rem;padding-right:0.6rem;border-bottom:1px solid transparent}
+.wb-pts{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--txt)}
+.wb-row.you .wb-pts{color:var(--gold)}
+.wb-bar-wrap{display:flex;flex-direction:column;gap:0.2rem}
+.wb-ahead{font-size:0.72rem;color:var(--muted)}
+.wb-ahead b{color:var(--txt2);font-weight:600}
+.wb-bar-bg{height:4px;background:rgba(11,28,46,0.06);border-radius:100px;overflow:hidden}
+.wb-bar{height:100%;border-radius:100px}
+.wb-wait{font-size:0.8rem;font-weight:700;text-align:right;white-space:nowrap}
+.wb-tag{display:inline-block;font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:0.12rem 0.4rem;border-radius:5px;margin-left:0.35rem;vertical-align:middle}
 .cb-over{font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.15rem;display:flex;align-items:center;gap:0.4rem}
 .cb-over::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .cb-title{font-size:0.88rem;font-weight:600;color:var(--txt);margin-bottom:0.85rem;line-height:1.35}
@@ -272,6 +294,12 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
       <div class="pf">🇮🇳</div><div class="pf">🇵🇭</div><div class="pf">🇳🇵</div><div class="pf">🇬🇧</div><div class="pf">🇨🇳</div>
     </div>
     <div class="proof-txt"><strong id="act-count">52</strong> people checked their position today</div>
+  </div>
+  <div class="natstat">
+    <div class="ns-item"><div class="ns-val">4 Jun 2026</div><div class="ns-lbl">Latest 189 round</div></div>
+    <div class="ns-item"><div class="ns-val">10,000</div><div class="ns-lbl">Invited last round</div></div>
+    <div class="ns-item"><div class="ns-val">143,000+</div><div class="ns-lbl">EOIs in tracked pool</div></div>
+    <div class="ns-item"><div class="ns-val">60+</div><div class="ns-lbl">Occupations tracked</div></div>
   </div>
 </div>
 
@@ -434,6 +462,12 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
         </div>
       </div>
 
+      <!-- ③b WAIT PREVIEW — 3 rows, always visible, the key answer -->
+      <div class="wb-preview" id="wb-preview" style="margin-bottom:1rem">
+        <div class="wbp-head">What your points are worth <span>· jump these bands to move faster</span></div>
+        <div class="wb-table" id="wb-table-preview"></div>
+      </div>
+
       <!-- ④ EXPAND BUTTON — ONE next action -->
       <button id="expand-btn" onclick="expandBreakdown()" style="width:100%;padding:0.85rem;background:transparent;border:1px solid var(--line2);border-radius:12px;color:var(--txt2);font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;margin-bottom:1rem;transition:all 0.15s;display:flex;align-items:center;justify-content:center;gap:0.5rem">
         <span id="expand-label">See my full breakdown — pool chart, cutoff history, pool trend ↓</span>
@@ -442,6 +476,16 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
       <!-- ⑤ EXPANDABLE CHARTS — hidden by default -->
       <div id="breakdown-section" style="display:none">
         <div style="animation:up 0.45s cubic-bezier(0.16,1,0.3,1)">
+
+          <!-- WAIT BY POINTS BAND (ImmiTrend-style) -->
+          <div class="chart-block" id="waitband-block">
+            <div class="cb-over" style="color:var(--gold)"><span style="background:var(--gold);width:5px;height:5px;border-radius:50%;display:inline-block"></span>What your points are worth · <span style="font-weight:400;text-transform:none;letter-spacing:0">estimated wait by score</span></div>
+            <div class="cb-title" id="wb-title">—</div>
+            <div class="wb-table" id="wb-table"></div>
+            <div class="chart-leg" style="margin-top:0.6rem">
+              <span style="font-size:0.6rem;color:var(--muted)">Estimates from current pool depth &amp; recent round pace. Higher scores are invited first.</span>
+            </div>
+          </div>
 
           <!-- CHART 1 -->
           <div class="chart-block" id="chart1-block">
@@ -869,6 +913,56 @@ function compute(oi,pts,vt){
   S={oi:oi,pts:pts,vt:vt,d:d,bands:bands,vals:vals,ahead:ahead,atBand:atBand,total:total,pct:pct,pool:pool};
 }
 
+/* WAIT BANDS — fills both preview (your band + next 2) and full table */
+function renderWaitBands(){
+  var d=S.d, bands=S.bands, vals=S.vals, pts=S.pts;
+  var maxAhead=0;
+  var rows=bands.map(function(b,i){
+    var ahead=0;
+    bands.forEach(function(bb,j){ if(bb>b) ahead+=vals[j]; });
+    if(ahead>maxAhead) maxAhead=ahead;
+    return {band:b, ahead:ahead};
+  });
+  function waitFor(ahead){
+    if(d.wa===0) return {t:'Frozen', c:'var(--red)', tag:''};
+    if(ahead<=30) return {t:'<1 month', c:'var(--grn)', tag:'FAST'};
+    if(ahead<=200) return {t:'1–3 months', c:'var(--grn)', tag:''};
+    if(ahead<=800) return {t:'3–8 months', c:'var(--amb)', tag:''};
+    if(ahead<=2500) return {t:'8–18 months', c:'var(--amb)', tag:''};
+    if(ahead<=6000) return {t:'2–4 years', c:'var(--red)', tag:''};
+    return {t:'5+ years', c:'var(--red)', tag:'SLOW'};
+  }
+  function rowHTML(r){
+    var w=waitFor(r.ahead);
+    var isYou=r.band===pts;
+    var pctBar=maxAhead>0?Math.max(4,Math.round(r.ahead/maxAhead*100)):4;
+    return '<div class="wb-row'+(isYou?' you':'')+'">'
+      +'<div class="wb-pts">'+r.band+'<span style="font-size:0.6rem;color:var(--muted);font-family:Outfit,sans-serif;font-weight:500"> pts</span></div>'
+      +'<div class="wb-bar-wrap">'
+        +'<div class="wb-ahead"><b>'+r.ahead.toLocaleString()+'</b> ahead of you'+(isYou?' <span class="wb-tag" style="background:var(--gd);color:var(--gold)">YOU</span>':'')+'</div>'
+        +'<div class="wb-bar-bg"><div class="wb-bar" style="width:'+pctBar+'%;background:'+w.c+'"></div></div>'
+      +'</div>'
+      +'<div class="wb-wait" style="color:'+w.c+'">'+w.t+(w.tag?'<span class="wb-tag" style="background:'+(w.tag==='FAST'?'var(--grd)':'var(--rd)')+';color:'+w.c+'">'+w.tag+'</span>':'')+'</div>'
+    +'</div>';
+  }
+  // FULL table — all bands
+  var fullHTML=rows.map(rowHTML).join('');
+  var fullEl=document.getElementById('wb-table');
+  if(fullEl) fullEl.innerHTML=fullHTML;
+  var titleEl=document.getElementById('wb-title');
+  if(titleEl) titleEl.textContent=d.lb+' — at your points ('+pts+') and every band above';
+  // PREVIEW — your band + next 2 bands above (the actionable jump)
+  var myIdx=bands.indexOf(pts);
+  if(myIdx<0){ // pts not an exact band — find nearest band at/below
+    myIdx=0;
+    for(var k=0;k<bands.length;k++){ if(bands[k]<=pts) myIdx=k; }
+  }
+  var previewRows=rows.slice(myIdx, myIdx+3);
+  if(previewRows.length<2) previewRows=rows.slice(Math.max(0,rows.length-3));
+  var prevEl=document.getElementById('wb-table-preview');
+  if(prevEl) prevEl.innerHTML=previewRows.map(rowHTML).join('');
+}
+
 /* RENDER STEP 3 */
 function renderStep3(){
   var d=S.d;var pts=S.pts;
@@ -877,6 +971,9 @@ function renderStep3(){
   document.getElementById('ss-ahead').textContent=S.ahead.toLocaleString();
   document.getElementById('ss-pct').textContent=S.pct+'th';
   document.getElementById('ss-wait').textContent=d.wa===0?'Frozen':d.wt+'–'+d.wm+'mo';
+
+  /* WAIT BY POINTS BAND */
+  renderWaitBands();
 
   /* CHART 1 — pool breakdown */
   var bgColors=S.bands.map(function(b){return b===pts?'#0A8F70':'#C9BFA8';});
