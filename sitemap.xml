@@ -4,6 +4,7 @@
   <url><loc>https://www.visaiq.com.au/eoi-queue</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://www.visaiq.com.au/eoi-backlog</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://www.visaiq.com.au/occupation-search</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://www.visaiq.com.au/skilled-occupation-list</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
   <url><loc>https://www.visaiq.com.au/rounds</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://www.visaiq.com.au/report</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
   <url><loc>https://www.visaiq.com.au/points-calculator</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
