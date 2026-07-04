@@ -515,7 +515,7 @@ var OCC={
   civil:{tier:3,tl:'Tier 3 — Engineering',c189:85,c190:70,c491:65,note:'QLD Olympics and WA WorldExpo driving demand. SA invited at 70 pts Mar 2026. VIC 190 granted civil eng Jun 2026 in 3 months.',pool:'~3,500 active EOIs',freeze:false},
   mech:{tier:3,tl:'Tier 3 — Engineering',c189:90,c190:70,c491:65,note:'WA 190 at 90 pts (5 Mar round). SA 190 at 70 pts. 189 federal at 90 pts. Strong demand in resources sector.',pool:'~4,000 active EOIs',freeze:false},
   trades:{tier:3,tl:'Tier 3 — Trades (Priority Occupations)',c189:65,c190:65,c491:65,note:'Electricians, plumbers, carpenters. 189 invited at 65 pts Jun 2026. WA invited at 65 pts offshore (3 Mar). SA at 65 pts. Easiest federal pathway in 2026.',pool:'Small pool — high demand',freeze:false},
-  software:{tier:4,tl:'Tier 4 — Technology (Fewest Invitations)',c189:null,c190:85,c491:70,note:'189 FROZEN — zero federal invitations in 2025-26 program year. SA 491 at 75 pts Mar 2026. VIC 190 at 90 pts offshore. TAS 190 via graduate pathway. Use 491 regional or SA 190.',pool:'~12,000+ active EOIs',freeze:true},
+  software:{tier:4,tl:'Tier 4 — Technology (Fewest Invitations)',c189:null,c190:85,c491:70,note:'189 FROZEN — zero federal invitations in 2026-27 program year. SA 491 at 75 pts Mar 2026. VIC 190 at 90 pts offshore. TAS 190 via graduate pathway. Use 491 regional or SA 190.',pool:'~12,000+ active EOIs',freeze:true},
   ict:{tier:4,tl:'Tier 4 — ICT',c189:null,c190:85,c491:70,note:'189 FROZEN. SA 190 ICT stream at 75 pts. ACT 190 at 90-95 pts. WA 190 ICT BA at 95 pts. Strongly recommend 190 or 491 pathway.',pool:'~8,000 active EOIs',freeze:true},
   cyber:{tier:4,tl:'Tier 4 — Technology',c189:null,c190:90,c491:70,note:'189 FROZEN. NSW 190 cybersecurity at 95 pts. VIC 190 at 70 pts offshore. ACT 190 valued in government sector.',pool:'Large pool',freeze:true},
   accountant:{tier:4,tl:'Tier 4 — Accounting (189 Frozen)',c189:null,c190:65,c491:65,note:'189 FROZEN — zero federal invitations 2025-26. SA 190 almost the only state inviting accountants at 65 pts monthly. TAS residential pathway. Do not wait in the 189 pool.',pool:'~15,000 active EOIs',freeze:true},
@@ -687,7 +687,7 @@ function showTension(r){
 
   var tensionText='';
   if(occ.freeze){
-    tensionText='You scored <em>'+r.total+' pts</em>. But the 189 federal pool for '+occName.toLowerCase()+'s has been frozen for the entire 2025-26 program year. <em>'+aboveYou.toLocaleString()+' people</em> are waiting alongside you — without a state nomination strategy, you may wait 2+ years.';
+    tensionText='You scored <em>'+r.total+' pts</em>. But the 189 federal pool for '+occName.toLowerCase()+'s has been frozen for the entire 2026-27 program year. <em>'+aboveYou.toLocaleString()+' people</em> are waiting alongside you — without a state nomination strategy, you may wait 2+ years.';
   } else if(r.total>=occ.c189){
     tensionText='You scored <em>'+r.total+' pts</em> — above the '+occ.c189+'-pt cutoff. But <em>'+aboveYou.toLocaleString()+' '+occName.toLowerCase()+'s scored higher</em> this quarter. In the queue, every point above yours means they get invited before you. Here\'s what separates the already-invited from those still waiting.';
   } else {
