@@ -317,31 +317,14 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
 </head>
 <body>
 
-<!-- ══ WHO'S USING VISAIQ TICKER ══ -->
+<!-- ══ REAL STAT BAR (replaced fabricated activity ticker) ══ -->
 <div class="ticker">
-  <div class="ticker-pill"><span class="d"></span>Who's using VisaIQ</div>
-  <div class="ticker-track">
-    <span class="tk"><span class="dot t"></span><b>Ananya S.</b> · Registered Nurse · 75 pts · checked queue position <span class="tm">3 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Carlo R.</b> · Civil Engineer · 80 pts · unlocked state grid <span class="tm">7 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Priya K.</b> · Nurse · 70 pts · offshore SA 190 · Singapore <span class="tm">11 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Owen H.</b> · Electrician · 65 pts · checked June round <span class="tm">15 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Mei L.</b> · Physiotherapist · 80 pts · downloaded PR report <span class="tm">19 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Rajan T.</b> · Social Worker · 75 pts · SA 190 — 87% match <span class="tm">23 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Dewi S.</b> · ECT Teacher · 80 pts · points calculator <span class="tm">27 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Vikram M.</b> · Mining Engineer · 85 pts · state nomination <span class="tm">31 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Nimal P.</b> · Carpenter · 65 pts · checked invitation rounds <span class="tm">35 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Zara A.</b> · Speech Pathologist · 80 pts · EOI queue check <span class="tm">39 min ago</span></span>
-    <!-- duplicate for seamless loop -->
-    <span class="tk"><span class="dot t"></span><b>Ananya S.</b> · Registered Nurse · 75 pts · checked queue position <span class="tm">3 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Carlo R.</b> · Civil Engineer · 80 pts · unlocked state grid <span class="tm">7 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Priya K.</b> · Nurse · 70 pts · offshore SA 190 · Singapore <span class="tm">11 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Owen H.</b> · Electrician · 65 pts · checked June round <span class="tm">15 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Mei L.</b> · Physiotherapist · 80 pts · downloaded PR report <span class="tm">19 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Rajan T.</b> · Social Worker · 75 pts · SA 190 — 87% match <span class="tm">23 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Dewi S.</b> · ECT Teacher · 80 pts · points calculator <span class="tm">27 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Vikram M.</b> · Mining Engineer · 85 pts · state nomination <span class="tm">31 min ago</span></span>
-    <span class="tk"><span class="dot t"></span><b>Nimal P.</b> · Carpenter · 65 pts · checked invitation rounds <span class="tm">35 min ago</span></span>
-    <span class="tk"><span class="dot"></span><b>Zara A.</b> · Speech Pathologist · 80 pts · EOI queue check <span class="tm">39 min ago</span></span>
+  <div class="ticker-pill"><span class="d"></span>Live data</div>
+  <div class="ticker-track" style="animation:none;padding:0 1.5rem">
+    <span class="tk"><span class="dot t"></span><b>4 Jun 2026</b> · latest SkillSelect round · <b>10,000</b> invited</span>
+    <span class="tk"><span class="dot"></span><b>143,000+</b> EOIs tracked across 60+ occupations</span>
+    <span class="tk"><span class="dot t"></span>Data updated within <b>48 hours</b> of each DHA round</span>
+    <span class="tk"><span class="dot"></span><b>11 free tools</b> · no agent · no signup to look</span>
   </div>
 </div>
 
@@ -359,7 +342,7 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
   </div>
   <div class="nav-right">
     <a href="#tools" class="nav-ghost">Free tools</a>
-    <a href="/report" class="nav-cta">PR Report <span class="price">A$69</span></a>
+    <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="nav-cta">Get free alerts</a>
   </div>
 </nav>
 
@@ -496,10 +479,10 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
 <section class="intel">
   <div class="intel-inner">
     <div class="fade">
-      <span class="intel-eyebrow">PR Intelligence Report · A$69</span>
+      <span class="intel-eyebrow">Free round alerts</span>
       <h2 class="intel-h">Queue position. Cutoff status.<br><em>Exactly what to do next.</em></h2>
       <p class="intel-p">This is what your report looks like. Real numbers from the June 2026 SkillSelect pool. Real queue position. Real action — personalised to your occupation and score.</p>
-      <a href="/report" class="intel-btn">See the full report preview →</a>
+      <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="intel-btn">See the full report preview →</a>
     </div>
     <div class="intel-dash fade d2">
       <div class="id-panel">
@@ -577,7 +560,7 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
   <div class="convert-card fade">
     <h2>Know where you stand<br>before you pay <em>anyone.</em></h2>
     <p>Start with a free pathway check. Unlock the full AI report when you're ready. Real DHA June 2026 data across 60+ occupations.</p>
-    <a href="/report" class="convert-btn">See the PR Report — A$69 →</a>
+    <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="convert-btn">Get free round alerts →</a>
     <div class="convert-sub">Instant access · One-off payment · vs A$300–500 agent consultation</div>
   </div>
 </section>
@@ -591,7 +574,7 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
     </div>
     <div class="foot-col">
       <h4>Tools</h4>
-      <a href="/report">PR Report</a>
+      <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false">Free alerts</a>
       <a href="/eoi-queue">EOI Queue Tracker</a>
       <a href="/eoi-backlog">EOI Backlog</a>
       <a href="/occupation-search">Occupation Search</a>

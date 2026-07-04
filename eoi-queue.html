@@ -282,7 +282,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
     <a href="/points-calculator">Points</a>
     <a href="/state-comparator">States</a>
   </div>
-  <a href="/report" class="nav-btn">Get Report — A$69</a>
+  <a href="#" onclick="if(window.viqClosePop){document.getElementById('viq-email-pop').style.display='flex'}return false" class="nav-btn">Get free alerts</a>
 </nav>
 
 <div class="hero">
@@ -566,7 +566,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
             <div style="text-align:center;padding:1rem">
               <div style="font-size:0.75rem;font-weight:700;color:var(--txt);margin-bottom:0.3rem">🔒 Full state eligibility in your report</div>
               <div style="font-size:0.68rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.5">All 8 states · probability score · checklist · apply links</div>
-              <a href="/report" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gold);color:var(--ink);padding:0.55rem 1.1rem;border-radius:9px;font-size:0.78rem;font-weight:800;text-decoration:none;transition:opacity 0.15s" onclick="gtag('event','state_lock_click',{event_category:'conversion'})">Unlock full state grid →</a>
+              <a href="/state-comparator" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gold);color:var(--ink);padding:0.55rem 1.1rem;border-radius:9px;font-size:0.78rem;font-weight:800;text-decoration:none;transition:opacity 0.15s" onclick="gtag('event','state_lock_click',{event_category:'conversion'})">See full state grid →</a>
             </div>
           </div>
         </div>
@@ -578,11 +578,11 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
         <div class="buy-num" id="buy-num" style="color:var(--gold2)">—</div>
         <div class="buy-lbl">people currently ahead of you in the queue</div>
         <div class="buy-sub" id="buy-sub">—</div>
-        <a href="/report" class="buy-btn" onclick="gtag('event','buy_click',{event_category:'conversion',value:69})">See my full PR report →</a>
+        <a href="/eoi-backlog" class="buy-btn" onclick="gtag('event','buy_click',{event_category:'conversion',value:69})">See my full breakdown →</a>
         <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.65rem;flex-wrap:wrap">
-          <a href="/report" style="font-size:0.72rem;color:var(--teal);text-decoration:none;font-weight:600">A$69 full report</a>
+          
           <span style="color:var(--muted);font-size:0.72rem">·</span>
-          <a href="/report#snapshot" style="font-size:0.72rem;color:var(--muted);text-decoration:none">A$29 snapshot</a>
+          
         </div>
         <div class="buy-fine">Instant · One-off · Not migration advice</div>
       </div>
@@ -643,7 +643,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:860px;margin:0
 <footer>
   <div class="fg">
     <div><div class="fc-l">Skilled Migration</div>
-      <a href="/report">PR Intelligence Report</a><a href="/points-calculator">Points Calculator</a>
+      <a href="/eoi-backlog">EOI Backlog</a><a href="/points-calculator">Points Calculator</a>
       <a href="/189-visa">189 Independent</a><a href="/190-visa">190 State Nomination</a><a href="/491-visa">491 Regional</a>
     </div>
     <div><div class="fc-l">Other Pathways</div>

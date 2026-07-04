@@ -375,7 +375,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:920px;margin:0
     <a href="/state-comparator">States</a>
     <a 
   </div>
-  <a href="/report" class="nav-cta">Get Report — A$69</a>
+  <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="nav-cta">Get free alerts</a>
 </nav>
 
 <!-- HERO -->
@@ -465,7 +465,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:920px;margin:0
       <div class="cta-title">Where do <em>you</em> sit in the queue?</div>
       <div class="cta-sub">Check your exact position — your occupation, your points, how many ahead of you.</div>
       <a href="/eoi-queue" class="cta-btn">Check my queue position →</a>
-      <div class="cta-fine">Free · or full report <a href="https://buy.stripe.com/4gM9AM6Q2anc8iYaSA5gc00" style="color:var(--gold2)">A$69 →</a></div>
+      <div class="cta-fine">Free · <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" style="color:var(--gold2)">get round alerts →</a></div>
     </div>
   </div>
 
@@ -536,7 +536,7 @@ footer{border-top:1px solid var(--line);padding:2rem 5%;max-width:920px;margin:0
   <div class="footer-grid">
     <div class="footer-col">
       <div class="footer-col-label">Skilled Migration</div>
-      <a href="/report">PR Intelligence Report</a>
+      <a href="/eoi-queue">EOI Queue Tracker</a>
       <a href="/points-calculator">Points Calculator</a>
       <a href="/eoi-queue">EOI Queue Tracker</a>
       <a href="/189-visa">189 Independent Visa</a>
@@ -1683,5 +1683,62 @@ renderStates();
 var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 </script>
+<!-- ══════════════════════════════════════════════════════════════════
+     VISAIQ EMAIL POPUP — reusable, shows once per page visit
+     Paste this block just before </body> on every page.
+     Uses MailerLite "VisaIQ Homepage" group (186396468848887410).
+     Shows after 25s OR on exit-intent, whichever first. One-time per load.
+     ══════════════════════════════════════════════════════════════════ -->
+<div id="viq-email-pop" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(11,28,46,0.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:1.25rem;font-family:'Outfit',sans-serif">
+  <div style="background:#FAFAF8;border-radius:18px;max-width:400px;width:100%;padding:1.75rem 1.6rem;position:relative;box-shadow:0 20px 60px rgba(11,28,46,0.3);animation:viqPopIn 0.35s cubic-bezier(0.16,1,0.3,1)">
+    <button onclick="viqClosePop()" aria-label="Close" style="position:absolute;top:0.85rem;right:0.95rem;background:none;border:none;font-size:1.35rem;color:#7A8899;cursor:pointer;line-height:1;padding:0">×</button>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#0B1C2E;line-height:1.15;margin-bottom:0.5rem;padding-right:1rem">Don't check this manually every week.</div>
+    <div style="font-size:0.9rem;color:#4E5D6E;line-height:1.6;margin-bottom:1.1rem">Get an email the moment your occupation is invited, a cutoff moves, or a state opens. Free — the same round data, delivered to you.</div>
+    <div id="viq-pop-form">
+      <input type="email" id="viq-pop-email" placeholder="your@email.com" autocomplete="email" style="width:100%;padding:0.8rem 1rem;font-size:0.95rem;font-family:'Outfit',sans-serif;border:1.5px solid rgba(11,28,46,0.14);border-radius:10px;background:#fff;color:#0B1C2E;outline:none;margin-bottom:0.6rem;box-sizing:border-box">
+      <button onclick="viqSubmitPop()" style="width:100%;padding:0.8rem;background:#B8811F;color:#fff;border:none;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer">Get free alerts →</button>
+      <div style="font-size:0.66rem;color:#7A8899;text-align:center;margin-top:0.6rem">No spam · round alerts only · unsubscribe anytime</div>
+    </div>
+    <div id="viq-pop-done" style="display:none;text-align:center;padding:1rem 0">
+      <div style="font-size:1.6rem;margin-bottom:0.4rem">✓</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#0B1C2E;font-weight:600">You're on the list.</div>
+      <div style="font-size:0.82rem;color:#4E5D6E;margin-top:0.3rem">We'll email you the moment something moves.</div>
+    </div>
+  </div>
+</div>
+<style>@keyframes viqPopIn{from{opacity:0;transform:translateY(16px) scale(0.97)}to{opacity:1;transform:none}}#viq-pop-email.err{border-color:#C0392B!important;animation:viqShake 0.4s}@keyframes viqShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}</style>
+<script>
+(function(){
+  var shown=false;
+  function show(){
+    if(shown)return; shown=true;
+    document.getElementById('viq-email-pop').style.display='flex';
+    if(window.gtag)gtag('event','email_popup_shown',{event_category:'lead'});
+  }
+  window.viqClosePop=function(){document.getElementById('viq-email-pop').style.display='none';};
+  window.viqSubmitPop=function(){
+    var inp=document.getElementById('viq-pop-email');
+    var email=(inp.value||'').trim();
+    if(!email||email.indexOf('@')<0||email.indexOf('.')<0){inp.classList.add('err');inp.focus();setTimeout(function(){inp.classList.remove('err');},500);return;}
+    try{fetch('https://connect.mailerlite.com/api/subscribers',{method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json',
+      'Authorization':'Bearer VISAIQ_MAILERLITE_TOKEN_PLACEHOLDER'},
+      body:JSON.stringify({email:email,groups:['186396468848887410'],fields:{source:'email_popup'}})
+    }).catch(function(){});}catch(e){}
+    document.getElementById('viq-pop-form').style.display='none';
+    document.getElementById('viq-pop-done').style.display='block';
+    if(window.gtag)gtag('event','email_captured',{event_category:'lead',method:'popup'});
+    setTimeout(window.viqClosePop,2200);
+  };
+  // trigger: 25s timer OR exit-intent, whichever first
+  setTimeout(show,25000);
+  document.addEventListener('mouseout',function(e){if(e.clientY<=0)show();});
+  // allow Enter key
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&document.getElementById('viq-email-pop').style.display==='flex')viqSubmitPop();
+  });
+})();
+</script>
+<!-- ══ END VISAIQ EMAIL POPUP ══ -->
 </body>
 </html>

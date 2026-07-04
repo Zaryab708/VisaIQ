@@ -310,7 +310,7 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
     <a href="/points-calculator">Points</a>
     <a href="/state-comparator">States</a>
   </div>
-  <a href="/report" class="nav-cta">Get Report — A$69</a>
+  <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="nav-cta">Get free alerts</a>
 </nav>
 
 <!-- TOOL NAV STRIP -->
@@ -321,7 +321,7 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
     <a href="/state-comparator" class="ts-pill">🗺️ Which State Nominates Me?</a>
     <a href="/rounds" class="ts-pill">📋 Invitation Rounds</a>
     <a href="/student-visa" class="ts-pill active">🎓 Student Visa Fees</a>
-    <a href="/report" class="ts-pill">📄 PR Report — A$69</a>
+    <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="ts-pill">🔔 Free alerts</a>
   </div>
 </div>
 
@@ -613,9 +613,9 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
 <div class="cta-band">
   <div>
     <h2>Know your PR score<br><em>before graduation.</em></h2>
-    <p>EOI queue position · state nomination probability · 12-month action plan. A$69, instant.</p>
+    <p>Get an email when fees change, your occupation is invited, or a round happens. Free.</p>
   </div>
-  <a href="/report" class="btn-gold">Get PR Report — A$69 →</a>
+  <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="btn-gold">Get free alerts →</a>
 </div>
 
 <!-- FOOTER -->
@@ -627,7 +627,7 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
       <a href="/points-calculator">Points</a>
       <a href="/state-comparator">States</a>
       <a href="/rounds">Rounds</a>
-      <a href="/report">PR Report</a>
+      <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false">Free alerts</a>
       <a href="/methodology">Methodology</a>
     </div>
     <span>© 2026 VisaIQ · Not migration advice</span>
@@ -700,7 +700,7 @@ function submitEmail(){
   try{fetch('https://connect.mailerlite.com/api/subscribers',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ML_TOKEN},body:JSON.stringify({email:email,groups:[ML_GROUP],fields:{source:'student_visa_fee_calc'}})}).catch(function(){});}catch(e){}
   document.getElementById('ecap-form').style.display='none';
   document.getElementById('ecap-done').style.display='block';
-  document.getElementById('ecap-done').innerHTML='✓ Saved. Want your complete PR plan? <a href="/report" style="color:var(--goldlight);font-weight:700;text-decoration:underline">Get your full PR report — A$69 →</a>';
+  document.getElementById('ecap-done').innerHTML='✓ Saved. We\'ll email you when fees or rounds change.';
 }
 
 function showTab(id,btn){
