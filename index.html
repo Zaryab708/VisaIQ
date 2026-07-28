@@ -313,6 +313,28 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
 .id-ag-l{font-size:0.56rem;color:#7A93B4;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.2rem}
 .id-ag-v{font-size:1rem;font-weight:700;color:#F0F5FF}
 .id-note{background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.2);border-radius:9px;padding:0.6rem 0.75rem;font-size:0.68rem;color:#9FB8D8;line-height:1.65}
+
+/* ===== VisaIQ mobile nav (added) ===== */
+.vq-burger{display:none;background:none;border:1px solid var(--border,#E5DFD3);border-radius:8px;width:42px;height:42px;cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px;flex-shrink:0}
+.vq-burger span{display:block;width:19px;height:2px;background:var(--navy,#0B1C2E);border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+.vq-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.vq-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.vq-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.vq-drawer{display:none;position:fixed;top:0;left:0;right:0;background:var(--white,#FAFAF8);border-bottom:1px solid var(--border,#E5DFD3);box-shadow:0 8px 32px rgba(11,28,46,.14);z-index:9998;padding:88px 18px 22px;max-height:100dvh;overflow-y:auto;transform:translateY(-101%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.vq-drawer.vq-open{transform:translateY(0)}
+.vq-dlabel{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#B8811F);font-weight:800;margin:2px 0 8px 4px}
+.vq-dlabel+.vq-dlabel{margin-top:20px}
+.vq-drawer .vq-dlabel~a{display:block;padding:13px 15px;font-size:.95rem;font-weight:500;color:var(--navy,#0B1C2E);text-decoration:none;border-radius:10px;border:1px solid var(--border,#E5DFD3);margin-bottom:7px;background:#fff}
+.vq-drawer a:active{background:var(--slate,#F5F1EA)}
+.vq-drawer .vq-dcta{background:var(--gold,#B8811F);color:#fff;border-color:var(--gold,#B8811F);text-align:center;font-weight:700;margin-top:18px}
+.vq-backdrop{display:none;position:fixed;inset:0;background:rgba(11,28,46,.42);z-index:9997;opacity:0;transition:opacity .3s ease}
+.vq-backdrop.vq-open{opacity:1}
+@media(max-width:920px){
+  .vq-burger{display:flex}
+  .vq-drawer{display:block}
+  .vq-backdrop{display:block}
+  body.vq-locked{overflow:hidden}
+}
 </style>
 </head>
 <body>
@@ -344,7 +366,40 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
     <a href="#tools" class="nav-ghost">Free tools</a>
     <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="nav-cta">Get free alerts</a>
   </div>
+  <button class="vq-burger" id="vqBurger" aria-label="Open menu" aria-expanded="false" aria-controls="vqDrawer">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="vq-backdrop" id="vqBackdrop"></div>
+<nav class="vq-drawer" id="vqDrawer" aria-label="Mobile navigation">
+  <div class="vq-dlabel">Skilled PR</div>
+  <a href="/eoi-queue">EOI Queue Tracker</a>
+  <a href="/eoi-backlog">EOI Backlog by Occupation</a>
+  <a href="/points-calculator">Points Calculator</a>
+  <a href="/state-comparator">Which State Nominates Me?</a>
+  <a href="/rounds">Invitation Rounds</a>
+
+  <div class="vq-dlabel">Occupations</div>
+  <a href="/occupation-search">Occupation &amp; ANZSCO Search</a>
+  <a href="/skilled-occupation-list">Skilled Occupation Lists</a>
+
+  <div class="vq-dlabel">Visa Costs</div>
+  <a href="/student-visa">Student Visa Fees</a>
+  <a href="/485-visa">485 Graduate Visa</a>
+  <a href="/partner-visa">Partner Visa Cost</a>
+  <a href="/482-visa">482 Salary Checker</a>
+
+  <div class="vq-dlabel">Guides</div>
+  <a href="/189-visa">189 Skilled Independent</a>
+  <a href="/190-visa">190 State Nomination</a>
+  <a href="/491-visa">491 Regional</a>
+  <a href="/pathway-finder">Pathway Finder</a>
+
+  <a href="#" class="vq-dcta" id="vqDrawerCta">Get free alerts</a>
+</nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -361,7 +416,7 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
       <a href="/student-visa" class="pw student fade in d2">
         <div class="pw-icon">🎓</div>
         <div class="pw-name">Student Visa</div>
-        <div class="pw-desc">Subclass 500 exact costs, the $2,000 fee, work rights and the PR pathway after study.</div>
+        <div class="pw-desc">Subclass 500 exact costs, the $2,500 fee, work rights and the PR pathway after study.</div>
         <div class="pw-go">Calculate my costs →</div>
       </a>
       <a href="/partner-visa" class="pw partner fade in d3">
@@ -559,9 +614,9 @@ footer{background:var(--navy);padding:3.5rem 5% 2rem;color:rgba(255,255,255,0.5)
 <section class="convert">
   <div class="convert-card fade">
     <h2>Know where you stand<br>before you pay <em>anyone.</em></h2>
-    <p>Start with a free pathway check. Unlock the full AI report when you're ready. Real DHA June 2026 data across 60+ occupations.</p>
+    <p>Check your real SkillSelect position free, then get an alert the moment your occupation moves. Real DHA June 2026 data across 60+ occupations.</p>
     <a href="#" onclick="document.getElementById('viq-email-pop').style.display='flex';return false" class="convert-btn">Get free round alerts →</a>
-    <div class="convert-sub">Instant access · One-off payment · vs A$300–500 agent consultation</div>
+    <div class="convert-sub">Free · No signup to look · Updated within 48h of every round</div>
   </div>
 </section>
 
@@ -668,6 +723,35 @@ document.querySelectorAll('.fade:not(.in)').forEach(el=>obs.observe(el));
     setTimeout(hide,3500);
   });
   emailInput.addEventListener('keydown',function(e){if(e.key==='Enter')submitBtn.click();});
+})();
+</script>
+
+<script>
+/* VisaIQ mobile nav */
+(function(){
+  var b=document.getElementById('vqBurger'),
+      d=document.getElementById('vqDrawer'),
+      k=document.getElementById('vqBackdrop');
+  if(!b||!d||!k)return;
+  function set(o){
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Close menu':'Open menu');
+    d.classList.toggle('vq-open',o);
+    k.classList.toggle('vq-open',o);
+    document.body.classList.toggle('vq-locked',o);
+    if(o&&typeof gtag==='function'){gtag('event','mobile_nav_open');}
+  }
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  k.addEventListener('click',function(){set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  d.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>920)set(false);});
+  var c=document.getElementById('vqDrawerCta');
+  if(c){c.addEventListener('click',function(e){
+    e.preventDefault();set(false);
+    var p=document.getElementById('viq-email-pop');
+    if(p)p.style.display='flex';
+  });}
 })();
 </script>
 </body>
